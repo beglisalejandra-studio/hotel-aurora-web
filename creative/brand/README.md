@@ -1,6 +1,10 @@
 # Materiales de marca · Hotel Aurora
 
-Esta carpeta es el único lugar donde se suben los logos y las fotos del hotel.
+> **Hotel Aurora es un proyecto de portafolio: el hotel no existe.**
+> Todo el contenido (habitaciones, planes, precios, textos) es ficticio y de demostración.
+> Las imágenes pueden ser generadas con IA.
+
+Esta carpeta es el único lugar donde se suben los logos y las fotos.
 Todo lo que entre aquí pasa por una revisión antes de publicarse en el sitio.
 
 ## Dónde subir cada cosa
@@ -9,37 +13,33 @@ Todo lo que entre aquí pasa por una revisión antes de publicarse en el sitio.
 |---|---|
 | Logos y favicon | `creative/brand/logo/` |
 | Fotografías | `creative/brand/photos/` |
-| Manual de marca, paleta, licencias de tipografías, autorizaciones | `creative/brand/` (raíz) |
+| Manual de marca, paleta, tipografías | `creative/brand/` (raíz) |
 
-Para subir desde GitHub: abre la carpeta → **Add file → Upload files** → arrastra los archivos → **Commit changes**.
-Elige **Create a new branch** (por ejemplo `media/logos-y-fotos`) en lugar de hacer commit directo a `main`.
+Rama de trabajo: `claude/laughing-newton-e2apbo`. Sube **directo a esa rama**, nunca a `main`.
 
-## Qué necesitamos
+Para subir desde GitHub: abre la carpeta → **Add file → Upload files** → arrastra los archivos →
+en **Commit changes** deja marcada la opción *Commit directly to the claude/laughing-newton-e2apbo branch*.
 
-### Logo
-- Formato **SVG** (preferido). Si no existe, PNG con fondo transparente de **mínimo 1000 px de ancho**.
-- Variante para fondo claro y variante para fondo oscuro.
-- Versión compacta o ícono para favicon y para el ícono de la app instalable.
+## Cómo se piden los materiales
 
-### Fotografías
-- Formato JPG o PNG original, sin compresión adicional ni marcas de agua.
-- **Mínimo 2000 px en el lado largo.** Cada archivo de **4 MB o menos** (límite de la subida desde el navegador).
-- Mezcla de orientaciones: horizontales para portadas y verticales para móvil.
-- Nombre descriptivo en minúsculas, sin tildes ni espacios, por ejemplo `habitacion-deluxe-cama.jpg`.
-- Cubrir: fachada y entrada, cada tipo de habitación (cama, baño, vista), zonas comunes (patio, piscina, restaurante, terraza), detalles (textura, arquitectura, desayuno) y entorno cercano.
+Cada solicitud trae:
+1. **Prompt** para generar la imagen.
+2. **Nombre exacto del archivo** (respétalo: el sitio lo referencia por ese nombre).
+3. **Enlace a la carpeta** donde subirlo.
 
-### Documentos
-- Paleta de colores y tipografías, con licencia de uso web si son de pago.
-- Manual de marca, si existe.
-- Texto de cada tipo de habitación: capacidad, camas, tamaño, servicios incluidos.
+## Reglas de los archivos
 
-## Derechos de uso (obligatorio)
+- Nombre en minúsculas, sin tildes ni espacios, separado por guiones: `habitacion-deluxe-cama.jpg`.
+- Logo: SVG si es posible; si no, PNG transparente de al menos 1000 px de ancho.
+- Fotos: JPG o PNG original, **mínimo 2000 px en el lado largo**, **4 MB o menos** por archivo (límite de la subida desde el navegador).
+- Sin marcas de agua, sin texto incrustado en las fotos y sin logos ni marcas de terceros.
 
-Solo sube material propio o con permiso por escrito para usarlo en el sitio web.
-Para cada foto indica quién es el autor o fotógrafo y si hay restricciones.
-Las fotos de terceros, de stock sin licencia o tomadas de internet no se publican.
-Si aparecen personas reconocibles, se necesita su autorización de imagen.
+## Procedencia (para el registro de media)
+
+Por cada imagen generada con IA, anota en el mensaje del commit o en el chat: la herramienta usada y el prompt.
+Revisa que los términos de esa herramienta permitan uso en un portafolio público.
+Si aparecen personas, deben ser generadas (no reales ni parecidas a alguien concreto).
 
 ## Qué NO subir aquí
 
-Contraseñas, claves de API, datos de huéspedes, documentos de identidad ni información bancaria.
+Contraseñas, claves de API, datos de personas reales, documentos de identidad ni información bancaria.
