@@ -24,7 +24,7 @@ npm install --ignore-scripts
 npm run lint && npm run typecheck && npm run format:check
 npm test
 npm run build
-node design/contrast-check.mjs     # contraste AA de los tokens de color
+node design/palette-check.mjs      # contraste AA de las 3 paletas (12 horas)
 ```
 
 ## Reglas del proyecto
