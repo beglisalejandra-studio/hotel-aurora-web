@@ -12,7 +12,7 @@ Sitio de un hotel boutique, muy visual: portada, habitaciones, alrededores con m
 |---|---|
 | **Ver la maqueta** | `creative/mockup/index.html` en el navegador (rutas: `#/`, `#/habitacion/terraza`, `#/reservar`). El botón «Guía de fotos» de la franja superior muestra el código y la medida de cada hueco de imagen |
 | Leer la propuesta completa y qué falta decidir | `docs/entregables/01-propuesta-diseno.md` |
-| Saber qué imágenes hay que generar (prompts para ChatGPT o Gemini, con medidas) | `creative/requests/LEEME.md` |
+| Saber qué imágenes hay que generar (prompts para ChatGPT o Gemini, con medidas) | `creative/requests/PROMPTS.md` (prompts) y `LEEME.md` (índice y avisos) |
 | Entender el diseño (tokens, tipografía, movimiento, presupuestos) | `DESIGN.md` |
 | Entender el producto, los claims y sus evidencias | `PRODUCT.md` |
 | Ver arquitectura, integraciones y plan por fases | `PROJECT.md` y `docs/decisions/` |

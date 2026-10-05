@@ -1,6 +1,6 @@
 # Material que necesito de ti: imágenes (prompts y medidas)
 
-Este es el **índice único** de lo que hay que producir. Cada imagen tiene su ficha (`<nombre>.md`) con el prompt completo para copiar y pegar en **ChatGPT o Gemini**, las medidas exactas y qué conservar.
+Este es el **índice único** de lo que hay que producir. **Todos los prompts juntos, para copiar y pegar: [`PROMPTS.md`](PROMPTS.md).** Cada imagen tiene su ficha (`<nombre>.md`) con el prompt completo para copiar y pegar en **ChatGPT o Gemini**, las medidas exactas y qué conservar.
 
 ## Cómo subirlas
 1. Genera la imagen con el prompt de su ficha.
