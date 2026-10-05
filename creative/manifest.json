@@ -1,5 +1,107 @@
 {
   "schema_version": 1,
   "project": "hotel-aurora",
-  "pages": []
+  "pages": [
+    {
+      "references": [],
+      "constraints": {
+        "preserve": [
+          "arcos de medio punto en piedra coralina",
+          "postigos de madera y baldosa de cemento",
+          "buganvilia y plantas tropicales en macetas de barro",
+          "paleta verdeazulada profunda, coral cálido, blanco marino y tinta azul",
+          "luz de las 6 de la mañana: sombras frías y luces cálidas",
+          "sin personas visibles, sin texto, sin logotipos ni marcas de agua",
+          "imágenes del hotel rotuladas como ilustrativas si son generadas con IA"
+        ],
+        "may_change": [
+          "encuadre",
+          "hora exacta de la luz",
+          "objetos de utilería",
+          "ángulo de cámara"
+        ],
+        "forbidden": [
+          "inventar logotipos",
+          "mostrar rostros de personas reales",
+          "generar con IA fotografías de lugares reales (atracciones) y presentarlas como reales",
+          "cambiar la paleta o la hora del día entre imágenes"
+        ]
+      },
+      "prompts": ["creative/requests/*.md (una ficha por imagen, con medidas y prompt)"],
+      "shots": [],
+      "outputs": [],
+      "poster": null,
+      "fallback": null,
+      "captions": [],
+      "audio": false,
+      "status": "planned",
+      "approval": {
+        "by": null,
+        "at": null
+      },
+      "versions": [],
+      "page": "home",
+      "type": "image",
+      "score": 28,
+      "reason": "VIDEO_SCORE 28 → Imagen estática optimizada. Factores principales: penal. rendimiento móvil (-18.7); demostración (+15); atmósfera (+15).",
+      "score_breakdown": [
+        {
+          "factor": "demostración",
+          "points": 15,
+          "why": "necesidad de demostrar con movimiento: 3/5"
+        },
+        {
+          "factor": "atmósfera",
+          "points": 15,
+          "why": "peso de la emoción/ambiente: 5/5"
+        },
+        {
+          "factor": "activos disponibles",
+          "points": 3,
+          "why": "calidad del material fuente/referencias: 1/5"
+        },
+        {
+          "factor": "referencias",
+          "points": 2,
+          "why": "1/5 referencias usan video hero"
+        },
+        {
+          "factor": "objetivo de conversión",
+          "points": 7,
+          "why": "objetivo: booking"
+        },
+        {
+          "factor": "tipo de oferta",
+          "points": 10,
+          "why": "oferta: experience"
+        },
+        {
+          "factor": "audiencia",
+          "points": 4,
+          "why": "audiencia: b2c-broad"
+        },
+        {
+          "factor": "plataforma",
+          "points": 3,
+          "why": "plataforma: organic-seo"
+        },
+        {
+          "factor": "penal. rendimiento móvil",
+          "points": -18.7,
+          "why": "75% tráfico móvil × prioridad de rendimiento 5/5"
+        },
+        {
+          "factor": "penal. peso de página",
+          "points": -8,
+          "why": "presupuesto 900 KB ≤ 1500 KB"
+        },
+        {
+          "factor": "penal. sensibilidad al movimiento",
+          "points": -4,
+          "why": "riesgo de sensibilidad al movimiento: 2/5"
+        }
+      ],
+      "scored_at": "2026-10-05T01:11:13.863Z"
+    }
+  ]
 }

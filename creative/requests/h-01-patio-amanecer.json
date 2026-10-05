@@ -1,0 +1,16 @@
+{
+  "name": "h-01-patio-amanecer",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "home",
+  "role": "portada (hero)",
+  "status": "requested",
+  "requested_at": "2026-10-05T01:14:48.073Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1600,
+  "max_bytes": 4000000,
+  "exts": [".jpg", ".jpeg", ".png", ".webp", ".avif"]
+}

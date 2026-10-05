@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotel Aurora, hotel boutique en Cartagena de Indias</title>
+<meta name="description" content="Maqueta de diseño de Hotel Aurora, hotel boutique ficticio en Cartagena de Indias. Proyecto de portafolio de beglisalejandra-studio.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#EEF3F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08171F" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* ============ TOKENS ============
+   Una paleta, un acento. Radios: arco (imágenes), pastilla (acciones), 14px (paneles, campos).
+   Fuentes: en producción se autoalojan con next/font (subconjunto latino). */
+:root{
+  --bg:#EEF3F2; --surface:#F8FBFA; --surface-2:#E2EBEA; --line:#C3D2CF;
+  --fg:#0C1E2B; --fg-2:#3B5260; --fg-3:#4F6672;
+  --sea:#14464F;
+  --accent:#C73E1D; --on-accent:#FFFFFF; --accent-text:#B5351A;
+  --on-media:#FFFFFF;
+  --r-panel:14px; --r-arch:999px 999px 0 0;
+  --shadow:0 22px 44px -24px rgb(12 30 43 / .42);
+  --gutter:clamp(16px,4vw,48px);
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --s-1:clamp(.8rem,.77rem + .12vw,.875rem);
+  --s0:clamp(1rem,.97rem + .15vw,1.0625rem);
+  --s1:clamp(1.15rem,1.05rem + .45vw,1.35rem);
+  --s2:clamp(1.5rem,1.2rem + 1.3vw,2.2rem);
+  --s3:clamp(2rem,1.3rem + 3vw,3.6rem);
+  --s4:clamp(2.6rem,1.4rem + 5.2vw,5.4rem);
+  --nav-h:64px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#08171F; --surface:#0F2530; --surface-2:#13303C; --line:#26434F;
+    --fg:#E8F0EF; --fg-2:#A9BDC0; --fg-3:#86A0A6;
+    --sea:#0E3A44;
+    --accent:#FF7A59; --on-accent:#08171F; --accent-text:#FF8E70;
+    --shadow:0 22px 44px -24px rgb(0 0 0 / .7);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--s0)/1.6 var(--f-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;letter-spacing:-.025em;line-height:1.02;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.ic{width:1.25em;height:1.25em;fill:currentColor;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1360px;margin-inline:auto;padding-inline:var(--gutter)}
+.hero__grid,.casa__grid,.city__grid,.avail__grid,.rm__grid,.flow__grid{grid-template-columns:minmax(0,1fr)}
+.hero__grid>*,.casa__grid>*,.city__grid>*,.avail__grid>*,.rm__grid>*,.flow__grid>*{min-width:0}
+[hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-60px;background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:100}
+.skip:focus{top:12px}
+
+/* ============ BOTONES ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;padding:0 1.5rem;border-radius:999px;border:1.5px solid transparent;font-weight:600;text-decoration:none;white-space:nowrap;transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--accent);color:var(--on-accent)}
+.btn--primary:hover{background:color-mix(in oklab,var(--accent) 88%,var(--fg))}
+.btn--ghost{border-color:var(--line);background:transparent}
+.btn--ghost:hover{border-color:var(--fg)}
+.btn--sm{min-height:44px;padding:0 1.15rem}
+.btn[aria-disabled="true"]{background:var(--surface-2);color:var(--fg-3);cursor:not-allowed}
+.btn[aria-disabled="true"]:active{transform:none}
+.link{display:inline-flex;align-items:center;gap:.5em;font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+.link .ic{transition:transform .3s var(--ease)}
+.link:hover .ic{transform:translateX(4px)}
+.iconbtn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line);background:transparent}
+.iconbtn:hover{border-color:var(--fg)}
+
+/* ============ AVISO DE PORTAFOLIO ============ */
+.demo{background:var(--fg);color:var(--bg);font-size:var(--s-1);line-height:1.4}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding-block:9px}
+.demo p{display:flex;gap:10px;align-items:flex-start}
+.demo .ic{margin-top:2px;color:var(--accent)}
+.demo button{background:none;border:1px solid color-mix(in oklab,var(--bg) 40%,transparent);border-radius:999px;color:inherit;padding:6px 12px;white-space:nowrap;min-height:32px}
+@media (max-width:700px){.demo button{display:none}}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:40;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.is-stuck{border-bottom-color:var(--line)}
+.nav .wrap{height:var(--nav-h);display:flex;align-items:center;gap:20px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1.45rem/1 var(--f-display);letter-spacing:-.03em}
+.brand__arc{width:30px;height:18px;position:relative;flex:none}
+.brand__arc::before{content:"";position:absolute;inset:0;border:2.5px solid var(--accent);border-bottom:0;border-radius:30px 30px 0 0}
+.brand__dot{position:absolute;inset:0;transform-origin:50% 100%;transform:rotate(90deg)}
+.brand__dot::after{content:"";position:absolute;left:-3.25px;bottom:-4.5px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.moment{display:none;font-size:var(--s-1);font-weight:600;color:var(--fg-3);border-left:1px solid var(--line);padding-left:16px;margin-left:-4px;min-width:6.5em}
+@media (min-width:1100px){body[data-screen="home"] .moment{display:block}}
+@supports (animation-timeline:scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .brand__dot{animation:sunrise linear both;animation-timeline:scroll(root)}
+    @keyframes sunrise{from{transform:rotate(0)}to{transform:rotate(180deg)}}
+  }
+}
+.nav__links{display:none;gap:6px;margin-left:auto}
+.nav__links a{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--fg-2);transition:color .2s,background .2s}
+.nav__links a:hover{color:var(--fg);background:var(--surface-2)}
+.nav__end{display:flex;gap:8px;align-items:center;margin-left:auto}
+.nav__menu{display:inline-grid}
+.drawer{position:fixed;inset:0;z-index:60;background:var(--bg);padding:calc(var(--nav-h) + 24px) var(--gutter) 32px;display:flex;flex-direction:column;gap:6px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility .3s}
+.drawer.is-open{opacity:1;transform:none;visibility:visible}
+.drawer a{font:600 var(--s3)/1.15 var(--f-display);letter-spacing:-.03em;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line)}
+.drawer__close{position:absolute;right:var(--gutter);top:calc((var(--nav-h) - 44px)/2)}
+@media (min-width:960px){
+  .nav__links{display:flex}
+  .nav__end{margin-left:0}
+  .nav__menu{display:none}
+}
+
+/* ============ PLACEHOLDERS DE FOTO (direccion de arte, sin peso) ============ */
+.ph{position:relative;overflow:hidden;background:var(--sea);isolation:isolate}
+.ph::before{content:"";position:absolute;inset:0;z-index:-1}
+.ph--dawn::before{background:
+  radial-gradient(60% 38% at 50% 78%,#FFD3A1 0%,rgba(255,190,140,.0) 70%),
+  linear-gradient(180deg,#1E3F57 0%,#5C7E91 30%,#E7A58A 62%,#F6C7A0 78%,#14464F 78.2%,#0C2F38 100%)}
+.ph--patio::before{background:
+  radial-gradient(70% 55% at 30% 18%,#FFD9A8 0%,rgba(255,217,168,0) 62%),
+  linear-gradient(160deg,#2E6F73 0%,#14464F 55%,#0B2B35 100%)}
+.ph--wall::before{background:
+  radial-gradient(80% 60% at 78% 12%,#FFB38E 0%,rgba(255,179,142,0) 60%),
+  linear-gradient(200deg,#C75A3F 0%,#8C3A34 50%,#2A2F45 100%)}
+.ph--terrace::before{background:
+  radial-gradient(90% 50% at 50% 100%,#F7B48C 0%,rgba(247,180,140,0) 65%),
+  linear-gradient(180deg,#10283B 0%,#2D5368 46%,#D98A74 88%)}
+.ph--r1::before{background:radial-gradient(70% 60% at 25% 20%,#FFE0B8 0%,rgba(255,224,184,0) 60%),linear-gradient(170deg,#7BA5A3 0%,#2E6F73 60%,#14464F 100%)}
+.ph--r2::before{background:radial-gradient(70% 60% at 75% 15%,#FFC9A8 0%,rgba(255,201,168,0) 60%),linear-gradient(190deg,#E49A82 0%,#A9553F 55%,#3A3447 100%)}
+.ph--r3::before{background:radial-gradient(60% 60% at 50% 10%,#FFD7B0 0%,rgba(255,215,176,0) 60%),linear-gradient(180deg,#D86A58 0%,#8E3A44 55%,#26263E 100%)}
+.ph--r4::before{background:radial-gradient(80% 50% at 50% 100%,#FFB07F 0%,rgba(255,176,127,0) 65%),linear-gradient(180deg,#14283C 0%,#3C5F73 55%,#E39A82 100%)}
+.arch{border-radius:var(--r-arch)}
+.rect{border-radius:var(--r-panel)}
+/* guia de fotos: muestra codigo y medidas solo si se activa */
+body.guide .ph::after{content:attr(data-slot) "\A" attr(data-size);white-space:pre;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font:600 .78rem/1.5 var(--f-body);color:#fff;background:rgb(8 23 31 / .78);padding:8px 12px;border-radius:10px;z-index:3}
+
+/* ============ SECCIONES ============ */
+.section{padding-top:clamp(72px,10vw,150px);padding-bottom:var(--pb,clamp(72px,10vw,150px));content-visibility:auto;contain-intrinsic-size:auto 900px}
+.section h2{font-size:var(--s3)}
+.section .lede{font-size:var(--s1);color:var(--fg-2);max-width:42ch;margin-top:1.1rem;line-height:1.5}
+.note{font-size:var(--s-1);color:var(--fg-3);margin-top:1.25rem}
+
+/* ---- HERO ---- */
+.hero{padding-top:0;padding-bottom:clamp(40px,6vw,80px)}
+.hero__grid{display:grid;gap:0}
+.hero__fig{position:relative;margin-inline:calc(var(--gutter) * -1)}
+.hero__media{position:relative;height:min(66dvh,560px);border-radius:var(--r-arch)}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,23,31,0) 40%,rgba(8,23,31,.7) 100%);z-index:2}
+.hero__copy{position:relative;margin-top:-9.5rem}
+.hero__eyebrow{font-size:var(--s-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-media);opacity:.92}
+.hero h1{font-size:var(--s4);margin-top:.7rem;color:var(--on-media)}
+.hero__sub{font-size:var(--s1);color:var(--fg-2);max-width:38ch;margin-top:1.8rem;line-height:1.5}
+@media (min-width:900px){
+  .hero{padding-top:clamp(20px,3vw,40px)}
+  .hero__grid{grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,80px);align-items:end}
+  .hero__fig{order:2;margin-inline:0;justify-self:end;width:100%;max-height:calc(100dvh - var(--nav-h) - 72px);aspect-ratio:4/5}
+  .hero__fig::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1.5px solid var(--line);border-bottom:0;border-radius:999px 999px 0 0}
+  .hero__media{height:100%;width:100%}
+  .hero__media::after{display:none}
+  .hero__copy{order:1;margin-top:0;padding-bottom:6px}
+  .hero__eyebrow{color:var(--accent-text);opacity:1}
+  .hero h1{color:var(--fg);font-size:clamp(3.6rem,2rem + 4.6vw,6.2rem)}
+  .hero__sub{margin-top:1.5rem}
+}
+
+/* ---- BARRA DE RESERVA ---- */
+.bar{position:relative;margin-top:1.8rem;display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);box-shadow:var(--shadow)}
+.bar__field{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px 18px;border:0;background:none;border-radius:var(--r-panel);min-height:64px;justify-content:center;transition:background .2s}
+.bar__field:hover{background:var(--surface-2)}
+.bar__field + .bar__field{border-top:1px solid var(--line);border-radius:0}
+.bar__label{font-size:var(--s-1);font-weight:600;color:var(--fg-3);display:flex;gap:8px;align-items:center}
+.bar__val{font-weight:600;font-size:var(--s0)}
+.bar__val.is-empty{color:var(--fg-2);font-weight:500}
+.bar .btn{margin:10px;min-height:52px}
+@media (min-width:640px){
+  .bar{grid-template-columns:1.5fr 1fr auto;align-items:center}
+  .bar__field + .bar__field{border-top:0;border-left:1px solid var(--line)}
+  .bar__field{border-radius:var(--r-panel) 0 0 var(--r-panel)}
+}
+.pop{position:absolute;z-index:45;left:0;right:0;top:calc(100% + 10px);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);box-shadow:var(--shadow);padding:18px}
+@media (min-width:900px){.pop{right:auto;width:min(680px,92vw)}}
+@media (max-width:639px){.pop{position:fixed;left:0;right:0;top:auto;bottom:0;border-radius:var(--r-panel) var(--r-panel) 0 0;max-height:86dvh;overflow:auto;padding-bottom:calc(18px + env(safe-area-inset-bottom))}}
+.pop__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.scrim{position:fixed;inset:0;background:rgb(8 23 31 / .45);z-index:44}
+
+/* ---- CASA ---- */
+.casa__grid{display:grid;gap:clamp(40px,6vw,88px)}
+.casa h2{max-width:14ch}
+.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,28px);align-items:end}
+.arches figure{margin:0}
+.arches .ph{width:100%}
+.arches figure:nth-child(1) .ph{aspect-ratio:3/4}
+.arches figure:nth-child(2) .ph{aspect-ratio:3/5}
+.arches figure:nth-child(3) .ph{aspect-ratio:3/3.6}
+.arches figcaption{margin-top:12px;font-weight:500;color:var(--fg-2)}
+@media (min-width:900px){
+  .casa__grid{grid-template-columns:5fr 7fr;align-items:end}
+}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .arches figure:nth-child(odd){animation:drift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    .arches figure:nth-child(even){animation:drift2 linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes drift{from{transform:translateY(32px)}to{transform:translateY(-32px)}}
+    @keyframes drift2{from{transform:translateY(-12px)}to{transform:translateY(20px)}}
+    .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
+    @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ---- HABITACIONES (carril con snap, sin JS para deslizar) ---- */
+.rooms__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.rooms__nav{display:none;gap:8px}
+@media (min-width:900px){.rooms__nav{display:flex}}
+.rooms__nav.no-ov{display:none!important}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,340px);gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:36px var(--gutter) 12px;margin-inline:calc(var(--gutter) * -1);scroll-padding-inline:var(--gutter);scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+@media (min-width:900px){.rail{grid-auto-columns:minmax(280px,calc((100% - 3 * clamp(14px,2vw,28px)) / 4))}}
+.room{scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;text-decoration:none}
+.room .ph{aspect-ratio:3/4;transition:transform .6s var(--ease)}
+.room:hover .ph{transform:translateY(-6px)}
+.room h3{font-size:var(--s2)}
+.room__meta{color:var(--fg-2);font-size:var(--s0);margin-top:6px}
+.room__price{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+.room__price div{display:grid;gap:2px}
+.room__price small{color:var(--fg-2);font-size:var(--s-1)}
+.room__price strong{font:600 var(--s1)/1 var(--f-display);white-space:nowrap}
+.go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);transition:background .25s,color .25s,border-color .25s,transform .35s var(--ease)}
+.room:hover .go{background:var(--accent);color:var(--on-accent);border-color:var(--accent);transform:translateX(3px)}
+
+/* ---- DIA (bento: 4 momentos, 4 celdas) ---- */
+.day__grid{display:grid;gap:14px;margin-top:clamp(36px,5vw,64px)}
+.tile{position:relative;border-radius:var(--r-panel);padding:clamp(20px,2.4vw,32px);min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.tile h3{font-size:var(--s2)}
+.tile p{margin-top:10px;max-width:34ch}
+.tile--img{color:var(--on-media);min-height:380px}
+.tile--img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,23,31,0) 35%,rgba(8,23,31,.78) 100%);z-index:-1}
+.tile--img .ph{position:absolute;inset:0;z-index:-2}
+.tile--accent{background:var(--accent);color:var(--on-accent)}
+.tile--soft{background:var(--surface-2)}
+.tile--night{background:#0C1E2B;color:#E8F0EF;min-height:240px}
+.tile--night::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 90% at 85% 120%,rgba(255,122,89,.5) 0%,rgba(255,122,89,0) 60%);z-index:-1}
+.tile--a h3{font-size:var(--s3)}
+.tile--a p{font-size:var(--s1);max-width:28ch}
+@media (min-width:900px){
+  .day__grid{grid-template-columns:repeat(4,1fr);grid-template-areas:"a a b c" "a a d d"}
+  .tile--a{grid-area:a;min-height:520px}.tile--b{grid-area:b}.tile--c{grid-area:c}.tile--d{grid-area:d}
+}
+
+/* ---- CIUDAD (mapa + panel) ---- */
+.city__grid{display:grid;gap:24px;margin-top:clamp(36px,5vw,64px)}
+.map{position:relative;border-radius:var(--r-panel);overflow:hidden;background:color-mix(in oklab,var(--sea) 22%,var(--surface-2));aspect-ratio:4/3;border:1px solid var(--line)}
+.map svg.base{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;min-width:44px;min-height:44px;background:none;border:0;padding:0}
+.pin__dot{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--surface);color:var(--fg);border:1.5px solid var(--fg);transition:transform .35s var(--ease),background .25s,color .25s}
+.pin__dot .ic{width:16px;height:16px}
+.pin:hover .pin__dot{transform:scale(1.12)}
+.pin[aria-pressed="true"] .pin__dot{background:var(--fg);color:var(--bg);transform:scale(1.2)}
+.pin__name{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:-4px;font-size:.72rem;font-weight:600;white-space:nowrap;color:var(--fg);text-shadow:0 0 6px var(--surface),0 0 6px var(--surface),0 0 3px var(--surface);pointer-events:none}
+.pin[data-side=left] .pin__name{top:50%;right:100%;left:auto;transform:translateY(-50%);margin:0 -2px 0 0}
+.pin[data-side=right] .pin__name{top:50%;left:100%;transform:translateY(-50%);margin:0 0 0 -2px}
+.pin[data-side=top] .pin__name{top:auto;bottom:100%;margin:0 0 -4px}
+.pin--hotel .pin__dot{width:38px;height:38px;background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.pin--hotel .pin__dot .ic{width:20px;height:20px}
+.pin--hotel{z-index:2}
+@media (max-width:899px){
+  .pin__name{display:none}
+  .pin[aria-pressed="true"] .pin__name,.pin--hotel .pin__name{display:block}
+  .pin__dot{width:24px;height:24px}.pin__dot .ic{width:14px;height:14px}
+  .pin--hotel .pin__dot{width:30px;height:30px}.pin--hotel .pin__dot .ic{width:17px;height:17px}
+}
+.route{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:3 7;stroke-linecap:round}
+.route.is-draw{animation:dash .9s var(--ease) both}
+@keyframes dash{from{stroke-dashoffset:140;opacity:0}to{stroke-dashoffset:0;opacity:1}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;min-height:260px}
+.panel h3{font-size:var(--s2)}
+.panel__mode{display:inline-flex;align-items:center;gap:8px;color:var(--fg-2);font-weight:500}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+.chips::-webkit-scrollbar{display:none}
+.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;min-height:44px;padding:0 16px;white-space:nowrap;font-weight:500;transition:border-color .2s,background .2s,color .2s}
+.chip:hover{border-color:var(--fg)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+@media (min-width:900px){
+  .city__grid{grid-template-columns:7fr 5fr;align-items:start}
+  .chips{margin:0;padding:0;flex-wrap:wrap}
+  .city__side{display:flex;flex-direction:column;gap:18px}
+  .panel{flex:1}
+}
+
+/* ---- DISPONIBILIDAD ---- */
+.avail__grid{display:grid;gap:clamp(28px,5vw,72px);margin-top:clamp(32px,4vw,56px)}
+@media (min-width:1000px){.avail__grid{grid-template-columns:4fr 8fr;align-items:start}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:var(--s-1);color:var(--fg-2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:18px;height:18px;border-radius:6px;border:1px solid var(--line)}
+.sw--sel{background:var(--accent);border-color:var(--accent)}
+.sw--out{background:var(--surface-2);position:relative}
+.sw--out::after{content:"";position:absolute;left:3px;right:3px;top:50%;border-top:1.5px solid var(--fg-3)}
+.sw--last{border-color:var(--accent-text);background:transparent;border-width:2px}
+.summary{margin-top:24px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);display:grid;gap:4px}
+.summary strong{font:600 var(--s1)/1.2 var(--f-display)}
+.summary .btn{margin-top:14px}
+
+/* ---- CALENDARIO ---- */
+.cal{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(14px,2vw,24px)}
+.pop .cal{border:0;padding:0;background:none}
+.cal__top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.cal__months{display:grid;gap:22px}
+@media (min-width:760px){.cal[data-months="2"] .cal__months{grid-template-columns:1fr 1fr;gap:36px}}
+.cal__title{font:600 var(--s1)/1 var(--f-display);text-align:center;min-height:44px;display:grid;place-items:center}
+.cal__dow,.cal__days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px 0}
+.cal__dow span{font-size:.72rem;font-weight:600;color:var(--fg-3);text-align:center;padding:6px 0;text-transform:uppercase;letter-spacing:.06em}
+.day{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:50px;border:0;background:none;border-radius:0;font-weight:600;line-height:1.1}
+.day small{font-size:.62rem;font-weight:500;color:var(--fg-3)}
+.day:not([disabled]):hover::before{background:var(--surface-2)}
+.day::before{content:"";position:absolute;inset:2px 1px;border-radius:999px;z-index:0;transition:background .15s}
+.day>*{position:relative;z-index:1}
+.day.is-last::before{box-shadow:inset 0 0 0 2px var(--accent-text)}
+.day.is-in{background:color-mix(in oklab,var(--accent) 14%,transparent)}
+.day.is-in::before{background:transparent}
+.day.is-start{border-radius:999px 0 0 999px;background:color-mix(in oklab,var(--accent) 14%,transparent)}
+.day.is-end{border-radius:0 999px 999px 0;background:color-mix(in oklab,var(--accent) 14%,transparent)}
+.day.is-start.is-end{border-radius:999px}
+.day.is-start::before,.day.is-end::before{background:var(--accent);box-shadow:none}
+.day.is-start,.day.is-end{color:var(--on-accent)}
+.day.is-start small,.day.is-end small{color:var(--on-accent);opacity:.9}
+.day[disabled]{color:var(--fg-3);cursor:not-allowed}
+.day.is-out{text-decoration:line-through;text-decoration-thickness:1.5px}
+.day.is-past{opacity:.45}
+.day.is-today span{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.day--blank{visibility:hidden}
+
+/* ---- FOOTER ---- */
+.foot{border-top:1px solid var(--line);padding-block:clamp(48px,7vw,96px) 32px}
+.foot__cols{display:grid;gap:36px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.foot__cols>div:first-child,.foot__cols>div:last-child{grid-column:1/-1}
+@media (min-width:900px){.foot__cols{grid-template-columns:1.3fr 1fr 1fr 1.6fr}.foot__cols>div:first-child,.foot__cols>div:last-child{grid-column:auto}}
+.foot h4{font:600 var(--s0)/1 var(--f-body);color:var(--fg-3);margin-bottom:14px;letter-spacing:0}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.foot li a,.foot li button{display:inline-flex;align-items:center;min-height:36px;overflow-wrap:anywhere;color:var(--fg);text-decoration:none;background:none;border:0;padding:0;font-weight:500;text-align:left}
+.foot li a:hover,.foot li button:hover{color:var(--accent-text)}
+.arcade{display:flex;gap:clamp(8px,1.6vw,22px);align-items:flex-end;margin-top:clamp(40px,6vw,88px);height:clamp(120px,16vw,230px)}
+.arcade i{flex:1;height:100%;border:1.5px solid var(--line);border-bottom:0;border-radius:999px 999px 0 0;position:relative;overflow:hidden}
+.arcade i:nth-child(odd){height:78%}
+.arcade i.lit{height:100%;border-color:transparent;background:radial-gradient(70% 40% at 50% 80%,#FFD3A1 0%,rgba(255,190,140,0) 70%),linear-gradient(180deg,#1E3F57 0%,#5C7E91 34%,#E7A58A 70%,#F6C7A0 100%)}
+.foot__legal{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);color:var(--fg-2);font-size:var(--s-1);display:grid;gap:6px;max-width:80ch}
+
+/* ---- DOCK MOVIL ---- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:42;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom));background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .45s var(--ease)}
+.dock.is-on{transform:none}
+.dock__t{display:grid;line-height:1.25}
+.dock__t strong{font:600 var(--s1)/1.1 var(--f-display)}
+.dock__t span{font-size:var(--s-1);color:var(--fg-2)}
+@media (min-width:900px){.dock{display:none}}
+body{padding-bottom:0}
+@media (max-width:899px){body[data-screen="home"],body[data-screen="room"]{padding-bottom:78px}}
+body[data-screen="book"] .dock{display:none}
+
+/* ============ PAGINA DE HABITACION ============ */
+.rm{padding-top:clamp(12px,2vw,28px);padding-bottom:clamp(60px,8vw,120px)}
+.crumbs{display:flex;gap:8px;align-items:center;color:var(--fg-2);font-size:var(--s-1);margin-bottom:18px}
+.crumbs a{text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.rm__grid{display:grid;gap:clamp(28px,4vw,56px)}
+@media (min-width:1000px){.rm__grid{grid-template-columns:7fr 5fr;align-items:start}}
+.gal{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+.gal .ph:first-child{grid-column:1/-1;aspect-ratio:4/5}
+.gal .ph:not(:first-child){aspect-ratio:1/1}
+@media (min-width:700px){
+  .gal{grid-template-columns:2fr 1fr;grid-template-rows:auto auto}
+  .gal .ph:first-child{grid-column:1;grid-row:1/3;aspect-ratio:auto;min-height:620px}
+  .gal .ph:not(:first-child){aspect-ratio:auto;min-height:300px}
+  .gal .ph:nth-child(4){display:none}
+}
+.rm h1{font-size:var(--s3);margin-bottom:1rem}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0;color:var(--fg-2)}
+.facts span{display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.rm__text{max-width:56ch;color:var(--fg-2);font-size:var(--s1);line-height:1.55}
+.amen{display:grid;gap:10px;margin-top:36px;grid-template-columns:1fr 1fr}
+.amen h3{font:600 var(--s0)/1.2 var(--f-body);grid-column:1/-1;color:var(--fg-3);margin-top:10px}
+.amen li{list-style:none;display:flex;gap:10px;align-items:center}
+.amen ul{display:contents;margin:0;padding:0}
+details{border-top:1px solid var(--line);padding:2px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{display:flex;justify-content:space-between;align-items:center;min-height:56px;font-weight:600;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary .ic{transition:transform .3s var(--ease)}
+details[open] summary .ic{transform:rotate(45deg)}
+details p{color:var(--fg-2);padding-bottom:16px;max-width:60ch}
+.stick{position:static;display:grid;gap:16px}
+@media (min-width:1000px){.stick{position:sticky;top:calc(var(--nav-h) + 20px)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(18px,2vw,26px);box-shadow:var(--shadow)}
+.card h2,.card h3{font-size:var(--s2)}
+.price{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.price strong{font:600 var(--s2)/1 var(--f-display)}
+.price span{color:var(--fg-2)}
+
+/* ============ FLUJO DE RESERVA ============ */
+.flow{padding-block:clamp(20px,3vw,40px) clamp(60px,8vw,120px)}
+.flow h1{font-size:var(--s3);margin-bottom:6px}
+.steps{display:flex;gap:0;margin:22px 0 32px;padding:0;list-style:none;counter-reset:s}
+.steps li{flex:1;display:flex;align-items:center;gap:10px;font-weight:500;color:var(--fg-3);position:relative;padding-right:10px;min-width:0}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);font-size:.85rem;font-weight:600;background:var(--bg)}
+.steps li span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.steps li:not(:last-child)::after{content:"";flex:1;height:1.5px;background:var(--line);margin-left:6px;min-width:12px}
+.steps li[aria-current="step"]{color:var(--fg)}
+.steps li[aria-current="step"]::before{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.steps li.is-done{color:var(--fg-2)}
+.steps li.is-done::before{content:"\2713";background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+@media (max-width:560px){.steps li span{display:none}.steps li[aria-current="step"] span{display:block}.steps li:not(:last-child)::after{min-width:8px}}
+.flow__grid{display:grid;gap:28px}
+@media (min-width:1000px){.flow__grid{grid-template-columns:7fr 4fr;gap:56px;align-items:start}}
+.opt{display:grid;gap:12px}
+.opt label{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-panel);background:var(--surface);cursor:pointer;transition:border-color .2s}
+.opt label:hover{border-color:var(--fg-3)}
+.opt input{width:20px;height:20px;accent-color:var(--accent)}
+.opt label:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.opt .thumb{display:none}
+@media (min-width:560px){.opt label{grid-template-columns:auto 84px 1fr auto}.opt .thumb{display:block;width:84px;height:84px;border-radius:12px}}
+.opt b{display:block;font:600 var(--s1)/1.2 var(--f-display)}
+.opt small{color:var(--fg-2);font-size:var(--s-1)}
+.opt .tot{text-align:right;line-height:1.25}
+.opt .tot strong{display:block}
+.opt label.is-na{opacity:.55;cursor:not-allowed}
+.field{display:grid;gap:8px}
+.field label{font-weight:600;font-size:var(--s-1);color:var(--fg-2)}
+.field input,.field select{min-height:52px;border:1.5px solid var(--fg-3);border-radius:var(--r-panel);background:var(--surface);padding:0 16px;width:100%}
+.field input::placeholder{color:var(--fg-3)}
+.field small{color:var(--fg-2);font-size:var(--s-1)}
+.form{display:grid;gap:18px}
+.form--2{grid-template-columns:1fr}
+@media (min-width:640px){.form--2{grid-template-columns:1fr 1fr}.form .full{grid-column:1/-1}}
+.check{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;color:var(--fg-2)}
+.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--accent)}
+.tabs{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:4px;margin-bottom:22px}
+.tabs button{border:0;background:none;min-height:44px;padding:0 20px;border-radius:999px;font-weight:600;color:var(--fg-2)}
+.tabs button[aria-selected="true"]{background:var(--bg);color:var(--fg);box-shadow:0 1px 0 var(--line)}
+.stepper{display:inline-flex;align-items:center;gap:12px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:transparent;display:grid;place-items:center}
+.stepper output{min-width:1.5ch;text-align:center;font-weight:600;font-size:var(--s1)}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sum dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:10px 16px}
+.sum dt{color:var(--fg-2)}
+.sum dd{margin:0;font-weight:600;text-align:right}
+.sum hr{grid-column:1/-1;border:0;border-top:1px solid var(--line);margin:4px 0;width:100%}
+.stop{border:2px solid var(--accent);background:color-mix(in oklab,var(--accent) 8%,var(--surface));border-radius:var(--r-panel);padding:clamp(18px,2.4vw,28px);display:grid;gap:12px}
+.stop h2{font-size:var(--s2)}
+.stop .ic{width:34px;height:34px;color:var(--accent-text)}
+.methods{display:grid;gap:10px;margin-top:20px;opacity:.9}
+.methods div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:var(--r-panel);color:var(--fg-3);background:transparent}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:var(--s-1);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);border-radius:999px;padding:6px 14px}
+.done h2{font-size:var(--s3);margin:16px 0 8px}
+.tline{display:grid;gap:0;margin:28px 0;padding:0;list-style:none}
+.tline li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding-bottom:22px;position:relative}
+.tline li::before{content:"";width:14px;height:14px;border-radius:50%;border:2px solid var(--line);margin:5px auto 0;background:var(--bg);position:relative;z-index:1}
+.tline li::after{content:"";position:absolute;left:13px;top:22px;bottom:0;border-left:2px solid var(--line)}
+.tline li:last-child::after{display:none}
+.tline li.on::before{background:var(--accent);border-color:var(--accent)}
+.tline strong{display:block}
+.tline span{color:var(--fg-2);font-size:var(--s-1)}
+.notify{display:grid;gap:18px}
+@media (min-width:900px){.notify{grid-template-columns:1fr 1fr}}
+.msg{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:18px;display:grid;gap:12px;align-content:start}
+.msg h3{font:600 var(--s0)/1.2 var(--f-body);display:flex;gap:10px;align-items:center}
+.bubble{background:color-mix(in oklab,var(--accent) 10%,var(--bg));border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:.95rem;line-height:1.5;max-width:34ch}
+.mail{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);font-size:.95rem}
+.mail b{display:block;margin-bottom:6px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:none;border:0;font-weight:600;padding:0;margin-bottom:6px}
+
+/* ============ DIALOGOS ============ */
+dialog{border:1px solid var(--line);border-radius:var(--r-panel);background:var(--surface);color:var(--fg);padding:clamp(20px,3vw,32px);width:min(480px,calc(100vw - 32px));box-shadow:var(--shadow)}
+dialog::backdrop{background:rgb(8 23 31 / .5)}
+dialog h2{font-size:var(--s2);margin-bottom:12px}
+dialog ul{padding-left:1.2em;color:var(--fg-2);display:grid;gap:8px;margin:14px 0 22px}
+.dlg-x{position:absolute;right:12px;top:12px}
+
+/* view transitions entre pantallas */
+@media (prefers-reduced-motion:no-preference){
+  ::view-transition-old(root){animation:vt-out .22s ease both}
+  ::view-transition-new(root){animation:vt-in .45s var(--ease) both}
+  @keyframes vt-out{to{opacity:0}}
+  @keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body data-screen="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></symbol><symbol id="i-bed" viewBox="0 0 256 256"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></symbol><symbol id="i-boat" viewBox="0 0 256 256"><path d="M221.06,110.59,208,106.23V56a16,16,0,0,0-16-16H136V24a8,8,0,0,0-16,0V40H64A16,16,0,0,0,48,56v50.23l-13.06,4.36A16,16,0,0,0,24,125.77V152c0,61.54,97.89,86.72,102.06,87.76a8,8,0,0,0,3.88,0C134.11,238.72,232,213.54,232,152V125.77A16,16,0,0,0,221.06,110.59ZM64,56H192v44.9L130.53,80.41a8,8,0,0,0-5.06,0L64,100.9Zm152,96c0,24.91-23.68,43-43.55,53.83A228.13,228.13,0,0,1,128,223.72,226.85,226.85,0,0,1,83.81,206C47.6,186.35,40,165.79,40,152V125.77L120,99.1V168a8,8,0,0,0,16,0V99.1l80,26.67Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-church" viewBox="0 0 256 256"><path d="M228.12,145.14,192,123.47V104a8,8,0,0,0-4-7L136,67.36V48h16a8,8,0,0,0,0-16H136V16a8,8,0,0,0-16,0V32H104a8,8,0,0,0,0,16h16V67.36L68,97.05a8,8,0,0,0-4,7v19.47L27.88,145.14A8,8,0,0,0,24,152v64a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V168a8,8,0,0,1,16,0v48a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V152A8,8,0,0,0,228.12,145.14ZM40,156.53l24-14.4V208H40ZM128,144a24,24,0,0,0-24,24v40H80V108.64l48-27.43,48,27.43V208H152V168A24,24,0,0,0,128,144Zm88,64H192V142.13l24,14.4Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-coffee" viewBox="0 0 256 256"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></symbol><symbol id="i-device-mobile" viewBox="0 0 256 256"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></symbol><symbol id="i-download-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"/></symbol><symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-lock-simple" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-mountains" viewBox="0 0 256 256"><path d="M164,80a28,28,0,1,0-28-28A28,28,0,0,0,164,80Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,40Zm90.88,155.92-54.56-92.08A15.87,15.87,0,0,0,186.55,96h0a15.85,15.85,0,0,0-13.76,7.84L146.63,148l-44.84-76.1a16,16,0,0,0-27.58,0L1.11,195.94A8,8,0,0,0,8,208H248a8,8,0,0,0,6.88-12.08ZM88,80l23.57,40H64.43ZM22,192l33-56h66l18.74,31.8,0,0L154,192Zm150.57,0-16.66-28.28L186.55,112,234,192Z"/></symbol><symbol id="i-person-simple-walk" viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star" viewBox="0 0 256 256"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></symbol><symbol id="i-sun-horizon" viewBox="0 0 256 256"><path d="M240,152H199.55a73.54,73.54,0,0,0,.45-8,72,72,0,0,0-144,0,73.54,73.54,0,0,0,.45,8H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM72,144a56,56,0,1,1,111.41,8H72.59A56.13,56.13,0,0,1,72,144Zm144,56a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16H208A8,8,0,0,1,216,200ZM72.84,43.58a8,8,0,0,1,14.32-7.16l8,16a8,8,0,0,1-14.32,7.16Zm-56,48.84a8,8,0,0,1,10.74-3.57l16,8a8,8,0,0,1-7.16,14.31l-16-8A8,8,0,0,1,16.84,92.42Zm192,15.16a8,8,0,0,1,3.58-10.73l16-8a8,8,0,1,1,7.16,14.31l-16,8a8,8,0,0,1-10.74-3.58Zm-48-55.16,8-16a8,8,0,0,1,14.32,7.16l-8,16a8,8,0,1,1-14.32-7.16Z"/></symbol><symbol id="i-swimming-pool" viewBox="0 0 256 256"><path d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,168a8,8,0,0,1,8-8c14.42,0,22.19,5.18,28.44,9.34C66,173.06,70.42,176,80,176s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34a8,8,0,0,1,0,16c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,178.94,137.57,176,128,176s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,178.94,41.58,176,32,176A8,8,0,0,1,24,168Zm208,40a8,8,0,0,1-8,8c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,218.94,137.57,216,128,216s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,218.94,41.58,216,32,216a8,8,0,0,1,0-16c14.42,0,22.19,5.18,28.44,9.34C66,213.06,70.42,216,80,216s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34A8,8,0,0,1,232,208Z"/></symbol><symbol id="i-taxi" viewBox="0 0 256 256"><path d="M240,104H228.64L201.25,56.06A16,16,0,0,0,187.36,48H165.42l-12-29.94A15.93,15.93,0,0,0,138.58,8H117.42a15.93,15.93,0,0,0-14.86,10.06L90.58,48H68.64a16,16,0,0,0-13.89,8.06L27.36,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM117.42,24h21.16l9.6,24H107.82ZM68.64,64H187.36l22.85,40H45.79ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"/></symbol><symbol id="i-user-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"/></symbol><symbol id="i-users" viewBox="0 0 256 256"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-waves" viewBox="0 0 256 256"><path d="M222.16,177.25a8,8,0,0,1-1,11.25c-17.36,14.39-32.86,19.5-47,19.5-18.58,0-34.82-8.82-49.93-17-25.35-13.76-47.24-25.64-79.07.74a8,8,0,1,1-10.22-12.31c40.17-33.28,70.32-16.92,96.93-2.48,25.35,13.75,47.24,25.63,79.07-.74A8,8,0,0,1,222.16,177.25Zm-11.27-57c-31.83,26.38-53.72,14.5-79.07.74-26.61-14.43-56.76-30.79-96.93,2.49a8,8,0,0,0,10.22,12.31c31.83-26.38,53.72-14.5,79.07-.74,15.11,8.19,31.35,17,49.93,17,14.14,0,29.64-5.11,47-19.5a8,8,0,1,0-10.22-12.31ZM45.11,79.8c31.83-26.37,53.72-14.49,79.07-.74,15.11,8.2,31.35,17,49.93,17,14.14,0,29.64-5.12,47-19.5a8,8,0,1,0-10.22-12.31c-31.83,26.38-53.72,14.5-79.07.74C105.21,50.58,75.06,34.22,34.89,67.5A8,8,0,1,0,45.11,79.8Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></defs></svg>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<div class="demo" role="note" aria-label="Aviso del proyecto">
+  <div class="wrap">
+    <p><svg class="ic" aria-hidden="true"><use href="#i-warning"/></svg><span><strong>Proyecto de portafolio de beglisalejandra-studio.</strong> Hotel ficticio: no se procesa ninguna reserva ni transacción.</span></p>
+    <button type="button" id="guide-btn" aria-pressed="false">Guía de fotos</button>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="Hotel Aurora, inicio"><span class="brand__arc" aria-hidden="true"><i class="brand__dot"></i></span>Aurora</a>
+    <span class="moment" id="sun-label" aria-hidden="true">Amanecer</span>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#/" data-go="habitaciones">Habitaciones</a>
+      <a href="#/" data-go="ciudad">La ciudad</a>
+      <a href="#/" data-go="disponibilidad">Disponibilidad</a>
+    </nav>
+    <div class="nav__end">
+      <button class="iconbtn" type="button" id="acct-btn" aria-label="Mi cuenta"><svg class="ic" aria-hidden="true"><use href="#i-user-circle"/></svg></button>
+      <a class="btn btn--primary btn--sm" href="#/reservar" id="nav-book">Reservar</a>
+      <button class="iconbtn nav__menu" type="button" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-label="Menú">
+  <button class="iconbtn drawer__close" type="button" id="menu-close" aria-label="Cerrar menú"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+  <a href="#/" data-go="habitaciones">Habitaciones</a>
+  <a href="#/" data-go="ciudad">La ciudad</a>
+  <a href="#/" data-go="disponibilidad">Disponibilidad</a>
+  <a href="#/reservar">Reservar</a>
+</div>
+
+
+<main id="main">
+
+<!-- ====================== INICIO ====================== -->
+<div id="s-home">
+  <section class="hero" data-moment="Amanecer" aria-labelledby="h1">
+    <div class="wrap hero__grid">
+      <div class="hero__fig"><div class="hero__media ph ph--dawn arch" data-slot="H-01 Patio al amanecer" data-size="1600 x 2000 px (4:5)" role="img" aria-label="Patio del hotel al amanecer, con arcos de piedra y luz cálida"></div></div>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Hotel boutique en Cartagena de Indias</p>
+        <h1 id="h1">Aquí la mañana llega primero</h1>
+        <p class="hero__sub">Un hotel boutique pensado alrededor de un patio, una terraza y la primera luz del día en Cartagena.</p>
+        <div class="bar" id="bar">
+          <button class="bar__field" type="button" id="bar-dates" aria-haspopup="dialog" aria-expanded="false">
+            <span class="bar__label"><svg class="ic" aria-hidden="true"><use href="#i-calendar-blank"/></svg>Fechas</span>
+            <span class="bar__val is-empty" id="bar-dates-val">Elige llegada y salida</span>
+          </button>
+          <div class="bar__field" style="cursor:default">
+            <span class="bar__label"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Huéspedes</span>
+            <span class="row" style="justify-content:flex-start;gap:10px">
+              <span class="stepper">
+                <button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                <output class="bar__val" data-guests-out aria-live="polite">2</output>
+                <button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              </span>
+            </span>
+          </div>
+          <a class="btn btn--primary" href="#/reservar" id="bar-book">Reservar</a>
+          <div class="pop" id="pop" role="dialog" aria-label="Elige tus fechas" hidden>
+            <div class="cal" id="cal-pop" data-months="2"></div>
+            <div class="pop__foot"><span class="note" style="margin:0" id="pop-sum" aria-live="polite">Elige la llegada y luego la salida.</span><button class="btn btn--primary btn--sm" type="button" id="pop-ok">Listo</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section casa" style="--pb:clamp(64px,8vw,110px)" id="casa" data-moment="Amanecer" aria-labelledby="h-casa">
+    <div class="wrap casa__grid">
+      <div class="rise">
+        <h2 id="h-casa">Una casa que se despierta despacio.</h2>
+        <p class="lede">Aurora es un hotel pequeño: pocas habitaciones, un patio central y una terraza para ver caer la tarde sobre la ciudad.</p>
+      </div>
+      <div class="arches">
+        <figure><div class="ph ph--patio arch" data-slot="C-01 Patio central" data-size="1200 x 1600 px (3:4)" role="img" aria-label="Patio central con vegetación y luz de la mañana"></div><figcaption>El patio</figcaption></figure>
+        <figure><div class="ph ph--wall arch" data-slot="C-02 Balcones" data-size="1200 x 2000 px (3:5)" role="img" aria-label="Fachada con balcones de madera y buganvilias"></div><figcaption>Los balcones</figcaption></figure>
+        <figure><div class="ph ph--terrace arch" data-slot="C-03 Terraza" data-size="1200 x 1440 px (5:6)" role="img" aria-label="Terraza al atardecer con la ciudad al fondo"></div><figcaption>La terraza</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="habitaciones" data-moment="Mañana" aria-labelledby="h-rooms" style="padding-top:0;--pb:clamp(96px,13vw,190px)">
+    <div class="wrap">
+      <div class="rooms__head rise">
+        <div>
+          <h2 id="h-rooms">Elige cómo quieres despertar.</h2>
+          <p class="lede">Cuatro habitaciones, cada una con su propia luz y su propia vista. Todas con baño privado y aire acondicionado.</p>
+        </div>
+        <div class="rooms__nav">
+          <button class="iconbtn" type="button" data-rail="-1" aria-label="Habitaciones anteriores"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+          <button class="iconbtn" type="button" data-rail="1" aria-label="Habitaciones siguientes"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="rail" role="list" tabindex="0" aria-label="Habitaciones"></div>
+      <p class="note">Precios y disponibilidad de demostración, en pesos colombianos.</p>
+    </div>
+  </section>
+
+  <section class="section" id="dia" data-moment="Mediodía" aria-labelledby="h-dia" style="padding-top:0;--pb:clamp(72px,9vw,120px)">
+    <div class="wrap">
+      <div class="rise">
+        <h2 id="h-dia">Un día en Aurora</h2>
+        <p class="lede">Del café del amanecer a la terraza de la noche: así se vive la casa de principio a fin.</p>
+      </div>
+      <div class="day__grid">
+        <article class="tile tile--img tile--a"><div class="ph ph--dawn" data-slot="D-01 Café en el patio" data-size="1400 x 1600 px (7:8)" aria-hidden="true"></div><h3>Amanecer</h3><p>Café en el patio, antes de que despierte la calle.</p></article>
+        <article class="tile tile--soft tile--b"><h3>Mañana</h3><p>Desayuno y salida temprano hacia la ciudad amurallada.</p></article>
+        <article class="tile tile--accent tile--c"><h3>Tarde</h3><p>Descanso a la sombra y paseo por Getsemaní.</p></article>
+        <article class="tile tile--night tile--d"><h3>Noche</h3><p>La terraza al caer el sol, con la ciudad iluminada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ciudad" data-moment="Tarde" aria-labelledby="h-city" style="padding-top:0;--pb:clamp(110px,15vw,210px)">
+    <div class="wrap">
+      <div class="rise">
+        <h2 id="h-city">Cartagena empieza en la puerta.</h2>
+        <p class="lede">Murallas, fortalezas, barrios de colores e islas. Toca un punto del mapa para ver cómo llegar.</p>
+      </div>
+      <div class="city__grid">
+        <div class="map" id="map">
+          <svg class="base" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <!-- Esquema ilustrativo, no a escala. En produccion: mapa real (MapLibre + PMTiles) con carga bajo demanda. -->
+            <g fill="var(--surface)">
+              <path d="M196,0 C214,60 238,120 252,150 C262,172 282,188 300,206 C320,226 336,240 360,246 C390,252 420,248 470,268 C520,290 590,296 640,300 L640,0 Z"/>
+              <path d="M262,190 C276,232 300,282 322,340 C336,380 344,412 348,438 C356,452 372,446 373,430 C375,380 360,320 340,270 C326,236 314,214 300,206 Z"/>
+              <path d="M400,480 C430,440 470,420 500,382 C522,352 566,340 640,352 L640,480 Z"/>
+              <path d="M372,466 C384,452 404,454 410,468 C414,480 396,486 382,484 C370,480 366,472 372,466 Z"/>
+              <ellipse cx="86" cy="408" rx="26" ry="12"/><ellipse cx="128" cy="428" rx="20" ry="9"/><ellipse cx="52" cy="436" rx="14" ry="7"/>
+            </g>
+            <g fill="none" stroke="var(--line)" stroke-width="1.2">
+              <ellipse cx="448" cy="150" rx="46" ry="30"/><ellipse cx="448" cy="150" rx="24" ry="15"/>
+              <ellipse cx="560" cy="92" rx="52" ry="34"/><ellipse cx="560" cy="92" rx="28" ry="18"/>
+            </g>
+            <path d="M246,160 C256,138 288,134 308,148 C326,160 330,188 320,206 C308,226 276,230 258,214 C244,200 238,176 246,160 Z" fill="color-mix(in oklab,var(--accent) 12%,var(--surface))" stroke="var(--accent-text)" stroke-width="1.8" stroke-dasharray="5 5"/>
+            <path d="M338,206 C350,198 372,200 380,212 C386,224 378,240 362,242 C346,244 334,232 338,206 Z" fill="color-mix(in oklab,var(--accent) 7%,var(--surface))" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="40" y="120" fill="var(--fg-3)" font-size="13" font-weight="600" letter-spacing="3" font-family="var(--f-body)">MAR CARIBE</text>
+            <text x="436" y="340" fill="var(--fg-3)" font-size="12" font-weight="600" letter-spacing="2" font-family="var(--f-body)">BAHÍA</text>
+            <path id="route" class="route" d="M0,0"/>
+          </svg>
+        </div>
+        <div class="city__side">
+          <div class="chips" id="chips" role="group" aria-label="Lugares cercanos"></div>
+          <div class="panel" id="panel" aria-live="polite"></div>
+          <p class="note" style="margin:0">Esquema ilustrativo, no a escala. Los tiempos desde el hotel se calculan con la dirección real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="disponibilidad" data-moment="Noche" aria-labelledby="h-av" style="padding-top:0;--pb:clamp(72px,10vw,140px)">
+    <div class="wrap">
+      <div class="rise">
+        <h2 id="h-av">Mira qué fechas están libres.</h2>
+      </div>
+      <div class="avail__grid">
+        <div>
+          <p class="lede" style="margin-top:0">Los días tachados no tienen habitaciones. Elige la llegada y la salida y sigue con tu reserva.</p>
+          <div class="legend">
+            <span><i class="sw sw--sel"></i>Tu estancia</span>
+            <span><i class="sw sw--last"></i>Últimas habitaciones</span>
+            <span><i class="sw sw--out"></i>Completo</span>
+          </div>
+          <div class="summary" aria-live="polite">
+            <span class="note" style="margin:0">Tu estancia</span>
+            <strong id="av-sum">Elige tus fechas</strong>
+            <span id="av-sub" style="color:var(--fg-2)">Precio por noche en miles de pesos, de demostración.</span>
+            <a class="btn btn--primary" href="#/reservar" id="av-book">Reservar</a>
+          </div>
+        </div>
+        <div class="cal" id="cal-home" data-months="2"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====================== HABITACION ====================== -->
+<div id="s-room" hidden>
+  <div class="wrap rm">
+    <nav class="crumbs" aria-label="Ruta"><a href="#/" data-go="habitaciones"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Habitaciones</a></nav>
+    <div class="rm__grid">
+      <div>
+        <div class="gal">
+          <div class="ph ph--r4 arch" data-slot="R4-01 Terraza Aurora, vista general" data-size="1600 x 2000 px (4:5)" role="img" aria-label="Terraza Aurora: habitación con terraza privada al atardecer"></div>
+          <div class="ph ph--r3 rect" data-slot="R4-02 Cama y luz" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Cama con ropa blanca y luz cálida"></div>
+          <div class="ph ph--patio rect" data-slot="R4-03 Baño" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Baño con piso de baldosa"></div>
+          <div class="ph ph--wall rect" data-slot="R4-04 Detalle" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Detalle de la terraza"></div>
+        </div>
+        <p class="note">Imágenes ilustrativas, generadas con IA para esta maqueta.</p>
+      </div>
+      <div>
+        <h1 id="rm-name">Terraza Aurora</h1>
+        <div class="facts" id="rm-facts"></div>
+        <p class="rm__text" id="rm-text"></p>
+        <div class="amen">
+          <h3>Incluye</h3>
+          <ul>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Baño privado</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Aire acondicionado</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-wifi-high"/></svg>Wi-Fi</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>Desayuno en el patio</li>
+          </ul>
+        </div>
+        <div style="margin-top:36px">
+          <details><summary>Llegada y salida<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Horarios por confirmar con el hotel. Se muestran aquí y en el correo de confirmación.</p></details>
+          <details><summary>Cancelación<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>La política de cancelación la define el hotel. Aparecerá completa antes de pagar.</p></details>
+          <details><summary>Niños y mascotas<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Por confirmar con el hotel.</p></details>
+        </div>
+        <div class="stick" style="margin-top:36px">
+          <div class="card">
+            <div class="price"><strong id="rm-price">COP 1.150.000</strong><span>por noche</span></div>
+            <div class="row" style="margin-bottom:16px">
+              <span class="note" style="margin:0" id="rm-sum">Elige tus fechas</span>
+            </div>
+            <a class="btn btn--primary" style="width:100%" href="#/reservar" id="rm-book">Reservar</a>
+            <p class="note" style="margin-bottom:0">No se cobra nada. Proyecto de portafolio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== RESERVA ====================== -->
+<div id="s-book" hidden>
+  <div class="wrap flow">
+    <button class="back" type="button" id="back-btn"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Volver</button>
+    <h1 id="flow-h" tabindex="-1">Tu reserva</h1>
+    <ol class="steps" id="steps" aria-label="Progreso de la reserva">
+      <li aria-current="step"><span>Fechas</span></li>
+      <li><span>Tus datos</span></li>
+      <li><span>Pago</span></li>
+      <li><span>Listo</span></li>
+    </ol>
+    <div class="flow__grid">
+      <div>
+        <!-- Paso 1 -->
+        <section data-step="1" aria-label="Fechas y habitación">
+          <div class="cal" id="cal-book" data-months="2"></div>
+          <div class="row" style="margin:22px 0 14px"><h2 style="font-size:var(--s2)">Habitaciones libres</h2>
+            <span class="row" style="gap:12px"><span class="note" style="margin:0">Huéspedes</span><span class="stepper"><button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button><output data-guests-out aria-live="polite">2</output><button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></span></span></div>
+          <div class="opt" id="opt"></div>
+          <div style="margin-top:24px"><button class="btn btn--primary" type="button" data-next id="next1">Continuar</button></div>
+        </section>
+        <!-- Paso 2 -->
+        <section data-step="2" aria-label="Tus datos" hidden>
+          <div class="tabs" role="tablist" aria-label="Cuenta">
+            <button role="tab" aria-selected="true" data-tab="new" type="button">Crear cuenta</button>
+            <button role="tab" aria-selected="false" data-tab="in" type="button">Ya tengo cuenta</button>
+          </div>
+          <form class="form form--2" id="form-new" novalidate onsubmit="return false">
+            <div class="field"><label for="f-name">Nombre completo</label><input id="f-name" autocomplete="name" placeholder="Como aparece en tu documento"></div>
+            <div class="field"><label for="f-mail">Correo</label><input id="f-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
+            <div class="field"><label for="f-tel">WhatsApp (opcional)</label><input id="f-tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="+57 300 000 0000"><small>Solo lo usamos para avisarte el estado de tu reserva.</small></div>
+            <div class="field"><label for="f-pass">Contraseña</label><input id="f-pass" type="password" autocomplete="new-password" placeholder="Mínimo 12 caracteres"><small>O elige recibir un enlace de acceso por correo.</small></div>
+            <label class="check full"><input type="checkbox" checked> <span>Quiero recibir el estado de mi reserva por correo.</span></label>
+            <label class="check full"><input type="checkbox"> <span>Quiero recibirlo también por WhatsApp.</span></label>
+            <label class="check full"><input type="checkbox"> <span>Acepto los <a href="#/">términos</a> y la <a href="#/">política de privacidad</a>.</span></label>
+            <div class="full"><button class="btn btn--primary" type="button" data-next>Continuar</button></div>
+          </form>
+          <form class="form" id="form-in" hidden novalidate onsubmit="return false">
+            <div class="field"><label for="g-mail">Correo</label><input id="g-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
+            <div><button class="btn btn--primary" type="button" data-next>Enviarme un enlace de acceso</button></div>
+          </form>
+          <p class="note"><svg class="ic" style="display:inline;vertical-align:-.2em" aria-hidden="true"><use href="#i-lock-simple"/></svg> Proyecto de portafolio: no escribas datos reales. Nada de lo que ingreses se guarda.</p>
+        </section>
+        <!-- Paso 3 -->
+        <section data-step="3" aria-label="Pago" hidden>
+          <div class="stop" role="alert">
+            <svg class="ic" aria-hidden="true"><use href="#i-lock-simple"/></svg>
+            <h2>El pago está desactivado en este proyecto.</h2>
+            <p>Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio. Ninguna transacción puede proceder: no se cobra, no se reserva y no se piden datos de tarjeta.</p>
+          </div>
+          <div class="methods" aria-label="Así se verá el pago real">
+            <div><span>Tarjeta débito o crédito</span><span>Pasarela por definir</span></div>
+            <div><span>Transferencia desde tu banco</span><span>Por definir</span></div>
+          </div>
+          <div class="row" style="margin-top:24px;gap:14px">
+            <button class="btn" type="button" aria-disabled="true" id="pay-btn" aria-describedby="pay-why">Pagar</button>
+            <button class="btn btn--ghost" type="button" data-next>Ver una confirmación de ejemplo</button>
+          </div>
+          <p class="note" id="pay-why">El botón Pagar permanece desactivado a propósito.</p>
+        </section>
+        <!-- Paso 4 -->
+        <section data-step="4" aria-label="Confirmación" hidden class="done">
+          <span class="tag"><svg class="ic" aria-hidden="true"><use href="#i-warning"/></svg>Simulación</span>
+          <h2>Así se vería tu reserva confirmada.</h2>
+          <p style="color:var(--fg-2);max-width:52ch">No se reservó nada ni se cobró nada. Este es el recorrido que verá un huésped: el estado de su reserva llega por el canal que elija.</p>
+          <ul class="tline">
+            <li class="on"><span></span><div><strong>Reserva recibida</strong><span>Código AUR-DEMO</span></div></li>
+            <li><span></span><div><strong>Reserva confirmada</strong><span>El hotel confirma disponibilidad</span></div></li>
+            <li><span></span><div><strong>Check-in</strong><span>Te avisamos el día anterior</span></div></li>
+          </ul>
+          <div class="notify">
+            <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Por WhatsApp</h3>
+              <div class="bubble" id="wa-msg"></div></div>
+            <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-envelope-simple"/></svg>Por correo</h3>
+              <div class="mail"><b>Tu reserva en Hotel Aurora está confirmada</b><span id="mail-msg"></span></div></div>
+          </div>
+          <p class="note">Vista previa. No se envía ningún mensaje.</p>
+          <div class="row" style="margin-top:18px;gap:14px"><a class="btn btn--ghost" href="#/">Volver al inicio</a></div>
+        </section>
+      </div>
+      <aside class="card sum" aria-label="Resumen de la reserva">
+        <h2>Resumen</h2>
+        <dl style="margin-top:16px" id="sum-dl"></dl>
+      </aside>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__cols">
+      <div><a class="brand" href="#/"><span class="brand__arc" aria-hidden="true"><i class="brand__dot" style="animation:none"></i></span>Aurora</a><p style="margin-top:14px;color:var(--fg-2);max-width:30ch">Hotel boutique en Cartagena de Indias, Colombia.</p></div>
+      <div><h4>El hotel</h4><ul><li><a href="#/" data-go="habitaciones">Habitaciones</a></li><li><a href="#/" data-go="ciudad">La ciudad</a></li><li><a href="#/" data-go="disponibilidad">Disponibilidad</a></li></ul></div>
+      <div><h4>Tu reserva</h4><ul><li><button type="button" id="acct-btn2">Mi cuenta</button></li><li><a href="#/reservar">Reservar</a></li><li><button type="button" id="install-btn"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-download-simple"/></svg>Instalar la app</button></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="#/"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-whatsapp-logo"/></svg>Escribir por WhatsApp</a></li><li><a href="#/"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-envelope-simple"/></svg>reservas@hotelaurora.example</a></li></ul></div>
+    </div>
+    <div class="arcade" aria-hidden="true"><i></i><i></i><i></i><i class="lit"></i><i></i><i></i><i></i></div>
+    <div class="foot__legal">
+      <p><strong>Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio.</strong> Hotel ficticio: no se procesa ninguna reserva ni transacción.</p>
+      <p>Imágenes ilustrativas. Precios, disponibilidad y servicios son de demostración.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><div class="dock__t"><strong id="dock-p">Desde COP 520.000</strong><span id="dock-s">por noche, de demostración</span></div><a class="btn btn--primary btn--sm" href="#/reservar" id="dock-book">Reservar</a></div>
+<div class="scrim" id="scrim" hidden></div>
+
+<dialog id="dlg-install" aria-labelledby="dlg-i-h">
+  <h2 id="dlg-i-h">Instala Aurora como app</h2>
+  <p style="color:var(--fg-2)">Se abre en pantalla completa y deja la reserva a un toque. Desde la app también puedes reservar y ver el estado de tus reservas.</p>
+  <ul>
+    <li><strong>Android y computador:</strong> menú del navegador, luego Instalar app.</li>
+    <li><strong>iPhone y iPad:</strong> Compartir, luego Añadir a pantalla de inicio.</li>
+  </ul>
+  <button class="btn btn--primary" type="button" data-close>Entendido</button>
+</dialog>
+<dialog id="dlg-acct" aria-labelledby="dlg-a-h">
+  <h2 id="dlg-a-h">Mi cuenta</h2>
+  <div class="form">
+    <div class="field"><label for="a-mail">Correo</label><input id="a-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
+    <button class="btn btn--primary" type="button" data-close>Enviarme un enlace de acceso</button>
+    <p class="note" style="margin:0">Proyecto de portafolio: no escribas datos reales.</p>
+  </div>
+</dialog>
+
+<script>
+(()=>{
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cop=n=>'COP '+n.toLocaleString('es-CO');
+const fShort=new Intl.DateTimeFormat('es-CO',{day:'numeric',month:'short'});
+const fLong=new Intl.DateTimeFormat('es-CO',{weekday:'short',day:'numeric',month:'short'});
+const fMonthRaw=new Intl.DateTimeFormat('es-CO',{month:'long',year:'numeric'});
+const fMonth={format:d=>{const t=fMonthRaw.format(d).replace(' de ',' ');return t.charAt(0).toUpperCase()+t.slice(1)}};
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const today=(()=>{const d=new Date();d.setHours(0,0,0,0);return d})();
+const add=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const nights=(a,b)=>Math.round((b-a)/864e5);
+const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+
+/* ---------- datos de demostracion ---------- */
+const ROOMS=[
+ {id:'alba',name:'Alba',cap:2,bed:'Cama king',view:'Vista al patio',base:520000,ph:'ph--r1',text:'Una habitación tranquila que recibe la primera luz del patio.'},
+ {id:'patio',name:'Patio',cap:3,bed:'Cama doble y sofá cama',view:'Balcón al patio',base:610000,ph:'ph--r2',text:'Con balcón sobre el patio central, para desayunar sin salir de la habitación.'},
+ {id:'buganvilia',name:'Balcón de Buganvilia',cap:3,bed:'Cama king',view:'Balcón a la calle',base:780000,ph:'ph--r3',text:'Balcón de madera sobre la calle, con buganvilias a la altura de la mano.'},
+ {id:'terraza',name:'Terraza Aurora',cap:4,bed:'Cama king y dos camas sencillas',view:'Terraza privada',base:1150000,ph:'ph--r4',text:'La habitación más amplia, con terraza privada para ver caer la tarde sobre la ciudad.'}
+];
+const blockedDay=d=>{const s=6+(hash(d.getFullYear()+'-'+d.getMonth())%14);const x=d.getDate();return x>=s&&x<s+4};
+const roomFree=(d,r)=>!blockedDay(d)&&(hash(iso(d)+r.id)%100)>=20;
+const freeRooms=d=>ROOMS.filter(r=>roomFree(d,r));
+const rate=(d,r)=>{let p=r.base;const w=d.getDay();if(w===5||w===6)p*=1.15;const m=d.getMonth();if(m===11||m===0)p*=1.25;return Math.round(p/10000)*10000};
+const dayInfo=d=>{const f=freeRooms(d);return {free:f.length,min:f.length?Math.min(...f.map(r=>rate(d,r))):0}};
+
+const S={start:null,end:null,guests:2,room:'terraza',step:1};
+const listeners=[];
+const emit=()=>listeners.forEach(f=>f());
+
+/* ---------- calendario ---------- */
+function Calendar(root){
+  let view=new Date(today.getFullYear(),today.getMonth(),1);
+  const months=+root.dataset.months||1;
+  let hover=null;
+  const render=()=>{
+    const wide=root.dataset.months==='2'&&matchMedia('(min-width:760px)').matches;
+    const n=wide?2:1;
+    let html=`<div class="cal__top"><button class="iconbtn" type="button" data-nav="-1" aria-label="Mes anterior"><svg class="ic" aria-hidden="true"><use href="#i-caret-left"/></svg></button><span class="sr" aria-live="polite">${fMonth.format(view)}</span><button class="iconbtn" type="button" data-nav="1" aria-label="Mes siguiente"><svg class="ic" aria-hidden="true"><use href="#i-caret-right"/></svg></button></div><div class="cal__months">`;
+    for(let m=0;m<n;m++){
+      const first=new Date(view.getFullYear(),view.getMonth()+m,1);
+      const lead=(first.getDay()+6)%7; // lunes primero
+      const dim=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
+      html+=`<div role="group" aria-label="${fMonth.format(first)}"><div class="cal__title">${fMonth.format(first)}</div><div class="cal__dow" aria-hidden="true">${['L','M','M','J','V','S','D'].map(x=>`<span>${x}</span>`).join('')}</div><div class="cal__days">`;
+      for(let i=0;i<lead;i++)html+='<span class="day day--blank"></span>';
+      for(let k=1;k<=dim;k++){
+        const d=new Date(first.getFullYear(),first.getMonth(),k);
+        const past=d<today, info=dayInfo(d), out=info.free===0;
+        const isS=S.start&&+d===+S.start, isE=S.end&&+d===+S.end;
+        const prev=S.end||hover; const inR=S.start&&prev&&d>S.start&&d<prev;
+        const c=['day',past&&'is-past',out&&!past&&'is-out',info.free===1&&!past&&'is-last',+d===+today&&'is-today',isS&&'is-start',isE&&'is-end',inR&&'is-in'].filter(Boolean).join(' ');
+        const dis=past||(out&&!(S.start&&!S.end&&d>S.start));
+        const label=`${fLong.format(d)}${past?', pasado':out?', completo':info.free===1?', últimas habitaciones':', libre desde '+cop(info.min)}`;
+        html+=`<button type="button" class="${c}" data-d="${iso(d)}" ${dis?'disabled':''} aria-label="${label}" ${isS||isE?'aria-pressed="true"':''}><span>${k}</span>${!past&&!out?`<small>${Math.round(info.min/1000)}</small>`:''}</button>`;
+      }
+      html+='</div></div>';
+    }
+    root.innerHTML=html+'</div>';
+  };
+  root.addEventListener('click',e=>{
+    const nav=e.target.closest('[data-nav]');
+    if(nav){const t=new Date(view.getFullYear(),view.getMonth()+(+nav.dataset.nav),1);if(t>=new Date(today.getFullYear(),today.getMonth(),1)){view=t;render()}return}
+    const b=e.target.closest('.day[data-d]'); if(!b||b.disabled)return;
+    const [y,m,d]=b.dataset.d.split('-').map(Number); const pick=new Date(y,m-1,d);
+    if(!S.start||S.end||pick<=S.start){ if(freeRooms(pick).length===0)return; S.start=pick;S.end=null }
+    else{ let ok=true;for(let t=new Date(S.start);t<pick;t=add(t,1))if(freeRooms(t).length===0){ok=false;break}
+      if(!ok){S.start=pick;S.end=null}else S.end=pick }
+    hover=null; emit();
+    const f=root.querySelector(`[data-d="${b.dataset.d}"]`); f&&f.focus({preventScroll:true});
+  });
+  /* vista previa del rango: solo alterna clases, no reemplaza el DOM (un repintado entre mousedown y mouseup pierde el clic) */
+  const paintHover=(to)=>{root.querySelectorAll('.day[data-d]').forEach(el=>{const [y,m,d]=el.dataset.d.split('-').map(Number);const x=new Date(y,m-1,d);el.classList.toggle('is-in',!!(S.start&&to&&x>S.start&&x<to)||!!(S.start&&S.end&&x>S.start&&x<S.end))})};
+  root.addEventListener('mouseover',e=>{const b=e.target.closest('.day[data-d]');if(!b||!S.start||S.end)return;const [y,m,d]=b.dataset.d.split('-').map(Number);hover=new Date(y,m-1,d);paintHover(hover>S.start?hover:null)});
+  root.addEventListener('mouseleave',()=>{hover=null;if(S.start&&!S.end)paintHover(null)});
+  root.addEventListener('keydown',e=>{
+    const b=e.target.closest('.day[data-d]'); if(!b)return;
+    const step={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key]; if(!step)return;
+    e.preventDefault(); const [y,m,d]=b.dataset.d.split('-').map(Number); const t=add(new Date(y,m-1,d),step);
+    const find=()=>root.querySelector(`[data-d="${iso(t)}"]`);
+    let el=find(); if(!el){view=new Date(t.getFullYear(),t.getMonth()-(step>0&&root.dataset.months==='2'&&matchMedia('(min-width:760px)').matches?1:0),1);render();el=find()}
+    el&&el.focus();
+  });
+  matchMedia('(min-width:760px)').addEventListener('change',render);
+  listeners.push(render); render(); return {render};
+}
+const cals=$$('.cal').map(Calendar);
+
+/* ---------- resumenes ---------- */
+const stayText=()=>S.start&&S.end?`${nights(S.start,S.end)} ${nights(S.start,S.end)===1?'noche':'noches'}, del ${fShort.format(S.start)} al ${fShort.format(S.end)}`:S.start?`Llegada el ${fShort.format(S.start)}. Elige la salida.`:'Elige tus fechas';
+const total=(r)=>{let t=0;for(let d=new Date(S.start);d<S.end;d=add(d,1))t+=rate(d,r);return t};
+const roomOk=r=>{if(!S.start||!S.end)return true;for(let d=new Date(S.start);d<S.end;d=add(d,1))if(!roomFree(d,r))return false;return r.cap>=S.guests};
+function refresh(){
+  const v=$('#bar-dates-val'); if(v){v.textContent=S.start&&S.end?`${fShort.format(S.start)} a ${fShort.format(S.end)}`:S.start?`${fShort.format(S.start)} a ...`:'Elige llegada y salida';v.classList.toggle('is-empty',!(S.start&&S.end))}
+  $('#pop-sum').textContent=stayText();
+  $('#av-sum').textContent=stayText();
+  $('#rm-sum').textContent=stayText();
+  const r=ROOMS.find(x=>x.id===S.room);
+  $('#dock-p').textContent=S.start&&S.end?cop(total(r)):'Desde COP 520.000';
+  $('#dock-s').textContent=S.start&&S.end?stayText():'por noche, de demostración';
+  $$('[data-guests-out]').forEach(o=>o.textContent=S.guests);
+  drawOptions(); drawSummary();
+}
+listeners.push(refresh);
+
+/* ---------- habitaciones ---------- */
+$('#rail').innerHTML=ROOMS.map(r=>`<a class="room" role="listitem" href="#/habitacion/${r.id}" data-room="${r.id}"><div class="ph ${r.ph} arch" data-slot="R-${r.id} portada" data-size="1200 x 1600 px (3:4)" role="img" aria-label="Habitación ${r.name}"></div><div><h3>${r.name}</h3><p class="room__meta">${r.cap} huéspedes, ${r.bed.toLowerCase()}. ${r.view}.</p></div><div class="room__price"><div><small>Desde</small><strong>${cop(r.base)}</strong></div><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></div></a>`).join('');
+const railFit=()=>{const r=$('#rail');$('.rooms__nav').classList.toggle('no-ov',r.scrollWidth<=r.clientWidth+4)};addEventListener('resize',railFit);requestAnimationFrame(railFit);
+$$('[data-rail]').forEach(b=>b.addEventListener('click',()=>{const rail=$('#rail');rail.scrollBy({left:(+b.dataset.rail)*rail.clientWidth*.7,behavior:reduce?'auto':'smooth'})}));
+
+function drawRoom(id){
+  const r=ROOMS.find(x=>x.id===id)||ROOMS[3]; S.room=r.id;
+  $('#rm-name').textContent=r.name; $('#rm-text').textContent=r.text;
+  $('#rm-price').textContent=cop(S.start&&S.end?Math.round(total(r)/nights(S.start,S.end)):r.base);
+  $('#rm-facts').innerHTML=`<span><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>${r.cap} huéspedes</span><span><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg>${r.bed}</span><span><svg class="ic" aria-hidden="true"><use href="#i-sun-horizon"/></svg>${r.view}</span>`;
+  const g=$$('.gal .ph'); g[0].className=`ph ${r.ph} arch`; g[0].dataset.slot=`R-${r.id} vista general`; document.title=`${r.name} | Hotel Aurora, hotel boutique en Cartagena de Indias`;
+}
+function drawOptions(){
+  const box=$('#opt'); if(!box)return;
+  box.innerHTML=ROOMS.map(r=>{
+    const ok=roomOk(r), t=S.start&&S.end?total(r):0;
+    return `<label class="${ok?'':'is-na'}"><input type="radio" name="room" value="${r.id}" ${S.room===r.id&&ok?'checked':''} ${ok?'':'disabled'}><span class="thumb ph ${r.ph}" data-slot="R-${r.id}" data-size="360 x 360 px"></span><span><b>${r.name}</b><small>${r.cap} huéspedes, ${r.bed.toLowerCase()}${ok?'':'. No disponible en estas fechas'}</small></span><span class="tot"><strong>${t?cop(t):cop(r.base)}</strong><small>${t?'total':'por noche'}</small></span></label>`}).join('');
+  $$('input[name=room]',box).forEach(i=>i.addEventListener('change',()=>{S.room=i.value;drawSummary()}));
+}
+function drawSummary(){
+  const dl=$('#sum-dl'); if(!dl)return; const r=ROOMS.find(x=>x.id===S.room);
+  if(!(S.start&&S.end)){dl.innerHTML='<dt>Estancia</dt><dd>Sin fechas</dd><dt>Habitación</dt><dd>'+r.name+'</dd>';return}
+  const n=nights(S.start,S.end), t=total(r);
+  dl.innerHTML=`<dt>Habitación</dt><dd>${r.name}</dd><dt>Llegada</dt><dd>${fLong.format(S.start)}</dd><dt>Salida</dt><dd>${fLong.format(S.end)}</dd><dt>Huéspedes</dt><dd>${S.guests}</dd><hr><dt>${n} ${n===1?'noche':'noches'}</dt><dd>${cop(t)}</dd><dt>Impuestos</dt><dd>Por definir</dd><hr><dt><strong>Total de demostración</strong></dt><dd>${cop(t)}</dd>`;
+  const name='Valentina';
+  $('#wa-msg').innerHTML=`Hola ${name}, tu reserva en Hotel Aurora quedó confirmada.<br>Habitación ${r.name}.<br>Llegada: ${fLong.format(S.start)}. Salida: ${fLong.format(S.end)}.<br>Código: AUR-DEMO`;
+  $('#mail-msg').textContent=`Hola ${name}. Te esperamos del ${fShort.format(S.start)} al ${fShort.format(S.end)} en la habitación ${r.name}. Código de reserva: AUR-DEMO.`;
+}
+
+/* ---------- huespedes ---------- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-guests]');if(!b)return;S.guests=Math.min(6,Math.max(1,S.guests+(+b.dataset.guests)));emit()});
+
+/* ---------- popover de fechas ---------- */
+const pop=$('#pop'), scrim=$('#scrim'), barBtn=$('#bar-dates');
+const openPop=o=>{pop.hidden=!o;barBtn.setAttribute('aria-expanded',o);scrim.hidden=!(o&&matchMedia('(max-width:639px)').matches)};
+barBtn.addEventListener('click',()=>openPop(pop.hidden));
+$('#pop-ok').addEventListener('click',()=>{openPop(false);barBtn.focus()});
+scrim.addEventListener('click',()=>openPop(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!pop.hidden){openPop(false);barBtn.focus()}closeMenu()}});
+document.addEventListener('click',e=>{if(!pop.hidden&&!e.composedPath().includes($('#bar')))openPop(false)});
+
+/* ---------- mapa ---------- */
+const POIS=[
+ {id:'amurallada',side:'left',n:'Ciudad Amurallada',x:41.5,y:35.5,ic:'bank',mode:['person-simple-walk','A pie'],t:'Centro histórico rodeado por murallas. Fue declarado Patrimonio de la Humanidad por la UNESCO en 1984.'},
+ {id:'getsemani',side:'right',n:'Getsemaní',x:59.5,y:49.5,ic:'church',mode:['person-simple-walk','A pie'],t:'Barrio de calles empedradas, iglesias antiguas y comida tradicional.'},
+ {id:'castillo',n:'Castillo de San Felipe',x:70,y:32.5,ic:'mountains',mode:['taxi','En taxi'],t:'Fortaleza del siglo XVII sobre el cerro de San Lázaro, con túneles y pasadizos para recorrer.'},
+ {id:'popa',side:'left',n:'Convento de la Popa',x:86,y:19,ic:'mountains',mode:['taxi','En taxi'],t:'Convento en lo alto de un cerro, con vista a la ciudad. Dato por verificar antes de publicar.'},
+ {id:'bocagrande',n:'Bocagrande',x:55,y:73,ic:'waves',mode:['taxi','En taxi'],t:'Zona moderna con playas, hoteles, restaurantes y centros comerciales.'},
+ {id:'rosario',n:'Islas del Rosario',x:14,y:86,ic:'boat',mode:['boat','En lancha'],t:'Archipiélago de playas de arena blanca y aguas cristalinas, con buceo y snorkel.'}
+];
+const HOTEL={x:51.5,y:43};
+const map=$('#map');
+map.insertAdjacentHTML('beforeend',`<button class="pin pin--hotel" style="left:${HOTEL.x}%;top:${HOTEL.y}%" type="button" aria-label="Hotel Aurora, ubicación por confirmar"><span class="pin__dot"><svg class="ic" aria-hidden="true"><use href="#i-sun-horizon"/></svg></span><span class="pin__name">Aurora</span></button>`+POIS.map(p=>`<button class="pin" data-side="${p.side||'bottom'}" style="left:${p.x}%;top:${p.y}%" type="button" data-poi="${p.id}" aria-pressed="false" aria-label="${p.n}"><span class="pin__dot"><svg class="ic" aria-hidden="true"><use href="#i-${p.ic}"/></svg></span><span class="pin__name">${p.n}</span></button>`).join(''));
+$('#chips').innerHTML=POIS.map(p=>`<button class="chip" type="button" data-poi="${p.id}" aria-pressed="false">${p.n}</button>`).join('');
+function selectPoi(id){
+  const p=POIS.find(x=>x.id===id)||POIS[0];
+  $$('[data-poi]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.poi===p.id));
+  $('#panel').innerHTML=`<h3>${p.n}</h3><p style="color:var(--fg-2);font-size:var(--s1);line-height:1.5">${p.t}</p><span class="panel__mode"><svg class="ic" aria-hidden="true"><use href="#i-${p.mode[0]}"/></svg>${p.mode[1]} desde el hotel</span><a class="link" style="margin-top:auto;align-self:flex-start" href="#/">Cómo llegar<svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>`;
+  const r=$('#route'), W=640,H=480, x1=HOTEL.x*W/100, y1=HOTEL.y*H/100, x2=p.x*W/100, y2=p.y*H/100;
+  r.setAttribute('d',`M${x1},${y1} Q${(x1+x2)/2+ (y2-y1)*.18},${(y1+y2)/2-(x2-x1)*.18} ${x2},${y2}`);
+  r.classList.remove('is-draw'); void r.getBoundingClientRect(); if(!reduce)r.classList.add('is-draw');
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-poi]');if(b)selectPoi(b.dataset.poi)});
+selectPoi('amurallada');
+
+/* ---------- router ---------- */
+const body=document.body;
+function setScreen(name){
+  const swap=()=>{['home','room','book'].forEach(n=>$('#s-'+n).hidden=n!==name);body.dataset.screen=name};
+  if(document.startViewTransition&&!reduce)document.startViewTransition(swap);else swap();
+}
+function route(){
+  const h=location.hash||'#/';
+  if(h.startsWith('#/habitacion/')){drawRoom(h.split('/')[2]);setScreen('room');scrollTo(0,0)}
+  else if(h.startsWith('#/reservar')){setScreen('book');showStep(S.step===4?4:1);scrollTo(0,0)}
+  else{setScreen('home')}
+  closeMenu(); openPop(false); updateDock();
+}
+addEventListener('hashchange',route);
+function goSection(id){
+  const go=()=>{const el=document.getElementById(id);el&&el.scrollIntoView({behavior:reduce?'auto':'smooth'})};
+  if(body.dataset.screen!=='home'){location.hash='#/';setTimeout(go,120)}else go();
+}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();closeMenu();goSection(a.dataset.go)}});
+
+/* ---------- flujo de reserva ---------- */
+function showStep(n){
+  S.step=n;
+  $$('[data-step]').forEach(s=>s.hidden=+s.dataset.step!==n);
+  $$('#steps li').forEach((li,i)=>{li.classList.toggle('is-done',i<n-1);i===n-1?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current')});
+  $('#flow-h').textContent=['','Elige tus fechas','Tus datos','Pago','Todo listo'][n]; $('#flow-h').focus({preventScroll:true});
+  $('#back-btn').hidden=n===4;
+  drawSummary(); scrollTo({top:0,behavior:'auto'});
+}
+document.addEventListener('click',e=>{
+  const nx=e.target.closest('[data-next]'); if(nx&&body.dataset.screen==='book'){
+    if(S.step===1&&!(S.start&&S.end)){$('#next1').textContent='Elige primero llegada y salida';setTimeout(()=>$('#next1').textContent='Continuar',2200);return}
+    showStep(Math.min(4,S.step+1))}
+  const tab=e.target.closest('[data-tab]'); if(tab){$$('[data-tab]').forEach(t=>t.setAttribute('aria-selected',t===tab));$('#form-new').hidden=tab.dataset.tab!=='new';$('#form-in').hidden=tab.dataset.tab==='new'}
+  if(e.target.closest('#pay-btn')){e.preventDefault();$('#pay-why').scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'})}
+});
+$('#back-btn').addEventListener('click',()=>{if(S.step>1)showStep(S.step-1);else history.length>1?history.back():location.hash='#/'});
+$('#nav-book').addEventListener('click',()=>{S.step=1});
+
+/* ---------- menu, dialogos, guia ---------- */
+const drawer=$('#drawer');
+function closeMenu(){drawer.classList.remove('is-open');$('#menu-btn').setAttribute('aria-expanded','false')}
+$('#menu-btn').addEventListener('click',()=>{drawer.classList.add('is-open');$('#menu-btn').setAttribute('aria-expanded','true');$('#menu-close').focus()});
+$('#menu-close').addEventListener('click',()=>{closeMenu();$('#menu-btn').focus()});
+$$('#drawer a').forEach(a=>a.addEventListener('click',closeMenu));
+const dI=$('#dlg-install'), dA=$('#dlg-acct');
+$('#install-btn').addEventListener('click',()=>dI.showModal());
+$('#acct-btn').addEventListener('click',()=>dA.showModal());
+$('#acct-btn2').addEventListener('click',()=>dA.showModal());
+$$('dialog [data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
+$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+$('#guide-btn').addEventListener('click',e=>{const on=body.classList.toggle('guide');e.currentTarget.setAttribute('aria-pressed',on)});
+
+/* ---------- observadores: dock, nav, momento del dia ---------- */
+const nav=$('#nav'); const io0=new IntersectionObserver(([en])=>nav.classList.toggle('is-stuck',!en.isIntersecting),{rootMargin:'-1px 0px 0px 0px'});
+const sentinel=document.createElement('div');sentinel.style.cssText='position:absolute;top:0;height:1px;width:1px';document.body.prepend(sentinel);io0.observe(sentinel);
+const dock=$('#dock'); let barVisible=true;
+new IntersectionObserver(([en])=>{barVisible=en.isIntersecting;updateDock()}).observe($('#bar'));
+function updateDock(){dock.classList.toggle('is-on',body.dataset.screen==='room'||(body.dataset.screen==='home'&&!barVisible))}
+const label=$('#sun-label');
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting&&en.target.dataset.moment)label.textContent=en.target.dataset.moment})},{rootMargin:'-45% 0px -50% 0px'});
+$$('[data-moment]').forEach(s=>io.observe(s));
+
+route(); refresh();
+})();
+</script>
+</body>
+</html>

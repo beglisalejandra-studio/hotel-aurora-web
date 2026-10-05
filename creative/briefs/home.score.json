@@ -1,0 +1,15 @@
+{
+  "page": "home",
+  "demonstration_need": 3,
+  "atmosphere_need": 5,
+  "assets_available": 1,
+  "references": { "count": 5, "with_video_hero": 1 },
+  "conversion_goal": "booking",
+  "offer_type": "experience",
+  "audience": "b2c-broad",
+  "platform": "organic-seo",
+  "mobile_share": 0.75,
+  "mobile_performance_priority": 5,
+  "motion_sensitivity_risk": 2,
+  "weight_budget_kb": 900
+}

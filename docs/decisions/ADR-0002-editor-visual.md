@@ -41,3 +41,6 @@ Las cifras corresponden al contenido de ejemplo: **mide de nuevo con el contenid
 4. El ancho del iframe de Puck se mide con `offsetWidth` (Puck lo reduce con `transform` si no cabe).
 5. El estado `.web-os/project.json` fallaba `format:check` con un solo módulo (Prettier lo escribe en una línea): ahora `.web-os` está en `.prettierignore`. Era un fallo latente que el editor por defecto dejó al descubierto.
 6. `output: "export"` no es viable con rutas de servidor (el build falla en `/sitemap.xml`): se descartó el perfil de exportación estática.
+
+## Revisión para Hotel Aurora (2026-10-05)
+**No se aplica el módulo `visual-editor`.** El diseño es a medida (arcos, mosaico, mapa y calendario propios) y no se compone con bloques genéricos. El contenido editable (habitaciones, textos y fotos) vive en archivos versionados del repositorio; la disponibilidad y las tarifas, en la base de datos. Se puede añadir después con `npm run module:add -- visual-editor` si el propietario lo pide.

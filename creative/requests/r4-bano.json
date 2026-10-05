@@ -1,0 +1,16 @@
+{
+  "name": "r4-bano",
+  "kind": "image",
+  "aspect": "1:1",
+  "page": "habitaciones",
+  "role": "Terraza Aurora: baño",
+  "status": "requested",
+  "requested_at": "2026-10-05T01:15:22.402Z",
+  "master": {
+    "w": 2560,
+    "h": 2560
+  },
+  "min_long_side": 1600,
+  "max_bytes": 4000000,
+  "exts": [".jpg", ".jpeg", ".png", ".webp", ".avif"]
+}

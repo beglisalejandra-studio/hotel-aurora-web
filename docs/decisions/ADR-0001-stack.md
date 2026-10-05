@@ -38,3 +38,6 @@ Esos números corresponden a la página de arranque **neutra**; cada proyecto de
 
 - Las versiones están **fijadas exactas**; las actualizaciones llegan por Dependabot (agrupadas minor/patch) y cada mayor se revisa con QA completo.
 - Cualquier cambio de esta tabla se anota aquí con su evidencia (comando + resultado), no solo en el commit.
+
+## Revisión para Hotel Aurora (2026-10-05)
+Se **mantiene** la plantilla (Next.js 16, TypeScript estricto, Tailwind 4). Motivos: páginas públicas estáticas servidas desde CDN, seguridad y rendimiento medibles con las herramientas ya incluidas, y reserva y cuenta como únicas partes dinámicas. Hosting **sin decidir**: ver `PROJECT.md` §5. Decisiones específicas del proyecto: `ADR-0003` (pagos), `ADR-0004` (cuentas y datos), `ADR-0005` (PWA), `ADR-0006` (mapa).
