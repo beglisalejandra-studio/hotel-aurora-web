@@ -90,12 +90,12 @@ Duraciones de 0.3 a 1.2 s con `cubic-bezier(.16,1,.3,1)` y `cubic-bezier(.7,0,.2
 ## 7. Presupuestos de rendimiento (objetivos a verificar con Lighthouse y datos de campo)
 | Métrica | Objetivo | Medido hoy en la maqueta |
 |---|---|---|
-| LCP (móvil, 4G simulado) | ≤ 2.0 s | ≈ 0.9 a 1.2 s con la entrada acortada (Chromium, CPU 4x, fuentes con latencia simulada; sin Lighthouse) |
-| CLS | ≤ 0.05 | no medido en producción |
+| LCP (móvil, 4G simulado) | ≤ 2.0 s | 0.56 s sin limitación y **0.99 s con CPU 4x y fuentes con 450 ms de latencia** (Chromium, 390 × 844, `PerformanceObserver`; sin Lighthouse) |
+| CLS | ≤ 0.05 | 0.002 a 0.007 en la maqueta (Chromium); en producción se mide con datos de campo |
 | INP | ≤ 200 ms | no medido |
-| JS inicial de la portada | ≤ 90 KB gzip | JS propio de la maqueta ≈ 8 KB gzip, 0 librerías |
+| JS inicial de la portada | ≤ 90 KB gzip | JS propio de la maqueta 26.4 KB sin comprimir, **9.4 KB gzip**, 0 librerías |
 | Fuentes | ≤ 60 KB | ≈ 53 KB estimado con Anybody recortado a `wdth 100..125` y `wght 700..800` (la versión sin recortar pesaba 75.8 KB) |
-| Transferencia total de la portada | ≤ 900 KB | HTML ≈ 86 KB sin comprimir (ver §8 de la propuesta) |
+| Transferencia total de la portada | ≤ 900 KB | HTML 87.0 KB sin comprimir y **25.3 KB gzip** (CSS 8.7 KB gzip incluido), más 2 fuentes de Google; 0 imágenes, 0 scripts externos |
 | Lighthouse móvil | Rendimiento ≥ 95 · Accesibilidad 100 · Mejores prácticas ≥ 95 · SEO ≥ 95 | no ejecutado (se mide en producción) |
 
 ## 8. Accesibilidad (reglas que la revisión adversarial dejó como obligatorias)
@@ -103,7 +103,7 @@ Duraciones de 0.3 a 1.2 s con `cubic-bezier(.16,1,.3,1)` y `cubic-bezier(.7,0,.2
 2. Cada cambio de ruta mueve el foco al encabezado de la vista, actualiza `document.title` y lo anuncia en una región `role="status"`.
 3. Los días completos y pasados usan `aria-disabled`, no `disabled`, para seguir siendo alcanzables y anunciarse.
 4. Ningún estado depende solo de la opacidad; el texto inactivo usa `--fg2` y una pista no cromática.
-5. Todo `style=""` y `onsubmit` inline se evita para que la maqueta pueda servirse con una CSP con nonce (quedan dos `<script>` inline y un `<style>`, que en producción llevan nonce).
+5. Ningún `style=""` ni `onsubmit` inline (medido: 0) para que la maqueta pueda servirse con una CSP con nonce; quedan dos `<script>` inline y un `<style>`, que en producción llevan nonce, y las fuentes de Google, que en producción se autoalojan.
 6. Probar siempre con el texto al 200 % y con `prefers-reduced-motion: reduce`.
 
 ## 9. Desviaciones respecto a Figma
