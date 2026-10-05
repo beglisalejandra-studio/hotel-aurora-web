@@ -1,0 +1,2 @@
+# Redirecciones 301 de las URLs antiguas a las nuevas. Una por línea: /ruta-antigua /ruta-nueva
+# Se comprueban con: npm run launch:check -- https://sitio.com --redirects docs/seo/redirects.txt

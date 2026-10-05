@@ -1,0 +1,38 @@
+# dependencias
+/node_modules
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# pruebas y reportes
+/coverage
+/playwright-report/
+/test-results/
+/.lighthouseci/
+
+# secretos: NUNCA versionar (los .example sí)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# sistema
+.web-os/state/
+.web-os/approvals/
+
+# varios
+.DS_Store
+*.log
+.vercel
+.netlify
+.tmp/
+.playwright-mcp/
+
+# material de análisis (capturas pesadas): se regenera con `npm run refs`
+creative/references/screenshots/*
+!creative/references/screenshots/.gitkeep

@@ -1,0 +1,128 @@
+name: CI
+
+# Acciones fijadas por SHA de commit (cadena de suministro). Dependabot las mantiene al día.
+# checkout v4 · setup-node v4 · upload-artifact v4 · dependency-review v4.9.0
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  # CI construye como preview: noindex, pagos en modo test, sin secretos de producción.
+  NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3000
+  NEXT_PUBLIC_SITE_ENV: preview
+
+jobs:
+  quality:
+    name: Calidad (lint · tipos · formato · unit · build)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+      - name: Higiene del proyecto (doctor, sin red)
+        run: node scripts/doctor.mjs --offline --scope project --only p:docs,p:front-matter,p:scripts,p:tsconfig,p:env-hygiene,p:secret-scan,p:manifest,p:ci,p:env-validation,p:replit
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: next-build
+          path: .next
+          include-hidden-files: true
+          retention-days: 1
+
+  e2e:
+    name: E2E + accesibilidad (Playwright + axe)
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      # SOLO PARA ESTE JOB DE PRUEBAS (los valores no sirven en ningún entorno real). Los usan las pruebas del módulo
+      # visual-editor si está aplicado; el envío de correo va a un buzón local (driver "outbox", prohibido en producción).
+      EDITOR_SESSION_SECRET: ci-only-secret-ci-only-secret-ci-only-1234
+      EDITOR_ALLOWED_EMAILS: editor@test.local:admin,viewer@test.local
+      EDITOR_MAIL_DRIVER: outbox
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: next-build
+          path: .next
+      - run: npm run e2e
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7
+
+  lighthouse:
+    name: Lighthouse (móvil, presupuestos)
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Build efímero SOLO para medir (se sirve en 127.0.0.1 y no se despliega): así SEO se evalúa sin el noindex de preview.
+      NEXT_PUBLIC_SITE_ENV: production
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - run: npm run lighthouse
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: lighthouse
+          path: .lighthouseci
+          retention-days: 7
+
+  security:
+    name: Seguridad (npm audit · revisión de dependencias)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run audit
+      - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0
+        if: github.event_name == 'pull_request'
+        with:
+          fail-on-severity: high

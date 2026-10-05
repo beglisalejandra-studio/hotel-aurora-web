@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "_nota": "Parámetros de la generación de imágenes y videos con Gemini/Veo (scripts/gemini-media.mjs). Los modelos y precios proceden de la documentación oficial de Google consultada el 2026-10-04 y CAMBIAN: se validan con la clave real (`node scripts/gemini-media.mjs models`) y los precios son un TOPE ESTIMADO para el guardián de coste, no una factura. Fuente: https://ai.google.dev/gemini-api/docs/pricing",
+  "checked": "2026-10-04",
+  "imageParamStyle": "responseFormat",
+  "image": {
+    "defaultModel": "gemini-3.1-flash-image",
+    "models": {
+      "gemini-3.1-flash-lite-image": {
+        "label": "Económico (solo 1K)",
+        "sizes": ["1K"],
+        "maxUsdPerImage": 0.04
+      },
+      "gemini-3.1-flash-image": {
+        "label": "Equilibrado",
+        "sizes": ["512", "1K", "2K", "4K"],
+        "maxUsdPerImage": 0.151
+      },
+      "gemini-3-pro-image": {
+        "label": "Máxima calidad",
+        "sizes": ["1K", "2K", "4K"],
+        "maxUsdPerImage": 0.24
+      }
+    },
+    "aspects": [
+      "1:1",
+      "1:4",
+      "1:8",
+      "2:3",
+      "3:2",
+      "3:4",
+      "4:1",
+      "4:3",
+      "4:5",
+      "5:4",
+      "8:1",
+      "9:16",
+      "16:9",
+      "21:9"
+    ],
+    "maxReferences": 14,
+    "maxReferenceBytes": 7000000
+  },
+  "video": {
+    "defaultModel": "veo-3.1-lite-generate-preview",
+    "models": {
+      "veo-3.1-lite-generate-preview": {
+        "label": "Económico",
+        "resolutions": ["720p", "1080p"],
+        "usdPerSecond": { "720p": 0.05, "1080p": 0.08 }
+      },
+      "veo-3.1-fast-generate-preview": {
+        "label": "Rápido",
+        "resolutions": ["720p", "1080p", "4k"],
+        "usdPerSecond": { "720p": 0.1, "1080p": 0.12, "4k": 0.3 }
+      },
+      "veo-3.1-generate-preview": {
+        "label": "Máxima calidad",
+        "resolutions": ["720p", "1080p", "4k"],
+        "usdPerSecond": { "720p": 0.4, "1080p": 0.4, "4k": 0.6 }
+      }
+    },
+    "aspects": ["16:9", "9:16"],
+    "durations": [4, 6, 8],
+    "highResNeedsSeconds": 8,
+    "maxReferences": 3,
+    "pollSeconds": 10,
+    "timeoutMinutes": 10,
+    "serverRetentionDays": 2
+  },
+  "guard": {
+    "maxUsdPerRun": 2,
+    "note": "Sin --go solo se SIMULA (cero llamadas y cero coste). Con --go se exige GEMINI_TIER=paid (imágenes y videos no existen en el plan gratuito) y que el coste estimado no supere el tope."
+  },
+  "master": {
+    "imageLongSidePx": 2560,
+    "imageUploadMaxBytes": 4000000,
+    "imageWebTargetBytes": 250000,
+    "videoMasterMaxBytes": 25000000,
+    "videoFps": [24, 30]
+  }
+}

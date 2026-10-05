@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de diseño (DESIGN.md es la fuente; si usas Figma: `npm run tokens` genera app/tokens.css y se importa aquí).
+ * Regla: los componentes usan var(--…) / utilidades de Tailwind, NUNCA valores mágicos.
+ * Los valores de ejemplo cumplen contraste AA; cámbialos con la dirección visual aprobada.
+ */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent: #0b5fff;
+  --accent-foreground: #ffffff;
+  --focus-ring: #0b5fff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  /* Pila del sistema: sin descargas de fuentes externas en build (privacidad y rendimiento). Sustituir por next/font/local. */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --accent: #6ea0ff;
+    --accent-foreground: #0a0a0a;
+    --focus-ring: #6ea0ff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Foco SIEMPRE visible (WCAG 2.4.7 / 2.4.11). */
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Movimiento reducido (WCAG 2.3.3): apaga animaciones y transiciones no esenciales. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
