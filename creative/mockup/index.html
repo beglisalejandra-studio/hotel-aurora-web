@@ -128,12 +128,13 @@ body:not([data-screen="room"]) #guide-btn{display:none}
 @media (min-width:900px){.hero__foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book{justify-content:flex-end}}
 /* celular y tableta en vertical: el nombre se parte en AU / R(sol) / RA y llena la pantalla */
 @media (max-width:899px) and (orientation:portrait){
-  .mark{display:grid;grid-template-columns:repeat(2,max-content);justify-content:space-between;align-items:end;row-gap:.04em;font-size:max(4rem,min(50vw,calc((100svh - var(--demo-h) - var(--bar-h) - 250px) / 2.48)));line-height:.8}
+  .mark{display:grid;grid-template-columns:repeat(2,max-content);justify-content:space-between;align-items:end;row-gap:.04em;font-size:max(4rem,min(50vw,calc((100svh - var(--demo-h) - var(--bar-h) - 266px) / 2.48)));line-height:.8}
   .mark .sun{margin-bottom:0}
 }
 @media (min-width:900px) and (max-aspect-ratio:4/5){.hero{min-height:max(34rem,62svh)}}
 @media (max-width:700px){#hero-book{display:none}}
 @media (max-height:500px) and (orientation:landscape){.hero{min-height:0}}
+@media (max-height:700px) and (orientation:portrait){.lede{font-size:1rem}.hero__foot{gap:12px;padding-top:12px}}
 
 @media (prefers-reduced-motion:no-preference){
   .hero,.bar{animation:dawn 1.2s .05s var(--ease) both}
@@ -149,8 +150,9 @@ body:not([data-screen="room"]) #guide-btn{display:none}
 @supports (animation-timeline:scroll()){
   @media (prefers-reduced-motion:no-preference){
     .js .flood{animation:flood linear both;animation-timeline:scroll(root);animation-range:0px 55svh}
-    .js .hero{animation-name:dawn,ink;animation-duration:1.2s,auto;animation-delay:.05s,0s;animation-timing-function:var(--ease),linear;animation-fill-mode:both,both;animation-timeline:auto,scroll(root);animation-range:normal,0px 55svh}
-    @keyframes ink{0%,46%{--fg:var(--f1);--fg2:var(--g1)}54%,100%{--fg:var(--f2);--fg2:var(--g2)}}
+    .js .hero{animation-name:dawn-h,ink;animation-duration:1.2s,auto;animation-delay:.05s,0s;animation-timing-function:var(--ease),linear;animation-fill-mode:both,both;animation-timeline:auto,scroll(root);animation-range:normal,0px 55svh}
+    @keyframes dawn-h{from{background-color:var(--b4);--fg:var(--f4);--fg2:var(--g4)}}
+    @keyframes ink{46%{--fg:var(--f1);--fg2:var(--g1)}54%,100%{--fg:var(--f2);--fg2:var(--g2)}}
     @keyframes flood{from{clip-path:circle(var(--sr,0px) at var(--sx,50%) var(--sy,30%))}to{clip-path:circle(var(--fr,150vmax) at var(--sx,50%) var(--sy,30%))}}
   }
 }
@@ -199,8 +201,8 @@ body:not([data-screen="room"]) #guide-btn{display:none}
 .zona{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(32px,5vw,64px)}
 @media (min-width:900px){.zona{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}}
 .zl{list-style:none;padding:0;margin:0;border-top:1.5px solid var(--fg)}
-.zl button{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;border-bottom:1.5px solid var(--fg);padding:14px 0;min-height:56px;font:700 clamp(1.3rem,1rem + 1vw,1.9rem)/1.05 var(--f-display);letter-spacing:-.02em;font-stretch:100%;transition:font-stretch .5s var(--ease-out),padding .4s var(--ease-out)}
-.zl button span{font:500 var(--s-1)/1 var(--f-text);letter-spacing:0;color:var(--fg2);text-align:right}
+.zl button{overflow-wrap:anywhere;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;border-bottom:1.5px solid var(--fg);padding:14px 0;min-height:56px;font:700 clamp(1.3rem,1rem + 1vw,1.9rem)/1.05 var(--f-display);letter-spacing:-.02em;font-stretch:100%;transition:font-stretch .5s var(--ease-out),padding .4s var(--ease-out)}
+.zl button span{font:500 var(--s-1)/1.1 var(--f-text);letter-spacing:0;color:var(--fg2);text-align:right;max-width:7rem;overflow-wrap:normal}
 .zl button[aria-pressed="true"]{font-stretch:112%;padding-left:12px}
 .zl button[aria-pressed="true"] span{color:var(--fg)}
 .map{position:relative;aspect-ratio:4/3;border:1.5px solid var(--fg);overflow:clip}
