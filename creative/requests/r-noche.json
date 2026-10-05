@@ -1,13 +1,13 @@
 {
-  "name": "r-patio",
+  "name": "r-noche",
   "kind": "image",
-  "aspect": "3:4",
+  "aspect": "1:1",
   "page": "habitaciones",
-  "role": "Habitación Patio (portada)",
+  "role": "Habitación Noche, 10 p. m. (ventana circular)",
   "status": "requested",
-  "requested_at": "2026-10-05T01:15:22.196Z",
+  "requested_at": "2026-10-05T18:43:09.636Z",
   "master": {
-    "w": 1920,
+    "w": 2560,
     "h": 2560
   },
   "min_long_side": 1600,

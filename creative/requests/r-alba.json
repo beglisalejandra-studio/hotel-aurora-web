@@ -1,13 +1,13 @@
 {
   "name": "r-alba",
   "kind": "image",
-  "aspect": "3:4",
+  "aspect": "1:1",
   "page": "habitaciones",
-  "role": "Habitación Alba (portada)",
+  "role": "Habitación Alba, 6 a. m. (ventana circular)",
   "status": "requested",
-  "requested_at": "2026-10-05T01:15:22.135Z",
+  "requested_at": "2026-10-05T18:43:09.467Z",
   "master": {
-    "w": 1920,
+    "w": 2560,
     "h": 2560
   },
   "min_long_side": 1600,

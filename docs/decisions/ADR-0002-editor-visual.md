@@ -43,4 +43,4 @@ Las cifras corresponden al contenido de ejemplo: **mide de nuevo con el contenid
 6. `output: "export"` no es viable con rutas de servidor (el build falla en `/sitemap.xml`): se descartó el perfil de exportación estática.
 
 ## Revisión para Hotel Aurora (2026-10-05)
-**No se aplica el módulo `visual-editor`.** El diseño es a medida (arcos, mosaico, mapa y calendario propios) y no se compone con bloques genéricos. El contenido editable (habitaciones, textos y fotos) vive en archivos versionados del repositorio; la disponibilidad y las tarifas, en la base de datos. Se puede añadir después con `npm run module:add -- visual-editor` si el propietario lo pide.
+**No se aplica el módulo `visual-editor`.** El diseño es a medida (nombre con sol, filas, mapa de líneas y calendario propios) y no se compone con bloques genéricos. El contenido editable (habitaciones, textos y fotos) vive en archivos versionados del repositorio; la disponibilidad y las tarifas, en la base de datos. Se puede añadir después con `npm run module:add -- visual-editor` si el propietario lo pide.

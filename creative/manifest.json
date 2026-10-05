@@ -6,28 +6,30 @@
       "references": [],
       "constraints": {
         "preserve": [
-          "arcos de medio punto en piedra coralina",
-          "postigos de madera y baldosa de cemento",
-          "buganvilia y plantas tropicales en macetas de barro",
-          "paleta verdeazulada profunda, coral cálido, blanco marino y tinta azul",
-          "luz de las 6 de la mañana: sombras frías y luces cálidas",
+          "la luz de cada hora: 6 a. m. (Alba), 12 m. (Mediodía), 6 p. m. (Atardecer) y 10 p. m. (Noche)",
+          "composición simétrica y centrada, recortable en círculo (el sujeto cabe en el 80 % central)",
+          "un color dominante por hora, el del campo de esa hora en la paleta elegida",
+          "interiorismo sobrio y minimalista: pocos objetos, cal blanca, madera clara y lino",
           "sin personas visibles, sin texto, sin logotipos ni marcas de agua",
           "imágenes del hotel rotuladas como ilustrativas si son generadas con IA"
         ],
         "may_change": [
           "encuadre",
-          "hora exacta de la luz",
-          "objetos de utilería",
-          "ángulo de cámara"
+          "objetos de apoyo",
+          "ángulo de cámara",
+          "tono exacto del color dominante (dentro de la paleta)"
         ],
         "forbidden": [
           "inventar logotipos",
           "mostrar rostros de personas reales",
           "generar con IA fotografías de lugares reales (atracciones) y presentarlas como reales",
-          "cambiar la paleta o la hora del día entre imágenes"
+          "arcos de piedra, buganvilias o elementos de postal como adorno",
+          "cambiar el estilo sobrio entre las cuatro imágenes"
         ]
       },
-      "prompts": ["creative/requests/*.md (una ficha por imagen, con medidas y prompt)"],
+      "prompts": [
+        "creative/requests/PROMPTS.md (4 fichas: r-alba, r-mediodia, r-atardecer, r-noche; 1:1, 2560 × 2560 px)"
+      ],
       "shots": [],
       "outputs": [],
       "poster": null,
@@ -43,7 +45,7 @@
       "page": "home",
       "type": "image",
       "score": 28,
-      "reason": "VIDEO_SCORE 28 → Imagen estática optimizada. Factores principales: penal. rendimiento móvil (-18.7); demostración (+15); atmósfera (+15).",
+      "reason": "VIDEO_SCORE 28 → Imagen estática optimizada. Factores principales: penal. rendimiento móvil (-18.7); demostración (+15); atmósfera (+15). La portada v2 no lleva fotografía: tipografía y color plano; solo hay 4 ventanas circulares en las páginas de habitación.",
       "score_breakdown": [
         {
           "factor": "demostración",

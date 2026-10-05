@@ -7,7 +7,7 @@
 ## 1. Negocio y oferta
 - **Qué vende / ofrece:** estancias en un hotel boutique en Cartagena de Indias, Colombia, con reserva directa en línea y estado de la reserva por WhatsApp o correo.
 - **Precio / modelo:** precio por noche en pesos colombianos (COP) por tipo de habitación. Valores de demostración (520.000 a 1.150.000 COP por noche, con recargo de viernes y sábado y de temporada alta). **Pendiente:** tarifas reales, impuestos, políticas de cancelación, horarios de llegada y salida.
-- **Diferencial (mecanismo distinto, no adjetivos):** **hipótesis creativa, pendiente de confirmar por el propietario:** una casa pequeña organizada alrededor de un patio y una terraza, contada como un día completo (de la primera luz a la noche).
+- **Diferencial (mecanismo distinto, no adjetivos):** **hipótesis creativa, pendiente de confirmar por el propietario:** **una habitación por hora:** cuatro habitaciones que son cuatro momentos del día (6 a. m., 12 m., 6 p. m. y 10 p. m.), y un sitio cuyo color cambia con la hora.
 
 ## 2. Audiencia
 - **Persona principal y su situación (hipótesis):** viajeros de ocio (parejas y grupos pequeños), colombianos y extranjeros, que comparan hoteles desde el celular antes de reservar.
@@ -40,7 +40,7 @@
 
 ## 6. Marca y restricciones
 - **Tono y voz:** claro, cálido y concreto; frases cortas; sin adjetivos vacíos ni verbos de relleno. Español de Colombia (`es-CO`).
-- **Elementos de marca obligatorios:** logotipo propuesto: palabra «Aurora» en Bricolage Grotesque 600 más un arco con un punto de sol (SVG geométrico simple, lo construye el equipo). Colores y tipografía: ver `DESIGN.md` §2. **Pendiente:** aprobación del logotipo.
+- **Elementos de marca obligatorios:** logotipo propuesto: la palabra AURORA en mayúsculas gruesas (Anybody 800) con la «O» convertida en el sol, un círculo con aro (SVG geométrico simple, lo construye el equipo). Colores y tipografía: ver `DESIGN.md` §2. **Pendiente:** aprobación del logotipo.
 - **Restricciones legales/sectoriales:**
   - Aviso permanente de portafolio y de «no se procesa ninguna transacción».
   - Imágenes del hotel generadas con IA: rotularlas como ilustrativas.
@@ -50,9 +50,9 @@
 
 ## 7. Preguntas abiertas para el propietario
 1. **Ubicación del hotel:** ¿Centro histórico, Getsemaní u otra zona? (define el mapa, los tiempos a pie y el copy).
-2. **Concepto y servicios:** ¿te sirve «patio, terraza y luz de la mañana» como idea central? ¿qué servicios incluimos en la demostración?
+2. **Concepto y servicios:** ¿te sirve «una habitación por hora» como idea central? ¿qué servicios incluimos en la demostración?
 3. **Idiomas:** ¿solo español o también inglés?
 4. **Hosting y dominio:** ¿alguna preferencia? (el dominio no existe aún; ver `PROJECT.md` §5).
 5. **Imágenes:** ¿las generamos con ChatGPT o Gemini siguiendo las fichas de `creative/requests/`?
-6. **Logotipo:** ¿aprobamos la marca propuesta (arco y sol) o exploramos otras?
+6. **Logotipo:** ¿aprobamos la marca propuesta (AURORA con el sol en la «O») o exploramos otras?
 7. **Pagos reales en el futuro:** ¿qué pasarela interesa (por ejemplo, la que usa tu mercado objetivo)? Hoy no se integra ninguna.

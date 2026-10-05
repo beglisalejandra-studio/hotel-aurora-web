@@ -13,7 +13,7 @@ mode: auto
 
 > Alcance, arquitectura, integraciones, secretos y despliegue. **El front-matter gobierna al sistema**: `type` (new | redesign | maintenance), `status` (discovery → design → build → qa → staging → production → maintenance), `duration` (1-3d | 1-2w | 3-6w), `visual_authority` (UNA sola: taste-skill | impeccable), `stack`, `hosting`, `figma_seat` (view | collab | dev | full: define el presupuesto de lecturas de Figma), `mode` (auto | explain).
 
-**Estado actual (2026-10-05):** brief, referencias, `VIDEO_SCORE` y **maqueta HTML entregados; esperan aprobación** antes de construir. No hay código de producción todavía.
+**Estado actual (2026-10-05):** brief, referencias globales (18, verificadas con navegador real), `VIDEO_SCORE` y **maqueta HTML v2 entregados; esperan aprobación** antes de construir. La v1 se rechazó por genérica y se rehízo (concepto «Una habitación por hora», color plano por hora, movimiento solo con CSS); la v2 pasó una revisión adversarial de seis dimensiones y se corrigieron sus hallazgos altos y medios. No hay código de producción todavía.
 
 ## 1. Alcance
 - **Objetivo de conversión (único):** reserva directa completada. En la versión de portafolio, el recorrido termina en un pago **bloqueado** y una confirmación de ejemplo.

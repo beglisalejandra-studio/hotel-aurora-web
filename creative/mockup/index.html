@@ -1,676 +1,530 @@
 <!doctype html>
-<html lang="es-CO">
+<html lang="es-CO" data-palette="luz" data-hour="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hotel Aurora, hotel boutique en Cartagena de Indias</title>
+<title>Hotel Aurora, hotel boutique en Cartagena de Indias (proyecto de portafolio)</title>
 <meta name="description" content="Maqueta de diseño de Hotel Aurora, hotel boutique ficticio en Cartagena de Indias. Proyecto de portafolio de beglisalejandra-studio.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#EEF3F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#08171F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFC4DE">
+<script>
+(function(){document.documentElement.classList.add('js');
+try{var q=new URLSearchParams(location.search).get('paleta')||localStorage.getItem('aurora-paleta');if(q&&['luz','fachadas','anil'].indexOf(q)>-1)document.documentElement.dataset.palette=q}catch(e){}})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@100..125,700..800&family=Familjen+Grotesk:wght@400..700&display=swap">
 <style>
-/* ============ TOKENS ============
-   Una paleta, un acento. Radios: arco (imágenes), pastilla (acciones), 14px (paneles, campos).
-   Fuentes: en producción se autoalojan con next/font (subconjunto latino). */
+/* =====================================================================
+   HOTEL AURORA v2. Un campo de color plano por hora del dia. Sin degradados.
+   Maquetacion: nombre a ancho completo, filete, filas (no tarjetas), calendario en circulos.
+   Movimiento: solo CSS (transform, clip-path, font-stretch) con guardas; JS solo para estado.
+   Fuentes: en produccion se autoalojan con next/font; Anybody se recorta a wdth 100..125 y wght 700..800 (lo unico que se usa).
+   ===================================================================== */
 :root{
-  --bg:#EEF3F2; --surface:#F8FBFA; --surface-2:#E2EBEA; --line:#C3D2CF;
-  --fg:#0C1E2B; --fg-2:#3B5260; --fg-3:#4F6672;
-  --sea:#14464F;
-  --accent:#C73E1D; --on-accent:#FFFFFF; --accent-text:#B5351A;
-  --on-media:#FFFFFF;
-  --r-panel:14px; --r-arch:999px 999px 0 0;
-  --shadow:0 22px 44px -24px rgb(12 30 43 / .42);
-  --gutter:clamp(16px,4vw,48px);
-  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --f-body:"Instrument Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --s-1:clamp(.8rem,.77rem + .12vw,.875rem);
-  --s0:clamp(1rem,.97rem + .15vw,1.0625rem);
-  --s1:clamp(1.15rem,1.05rem + .45vw,1.35rem);
-  --s2:clamp(1.5rem,1.2rem + 1.3vw,2.2rem);
-  --s3:clamp(2rem,1.3rem + 3vw,3.6rem);
-  --s4:clamp(2.6rem,1.4rem + 5.2vw,5.4rem);
-  --nav-h:64px;
-  --ease:cubic-bezier(.16,1,.3,1);
+  --f-display:"Anybody","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --f-text:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,3.2vw,44px);
+  --demo-h:44px;--bar-h:56px;
+  --sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px);--sat:env(safe-area-inset-top,0px);
+  --gl:max(var(--gutter),var(--sal));--gr:max(var(--gutter),var(--sar));
+  --ease:cubic-bezier(.7,0,.2,1);--ease-out:cubic-bezier(.16,1,.3,1);
+  --s-1:.8125rem;--s0:1.0625rem;--s1:clamp(1.15rem,1rem + .6vw,1.5rem);
+  --s2:clamp(1.8rem,.9rem + 5vw,5.6rem);
+  --s3:clamp(2.4rem,.6rem + 5.6vw,5.4rem);
 }
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#08171F; --surface:#0F2530; --surface-2:#13303C; --line:#26434F;
-    --fg:#E8F0EF; --fg-2:#A9BDC0; --fg-3:#86A0A6;
-    --sea:#0E3A44;
-    --accent:#FF7A59; --on-accent:#08171F; --accent-text:#FF8E70;
-    --shadow:0 22px 44px -24px rgb(0 0 0 / .7);
-  }
-}
+@media (max-width:700px){:root{--demo-h:88px}}
+/* colores animables: la tinta del hero cambia junto con la inundacion del sol */
+@property --fg{syntax:"<color>";inherits:true;initial-value:#0a0a0a}
+@property --fg2{syntax:"<color>";inherits:true;initial-value:#4a2f3b}
+/* ---- paletas: 4 horas = 4 campos. b = campo, f = texto, g = texto secundario (todos AA, ver design/palette-check.mjs) ---- */
+html[data-palette="luz"]{--b1:#FFC4DE;--f1:#0A0A0A;--g1:#4A2F3B;--b2:#F2F964;--f2:#0A0A0A;--g2:#3D3E19;--b3:#FF8D6A;--f3:#0A0A0A;--g3:#4A2216;--b4:#150A3C;--f4:#F7F5FF;--g4:#C9C3E6}
+html[data-palette="fachadas"]{--b1:#C90362;--f1:#FFF7FA;--g1:#FFE3EF;--b2:#F9C230;--f2:#15110E;--g2:#4A3A0A;--b3:#EC672A;--f3:#15110E;--g3:#3A1604;--b4:#0E47CA;--f4:#FFFFFF;--g4:#C7D6FA}
+html[data-palette="anil"]{--b1:#EEF0FB;--f1:#1A1D8C;--g1:#4A4EB0;--b2:#FFD23F;--f2:#14186E;--g2:#3C40A0;--b3:#7C83EC;--f3:#0B0E4A;--g3:#12154F;--b4:#2B2FB8;--f4:#FFFFFF;--g4:#D2D5F6}
+html{--bg:var(--b1);--fg:var(--f1);--fg2:var(--g1)}
+html[data-hour="2"]{--bg:var(--b2);--fg:var(--f2);--fg2:var(--g2)}
+html[data-hour="3"]{--bg:var(--b3);--fg:var(--f3);--fg2:var(--g3)}
+html[data-hour="4"]{--bg:var(--b4);--fg:var(--f4);--fg2:var(--g4)}
+.h1{--bg:var(--b1);--fg:var(--f1);--fg2:var(--g1);--next:var(--b2);--prev:var(--b1)}
+.h2{--bg:var(--b2);--fg:var(--f2);--fg2:var(--g2);--next:var(--b3);--prev:var(--b1)}
+.h3{--bg:var(--b3);--fg:var(--f3);--fg2:var(--g3);--next:var(--b4);--prev:var(--b2)}
+.h4{--bg:var(--b4);--fg:var(--f4);--fg2:var(--g4);--next:var(--b4);--prev:var(--b3)}
+
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--s0)/1.6 var(--f-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
-h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;letter-spacing:-.025em;line-height:1.02;margin:0;text-wrap:balance}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--bar-h) + 12px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--s0)/1.5 var(--f-text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;transition:background-color .5s,color .5s}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;margin:0;line-height:.92;letter-spacing:-.02em;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 a{color:inherit}
 img,svg{display:block;max-width:100%}
-button,input,select{font:inherit;color:inherit}
+button,input{font:inherit;color:inherit}
 button{cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.ic{width:1.25em;height:1.25em;fill:currentColor;flex:none}
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.pill--solid:focus-visible,.dock .pill:focus-visible{box-shadow:0 0 0 3px var(--bg)}
+.demo :focus-visible{outline-color:#fff;box-shadow:none}
+.day.is-start:focus-visible,.day.is-end:focus-visible{outline-color:var(--fg)}
+.sheet :focus-visible{outline-color:var(--f4)}
+main:focus,[tabindex="-1"]:focus,[tabindex="-1"]:focus-visible{outline:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wrap{max-width:1360px;margin-inline:auto;padding-inline:var(--gutter)}
-.hero__grid,.casa__grid,.city__grid,.avail__grid,.rm__grid,.flow__grid{grid-template-columns:minmax(0,1fr)}
-.hero__grid>*,.casa__grid>*,.city__grid>*,.avail__grid>*,.rm__grid>*,.flow__grid>*{min-width:0}
+.ic{width:1.1em;height:1.1em;fill:currentColor;flex:none}
+.wrap{padding-left:var(--gl);padding-right:var(--gr)}
 [hidden]{display:none!important}
-.skip{position:absolute;left:12px;top:-60px;background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:100}
+.skip{position:absolute;left:12px;top:-60px;background:#0A0A0A;color:#fff;padding:10px 16px;border-radius:999px;z-index:100}
 .skip:focus{top:12px}
+.micro{font-size:var(--s-1);font-weight:500;letter-spacing:.02em}
+.rule{height:0;border:0;border-top:1.5px solid var(--fg);margin:0}
 
-/* ============ BOTONES ============ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;padding:0 1.5rem;border-radius:999px;border:1.5px solid transparent;font-weight:600;text-decoration:none;white-space:nowrap;transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s}
-.btn:active{transform:scale(.97)}
-.btn--primary{background:var(--accent);color:var(--on-accent)}
-.btn--primary:hover{background:color-mix(in oklab,var(--accent) 88%,var(--fg))}
-.btn--ghost{border-color:var(--line);background:transparent}
-.btn--ghost:hover{border-color:var(--fg)}
-.btn--sm{min-height:44px;padding:0 1.15rem}
-.btn[aria-disabled="true"]{background:var(--surface-2);color:var(--fg-3);cursor:not-allowed}
-.btn[aria-disabled="true"]:active{transform:none}
+/* ---- botones ---- */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:44px;padding:0 1.25rem;border-radius:999px;border:1.5px solid currentColor;background:transparent;font-weight:600;text-decoration:none;white-space:nowrap;transition:background-color .3s,color .3s,transform .3s var(--ease-out)}
+.pill:hover{background:var(--fg);color:var(--bg)}
+.pill--solid{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.pill--solid:hover{background:transparent;color:var(--fg)}
+.pill:active{transform:scale(.97)}
+.pill[aria-disabled="true"]{color:var(--fg2);border-style:dashed;cursor:not-allowed}
+.pill[aria-disabled="true"]:hover{background:transparent;color:inherit}
 .link{display:inline-flex;align-items:center;gap:.5em;font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
-.link .ic{transition:transform .3s var(--ease)}
-.link:hover .ic{transform:translateX(4px)}
-.iconbtn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line);background:transparent}
-.iconbtn:hover{border-color:var(--fg)}
+.link--btn{background:none;border-width:0 0 1.5px}
+.muted{color:var(--fg2)}.strong{font-weight:600}.w28{max-width:28ch}
+.ic--inline{display:inline;vertical-align:-.15em;margin-right:6px}
+.dot--1{background:var(--b1)}.dot--2{background:var(--b2)}.dot--3{background:var(--b3)}.dot--4{background:var(--b4)}
 
-/* ============ AVISO DE PORTAFOLIO ============ */
-.demo{background:var(--fg);color:var(--bg);font-size:var(--s-1);line-height:1.4}
-.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding-block:9px}
-.demo p{display:flex;gap:10px;align-items:flex-start}
-.demo .ic{margin-top:2px;color:var(--accent)}
-.demo button{background:none;border:1px solid color-mix(in oklab,var(--bg) 40%,transparent);border-radius:999px;color:inherit;padding:6px 12px;white-space:nowrap;min-height:32px}
-@media (max-width:700px){.demo button{display:none}}
+/* ---- aviso de portafolio + herramientas de la maqueta ---- */
+.demo{background:#0A0A0A;color:#fff;font-size:var(--s-1);line-height:1.35}
+.demo .in{display:flex;gap:10px 18px;justify-content:space-between;align-items:center;padding:max(7px,var(--sat)) var(--gr) 7px var(--gl);flex-wrap:wrap;min-height:var(--demo-h)}
+.demo .tools{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.demo .tools span{opacity:.7}
+.demo button{background:none;border:1px solid #ffffff80;color:#fff;border-radius:999px;min-height:28px;padding:0 10px;font-size:12px}
+.demo button[aria-pressed="true"]{background:#fff;color:#0A0A0A;border-color:#fff}
+@media (max-width:700px){.demo .tools span:first-child{display:none}.demo .lbl{display:none}.demo .sw{margin:0;width:14px;height:14px}.demo button{min-width:36px;min-height:36px;padding:0 9px}.demo .in{gap:6px}}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid currentColor}
+.sw--luz{background:#FFC4DE}.sw--fachadas{background:#C90362}.sw--anil{background:#2B2FB8}
+body:not([data-screen="room"]) #guide-btn{display:none}
 
-/* ============ NAV ============ */
-.nav{position:sticky;top:0;z-index:40;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav.is-stuck{border-bottom-color:var(--line)}
-.nav .wrap{height:var(--nav-h);display:flex;align-items:center;gap:20px}
-.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1.45rem/1 var(--f-display);letter-spacing:-.03em}
-.brand__arc{width:30px;height:18px;position:relative;flex:none}
-.brand__arc::before{content:"";position:absolute;inset:0;border:2.5px solid var(--accent);border-bottom:0;border-radius:30px 30px 0 0}
-.brand__dot{position:absolute;inset:0;transform-origin:50% 100%;transform:rotate(90deg)}
-.brand__dot::after{content:"";position:absolute;left:-3.25px;bottom:-4.5px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
-.moment{display:none;font-size:var(--s-1);font-weight:600;color:var(--fg-3);border-left:1px solid var(--line);padding-left:16px;margin-left:-4px;min-width:6.5em}
-@media (min-width:1100px){body[data-screen="home"] .moment{display:block}}
+/* ---- barra de tres zonas ---- */
+.bar{position:static;z-index:40;min-height:var(--bar-h);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding-left:var(--gl);padding-right:var(--gr);background:var(--bg);color:var(--fg);transition:background-color .5s,color .5s}
+.js .bar{position:sticky;top:0}
+.bar__mid{text-align:center}
+.bar__end{justify-self:end;display:flex;gap:8px;align-items:center}
+.bar .pill{min-height:44px;padding:0 1rem}
+@media (max-width:700px){.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-content:center;padding-block:6px}.bar__mid{display:none}}
+
+/* ---- hero: el nombre, el sol en la o, filete y dos bloques ---- */
+.hero{position:relative;isolation:isolate;min-height:calc(100svh - var(--demo-h) - var(--bar-h));display:grid;grid-template-rows:auto 1fr auto;padding:clamp(10px,1.6vw,24px) var(--gr) var(--gutter) var(--gl);background:var(--bg);color:var(--fg);overflow:clip}
+.mark{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--f-display);font-weight:800;font-stretch:100%;font-size:min(21.4vw,36rem);line-height:.78;letter-spacing:0;text-transform:uppercase;padding-bottom:.04em}
+.mark span{display:block}
+.mark span:nth-child(2){--i:1}.mark span:nth-child(3){--i:2}.mark span:nth-child(5){--i:4}.mark span:nth-child(6){--i:5}
+.mark .sun{flex:none;width:.69em;height:.69em;border-radius:50%;border:.05em solid var(--fg);background:var(--next);margin-bottom:.095em}
+.flood{position:absolute;inset:0;z-index:-1;background:var(--next);opacity:0;pointer-events:none;clip-path:circle(var(--sr,0px) at var(--sx,50%) var(--sy,30%));transition:opacity .4s}
+.flood-on .flood{opacity:1}
+.hero__foot{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;padding-top:18px;border-top:1.5px solid var(--fg);align-items:end}
+.lede{font-size:var(--s1);line-height:1.25;max-width:26ch;font-weight:500}
+.book{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.book .k{display:block;font-size:var(--s-1);color:var(--fg2);font-weight:500}
+.dates{border:0;background:none;padding:0;text-align:left;border-bottom:1.5px solid var(--fg);min-height:44px;font:700 clamp(1.4rem,1rem + 1.6vw,2.2rem)/1 var(--f-display);letter-spacing:-.02em}
+.stepper{display:inline-flex;align-items:center;gap:12px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;display:grid;place-items:center}
+.stepper output{min-width:1.4ch;text-align:center;font:700 1.5rem/1 var(--f-display)}
+@media (min-width:900px){.hero__foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book{justify-content:flex-end}}
+/* celular y tableta en vertical: el nombre se parte en AU / R(sol) / RA y llena la pantalla */
+@media (max-width:899px) and (orientation:portrait){
+  .mark{display:grid;grid-template-columns:repeat(2,max-content);justify-content:space-between;align-items:end;row-gap:.04em;font-size:max(4rem,min(50vw,calc((100svh - var(--demo-h) - var(--bar-h) - 250px) / 2.48)));line-height:.8}
+  .mark .sun{margin-bottom:0}
+}
+@media (min-width:900px) and (max-aspect-ratio:4/5){.hero{min-height:max(34rem,62svh)}}
+@media (max-width:700px){#hero-book{display:none}}
+@media (max-height:500px) and (orientation:landscape){.hero{min-height:0}}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero,.bar{animation:dawn 1.2s .05s var(--ease) both}
+  @keyframes dawn{from{background-color:var(--b4);color:var(--f4)}}
+  .mark span:not(.sun){animation:letter .8s var(--ease-out) both;animation-delay:calc(.15s + var(--i,0) * 50ms)}
+  @keyframes letter{from{opacity:0;translate:0 .3em}}
+  .mark .sun{animation:sunrise 1.1s .45s var(--ease-out) both}
+  @keyframes sunrise{from{translate:0 140%;opacity:0}}
+  .hero__foot{animation:rise .6s .2s var(--ease-out) both}
+  @keyframes rise{from{opacity:0;translate:0 22px}}
+}
+/* el sol sale de la o y inunda el hero de mediodia, al ritmo del scroll */
 @supports (animation-timeline:scroll()){
   @media (prefers-reduced-motion:no-preference){
-    .brand__dot{animation:sunrise linear both;animation-timeline:scroll(root)}
-    @keyframes sunrise{from{transform:rotate(0)}to{transform:rotate(180deg)}}
+    .js .flood{animation:flood linear both;animation-timeline:scroll(root);animation-range:0px 55svh}
+    .js .hero{animation-name:dawn,ink;animation-duration:1.2s,auto;animation-delay:.05s,0s;animation-timing-function:var(--ease),linear;animation-fill-mode:both,both;animation-timeline:auto,scroll(root);animation-range:normal,0px 55svh}
+    @keyframes ink{0%,46%{--fg:var(--f1);--fg2:var(--g1)}54%,100%{--fg:var(--f2);--fg2:var(--g2)}}
+    @keyframes flood{from{clip-path:circle(var(--sr,0px) at var(--sx,50%) var(--sy,30%))}to{clip-path:circle(var(--fr,150vmax) at var(--sx,50%) var(--sy,30%))}}
   }
 }
-.nav__links{display:none;gap:6px;margin-left:auto}
-.nav__links a{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--fg-2);transition:color .2s,background .2s}
-.nav__links a:hover{color:var(--fg);background:var(--surface-2)}
-.nav__end{display:flex;gap:8px;align-items:center;margin-left:auto}
-.nav__menu{display:inline-grid}
-.drawer{position:fixed;inset:0;z-index:60;background:var(--bg);padding:calc(var(--nav-h) + 24px) var(--gutter) 32px;display:flex;flex-direction:column;gap:6px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility .3s}
-.drawer.is-open{opacity:1;transform:none;visibility:visible}
-.drawer a{font:600 var(--s3)/1.15 var(--f-display);letter-spacing:-.03em;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line)}
-.drawer__close{position:absolute;right:var(--gutter);top:calc((var(--nav-h) - 44px)/2)}
-@media (min-width:960px){
-  .nav__links{display:flex}
-  .nav__end{margin-left:0}
-  .nav__menu{display:none}
-}
 
-/* ============ PLACEHOLDERS DE FOTO (direccion de arte, sin peso) ============ */
-.ph{position:relative;overflow:hidden;background:var(--sea);isolation:isolate}
-.ph::before{content:"";position:absolute;inset:0;z-index:-1}
-.ph--dawn::before{background:
-  radial-gradient(60% 38% at 50% 78%,#FFD3A1 0%,rgba(255,190,140,.0) 70%),
-  linear-gradient(180deg,#1E3F57 0%,#5C7E91 30%,#E7A58A 62%,#F6C7A0 78%,#14464F 78.2%,#0C2F38 100%)}
-.ph--patio::before{background:
-  radial-gradient(70% 55% at 30% 18%,#FFD9A8 0%,rgba(255,217,168,0) 62%),
-  linear-gradient(160deg,#2E6F73 0%,#14464F 55%,#0B2B35 100%)}
-.ph--wall::before{background:
-  radial-gradient(80% 60% at 78% 12%,#FFB38E 0%,rgba(255,179,142,0) 60%),
-  linear-gradient(200deg,#C75A3F 0%,#8C3A34 50%,#2A2F45 100%)}
-.ph--terrace::before{background:
-  radial-gradient(90% 50% at 50% 100%,#F7B48C 0%,rgba(247,180,140,0) 65%),
-  linear-gradient(180deg,#10283B 0%,#2D5368 46%,#D98A74 88%)}
-.ph--r1::before{background:radial-gradient(70% 60% at 25% 20%,#FFE0B8 0%,rgba(255,224,184,0) 60%),linear-gradient(170deg,#7BA5A3 0%,#2E6F73 60%,#14464F 100%)}
-.ph--r2::before{background:radial-gradient(70% 60% at 75% 15%,#FFC9A8 0%,rgba(255,201,168,0) 60%),linear-gradient(190deg,#E49A82 0%,#A9553F 55%,#3A3447 100%)}
-.ph--r3::before{background:radial-gradient(60% 60% at 50% 10%,#FFD7B0 0%,rgba(255,215,176,0) 60%),linear-gradient(180deg,#D86A58 0%,#8E3A44 55%,#26263E 100%)}
-.ph--r4::before{background:radial-gradient(80% 50% at 50% 100%,#FFB07F 0%,rgba(255,176,127,0) 65%),linear-gradient(180deg,#14283C 0%,#3C5F73 55%,#E39A82 100%)}
-.arch{border-radius:var(--r-arch)}
-.rect{border-radius:var(--r-panel)}
-/* guia de fotos: muestra codigo y medidas solo si se activa */
-body.guide .ph::after{content:attr(data-slot) "\A" attr(data-size);white-space:pre;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font:600 .78rem/1.5 var(--f-body);color:#fff;background:rgb(8 23 31 / .78);padding:8px 12px;border-radius:10px;z-index:3}
-
-/* ============ SECCIONES ============ */
-.section{padding-top:clamp(72px,10vw,150px);padding-bottom:var(--pb,clamp(72px,10vw,150px));content-visibility:auto;contain-intrinsic-size:auto 900px}
-.section h2{font-size:var(--s3)}
-.section .lede{font-size:var(--s1);color:var(--fg-2);max-width:42ch;margin-top:1.1rem;line-height:1.5}
-.note{font-size:var(--s-1);color:var(--fg-3);margin-top:1.25rem}
-
-/* ---- HERO ---- */
-.hero{padding-top:0;padding-bottom:clamp(40px,6vw,80px)}
-.hero__grid{display:grid;gap:0}
-.hero__fig{position:relative;margin-inline:calc(var(--gutter) * -1)}
-.hero__media{position:relative;height:min(66dvh,560px);border-radius:var(--r-arch)}
-.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,23,31,0) 40%,rgba(8,23,31,.7) 100%);z-index:2}
-.hero__copy{position:relative;margin-top:-9.5rem}
-.hero__eyebrow{font-size:var(--s-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-media);opacity:.92}
-.hero h1{font-size:var(--s4);margin-top:.7rem;color:var(--on-media)}
-.hero__sub{font-size:var(--s1);color:var(--fg-2);max-width:38ch;margin-top:1.8rem;line-height:1.5}
-@media (min-width:900px){
-  .hero{padding-top:clamp(20px,3vw,40px)}
-  .hero__grid{grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,80px);align-items:end}
-  .hero__fig{order:2;margin-inline:0;justify-self:end;width:100%;max-height:calc(100dvh - var(--nav-h) - 72px);aspect-ratio:4/5}
-  .hero__fig::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1.5px solid var(--line);border-bottom:0;border-radius:999px 999px 0 0}
-  .hero__media{height:100%;width:100%}
-  .hero__media::after{display:none}
-  .hero__copy{order:1;margin-top:0;padding-bottom:6px}
-  .hero__eyebrow{color:var(--accent-text);opacity:1}
-  .hero h1{color:var(--fg);font-size:clamp(3.6rem,2rem + 4.6vw,6.2rem)}
-  .hero__sub{margin-top:1.5rem}
-}
-
-/* ---- BARRA DE RESERVA ---- */
-.bar{position:relative;margin-top:1.8rem;display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);box-shadow:var(--shadow)}
-.bar__field{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px 18px;border:0;background:none;border-radius:var(--r-panel);min-height:64px;justify-content:center;transition:background .2s}
-.bar__field:hover{background:var(--surface-2)}
-.bar__field + .bar__field{border-top:1px solid var(--line);border-radius:0}
-.bar__label{font-size:var(--s-1);font-weight:600;color:var(--fg-3);display:flex;gap:8px;align-items:center}
-.bar__val{font-weight:600;font-size:var(--s0)}
-.bar__val.is-empty{color:var(--fg-2);font-weight:500}
-.bar .btn{margin:10px;min-height:52px}
-@media (min-width:640px){
-  .bar{grid-template-columns:1.5fr 1fr auto;align-items:center}
-  .bar__field + .bar__field{border-top:0;border-left:1px solid var(--line)}
-  .bar__field{border-radius:var(--r-panel) 0 0 var(--r-panel)}
-}
-.pop{position:absolute;z-index:45;left:0;right:0;top:calc(100% + 10px);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);box-shadow:var(--shadow);padding:18px}
-@media (min-width:900px){.pop{right:auto;width:min(680px,92vw)}}
-@media (max-width:639px){.pop{position:fixed;left:0;right:0;top:auto;bottom:0;border-radius:var(--r-panel) var(--r-panel) 0 0;max-height:86dvh;overflow:auto;padding-bottom:calc(18px + env(safe-area-inset-bottom))}}
-.pop__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-.scrim{position:fixed;inset:0;background:rgb(8 23 31 / .45);z-index:44}
-
-/* ---- CASA ---- */
-.casa__grid{display:grid;gap:clamp(40px,6vw,88px)}
-.casa h2{max-width:14ch}
-.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,28px);align-items:end}
-.arches figure{margin:0}
-.arches .ph{width:100%}
-.arches figure:nth-child(1) .ph{aspect-ratio:3/4}
-.arches figure:nth-child(2) .ph{aspect-ratio:3/5}
-.arches figure:nth-child(3) .ph{aspect-ratio:3/3.6}
-.arches figcaption{margin-top:12px;font-weight:500;color:var(--fg-2)}
-@media (min-width:900px){
-  .casa__grid{grid-template-columns:5fr 7fr;align-items:end}
-}
+/* ---- secciones por hora: el campo siguiente entra como un iris desde la derecha ---- */
+.hour{position:relative;isolation:isolate;color:var(--fg);padding:clamp(72px,11vw,170px) 0}
+.hour.hero{padding:clamp(10px,1.6vw,24px) var(--gr) var(--gutter) var(--gl)}
+.hour:not(.hero){background:var(--bg)}
+.hour.iris{background:var(--prev)}
+.iris::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--bg)}
 @supports (animation-timeline:view()){
   @media (prefers-reduced-motion:no-preference){
-    .arches figure:nth-child(odd){animation:drift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    .arches figure:nth-child(even){animation:drift2 linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-    @keyframes drift{from{transform:translateY(32px)}to{transform:translateY(-32px)}}
-    @keyframes drift2{from{transform:translateY(-12px)}to{transform:translateY(20px)}}
-    .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
-    @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    .iris::before{animation:iris linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+    @keyframes iris{from{clip-path:circle(0% at 66% 0%)}to{clip-path:circle(145% at 66% 0%)}}
   }
 }
+.hour h2{font-size:var(--s2);font-weight:800;max-width:14ch;overflow-wrap:break-word}
+@media (min-width:700px){.hour h2{font-stretch:125%;max-width:22ch}}
+.hour .sub{font-size:var(--s1);color:var(--fg2);margin-top:18px;max-width:30ch;line-height:1.25}
 
-/* ---- HABITACIONES (carril con snap, sin JS para deslizar) ---- */
-.rooms__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
-.rooms__nav{display:none;gap:8px}
-@media (min-width:900px){.rooms__nav{display:flex}}
-.rooms__nav.no-ov{display:none!important}
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,340px);gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:36px var(--gutter) 12px;margin-inline:calc(var(--gutter) * -1);scroll-padding-inline:var(--gutter);scrollbar-width:none;overscroll-behavior-x:contain}
-.rail::-webkit-scrollbar{display:none}
-@media (min-width:900px){.rail{grid-auto-columns:minmax(280px,calc((100% - 3 * clamp(14px,2vw,28px)) / 4))}}
-.room{scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;text-decoration:none}
-.room .ph{aspect-ratio:3/4;transition:transform .6s var(--ease)}
-.room:hover .ph{transform:translateY(-6px)}
-.room h3{font-size:var(--s2)}
-.room__meta{color:var(--fg-2);font-size:var(--s0);margin-top:6px}
-.room__price{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
-.room__price div{display:grid;gap:2px}
-.room__price small{color:var(--fg-2);font-size:var(--s-1)}
-.room__price strong{font:600 var(--s1)/1 var(--f-display);white-space:nowrap}
-.go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);transition:background .25s,color .25s,border-color .25s,transform .35s var(--ease)}
-.room:hover .go{background:var(--accent);color:var(--on-accent);border-color:var(--accent);transform:translateX(3px)}
-
-/* ---- DIA (bento: 4 momentos, 4 celdas) ---- */
-.day__grid{display:grid;gap:14px;margin-top:clamp(36px,5vw,64px)}
-.tile{position:relative;border-radius:var(--r-panel);padding:clamp(20px,2.4vw,32px);min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
-.tile h3{font-size:var(--s2)}
-.tile p{margin-top:10px;max-width:34ch}
-.tile--img{color:var(--on-media);min-height:380px}
-.tile--img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,23,31,0) 35%,rgba(8,23,31,.78) 100%);z-index:-1}
-.tile--img .ph{position:absolute;inset:0;z-index:-2}
-.tile--accent{background:var(--accent);color:var(--on-accent)}
-.tile--soft{background:var(--surface-2)}
-.tile--night{background:#0C1E2B;color:#E8F0EF;min-height:240px}
-.tile--night::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 90% at 85% 120%,rgba(255,122,89,.5) 0%,rgba(255,122,89,0) 60%);z-index:-1}
-.tile--a h3{font-size:var(--s3)}
-.tile--a p{font-size:var(--s1);max-width:28ch}
-@media (min-width:900px){
-  .day__grid{grid-template-columns:repeat(4,1fr);grid-template-areas:"a a b c" "a a d d"}
-  .tile--a{grid-area:a;min-height:520px}.tile--b{grid-area:b}.tile--c{grid-area:c}.tile--d{grid-area:d}
-}
-
-/* ---- CIUDAD (mapa + panel) ---- */
-.city__grid{display:grid;gap:24px;margin-top:clamp(36px,5vw,64px)}
-.map{position:relative;border-radius:var(--r-panel);overflow:hidden;background:color-mix(in oklab,var(--sea) 22%,var(--surface-2));aspect-ratio:4/3;border:1px solid var(--line)}
-.map svg.base{position:absolute;inset:0;width:100%;height:100%}
-.pin{position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;min-width:44px;min-height:44px;background:none;border:0;padding:0}
-.pin__dot{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--surface);color:var(--fg);border:1.5px solid var(--fg);transition:transform .35s var(--ease),background .25s,color .25s}
-.pin__dot .ic{width:16px;height:16px}
-.pin:hover .pin__dot{transform:scale(1.12)}
-.pin[aria-pressed="true"] .pin__dot{background:var(--fg);color:var(--bg);transform:scale(1.2)}
-.pin__name{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:-4px;font-size:.72rem;font-weight:600;white-space:nowrap;color:var(--fg);text-shadow:0 0 6px var(--surface),0 0 6px var(--surface),0 0 3px var(--surface);pointer-events:none}
-.pin[data-side=left] .pin__name{top:50%;right:100%;left:auto;transform:translateY(-50%);margin:0 -2px 0 0}
-.pin[data-side=right] .pin__name{top:50%;left:100%;transform:translateY(-50%);margin:0 0 0 -2px}
-.pin[data-side=top] .pin__name{top:auto;bottom:100%;margin:0 0 -4px}
-.pin--hotel .pin__dot{width:38px;height:38px;background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-.pin--hotel .pin__dot .ic{width:20px;height:20px}
-.pin--hotel{z-index:2}
+/* ---- filas con filete (habitaciones) ---- */
+.rows{margin-top:clamp(32px,5vw,72px);border-top:1.5px solid var(--fg);list-style:none;padding:0}
+.row{--w:100%;display:grid;grid-template-columns:7.5rem minmax(0,3.4fr) minmax(0,1.6fr) minmax(7.6rem,1.1fr) 44px;gap:clamp(8px,1.6vw,26px);align-items:center;padding:clamp(14px,2vw,26px) 0;border-bottom:1.5px solid var(--fg);text-decoration:none;color:inherit}
+.row .hr{font-weight:600;display:flex;align-items:center;gap:10px}
+.row .dot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--fg);flex:none}
+.row .nm{font-family:var(--f-display);font-weight:700;font-stretch:var(--w);font-size:var(--s3);line-height:.92;letter-spacing:-.025em;white-space:nowrap;transition:font-stretch .6s var(--ease-out)}
+.row[data-room="mediodia"]{--w:122%}.row[data-room="atardecer"]{--w:110%}
+@media (min-width:900px) and (max-width:1099px){.row[data-room="mediodia"],.row[data-room="atardecer"]{--w:100%}}
+.row .ds{color:var(--fg2);line-height:1.3;text-wrap:pretty}
+.row .pr{font-weight:600;line-height:1.2}
+.row .pr .amt{white-space:nowrap}
+.row .pr small{display:block;color:var(--fg2);font-weight:500;font-size:var(--s-1);white-space:nowrap}
+.row .go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;transition:background-color .3s,color .3s,translate .4s var(--ease-out)}
+.row:hover .go,.row:focus-visible .go{background:var(--fg);color:var(--bg);translate:4px 0}
+@media (hover:hover) and (min-width:1400px){.row:hover .nm,.row:focus-visible .nm{font-stretch:122%}}
+@media (hover:hover) and (min-width:900px) and (max-width:1099px){.row:hover .nm,.row:focus-visible .nm{font-stretch:calc(var(--w) + 2%)}}
+@media (hover:hover) and (min-width:1100px) and (max-width:1399px){.row:hover .nm,.row:focus-visible .nm{font-stretch:calc(var(--w) + 4%)}}
+@media (hover:hover) and (min-width:900px) and (max-width:1399px){.row[data-room="atardecer"]:hover .nm,.row[data-room="atardecer"]:focus-visible .nm{font-stretch:var(--w)}}
 @media (max-width:899px){
-  .pin__name{display:none}
-  .pin[aria-pressed="true"] .pin__name,.pin--hotel .pin__name{display:block}
-  .pin__dot{width:24px;height:24px}.pin__dot .ic{width:14px;height:14px}
-  .pin--hotel .pin__dot{width:30px;height:30px}.pin--hotel .pin__dot .ic{width:17px;height:17px}
-}
-.route{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:3 7;stroke-linecap:round}
-.route.is-draw{animation:dash .9s var(--ease) both}
-@keyframes dash{from{stroke-dashoffset:140;opacity:0}to{stroke-dashoffset:0;opacity:1}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;min-height:260px}
-.panel h3{font-size:var(--s2)}
-.panel__mode{display:inline-flex;align-items:center;gap:8px;color:var(--fg-2);font-weight:500}
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
-.chips::-webkit-scrollbar{display:none}
-.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;min-height:44px;padding:0 16px;white-space:nowrap;font-weight:500;transition:border-color .2s,background .2s,color .2s}
-.chip:hover{border-color:var(--fg)}
-.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-@media (min-width:900px){
-  .city__grid{grid-template-columns:7fr 5fr;align-items:start}
-  .chips{margin:0;padding:0;flex-wrap:wrap}
-  .city__side{display:flex;flex-direction:column;gap:18px}
-  .panel{flex:1}
+  .row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"hr go" "nm nm" "ds pr";row-gap:8px}
+  .row .nm{white-space:normal;overflow-wrap:anywhere}
+  .row .hr{grid-area:hr}.row .nm{grid-area:nm}.row .ds{grid-area:ds}.row .pr{grid-area:pr;text-align:right}.row .go{grid-area:go}
 }
 
-/* ---- DISPONIBILIDAD ---- */
-.avail__grid{display:grid;gap:clamp(28px,5vw,72px);margin-top:clamp(32px,4vw,56px)}
-@media (min-width:1000px){.avail__grid{grid-template-columns:4fr 8fr;align-items:start}}
-.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:var(--s-1);color:var(--fg-2)}
-.legend span{display:inline-flex;align-items:center;gap:8px}
-.sw{width:18px;height:18px;border-radius:6px;border:1px solid var(--line)}
-.sw--sel{background:var(--accent);border-color:var(--accent)}
-.sw--out{background:var(--surface-2);position:relative}
-.sw--out::after{content:"";position:absolute;left:3px;right:3px;top:50%;border-top:1.5px solid var(--fg-3)}
-.sw--last{border-color:var(--accent-text);background:transparent;border-width:2px}
-.summary{margin-top:24px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);display:grid;gap:4px}
-.summary strong{font:600 var(--s1)/1.2 var(--f-display)}
-.summary .btn{margin-top:14px}
+/* ---- la ciudad: lista y plano de lineas ---- */
+.zona{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(32px,5vw,64px)}
+@media (min-width:900px){.zona{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}}
+.zl{list-style:none;padding:0;margin:0;border-top:1.5px solid var(--fg)}
+.zl button{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;border-bottom:1.5px solid var(--fg);padding:14px 0;min-height:56px;font:700 clamp(1.3rem,1rem + 1vw,1.9rem)/1.05 var(--f-display);letter-spacing:-.02em;font-stretch:100%;transition:font-stretch .5s var(--ease-out),padding .4s var(--ease-out)}
+.zl button span{font:500 var(--s-1)/1 var(--f-text);letter-spacing:0;color:var(--fg2);text-align:right}
+.zl button[aria-pressed="true"]{font-stretch:112%;padding-left:12px}
+.zl button[aria-pressed="true"] span{color:var(--fg)}
+.map{position:relative;aspect-ratio:4/3;border:1.5px solid var(--fg);overflow:clip}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .ln{fill:none;stroke:var(--fg);stroke-width:1.6;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.map .ln--soft{stroke-width:1;opacity:.55}
+.map .ln--dash{stroke-dasharray:6 6}
+.route{fill:none;stroke:var(--fg);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;vector-effect:non-scaling-stroke}
+.route.is-draw{animation:draw 1s var(--ease-out) both}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.pin{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);min-width:44px;min-height:44px;display:grid;place-items:center;background:none;border:0;padding:0}
+.pin i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--fg);background:var(--bg);transition:transform .35s var(--ease-out),background-color .25s}
+.pin[aria-pressed="true"] i{background:var(--fg);transform:scale(1.6)}
+.pin--hotel{pointer-events:none}
+.pin--hotel i{width:22px;height:22px;background:var(--next);border-width:2px}
+.pin b{position:absolute;top:100%;left:50%;translate:-50% -6px;font:600 .78rem/1 var(--f-text);white-space:nowrap;display:none}
+.pin[data-side=left] b{top:50%;left:auto;right:100%;translate:4px -50%}
+.pin[data-side=right] b{top:50%;left:100%;translate:-4px -50%}
+.pin[data-side=top] b{top:auto;bottom:100%;translate:-50% 6px}
+.pin[aria-pressed="true"] b,.pin--hotel b{display:block}
+.panel{margin-top:18px;max-width:46ch}
+.panel p{font-size:var(--s1);line-height:1.25}
+.panel .mode{display:inline-flex;gap:8px;align-items:center;color:var(--fg2);margin-top:10px;font-weight:500}
+.lead-note{font-size:var(--s0);font-weight:600;margin:0 0 18px}
+.note{font-size:var(--s-1);color:var(--fg2);margin-top:14px}
 
-/* ---- CALENDARIO ---- */
-.cal{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(14px,2vw,24px)}
-.pop .cal{border:0;padding:0;background:none}
-.cal__top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
-.cal__months{display:grid;gap:22px}
-@media (min-width:760px){.cal[data-months="2"] .cal__months{grid-template-columns:1fr 1fr;gap:36px}}
-.cal__title{font:600 var(--s1)/1 var(--f-display);text-align:center;min-height:44px;display:grid;place-items:center}
-.cal__dow,.cal__days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px 0}
-.cal__dow span{font-size:.72rem;font-weight:600;color:var(--fg-3);text-align:center;padding:6px 0;text-transform:uppercase;letter-spacing:.06em}
-.day{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:50px;border:0;background:none;border-radius:0;font-weight:600;line-height:1.1}
-.day small{font-size:.62rem;font-weight:500;color:var(--fg-3)}
-.day:not([disabled]):hover::before{background:var(--surface-2)}
-.day::before{content:"";position:absolute;inset:2px 1px;border-radius:999px;z-index:0;transition:background .15s}
-.day>*{position:relative;z-index:1}
-.day.is-last::before{box-shadow:inset 0 0 0 2px var(--accent-text)}
-.day.is-in{background:color-mix(in oklab,var(--accent) 14%,transparent)}
-.day.is-in::before{background:transparent}
-.day.is-start{border-radius:999px 0 0 999px;background:color-mix(in oklab,var(--accent) 14%,transparent)}
-.day.is-end{border-radius:0 999px 999px 0;background:color-mix(in oklab,var(--accent) 14%,transparent)}
-.day.is-start.is-end{border-radius:999px}
-.day.is-start::before,.day.is-end::before{background:var(--accent);box-shadow:none}
-.day.is-start,.day.is-end{color:var(--on-accent)}
-.day.is-start small,.day.is-end small{color:var(--on-accent);opacity:.9}
-.day[disabled]{color:var(--fg-3);cursor:not-allowed}
-.day.is-out{text-decoration:line-through;text-decoration-thickness:1.5px}
-.day.is-past{opacity:.45}
-.day.is-today span{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+/* ---- calendario en circulos ---- */
+.cal{--cell:clamp(42px,5.4vw,66px)}
+.cal__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.cal__top .iconb{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:none;display:grid;place-items:center}
+.cal__top .iconb[aria-disabled="true"]{opacity:.4;cursor:not-allowed}
+.cal__months{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,4vw,56px)}
+@media (min-width:900px){.cal[data-months="2"] .cal__months{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.cal__title{font:800 var(--s1)/1 var(--f-display);margin-bottom:10px}
+.cal__dow,.cal__days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.cal__dow span{font-size:.75rem;font-weight:600;text-align:center;padding:6px 0;color:var(--fg2);text-transform:uppercase;letter-spacing:.08em}
+.day{position:relative;display:grid;place-items:center;width:100%;min-width:0;height:var(--cell);border:0;background:none;font:600 1rem/1 var(--f-text);font-variant-numeric:tabular-nums;color:inherit;padding:0}
+.day::before{content:"";position:absolute;left:50%;top:50%;width:min(78%,calc(var(--cell) * .78));aspect-ratio:1;translate:-50% -50%;border-radius:50%;border:1.5px solid currentColor;opacity:.7;transition:background-color .2s,opacity .2s}
+.day:focus-visible{outline-offset:-3px;border-radius:12px}
+.day span{position:relative;z-index:1}
+.day small{position:absolute;bottom:2%;left:0;right:0;text-align:center;font-size:.625rem;font-weight:500;opacity:0;z-index:1}
+.day:not([aria-disabled="true"]):hover::before{opacity:1}
+.day:hover small,.day:focus-visible small{opacity:1}
+.day.is-start small,.day.is-end small{display:none}
+.day.is-past{opacity:.35}.day.is-past::before{display:none}
+.day.is-out span{text-decoration:line-through;text-decoration-thickness:1.5px}
+.day.is-out::before{opacity:.75;background:linear-gradient(to top right,transparent calc(50% - .8px),currentColor 50%,transparent calc(50% + .8px))}
+.day.is-last::before{border-style:dotted;border-width:2.5px;opacity:1}
+.day.is-today span{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.day.is-in{background:linear-gradient(color-mix(in oklab,var(--fg) 10%,transparent),color-mix(in oklab,var(--fg) 10%,transparent)) center/100% 62% no-repeat}
+.day.is-start{background:linear-gradient(color-mix(in oklab,var(--fg) 10%,transparent),color-mix(in oklab,var(--fg) 10%,transparent)) right center/50% 62% no-repeat}
+.day.is-end{background:linear-gradient(color-mix(in oklab,var(--fg) 10%,transparent),color-mix(in oklab,var(--fg) 10%,transparent)) left center/50% 62% no-repeat}
+.day.is-start.is-end{background:none}
+.day.is-start::before,.day.is-end::before{background:var(--fg);opacity:1;width:min(88%,calc(var(--cell) * .88))}
+.day.is-start,.day.is-end{color:var(--bg)}
 .day--blank{visibility:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0;margin:22px 0 0;font-size:var(--s-1);color:var(--fg2)}
+.legend li{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:16px;height:16px;border-radius:50%;border:1.5px solid currentColor;display:inline-block}
+.legend .l-sel{background:var(--fg);border-color:var(--fg)}
+.legend .l-last{border-style:dotted;border-width:2.5px}
+.legend .l-out{background:linear-gradient(to top right,transparent calc(50% - .8px),currentColor 50%,transparent calc(50% + .8px))}
+.resv{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(30px,5vw,64px)}
+@media (min-width:1000px){.resv{grid-template-columns:minmax(0,4fr) minmax(0,8fr);align-items:start}}
+.big{font:800 clamp(2rem,1.2rem + 2.6vw,3.6rem)/.95 var(--f-display);letter-spacing:-.03em}
+.sumbox p{margin-top:8px}.sumbox .pill{margin-top:22px}
 
-/* ---- FOOTER ---- */
-.foot{border-top:1px solid var(--line);padding-block:clamp(48px,7vw,96px) 32px}
-.foot__cols{display:grid;gap:36px;grid-template-columns:repeat(2,minmax(0,1fr))}
+/* ---- pie: el nombre cortado por el borde ---- */
+.foot{background:var(--b4);color:var(--f4);--bg:var(--b4);--fg:var(--f4);--fg2:var(--g4);padding:clamp(56px,8vw,110px) 0 0;overflow:clip}
+.foot :focus-visible{outline-color:var(--f4)}
+.foot__cols{display:grid;gap:30px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .foot__cols>div:first-child,.foot__cols>div:last-child{grid-column:1/-1}
-@media (min-width:900px){.foot__cols{grid-template-columns:1.3fr 1fr 1fr 1.6fr}.foot__cols>div:first-child,.foot__cols>div:last-child{grid-column:auto}}
-.foot h4{font:600 var(--s0)/1 var(--f-body);color:var(--fg-3);margin-bottom:14px;letter-spacing:0}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.foot li a,.foot li button{display:inline-flex;align-items:center;min-height:36px;overflow-wrap:anywhere;color:var(--fg);text-decoration:none;background:none;border:0;padding:0;font-weight:500;text-align:left}
-.foot li a:hover,.foot li button:hover{color:var(--accent-text)}
-.arcade{display:flex;gap:clamp(8px,1.6vw,22px);align-items:flex-end;margin-top:clamp(40px,6vw,88px);height:clamp(120px,16vw,230px)}
-.arcade i{flex:1;height:100%;border:1.5px solid var(--line);border-bottom:0;border-radius:999px 999px 0 0;position:relative;overflow:hidden}
-.arcade i:nth-child(odd){height:78%}
-.arcade i.lit{height:100%;border-color:transparent;background:radial-gradient(70% 40% at 50% 80%,#FFD3A1 0%,rgba(255,190,140,0) 70%),linear-gradient(180deg,#1E3F57 0%,#5C7E91 34%,#E7A58A 70%,#F6C7A0 100%)}
-.foot__legal{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);color:var(--fg-2);font-size:var(--s-1);display:grid;gap:6px;max-width:80ch}
+@media (min-width:900px){.foot__cols{grid-template-columns:1.2fr 1fr 1fr 1.7fr}.foot__cols>div:first-child,.foot__cols>div:last-child{grid-column:auto}}
+.foot .fh{font:600 var(--s-1)/1 var(--f-text);color:var(--fg2);margin:0 0 12px;letter-spacing:.04em}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.foot li a,.foot li button{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:none;border:0;padding:0;text-decoration:none;font-weight:500;text-align:left;overflow-wrap:anywhere}
+.foot li .ex{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;overflow-wrap:anywhere}
+.foot li a:hover,.foot li button:hover{text-decoration:underline;text-underline-offset:4px}
+.foot__legal{margin-top:34px;grid-template-columns:minmax(0,1fr);padding-top:18px;border-top:1.5px solid var(--fg);color:var(--fg2);font-size:var(--s-1);display:grid;gap:6px;max-width:82ch}
+.foot__legal strong{color:var(--fg)}
+.foot__mark{font:800 min(21.4vw,36rem)/.78 var(--f-display);text-transform:uppercase;letter-spacing:0;margin:clamp(30px,5vw,70px) 0 -.2em 0;display:flex;justify-content:space-between;align-items:flex-end;color:var(--f4);user-select:none}
+.foot__mark i{display:block;font-style:normal}
+.foot__mark .sun{flex:none;width:.69em;height:.69em;border-radius:50%;border:.05em solid var(--f4);background:var(--b3);margin-bottom:.095em}
 
-/* ---- DOCK MOVIL ---- */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:42;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom));background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .45s var(--ease)}
-.dock.is-on{transform:none}
-.dock__t{display:grid;line-height:1.25}
-.dock__t strong{font:600 var(--s1)/1.1 var(--f-display)}
-.dock__t span{font-size:var(--s-1);color:var(--fg-2)}
+/* ---- dock movil ---- */
+.dock{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));translate:-50% calc(100% + 14px + env(safe-area-inset-bottom,0px) + 12px);visibility:hidden;z-index:42;transition:translate .5s var(--ease-out),visibility 0s .5s}
+.dock.is-on{translate:-50% 0;visibility:visible;transition:translate .5s var(--ease-out)}
+.dock .pill{min-height:52px;padding:0 1.8rem;box-shadow:0 10px 30px -12px rgb(0 0 0 / .45)}
 @media (min-width:900px){.dock{display:none}}
-body{padding-bottom:0}
-@media (max-width:899px){body[data-screen="home"],body[data-screen="room"]{padding-bottom:78px}}
-body[data-screen="book"] .dock{display:none}
+@media (max-width:899px){html{scroll-padding-bottom:calc(52px + 14px + env(safe-area-inset-bottom,0px) + 12px)}}
+@media (max-height:500px){.dock{display:none}}
 
-/* ============ PAGINA DE HABITACION ============ */
-.rm{padding-top:clamp(12px,2vw,28px);padding-bottom:clamp(60px,8vw,120px)}
-.crumbs{display:flex;gap:8px;align-items:center;color:var(--fg-2);font-size:var(--s-1);margin-bottom:18px}
-.crumbs a{text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px}
-.rm__grid{display:grid;gap:clamp(28px,4vw,56px)}
-@media (min-width:1000px){.rm__grid{grid-template-columns:7fr 5fr;align-items:start}}
-.gal{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
-.gal .ph:first-child{grid-column:1/-1;aspect-ratio:4/5}
-.gal .ph:not(:first-child){aspect-ratio:1/1}
-@media (min-width:700px){
-  .gal{grid-template-columns:2fr 1fr;grid-template-rows:auto auto}
-  .gal .ph:first-child{grid-column:1;grid-row:1/3;aspect-ratio:auto;min-height:620px}
-  .gal .ph:not(:first-child){aspect-ratio:auto;min-height:300px}
-  .gal .ph:nth-child(4){display:none}
-}
-.rm h1{font-size:var(--s3);margin-bottom:1rem}
-.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0;color:var(--fg-2)}
-.facts span{display:inline-flex;align-items:center;gap:8px;font-weight:500}
-.rm__text{max-width:56ch;color:var(--fg-2);font-size:var(--s1);line-height:1.55}
-.amen{display:grid;gap:10px;margin-top:36px;grid-template-columns:1fr 1fr}
-.amen h3{font:600 var(--s0)/1.2 var(--f-body);grid-column:1/-1;color:var(--fg-3);margin-top:10px}
-.amen li{list-style:none;display:flex;gap:10px;align-items:center}
-.amen ul{display:contents;margin:0;padding:0}
-details{border-top:1px solid var(--line);padding:2px 0}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{display:flex;justify-content:space-between;align-items:center;min-height:56px;font-weight:600;cursor:pointer;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary .ic{transition:transform .3s var(--ease)}
-details[open] summary .ic{transform:rotate(45deg)}
-details p{color:var(--fg-2);padding-bottom:16px;max-width:60ch}
-.stick{position:static;display:grid;gap:16px}
-@media (min-width:1000px){.stick{position:sticky;top:calc(var(--nav-h) + 20px)}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(18px,2vw,26px);box-shadow:var(--shadow)}
-.card h2,.card h3{font-size:var(--s2)}
-.price{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
-.price strong{font:600 var(--s2)/1 var(--f-display)}
-.price span{color:var(--fg-2)}
-
-/* ============ FLUJO DE RESERVA ============ */
-.flow{padding-block:clamp(20px,3vw,40px) clamp(60px,8vw,120px)}
-.flow h1{font-size:var(--s3);margin-bottom:6px}
-.steps{display:flex;gap:0;margin:22px 0 32px;padding:0;list-style:none;counter-reset:s}
-.steps li{flex:1;display:flex;align-items:center;gap:10px;font-weight:500;color:var(--fg-3);position:relative;padding-right:10px;min-width:0}
-.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);font-size:.85rem;font-weight:600;background:var(--bg)}
-.steps li span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.steps li:not(:last-child)::after{content:"";flex:1;height:1.5px;background:var(--line);margin-left:6px;min-width:12px}
-.steps li[aria-current="step"]{color:var(--fg)}
-.steps li[aria-current="step"]::before{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.steps li.is-done{color:var(--fg-2)}
-.steps li.is-done::before{content:"\2713";background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-@media (max-width:560px){.steps li span{display:none}.steps li[aria-current="step"] span{display:block}.steps li:not(:last-child)::after{min-width:8px}}
-.flow__grid{display:grid;gap:28px}
-@media (min-width:1000px){.flow__grid{grid-template-columns:7fr 4fr;gap:56px;align-items:start}}
-.opt{display:grid;gap:12px}
-.opt label{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-panel);background:var(--surface);cursor:pointer;transition:border-color .2s}
-.opt label:hover{border-color:var(--fg-3)}
-.opt input{width:20px;height:20px;accent-color:var(--accent)}
-.opt label:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.opt .thumb{display:none}
-@media (min-width:560px){.opt label{grid-template-columns:auto 84px 1fr auto}.opt .thumb{display:block;width:84px;height:84px;border-radius:12px}}
-.opt b{display:block;font:600 var(--s1)/1.2 var(--f-display)}
-.opt small{color:var(--fg-2);font-size:var(--s-1)}
-.opt .tot{text-align:right;line-height:1.25}
-.opt .tot strong{display:block}
-.opt label.is-na{opacity:.55;cursor:not-allowed}
-.field{display:grid;gap:8px}
-.field label{font-weight:600;font-size:var(--s-1);color:var(--fg-2)}
-.field input,.field select{min-height:52px;border:1.5px solid var(--fg-3);border-radius:var(--r-panel);background:var(--surface);padding:0 16px;width:100%}
-.field input::placeholder{color:var(--fg-3)}
-.field small{color:var(--fg-2);font-size:var(--s-1)}
-.form{display:grid;gap:18px}
-.form--2{grid-template-columns:1fr}
-@media (min-width:640px){.form--2{grid-template-columns:1fr 1fr}.form .full{grid-column:1/-1}}
-.check{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;color:var(--fg-2)}
-.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--accent)}
-.tabs{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:4px;margin-bottom:22px}
-.tabs button{border:0;background:none;min-height:44px;padding:0 20px;border-radius:999px;font-weight:600;color:var(--fg-2)}
-.tabs button[aria-selected="true"]{background:var(--bg);color:var(--fg);box-shadow:0 1px 0 var(--line)}
-.stepper{display:inline-flex;align-items:center;gap:12px}
-.stepper button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:transparent;display:grid;place-items:center}
-.stepper output{min-width:1.5ch;text-align:center;font-weight:600;font-size:var(--s1)}
-.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.sum dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:10px 16px}
-.sum dt{color:var(--fg-2)}
-.sum dd{margin:0;font-weight:600;text-align:right}
-.sum hr{grid-column:1/-1;border:0;border-top:1px solid var(--line);margin:4px 0;width:100%}
-.stop{border:2px solid var(--accent);background:color-mix(in oklab,var(--accent) 8%,var(--surface));border-radius:var(--r-panel);padding:clamp(18px,2.4vw,28px);display:grid;gap:12px}
-.stop h2{font-size:var(--s2)}
-.stop .ic{width:34px;height:34px;color:var(--accent-text)}
-.methods{display:grid;gap:10px;margin-top:20px;opacity:.9}
-.methods div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1.5px dashed var(--line);border-radius:var(--r-panel);color:var(--fg-3);background:transparent}
-.tag{display:inline-flex;align-items:center;gap:8px;font-size:var(--s-1);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);border-radius:999px;padding:6px 14px}
-.done h2{font-size:var(--s3);margin:16px 0 8px}
-.tline{display:grid;gap:0;margin:28px 0;padding:0;list-style:none}
-.tline li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding-bottom:22px;position:relative}
-.tline li::before{content:"";width:14px;height:14px;border-radius:50%;border:2px solid var(--line);margin:5px auto 0;background:var(--bg);position:relative;z-index:1}
-.tline li::after{content:"";position:absolute;left:13px;top:22px;bottom:0;border-left:2px solid var(--line)}
-.tline li:last-child::after{display:none}
-.tline li.on::before{background:var(--accent);border-color:var(--accent)}
-.tline strong{display:block}
-.tline span{color:var(--fg-2);font-size:var(--s-1)}
-.notify{display:grid;gap:18px}
-@media (min-width:900px){.notify{grid-template-columns:1fr 1fr}}
-.msg{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:18px;display:grid;gap:12px;align-content:start}
-.msg h3{font:600 var(--s0)/1.2 var(--f-body);display:flex;gap:10px;align-items:center}
-.bubble{background:color-mix(in oklab,var(--accent) 10%,var(--bg));border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:.95rem;line-height:1.5;max-width:34ch}
-.mail{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);font-size:.95rem}
-.mail b{display:block;margin-bottom:6px}
-.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:none;border:0;font-weight:600;padding:0;margin-bottom:6px}
-
-/* ============ DIALOGOS ============ */
-dialog{border:1px solid var(--line);border-radius:var(--r-panel);background:var(--surface);color:var(--fg);padding:clamp(20px,3vw,32px);width:min(480px,calc(100vw - 32px));box-shadow:var(--shadow)}
-dialog::backdrop{background:rgb(8 23 31 / .5)}
-dialog h2{font-size:var(--s2);margin-bottom:12px}
-dialog ul{padding-left:1.2em;color:var(--fg-2);display:grid;gap:8px;margin:14px 0 22px}
-.dlg-x{position:absolute;right:12px;top:12px}
-
-/* view transitions entre pantallas */
+/* ---- hojas (calendario y menu) con iris desde el boton ---- */
+dialog.sheet{border:0;padding:0;margin:0;max-width:none;max-height:none;width:100%;height:100%;background:var(--b4);color:var(--f4);--bg:var(--b4);--fg:var(--f4);--fg2:var(--g4)}
+dialog.sheet::backdrop{background:var(--b4)}
+.sheet--sm{height:auto;max-height:100%;margin:auto;width:min(520px,calc(100vw - 32px))}
+.sheet__in{height:100%;overflow:auto;padding:max(var(--gutter),var(--sat)) var(--gr) max(var(--gutter),env(safe-area-inset-bottom,0px)) var(--gl);display:flex;flex-direction:column;gap:clamp(18px,3vw,36px)}
+.sheet--sm .sheet__in{height:auto}
+.sheet__top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:2;background:var(--bg)}
+.sheet__sum{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.big--sm{font-size:clamp(1.6rem,1rem + 2vw,2.6rem)}
+.is-opening{pointer-events:none}
+.sheet h2{font-size:var(--s2);font-weight:800}
+.menu a{overflow-wrap:anywhere;font:800 clamp(2rem,min(8vw,13vh),7.5rem)/.95 var(--f-display);letter-spacing:-.03em;text-decoration:none;display:block;padding:6px 0;font-stretch:100%;transition:font-stretch .5s var(--ease-out),translate .5s var(--ease-out)}
+.menu a:hover,.menu a:focus-visible{font-stretch:125%;translate:10px 0}
+.menu .push{margin-top:auto}
 @media (prefers-reduced-motion:no-preference){
-  ::view-transition-old(root){animation:vt-out .22s ease both}
-  ::view-transition-new(root){animation:vt-in .45s var(--ease) both}
-  @keyframes vt-out{to{opacity:0}}
-  @keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+  dialog.sheet[open]{animation:irisin .8s var(--ease) both}
+  @keyframes irisin{from{clip-path:circle(0px at var(--ox,50%) var(--oy,50%))}to{clip-path:circle(150vmax at var(--ox,50%) var(--oy,50%))}}
+  ::view-transition-old(root){animation:none}
+  ::view-transition-new(root){animation:vtiris .8s var(--ease) both}
+  @keyframes vtiris{from{clip-path:circle(0px at var(--vx,50%) var(--vy,50%))}to{clip-path:circle(150vmax at var(--vx,50%) var(--vy,50%))}}
 }
+
+/* ---- pagina de habitacion ---- */
+.rm{padding:clamp(18px,3vw,40px) 0 clamp(60px,9vw,130px)}
+.rm>.wrap{container-type:inline-size}
+.rm__name{font:800 calc(97cqw / var(--em,4.4))/.8 var(--f-display);letter-spacing:-.03em;text-transform:uppercase;margin:clamp(18px,3vw,40px) 0 0 -.03em;font-stretch:var(--w,100%);white-space:nowrap}
+.rm__name[data-room="alba"]{--w:125%;--em:3.37}
+.rm__name[data-room="mediodia"]{--w:100%;--em:4.84}
+.rm__name[data-room="atardecer"]{--w:100%;--em:5.67}
+.rm__name[data-room="noche"]{--w:125%;--em:4.4}
+@supports not (font-size:1cqw){.rm__name{font-size:clamp(3rem,15vw,10rem);white-space:normal;overflow-wrap:anywhere}}
+.rm__hr{display:flex;align-items:center;gap:12px;font-weight:600;margin-top:clamp(22px,4vw,56px)}
+.rm__hr .dot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--fg)}
+.rm__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(28px,5vw,64px);padding-top:18px;border-top:1.5px solid var(--fg)}
+@media (min-width:900px){.rm__grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}}
+/* provisional hasta que lleguen las fotos: un glifo plano por hora (sol bajo, alto, poniente y creciente) */
+.win{position:relative;aspect-ratio:1;border-radius:50%;border:1.5px solid var(--fg);display:grid;place-items:center;overflow:hidden;background:var(--next);container-type:inline-size}
+.win::after{content:"";width:34%;aspect-ratio:1;border-radius:50%;background:var(--fg);translate:var(--sx,0) var(--sy,0)}
+html[data-hour="1"] .win{--sy:23cqw}
+html[data-hour="2"] .win{--sy:-23cqw}
+html[data-hour="3"] .win{--sx:-14cqw;--sy:15cqw}
+html[data-hour="4"] .win::after{background:none;box-shadow:inset -7cqw -1cqw 0 0 var(--fg);--sx:5cqw;--sy:-8cqw}
+.facts{margin:0;display:grid;grid-template-columns:minmax(0,max-content) minmax(0,1fr);gap:0;border-top:1.5px solid var(--fg)}
+.facts dt,.facts dd{margin:0;padding:14px 0;border-bottom:1.5px solid var(--fg)}
+.facts dt{color:var(--fg2);padding-right:24px}
+.facts dd{font-weight:600;overflow-wrap:anywhere;text-wrap:pretty}
+.rm__text{font-size:var(--s1);line-height:1.25;max-width:32ch;margin-bottom:26px}
+.rm__book{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:26px}
+.rm__price{font:800 clamp(1.8rem,1.2rem + 2vw,3rem)/1 var(--f-display);overflow-wrap:anywhere}
+.rm__price small{display:block;font:500 var(--s-1)/1.3 var(--f-text);color:var(--fg2);margin-top:4px}
+
+/* ---- flujo de reserva ---- */
+.flow{padding:clamp(18px,3vw,40px) 0 clamp(60px,9vw,130px)}
+.back{background:none;border:0;padding:0;min-height:44px;display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.flow__h{font-size:clamp(2rem,1rem + 6vw,6rem);overflow-wrap:break-word;font-weight:800;margin:10px 0 24px}
+.steps{display:flex;flex-wrap:wrap;gap:6px 26px;list-style:none;margin:0 0 30px;padding:0 0 12px;border-bottom:1.5px solid var(--fg);font-weight:600;color:var(--fg2)}
+.steps li[aria-current="step"]{color:var(--fg);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
+.steps li.is-done::after{content:" \2713"}
+.steps li.is-skip::after{content:" (omitido)"}
+.flow__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+@media (min-width:1000px){.flow__grid{grid-template-columns:minmax(0,7fr) minmax(0,4fr);align-items:start}}
+.opthead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:30px 0 14px}
+.opthead h2{font-size:var(--s1)}
+.cta-row{margin-top:26px}
+.cta-row--flex{display:flex;gap:12px;flex-wrap:wrap}
+.ic--lg{width:34px;height:34px}
+.stop__p{font-size:var(--s1);line-height:1.25;max-width:44ch}
+.methods-h{margin:22px 0 0}
+.done__lede{font-size:var(--s1);line-height:1.25;max-width:42ch;color:var(--fg2)}
+.mt18{margin-top:18px}
+.sheet .h-sm{font-size:var(--s1)}
+.err{margin:14px 0 0;font-weight:700;border-left:3px solid var(--fg);padding-left:12px}
+.opt{display:grid;gap:0;border-top:1.5px solid var(--fg)}
+.opt label{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:16px 0;border-bottom:1.5px solid var(--fg);cursor:pointer}
+.opt label>span:nth-of-type(1){flex:1 1 12rem;min-width:0}
+.opt input{width:22px;height:22px;accent-color:var(--fg)}
+.opt b{display:block;font:700 var(--s1)/1 var(--f-display)}
+.opt small{color:var(--fg2)}
+.opt .tot{text-align:right;font-weight:600;line-height:1.2;margin-left:auto;overflow-wrap:anywhere}
+.opt label.is-na{color:var(--fg2);cursor:not-allowed}
+.opt label.is-na b,.opt label.is-na .tot{text-decoration:line-through;text-decoration-thickness:1.5px}
+.form{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+@media (min-width:640px){.form--2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.form .full{grid-column:1/-1}}
+.field{display:grid;gap:6px}
+.field label{font-size:var(--s-1);font-weight:600;color:var(--fg2)}
+.field input{width:100%;min-width:0;min-height:52px;border:0;border-bottom:1.5px solid var(--fg);background:transparent;padding:0;border-radius:0;font-size:1.2rem}
+.field input::placeholder{color:var(--fg2);opacity:1}
+.field input[aria-invalid="true"],.check input[aria-invalid="true"]{outline:3px solid var(--fg);outline-offset:3px}
+.field small{color:var(--fg2);font-size:var(--s-1)}
+.check{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;color:var(--fg2)}
+.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--fg)}
+.tabs{display:flex;gap:22px;margin-bottom:22px}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;min-height:44px;padding:0;font-weight:600;color:var(--fg2)}
+.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.sum dl{margin:14px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:0}
+.sum dt,.sum dd{margin:0;padding:11px 0;border-bottom:1.5px solid var(--fg)}
+.sum dt{color:var(--fg2)}.sum dd{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.sum h2{font-size:var(--s1)}
+.stop{border:2.5px solid var(--fg);padding:clamp(18px,3vw,36px);display:grid;gap:12px}
+.stop h2{font-size:clamp(1.8rem,1rem + 3vw,3.4rem);font-weight:800}
+.methods{display:grid;gap:0;margin-top:8px;border-top:1.5px dashed var(--fg)}
+.methods div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1.5px dashed var(--fg);color:var(--fg2)}
+.tag{display:inline-block;font-weight:700;font-size:var(--s-1);letter-spacing:.08em;text-transform:uppercase;background:var(--fg);color:var(--bg);border-radius:999px;padding:6px 14px;width:fit-content}
+.done h2{font-size:clamp(2.4rem,1rem + 6vw,6rem);font-weight:800;margin:16px 0 10px}
+.tline{list-style:none;margin:26px 0;padding:0;border-top:1.5px solid var(--fg)}
+.tline li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1.5px solid var(--fg);color:var(--fg2)}
+.tline li.on{color:var(--fg);font-weight:700}
+.notify{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+@media (min-width:900px){.notify{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.msg{border:1.5px solid var(--fg);padding:18px;display:grid;gap:12px;align-content:start}
+.msg h3{font:700 var(--s0)/1.2 var(--f-text);display:flex;gap:10px;align-items:center}
+.bubble{background:color-mix(in oklab,var(--fg) 14%,transparent);padding:12px 14px;border-radius:4px 16px 16px 16px;font-size:.95rem;line-height:1.5;max-width:34ch}
+.mail{border:1.5px solid var(--fg);padding:14px;font-size:.95rem}
+.mail b{display:block;margin-bottom:6px}
+
+/* ---- fotos pendientes (la guia las rotula) ---- */
+body.guide .win::before{content:attr(data-slot) "\A" attr(data-size);white-space:pre;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font:600 .78rem/1.5 var(--f-text);background:#0A0A0A;color:#fff;padding:8px 12px;border-radius:10px;z-index:3}
+/* ---- movimiento reducido: ninguna transicion ni animacion de movimiento ---- */
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  *,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important;animation-duration:.01ms!important;animation-delay:0s!important;scroll-behavior:auto!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+/* ---- contraste forzado: los estados del calendario no dependen del color de fondo ---- */
+@media (forced-colors:active){
+  .day.is-start::before,.day.is-end::before{background:Highlight;border-color:Highlight;forced-color-adjust:none}
+  .day.is-in{border-block:2px solid Highlight}
+  .day.is-out span{text-decoration:line-through}
 }
 </style>
 </head>
 <body data-screen="home">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></symbol><symbol id="i-bed" viewBox="0 0 256 256"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></symbol><symbol id="i-boat" viewBox="0 0 256 256"><path d="M221.06,110.59,208,106.23V56a16,16,0,0,0-16-16H136V24a8,8,0,0,0-16,0V40H64A16,16,0,0,0,48,56v50.23l-13.06,4.36A16,16,0,0,0,24,125.77V152c0,61.54,97.89,86.72,102.06,87.76a8,8,0,0,0,3.88,0C134.11,238.72,232,213.54,232,152V125.77A16,16,0,0,0,221.06,110.59ZM64,56H192v44.9L130.53,80.41a8,8,0,0,0-5.06,0L64,100.9Zm152,96c0,24.91-23.68,43-43.55,53.83A228.13,228.13,0,0,1,128,223.72,226.85,226.85,0,0,1,83.81,206C47.6,186.35,40,165.79,40,152V125.77L120,99.1V168a8,8,0,0,0,16,0V99.1l80,26.67Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-church" viewBox="0 0 256 256"><path d="M228.12,145.14,192,123.47V104a8,8,0,0,0-4-7L136,67.36V48h16a8,8,0,0,0,0-16H136V16a8,8,0,0,0-16,0V32H104a8,8,0,0,0,0,16h16V67.36L68,97.05a8,8,0,0,0-4,7v19.47L27.88,145.14A8,8,0,0,0,24,152v64a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V168a8,8,0,0,1,16,0v48a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V152A8,8,0,0,0,228.12,145.14ZM40,156.53l24-14.4V208H40ZM128,144a24,24,0,0,0-24,24v40H80V108.64l48-27.43,48,27.43V208H152V168A24,24,0,0,0,128,144Zm88,64H192V142.13l24,14.4Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-coffee" viewBox="0 0 256 256"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></symbol><symbol id="i-device-mobile" viewBox="0 0 256 256"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></symbol><symbol id="i-download-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"/></symbol><symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-lock-simple" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-mountains" viewBox="0 0 256 256"><path d="M164,80a28,28,0,1,0-28-28A28,28,0,0,0,164,80Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,40Zm90.88,155.92-54.56-92.08A15.87,15.87,0,0,0,186.55,96h0a15.85,15.85,0,0,0-13.76,7.84L146.63,148l-44.84-76.1a16,16,0,0,0-27.58,0L1.11,195.94A8,8,0,0,0,8,208H248a8,8,0,0,0,6.88-12.08ZM88,80l23.57,40H64.43ZM22,192l33-56h66l18.74,31.8,0,0L154,192Zm150.57,0-16.66-28.28L186.55,112,234,192Z"/></symbol><symbol id="i-person-simple-walk" viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star" viewBox="0 0 256 256"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></symbol><symbol id="i-sun-horizon" viewBox="0 0 256 256"><path d="M240,152H199.55a73.54,73.54,0,0,0,.45-8,72,72,0,0,0-144,0,73.54,73.54,0,0,0,.45,8H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM72,144a56,56,0,1,1,111.41,8H72.59A56.13,56.13,0,0,1,72,144Zm144,56a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16H208A8,8,0,0,1,216,200ZM72.84,43.58a8,8,0,0,1,14.32-7.16l8,16a8,8,0,0,1-14.32,7.16Zm-56,48.84a8,8,0,0,1,10.74-3.57l16,8a8,8,0,0,1-7.16,14.31l-16-8A8,8,0,0,1,16.84,92.42Zm192,15.16a8,8,0,0,1,3.58-10.73l16-8a8,8,0,1,1,7.16,14.31l-16,8a8,8,0,0,1-10.74-3.58Zm-48-55.16,8-16a8,8,0,0,1,14.32,7.16l-8,16a8,8,0,1,1-14.32-7.16Z"/></symbol><symbol id="i-swimming-pool" viewBox="0 0 256 256"><path d="M88,149.39a8,8,0,0,0,8-8V128h64v15.29a8,8,0,0,0,16,0V32a8,8,0,0,0-16,0V48H96V32a8,8,0,0,0-16,0V141.39A8,8,0,0,0,88,149.39ZM96,112V96h64v16Zm64-48V80H96V64ZM24,168a8,8,0,0,1,8-8c14.42,0,22.19,5.18,28.44,9.34C66,173.06,70.42,176,80,176s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34a8,8,0,0,1,0,16c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,178.94,137.57,176,128,176s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,178.94,41.58,176,32,176A8,8,0,0,1,24,168Zm208,40a8,8,0,0,1-8,8c-9.58,0-14,2.94-19.56,6.66-6.25,4.16-14,9.34-28.44,9.34s-22.2-5.18-28.44-9.34C142,218.94,137.57,216,128,216s-14,2.94-19.56,6.66c-6.24,4.16-14,9.34-28.43,9.34s-22.19-5.18-28.44-9.34C46,218.94,41.58,216,32,216a8,8,0,0,1,0-16c14.42,0,22.19,5.18,28.44,9.34C66,213.06,70.42,216,80,216s14-2.94,19.56-6.66c6.24-4.16,14-9.34,28.43-9.34s22.2,5.18,28.44,9.34c5.58,3.72,10,6.66,19.57,6.66s14-2.94,19.56-6.66c6.25-4.16,14-9.34,28.44-9.34A8,8,0,0,1,232,208Z"/></symbol><symbol id="i-taxi" viewBox="0 0 256 256"><path d="M240,104H228.64L201.25,56.06A16,16,0,0,0,187.36,48H165.42l-12-29.94A15.93,15.93,0,0,0,138.58,8H117.42a15.93,15.93,0,0,0-14.86,10.06L90.58,48H68.64a16,16,0,0,0-13.89,8.06L27.36,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM117.42,24h21.16l9.6,24H107.82ZM68.64,64H187.36l22.85,40H45.79ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"/></symbol><symbol id="i-user-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"/></symbol><symbol id="i-users" viewBox="0 0 256 256"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-waves" viewBox="0 0 256 256"><path d="M222.16,177.25a8,8,0,0,1-1,11.25c-17.36,14.39-32.86,19.5-47,19.5-18.58,0-34.82-8.82-49.93-17-25.35-13.76-47.24-25.64-79.07.74a8,8,0,1,1-10.22-12.31c40.17-33.28,70.32-16.92,96.93-2.48,25.35,13.75,47.24,25.63,79.07-.74A8,8,0,0,1,222.16,177.25Zm-11.27-57c-31.83,26.38-53.72,14.5-79.07.74-26.61-14.43-56.76-30.79-96.93,2.49a8,8,0,0,0,10.22,12.31c31.83-26.38,53.72-14.5,79.07-.74,15.11,8.19,31.35,17,49.93,17,14.14,0,29.64-5.11,47-19.5a8,8,0,1,0-10.22-12.31ZM45.11,79.8c31.83-26.37,53.72-14.49,79.07-.74,15.11,8.2,31.35,17,49.93,17,14.14,0,29.64-5.12,47-19.5a8,8,0,1,0-10.22-12.31c-31.83,26.38-53.72,14.5-79.07.74C105.21,50.58,75.06,34.22,34.89,67.5A8,8,0,1,0,45.11,79.8Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol><symbol id="i-download-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"/></symbol><symbol id="i-lock-simple" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-person-simple-walk" viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"/></symbol><symbol id="i-taxi" viewBox="0 0 256 256"><path d="M240,104H228.64L201.25,56.06A16,16,0,0,0,187.36,48H165.42l-12-29.94A15.93,15.93,0,0,0,138.58,8H117.42a15.93,15.93,0,0,0-14.86,10.06L90.58,48H68.64a16,16,0,0,0-13.89,8.06L27.36,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM117.42,24h21.16l9.6,24H107.82ZM68.64,64H187.36l22.85,40H45.79ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"/></symbol><symbol id="i-boat" viewBox="0 0 256 256"><path d="M221.06,110.59,208,106.23V56a16,16,0,0,0-16-16H136V24a8,8,0,0,0-16,0V40H64A16,16,0,0,0,48,56v50.23l-13.06,4.36A16,16,0,0,0,24,125.77V152c0,61.54,97.89,86.72,102.06,87.76a8,8,0,0,0,3.88,0C134.11,238.72,232,213.54,232,152V125.77A16,16,0,0,0,221.06,110.59ZM64,56H192v44.9L130.53,80.41a8,8,0,0,0-5.06,0L64,100.9Zm152,96c0,24.91-23.68,43-43.55,53.83A228.13,228.13,0,0,1,128,223.72,226.85,226.85,0,0,1,83.81,206C47.6,186.35,40,165.79,40,152V125.77L120,99.1V168a8,8,0,0,0,16,0V99.1l80,26.67Z"/></symbol></defs></svg>
 <a class="skip" href="#main">Saltar al contenido</a>
+<div id="route-live" class="sr" role="status" aria-live="polite"></div>
 
-<div class="demo" role="note" aria-label="Aviso del proyecto">
-  <div class="wrap">
-    <p><svg class="ic" aria-hidden="true"><use href="#i-warning"/></svg><span><strong>Proyecto de portafolio de beglisalejandra-studio.</strong> Hotel ficticio: no se procesa ninguna reserva ni transacción.</span></p>
-    <button type="button" id="guide-btn" aria-pressed="false">Guía de fotos</button>
-  </div>
-</div>
-
-<header class="nav" id="nav">
-  <div class="wrap">
-    <a class="brand" href="#/" aria-label="Hotel Aurora, inicio"><span class="brand__arc" aria-hidden="true"><i class="brand__dot"></i></span>Aurora</a>
-    <span class="moment" id="sun-label" aria-hidden="true">Amanecer</span>
-    <nav class="nav__links" aria-label="Principal">
-      <a href="#/" data-go="habitaciones">Habitaciones</a>
-      <a href="#/" data-go="ciudad">La ciudad</a>
-      <a href="#/" data-go="disponibilidad">Disponibilidad</a>
-    </nav>
-    <div class="nav__end">
-      <button class="iconbtn" type="button" id="acct-btn" aria-label="Mi cuenta"><svg class="ic" aria-hidden="true"><use href="#i-user-circle"/></svg></button>
-      <a class="btn btn--primary btn--sm" href="#/reservar" id="nav-book">Reservar</a>
-      <button class="iconbtn nav__menu" type="button" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></button>
+<aside class="demo" aria-label="Aviso del proyecto">
+  <div class="in">
+    <p><svg class="ic ic--inline" aria-hidden="true"><use href="#i-warning"/></svg><strong>Proyecto de portafolio de beglisalejandra-studio.</strong> Hotel ficticio: no se procesa ninguna reserva ni transacción.</p>
+    <div class="tools" role="group" aria-label="Herramientas de la maqueta">
+      <span>Paleta</span>
+      <button type="button" data-palette-btn="luz" aria-pressed="true" aria-label="Paleta Luz del día"><i class="sw sw--luz"></i><span class="lbl">Luz del día</span></button>
+      <button type="button" data-palette-btn="fachadas" aria-pressed="false" aria-label="Paleta Fachadas"><i class="sw sw--fachadas"></i><span class="lbl">Fachadas</span></button>
+      <button type="button" data-palette-btn="anil" aria-pressed="false" aria-label="Paleta Añil"><i class="sw sw--anil"></i><span class="lbl">Añil</span></button>
+      <button type="button" id="guide-btn" aria-pressed="false" aria-label="Guía de fotos">Guía<span class="lbl"> de fotos</span></button>
     </div>
   </div>
+</aside>
+
+<header class="bar" id="bar">
+  <div><button class="pill" type="button" id="menu-btn" aria-haspopup="dialog">Menú</button></div>
+  <p class="bar__mid micro">Cartagena de Indias, 10°23′ N, <span id="clock"></span></p>
+  <div class="bar__end"><a class="pill pill--solid" href="#/reservar" id="nav-book">Reservar</a></div>
 </header>
-<div class="drawer" id="drawer" aria-label="Menú">
-  <button class="iconbtn drawer__close" type="button" id="menu-close" aria-label="Cerrar menú"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
-  <a href="#/" data-go="habitaciones">Habitaciones</a>
-  <a href="#/" data-go="ciudad">La ciudad</a>
-  <a href="#/" data-go="disponibilidad">Disponibilidad</a>
-  <a href="#/reservar">Reservar</a>
-</div>
 
-
-<main id="main">
+<main id="main" tabindex="-1">
 
 <!-- ====================== INICIO ====================== -->
 <div id="s-home">
-  <section class="hero" data-moment="Amanecer" aria-labelledby="h1">
-    <div class="wrap hero__grid">
-      <div class="hero__fig"><div class="hero__media ph ph--dawn arch" data-slot="H-01 Patio al amanecer" data-size="1600 x 2000 px (4:5)" role="img" aria-label="Patio del hotel al amanecer, con arcos de piedra y luz cálida"></div></div>
-      <div class="hero__copy">
-        <p class="hero__eyebrow">Hotel boutique en Cartagena de Indias</p>
-        <h1 id="h1">Aquí la mañana llega primero</h1>
-        <p class="hero__sub">Un hotel boutique pensado alrededor de un patio, una terraza y la primera luz del día en Cartagena.</p>
-        <div class="bar" id="bar">
-          <button class="bar__field" type="button" id="bar-dates" aria-haspopup="dialog" aria-expanded="false">
-            <span class="bar__label"><svg class="ic" aria-hidden="true"><use href="#i-calendar-blank"/></svg>Fechas</span>
-            <span class="bar__val is-empty" id="bar-dates-val">Elige llegada y salida</span>
-          </button>
-          <div class="bar__field" style="cursor:default">
-            <span class="bar__label"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Huéspedes</span>
-            <span class="row" style="justify-content:flex-start;gap:10px">
-              <span class="stepper">
-                <button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button>
-                <output class="bar__val" data-guests-out aria-live="polite">2</output>
-                <button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button>
-              </span>
-            </span>
-          </div>
-          <a class="btn btn--primary" href="#/reservar" id="bar-book">Reservar</a>
-          <div class="pop" id="pop" role="dialog" aria-label="Elige tus fechas" hidden>
-            <div class="cal" id="cal-pop" data-months="2"></div>
-            <div class="pop__foot"><span class="note" style="margin:0" id="pop-sum" aria-live="polite">Elige la llegada y luego la salida.</span><button class="btn btn--primary btn--sm" type="button" id="pop-ok">Listo</button></div>
-          </div>
-        </div>
+  <section class="hour h1 hero" id="inicio" data-hour="1" aria-label="Inicio">
+    <div class="flood" aria-hidden="true"></div>
+    <h1 class="mark" id="mark" aria-label="Hotel Aurora, hotel boutique en Cartagena de Indias">
+      <span aria-hidden="true">A</span><span aria-hidden="true">U</span><span aria-hidden="true">R</span><span class="sun" id="sun" aria-hidden="true"></span><span aria-hidden="true">R</span><span aria-hidden="true">A</span>
+    </h1>
+    <div></div>
+    <div class="hero__foot">
+      <p class="lede">Cuatro habitaciones, una para cada momento del día, en un hotel pequeño de Cartagena de Indias.</p>
+      <div class="book">
+        <div><span class="k">Fechas</span><button class="dates" type="button" id="hero-dates" aria-haspopup="dialog"><span id="hero-dates-val">Elige tus fechas</span></button></div>
+        <div role="group" aria-labelledby="g-lbl-hero"><span class="k" id="g-lbl-hero">Huéspedes</span><span class="stepper"><button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button><output data-guests-out aria-live="polite">2</output><button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
+        <a class="pill pill--solid" href="#/reservar" id="hero-book">Reservar</a>
       </div>
     </div>
   </section>
 
-  <section class="section casa" style="--pb:clamp(64px,8vw,110px)" id="casa" data-moment="Amanecer" aria-labelledby="h-casa">
-    <div class="wrap casa__grid">
-      <div class="rise">
-        <h2 id="h-casa">Una casa que se despierta despacio.</h2>
-        <p class="lede">Aurora es un hotel pequeño: pocas habitaciones, un patio central y una terraza para ver caer la tarde sobre la ciudad.</p>
-      </div>
-      <div class="arches">
-        <figure><div class="ph ph--patio arch" data-slot="C-01 Patio central" data-size="1200 x 1600 px (3:4)" role="img" aria-label="Patio central con vegetación y luz de la mañana"></div><figcaption>El patio</figcaption></figure>
-        <figure><div class="ph ph--wall arch" data-slot="C-02 Balcones" data-size="1200 x 2000 px (3:5)" role="img" aria-label="Fachada con balcones de madera y buganvilias"></div><figcaption>Los balcones</figcaption></figure>
-        <figure><div class="ph ph--terrace arch" data-slot="C-03 Terraza" data-size="1200 x 1440 px (5:6)" role="img" aria-label="Terraza al atardecer con la ciudad al fondo"></div><figcaption>La terraza</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="habitaciones" data-moment="Mañana" aria-labelledby="h-rooms" style="padding-top:0;--pb:clamp(96px,13vw,190px)">
+  <section class="hour h2" id="habitaciones" data-hour="2" aria-labelledby="h-rooms">
     <div class="wrap">
-      <div class="rooms__head rise">
+      <h2 id="h-rooms">Cuatro horas, cuatro habitaciones.</h2>
+      <ul class="rows" id="rooms-list">
+        <li><a class="row" href="#/habitacion/alba" data-room="alba"><span class="hr"><i class="dot dot--1"></i>6&nbsp;a.&nbsp;m.</span><span class="nm">Alba</span><span class="ds">2 huéspedes. Cama king. Patio al este.</span><span class="pr"><span class="from">Desde</span> <span class="amt">COP&nbsp;520.000</span><small>por noche</small></span><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></a></li>
+        <li><a class="row" href="#/habitacion/mediodia" data-room="mediodia"><span class="hr"><i class="dot dot--2"></i>12&nbsp;m.</span><span class="nm">Mediodía</span><span class="ds">3 huéspedes. Cama doble y sofá cama. Balcón al patio.</span><span class="pr"><span class="from">Desde</span> <span class="amt">COP&nbsp;610.000</span><small>por noche</small></span><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></a></li>
+        <li><a class="row" href="#/habitacion/atardecer" data-room="atardecer"><span class="hr"><i class="dot dot--3"></i>6&nbsp;p.&nbsp;m.</span><span class="nm">Atardecer</span><span class="ds">3 huéspedes. Cama king. Balcón a la calle.</span><span class="pr"><span class="from">Desde</span> <span class="amt">COP&nbsp;780.000</span><small>por noche</small></span><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></a></li>
+        <li><a class="row" href="#/habitacion/noche" data-room="noche"><span class="hr"><i class="dot dot--4"></i>10&nbsp;p.&nbsp;m.</span><span class="nm">Noche</span><span class="ds">4 huéspedes. Cama king y dos camas sencillas. Terraza privada.</span><span class="pr"><span class="from">Desde</span> <span class="amt">COP&nbsp;1.150.000</span><small>por noche</small></span><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></a></li>
+      </ul>
+      <p class="note">Precios y disponibilidad de demostración, en pesos colombianos. Las noches de viernes y sábado, y los meses de diciembre y enero, tienen recargo.</p>
+    </div>
+  </section>
+
+  <section class="hour h3 iris" id="ciudad" data-hour="3" aria-labelledby="h-city">
+    <div class="wrap">
+      <h2 id="h-city">La ciudad desde la puerta.</h2>
+      <p class="sub">Toca un lugar para ver qué hay cerca.</p>
+      <div class="zona">
         <div>
-          <h2 id="h-rooms">Elige cómo quieres despertar.</h2>
-          <p class="lede">Cuatro habitaciones, cada una con su propia luz y su propia vista. Todas con baño privado y aire acondicionado.</p>
-        </div>
-        <div class="rooms__nav">
-          <button class="iconbtn" type="button" data-rail="-1" aria-label="Habitaciones anteriores"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
-          <button class="iconbtn" type="button" data-rail="1" aria-label="Habitaciones siguientes"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-        </div>
-      </div>
-      <div class="rail" id="rail" role="list" tabindex="0" aria-label="Habitaciones"></div>
-      <p class="note">Precios y disponibilidad de demostración, en pesos colombianos.</p>
-    </div>
-  </section>
-
-  <section class="section" id="dia" data-moment="Mediodía" aria-labelledby="h-dia" style="padding-top:0;--pb:clamp(72px,9vw,120px)">
-    <div class="wrap">
-      <div class="rise">
-        <h2 id="h-dia">Un día en Aurora</h2>
-        <p class="lede">Del café del amanecer a la terraza de la noche: así se vive la casa de principio a fin.</p>
-      </div>
-      <div class="day__grid">
-        <article class="tile tile--img tile--a"><div class="ph ph--dawn" data-slot="D-01 Café en el patio" data-size="1400 x 1600 px (7:8)" aria-hidden="true"></div><h3>Amanecer</h3><p>Café en el patio, antes de que despierte la calle.</p></article>
-        <article class="tile tile--soft tile--b"><h3>Mañana</h3><p>Desayuno y salida temprano hacia la ciudad amurallada.</p></article>
-        <article class="tile tile--accent tile--c"><h3>Tarde</h3><p>Descanso a la sombra y paseo por Getsemaní.</p></article>
-        <article class="tile tile--night tile--d"><h3>Noche</h3><p>La terraza al caer el sol, con la ciudad iluminada.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="ciudad" data-moment="Tarde" aria-labelledby="h-city" style="padding-top:0;--pb:clamp(110px,15vw,210px)">
-    <div class="wrap">
-      <div class="rise">
-        <h2 id="h-city">Cartagena empieza en la puerta.</h2>
-        <p class="lede">Murallas, fortalezas, barrios de colores e islas. Toca un punto del mapa para ver cómo llegar.</p>
-      </div>
-      <div class="city__grid">
-        <div class="map" id="map">
-          <svg class="base" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <!-- Esquema ilustrativo, no a escala. En produccion: mapa real (MapLibre + PMTiles) con carga bajo demanda. -->
-            <g fill="var(--surface)">
-              <path d="M196,0 C214,60 238,120 252,150 C262,172 282,188 300,206 C320,226 336,240 360,246 C390,252 420,248 470,268 C520,290 590,296 640,300 L640,0 Z"/>
-              <path d="M262,190 C276,232 300,282 322,340 C336,380 344,412 348,438 C356,452 372,446 373,430 C375,380 360,320 340,270 C326,236 314,214 300,206 Z"/>
-              <path d="M400,480 C430,440 470,420 500,382 C522,352 566,340 640,352 L640,480 Z"/>
-              <path d="M372,466 C384,452 404,454 410,468 C414,480 396,486 382,484 C370,480 366,472 372,466 Z"/>
-              <ellipse cx="86" cy="408" rx="26" ry="12"/><ellipse cx="128" cy="428" rx="20" ry="9"/><ellipse cx="52" cy="436" rx="14" ry="7"/>
-            </g>
-            <g fill="none" stroke="var(--line)" stroke-width="1.2">
-              <ellipse cx="448" cy="150" rx="46" ry="30"/><ellipse cx="448" cy="150" rx="24" ry="15"/>
-              <ellipse cx="560" cy="92" rx="52" ry="34"/><ellipse cx="560" cy="92" rx="28" ry="18"/>
-            </g>
-            <path d="M246,160 C256,138 288,134 308,148 C326,160 330,188 320,206 C308,226 276,230 258,214 C244,200 238,176 246,160 Z" fill="color-mix(in oklab,var(--accent) 12%,var(--surface))" stroke="var(--accent-text)" stroke-width="1.8" stroke-dasharray="5 5"/>
-            <path d="M338,206 C350,198 372,200 380,212 C386,224 378,240 362,242 C346,244 334,232 338,206 Z" fill="color-mix(in oklab,var(--accent) 7%,var(--surface))" stroke="var(--line)" stroke-width="1.5"/>
-            <text x="40" y="120" fill="var(--fg-3)" font-size="13" font-weight="600" letter-spacing="3" font-family="var(--f-body)">MAR CARIBE</text>
-            <text x="436" y="340" fill="var(--fg-3)" font-size="12" font-weight="600" letter-spacing="2" font-family="var(--f-body)">BAHÍA</text>
-            <path id="route" class="route" d="M0,0"/>
-          </svg>
-        </div>
-        <div class="city__side">
-          <div class="chips" id="chips" role="group" aria-label="Lugares cercanos"></div>
+          <ul class="zl" id="zl"></ul>
           <div class="panel" id="panel" aria-live="polite"></div>
-          <p class="note" style="margin:0">Esquema ilustrativo, no a escala. Los tiempos desde el hotel se calculan con la dirección real.</p>
+        </div>
+        <div>
+          <div class="map" id="map">
+            <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- Esquema de lineas, ilustrativo y no a escala. En produccion: mapa real (MapLibre + PMTiles) bajo demanda. -->
+              <path class="ln" d="M196,0 C214,60 238,120 252,150 C262,172 282,188 300,206 C320,226 336,240 360,246 C390,252 420,248 470,268 C520,290 590,296 640,300"/>
+              <path class="ln" d="M262,190 C276,232 300,282 322,340 C336,380 344,412 348,438 C356,452 372,446 373,430 C375,380 360,320 340,270 C326,236 314,214 300,206"/>
+              <path class="ln" d="M400,480 C430,440 470,420 500,382 C522,352 566,340 640,352"/>
+              <path class="ln ln--soft" d="M372,466 C384,452 404,454 410,468 C414,480 396,486 382,484 C370,480 366,472 372,466 Z"/>
+              <ellipse class="ln ln--soft" cx="86" cy="408" rx="26" ry="12"/><ellipse class="ln ln--soft" cx="128" cy="428" rx="20" ry="9"/>
+              <ellipse class="ln ln--soft" cx="448" cy="150" rx="46" ry="30"/><ellipse class="ln ln--soft" cx="448" cy="150" rx="24" ry="15"/>
+              <ellipse class="ln ln--soft" cx="560" cy="92" rx="52" ry="34"/><ellipse class="ln ln--soft" cx="560" cy="92" rx="28" ry="18"/>
+              <path class="ln ln--dash" d="M246,160 C256,138 288,134 308,148 C326,160 330,188 320,206 C308,226 276,230 258,214 C244,200 238,176 246,160 Z"/>
+              <path class="ln" d="M338,206 C350,198 372,200 380,212 C386,224 378,240 362,242 C346,244 334,232 338,206 Z"/>
+              <path id="route" class="route" pathLength="1" d="M0,0"/>
+            </svg>
+          </div>
+          <p class="note">Esquema de líneas, ilustrativo y no a escala. La ubicación del hotel es de ejemplo; los tiempos de traslado se mostrarán cuando haya una dirección real.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="disponibilidad" data-moment="Noche" aria-labelledby="h-av" style="padding-top:0;--pb:clamp(72px,10vw,140px)">
+  <section class="hour h4 iris" id="disponibilidad" data-hour="4" aria-labelledby="h-av">
     <div class="wrap">
-      <div class="rise">
-        <h2 id="h-av">Mira qué fechas están libres.</h2>
-      </div>
-      <div class="avail__grid">
-        <div>
-          <p class="lede" style="margin-top:0">Los días tachados no tienen habitaciones. Elige la llegada y la salida y sigue con tu reserva.</p>
-          <div class="legend">
-            <span><i class="sw sw--sel"></i>Tu estancia</span>
-            <span><i class="sw sw--last"></i>Últimas habitaciones</span>
-            <span><i class="sw sw--out"></i>Completo</span>
-          </div>
-          <div class="summary" aria-live="polite">
-            <span class="note" style="margin:0">Tu estancia</span>
-            <strong id="av-sum">Elige tus fechas</strong>
-            <span id="av-sub" style="color:var(--fg-2)">Precio por noche en miles de pesos, de demostración.</span>
-            <a class="btn btn--primary" href="#/reservar" id="av-book">Reservar</a>
-          </div>
+      <h2 id="h-av">Elige tus noches.</h2>
+      <div class="resv">
+        <div class="sumbox" aria-live="polite">
+          <p class="big" id="av-big">Sin fechas</p>
+          <p id="av-range" class="muted">Toca una llegada y una salida en el calendario.</p>
+          <p id="av-total" class="strong"></p>
+          <a class="pill pill--solid" href="#/reservar" id="av-book">Reservar</a>
+          <ul class="legend">
+            <li><i></i>Libre</li><li><i class="l-last"></i>Última habitación (demo)</li><li><i class="l-out"></i>Completo (demo)</li><li><i class="l-sel"></i>Tu estancia</li>
+          </ul>
         </div>
-        <div class="cal" id="cal-home" data-months="2"></div>
+        <div><div class="cal" id="cal-home" data-months="2" aria-describedby="av-note"></div><p class="note" id="av-note">Disponibilidad y precios de demostración; no reflejan un hotel real.</p></div>
       </div>
     </div>
   </section>
@@ -678,413 +532,523 @@ dialog ul{padding-left:1.2em;color:var(--fg-2);display:grid;gap:8px;margin:14px 
 
 <!-- ====================== HABITACION ====================== -->
 <div id="s-room" hidden>
-  <div class="wrap rm">
-    <nav class="crumbs" aria-label="Ruta"><a href="#/" data-go="habitaciones"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Habitaciones</a></nav>
-    <div class="rm__grid">
-      <div>
-        <div class="gal">
-          <div class="ph ph--r4 arch" data-slot="R4-01 Terraza Aurora, vista general" data-size="1600 x 2000 px (4:5)" role="img" aria-label="Terraza Aurora: habitación con terraza privada al atardecer"></div>
-          <div class="ph ph--r3 rect" data-slot="R4-02 Cama y luz" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Cama con ropa blanca y luz cálida"></div>
-          <div class="ph ph--patio rect" data-slot="R4-03 Baño" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Baño con piso de baldosa"></div>
-          <div class="ph ph--wall rect" data-slot="R4-04 Detalle" data-size="1200 x 1200 px (1:1)" role="img" aria-label="Detalle de la terraza"></div>
-        </div>
-        <p class="note">Imágenes ilustrativas, generadas con IA para esta maqueta.</p>
-      </div>
-      <div>
-        <h1 id="rm-name">Terraza Aurora</h1>
-        <div class="facts" id="rm-facts"></div>
-        <p class="rm__text" id="rm-text"></p>
-        <div class="amen">
-          <h3>Incluye</h3>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Baño privado</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Aire acondicionado</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-wifi-high"/></svg>Wi-Fi</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>Desayuno en el patio</li>
-          </ul>
-        </div>
-        <div style="margin-top:36px">
-          <details><summary>Llegada y salida<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Horarios por confirmar con el hotel. Se muestran aquí y en el correo de confirmación.</p></details>
-          <details><summary>Cancelación<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>La política de cancelación la define el hotel. Aparecerá completa antes de pagar.</p></details>
-          <details><summary>Niños y mascotas<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Por confirmar con el hotel.</p></details>
-        </div>
-        <div class="stick" style="margin-top:36px">
-          <div class="card">
-            <div class="price"><strong id="rm-price">COP 1.150.000</strong><span>por noche</span></div>
-            <div class="row" style="margin-bottom:16px">
-              <span class="note" style="margin:0" id="rm-sum">Elige tus fechas</span>
-            </div>
-            <a class="btn btn--primary" style="width:100%" href="#/reservar" id="rm-book">Reservar</a>
-            <p class="note" style="margin-bottom:0">No se cobra nada. Proyecto de portafolio.</p>
+  <section class="hour rm" id="rm">
+    <div class="wrap">
+      <a class="link" href="#/" data-go="habitaciones"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Habitaciones</a>
+      <p class="rm__hr"><i class="dot dot--1" id="rm-dot"></i><span id="rm-hour">6&nbsp;a.&nbsp;m.</span></p>
+      <h1 class="rm__name" id="rm-name" data-room="alba" tabindex="-1">Alba</h1>
+      <div class="rm__grid">
+        <div class="win ph" id="rm-win" data-slot="R-alba-01 · ventana circular" data-size="2560 × 2560 px (1:1)" role="img" aria-label="Habitación Alba"></div>
+        <div>
+          <p class="rm__text" id="rm-text"></p>
+          <dl class="facts" id="rm-facts"></dl>
+          <div class="rm__book">
+            <p class="rm__price" id="rm-price">COP&nbsp;520.000<small id="rm-sum">por noche, de demostración</small></p>
+            <a class="pill pill--solid" href="#/reservar" id="rm-book">Reservar</a>
           </div>
+          <p class="note">Servicios, precios y disponibilidad de demostración. No se cobra nada. Proyecto de portafolio.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 
 <!-- ====================== RESERVA ====================== -->
 <div id="s-book" hidden>
-  <div class="wrap flow">
-    <button class="back" type="button" id="back-btn"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Volver</button>
-    <h1 id="flow-h" tabindex="-1">Tu reserva</h1>
-    <ol class="steps" id="steps" aria-label="Progreso de la reserva">
-      <li aria-current="step"><span>Fechas</span></li>
-      <li><span>Tus datos</span></li>
-      <li><span>Pago</span></li>
-      <li><span>Listo</span></li>
-    </ol>
-    <div class="flow__grid">
-      <div>
-        <!-- Paso 1 -->
-        <section data-step="1" aria-label="Fechas y habitación">
-          <div class="cal" id="cal-book" data-months="2"></div>
-          <div class="row" style="margin:22px 0 14px"><h2 style="font-size:var(--s2)">Habitaciones libres</h2>
-            <span class="row" style="gap:12px"><span class="note" style="margin:0">Huéspedes</span><span class="stepper"><button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button><output data-guests-out aria-live="polite">2</output><button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></span></span></div>
-          <div class="opt" id="opt"></div>
-          <div style="margin-top:24px"><button class="btn btn--primary" type="button" data-next id="next1">Continuar</button></div>
-        </section>
-        <!-- Paso 2 -->
-        <section data-step="2" aria-label="Tus datos" hidden>
-          <div class="tabs" role="tablist" aria-label="Cuenta">
-            <button role="tab" aria-selected="true" data-tab="new" type="button">Crear cuenta</button>
-            <button role="tab" aria-selected="false" data-tab="in" type="button">Ya tengo cuenta</button>
-          </div>
-          <form class="form form--2" id="form-new" novalidate onsubmit="return false">
-            <div class="field"><label for="f-name">Nombre completo</label><input id="f-name" autocomplete="name" placeholder="Como aparece en tu documento"></div>
-            <div class="field"><label for="f-mail">Correo</label><input id="f-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
-            <div class="field"><label for="f-tel">WhatsApp (opcional)</label><input id="f-tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="+57 300 000 0000"><small>Solo lo usamos para avisarte el estado de tu reserva.</small></div>
-            <div class="field"><label for="f-pass">Contraseña</label><input id="f-pass" type="password" autocomplete="new-password" placeholder="Mínimo 12 caracteres"><small>O elige recibir un enlace de acceso por correo.</small></div>
-            <label class="check full"><input type="checkbox" checked> <span>Quiero recibir el estado de mi reserva por correo.</span></label>
-            <label class="check full"><input type="checkbox"> <span>Quiero recibirlo también por WhatsApp.</span></label>
-            <label class="check full"><input type="checkbox"> <span>Acepto los <a href="#/">términos</a> y la <a href="#/">política de privacidad</a>.</span></label>
-            <div class="full"><button class="btn btn--primary" type="button" data-next>Continuar</button></div>
-          </form>
-          <form class="form" id="form-in" hidden novalidate onsubmit="return false">
-            <div class="field"><label for="g-mail">Correo</label><input id="g-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
-            <div><button class="btn btn--primary" type="button" data-next>Enviarme un enlace de acceso</button></div>
-          </form>
-          <p class="note"><svg class="ic" style="display:inline;vertical-align:-.2em" aria-hidden="true"><use href="#i-lock-simple"/></svg> Proyecto de portafolio: no escribas datos reales. Nada de lo que ingreses se guarda.</p>
-        </section>
-        <!-- Paso 3 -->
-        <section data-step="3" aria-label="Pago" hidden>
-          <div class="stop" role="alert">
-            <svg class="ic" aria-hidden="true"><use href="#i-lock-simple"/></svg>
-            <h2>El pago está desactivado en este proyecto.</h2>
-            <p>Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio. Ninguna transacción puede proceder: no se cobra, no se reserva y no se piden datos de tarjeta.</p>
-          </div>
-          <div class="methods" aria-label="Así se verá el pago real">
-            <div><span>Tarjeta débito o crédito</span><span>Pasarela por definir</span></div>
-            <div><span>Transferencia desde tu banco</span><span>Por definir</span></div>
-          </div>
-          <div class="row" style="margin-top:24px;gap:14px">
-            <button class="btn" type="button" aria-disabled="true" id="pay-btn" aria-describedby="pay-why">Pagar</button>
-            <button class="btn btn--ghost" type="button" data-next>Ver una confirmación de ejemplo</button>
-          </div>
-          <p class="note" id="pay-why">El botón Pagar permanece desactivado a propósito.</p>
-        </section>
-        <!-- Paso 4 -->
-        <section data-step="4" aria-label="Confirmación" hidden class="done">
-          <span class="tag"><svg class="ic" aria-hidden="true"><use href="#i-warning"/></svg>Simulación</span>
-          <h2>Así se vería tu reserva confirmada.</h2>
-          <p style="color:var(--fg-2);max-width:52ch">No se reservó nada ni se cobró nada. Este es el recorrido que verá un huésped: el estado de su reserva llega por el canal que elija.</p>
-          <ul class="tline">
-            <li class="on"><span></span><div><strong>Reserva recibida</strong><span>Código AUR-DEMO</span></div></li>
-            <li><span></span><div><strong>Reserva confirmada</strong><span>El hotel confirma disponibilidad</span></div></li>
-            <li><span></span><div><strong>Check-in</strong><span>Te avisamos el día anterior</span></div></li>
-          </ul>
-          <div class="notify">
-            <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Por WhatsApp</h3>
-              <div class="bubble" id="wa-msg"></div></div>
-            <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-envelope-simple"/></svg>Por correo</h3>
-              <div class="mail"><b>Tu reserva en Hotel Aurora está confirmada</b><span id="mail-msg"></span></div></div>
-          </div>
-          <p class="note">Vista previa. No se envía ningún mensaje.</p>
-          <div class="row" style="margin-top:18px;gap:14px"><a class="btn btn--ghost" href="#/">Volver al inicio</a></div>
-        </section>
+  <section class="hour flow" id="flow">
+    <div class="wrap">
+      <button class="back" type="button" id="back-btn"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg>Volver</button>
+      <h1 class="flow__h" id="flow-h" tabindex="-1">Elige tus noches</h1>
+      <ol class="steps" id="steps" aria-label="Progreso de la reserva">
+        <li aria-current="step">Fechas</li><li>Datos</li><li>Pago</li><li>Ejemplo</li>
+      </ol>
+      <div class="flow__grid">
+        <div>
+          <section data-step="1" aria-label="Fechas y habitación">
+            <div class="cal" id="cal-book" data-months="2" aria-describedby="cal-note"></div>
+            <p class="note" id="cal-note">Disponibilidad y precios de demostración; no reflejan un hotel real.</p>
+            <div class="opthead"><h2 id="h-opt">Habitaciones</h2>
+              <span class="stepper" role="group" aria-labelledby="g-lbl-book"><span class="micro" id="g-lbl-book">Huéspedes</span><button type="button" data-guests="-1" aria-label="Quitar un huésped"><svg class="ic" aria-hidden="true"><use href="#i-minus"/></svg></button><output data-guests-out aria-live="polite">2</output><button type="button" data-guests="1" aria-label="Añadir un huésped"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
+            <p class="err" id="opt-msg" role="status" hidden></p>
+            <div class="opt" id="opt" role="radiogroup" aria-labelledby="h-opt"></div>
+            <p class="err" id="err1" role="alert" hidden></p>
+            <p class="cta-row"><button class="pill pill--solid" type="button" data-next id="next1" aria-describedby="err1">Continuar</button></p>
+          </section>
+          <section data-step="2" aria-label="Tus datos" hidden>
+            <p class="lead-note"><svg class="ic ic--inline" aria-hidden="true"><use href="#i-lock-simple"/></svg>Proyecto de portafolio: escribe datos inventados. Lo que escribas no se envía ni se guarda.</p>
+            <div class="tabs" role="tablist" aria-label="Cuenta"><button role="tab" id="t-new" aria-controls="form-new" aria-selected="true" data-tab="new" type="button">Crear cuenta</button><button role="tab" id="t-in" aria-controls="form-in" aria-selected="false" tabindex="-1" data-tab="in" type="button">Ya tengo cuenta</button></div>
+            <form class="form form--2" id="form-new" role="tabpanel" aria-labelledby="t-new" novalidate>
+              <div class="field"><label for="f-name">Nombre de ejemplo</label><input id="f-name" autocomplete="name" placeholder="Nombre de ejemplo"></div>
+              <div class="field"><label for="f-mail">Correo</label><input id="f-mail" type="email" autocomplete="email" placeholder="nombre@example.com"></div>
+              <div class="field"><label for="f-tel">WhatsApp (opcional)</label><input id="f-tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="+57 300 000 0000"><small>En un hotel real solo se usaría para avisarte el estado de tu reserva. Aquí no se envía nada.</small></div>
+              <label class="check full"><input type="checkbox"><span>Quiero recibir el estado de mi reserva por correo (ejemplo).</span></label>
+              <label class="check full"><input type="checkbox"><span>Quiero recibirlo también por WhatsApp (ejemplo).</span></label>
+              <label class="check full"><input type="checkbox" id="c-terms"><span>Acepto los términos y la política de privacidad (de ejemplo, no existen).</span></label>
+              <p class="err full" id="form-err" role="alert" hidden></p>
+              <div class="full"><button class="pill pill--solid" type="submit">Continuar</button></div>
+            </form>
+            <form class="form" id="form-in" role="tabpanel" aria-labelledby="t-in" hidden novalidate>
+              <div class="field"><label for="g-mail">Correo</label><input id="g-mail" type="email" autocomplete="email" placeholder="nombre@example.com"><small>Simulación: no se envía ningún correo.</small></div>
+              <p class="err" id="in-err" role="alert" hidden></p>
+              <div><button class="pill pill--solid" type="submit">Continuar con acceso de ejemplo</button></div>
+            </form>
+          </section>
+          <section data-step="3" aria-label="Pago" hidden>
+            <div class="stop" role="alert">
+              <svg class="ic ic--lg" aria-hidden="true"><use href="#i-lock-simple"/></svg>
+              <h2>El pago está desactivado en este proyecto.</h2>
+              <p class="stop__p">Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio. Ninguna transacción puede proceder: no se cobra, no se reserva y no se piden datos de tarjeta.</p>
+            </div>
+            <p class="micro muted methods-h" id="m-h">Medios de pago que tendría un hotel real (solo ilustración)</p>
+            <div class="methods" role="group" aria-labelledby="m-h"><div><span>Tarjeta débito o crédito</span><span>Pasarela por definir</span></div><div><span>Transferencia desde tu banco</span><span>Por definir</span></div></div>
+            <p class="cta-row cta-row--flex"><button class="pill" type="button" aria-disabled="true" id="pay-btn" aria-describedby="pay-why">Pagar</button><button class="pill pill--solid" type="button" data-next>Ver una confirmación de ejemplo</button></p>
+            <p class="note" id="pay-why">El botón Pagar permanece desactivado a propósito.</p>
+          </section>
+          <section data-step="4" aria-label="Confirmación" hidden class="done">
+            <span class="tag">Simulación</span>
+            <h2>Así se vería tu reserva confirmada.</h2>
+            <p class="done__lede">No se reservó nada ni se cobró nada. El estado de una reserva real llegaría por el canal que elija el huésped.</p>
+            <ul class="tline"><li class="on"><span>Reserva recibida</span><span>Código AUR-DEMO</span></li><li><span>Reserva confirmada</span><span>El hotel confirmaría la disponibilidad</span></li><li><span>Llegada</span><span>Te escribiríamos el día anterior</span></li></ul>
+            <div class="notify">
+              <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Por WhatsApp</h3><div class="bubble" id="wa-msg"></div></div>
+              <div class="msg"><h3><svg class="ic" aria-hidden="true"><use href="#i-envelope-simple"/></svg>Por correo</h3><div class="mail"><b>[Simulación] Tu reserva en Hotel Aurora quedaría confirmada</b><span id="mail-msg"></span></div></div>
+            </div>
+            <p class="note">Vista previa. No se envía ningún mensaje.</p>
+            <p class="mt18"><a class="pill" href="#/">Volver al inicio</a></p>
+          </section>
+        </div>
+        <aside class="sum" aria-label="Resumen de la reserva"><h2>Resumen</h2><dl id="sum-dl"></dl><p class="note">Viernes, sábado, diciembre y enero tienen recargo. Precios de demostración.</p></aside>
       </div>
-      <aside class="card sum" aria-label="Resumen de la reserva">
-        <h2>Resumen</h2>
-        <dl style="margin-top:16px" id="sum-dl"></dl>
-      </aside>
     </div>
-  </div>
+  </section>
 </div>
 </main>
 
 <footer class="foot">
   <div class="wrap">
     <div class="foot__cols">
-      <div><a class="brand" href="#/"><span class="brand__arc" aria-hidden="true"><i class="brand__dot" style="animation:none"></i></span>Aurora</a><p style="margin-top:14px;color:var(--fg-2);max-width:30ch">Hotel boutique en Cartagena de Indias, Colombia.</p></div>
-      <div><h4>El hotel</h4><ul><li><a href="#/" data-go="habitaciones">Habitaciones</a></li><li><a href="#/" data-go="ciudad">La ciudad</a></li><li><a href="#/" data-go="disponibilidad">Disponibilidad</a></li></ul></div>
-      <div><h4>Tu reserva</h4><ul><li><button type="button" id="acct-btn2">Mi cuenta</button></li><li><a href="#/reservar">Reservar</a></li><li><button type="button" id="install-btn"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-download-simple"/></svg>Instalar la app</button></li></ul></div>
-      <div><h4>Contacto</h4><ul><li><a href="#/"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-whatsapp-logo"/></svg>Escribir por WhatsApp</a></li><li><a href="#/"><svg class="ic" aria-hidden="true" style="margin-right:8px"><use href="#i-envelope-simple"/></svg>reservas@hotelaurora.example</a></li></ul></div>
+      <div><h2 class="fh">Hotel Aurora</h2><p class="w28">Hotel boutique en Cartagena de Indias, Colombia.</p></div>
+      <div><h2 class="fh">El hotel</h2><ul><li><a href="#/" data-go="habitaciones">Habitaciones</a></li><li><a href="#/" data-go="ciudad">La ciudad</a></li><li><a href="#/" data-go="disponibilidad">Disponibilidad</a></li></ul></div>
+      <div><h2 class="fh">Tu reserva</h2><ul><li><button type="button" id="acct-btn2">Mi cuenta</button></li><li><a href="#/reservar">Reservar</a></li><li><button type="button" id="install-btn"><svg class="ic" aria-hidden="true"><use href="#i-download-simple"/></svg>Instalar la app</button></li></ul></div>
+      <div><h2 class="fh">Contacto de ejemplo</h2><ul><li><span class="ex"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>WhatsApp (ejemplo)</span></li><li><span class="ex"><svg class="ic" aria-hidden="true"><use href="#i-envelope-simple"/></svg>reservas@hotelaurora.example</span></li></ul></div>
     </div>
-    <div class="arcade" aria-hidden="true"><i></i><i></i><i></i><i class="lit"></i><i></i><i></i><i></i></div>
     <div class="foot__legal">
       <p><strong>Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio.</strong> Hotel ficticio: no se procesa ninguna reserva ni transacción.</p>
-      <p>Imágenes ilustrativas. Precios, disponibilidad y servicios son de demostración.</p>
+      <p>Precios, disponibilidad y servicios son de demostración. Las imágenes del hotel serán ilustrativas.</p>
     </div>
+    <div class="foot__mark" aria-hidden="true"><i>A</i><i>U</i><i>R</i><i class="sun"></i><i>R</i><i>A</i></div>
   </div>
 </footer>
 
-<div class="dock" id="dock"><div class="dock__t"><strong id="dock-p">Desde COP 520.000</strong><span id="dock-s">por noche, de demostración</span></div><a class="btn btn--primary btn--sm" href="#/reservar" id="dock-book">Reservar</a></div>
-<div class="scrim" id="scrim" hidden></div>
+<div class="dock" id="dock"><a class="pill pill--solid" href="#/reservar" id="dock-book">Reservar</a></div>
 
-<dialog id="dlg-install" aria-labelledby="dlg-i-h">
-  <h2 id="dlg-i-h">Instala Aurora como app</h2>
-  <p style="color:var(--fg-2)">Se abre en pantalla completa y deja la reserva a un toque. Desde la app también puedes reservar y ver el estado de tus reservas.</p>
-  <ul>
-    <li><strong>Android y computador:</strong> menú del navegador, luego Instalar app.</li>
-    <li><strong>iPhone y iPad:</strong> Compartir, luego Añadir a pantalla de inicio.</li>
-  </ul>
-  <button class="btn btn--primary" type="button" data-close>Entendido</button>
+<dialog class="sheet" id="dlg-cal" aria-labelledby="dlg-cal-h">
+  <div class="sheet__in">
+    <div class="sheet__top"><h2 id="dlg-cal-h">Elige tus noches.</h2><button class="pill" type="button" data-close>Cerrar</button></div>
+    <div class="cal" id="cal-sheet" data-months="2" aria-describedby="sheet-note"></div>
+    <p class="note" id="sheet-note">Disponibilidad y precios de demostración; no reflejan un hotel real.</p>
+    <div class="sheet__sum"><p class="big big--sm" id="sheet-sum" aria-live="polite">Sin fechas</p><button class="pill pill--solid" type="button" data-close>Listo</button></div>
+  </div>
 </dialog>
-<dialog id="dlg-acct" aria-labelledby="dlg-a-h">
-  <h2 id="dlg-a-h">Mi cuenta</h2>
-  <div class="form">
-    <div class="field"><label for="a-mail">Correo</label><input id="a-mail" type="email" autocomplete="email" placeholder="nombre@correo.com"></div>
-    <button class="btn btn--primary" type="button" data-close>Enviarme un enlace de acceso</button>
-    <p class="note" style="margin:0">Proyecto de portafolio: no escribas datos reales.</p>
+<dialog class="sheet menu" id="dlg-menu" aria-label="Menú">
+  <div class="sheet__in">
+    <div class="sheet__top"><span class="micro">Hotel Aurora</span><button class="pill" type="button" data-close>Cerrar</button></div>
+    <nav aria-label="Principal"><a href="#/" data-go="habitaciones" data-close>Habitaciones</a><a href="#/" data-go="ciudad" data-close>La ciudad</a><a href="#/reservar" data-close>Reservar</a><a href="#/" id="menu-acct" data-close>Mi cuenta</a></nav>
+    <p class="push"><button class="link link--btn" type="button" id="menu-install"><svg class="ic" aria-hidden="true"><use href="#i-download-simple"/></svg>Instalar la app</button></p>
+  </div>
+</dialog>
+<dialog class="sheet sheet--sm" id="dlg-install" aria-labelledby="dlg-i-h">
+  <div class="sheet__in">
+    <h2 id="dlg-i-h" class="h-sm">Instalar la app (próximamente)</h2>
+    <p>Esta maqueta todavía no se puede instalar. En la versión final se abriría en pantalla completa y dejaría la reserva a un toque.</p>
+    <p class="note">Hotel Aurora es un hotel ficticio de portafolio: no se procesa ninguna reserva ni pago.</p>
+    <p><button class="pill pill--solid" type="button" data-close>Entendido</button></p>
+  </div>
+</dialog>
+<dialog class="sheet sheet--sm" id="dlg-acct" aria-labelledby="dlg-a-h">
+  <div class="sheet__in">
+    <h2 id="dlg-a-h" class="h-sm">Mi cuenta</h2>
+    <p class="lead-note">Proyecto de portafolio: escribe datos inventados. Lo que escribas no se envía ni se guarda.</p>
+    <div class="field"><label for="a-mail">Correo</label><input id="a-mail" type="email" autocomplete="email" placeholder="nombre@example.com"></div>
+    <p><button class="pill pill--solid" type="button" id="a-send">Probar el acceso (simulación)</button></p>
+    <p class="note" id="a-status" role="status"></p>
+    <p><button class="pill" type="button" data-close>Cerrar</button></p>
   </div>
 </dialog>
 
 <script>
 (()=>{
 "use strict";
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const cop=n=>'COP '+n.toLocaleString('es-CO');
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const root=document.documentElement,body=document.body;
+const rmq=matchMedia('(prefers-reduced-motion: reduce)');const R=()=>rmq.matches;
+const NB=' ';
+const cop=n=>'COP'+NB+n.toLocaleString('es-CO');
 const fShort=new Intl.DateTimeFormat('es-CO',{day:'numeric',month:'short'});
-const fLong=new Intl.DateTimeFormat('es-CO',{weekday:'short',day:'numeric',month:'short'});
+const fWeek=new Intl.DateTimeFormat('es-CO',{weekday:'long',day:'numeric',month:'long'});
+const fFull=new Intl.DateTimeFormat('es-CO',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 const fMonthRaw=new Intl.DateTimeFormat('es-CO',{month:'long',year:'numeric'});
 const fMonth={format:d=>{const t=fMonthRaw.format(d).replace(' de ',' ');return t.charAt(0).toUpperCase()+t.slice(1)}};
+const longTxt=d=>fWeek.format(d).replace(',','');
+const rangeShort=(a,b)=>a.getMonth()===b.getMonth()&&a.getFullYear()===b.getFullYear()?`${a.getDate()} al ${fShort.format(b)}`:`${fShort.format(a)} al ${fShort.format(b)}`;
 const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 const today=(()=>{const d=new Date();d.setHours(0,0,0,0);return d})();
 const add=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
 const nights=(a,b)=>Math.round((b-a)/864e5);
 const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+const TITLE_HOME='Hotel Aurora, hotel boutique en Cartagena de Indias (proyecto de portafolio)';
+const setTitle=t=>{document.title=t?`${t} | Hotel Aurora (proyecto de portafolio)`:TITLE_HOME};
 
-/* ---------- datos de demostracion ---------- */
+/* ---------- datos de demostracion: una habitacion por hora ---------- */
 const ROOMS=[
- {id:'alba',name:'Alba',cap:2,bed:'Cama king',view:'Vista al patio',base:520000,ph:'ph--r1',text:'Una habitación tranquila que recibe la primera luz del patio.'},
- {id:'patio',name:'Patio',cap:3,bed:'Cama doble y sofá cama',view:'Balcón al patio',base:610000,ph:'ph--r2',text:'Con balcón sobre el patio central, para desayunar sin salir de la habitación.'},
- {id:'buganvilia',name:'Balcón de Buganvilia',cap:3,bed:'Cama king',view:'Balcón a la calle',base:780000,ph:'ph--r3',text:'Balcón de madera sobre la calle, con buganvilias a la altura de la mano.'},
- {id:'terraza',name:'Terraza Aurora',cap:4,bed:'Cama king y dos camas sencillas',view:'Terraza privada',base:1150000,ph:'ph--r4',text:'La habitación más amplia, con terraza privada para ver caer la tarde sobre la ciudad.'}
+ {id:'alba',h:1,name:'Alba',hour:'6 a. m.',cap:2,bed:'Cama king',view:'Patio al este',base:520000,text:'La primera luz del día entra por el patio y llega a la cama.'},
+ {id:'mediodia',h:2,name:'Mediodía',hour:'12 m.',cap:3,bed:'Cama doble y sofá cama',view:'Balcón al patio',base:610000,text:'Un balcón sobre el patio para desayunar sin salir de la habitación.'},
+ {id:'atardecer',h:3,name:'Atardecer',hour:'6 p. m.',cap:3,bed:'Cama king',view:'Balcón a la calle',base:780000,text:'El balcón mira a la calle cuando baja el sol y empieza la tarde.'},
+ {id:'noche',h:4,name:'Noche',hour:'10 p. m.',cap:4,bed:'Cama king y dos camas sencillas',view:'Terraza privada',base:1150000,text:'La más amplia, con terraza privada para ver la ciudad encenderse.'}
 ];
+const MAXG=Math.max(...ROOMS.map(r=>r.cap));
 const blockedDay=d=>{const s=6+(hash(d.getFullYear()+'-'+d.getMonth())%14);const x=d.getDate();return x>=s&&x<s+4};
 const roomFree=(d,r)=>!blockedDay(d)&&(hash(iso(d)+r.id)%100)>=20;
 const freeRooms=d=>ROOMS.filter(r=>roomFree(d,r));
 const rate=(d,r)=>{let p=r.base;const w=d.getDay();if(w===5||w===6)p*=1.15;const m=d.getMonth();if(m===11||m===0)p*=1.25;return Math.round(p/10000)*10000};
 const dayInfo=d=>{const f=freeRooms(d);return {free:f.length,min:f.length?Math.min(...f.map(r=>rate(d,r))):0}};
+const S={start:null,end:null,guests:2,room:'noche',step:1};
+const listeners=[];const emit=()=>listeners.forEach(f=>f());
+const curRoom=()=>ROOMS.find(x=>x.id===S.room)||null;
 
-const S={start:null,end:null,guests:2,room:'terraza',step:1};
-const listeners=[];
-const emit=()=>listeners.forEach(f=>f());
-
-/* ---------- calendario ---------- */
-function Calendar(root){
-  let view=new Date(today.getFullYear(),today.getMonth(),1);
-  const months=+root.dataset.months||1;
-  let hover=null;
+/* ---------- calendario en circulos (teclado: flechas, Inicio, Fin, AvPag, RePag) ---------- */
+function Calendar(rootEl){
+  let view=new Date(today.getFullYear(),today.getMonth(),1),hover=null,act=null;
+  const first0=new Date(today.getFullYear(),today.getMonth(),1);
+  const mq=matchMedia('(min-width:900px)');
+  const two=()=>rootEl.dataset.months==='2'&&mq.matches;
+  rootEl.innerHTML='<div class="cal__top"><button class="iconb" type="button" data-nav="-1" aria-label="Mes anterior"><svg class="ic" aria-hidden="true"><use href="#i-caret-left"/></svg></button><span class="sr" role="status" aria-live="polite" data-live></span><button class="iconb" type="button" data-nav="1" aria-label="Mes siguiente"><svg class="ic" aria-hidden="true"><use href="#i-caret-right"/></svg></button></div><div class="cal__months"></div>';
+  const box=$('.cal__months',rootEl),live=$('[data-live]',rootEl),prevBtn=$('[data-nav="-1"]',rootEl);
+  const monthsLabel=()=>two()?`${fMonth.format(view)} y ${fMonth.format(new Date(view.getFullYear(),view.getMonth()+1,1))}`:fMonth.format(view);
   const render=()=>{
-    const wide=root.dataset.months==='2'&&matchMedia('(min-width:760px)').matches;
-    const n=wide?2:1;
-    let html=`<div class="cal__top"><button class="iconbtn" type="button" data-nav="-1" aria-label="Mes anterior"><svg class="ic" aria-hidden="true"><use href="#i-caret-left"/></svg></button><span class="sr" aria-live="polite">${fMonth.format(view)}</span><button class="iconbtn" type="button" data-nav="1" aria-label="Mes siguiente"><svg class="ic" aria-hidden="true"><use href="#i-caret-right"/></svg></button></div><div class="cal__months">`;
+    const n=two()?2:1;let html='';
     for(let m=0;m<n;m++){
-      const first=new Date(view.getFullYear(),view.getMonth()+m,1);
-      const lead=(first.getDay()+6)%7; // lunes primero
-      const dim=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
+      const first=new Date(view.getFullYear(),view.getMonth()+m,1),lead=(first.getDay()+6)%7,dim=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
       html+=`<div role="group" aria-label="${fMonth.format(first)}"><div class="cal__title">${fMonth.format(first)}</div><div class="cal__dow" aria-hidden="true">${['L','M','M','J','V','S','D'].map(x=>`<span>${x}</span>`).join('')}</div><div class="cal__days">`;
       for(let i=0;i<lead;i++)html+='<span class="day day--blank"></span>';
       for(let k=1;k<=dim;k++){
-        const d=new Date(first.getFullYear(),first.getMonth(),k);
-        const past=d<today, info=dayInfo(d), out=info.free===0;
-        const isS=S.start&&+d===+S.start, isE=S.end&&+d===+S.end;
-        const prev=S.end||hover; const inR=S.start&&prev&&d>S.start&&d<prev;
-        const c=['day',past&&'is-past',out&&!past&&'is-out',info.free===1&&!past&&'is-last',+d===+today&&'is-today',isS&&'is-start',isE&&'is-end',inR&&'is-in'].filter(Boolean).join(' ');
+        const d=new Date(first.getFullYear(),first.getMonth(),k),past=d<today,info=dayInfo(d),out=info.free===0,isToday=+d===+today;
+        const isS=S.start&&+d===+S.start,isE=S.end&&+d===+S.end,prev=S.end||hover,inR=S.start&&prev&&d>S.start&&d<prev;
+        const c=['day',past&&'is-past',out&&!past&&'is-out',info.free===1&&!past&&'is-last',isToday&&'is-today',isS&&'is-start',isE&&'is-end',inR&&'is-in'].filter(Boolean).join(' ');
         const dis=past||(out&&!(S.start&&!S.end&&d>S.start));
-        const label=`${fLong.format(d)}${past?', pasado':out?', completo':info.free===1?', últimas habitaciones':', libre desde '+cop(info.min)}`;
-        html+=`<button type="button" class="${c}" data-d="${iso(d)}" ${dis?'disabled':''} aria-label="${label}" ${isS||isE?'aria-pressed="true"':''}><span>${k}</span>${!past&&!out?`<small>${Math.round(info.min/1000)}</small>`:''}</button>`;
+        const state=isS?', llegada':isE?', salida':inR?', dentro de tu estancia':'';
+        const avail=past?', pasado':out?', completo':info.free===1?', última habitación':', libre desde '+cop(info.min);
+        const label=`${fFull.format(d)}${isToday?', hoy':''}${state}${avail}`;
+        html+=`<button type="button" class="${c}" data-d="${iso(d)}" tabindex="-1" ${dis?'aria-disabled="true"':''} ${isToday?'aria-current="date"':''} aria-label="${label}" ${isS||isE?'aria-pressed="true"':''}><span>${k}</span>${!past&&!out?`<small>${Math.round(info.min/1000)}</small>`:''}</button>`;
       }
       html+='</div></div>';
     }
-    root.innerHTML=html+'</div>';
+    box.innerHTML=html;
+    prevBtn.setAttribute('aria-disabled',String(view<=first0));
+    let tab=act&&box.querySelector(`[data-d="${act}"]`);
+    if(!tab&&S.start)tab=box.querySelector(`[data-d="${iso(S.start)}"]`);
+    if(!tab)tab=box.querySelector('.day[data-d]:not([aria-disabled="true"])')||box.querySelector('.day[data-d]');
+    if(tab)tab.tabIndex=0;
   };
-  root.addEventListener('click',e=>{
+  const focusDate=t=>{
+    let el=box.querySelector(`[data-d="${iso(t)}"]`);
+    if(!el){
+      const first=new Date(t.getFullYear(),t.getMonth(),1);
+      view=t<view?first:new Date(first.getFullYear(),first.getMonth()-(two()?1:0),1);
+      if(view<first0)view=first0;
+      act=iso(t);render();live.textContent=monthsLabel();el=box.querySelector(`[data-d="${iso(t)}"]`);
+    }
+    act=iso(t);
+    $$('.day[tabindex="0"]',box).forEach(x=>x.tabIndex=-1);
+    if(el){el.tabIndex=0;el.focus()}
+  };
+  const pick=b=>{
+    const [y,m,d]=b.dataset.d.split('-').map(Number),pk=new Date(y,m-1,d);
+    if(!S.start||S.end||pk<=S.start){if(freeRooms(pk).length===0)return;S.start=pk;S.end=null}
+    else{
+      let ok=true;for(let t=new Date(S.start);t<pk;t=add(t,1))if(freeRooms(t).length===0){ok=false;break}
+      if(ok)S.end=pk;
+      else if(freeRooms(pk).length===0){live.textContent='Hay noches completas entre esas fechas. Elige otra salida.';return}
+      else{S.start=pk;S.end=null}
+    }
+    act=b.dataset.d;hover=null;emit();
+    const f=box.querySelector(`[data-d="${b.dataset.d}"]`);if(f){f.tabIndex=0;f.focus({preventScroll:true})}
+  };
+  rootEl.addEventListener('click',e=>{
     const nav=e.target.closest('[data-nav]');
-    if(nav){const t=new Date(view.getFullYear(),view.getMonth()+(+nav.dataset.nav),1);if(t>=new Date(today.getFullYear(),today.getMonth(),1)){view=t;render()}return}
-    const b=e.target.closest('.day[data-d]'); if(!b||b.disabled)return;
-    const [y,m,d]=b.dataset.d.split('-').map(Number); const pick=new Date(y,m-1,d);
-    if(!S.start||S.end||pick<=S.start){ if(freeRooms(pick).length===0)return; S.start=pick;S.end=null }
-    else{ let ok=true;for(let t=new Date(S.start);t<pick;t=add(t,1))if(freeRooms(t).length===0){ok=false;break}
-      if(!ok){S.start=pick;S.end=null}else S.end=pick }
-    hover=null; emit();
-    const f=root.querySelector(`[data-d="${b.dataset.d}"]`); f&&f.focus({preventScroll:true});
+    if(nav){const t=new Date(view.getFullYear(),view.getMonth()+(+nav.dataset.nav),1);if(t>=first0){view=t;render();live.textContent=monthsLabel()}return}
+    const b=e.target.closest('.day[data-d]');if(!b||b.getAttribute('aria-disabled')==='true')return;
+    pick(b);
   });
-  /* vista previa del rango: solo alterna clases, no reemplaza el DOM (un repintado entre mousedown y mouseup pierde el clic) */
-  const paintHover=(to)=>{root.querySelectorAll('.day[data-d]').forEach(el=>{const [y,m,d]=el.dataset.d.split('-').map(Number);const x=new Date(y,m-1,d);el.classList.toggle('is-in',!!(S.start&&to&&x>S.start&&x<to)||!!(S.start&&S.end&&x>S.start&&x<S.end))})};
-  root.addEventListener('mouseover',e=>{const b=e.target.closest('.day[data-d]');if(!b||!S.start||S.end)return;const [y,m,d]=b.dataset.d.split('-').map(Number);hover=new Date(y,m-1,d);paintHover(hover>S.start?hover:null)});
-  root.addEventListener('mouseleave',()=>{hover=null;if(S.start&&!S.end)paintHover(null)});
-  root.addEventListener('keydown',e=>{
-    const b=e.target.closest('.day[data-d]'); if(!b)return;
-    const step={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key]; if(!step)return;
-    e.preventDefault(); const [y,m,d]=b.dataset.d.split('-').map(Number); const t=add(new Date(y,m-1,d),step);
-    const find=()=>root.querySelector(`[data-d="${iso(t)}"]`);
-    let el=find(); if(!el){view=new Date(t.getFullYear(),t.getMonth()-(step>0&&root.dataset.months==='2'&&matchMedia('(min-width:760px)').matches?1:0),1);render();el=find()}
-    el&&el.focus();
+  const paintHover=to=>{box.querySelectorAll('.day[data-d]').forEach(el=>{const [y,m,d]=el.dataset.d.split('-').map(Number),x=new Date(y,m-1,d);el.classList.toggle('is-in',!!(S.start&&to&&x>S.start&&x<to)||!!(S.start&&S.end&&x>S.start&&x<S.end))})};
+  rootEl.addEventListener('mouseover',e=>{const b=e.target.closest('.day[data-d]');if(!b||!S.start||S.end)return;const [y,m,d]=b.dataset.d.split('-').map(Number);hover=new Date(y,m-1,d);paintHover(hover>S.start?hover:null)});
+  rootEl.addEventListener('mouseleave',()=>{hover=null;if(S.start&&!S.end)paintHover(null)});
+  rootEl.addEventListener('keydown',e=>{
+    const b=e.target.closest('.day[data-d]');if(!b)return;
+    const [y,m,d]=b.dataset.d.split('-').map(Number),cur=new Date(y,m-1,d),dow=(cur.getDay()+6)%7;let t=null;
+    const monthShift=n=>new Date(cur.getFullYear(),cur.getMonth()+n,Math.min(cur.getDate(),new Date(cur.getFullYear(),cur.getMonth()+n+1,0).getDate()));
+    switch(e.key){
+      case 'ArrowLeft':t=add(cur,-1);break;case 'ArrowRight':t=add(cur,1);break;
+      case 'ArrowUp':t=add(cur,-7);break;case 'ArrowDown':t=add(cur,7);break;
+      case 'Home':t=add(cur,-dow);break;case 'End':t=add(cur,6-dow);break;
+      case 'PageUp':t=monthShift(-1);break;case 'PageDown':t=monthShift(1);break;
+      default:return;
+    }
+    e.preventDefault();if(t<today)t=new Date(today);focusDate(t);
   });
-  matchMedia('(min-width:760px)').addEventListener('change',render);
-  listeners.push(render); render(); return {render};
+  mq.addEventListener('change',render);listeners.push(render);render();
 }
-const cals=$$('.cal').map(Calendar);
+$$('.cal').forEach(Calendar);
 
-/* ---------- resumenes ---------- */
-const stayText=()=>S.start&&S.end?`${nights(S.start,S.end)} ${nights(S.start,S.end)===1?'noche':'noches'}, del ${fShort.format(S.start)} al ${fShort.format(S.end)}`:S.start?`Llegada el ${fShort.format(S.start)}. Elige la salida.`:'Elige tus fechas';
-const total=(r)=>{let t=0;for(let d=new Date(S.start);d<S.end;d=add(d,1))t+=rate(d,r);return t};
-const roomOk=r=>{if(!S.start||!S.end)return true;for(let d=new Date(S.start);d<S.end;d=add(d,1))if(!roomFree(d,r))return false;return r.cap>=S.guests};
+/* ---------- disponibilidad por habitacion ---------- */
+const total=r=>{let t=0;for(let d=new Date(S.start);d<S.end;d=add(d,1))t+=rate(d,r);return t};
+const roomWhy=r=>{
+  if(r.cap<S.guests)return `Capacidad máxima: ${r.cap} huéspedes`;
+  if(S.start&&S.end)for(let d=new Date(S.start);d<S.end;d=add(d,1))if(!roomFree(d,r))return 'No disponible en estas fechas';
+  return '';
+};
+const roomOk=r=>!roomWhy(r);
+const stayShort=()=>S.start&&S.end?rangeShort(S.start,S.end):S.start?`${fShort.format(S.start)}, elige la salida`:'Elige tus fechas';
+const nightsTxt=()=>S.start&&S.end?`${nights(S.start,S.end)} ${nights(S.start,S.end)===1?'noche':'noches'}`:'Sin fechas';
+function ensureRoom(force){
+  if(!force&&body.dataset.screen==='room')return;
+  const cur=curRoom();if(cur&&roomOk(cur))return;
+  const alt=ROOMS.find(roomOk);S.room=alt?alt.id:null;
+  if(alt&&body.dataset.screen==='book')setHour(alt.h);
+}
 function refresh(){
-  const v=$('#bar-dates-val'); if(v){v.textContent=S.start&&S.end?`${fShort.format(S.start)} a ${fShort.format(S.end)}`:S.start?`${fShort.format(S.start)} a ...`:'Elige llegada y salida';v.classList.toggle('is-empty',!(S.start&&S.end))}
-  $('#pop-sum').textContent=stayText();
-  $('#av-sum').textContent=stayText();
-  $('#rm-sum').textContent=stayText();
-  const r=ROOMS.find(x=>x.id===S.room);
-  $('#dock-p').textContent=S.start&&S.end?cop(total(r)):'Desde COP 520.000';
-  $('#dock-s').textContent=S.start&&S.end?stayText():'por noche, de demostración';
-  $$('[data-guests-out]').forEach(o=>o.textContent=S.guests);
-  drawOptions(); drawSummary();
+  ensureRoom();
+  $('#hero-dates-val').textContent=stayShort();
+  $('#sheet-sum').textContent=S.start&&S.end?`${nightsTxt()}, ${stayShort()}`:S.start?`Llegada el ${fShort.format(S.start)}. Elige la salida.`:'Sin fechas';
+  $('#av-big').textContent=nightsTxt();
+  $('#av-range').textContent=S.start&&S.end?`Del ${longTxt(S.start)} al ${longTxt(S.end)}`:S.start?`Llegada el ${longTxt(S.start)}. Elige la salida.`:'Toca una llegada y una salida en el calendario.';
+  const r=curRoom();
+  $('#av-total').textContent=S.start&&S.end&&r?`${r.name}: ${cop(total(r))} (demo)`:'';
+  $$('[data-guests-out]').forEach(o=>{o.innerHTML=`${S.guests}<span class="sr"> ${S.guests===1?'huésped':'huéspedes'}</span>`});
+  $$('[data-guests]').forEach(b=>b.setAttribute('aria-disabled',String((+b.dataset.guests<0&&S.guests<=1)||(+b.dataset.guests>0&&S.guests>=MAXG))));
+  drawOptions();drawSummary();drawRoomPrice();
 }
 listeners.push(refresh);
 
-/* ---------- habitaciones ---------- */
-$('#rail').innerHTML=ROOMS.map(r=>`<a class="room" role="listitem" href="#/habitacion/${r.id}" data-room="${r.id}"><div class="ph ${r.ph} arch" data-slot="R-${r.id} portada" data-size="1200 x 1600 px (3:4)" role="img" aria-label="Habitación ${r.name}"></div><div><h3>${r.name}</h3><p class="room__meta">${r.cap} huéspedes, ${r.bed.toLowerCase()}. ${r.view}.</p></div><div class="room__price"><div><small>Desde</small><strong>${cop(r.base)}</strong></div><span class="go" aria-hidden="true"><svg class="ic"><use href="#i-arrow-right"/></svg></span></div></a>`).join('');
-const railFit=()=>{const r=$('#rail');$('.rooms__nav').classList.toggle('no-ov',r.scrollWidth<=r.clientWidth+4)};addEventListener('resize',railFit);requestAnimationFrame(railFit);
-$$('[data-rail]').forEach(b=>b.addEventListener('click',()=>{const rail=$('#rail');rail.scrollBy({left:(+b.dataset.rail)*rail.clientWidth*.7,behavior:reduce?'auto':'smooth'})}));
-
-function drawRoom(id){
-  const r=ROOMS.find(x=>x.id===id)||ROOMS[3]; S.room=r.id;
-  $('#rm-name').textContent=r.name; $('#rm-text').textContent=r.text;
-  $('#rm-price').textContent=cop(S.start&&S.end?Math.round(total(r)/nights(S.start,S.end)):r.base);
-  $('#rm-facts').innerHTML=`<span><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>${r.cap} huéspedes</span><span><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg>${r.bed}</span><span><svg class="ic" aria-hidden="true"><use href="#i-sun-horizon"/></svg>${r.view}</span>`;
-  const g=$$('.gal .ph'); g[0].className=`ph ${r.ph} arch`; g[0].dataset.slot=`R-${r.id} vista general`; document.title=`${r.name} | Hotel Aurora, hotel boutique en Cartagena de Indias`;
-}
 function drawOptions(){
-  const box=$('#opt'); if(!box)return;
-  box.innerHTML=ROOMS.map(r=>{
-    const ok=roomOk(r), t=S.start&&S.end?total(r):0;
-    return `<label class="${ok?'':'is-na'}"><input type="radio" name="room" value="${r.id}" ${S.room===r.id&&ok?'checked':''} ${ok?'':'disabled'}><span class="thumb ph ${r.ph}" data-slot="R-${r.id}" data-size="360 x 360 px"></span><span><b>${r.name}</b><small>${r.cap} huéspedes, ${r.bed.toLowerCase()}${ok?'':'. No disponible en estas fechas'}</small></span><span class="tot"><strong>${t?cop(t):cop(r.base)}</strong><small>${t?'total':'por noche'}</small></span></label>`}).join('');
-  $$('input[name=room]',box).forEach(i=>i.addEventListener('change',()=>{S.room=i.value;drawSummary()}));
+  const box=$('#opt');if(!box)return;
+  box.innerHTML=ROOMS.map(r=>{const why=roomWhy(r),ok=!why,t=S.start&&S.end?total(r):0;
+    return `<label class="${ok?'':'is-na'}"><input type="radio" name="room" value="${r.id}" ${S.room===r.id&&ok?'checked':''} ${ok?'':'disabled'}><span><b>${r.name}</b><small>${r.hour} · ${r.cap} huéspedes, ${r.bed.toLowerCase()}${ok?'':'. '+why}</small></span><span class="tot">${t?cop(t):cop(r.base)}<br><small>${t?'total':'por noche'}</small></span></label>`}).join('');
+  $$('input[name=room]',box).forEach(i=>i.addEventListener('change',()=>{S.room=i.value;setHour(ROOMS.find(x=>x.id===S.room).h);drawSummary()}));
+  const msg=$('#opt-msg');
+  if(!ROOMS.some(roomOk)){msg.textContent='Ninguna habitación está libre para esas fechas y huéspedes. Cambia las fechas o el número de huéspedes.';msg.hidden=false}
+  else{msg.hidden=true;msg.textContent=''}
 }
 function drawSummary(){
-  const dl=$('#sum-dl'); if(!dl)return; const r=ROOMS.find(x=>x.id===S.room);
-  if(!(S.start&&S.end)){dl.innerHTML='<dt>Estancia</dt><dd>Sin fechas</dd><dt>Habitación</dt><dd>'+r.name+'</dd>';return}
-  const n=nights(S.start,S.end), t=total(r);
-  dl.innerHTML=`<dt>Habitación</dt><dd>${r.name}</dd><dt>Llegada</dt><dd>${fLong.format(S.start)}</dd><dt>Salida</dt><dd>${fLong.format(S.end)}</dd><dt>Huéspedes</dt><dd>${S.guests}</dd><hr><dt>${n} ${n===1?'noche':'noches'}</dt><dd>${cop(t)}</dd><dt>Impuestos</dt><dd>Por definir</dd><hr><dt><strong>Total de demostración</strong></dt><dd>${cop(t)}</dd>`;
-  const name='Valentina';
-  $('#wa-msg').innerHTML=`Hola ${name}, tu reserva en Hotel Aurora quedó confirmada.<br>Habitación ${r.name}.<br>Llegada: ${fLong.format(S.start)}. Salida: ${fLong.format(S.end)}.<br>Código: AUR-DEMO`;
-  $('#mail-msg').textContent=`Hola ${name}. Te esperamos del ${fShort.format(S.start)} al ${fShort.format(S.end)} en la habitación ${r.name}. Código de reserva: AUR-DEMO.`;
+  const dl=$('#sum-dl');if(!dl)return;const r=curRoom();
+  if(!(S.start&&S.end)||!r){dl.innerHTML=`<dt>Estancia</dt><dd>Sin fechas</dd><dt>Habitación</dt><dd>${r?r.name:'Sin habitación libre'}</dd>`;return}
+  const n=nights(S.start,S.end),t=total(r);
+  dl.innerHTML=`<dt>Habitación</dt><dd>${r.name}</dd><dt>Llegada</dt><dd>${longTxt(S.start)}</dd><dt>Salida</dt><dd>${longTxt(S.end)}</dd><dt>Huéspedes</dt><dd>${S.guests}</dd><dt>${n} ${n===1?'noche':'noches'}</dt><dd>${cop(t)}</dd><dt>Impuestos</dt><dd>Por definir</dd><dt><strong>Total de demostración</strong></dt><dd>${cop(t)}</dd>`;
+  $('#wa-msg').innerHTML=`[Simulación] Hola. Tu reserva en Hotel Aurora quedaría confirmada.<br>Habitación ${r.name}.<br>Llegada: ${longTxt(S.start)}. Salida: ${longTxt(S.end)}.<br>Código: AUR-DEMO`;
+  $('#mail-msg').textContent=`Hola. Te esperaríamos del ${rangeShort(S.start,S.end)} en la habitación ${r.name}. Código de reserva: AUR-DEMO.`;
+}
+function drawRoom(r){
+  S.room=r.id;
+  const nm=$('#rm-name');nm.textContent=r.name;nm.dataset.room=r.id;
+  $('#rm-hour').textContent=r.hour;$('#rm-text').textContent=r.text;
+  $('#rm-dot').className='dot dot--'+r.h;
+  $('#rm-facts').innerHTML=`<dt>Huéspedes</dt><dd>${r.cap}</dd><dt>Cama</dt><dd>${r.bed}</dd><dt>Vista</dt><dd>${r.view}</dd><dt>Incluye</dt><dd>Baño privado y aire acondicionado</dd><dt>Llegada y salida</dt><dd>Por confirmar con el hotel</dd>`;
+  const w=$('#rm-win');w.dataset.slot=`R-${r.id}-01 · ventana circular`;w.dataset.size='2560 × 2560 px (1:1)';w.setAttribute('aria-label',`Habitación ${r.name}`);
+  drawRoomPrice();
+}
+function drawRoomPrice(){
+  const r=curRoom()||ROOMS[0];const p=$('#rm-price');if(!p)return;
+  const dated=S.start&&S.end,ok=roomOk(r);
+  p.firstChild.nodeValue=cop(dated&&ok?total(r):r.base);
+  $('#rm-sum').textContent=dated?(ok?`${nightsTxt()} en total, de demostración`:'No disponible en las fechas elegidas'):'por noche, de demostración';
 }
 
-/* ---------- huespedes ---------- */
-document.addEventListener('click',e=>{const b=e.target.closest('[data-guests]');if(!b)return;S.guests=Math.min(6,Math.max(1,S.guests+(+b.dataset.guests)));emit()});
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-guests]');if(!b)return;
+  const next=Math.min(MAXG,Math.max(1,S.guests+(+b.dataset.guests)));
+  if(next!==S.guests){S.guests=next;emit()}
+});
 
-/* ---------- popover de fechas ---------- */
-const pop=$('#pop'), scrim=$('#scrim'), barBtn=$('#bar-dates');
-const openPop=o=>{pop.hidden=!o;barBtn.setAttribute('aria-expanded',o);scrim.hidden=!(o&&matchMedia('(max-width:639px)').matches)};
-barBtn.addEventListener('click',()=>openPop(pop.hidden));
-$('#pop-ok').addEventListener('click',()=>{openPop(false);barBtn.focus()});
-scrim.addEventListener('click',()=>openPop(false));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!pop.hidden){openPop(false);barBtn.focus()}closeMenu()}});
-document.addEventListener('click',e=>{if(!pop.hidden&&!e.composedPath().includes($('#bar')))openPop(false)});
-
-/* ---------- mapa ---------- */
+/* ---------- la ciudad ---------- */
 const POIS=[
- {id:'amurallada',side:'left',n:'Ciudad Amurallada',x:41.5,y:35.5,ic:'bank',mode:['person-simple-walk','A pie'],t:'Centro histórico rodeado por murallas. Fue declarado Patrimonio de la Humanidad por la UNESCO en 1984.'},
- {id:'getsemani',side:'right',n:'Getsemaní',x:59.5,y:49.5,ic:'church',mode:['person-simple-walk','A pie'],t:'Barrio de calles empedradas, iglesias antiguas y comida tradicional.'},
- {id:'castillo',n:'Castillo de San Felipe',x:70,y:32.5,ic:'mountains',mode:['taxi','En taxi'],t:'Fortaleza del siglo XVII sobre el cerro de San Lázaro, con túneles y pasadizos para recorrer.'},
- {id:'popa',side:'left',n:'Convento de la Popa',x:86,y:19,ic:'mountains',mode:['taxi','En taxi'],t:'Convento en lo alto de un cerro, con vista a la ciudad. Dato por verificar antes de publicar.'},
- {id:'bocagrande',n:'Bocagrande',x:55,y:73,ic:'waves',mode:['taxi','En taxi'],t:'Zona moderna con playas, hoteles, restaurantes y centros comerciales.'},
- {id:'rosario',n:'Islas del Rosario',x:14,y:86,ic:'boat',mode:['boat','En lancha'],t:'Archipiélago de playas de arena blanca y aguas cristalinas, con buceo y snorkel.'}
+ {id:'amurallada',side:'left',n:'Ciudad Amurallada',m:'A pie',mi:'person-simple-walk',x:41.5,y:35.5,t:'El conjunto de puerto, fortalezas y monumentos de Cartagena, que incluye la ciudad amurallada, es Patrimonio de la Humanidad de la UNESCO desde 1984.'},
+ {id:'getsemani',side:'right',n:'Getsemaní',m:'A pie',mi:'person-simple-walk',x:59.5,y:49.5,t:'Barrio de calles empedradas, iglesias antiguas y comida tradicional.'},
+ {id:'castillo',n:'Castillo de San Felipe',m:'En taxi',mi:'taxi',x:70,y:32.5,t:'Fortaleza que empezó a construirse en el siglo XVII sobre el cerro de San Lázaro, con túneles y pasadizos para recorrer.'},
+ {id:'popa',side:'left',n:'Convento de la Popa',m:'En taxi',mi:'taxi',x:86,y:19,t:'Convento en lo alto de un cerro, con vista a la ciudad.'},
+ {id:'bocagrande',n:'Bocagrande',m:'En taxi',mi:'taxi',x:55,y:73,t:'Zona moderna con playas, hoteles, restaurantes y centros comerciales.'},
+ {id:'rosario',n:'Islas del Rosario',m:'En lancha',mi:'boat',x:14,y:86,t:'Archipiélago de playas de arena blanca, con buceo y snorkel.'}
 ];
 const HOTEL={x:51.5,y:43};
-const map=$('#map');
-map.insertAdjacentHTML('beforeend',`<button class="pin pin--hotel" style="left:${HOTEL.x}%;top:${HOTEL.y}%" type="button" aria-label="Hotel Aurora, ubicación por confirmar"><span class="pin__dot"><svg class="ic" aria-hidden="true"><use href="#i-sun-horizon"/></svg></span><span class="pin__name">Aurora</span></button>`+POIS.map(p=>`<button class="pin" data-side="${p.side||'bottom'}" style="left:${p.x}%;top:${p.y}%" type="button" data-poi="${p.id}" aria-pressed="false" aria-label="${p.n}"><span class="pin__dot"><svg class="ic" aria-hidden="true"><use href="#i-${p.ic}"/></svg></span><span class="pin__name">${p.n}</span></button>`).join(''));
-$('#chips').innerHTML=POIS.map(p=>`<button class="chip" type="button" data-poi="${p.id}" aria-pressed="false">${p.n}</button>`).join('');
+$('#zl').innerHTML=POIS.map(p=>`<li><button type="button" data-poi="${p.id}" aria-pressed="false">${p.n}<span>${p.m}</span></button></li>`).join('');
+$('#map').insertAdjacentHTML('beforeend','<span class="pin pin--hotel" data-side="bottom" role="img" aria-label="Hotel Aurora, ubicación de ejemplo"><i></i><b>Aurora</b></span>'+POIS.map(p=>`<button class="pin" data-side="${p.side||'bottom'}" type="button" data-poi="${p.id}" aria-pressed="false" aria-label="${p.n}"><i></i><b>${p.n}</b></button>`).join(''));
+$$('#map .pin').forEach(el=>{const q=el.dataset.poi?POIS.find(x=>x.id===el.dataset.poi):HOTEL;el.style.setProperty('--x',q.x+'%');el.style.setProperty('--y',q.y+'%')});
 function selectPoi(id){
   const p=POIS.find(x=>x.id===id)||POIS[0];
   $$('[data-poi]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.poi===p.id));
-  $('#panel').innerHTML=`<h3>${p.n}</h3><p style="color:var(--fg-2);font-size:var(--s1);line-height:1.5">${p.t}</p><span class="panel__mode"><svg class="ic" aria-hidden="true"><use href="#i-${p.mode[0]}"/></svg>${p.mode[1]} desde el hotel</span><a class="link" style="margin-top:auto;align-self:flex-start" href="#/">Cómo llegar<svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>`;
-  const r=$('#route'), W=640,H=480, x1=HOTEL.x*W/100, y1=HOTEL.y*H/100, x2=p.x*W/100, y2=p.y*H/100;
-  r.setAttribute('d',`M${x1},${y1} Q${(x1+x2)/2+ (y2-y1)*.18},${(y1+y2)/2-(x2-x1)*.18} ${x2},${y2}`);
-  r.classList.remove('is-draw'); void r.getBoundingClientRect(); if(!reduce)r.classList.add('is-draw');
+  $('#panel').innerHTML=`<p>${p.t}</p><span class="mode"><svg class="ic" aria-hidden="true"><use href="#i-${p.mi}"/></svg>${p.m} (ejemplo)</span>`;
+  const r=$('#route'),W=640,H=480,x1=HOTEL.x*W/100,y1=HOTEL.y*H/100,x2=p.x*W/100,y2=p.y*H/100;
+  r.setAttribute('d',`M${x1},${y1} Q${(x1+x2)/2+(y2-y1)*.18},${(y1+y2)/2-(x2-x1)*.18} ${x2},${y2}`);
+  r.classList.remove('is-draw');void r.getBoundingClientRect();if(!R())r.classList.add('is-draw');
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-poi]');if(b)selectPoi(b.dataset.poi)});
 selectPoi('amurallada');
 
-/* ---------- router ---------- */
-const body=document.body;
-function setScreen(name){
-  const swap=()=>{['home','room','book'].forEach(n=>$('#s-'+n).hidden=n!==name);body.dataset.screen=name};
-  if(document.startViewTransition&&!reduce)document.startViewTransition(swap);else swap();
+/* ---------- hora del dia: el color de la barra y de la pagina sigue a la seccion ---------- */
+function setHour(h){root.dataset.hour=String(h);const m=document.querySelector('meta[name=theme-color]');const c=getComputedStyle(root).getPropertyValue('--b'+h).trim();if(m&&c)m.content=c}
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting&&body.dataset.screen==='home')setHour(en.target.dataset.hour)}),{rootMargin:'-45% 0px -54% 0px'});
+$$('#s-home [data-hour]').forEach(s=>io.observe(s));
+
+/* ---------- reloj de Cartagena ---------- */
+const clock=$('#clock');const fClock=new Intl.DateTimeFormat('es-CO',{hour:'numeric',minute:'2-digit',timeZone:'America/Bogota'});
+const tick=()=>{clock.textContent=fClock.format(new Date())};tick();setInterval(tick,30000);
+
+/* ---------- altura real del aviso (para calcular el pliegue del hero) ---------- */
+const demo=$('.demo');
+new ResizeObserver(()=>root.style.setProperty('--demo-h',demo.offsetHeight+'px')).observe(demo);
+
+/* ---------- el sol en la o: medidas para el hero ---------- */
+const hero=$('#inicio'),sun=$('#sun');
+function sunMetrics(){
+  const w=sun.offsetWidth;if(!w)return;
+  const sx=sun.offsetLeft+w/2,sy=sun.offsetTop+w/2,W=hero.offsetWidth,H=hero.offsetHeight;
+  hero.style.setProperty('--sx',sx.toFixed(1)+'px');hero.style.setProperty('--sy',sy.toFixed(1)+'px');
+  hero.style.setProperty('--sr',(w/2-3).toFixed(1)+'px');
+  hero.style.setProperty('--fr',(Math.hypot(Math.max(sx,W-sx),Math.max(sy,H-sy))+24).toFixed(0)+'px');
+}
+sunMetrics();new ResizeObserver(sunMetrics).observe(hero);document.fonts&&document.fonts.ready.then(sunMetrics);
+setTimeout(()=>hero.classList.add('flood-on'),R()||scrollY>8?0:2000);
+
+/* ---------- pantallas: transicion de iris desde el punto de clic, foco y anuncio ---------- */
+let lastPt={x:innerWidth/2,y:innerHeight/2};
+document.addEventListener('pointerdown',e=>{lastPt={x:e.clientX,y:e.clientY}},{passive:true});
+let firstRoute=true,navCount=0;
+function focusRoute(name){
+  if(firstRoute){firstRoute=false;return}
+  const t=name==='room'?$('#rm-name'):name==='book'?$('#flow-h'):$('#main');
+  t.focus({preventScroll:true});$('#route-live').textContent=document.title;
+}
+function go(name,hourAfter,title){
+  const swap=()=>{
+    ['home','room','book'].forEach(n=>$('#s-'+n).hidden=n!==name);body.dataset.screen=name;
+    if(hourAfter)setHour(hourAfter);
+    if(name==='home')sunMetrics();else scrollTo({top:0,left:0,behavior:'instant'});
+    if(title!==undefined)setTitle(title);
+    updateDock();focusRoute(name);
+  };
+  root.style.setProperty('--vx',lastPt.x+'px');root.style.setProperty('--vy',lastPt.y+'px');
+  if(document.startViewTransition&&!R()){const t=document.startViewTransition(swap);t.ready.catch(()=>{});t.finished.catch(()=>{})}else swap();
+}
+const ROOM_IDS=ROOMS.map(r=>r.id);
+function parseRoute(h){
+  if(h===''||h==='#'||h==='#/')return {n:'home'};
+  const m=h.match(/^#\/habitacion\/([a-z]+)$/);
+  if(m&&ROOM_IDS.includes(m[1]))return {n:'room',id:m[1]};
+  if(h==='#/reservar')return {n:'book'};
+  return null;
 }
 function route(){
-  const h=location.hash||'#/';
-  if(h.startsWith('#/habitacion/')){drawRoom(h.split('/')[2]);setScreen('room');scrollTo(0,0)}
-  else if(h.startsWith('#/reservar')){setScreen('book');showStep(S.step===4?4:1);scrollTo(0,0)}
-  else{setScreen('home')}
-  closeMenu(); openPop(false); updateDock();
+  const h=location.hash;
+  if(h==='#main')return;
+  let r=parseRoute(h);
+  if(!r){history.replaceState(null,'',location.pathname+location.search+'#/');r={n:'home'}}
+  closeAll();
+  if(r.n==='room'){const room=ROOMS.find(x=>x.id===r.id);drawRoom(room);go('room',room.h,room.name)}
+  else if(r.n==='book'){ensureRoom(true);const rm=curRoom();refresh();showStep(S.step===4?4:1,false);go('book',rm?rm.h:4)}
+  else go('home',1,'');
 }
-addEventListener('hashchange',route);
-function goSection(id){
-  const go=()=>{const el=document.getElementById(id);el&&el.scrollIntoView({behavior:reduce?'auto':'smooth'})};
-  if(body.dataset.screen!=='home'){location.hash='#/';setTimeout(go,120)}else go();
-}
-document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();closeMenu();goSection(a.dataset.go)}});
+addEventListener('hashchange',()=>{navCount++;route()});
+function goSection(id){const go2=()=>{const el=document.getElementById(id);el&&el.scrollIntoView({behavior:R()?'auto':'smooth'})};if(body.dataset.screen!=='home'){location.hash='#/';setTimeout(go2,260)}else go2()}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();const d=a.closest('dialog');d&&d.close();goSection(a.dataset.go)}});
+$('.skip').addEventListener('click',e=>{e.preventDefault();$('#main').focus()});
 
 /* ---------- flujo de reserva ---------- */
-function showStep(n){
-  S.step=n;
-  $$('[data-step]').forEach(s=>s.hidden=+s.dataset.step!==n);
-  $$('#steps li').forEach((li,i)=>{li.classList.toggle('is-done',i<n-1);i===n-1?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current')});
-  $('#flow-h').textContent=['','Elige tus fechas','Tus datos','Pago','Todo listo'][n]; $('#flow-h').focus({preventScroll:true});
-  $('#back-btn').hidden=n===4;
-  drawSummary(); scrollTo({top:0,behavior:'auto'});
+const STEP_H=['','Elige tus noches','Tus datos','Pago','Confirmación de ejemplo'];
+const STEP_T=['','Fechas | Reservar','Tus datos | Reservar','Pago bloqueado | Reservar','Confirmación de ejemplo | Reservar'];
+function showStep(n,focus=true){
+  S.step=n;$$('[data-step]').forEach(s=>s.hidden=+s.dataset.step!==n);
+  $$('#steps li').forEach((li,i)=>{
+    li.classList.toggle('is-done',i<n-1&&!(n===4&&i===2));li.classList.toggle('is-skip',n===4&&i===2);
+    i===n-1?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current');
+  });
+  $('#flow-h').textContent=STEP_H[n];setTitle(STEP_T[n]);
+  $('#back-btn').hidden=n===4;drawSummary();
+  if(focus){$('#flow-h').focus({preventScroll:true});scrollTo({top:0,left:0,behavior:'instant'});$('#route-live').textContent=document.title}
 }
 document.addEventListener('click',e=>{
-  const nx=e.target.closest('[data-next]'); if(nx&&body.dataset.screen==='book'){
-    if(S.step===1&&!(S.start&&S.end)){$('#next1').textContent='Elige primero llegada y salida';setTimeout(()=>$('#next1').textContent='Continuar',2200);return}
-    showStep(Math.min(4,S.step+1))}
-  const tab=e.target.closest('[data-tab]'); if(tab){$$('[data-tab]').forEach(t=>t.setAttribute('aria-selected',t===tab));$('#form-new').hidden=tab.dataset.tab!=='new';$('#form-in').hidden=tab.dataset.tab==='new'}
-  if(e.target.closest('#pay-btn')){e.preventDefault();$('#pay-why').scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'})}
+  const nx=e.target.closest('[data-next]');
+  if(nx&&body.dataset.screen==='book'){
+    if(S.step===1){
+      const err=$('#err1'),rm=curRoom();
+      if(!(S.start&&S.end)){err.textContent='Elige primero llegada y salida.';err.hidden=false;const d=$('#cal-book .day[tabindex="0"]');d&&d.focus();return}
+      if(!rm||!roomOk(rm)){err.textContent='Elige una habitación libre para esas fechas y huéspedes.';err.hidden=false;return}
+      err.hidden=true;
+    }
+    showStep(Math.min(4,S.step+1));
+  }
+  if(e.target.closest('#pay-btn')){e.preventDefault();$('#pay-why').scrollIntoView({block:'center',behavior:R()?'auto':'smooth'})}
 });
-$('#back-btn').addEventListener('click',()=>{if(S.step>1)showStep(S.step-1);else history.length>1?history.back():location.hash='#/'});
-$('#nav-book').addEventListener('click',()=>{S.step=1});
+/* pestañas: Crear cuenta / Ya tengo cuenta */
+const tabs=$$('[data-tab]');
+function selectTab(tab,focus){
+  tabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});
+  $('#form-new').hidden=tab.dataset.tab!=='new';$('#form-in').hidden=tab.dataset.tab==='new';
+  if(focus)tab.focus();
+}
+tabs.forEach(t=>t.addEventListener('click',()=>selectTab(t,false)));
+$('.tabs').addEventListener('keydown',e=>{
+  if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight'&&e.key!=='Home'&&e.key!=='End')return;e.preventDefault();
+  const i=tabs.indexOf(document.activeElement);const j=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;selectTab(tabs[j],true);
+});
+function validate(fields){
+  const bad=fields.filter(([el,okFn])=>{const ok=okFn(el);ok?el.removeAttribute('aria-invalid'):el.setAttribute('aria-invalid','true');return !ok});
+  return bad.map(b=>b[0]);
+}
+const mailOk=el=>el.value.trim().length>0&&el.checkValidity();
+$('#form-new').addEventListener('submit',e=>{
+  e.preventDefault();const err=$('#form-err');
+  const bad=validate([[$('#f-name'),el=>el.value.trim().length>1],[$('#f-mail'),mailOk],[$('#c-terms'),el=>el.checked]]);
+  if(bad.length){err.textContent='Revisa los campos marcados: nombre, correo y aceptación de los términos de ejemplo.';err.hidden=false;bad[0].focus();return}
+  err.hidden=true;showStep(3);
+});
+$('#form-in').addEventListener('submit',e=>{
+  e.preventDefault();const err=$('#in-err');
+  const bad=validate([[$('#g-mail'),mailOk]]);
+  if(bad.length){err.textContent='Escribe un correo válido (puede ser inventado).';err.hidden=false;bad[0].focus();return}
+  err.hidden=true;showStep(3);
+});
+$('#back-btn').addEventListener('click',()=>{if(S.step>1)showStep(S.step-1);else navCount>0?history.back():location.hash='#/'});
+$$('#nav-book,#hero-book,#av-book,#dock-book').forEach(a=>a.addEventListener('click',()=>{S.step=1}));
 
-/* ---------- menu, dialogos, guia ---------- */
-const drawer=$('#drawer');
-function closeMenu(){drawer.classList.remove('is-open');$('#menu-btn').setAttribute('aria-expanded','false')}
-$('#menu-btn').addEventListener('click',()=>{drawer.classList.add('is-open');$('#menu-btn').setAttribute('aria-expanded','true');$('#menu-close').focus()});
-$('#menu-close').addEventListener('click',()=>{closeMenu();$('#menu-btn').focus()});
-$$('#drawer a').forEach(a=>a.addEventListener('click',closeMenu));
-const dI=$('#dlg-install'), dA=$('#dlg-acct');
-$('#install-btn').addEventListener('click',()=>dI.showModal());
-$('#acct-btn').addEventListener('click',()=>dA.showModal());
-$('#acct-btn2').addEventListener('click',()=>dA.showModal());
+/* ---------- hojas, menu, paleta, guia ---------- */
+function openSheet(dlg,evTarget){
+  const r=(evTarget||document.body).getBoundingClientRect();
+  dlg.style.setProperty('--ox',(r.left+r.width/2)+'px');dlg.style.setProperty('--oy',(r.top+r.height/2)+'px');
+  dlg.classList.add('is-opening');setTimeout(()=>dlg.classList.remove('is-opening'),R()?0:450);
+  dlg.showModal();
+}
+function closeAll(){$$('dialog[open]').forEach(d=>d.close())}
+$('#menu-btn').addEventListener('click',e=>openSheet($('#dlg-menu'),e.currentTarget));
+$('#hero-dates').addEventListener('click',e=>openSheet($('#dlg-cal'),e.currentTarget));
+$('#install-btn').addEventListener('click',e=>openSheet($('#dlg-install'),e.currentTarget));
+$('#menu-install').addEventListener('click',e=>{$('#dlg-menu').close();openSheet($('#dlg-install'),e.currentTarget)});
+$('#acct-btn2').addEventListener('click',e=>openSheet($('#dlg-acct'),e.currentTarget));
+$('#menu-acct').addEventListener('click',e=>{e.preventDefault();$('#dlg-menu').close();openSheet($('#dlg-acct'),e.currentTarget)});
 $$('dialog [data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+$$('dialog.sheet').forEach(d=>d.addEventListener('click',e=>{if(e.target===d&&!d.classList.contains('is-opening'))d.close()}));
+$('#a-send').addEventListener('click',()=>{$('#a-status').textContent='Simulación: no se envió ningún correo.'});
+$('#dlg-acct').addEventListener('close',()=>{$('#a-mail').value='';$('#a-status').textContent=''});
+$$('[data-palette-btn]').forEach(b=>b.addEventListener('click',()=>{const p=b.dataset.paletteBtn;root.dataset.palette=p;try{localStorage.setItem('aurora-paleta',p)}catch(e){}$$('[data-palette-btn]').forEach(x=>x.setAttribute('aria-pressed',x===b));setHour(root.dataset.hour||1)}));
+const pal=root.dataset.palette;$$('[data-palette-btn]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.paletteBtn===pal));
 $('#guide-btn').addEventListener('click',e=>{const on=body.classList.toggle('guide');e.currentTarget.setAttribute('aria-pressed',on)});
 
-/* ---------- observadores: dock, nav, momento del dia ---------- */
-const nav=$('#nav'); const io0=new IntersectionObserver(([en])=>nav.classList.toggle('is-stuck',!en.isIntersecting),{rootMargin:'-1px 0px 0px 0px'});
-const sentinel=document.createElement('div');sentinel.style.cssText='position:absolute;top:0;height:1px;width:1px';document.body.prepend(sentinel);io0.observe(sentinel);
-const dock=$('#dock'); let barVisible=true;
-new IntersectionObserver(([en])=>{barVisible=en.isIntersecting;updateDock()}).observe($('#bar'));
-function updateDock(){dock.classList.toggle('is-on',body.dataset.screen==='room'||(body.dataset.screen==='home'&&!barVisible))}
-const label=$('#sun-label');
-const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting&&en.target.dataset.moment)label.textContent=en.target.dataset.moment})},{rootMargin:'-45% 0px -50% 0px'});
-$$('[data-moment]').forEach(s=>io.observe(s));
+/* ---------- dock movil: solo en la portada, y se aparta del hero, del boton de disponibilidad y del pie ---------- */
+const dock=$('#dock');const vis={hero:true,av:false,foot:false};
+new IntersectionObserver(([en])=>{vis.hero=en.isIntersecting;updateDock()},{threshold:.25}).observe(hero);
+new IntersectionObserver(([en])=>{vis.av=en.isIntersecting;updateDock()}).observe($('#av-book'));
+new IntersectionObserver(([en])=>{vis.foot=en.isIntersecting;updateDock()}).observe($('.foot'));
+function updateDock(){dock.classList.toggle('is-on',body.dataset.screen==='home'&&!vis.hero&&!vis.av&&!vis.foot)}
 
-route(); refresh();
+route();refresh();
 })();
 </script>
 </body>

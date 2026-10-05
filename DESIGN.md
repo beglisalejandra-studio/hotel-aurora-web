@@ -1,108 +1,110 @@
-# DESIGN — Hotel Aurora
+# DESIGN — Hotel Aurora (v2)
 
 > Dirección visual, tokens y reglas de componentes. **Autoridad visual única** (`visual_authority` en PROJECT.md: taste-skill). Los tokens son la fuente; los componentes solo usan `var(--…)`/utilidades, nunca valores mágicos. La maqueta aprobable está en `creative/mockup/index.html` y es la referencia viva de este documento.
+> La v1 (fotografía a sangre, arcos, verdeazulado y coral, Bricolage Grotesque) fue **rechazada por genérica** y está solo en el historial de git.
 
 ## 1. Dirección
-- **Concepto:** «El día en la casa». Un hotel pequeño con patio, contado de la primera luz a la noche. El logo (un arco con un punto de sol) recorre el día con el scroll.
-- **Palabras clave:** luminoso · arquitectónico · sereno · cálido · preciso.
-- **Elemento firma:** el arco de medio punto. Enmarca las imágenes, forma la arcada del pie (un arco "iluminado" por el amanecer) y es el trazo del logo; el punto de sol se mueve sobre él al hacer scroll.
-- **Luz de las 6 de la mañana:** sombras frías verdeazuladas y luces cálidas durazno y coral; piedra, madera, baldosa de cemento y buganvilia; sin personas visibles.
-- **Referencias adoptadas (principios, no clones):** ver `reference-analysis.md`.
-- **Qué evitar:** hero centrado sobre degradado; tres tarjetas iguales con ícono; paleta crema, latón y espresso; serif «de lujo» por defecto; fotos de stock evidentes; emojis como íconos; animaciones sin propósito; mapas pesados que bloquean la carga; botones de pago que parezcan reales en la versión de portafolio.
+- **Concepto:** «Una habitación por hora». Las cuatro habitaciones son cuatro momentos del día (Alba 6 a. m., Mediodía 12 m., Atardecer 6 p. m., Noche 10 p. m.) y **el color de toda la página es la hora**. El nombre AURORA ocupa el ancho de la pantalla y su «O» es un sol que, al hacer scroll, inunda la pantalla con la hora siguiente.
+- **Palabras clave:** minimalista · tipográfico · plano · preciso · motion graphic hecho solo con CSS.
+- **Elemento firma:** el sol en la «O» y el campo de color plano por hora (sin degradados, sin sombras, sin fotografía en la portada).
+- **Maquetación:** tomada de referencias de Dribbble y reinterpretada (arquetipos UMBRAL y VENTANA, ver `reference-analysis.md`): nombre a ancho completo, filete, barra de tres zonas (Menú · lugar y hora · Reservar), filas con filete en lugar de tarjetas, calendario en círculos, reserva alcanzable con el pulgar.
+- **Qué evitar:** fórmula de lujo (crema + dorado + serif), hero de plantilla (titular centrado con dos botones y widget de cuatro cajas), cliché postal de Cartagena, movimiento pesado (video, WebGL, Lottie), scroll secuestrado, prueba social sin evidencia.
 
 ## 2. Tokens
-Tema claro por defecto y tema oscuro por `prefers-color-scheme`. Un solo acento. Contrastes medidos con `design/contrast-check.mjs` (fórmula WCAG 2.2) el 2026-10-05.
+Un solo tema (no sigue `prefers-color-scheme`: el color lo da la hora). Tres paletas conmutables con `html[data-palette]` (`luz` por defecto, `fachadas`, `anil`) y la hora activa en `html[data-hour]` (1 a 4). Cada paleta define cuatro horas con tres variables: `--b1..4` campo, `--f1..4` texto, `--g1..4` texto secundario. Contrastes medidos con `node design/palette-check.mjs` (fórmula WCAG 2.2; **todas las horas cumplen AA en texto y texto secundario**).
 
-| Token | Claro | Oscuro | Uso | Contraste medido |
+| Paleta | Hora 1 · Alba | Hora 2 · Mediodía | Hora 3 · Atardecer | Hora 4 · Noche |
 |---|---|---|---|---|
-| `--bg` | `#EEF3F2` | `#08171F` | fondo de página | n/a |
-| `--surface` / `--surface-2` | `#F8FBFA` / `#E2EBEA` | `#0F2530` / `#13303C` | paneles, campos / fichas suaves | n/a |
-| `--line` | `#C3D2CF` | `#26434F` | divisores, bordes decorativos | decorativo |
-| `--fg` | `#0C1E2B` | `#E8F0EF` | texto principal | 15.16:1 / 15.74:1 |
-| `--fg-2` | `#3B5260` | `#A9BDC0` | texto secundario | 7.31:1 / 9.31:1 |
-| `--fg-3` | `#4F6672` | `#86A0A6` | notas, etiquetas | 5.39:1 / 6.59:1 (sobre `--bg`) |
-| `--accent` / `--on-accent` | `#C73E1D` / `#FFFFFF` | `#FF7A59` / `#08171F` | CTA, selección, marca | 5.08:1 / 7.10:1 |
-| `--accent-text` | `#B5351A` | `#FF8E70` | enlaces y etiquetas sobre fondo | 5.37:1 / 8.12:1 |
-| `--sea` | `#14464F` | `#0E3A44` | agua del mapa, fotos de referencia | tono neutro frío |
+| **Luz del día** | `#FFC4DE` · texto `#0A0A0A` 13.39:1 · sec. 8.07:1 | `#F2F964` · `#0A0A0A` 17.45:1 · 9.73:1 | `#FF8D6A` · `#0A0A0A` 8.74:1 · 6.05:1 | `#150A3C` · `#F7F5FF` 17.06:1 · 10.90:1 |
+| **Fachadas** | `#C90362` · `#FFF7FA` 5.43:1 · 4.76:1 | `#F9C230` · `#15110E` 11.43:1 · 6.73:1 | `#EC672A` · `#15110E` 5.85:1 · 5.04:1 | `#0E47CA` · `#FFFFFF` 7.57:1 · 5.20:1 |
+| **Añil** | `#EEF0FB` · `#1A1D8C` 11.57:1 · 6.15:1 | `#FFD23F` · `#14186E` 10.50:1 · 5.98:1 | `#7C83EC` · `#0B0E4A` 5.37:1 · 5.07:1 | `#2B2FB8` · `#FFFFFF` 9.54:1 · 6.63:1 |
 
-Tipografía (autoalojada con `next/font` en producción, subconjunto latino):
-- **Display:** Bricolage Grotesque, peso 600, `letter-spacing: -.025em`, `line-height: 1.02`.
-- **Cuerpo:** Instrument Sans, 400 a 700, `line-height: 1.6`.
-- **Escala fluida (6 pasos):** `s-1` .8 a .875 rem · `s0` 1 a 1.0625 · `s1` 1.15 a 1.35 · `s2` 1.5 a 2.2 · `s3` 2 a 3.6 · `s4` 2.6 a 5.4 (el titular del hero llega a 6.2 rem en escritorio).
-- Peso medido (Google Fonts, woff2 latino, 2026-10-05): Bricolage variable completo 76.9 KB e Instrument Sans 30.1 KB. **Meta de producción: ≤ 60 KB combinados** recortando ejes y glifos (a verificar al construir).
+Reglas de color:
+- **El sol** (`--next`, el campo de la hora siguiente) es decorativo y lleva siempre un aro del color de texto; su contraste contra el campo no cuenta como texto.
+- Una paleta nueva debe tener contraste ≥ 4.5:1 en texto y texto secundario **y** una diferencia clara entre la hora 1 y la 2 (es lo que cubre la inundación del sol). La primera versión de Añil fallaba esto (dos lavandas casi iguales) y se corrigió con el amarillo del sol.
+- La tinta del hero cambia junto con la inundación (`--fg` y `--fg2` son propiedades registradas con `@property` y se animan con la misma línea de tiempo del scroll): sin esto, en Fachadas el texto quedaba blanco sobre amarillo (1.4:1).
+- Los estados no dependen solo del color: «completo» va tachado, «última habitación» punteado, el anillo de foco mide 3 px y usa `--fg`.
 
-Forma (una sola regla, no se mezcla):
-- **Arco:** imágenes de composición (esquinas superiores totalmente redondeadas, base recta).
-- **Píldora:** botones, chips y controles.
-- **14 px:** paneles, campos, mosaicos, tarjetas.
-- **Sombra:** una sola, teñida del fondo (`0 22px 44px -24px` con el tono de `--fg`).
+Tipografía (autoalojada con `next/font` en producción, subconjunto latino y ejes recortados):
+- **Display:** Anybody (SIL OFL), pesos 700 y 800, ancho `wdth` de 100 a 125 %. El ancho es parte del diseño: las filas de habitaciones se ensanchan al mediodía y al pasar el cursor, y los titulares de sección van a 125 % desde 700 px.
+- **Cuerpo:** Familjen Grotesk (SIL OFL), 400 a 700.
+- **Escala:** `s-1` .8125 rem · `s0` 1.0625 · `s1` 1.15 a 1.5 · `s2` 1.8 a 5.6 · `s3` 2.4 a 5.4. El nombre usa `min(21.4vw, 36rem)` y **no tiene suelo en `rem`** (con suelo se recortaba al ampliar el texto). El nombre de cada habitación se dimensiona por contenedor (`97cqw / ancho natural del nombre`) para llenar el ancho sin partirse.
+- Peso en la maqueta pidiendo `wdth,wght@100..125,700..800`: ver §7.
 
-Espaciado: contenedor 1360 px, gutter `clamp(16px, 4vw, 48px)`; el ritmo vertical entre secciones **varía a propósito** (de 64 a 210 px según la sección).
+Forma (una sola regla, no se mezcla): **círculo** (sol, días, botones de icono, ventana de la habitación), **píldora** (botones y chips), **filete de 1.5 px** (listas, tablas, separadores). Sin sombras salvo la del dock.
+Espaciado: gutter `clamp(16px, 3.2vw, 44px)`; el contenido respeta `env(safe-area-inset-*)` en barra, hero, hojas y aviso.
 
 ## 3. Componentes y estados
-| Componente | Variantes | Estados cubiertos en la maqueta | Notas de accesibilidad |
-|---|---|---|---|
-| Aviso de portafolio | fijo arriba y en pie | n/a | `role="note"`; no se puede cerrar |
-| Barra de reserva | escritorio (3 columnas) / móvil (apilada + hoja inferior) | vacío, con fechas, abierta | popover con `Esc`; el foco vuelve al campo |
-| Calendario de disponibilidad | 1 o 2 meses | libre, últimas habitaciones, completo, pasado, hoy, inicio, fin, rango, enfoque | botones ≥ 44 px, flechas del teclado, `aria-label` con precio; tachado además de color |
-| Tarjeta de habitación | carril con snap | normal, hover | enlace único; el precio no depende del color |
-| Mosaico del día (bento) | imagen / suave / acento / noche | normal | 4 contenidos, 4 celdas |
-| Mapa + panel | esquema (maqueta) / MapLibre (producción) | punto activo, ruta animada | pines `button` con `aria-pressed`; etiquetas solo del punto activo en móvil |
-| Pasos de reserva | 4 pasos | actual, hecho, pendiente | `aria-current="step"`; el foco va al título al cambiar de paso |
-| Pago bloqueado | solo portafolio | desactivado con `aria-disabled` | el botón sigue enfocable y explica por qué |
-| Vista previa de notificaciones | WhatsApp / correo | n/a | etiquetada «Vista previa. No se envía nada» |
-| Dock móvil | precio + Reservar | oculto / visible | respeta `safe-area-inset-bottom` |
+| Componente | Variantes y estados cubiertos en la maqueta | Accesibilidad |
+|---|---|---|
+| Aviso de portafolio | `aside` fijo arriba y en pie; herramientas de la maqueta (paleta, guía de fotos) | landmark propio; botones de 36 px o más |
+| Barra de tres zonas | Menú · Cartagena y hora local · Reservar; sticky | anillo de foco visible sobre cualquier hora |
+| Hero | nombre con sol, filete, frase, fechas y huéspedes | `h1` con `aria-label`; las letras son decorativas |
+| Filas de habitaciones | reposo, hover (el nombre se ensancha), foco | enlace único por fila; el precio no se parte |
+| La ciudad | lista alternativa por teclado + esquema de líneas; pin activo; ruta dibujada | `aria-pressed`; el hotel es de ejemplo |
+| Calendario en círculos | libre, última habitación, completo (tachado), pasado, hoy, llegada, salida, rango, foco | flechas, Inicio, Fin, AvPág y RePág; un solo tabstop; `aria-disabled` en días completos; etiqueta con fecha larga y estado |
+| Huéspedes | contador de 1 a 4 | grupo con nombre; el tope se comunica con `aria-disabled` |
+| Hojas (calendario, menú, cuenta, instalar) | iris desde el botón; en celular apaisado el botón Cerrar queda fijo | `dialog` nativo; foco devuelto al cerrar |
+| Habitación | nombre a ancho completo, ventana circular con glifo de la hora, hechos en filas | foco al `h1` al entrar, título de página y anuncio |
+| Pasos de reserva | 4 pasos; el 4 se llama «Ejemplo» y marca Pago como «omitido» | `aria-current="step"`; validación con `aria-invalid` y mensaje con `role="alert"` |
+| Pago bloqueado | solo portafolio: `aria-disabled`, borde discontinuo y explicación visible | el botón sigue enfocable |
+| Confirmación de ejemplo | rótulo «Simulación», línea de tiempo en condicional, vistas previas de WhatsApp y correo | etiquetada «[Simulación]» |
+| Dock móvil | solo en la portada, se aparta del hero, del botón de disponibilidad y del pie | `visibility: hidden` cuando está apagado (no se enfoca) |
 
-Estados que faltan y se construyen en la fase de implementación: carga (esqueletos con la forma final), vacío («sin disponibilidad en estas fechas»), error de red y de validación (en línea, bajo el campo), sesión caducada.
+Estados pendientes de construir en la fase de implementación: carga, error de red, sesión caducada y vacío («sin disponibilidad en estas fechas»).
 
 ## 4. Responsive
-Breakpoints usados: 360 · 390 · 640 · 768 · 900 · 960 · 1024 · 1100 · 1440 px. Verificado sin desbordamiento horizontal de 360 a 1440 px.
+Verificado sin desbordamiento horizontal de 320 a 2560 px en las seis rutas, los pasos de reserva y las cuatro hojas, y con el texto al 150 % y 200 % en 320, 390 y 430 px.
 
-| Elemento | Móvil (390) | Tablet (768) | Escritorio (1440) |
+| Elemento | Celular vertical (390) | Tableta vertical (768) | Escritorio (1440) |
 |---|---|---|---|
-| Hero | arco a sangre con titular sobre scrim; CTA en la barra superior y dock | arco a sangre | titular a la izquierda, arco 4:5 a la derecha con arco de contorno |
-| Barra de reserva | apilada; fechas en hoja inferior | apilada en 3 columnas desde 640 | 3 columnas con popover de 2 meses |
-| Habitaciones | carril con la siguiente tarjeta asomando | carril | 4 tarjetas en la retícula, flechas solo si hay desborde |
-| Bento | una columna | una columna | rejilla 4 columnas con una celda grande |
-| Mapa | 4:3, solo etiqueta del punto activo, chips con scroll | 4:3 | mapa 7/12 + panel 5/12 |
-| Calendario | 1 mes | 1 mes | 2 meses |
-| Navegación | menú de pantalla completa | menú de pantalla completa | una línea, 64 px |
+| Nombre del hero | partido en AU / R(sol) / RA, llena la pantalla | igual, limitado por la altura (`26svh`) | una línea a ancho completo; hasta 36 rem de tope |
+| Habitaciones | filas apiladas (hora, nombre, descripción y precio) | igual | filas de cinco columnas; el nombre se ensancha al pasar el cursor |
+| Calendario | 1 mes, celdas de 41 px mínimo en 320 px | 1 mes alineado con L M M J V S D | 2 meses |
+| Dock | sí | sí | no |
+| Hoja de fechas | pantalla completa | pantalla completa | pantalla completa |
 
 ## 5. Movimiento
-Principio: **solo CSS salvo cambios de estado**; todo con `prefers-reduced-motion` (se anula por completo).
+Principio: **solo CSS salvo cambios de estado**; el estado base ya es el estado final visible; todo lo ligado al scroll va dentro de `@supports (animation-timeline: …)` y `@media (prefers-reduced-motion: no-preference)`. Con `prefers-reduced-motion: reduce` no corre ninguna animación ni transición de movimiento (verificado: `document.getAnimations().length === 0` tras cargar, pasar el cursor, elegir un lugar, abrir el menú y hacer scroll).
 
 | Movimiento | Qué comunica | Técnica |
 |---|---|---|
-| Punto del logo recorre el arco (0° a 180°) | el paso del día mientras se avanza en la página | `animation-timeline: scroll(root)` dentro de `@supports`; sin soporte queda fijo arriba |
-| Arcos de «La casa» se desplazan a ritmos distintos | profundidad y orden de lectura | `animation-timeline: view()` |
-| Aparición de titulares de sección | jerarquía | `view()` con rango de entrada |
-| Ruta del hotel al lugar elegido en el mapa | relación espacial | `stroke-dashoffset` al seleccionar |
-| Transición entre pantallas | continuidad | View Transitions API si existe |
-| Botones: pulsación `scale(.97)`; tarjetas: elevación 6 px | retroalimentación | transform y opacity solamente |
+| Amanecer del hero (campo de noche a campo de día, 1.2 s) y entrada de letras y frase (≤ 0.8 s) | la primera luz | `animation` por tiempo en `transform`, `opacity` y color |
+| El sol se eleva en la «O» y su campo inunda el hero | el paso a la hora siguiente | `clip-path: circle()` ligado a `scroll(root)` con centro y radios medidos por JS (`ResizeObserver`) |
+| La tinta del hero cambia con la inundación | legibilidad en cualquier paleta | `@property --fg/--fg2` animadas con la misma línea de tiempo |
+| Cada sección entra como un iris | el cambio de hora | `clip-path: circle()` ligado a `view()` (`entry 0%` a `cover 28%`) |
+| El nombre de una fila se ensancha | foco y hover | `font-stretch` (transición); en reposo cada hora tiene su ancho |
+| Pantallas con iris desde el punto del clic | continuidad | View Transitions API si existe; sin ella, cambio directo |
+| Hojas con iris desde el botón | origen del gesto | `animation` de `clip-path` |
+| Ruta del hotel al lugar elegido | relación espacial | `stroke-dashoffset` |
 
-Duraciones 250 a 600 ms con `cubic-bezier(.16,1,.3,1)`. Sin cursores personalizados, sin parallax con JS, sin bucles infinitos, sin marquesinas. **Cero librerías de animación** en la maqueta.
+Duraciones de 0.3 a 1.2 s con `cubic-bezier(.16,1,.3,1)` y `cubic-bezier(.7,0,.2,1)`. Sin cursores personalizados, sin parallax con JS, sin bucles infinitos, **cero librerías de animación**. Los campos de color cambian por `IntersectionObserver`, no por escuchas de scroll.
 
 ## 6. Imagen y video
-- **Decisión de la portada (`VIDEO_SCORE` 28):** imagen estática AVIF/WebP, sin video. Registro en `creative/manifest.json` y `creative/briefs/home.score.json`. Un microvideo de ≤ 6 s solo para escritorio queda como mejora opcional que requiere aprobación.
-- **Dirección de arte:** luz de las 6 de la mañana, 35 mm, grano fino, sin personas, sin texto, sin logotipos.
-- **Recorte en arco:** el borde superior se corta con una semicircunferencia; el sujeto va centrado en el 70 % inferior de la imagen.
-- **Contrato visual** (lo que no cambia entre imágenes): arcos de medio punto en piedra, postigos de madera, baldosa de cemento, buganvilia, paleta verdeazulada y coral, hora del día, ausencia de personas. Ver `creative/manifest.json` → `constraints.preserve`.
+- **Decisión (`VIDEO_SCORE` 28):** imagen, no video. La portada v2 no lleva fotografía: es tipografía y color plano. El registro está en `creative/manifest.json` y `creative/briefs/home.score.json`.
+- **Fotografías necesarias: cuatro**, una por habitación, en una ventana circular (`R-<habitación>-01`, **1:1, 2560 × 2560 px**, con el sujeto centrado porque se recorta en círculo). Prompts en `creative/requests/PROMPTS.md`. Hasta que lleguen, la ventana muestra un glifo plano por hora (sol bajo, alto, poniente y creciente), provisional.
+- **Dirección de arte de las fotos:** la luz de cada hora (6 a. m., 12 m., 6 p. m., 10 p. m.), composición sobria con pocos objetos, sin personas, sin texto ni logotipos, y la paleta de la hora como único color dominante. Nada de arcos de piedra ni buganvilias como adorno.
 - **Atracciones turísticas:** fotografías reales con licencia o propias (no generadas por IA) porque representan lugares reales.
-- **Entrega técnica:** AVIF y WebP con `srcset`, dimensiones declaradas (sin CLS), primera imagen con `priority`, resto `loading="lazy"`.
+- **Entrega técnica:** AVIF y WebP con `srcset`, dimensiones declaradas (sin CLS), `loading="lazy"`.
 
-## 7. Presupuestos de rendimiento (objetivos a verificar con Lighthouse y medición propia)
-| Métrica | Objetivo |
-|---|---|
-| LCP (móvil, 4G simulado) | ≤ 2.0 s (umbral de Google: 2.5 s) |
-| CLS | ≤ 0.05 (umbral: 0.1) |
-| INP | ≤ 200 ms |
-| JS inicial de la portada | ≤ 90 KB gzip (sin librerías de animación; mapa y calendario cargados bajo demanda) |
-| CSS | ≤ 25 KB gzip |
-| Imagen del hero en móvil | ≤ 120 KB (AVIF) |
-| Transferencia total de la portada | ≤ 900 KB (coincide con `weight_budget_kb` del `VIDEO_SCORE`) |
-| Lighthouse móvil | Rendimiento ≥ 95 · Accesibilidad 100 · Mejores prácticas ≥ 95 · SEO ≥ 95 (en entorno de producción) |
+## 7. Presupuestos de rendimiento (objetivos a verificar con Lighthouse y datos de campo)
+| Métrica | Objetivo | Medido hoy en la maqueta |
+|---|---|---|
+| LCP (móvil, 4G simulado) | ≤ 2.0 s | ≈ 0.9 a 1.2 s con la entrada acortada (Chromium, CPU 4x, fuentes con latencia simulada; sin Lighthouse) |
+| CLS | ≤ 0.05 | no medido en producción |
+| INP | ≤ 200 ms | no medido |
+| JS inicial de la portada | ≤ 90 KB gzip | JS propio de la maqueta ≈ 8 KB gzip, 0 librerías |
+| Fuentes | ≤ 60 KB | ≈ 53 KB estimado con Anybody recortado a `wdth 100..125` y `wght 700..800` (la versión sin recortar pesaba 75.8 KB) |
+| Transferencia total de la portada | ≤ 900 KB | HTML ≈ 86 KB sin comprimir (ver §8 de la propuesta) |
+| Lighthouse móvil | Rendimiento ≥ 95 · Accesibilidad 100 · Mejores prácticas ≥ 95 · SEO ≥ 95 | no ejecutado (se mide en producción) |
 
-Medido hoy en la maqueta (sin imágenes): HTML 92 KB sin comprimir, 27 KB gzip, una sola petición externa (fuentes) y cero JavaScript de terceros.
+## 8. Accesibilidad (reglas que la revisión adversarial dejó como obligatorias)
+1. Anillo de foco de 3 px en `var(--fg)` con separación, nunca en `currentColor` (en botones sólidos quedaba del color del fondo).
+2. Cada cambio de ruta mueve el foco al encabezado de la vista, actualiza `document.title` y lo anuncia en una región `role="status"`.
+3. Los días completos y pasados usan `aria-disabled`, no `disabled`, para seguir siendo alcanzables y anunciarse.
+4. Ningún estado depende solo de la opacidad; el texto inactivo usa `--fg2` y una pista no cromática.
+5. Todo `style=""` y `onsubmit` inline se evita para que la maqueta pueda servirse con una CSP con nonce (quedan dos `<script>` inline y un `<style>`, que en producción llevan nonce).
+6. Probar siempre con el texto al 200 % y con `prefers-reduced-motion: reduce`.
 
-## 8. Desviaciones respecto a Figma
-Ninguna. No hay archivo de Figma; la intención visual vive en la maqueta HTML. Si se quiere, se puede crear un archivo de Figma con las variables de §2 para uso del equipo de diseño.
+## 9. Desviaciones respecto a Figma
+Ninguna. No hay archivo de Figma; la intención visual vive en la maqueta HTML. Si se quiere, se puede crear un archivo de Figma con las variables de §2.

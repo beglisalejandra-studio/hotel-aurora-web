@@ -1,6 +1,8 @@
 # Material que necesito de ti: imágenes (prompts y medidas)
 
-Este es el **índice único** de lo que hay que producir. **Todos los prompts juntos, para copiar y pegar: [`PROMPTS.md`](PROMPTS.md).** Cada imagen tiene su ficha (`<nombre>.md`) con el prompt completo para copiar y pegar en **ChatGPT o Gemini**, las medidas exactas y qué conservar.
+Este es el **índice único** de lo que hay que producir. **Todos los prompts juntos, para copiar y pegar: [`PROMPTS.md`](PROMPTS.md).** Cada imagen tiene su ficha (`<nombre>.md`) con el prompt completo para **ChatGPT o Gemini**, las medidas exactas y qué conservar.
+
+> **Aviso:** las fichas de la primera versión (patio, arcos, buganvilia, verdeazulado y coral) **se descartaron** porque el diseño cambió (v2: color plano por hora, sin fotografía en la portada). **No generes imágenes de la v1.** Siguen en el historial de git por si se quieren recuperar.
 
 ## Cómo subirlas
 1. Genera la imagen con el prompt de su ficha.
@@ -8,51 +10,38 @@ Este es el **índice único** de lo que hay que producir. **Todos los prompts ju
 3. Dime «subí <nombre>» y compruebo medidas, proporción y peso contra la ficha.
 4. **Tú apruebas** cada imagen. Hasta entonces es un borrador y no se publica.
 
-> Hasta que lleguen, la maqueta usa degradados de color en su lugar (con la «Guía de fotos» activable en la franja superior verás el código y la medida de cada hueco).
+> Hasta que lleguen, la maqueta muestra en cada ventana un glifo plano por hora (sol bajo, alto, poniente y creciente). Con el botón «Guía de fotos» (visible en la página de cada habitación) ves el código y la medida de cada hueco.
 
-## Lote A: lo mínimo para ver el sitio terminado (12 imágenes)
-| Archivo (`creative/inbox/…`) | Proporción | Medida del máster | Dónde se usa | Texto alternativo sugerido |
-|---|---|---|---|---|
-| `h-01-patio-amanecer` | 4:5 | 2048 × 2560 px | portada (hero) | Patio del hotel al amanecer, con arcos de piedra, buganvilia y luz cálida |
-| `c-01-patio-central` | 3:4 | 1920 × 2560 px | «La casa» | Patio central visto desde un corredor con arcos |
-| `c-02-balcones` | 3:5 | 1536 × 2560 px | «La casa» | Fachada con balcones de madera y buganvilias |
-| `c-03-terraza` | 5:6 | 2134 × 2560 px | «La casa» | Terraza al amanecer con la ciudad al fondo |
-| `d-01-cafe-patio` | 7:8 | 2240 × 2560 px | «Un día en Aurora» | Taza de café sobre una mesa en el patio |
-| `r-alba` | 3:4 | 1920 × 2560 px | tarjeta y página de la habitación Alba | Habitación Alba con cama king y ventana al patio |
-| `r-patio` | 3:4 | 1920 × 2560 px | habitación Patio | Habitación Patio con balcón sobre el patio |
-| `r-buganvilia` | 3:4 | 1920 × 2560 px | habitación Balcón de Buganvilia | Habitación con balcón de madera y buganvilia |
-| `r-terraza` | 4:5 | 2048 × 2560 px | habitación Terraza Aurora (portada y vista general) | Suite Terraza Aurora con terraza privada |
-| `r4-cama` | 1:1 | 2560 × 2560 px | galería Terraza Aurora | Cama con ropa de lino blanco y luz lateral |
-| `r4-bano` | 1:1 | 2560 × 2560 px | galería Terraza Aurora | Baño con piso de baldosa de cemento |
-| `r4-detalle` | 1:1 | 2560 × 2560 px | galería Terraza Aurora | Detalle de la terraza con mesa y planta |
+## Lote único: 4 imágenes (una por habitación)
+| Archivo (`creative/inbox/…`) | Hora | Proporción | Medida del máster | Dónde se usa | Texto alternativo sugerido |
+|---|---|---|---|---|---|
+| `r-alba` | 6 a. m. | 1:1 | 2560 × 2560 px | ventana circular de la habitación Alba | Habitación Alba con cama king de lino blanco frente a una ventana abierta al patio, con luz rosada de las 6 de la mañana |
+| `r-mediodia` | 12 m. | 1:1 | 2560 × 2560 px | ventana circular de Mediodía | Habitación Mediodía con balcón abierto sobre el patio y un desayuno servido sobre una mesa pequeña, con luz cenital cálida |
+| `r-atardecer` | 6 p. m. | 1:1 | 2560 × 2560 px | ventana circular de Atardecer | Habitación Atardecer con balcón a la calle y luz anaranjada que dibuja un rectángulo coral sobre el muro |
+| `r-noche` | 10 p. m. | 1:1 | 2560 × 2560 px | ventana circular de Noche | Habitación Noche con puertas de vidrio a una terraza privada y la ciudad encendida al fondo |
 
-Reglas comunes a todas: mínimo **1600 px en el lado mayor**, **hasta 4 MB** por archivo, color sRGB, **sin texto ni logotipos dentro de la imagen**. Yo las convierto a AVIF y WebP.
+Reglas comunes: mínimo **1600 px en el lado mayor**, **hasta 4 MB** por archivo, color sRGB, **sin texto ni logotipos dentro de la imagen**. Yo las convierto a AVIF y WebP.
 
-## Consejos para que las imágenes se vean como de la misma casa
-- Genera **todas en la misma conversación**. Cuando apruebes `h-01`, adjúntala a las siguientes con la frase: *«Usa la imagen adjunta como referencia de estilo, paleta y luz»*.
-- Pide el formato en la propia frase (ya viene en cada prompt). Si la herramienta no respeta la proporción exacta, recórtala; lo importante es que no quede por debajo de 1600 px.
-- **Recorte en arco:** el borde superior se corta con una semicircunferencia. Si el sujeto queda muy arriba, pide *«desplaza el sujeto hacia abajo»*.
+## Consejos para que las cuatro se vean como de la misma casa
+- Genera **las cuatro en la misma conversación**. Cuando apruebes `r-alba`, adjúntala a las siguientes con la frase: *«Usa la imagen adjunta como referencia de estilo y de nivel de detalle; cambia solo la hora, la luz y el color dominante»*.
+- **Recorte circular:** el sujeto va centrado y lo importante en el 80 % central. Si queda muy cerca del borde, pide *«aleja la cámara y deja más aire alrededor»*.
 - Rotularemos las imágenes como **ilustrativas** (generadas con IA), porque el hotel es ficticio.
-
-## Lote B (después de aprobar el A)
-Tres galerías más de cuatro imágenes (Alba, Patio y Balcón de Buganvilia). Las pediré con el mismo formato cuando apruebes el lote A.
+- El color dominante de cada hora sale de la paleta elegida. Los prompts usan «Luz del día»; si eliges Fachadas o Añil, se ajustan los colores.
 
 ## Fotos de las atracciones: **reales, no generadas**
-Las atracciones (Ciudad Amurallada, Getsemaní, Castillo de San Felipe, Convento de la Popa, Bocagrande, Islas del Rosario) son lugares reales: **no se generan con IA**. Opciones:
+Las atracciones (Ciudad Amurallada, Getsemaní, Castillo de San Felipe, Convento de la Popa, Bocagrande, Islas del Rosario) son lugares reales: **no se generan con IA**. En la maqueta v2 no se muestran fotos de ellas (la lista y el esquema bastan); si más adelante se quieren:
 - Fotos propias o de alguien que dé permiso por escrito.
 - Fotos con licencia abierta (por ejemplo Wikimedia Commons), anotando autor, enlace y licencia en `creative/manifest.json` y dando el crédito que la licencia exija.
-- Medida sugerida: **3:2, 1800 × 1200 px**, hasta 4 MB. Es opcional y va en la fase 2.
+- Medida sugerida: **3:2, 1800 × 1200 px**, hasta 4 MB.
 
-## Logotipo y íconos
-- **Logotipo:** lo construyo yo como SVG limpio (palabra «Aurora» en Bricolage Grotesque 600 más un arco con un punto de sol, tal como se ve en la maqueta). Los generadores de imágenes no producen vectores fiables.
-- **Si quieres explorar alternativas con ChatGPT o Gemini** (solo ideas, 1:1, **2048 × 2048 px**, PNG con fondo blanco): *«Seis variantes de un logotipo minimalista para un hotel boutique llamado Aurora en Cartagena de Indias: un arco de medio punto con un pequeño sol sobre él, trazo único, vectorial plano, sin degradados, un solo color coral sobre fondo blanco, sin texto adicional.»*
+## Logotipo e íconos
+- **Logotipo:** lo construyo yo como SVG limpio: la palabra **AURORA en mayúsculas gruesas (Anybody 800) con la «O» convertida en el sol** (un círculo con aro), tal como se ve en la portada. Los generadores de imágenes no producen vectores fiables.
+- **Si quieres explorar alternativas con ChatGPT o Gemini** (solo ideas, 1:1, **2048 × 2048 px**, PNG con fondo blanco): *«Seis variantes de un logotipo minimalista para un hotel boutique llamado AURORA: la palabra en mayúsculas muy gruesas y compactas, con la letra O sustituida por un círculo-sol relleno con un aro grueso, un solo color negro sobre fondo blanco, vectorial plano, sin degradados, sin sombras, sin texto adicional.»*
 - **Íconos de la app (PWA):** los genero yo desde el SVG: 192 × 192, 512 × 512, 512 × 512 «maskable» (zona segura del 80 %), 180 × 180 (iOS) y favicon. No necesitas hacer nada.
-- **Imagen para compartir en redes (1200 × 630 px):** la compongo yo con el logotipo y la imagen del hero.
+- **Imagen para compartir en redes (1200 × 630 px):** la compongo yo con el logotipo sobre el campo de color de la hora.
 
-## Video (opcional, hoy NO recomendado)
-El cálculo `VIDEO_SCORE` de la portada dio **28 → imagen** (el microvideo empieza en 30) y tu prioridad es la velocidad en el celular. Si más adelante quieres un microvideo **solo para escritorio**, el pedido sería: **1920 × 1080 px (16:9), 6 segundos, en bucle, sin audio, máximo 1,5 MB ya optimizado**, con este prompt para Gemini (Veo) o ChatGPT (Sora):
-*«Plano lento hacia adelante por un patio colonial de hotel boutique en Cartagena de Indias a la luz de las 6 de la mañana; el cielo pasa de azul verdoso a coral; arcos de piedra, postigos de madera, buganvilia; sin personas, sin texto, sin logotipos; bucle perfecto de 6 segundos, fotorrealista.»*
-Requiere tu aprobación y se carga solo en pantallas ≥ 900 px, sin movimiento reducido y después de pintar la imagen principal.
+## Video: no se necesita
+El cálculo `VIDEO_SCORE` de la portada dio **28 → imagen**, y la v2 mueve el sol, el color y las secciones solo con CSS (sin video, sin librerías). Si más adelante quieres un microvideo, se evalúa de nuevo con `VIDEO_SCORE` y requiere tu aprobación.
 
 ## Antes de publicar cualquier imagen
 - [ ] La aprobaste tú.

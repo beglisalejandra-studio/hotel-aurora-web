@@ -1,105 +1,113 @@
-# 01 · Propuesta de diseño UX/UI y plan técnico
+# 01 · Propuesta de diseño UX/UI y plan técnico (v2)
 
 > **Estado: en revisión (2026-10-05). Pendiente de aprobación** de la persona responsable antes de escribir código de producción.
 > **Hotel Aurora es un proyecto de portafolio de beglisalejandra-studio. Hotel ficticio: no se procesa ninguna reserva ni transacción.**
+> Esta es la **v2**. La v1 se rechazó por genérica («colores y tipografías muy genéricos, no innovador»); se rehízo con la maquetación tomada de referencias de Dribbble y color y movimiento nuevos. La v1 queda en el historial de git.
 
 ## Resumen en 30 segundos
-- **Idea:** «El día en la casa». Un hotel pequeño con patio, contado de la primera luz a la noche. El logo (un arco con un punto de sol) recorre el día mientras se hace scroll.
-- **Firma visual:** el arco de medio punto de la arquitectura colonial (marco de imágenes, arcada del pie, trazo del logo).
+- **Idea:** «Una habitación por hora». Cuatro habitaciones que son cuatro momentos del día; **el color de toda la página es la hora**. AURORA ocupa el ancho de la pantalla y su «O» es un sol que, al hacer scroll, inunda la pantalla con la hora siguiente.
+- **Qué lo hace distinto:** color plano (sin degradados ni fotografía en la portada), una tipografía variable cuyo **ancho** cambia con la luz, y movimiento hecho solo con CSS ligado al scroll. Nada de arcos de piedra ni cliché postal de Cartagena.
 - **Cómo cumple tus prioridades:**
-  - *Seguridad:* cuentas con Postgres y seguridad por fila, datos mínimos, nada de tarjetas, pagos imposibles en portafolio (ADR-0003 y 0004).
-  - *Velocidad:* páginas públicas estáticas, animación solo con CSS, imagen en vez de video (el cálculo dio 28 → imagen), mapa real solo bajo demanda, presupuestos medibles.
-  - *Celular, tablet y computador:* maqueta verificada sin desbordes de 360 a 1440 px.
-  - *App instalable con reserva:* PWA sin datos personales en caché (ADR-0005).
-- **Maqueta para revisar:** `creative/mockup/index.html` (un solo archivo; ábrelo en el navegador).
+  - *Seguridad:* cuentas con Postgres y seguridad por fila, datos mínimos, nada de tarjetas, pagos imposibles en portafolio (ADR-0003 y 0004). La maqueta no envía ni guarda lo que se escribe.
+  - *Velocidad:* páginas públicas estáticas, animación solo con CSS, **cero librerías, cero imágenes en la portada**, imagen en vez de video (el cálculo dio 28 → imagen).
+  - *Celular, tablet y computador:* sin desbordes de 320 a 2560 px, también con el texto al 200 %.
+  - *App instalable con reserva:* PWA sin datos personales en caché (ADR-0005); en la maqueta el botón «Instalar la app» dice con claridad que todavía no se puede instalar.
+- **Maqueta para revisar:** `creative/mockup/index.html` (un solo archivo; ábrelo en el navegador). La franja negra de arriba cambia entre **tres paletas**: Luz del día, Fachadas y Añil.
 
 ## Concepto
-- **Idea central:** una casa-hotel contada como un día completo, de la primera luz a la noche.
-- **Tres adjetivos:** luminoso, arquitectónico, sereno.
-- **Elemento firma:** el arco; el punto de sol del logo recorre el arco con el scroll.
-- **Qué evitamos:** hero centrado sobre degradado, tarjetas iguales con ícono, paleta crema y latón, serif «de lujo», fotos de stock, animación sin propósito. Detalle en `DESIGN.md`.
+- **Idea central:** cuatro habitaciones = cuatro horas (Alba 6 a. m., Mediodía 12 m., Atardecer 6 p. m., Noche 10 p. m.). Al bajar por la página el campo de color pasa de una hora a la siguiente.
+- **Tres adjetivos:** plano, tipográfico, preciso.
+- **Elemento firma:** el sol en la «O» de AURORA y el campo de color por hora.
+- **Qué evitamos:** hero centrado con dos botones, widget de reserva de cuatro cajas, tarjetas iguales, paleta crema y dorado, serif «de lujo», fotos de stock, animación sin propósito. Detalle en `DESIGN.md`.
 
-## Referencias (enlaces verificados el 2026-10-05)
-| # | URL | Qué se toma (principio) | Qué NO se toma |
-|---|---|---|---|
-| 1 | [aman.com](https://www.aman.com/) | imagen como protagonista, mucho aire, contexto geográfico en la navegación | su aspecto; su navegación de 36 propiedades |
-| 2 | [schlosshotel-kitzbuehel.com](https://www.schlosshotel-kitzbuehel.com/en) | poco texto sobre la foto; «Book» siempre a mano; habitaciones con precio desde y página propia | el motor de reservas externo |
-| 3 | [vanderhotel.com](https://vanderhotel.com/) | voz de marca con personalidad, no lenguaje de inventario | el humor forzado y su paleta de madera |
-| 4 | [velaaprivateisland.com](https://www.velaaprivateisland.com/) | narrativa en lugar de lista de servicios | menú de 10 o más secciones |
-| 5 | [faithibiza.com](https://faithibiza.com/) | navegar por intención | video de portada y «Scroll to discover» |
-| 6 | [anandahotelboutique.com](https://www.anandahotelboutique.com/) | punto de partida del sector en Cartagena y lo que hay que superar: sin reserva visible e imágenes rotas | todo su aspecto |
-| 7 | [awwwards.com/websites/hotel](https://www.awwwards.com/websites/hotel/) | colección: tipografía cuidada, imagen a pantalla completa | parallax con JavaScript pesado |
-| 8 | [21st: calendario de hotel](https://21st.dev/@cnippet-dev/components/v-calendar-15) y [rango con píldoras](https://21st.dev/@shadcnspace/components/calendar-range-select) | patrón de rango con noches y extremos en píldora | su código (implementación propia, ≈ 4 KB) |
-| 9 | [21st: Hero Scrub](https://21st.dev/@jean.duthil13/components/hero-scrub) y [Hotel Showcase](https://21st.dev/@kedhareswer/components/hotel-showcase) | nada | descartados por peso (canvas y GSAP) |
+## Referencias globales (enlaces verificados el 2026-10-05)
+Elegidas entre 333 candidatos únicos de 11 búsquedas, sin límite de país (5 de las 18 son colombianas o latinoamericanas). **Lista completa con qué se toma y qué no: `creative/references/urls.md` y `creative/references/reference-analysis.md`.**
 
-Enlaces que fallaron o no correspondían (Hoxton, Mr & Mrs Smith, UNESCO, casasanagustin.com, hotelcapellan.com, casapestana.com) están en `creative/references/urls.md` como registro.
+| Referencia | Qué se toma (principio, no diseño) | Dónde se ve |
+|---|---|---|
+| [Omah Jati](https://dribbble.com/shots/23650898-Omah-Jati-Private-Villa-Website) (Dribbble) | nombre a ancho completo, barra de tres microetiquetas, habitaciones como filas con filete | **base de la maquetación** |
+| [Modernist website](https://dribbble.com/shots/27621821-Modernist-website) (Dribbble) | la «o» del nombre como protagonista | el sol de AURORA |
+| [Corte d'Oro](https://dribbble.com/shots/27754026-Tuscan-Boutique-Hotel-Website-Corte-d-Oro) (Dribbble) | nombre cortado por la base, pildora única, calendario como pantalla propia | pie y reserva |
+| [#1 Capsules](https://dribbble.com/shots/25967623--1-Capsules) (Dribbble) | pildora de navegación alcanzable con el pulgar | dock móvil |
+| [PUBLIC Hotels](https://www.publichotels.com/) (EE. UU.) | nombre a 100vw y cambio de plano como transición | iris entre pantallas |
+| [TARQ](https://www.tarqstudio.com/es) (**Colombia**) | habitación como fila-leyenda, reserva fuera del hero | filas de habitaciones |
+| [Uno II Uno](https://dribbble.com/shots/25302563-Uno-Uno-hotel-branding) (**Getsemaní**) | plano de calles como fondo de mapa | mapa de líneas |
+| [AZULIK](https://azulik.com) (**México**) | reserva como píldora inferior que abre el calendario | dock y hoja de fechas |
+| [KAAN Architecten](https://kaanarchitecten.com/) (Países Bajos) | índice tipográfico, la misma lista sirve para el mapa | lista de la ciudad |
+| [Rauno Freiberg](https://rauno.me/) (Estonia) | la hora como eje | «una habitación por hora» |
+
+Referencias que fallaron o no correspondían están en `creative/references/urls.md` como registro.
 
 ## Cómo se verá, plataforma por plataforma
 | Plataforma | Qué cambia en el diseño | Captura |
 |---|---|---|
-| Móvil (390 px) | arco a sangre con el titular sobre una veladura; CTA «Reservar» arriba y en un dock inferior; fechas en hoja inferior de un mes; mapa con solo la etiqueta del punto activo; carril de habitaciones con la siguiente tarjeta asomando | [portada](../../creative/mockup/screenshots/home-390.png) · [fechas](../../creative/mockup/screenshots/fechas-390-hoja-inferior.png) · [pago bloqueado](../../creative/mockup/screenshots/reserva-390-pago-bloqueado.png) |
-| Tablet (768 px) | misma estructura que móvil con más aire; la barra de reserva se organiza en 3 columnas | [portada](../../creative/mockup/screenshots/home-768.png) |
-| Escritorio (1440 px) | titular a la izquierda y arco 4:5 a la derecha con un arco de contorno detrás; calendario de 2 meses; mapa y panel lado a lado; mosaico de 4 celdas | [portada](../../creative/mockup/screenshots/home-1440.png) · [reserva](../../creative/mockup/screenshots/reserva-1440-fechas.png) · [pago bloqueado](../../creative/mockup/screenshots/reserva-1440-pago-bloqueado.png) · [modo oscuro](../../creative/mockup/screenshots/home-1440-oscuro.png) |
+| Móvil (390 px) | el nombre se parte en AU / R(sol) / RA y llena la pantalla; Reservar arriba y en un dock inferior que se aparta del pie; fechas en hoja de pantalla completa; filas apiladas | `creative/mockup/screenshots/` |
+| Tableta (768 px) | el mismo nombre en tres líneas limitado por la altura; calendario de un mes alineado con L M M J V S D | `creative/mockup/screenshots/` |
+| Escritorio (1440 px) | nombre en una línea a ancho completo; filas de cinco columnas con el nombre que se ensancha; calendario de 2 meses; lista y mapa lado a lado | `creative/mockup/screenshots/` |
 | App instalada (PWA) | misma interfaz a pantalla completa; atajos «Reservar» y «Mis reservas»; sin conexión, pantalla con el contacto del hotel | se diseña en la fase 4 |
 
 ## Experiencia de usuario
 **Perfiles:**
-1. *Viajero que compara desde el celular.* Quiere ver el lugar, qué está libre y cuánto cuesta, sin registrarse todavía.
+1. *Viajero que compara desde el celular.* Quiere ver qué está libre y cuánto cuesta, sin registrarse todavía.
 2. *Huésped con reserva.* Quiere saber el estado y llegar bien (mapa).
 3. *Quien revisa el portafolio.* Quiere ver calidad, criterio y seguridad.
 
 **Recorrido de conversión** (cuatro pasos, un solo botón primario «Reservar» en todo el sitio):
-1. **Fechas:** desde la portada o la barra, calendario de rango con precio por noche, noches contadas y días completos tachados. Las fechas viajan con la persona entre pantallas.
-2. **Tus datos:** crear cuenta o entrar con enlace. Consentimientos separados (avisos por correo, por WhatsApp, marketing).
+1. **Fechas:** desde la portada o la barra, calendario de rango con precio por noche, noches contadas y días completos tachados. Si las fechas dejan fuera una habitación, se explica por qué (no disponible o capacidad máxima) y se propone una libre.
+2. **Tus datos:** crear cuenta o entrar con enlace; consentimientos separados y **sin premarcar**; el aviso «escribe datos inventados» va arriba, en tamaño normal.
 3. **Pago:** **bloqueado en portafolio**, con un aviso inconfundible; el botón Pagar queda desactivado a propósito.
-4. **Listo:** confirmación marcada «Simulación» y vista previa del aviso por **WhatsApp** y por **correo**, con la línea de estado (recibida, confirmada, check-in).
-
-**Fricciones que quitamos:** ver precios sin cuenta; fechas que no se pierden; resumen siempre visible; sin pedir datos que no se necesitan.
+4. **Confirmación de ejemplo:** rotulada «Simulación» desde el título, con vistas previas de WhatsApp y correo en condicional.
 
 **Mapa del sitio:** `/` · `/habitaciones/[slug]` · `/reservar` · `/cuenta` · `/cuenta/reservas` · privacidad, términos y cookies · `/offline` · 404.
 
-**Estados:** *éxito, vacío y bloqueado* están en la maqueta. *Carga* (esqueletos con la forma final), *error de red* y *sesión caducada* se construyen en la fase 1 a 3 (listados en `DESIGN.md` §3).
+**Estados:** *éxito, vacío por capacidad, ruta inexistente y bloqueado* están en la maqueta. *Carga*, *error de red* y *sesión caducada* se construyen en la fase 1 a 3 (listados en `DESIGN.md` §3).
 
-**Accesibilidad (medida):** contraste AA en todos los pares de colores, claro y oscuro (`node design/contrast-check.mjs`); calendario operable con flechas; foco visible; objetivos de 44 px; el estado nunca depende solo del color (los días completos van tachados); enlace «Saltar al contenido»; `prefers-reduced-motion` anula todo el movimiento.
+**Accesibilidad (medida):** contraste AA en las 12 combinaciones de color (`node design/palette-check.mjs`); calendario con flechas, Inicio, Fin, AvPág y RePág; anillo de foco de 3 px visible en cada hora; foco, título y anuncio al cambiar de pantalla; texto ampliado al 200 % sin recortes; `prefers-reduced-motion` anula todo el movimiento. Reglas en `DESIGN.md` §8.
 
 ## Cómo lo hacemos (plan técnico, resumen)
 | Tema | Propuesta | Detalle |
 |---|---|---|
 | Base | Next.js 16 + TypeScript estricto + Tailwind 4; páginas públicas estáticas, solo cuenta y reserva dinámicas; sin editor visual | ADR-0001 y 0002 |
-| Seguridad de datos | Postgres con seguridad por fila (prueba negativa obligatoria), datos mínimos, sin tarjetas, contraseñas de 12 o más caracteres, CAPTCHA y límite de tasa, cookies `HttpOnly`, CSP, exportar y eliminar desde la cuenta, secretos solo en el gestor | ADR-0004, `docs/privacy/data-map.md` |
+| Seguridad de datos | Postgres con seguridad por fila (prueba negativa obligatoria), datos mínimos, sin tarjetas, CAPTCHA y límite de tasa, cookies `HttpOnly`, **CSP con nonce** (la maqueta ya evita `style=""` y `onsubmit` inline), exportar y eliminar desde la cuenta, secretos solo en el gestor | ADR-0004, `docs/privacy/data-map.md` |
 | Sin dobles reservas | Transacción que bloquea las noches, retención corta con vencimiento, clave de idempotencia, prueba de carrera | ADR-0004 |
 | Pagos | Interfaz de pagos con un único proveedor que **siempre rechaza**; guardas en el arranque, CSP y CI | ADR-0003 |
-| Estado por WhatsApp o correo | Cola de eventos de reserva; correo transaccional y API de WhatsApp Business (los mensajes que inicia la empresa requieren plantillas aprobadas; solo con consentimiento). **En portafolio: vista previa, no se envía nada** | `PROJECT.md` §3 |
-| Mapa | Póster estático + MapLibre y PMTiles propios cargados bajo demanda; sin claves ni rastreadores | ADR-0006 |
+| Estado por WhatsApp o correo | Cola de eventos de reserva; correo transaccional y API de WhatsApp Business (plantillas aprobadas; solo con consentimiento). **En portafolio: vista previa, no se envía nada** | `PROJECT.md` §3 |
+| Mapa | Esquema de líneas en la maqueta; MapLibre y PMTiles propios cargados bajo demanda en producción; sin claves ni rastreadores | ADR-0006 |
 | App instalable | Manifiesto, atajos, service worker mínimo que nunca guarda datos personales; reservar siempre en línea | ADR-0005 |
-| Velocidad | Presupuestos en `DESIGN.md` §7 (LCP ≤ 2.0 s, JS inicial ≤ 90 KB gzip, hero ≤ 120 KB, portada ≤ 900 KB) medidos con Lighthouse y datos de campo | `DESIGN.md` §7 |
-| Imágenes | 12 imágenes del lote A con prompts para ChatGPT o Gemini y medidas exactas | `creative/requests/LEEME.md` |
+| Tipografía | Anybody (ancho 100 a 125, pesos 700 y 800) y Familjen Grotesk, ambas SIL OFL, autoalojadas con `next/font`; presupuesto de fuentes ≤ 60 KB | `DESIGN.md` §2 |
+| Velocidad | Presupuestos en `DESIGN.md` §7 medidos con Lighthouse y datos de campo | `DESIGN.md` §7 |
+| Imágenes | **4 imágenes** (una por habitación, ventana circular 1:1) con prompts para ChatGPT o Gemini y medidas exactas | `creative/requests/LEEME.md` |
 | Hosting | **Por decidir** (Vercel, Cloudflare o contenedor propio); no se impone ninguno | `PROJECT.md` §5 |
 | Fases | 0 maqueta (hecha) → 1 base → 2 habitaciones y calendario → 3 cuentas y reserva → 4 PWA y SEO → 5 QA → 6 preview y entrega | `PROJECT.md` §6 |
 
 ## Maqueta
-`creative/mockup/index.html`. Un solo archivo; las fuentes se piden a Google solo en la maqueta (en producción se autoalojan). Contiene: portada, página de habitación (`#/habitacion/terraza`), flujo de reserva de 4 pasos (`#/reservar`), modo claro y oscuro. La franja superior tiene el botón **Guía de fotos**, que muestra en cada hueco de imagen su código y su medida.
+`creative/mockup/index.html`. Un solo archivo; las fuentes se piden a Google solo en la maqueta (en producción se autoalojan). Contiene: portada, página de habitación (`#/habitacion/noche`, también `alba`, `mediodia`, `atardecer`), flujo de reserva de 4 pasos (`#/reservar`) y tres paletas (`?paleta=luz|fachadas|anil`). El botón **Guía de fotos** aparece en la página de cada habitación y muestra el código y la medida del hueco de imagen.
+
+### Revisión adversarial y qué se corrigió
+Seis revisores independientes (genericidad, accesibilidad, movimiento y rendimiento, responsive, texto y veracidad, seguridad) probaron la primera versión de esta maqueta con navegador real, y un escéptico intentó refutar cada hallazgo alto o medio. Resultado: **90 hallazgos confirmados y ninguno refutado** (11 altos, 47 medios, 32 bajos). Se corrigieron los 11 altos y los 47 medios; los más importantes:
+- **Diseño:** el nombre de la habitación se partía a mitad de palabra en dos de cuatro páginas; la portada en celular era casi todo campo vacío; la paleta Añil era una rampa de un solo tono.
+- **Accesibilidad:** el anillo de foco era invisible en todos los botones sólidos; «Saltar al contenido» cambiaba de pantalla; al cambiar de ruta el foco se perdía; el calendario no se podía recorrer con teclado y tenía 49 paradas de Tab; en Fachadas el texto del hero quedaba casi blanco sobre amarillo (1.4:1).
+- **Veracidad:** se podía reservar una habitación no disponible; la confirmación decía «Todo listo» y marcaba el pago como hecho; «Instalar la app» prometía funciones inexistentes; había una nota interna visible («Dato por verificar»).
+- **Seguridad y privacidad:** campo de contraseña y casilla de consentimiento premarcada en una maqueta que no guarda nada; formularios sin envío real.
 
 ### Qué verifiqué
-- Sin desbordamiento horizontal en 360, 390, 430, 768, 900, 1024, 1280 y 1440 px.
-- Recorrido completo con clics reales en 1440 y 390 px (19 a 20 comprobaciones por tamaño: abrir fechas, elegir rango, ir a la habitación, reservar, avanzar los pasos, pago bloqueado que **no avanza**, confirmación «Simulación», vista previa de WhatsApp, teclado en el calendario, menú móvil, diálogo de instalación). La prueba encontró y corrigió tres errores reales (el selector se cerraba al elegir la primera fecha, la vista previa del rango podía perder el clic y la hoja inferior quedaba tapada en móvil).
-- Contraste AA en todos los pares, claro y oscuro (un par del tema claro estaba en 4.10:1 y se corrigió).
-- Consola del navegador sin errores ni avisos.
-- Cero rayas largas en el texto visible (regla tipográfica del proyecto).
+(ver la sección final de este documento: se completa con la última ejecución)
 
 ### Qué NO verifiqué (honestidad)
-- **Fotos reales:** la maqueta usa degradados de color como sustitutos; el diseño depende de las imágenes que aún no existen.
+- **Fotos reales:** la maqueta usa un glifo plano por hora como sustituto en la ventana de la habitación; el diseño final depende de cuatro imágenes que aún no existen.
 - **Lighthouse:** no lo ejecuté; sin imágenes ni servidor desplegado la cifra engañaría. Se mide en la fase 5.
-- **Lectores de pantalla, Safari, Firefox y dispositivos reales:** solo probé con Chromium emulado. Las animaciones con `animation-timeline` están protegidas con `@supports` y degradan a estático, pero no las vi en Safari ni Firefox.
-- **El mapa es un esquema ilustrativo**, no a escala; las coordenadas y los tiempos reales dependen de la dirección del hotel.
+- **Lectores de pantalla (NVDA, VoiceOver, TalkBack), Safari real y dispositivos físicos:** solo probé con Chromium, Firefox y WebKit de Playwright (emulados). El anuncio de las regiones en vivo y el comportamiento táctil real no están comprobados.
+- **El mapa es un esquema ilustrativo**, no a escala; las coordenadas y los tiempos reales dependen de una dirección que aún no existe.
+- **El peso de las fuentes recortadas (≈ 53 KB)** es una estimación con `fontTools`, no una medición con la API de Google.
 - **Nada de producción:** no hay código de aplicación, base de datos, autenticación, pagos, correo ni WhatsApp; es una maqueta.
 
 ## Decisiones pendientes para la persona
-1. **Aprobar o corregir** la maqueta y el concepto («El día en la casa», arco y sol).
-2. **Ubicación:** ¿Centro histórico, Getsemaní u otra zona?
-3. **Registro en el portafolio:** ¿funciona de verdad contra un proyecto de pruebas con purga a las 24 h (recomendado) o es simulado? (ADR-0004)
-4. **Idiomas:** ¿solo español o también inglés?
-5. **Hosting y dominio:** ¿preferencia? El dominio aún no existe.
-6. **Imágenes:** ¿generamos el lote A con ChatGPT o Gemini? Subir a `creative/inbox/`.
-7. **Logotipo:** ¿aprobamos el arco con sol construido en SVG?
-8. **Cuentas de servicios** (base de datos, correo, WhatsApp): las crea una persona; yo no recibo claves por el chat.
+1. **Aprobar o corregir** el concepto («Una habitación por hora», el sol en la «O») y **elegir paleta**: Luz del día (rosa, limón, coral y noche; la que muestra la maqueta por defecto), Fachadas (magenta, amarillo, naranja y azul eléctrico) o Añil (lavanda, amarillo sol, periwinkle e índigo).
+2. **Tipografía:** Anybody + Familjen Grotesk, ambas libres (SIL OFL). Si prefieres fuentes con licencia comercial (por ejemplo Cabinet Grotesk), no se pueden subir a un repositorio público de portafolio.
+3. **Ubicación:** ¿Centro histórico, Getsemaní u otra zona? Hoy el mapa dice «ubicación de ejemplo».
+4. **Registro en el portafolio:** ¿funciona de verdad contra un proyecto de pruebas con purga a las 24 h (recomendado) o es simulado? (ADR-0004)
+5. **Idiomas:** ¿solo español o también inglés?
+6. **Hosting y dominio:** ¿preferencia? El dominio aún no existe.
+7. **Imágenes:** ¿generamos las 4 imágenes con ChatGPT o Gemini? Subir a `creative/inbox/`. Aún **no** generes las de la v1.
+8. **Logotipo:** ¿aprobamos AURORA con el sol en la «O», construido en SVG?
+9. **Cuentas de servicios** (base de datos, correo, WhatsApp): las crea una persona; yo no recibo claves por el chat.

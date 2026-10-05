@@ -25,7 +25,7 @@ export const PALETTES = {
     g: ["#FFE3EF", "#4A3A0A", "#3A1604", "#C7D6FA"],
   },
   anil: {
-    b: ["#EEF0FB", "#CDD1F8", "#7C83EC", "#2B2FB8"],
+    b: ["#EEF0FB", "#FFD23F", "#7C83EC", "#2B2FB8"],
     f: ["#1A1D8C", "#14186E", "#0B0E4A", "#FFFFFF"],
     g: ["#4A4EB0", "#3C40A0", "#12154F", "#D2D5F6"],
   },
