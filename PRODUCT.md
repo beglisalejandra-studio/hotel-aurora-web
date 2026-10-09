@@ -58,7 +58,9 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 6. **Horarios:** entrada desde las 15:00, salida hasta las 12:00. **Petfriendly:** sí.
 7. **Material visual:** lo produce la persona con prompts ultra realistas que se le piden **uno a uno** (`creative/requests/`).
 8. **Entrega para no técnicos:** en lugar de vídeo, un **documento muy explicado** (`docs/entregables/03-guia-de-gestion.md`).
+9. **Formato de la guía final:** **PDF** (más la versión en el repositorio).
+10. **Suplemento por mascota:** se deja **sin importe publicado**.
+11. **Móvil primero, siempre:** la versión móvil es prioritaria en todo entregable (regla en `CLAUDE.md`).
 
 ## 8. Preguntas abiertas
-- Formato final de la guía (Documento de Google, Word o PDF).
-- Si el hotel real admitirá perros de cualquier tamaño y cuál será el suplemento (aquí, ficticio y sin importe).
+- Para un hotel real: si admitirá perros de cualquier tamaño y cuál será el suplemento (en el portfolio queda ficticio y sin importe, decisión 10).

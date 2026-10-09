@@ -2,12 +2,14 @@
 
 Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md` (medidas exactas, prompt ultra realista y carpeta de subida). Al recibirla se comprueba con `media-intake.mjs`, se anota como **borrador** y la persona la aprueba antes de pasar a `public/media/`. La primera imagen aprobada de cada espacio **fija la identidad** (edificio, luz, paleta): las siguientes se piden como variaciones de ella.
 
+**Móvil primero (regla permanente):** cada pieza se pide con su composición nativa para el contenedor móvil real, nunca como recorte automático de la de escritorio. Antes de pedirla se mide el contenedor en la maqueta y se calcula cuánto de la foto se ve con `cover`; la ficha fija las zonas seguras. Ninguna pieza se aprueba sin verla en 390 × 844.
+
 **Aviso sobre contenido sintético:** si las imágenes se generan con IA, se registran con `ai_generated: true` en `creative/manifest.json` y el portfolio debe indicarlo (el hotel y sus fotos son ficticios). Para un cliente real se usan fotografías reales.
 
 | # | Código | Tipo | Qué | Proporción | Estado |
 |---|---|---|---|---|---|
-| 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Solicitada** (`p01-hero-escritorio.md`) |
-| 2 | P01 móvil | Foto | La misma escena recortada en vertical (se pide como variación de la aprobada) | 4:5 | Pendiente de #1 |
+| 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Recibida** como borrador; pendiente de tu aprobación (`p01-hero-escritorio.md`) |
+| 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Solicitada** (`p01-hero-movil.md`); se genera con P01 escritorio como referencia |
 | 3 | P03 | Foto | Patio interior a media mañana | 3:2 | Pendiente |
 | 4 | P04 | Foto | Habitación Alba, vista general | 4:5 | Pendiente |
 | 5 | P05 | Foto | Alba, la luz sobre la pared | 3:2 | Pendiente |
@@ -16,7 +18,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 8 | V01 | Vídeo | Luz de ventana sobre la mesa, 6 s en bucle, sin audio | 3:2 | Pendiente de #7 |
 | 9 | P19 | Foto | Sala de tratamientos del spa | 4:5 | Pendiente |
 | 10 | P25 | Foto | Perro en la terraza de la habitación (hotel petfriendly) | 3:2 | Pendiente |
-| 11 | P21 a P23 | Foto | Portadas de los tres paquetes | 4:5 | Pendiente |
+| 11 | P21 a P23 | Foto | Portadas de los tres paquetes | 4:5 | Pendiente (ajustar antes de pedir: ver tabla de contenedores) |
 | 12 | P07 a P15 | Foto | Resto de habitaciones: Marea, Terraza y suite Faro | 3:2 y 4:5 | Pendiente |
 | 13 | P17, P18 | Foto | Plato en primer plano y desayuno | 3:2 | Pendiente |
 | 14 | P20 | Foto | Zona de agua del spa al amanecer | 3:2 | Pendiente |
@@ -25,3 +27,15 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 17 | V02, V03 | Vídeo | Agua del spa y luz sobre la pared de Alba, 6 s en bucle | 4:5 y 3:2 | Pendiente |
 | 18 | 360 x 4 | Foto 360 | Panoramas equirrectangulares de las cuatro habitaciones (extra aprobado) | 2:1 | Pendiente |
 | 19 | Mapa de profundidad de P01 | Derivado | Lo genera el equipo a partir de P01 aprobada (extra 2,5D) | igual que P01 | Pendiente de #1 |
+
+## Contenedores medidos en la maqueta (2026-10-09)
+Tamaño real de cada hueco de foto (`offsetWidth` x `offsetHeight`) a 390, 768 y 1440 px de ancho. La proporción entre paréntesis es ancho/alto.
+
+| Hueco | Móvil 390 | Tableta 768 | Escritorio 1440 | Se pide | Consecuencia |
+|---|---|---|---|---|---|
+| P01 héroe | 390 x 772 (0,51) | 768 x 952 (0,81) | 1440 x 828 (1,74) | 16:10 y **9:16** | Dos composiciones nativas; la tableta vertical reutiliza la 9:16 anclada arriba. Una foto 4:5 perdería el 37 % del ancho en el móvil; una 16:10, el 68 % |
+| P03 patio, V01 | 328 x 218 (1,50) | 338 x 225 | 634 x 422 | 3:2 | Coincide |
+| P04 Alba, P19 spa (recorrido) | 234 x 293 (0,80) | 230 x 288 | 420 x 525 | 4:5 | Coincide |
+| Carril de habitaciones (P04, P07, P10, P13) | 288 x 360 (0,80) | 288 x 360 | 288 x 360 | 4:5 | Coincide |
+| P25 mascotas | 358 x 239 (1,50) | 707 x 471 | 686 x 457 | 3:2 | Coincide |
+| P21 a P23 paquetes | 358 x 420 (0,85) | 707 x 420 (1,68) | 719 x 560 (1,28) | 4:5 | **No coincide** en tableta y escritorio: al pedirlas, sujeto en la franja central (26 % a 74 % del alto) o igualar el contenedor con CSS |

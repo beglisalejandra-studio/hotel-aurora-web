@@ -76,4 +76,4 @@ Contacto de soporte, horario y cómo reportar un problema: ver `05-plan-de-sopor
 | 11 | Banner de cookies y ventana de configuración | 5.7 |
 
 ## Formato de entrega
-Documento ilustrado para personas sin conocimientos técnicos: **Documento de Google, Word o PDF** (la persona elige el formato; ver `PRODUCT.md` §8), más esta versión en el repositorio.
+Documento ilustrado para personas sin conocimientos técnicos: **PDF** (formato elegido por la persona el 2026-10-09; ver `PRODUCT.md` §7). Será un PDF etiquetado y accesible: texto seleccionable, marcadores por capítulo y texto alternativo en cada captura, más esta versión en el repositorio.

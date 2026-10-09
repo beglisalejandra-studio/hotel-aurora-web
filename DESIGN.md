@@ -25,7 +25,7 @@ Familia de color: **terracota + pizarra**, un solo acento. Dos temas con el mism
 | `--accent` | `#B9431A` | `#F0794A` | CTA, enlaces | texto sobre fondo 4,72:1 / 6,42:1 |
 | `--on-accent` | `#FFFFFF` | `#1A0F09` | texto sobre acento | 5,41:1 / 6,75:1 |
 | `--accent-soft` | `#F3D9CC` | `#3A2418` | celdas tintadas | tinta sobre él 12,25:1 (Día) |
-| texto sobre foto | `#F3F6F7` + degradado `rgba(11,17,23,.88→0)` | igual | titular y párrafo del héroe | ≥ 4,5:1 por construcción (degradado inferior), a verificar con la foto real |
+| texto sobre foto | `#F3F6F7` + degradado `rgba(11,17,23,.88→0)` | igual | titular y párrafo del héroe | ≥ 4,5:1. **Medido con la foto P01 real (2026-10-09):** el degradado inferior solo no basta en escritorio (el 13,8 % de los píxeles de «Amanece» y el 19,9 % de «despacio.» quedan bajo 3:1). Con un degradado lateral añadido (`90deg`, `rgba(11,17,23,.62)` a `.42` al 34 % y `0` al 64 %): titular ≥ 3:1 y párrafo ≥ 4,5:1 en escritorio y móvil (0,4 % de los píxeles del párrafo móvil, 3,8:1) |
 
 Sin negro ni blanco puros en superficies de texto. Un solo acento en toda la página.
 
@@ -68,7 +68,8 @@ Breakpoints: 360 · 390 · 768 · 1024 · 1440 px, mobile first. En móvil: el h
 - **Navegadores sin scroll-timeline:** se muestra la versión estática. Estado de soporte: Chromium sí; Safari y Firefox con fuentes contradictorias, **a verificar en caniuse al implementar**.
 
 ## 6. Imagen y video
-- **Dirección de arte:** luz natural de mañana, arquitectura y horizonte, tonos de pizarra y terracota, sin personas posando. La foto del héroe se entrega en **dos recortes** (16:10 escritorio y 4:5 móvil) con zona libre en la parte inferior para el texto.
+- **Dirección de arte:** luz natural de mañana, arquitectura y horizonte, tonos de pizarra y terracota, sin personas posando. La foto del héroe se entrega en **dos composiciones nativas** (16:10 escritorio y **9:16 móvil**: el contenedor del héroe en un teléfono mide unos 390 x 772, proporción 0,51) con zona libre en la parte inferior para el texto. La tableta vertical (768 x 952) reutiliza la 9:16 anclada arriba.
+- **Móvil primero (regla permanente):** la versión móvil se diseña, se mide y se revisa antes que la de escritorio; ver `CLAUDE.md`. Cada foto se pide con su composición móvil nativa; la tabla de contenedores medidos está en `creative/requests/INDEX.md`.
 - **El héroe es imagen** (LCP), AVIF con `fetchpriority="high"`. Sin vídeo en el héroe salvo que `VIDEO_SCORE` lo justifique en la fase 4.
 - **Vídeo en ventanas** (restaurante y spa): MP4/WebM mudo en bucle de 6 s, `preload="none"`, póster AVIF, arranca al entrar en pantalla, se pausa al salir, no se carga con `saveData` o conexión lenta. Peso máximo por clip: ver ADR-0006.
 - **Estado de la maqueta:** `creative/providers.json` fija el proveedor de imagen en `manual` y la generación de imágenes de Figma consume créditos de pago, así que **no he generado fotos**. La maqueta usa huecos rotulados (`P01`, `V01`...); el material se pide en `creative/briefs/pedido-de-materiales.md`.

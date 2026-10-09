@@ -26,7 +26,7 @@ Análisis completo y capturas: `reference-analysis.md` y `creative/references/`.
 ## Cómo se verá, plataforma por plataforma
 | Plataforma | Qué cambia en el diseño | Capturas |
 |---|---|---|
-| Móvil (390 px) | Foto vertical 4:5 a sangre con texto abajo y un único botón "Reservar"; el recorrido usa planos pequeños con pie en panel inferior; carrusel de habitaciones con `scroll-snap`; objetivos ≥ 44 px | `capturas/walk-m-0.png`, `capturas/walk-m-50.png`, `capturas/reserva-movil.png` |
+| Móvil (390 px) | Foto vertical 9:16 a sangre (corregido el 2026-10-09 tras medir el contenedor: 390 x 772) con texto abajo y un único botón "Reservar"; el recorrido usa planos pequeños con pie en panel inferior; carrusel de habitaciones con `scroll-snap`; objetivos ≥ 44 px | `capturas/walk-m-0.png`, `capturas/walk-m-50.png`, `capturas/reserva-movil.png` |
 | Tablet (768 px) | Barra de reserva en cuatro columnas; recorrido con pies laterales | Sin capturar en esta ronda (comprobado: 0 px de desborde y sin errores) |
 | Escritorio (1440 px) | Foto horizontal 16:10 a sangre, barra de reserva con cuatro campos, recorrido con pies alternados izquierda y derecha, efectos de puntero | `capturas/walk-d-0.png`, `capturas/walk-d-30.png`, `capturas/walk-d-50.png`, `capturas/reserva-escritorio.png`, `capturas/ficha-habitacion-escritorio-en.png` |
 | App instalada (PWA) | No se plantea en esta fase | n/a |

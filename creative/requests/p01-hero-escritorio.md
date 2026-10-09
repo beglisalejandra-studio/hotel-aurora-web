@@ -44,3 +44,19 @@ Ultra-realistic architectural photograph, a real photo and not a render. Exterio
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+Archivo recibido: `creative/inbox/p01-hero-escritorio.jpg` · JPG, 2560 × 1600 (16:10), 1,92 MB, sRGB. No lleva metadatos de procedencia (ni EXIF, ni XMP, ni C2PA detectables), así que **no se sabe con qué herramienta se hizo**: hace falta que la persona lo indique para registrarlo en `creative/manifest.json` (`ai_generated`).
+
+**Cumple:** medidas y proporción; sin personas, texto, logos ni arcos (puerta y ventanas rectangulares); luz de amanecer desde la izquierda; teja terracota, contraventanas oscuras y paleta pizarra y terracota; el 43 % inferior es grava lisa, sin objetos.
+
+**Se aparta de la ficha:** cielo azul saturado (la ficha pedía un cielo pálido con calima); muro más crema que encalado; grava muy nítida (pesa).
+
+**Peso optimizado (pruebas en 1600 px de ancho):** WebP calidad 72 = 250 KB; WebP 50 = 189 KB; AVIF 45 = 126 KB; AVIF 55 = 175 KB. En 960 px, AVIF 55 = 73 KB; en 480 px, 17 KB. El presupuesto del ADR-0006 (LCP ≤ 180 KB; ≤ 110 KB en móvil) se cumple con AVIF y WebP de reserva a calidad ~45. Suavizar el suelo ahorraría casi la mitad (133 KB en WebP 72), pero se pide ya desenfocado en la foto móvil.
+
+**Texto sobre la foto (medido en la maqueta con la foto real):** solo con el degradado inferior, en escritorio el 13,8 % de los píxeles de «Amanece» y el 19,9 % de «despacio.» quedan bajo 3:1. Con un degradado lateral añadido, el titular supera 3:1 y el párrafo 4,5:1 (en móvil, el 0,4 % de los píxeles del párrafo queda en 3,8:1). Se aplica en la fase 5 (ver `DESIGN.md`). Capturas: `docs/entregables/capturas/p01-escritorio-con-velo.jpg`.
+
+**Móvil (problema):** el contenedor del héroe en un teléfono mide 390 × 772 (0,51). Con `cover`, esta foto 16:10 muestra solo el **32 % de su ancho**: se pierden los olivos y el mar, y la fachada queda cortada por las ventanas. Capturas: `docs/entregables/capturas/p01-movil-recorte-del-escritorio.jpg`. Por eso se pide una composición nativa 9:16 (`p01-hero-movil.md`).
+
+**Pendiente de la persona:** aprobar o repetir con corrección. Nada pasa a `public/media/` sin esa aprobación.

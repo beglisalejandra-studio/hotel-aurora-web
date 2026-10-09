@@ -1,0 +1,22 @@
+{
+  "name": "p01-hero-movil",
+  "kind": "image",
+  "aspect": "9:16",
+  "page": "home",
+  "role": "heroe de portada en movil (LCP): la misma fachada, recomposicion vertical",
+  "status": "requested",
+  "requested_at": "2026-10-09T16:04:50.965Z",
+  "master": {
+    "w": 1440,
+    "h": 2560
+  },
+  "min_long_side": 1600,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ]
+}

@@ -18,7 +18,7 @@ Fotos: JPG o PNG, **mínimo 2000 px en el lado largo**, ≤ 4 MB por archivo si 
 ## Lista de fotos (por prioridad)
 | Código | Dónde se usa | Encuadre | Qué debe verse |
 |---|---|---|---|
-| **P01** | Héroe de inicio (LCP). **Dos recortes:** horizontal 16:10 y vertical 4:5 | Máster horizontal **2560 x 1600** y vertical 4:5 con la medida exacta de su ficha, con **zona libre en el tercio inferior** (ahí va el texto) | Fachada de una casa encalada restaurada, mirando al este, con el primer sol rozando el muro. Sombras frías de pizarra, borde cálido de luz. Sin personas |
+| **P01** | Héroe de inicio (LCP). **Dos composiciones nativas:** horizontal 16:10 (escritorio) y vertical 9:16 (móvil y tableta vertical) | Máster horizontal **2560 x 1600** y vertical **1440 x 2560**, con **zona libre abajo** (tercio inferior en escritorio, 42 % inferior en móvil: ahí va el texto) | Fachada de una casa encalada restaurada, mirando al este, con el primer sol rozando el muro. Sombras frías de pizarra, borde cálido de luz. Sin personas |
 | **P02** | Compartir en redes (OG) | Horizontal 1200 x 630 útil | Variante de P01 con aire a la izquierda |
 | **P03** | Recorrido (casa) | Horizontal 3:2 | Patio interior a media mañana |
 | **P04 a P06** | Habitación **Alba** (este, sol al amanecer) | 3:2 y detalle | Vista general, luz sobre la pared, baño |
@@ -30,7 +30,7 @@ Fotos: JPG o PNG, **mínimo 2000 px en el lado largo**, ≤ 4 MB por archivo si 
 | **P21 a P23** | Portadas de paquetes | 4:5 | Escapada de dos noches, cena en la casa, día de spa |
 | **P24** | Entorno | 16:9 | Costa por la mañana |
 
-Total: 24 fotos. Para empezar, **P01 (dos recortes), P03, P04, P16 y P19** bastan para afinar el recorrido de la maqueta en la fase 3.
+Total: 24 fotos. Para empezar, **P01 (escritorio y móvil), P03, P04, P16 y P19** bastan para afinar el recorrido de la maqueta en la fase 3.
 
 ## Vídeo (opcional, lo decide `VIDEO_SCORE` en la fase 4)
 | Código | Dónde | Qué debe verse | Especificaciones |

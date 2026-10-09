@@ -15,6 +15,13 @@
 - Producción, pagos reales, DNS, credenciales y permisos: **solo con aprobación humana**. El agente no crea `.web-os/approvals/*`.
 - Autoridad visual **única**: `visual_authority` de PROJECT.md. Sus skills están en `.claude/skills/`.
 
+## Móvil primero (regla permanente, pedida por la persona)
+- La versión móvil es **siempre** prioritaria: se diseña, se mide y se revisa **antes** que la de escritorio. Un cambio no está bien si en 390 × 844 se ve mal, aunque en escritorio luzca.
+- Toda revisión de un entregable visual incluye captura en **390 × 844**, 768 × 1024 y 1440 × 900, vista antes de pedir aprobación.
+- Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
+- Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio.
+- Objetivos táctiles ≥ 44 px, sin desbordamiento horizontal a 390 px y el botón flotante no tapa la acción principal.
+
 ## Reglas técnicas (Next.js next · TypeScript estricto)
 - **Antes de escribir código de Next, lee `node_modules/next/dist/docs/`** (esta versión tiene cambios de ruptura). En Next 16: el antiguo *middleware* se llama **`proxy.ts`** (función `proxy`); `next lint` ya no existe (se usa `eslint`).
 - Componentes de servidor por defecto; `"use client"` solo si hace falta. Componentes pequeños, HTML semántico, un `h1` por página.
