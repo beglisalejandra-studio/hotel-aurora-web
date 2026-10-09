@@ -23,7 +23,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 9 | P19 | Foto | Sala de tratamientos del spa | 4:5 | Pendiente |
 | 10 | P25 | Foto | Perro en la terraza de la habitación (hotel petfriendly) | 3:2 | Pendiente |
 | 11 | P21 a P23 | Foto | Portadas de los tres paquetes | 4:5 | Pendiente (ajustar antes de pedir: ver tabla de contenedores) |
-| 12a | P07 escritorio y móvil | Foto (2 versiones) | Marea, vista general (concepto: la línea de marea) | 4:5 las dos (la móvil, con tres bandas grandes) | **Preparada** el 2026-10-09 (`p07-marea-escritorio.md` y `p07-marea-movil.md`); se pide cuando la persona apruebe el concepto |
+| 12a | P07 escritorio y móvil | Foto (2 versiones) | Marea, vista general (concepto v2: el mirador, con el aspecto de P01 al pie de la letra) | 4:5 las dos (la móvil, con primer plano del banco-mirador) | **Rehecha por tercera vez** el 2026-10-09 con contrato de estilo: la versión anterior rompía la estética del hotel (`p07-marea-escritorio.md` y `p07-marea-movil.md`) |
 | 12b | P08, P09 | Foto | Marea: ventana al mar y ropa de cama | 3:2 | Pendiente de P07 |
 | 12c | P10 a P15 | Foto | Terraza y suite Faro, según el concepto | 3:2 y 4:5 | Pendiente |
 | 13 | P17, P18 | Foto | Plato en primer plano y desayuno | 3:2 | Pendiente |

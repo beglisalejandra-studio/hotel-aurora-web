@@ -3,9 +3,9 @@
   "kind": "image",
   "aspect": "4:5",
   "page": "habitaciones",
-  "role": "habitacion Marea, vista general, version movil (huecos medidos 358x448, 288x360 y 234x293)",
+  "role": "habitacion Marea (el mirador), vista general, version movil (huecos medidos 358x448, 288x360 y 234x293)",
   "status": "requested",
-  "requested_at": "2026-10-09T19:19:03.928Z",
+  "requested_at": "2026-10-09T19:36:34.548Z",
   "master": {
     "w": 2048,
     "h": 2560
@@ -19,5 +19,5 @@
     ".webp",
     ".avif"
   ],
-  "contract": "essence"
+  "contract": "style-lock"
 }

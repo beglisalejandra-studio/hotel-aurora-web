@@ -3,6 +3,7 @@
 // lleve SIEMPRE la proporción exacta: una línea "FORMAT:" al inicio y una línea "OUTPUT:" al final (orientación, proporción,
 // tamaño objetivo y mínimo, calidad, color y formato).
 //   node scripts/finalize-media-request.mjs [nombre …] [--min 1500]   remata las fichas indicadas (por defecto, todas las pendientes)
+//   node scripts/finalize-media-request.mjs <nombre> --look "texto"      contrato de estilo: la primera imagen adjunta fija el aspecto (luz, paleta, graduación) al pie de la letra
 //   node scripts/finalize-media-request.mjs <nombre> --essence "texto"   sustituye el VISUAL CONTRACT por un contrato de esencia:
 //                                                                     la referencia aporta materiales y lenguaje constructivo, no color ni luz
 //   node scripts/finalize-media-request.mjs --check                   no escribe nada; sale con 1 si una ficha pendiente no tiene OUTPUT
@@ -17,7 +18,8 @@ const val = (n, d) => (argv.includes(n) ? argv[argv.indexOf(n) + 1] : d);
 const MIN = Number(val('--min', 1500));
 const DIR = 'creative/requests';
 const ESSENCE = val('--essence', null);
-const names = argv.filter((a, i) => !a.startsWith('--') && argv[i - 1] !== '--min' && argv[i - 1] !== '--essence');
+const LOOK = val('--look', null);
+const names = argv.filter((a, i) => !a.startsWith('--') && !['--min', '--essence', '--look'].includes(argv[i - 1]));
 
 if (!Number.isFinite(MIN) || MIN < 800) {
   console.error('--min debe ser un número de píxeles razonable (800 o más).');
@@ -68,7 +70,15 @@ for (const name of cards) {
     continue;
   }
   let body = block[1].replace(/^FORMAT:.*\n*/m, '').replace(/\n*^OUTPUT:.*$/m, '').replace(/^\s+|\s+$/g, '');
-  if (ESSENCE) {
+  if (LOOK) {
+    // Contrato de estilo: la primera imagen adjunta (la imagen principal del hotel) fija el aspecto al pie de la letra;
+    // solo cambia el espacio que se muestra.
+    body = body.replace(
+      /^(VISUAL|ESSENCE|STYLE) CONTRACT:.*$/m,
+      `STYLE CONTRACT: the first attached image is the main image of the hotel and defines its exact visual style. Reproduce that look to the letter: ${LOOK}. Only the space shown changes: the room, its furniture and its composition, as described below. Do not copy the exterior itself, only its look.`,
+    );
+    req.contract = 'style-lock';
+  } else if (ESSENCE) {
     // Habitaciones nuevas: la referencia aporta el lenguaje constructivo del hotel, no su color ni su luz.
     body = body.replace(
       /^VISUAL CONTRACT:.*$/m,
