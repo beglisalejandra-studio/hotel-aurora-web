@@ -39,6 +39,8 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 | Cancelación flexible | Depende de las tarifas configuradas en Mews | pendiente | **NO publicar** como promesa; mostrar la condición real que devuelva Mews |
 | Entrada desde las 15:00 y salida hasta las 12:00 | Política ficticia de portfolio, fijada por la persona el 2026-10-09; en producción se configura en Mews y se lee del CMS | n/a | ficticio, declarado |
 | Hotel petfriendly: hasta 2 perros por habitación, cama y cuencos de cortesía, suplemento por mascota visible antes de pagar | Política ficticia de portfolio pedida por la persona; **sin importe publicado** | n/a | ficticio, declarado. **No se promete acceso de perros a la playa** (lo regula el ayuntamiento) |
+| Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional | Política ficticia de portfolio pedida por la persona el 2026-10-09 | n/a | ficticio, declarado. Se muestra en la ficha de cada habitación, en la sección de habitaciones y en las preguntas frecuentes |
+| Camas y capacidad: Alba 2 personas (1 cama doble); Terraza 2 personas (2 camas individuales); Marea 3 personas (1 cama doble y 1 individual); Faro 4 personas (mini apartamento con salón y 2 dormitorios: 1 cama doble y 2 individuales) | Configuración ficticia de portfolio fijada por la persona el 2026-10-09 (la distribución de camas de Faro es un supuesto mío, por confirmar) | n/a | ficticio, declarado |
 | Reseñas, puntuaciones, premios, sellos, "como visto en" | Ninguna | ninguno | **Ninguno publicado** (no se fabrican testimonios) |
 
 > Testimonios, cifras, logos, certificaciones y reseñas: solo con evidencia **y permiso**. Sin ellos no se publican.
@@ -61,6 +63,9 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 9. **Formato de la guía final:** **PDF** (más la versión en el repositorio).
 10. **Suplemento por mascota:** se deja **sin importe publicado**.
 11. **Móvil primero, siempre:** la versión móvil es prioritaria en todo entregable (regla en `CLAUDE.md`).
+12. **Camas, capacidad y precio (2026-10-09):** Terraza pasa a **2 camas individuales** (2 personas) con el mismo precio que Alba; Marea tiene **1 cama doble y 1 individual** (3 personas, cuesta más); Faro es un **mini apartamento** con salón y dos dormitorios (4 personas, el más caro y el más exclusivo). Los importes son de ejemplo: Alba y Terraza 168 €, Marea 189 €, Faro 296 € (la superficie de Faro sube a 74 m²).
+13. **Cuna y cama para mascota:** todas las habitaciones pueden pedirlas en la habitación, **sin coste adicional**. La web lo dice en la ficha de cada habitación, bajo el carrusel de habitaciones y en las preguntas frecuentes.
+14. **Sol directo en todas las habitaciones (fotografía):** todas reciben sol directo en la foto, y lo que las distingue es la decoración, el color de la ropa de cama y los elementos propios. En la terraza el sol es suave, dorado y bueno para tomar el sol. Cada habitación se muestra con habitación, terraza (si la tiene), baño y zona de TV; el hotel muestra además zonas comunes, restaurante y zona pet friendly.
 
 ## 8. Preguntas abiertas
 - Para un hotel real: si admitirá perros de cualquier tamaño y cuál será el suplemento (en el portfolio queda ficticio y sin importe, decisión 10).

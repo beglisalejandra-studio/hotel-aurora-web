@@ -3,9 +3,9 @@
   "kind": "image",
   "aspect": "4:5",
   "page": "habitaciones",
-  "role": "habitacion Marea (el mirador), vista general, version movil (huecos medidos 358x448, 288x360 y 234x293)",
+  "role": "Marea, dormitorio vista general, version movil (hueco 358x448); minimo 1120x1400 como en P04 movil",
   "status": "requested",
-  "requested_at": "2026-10-09T19:36:34.548Z",
+  "requested_at": "2026-10-09T20:41:34.905Z",
   "master": {
     "w": 2048,
     "h": 2560
@@ -19,5 +19,6 @@
     ".webp",
     ".avif"
   ],
-  "contract": "style-lock"
+  "batch": "marea",
+  "prompt_file": "creative/briefs/prompt-maestro-marea.md"
 }

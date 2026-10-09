@@ -389,6 +389,7 @@ details.q p{padding:0 48px 24px 0;color:var(--ink-2);max-width:60ch}
 .room-head .h-display{font-size:clamp(56px,10vw,140px)}
 .room-head p{margin-top:12px}
 .facts{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:28px}
+.note-extras{margin:0;max-width:60ch;padding:16px 20px;border-left:3px solid var(--accent);background:var(--band);font-size:16px;line-height:1.5}
 .facts div{display:flex;flex-direction:column}
 .facts dt{font-size:13px;color:var(--ink-2)}
 .facts dd{margin:0;font:400 22px/1.3 var(--f-display)}
@@ -623,6 +624,7 @@ body.noscroll{overflow:hidden}
       <div class="track" id="track" tabindex="0" role="region" aria-label="Habitaciones" data-es-aria="Habitaciones" data-en-aria="Rooms"></div>
       <div class="rp" aria-hidden="true"><i></i></div>
       <p class="small fine" data-es="Precios de ejemplo. En la web real los devuelve el motor de reservas." data-en="Example prices. On the live site the booking engine returns them.">Precios de ejemplo. En la web real los devuelve el motor de reservas.</p>
+      <p class="small fine" data-es="Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional." data-en="Every room can request a pet bed or a baby crib in the room at no extra cost.">Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional.</p>
     </div>
   </section>
 
@@ -772,6 +774,7 @@ body.noscroll{overflow:hidden}
             <div class="sunblock" id="rSun"></div>
           </div>
           <div class="feat" id="rFeat"></div>
+          <p class="note-extras" data-es="Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional." data-en="Every room can request a pet bed or a baby crib in the room at no extra cost.">Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional.</p>
         </div>
       </div>
       <aside class="room-aside" aria-label="Reserva" data-es-aria="Reserva" data-en-aria="Booking">
@@ -909,31 +912,36 @@ let lang = store.get('aurora-lang') || ((navigator.language || 'es').toLowerCase
 const CHECKIN = '15:00', CHECKOUT = '12:00'; // en producción vienen de los ajustes del CMS / Mews
 const ROOMS = {
   alba:    { n:'Alba',    area:32, guests:2, price:168, codes:['P04','P05','P06'],
+    beds:{es:'1 cama doble', en:'1 double bed'},
     orient:{es:'Orientada al este.', en:'Facing east.'},
     light:{es:'Sol de 7:10 a 10:30.', en:'Sun from 7:10 to 10:30.'},
     sun:['7:10','10:30'],
     blurb:{es:'La habitación que despierta primero. El sol entra por la ventana a primera hora y recorre la pared de cal hasta media mañana.', en:'The room that wakes up first. The sun comes through the window early and travels along the lime wall until mid-morning.'} },
   marea:   { n:'Marea',   area:36, guests:3, price:189, codes:['P07','P08','P09'],
+    beds:{es:'1 cama doble y 1 individual', en:'1 double bed and 1 single bed'},
     orient:{es:'Vista al mar, orientada al suroeste.', en:'Sea view, facing south-west.'},
-    light:{es:'Luz de tarde hasta la puesta.', en:'Afternoon light until sunset.'},
-    sun:null,
-    blurb:{es:'Una ventana grande al Atlántico y la luz dorada de la tarde sobre las sábanas. Se duerme con el ruido lejano del mar.', en:'A large window onto the Atlantic and the golden afternoon light across the sheets. You fall asleep to the distant sound of the sea.'} },
-  terraza: { n:'Terraza', area:40, guests:3, price:214, codes:['P10','P11','P12'],
+    light:{es:'Sol de 16:20 a 20:45.', en:'Sun from 16:20 to 20:45.'},
+    sun:['16:20','20:45'],
+    blurb:{es:'Un banco de obra en una ventana de muro grueso, con el Atlántico enmarcado y el sol dorado de la tarde sobre la ropa de cama. Cabe una persona más: una cama doble y una individual.', en:'A masonry bench in the window of a thick wall, the Atlantic framed and the golden afternoon sun across the bed linen. Room for one more: a double bed and a single bed.'} },
+  terraza: { n:'Terraza', area:40, guests:2, price:168, codes:['P10','P11','P12'],
+    beds:{es:'2 camas individuales', en:'2 single beds'},
     orient:{es:'Orientada al este, con terraza privada.', en:'Facing east, with a private terrace.'},
     light:{es:'Sol de 8:00 a 12:00.', en:'Sun from 8:00 to 12:00.'},
     sun:['8:00','12:00'],
-    blurb:{es:'Desayunar fuera en cuanto el sol llega a la mesa. La terraza es privada y da al patio interior.', en:'Breakfast outside as soon as the sun reaches the table. The terrace is private and overlooks the courtyard.'} },
-  faro:    { n:'Faro',    area:58, guests:4, price:296, codes:['P13','P14','P15'],
-    orient:{es:'Suite orientada al sur y al oeste.', en:'Suite facing south and west.'},
-    light:{es:'Luz durante todo el día.', en:'Light all day long.'},
-    sun:null,
-    blurb:{es:'La suite de la casa: salón, dormitorio y ventanas a dos fachadas. La luz cambia de pared a lo largo del día.', en:'The house suite: living room, bedroom and windows on two sides. The light moves from wall to wall through the day.'} }
+    blurb:{es:'Dos camas individuales y una terraza privada con sol suave y dorado por la mañana, buena para tomar el sol. Desayunar fuera en cuanto el sol llega a la mesa.', en:'Two single beds and a private terrace with soft golden morning sun, made for sunbathing. Breakfast outside as soon as the sun reaches the table.'} },
+  faro:    { n:'Faro',    area:74, guests:4, price:296, codes:['P13','P14','P15'],
+    beds:{es:'Salón y 2 dormitorios: 1 cama doble y 2 individuales', en:'Living room and 2 bedrooms: 1 double bed and 2 single beds'},
+    orient:{es:'Mini apartamento orientado al sur y al oeste.', en:'Mini apartment facing south and west.'},
+    light:{es:'Sol de 11:30 a 20:50.', en:'Sun from 11:30 to 20:50.'},
+    sun:['11:30','20:50'],
+    blurb:{es:'El mini apartamento de la casa: un salón con zona de TV y dos dormitorios, con ventanas a dos fachadas. La luz cambia de pared a lo largo del día.', en:'The house mini apartment: a living room with a TV corner and two bedrooms, with windows on two sides. The light moves from wall to wall through the day.'} }
 };
 const FAQ = [
   [{es:'¿Cómo cancelo una reserva?',en:'How do I cancel a booking?'},{es:'Desde el correo de confirmación o escribiéndonos. Cada tarifa indica su política antes de pagar.',en:'From the confirmation email or by writing to us. Each rate shows its policy before you pay.'}],
   [{es:'¿A qué hora son la entrada y la salida?',en:'What time are check-in and check-out?'},{es:'La entrada es desde las 15:00 y la salida hasta las 12:00. Si llegas antes, guardamos tu equipaje.',en:'Check-in is from 15:00 and check-out until 12:00. If you arrive earlier, we store your luggage.'}],
   [{es:'¿Hay aparcamiento?',en:'Is there parking?'},{es:'Sí, junto a la casa y sujeto a disponibilidad. Avísanos al reservar.',en:'Yes, next to the house and subject to availability. Let us know when you book.'}],
   [{es:'¿Puedo viajar con mi perro?',en:'Can I travel with my dog?'},{es:'Sí, somos un hotel petfriendly. Se admiten hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.',en:'Yes, we are a pet-friendly hotel. Up to two dogs are welcome per room, with a bed and bowls provided. The pet supplement is shown before you pay.'}],
+  [{es:'¿Hay cuna o cama para mi mascota?',en:'Is there a baby crib or a bed for my pet?'},{es:'Sí. Todas las habitaciones pueden pedir una cuna de bebé o una cama para mascota, sin coste adicional. Pídela al reservar o escríbenos.',en:'Yes. Every room can request a baby crib or a pet bed at no extra cost. Ask when you book or write to us.'}],
   [{es:'¿El spa es solo para huéspedes?',en:'Is the spa for guests only?'},{es:'No. Las personas que no se alojan pueden pedir cita según disponibilidad.',en:'No. People not staying with us can request an appointment, subject to availability.'}],
   [{es:'¿Cómo llego?',en:'How do I get there?'},{es:'Estamos en la Costa de la Luz, a unos minutos en coche de la playa. Te enviamos la ruta con la confirmación.',en:'We are on the Costa de la Luz, a few minutes by car from the beach. We send directions with your confirmation.'}]
 ];
@@ -946,8 +954,8 @@ const SPA = [
     items:[[{es:'Ritual compartido',en:'Shared ritual'},{es:'90 min',en:'90 min'}],[{es:'Bañera para dos',en:'Bath for two'},{es:'Incluida',en:'Included'}],[{es:'Té al terminar',en:'Tea afterwards'},{es:'Incluido',en:'Included'}]]}
 ];
 const FEAT = {
-  es:[['Descanso',['Cama king o dos camas','Ropa de cama de algodón','Cortinas opacas','Aislamiento acústico']],['Baño',['Ducha de lluvia','Toallas de algodón','Productos de cortesía','Secador de pelo']],['Servicios',['Wifi','Aire acondicionado','Caja fuerte','Minibar bajo petición']]],
-  en:[['Rest',['King bed or twin beds','Cotton bed linen','Blackout curtains','Sound insulation']],['Bathroom',['Rain shower','Cotton towels','Toiletries','Hairdryer']],['Services',['Wifi','Air conditioning','In-room safe','Minibar on request']]]
+  es:[['Descanso',['Camas según la habitación (ver arriba)','Ropa de cama de lino','Cortinas opacas','Aislamiento acústico']],['Baño',['Ducha de lluvia','Toallas de algodón','Productos de cortesía','Secador de pelo']],['Servicios',['Wifi','Aire acondicionado','Caja fuerte','Cuna o cama para mascota, sin coste adicional (bajo petición)']]],
+  en:[['Rest',['Beds depend on the room (see above)','Linen bed sheets','Blackout curtains','Sound insulation']],['Bathroom',['Rain shower','Cotton towels','Toiletries','Hairdryer']],['Services',['Wifi','Air conditioning','In-room safe','Baby crib or pet bed at no extra cost (on request)']]]
 };
 const D = {
   es:{ steps:['Fechas','Habitación','Confirmar'], back:'Atrás', next:'Continuar', confirm:'Confirmar reserva', close:'Cerrar',
@@ -1027,6 +1035,7 @@ function renderRooms(){
       <h3 class="h3">${r.n}</h3>
       <p class="room-light">${r.orient[lang]} ${r.light[lang]}</p>
       <p class="small">${r.area} m², ${T().guests(r.guests)}</p>
+      <p class="small">${r.beds[lang]}</p>
       <p class="room-price"><span>${T().from}</span> ${eur(r.price)} <span>/ ${T().night}</span></p>
       <div class="room-actions"><button type="button" class="btn btn-primary btn-sm" data-open-booking data-room="${k}">${T().book}</button><a class="link-arrow" href="#/habitacion/${k}">${T().detail}</a></div>
     </article>`).join('');
@@ -1054,7 +1063,7 @@ function renderRoomPage(){
   const r = ROOMS[roomKey]; if (!r) return;
   $('#rTitle').textContent = r.n; $('#rCrumb').textContent = r.n;
   $('#rOrient').textContent = r.light[lang];
-  $('#rFacts').innerHTML = `<div><dt>${lang==='es'?'Superficie':'Size'}</dt><dd>${r.area} m²</dd></div><div><dt>${lang==='es'?'Capacidad':'Sleeps'}</dt><dd>${T().guests(r.guests)}</dd></div><div><dt>${lang==='es'?'Orientación':'Aspect'}</dt><dd>${r.orient[lang].replace(/\.$/, '')}</dd></div><div><dt>${lang==='es'?'Entrada':'Check-in'}</dt><dd>${CHECKIN}</dd></div><div><dt>${lang==='es'?'Salida':'Check-out'}</dt><dd>${CHECKOUT}</dd></div><div><dt>${lang==='es'?'Perros':'Dogs'}</dt><dd>${lang==='es'?'Bienvenidos':'Welcome'}</dd></div>`;
+  $('#rFacts').innerHTML = `<div><dt>${lang==='es'?'Superficie':'Size'}</dt><dd>${r.area} m²</dd></div><div><dt>${lang==='es'?'Capacidad':'Sleeps'}</dt><dd>${T().guests(r.guests)}</dd></div><div><dt>${lang==='es'?'Camas':'Beds'}</dt><dd>${r.beds[lang]}</dd></div><div><dt>${lang==='es'?'Orientación':'Aspect'}</dt><dd>${r.orient[lang].replace(/\.$/, '')}</dd></div><div><dt>${lang==='es'?'Entrada':'Check-in'}</dt><dd>${CHECKIN}</dd></div><div><dt>${lang==='es'?'Salida':'Check-out'}</dt><dd>${CHECKOUT}</dd></div><div><dt>${lang==='es'?'Perros':'Dogs'}</dt><dd>${lang==='es'?'Bienvenidos':'Welcome'}</dd></div>`;
   $('#rBlurb').textContent = r.blurb[lang];
   $('#rSun').innerHTML = r.sun
     ? `<div class="sunnum"><strong>${r.sun[0]}</strong><span>${lang==='es'?'primer sol en la habitación':'first sun in the room'}</span></div><div class="sunnum"><strong>${r.sun[1]}</strong><span>${lang==='es'?'último sol directo':'last direct sun'}</span></div>`

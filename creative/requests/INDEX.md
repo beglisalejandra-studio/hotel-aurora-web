@@ -8,6 +8,8 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 
 **Móvil primero (regla permanente):** cada pieza se pide con su composición nativa para el contenedor móvil real, nunca como recorte automático de la de escritorio. Antes de pedirla se mide el contenedor en la maqueta y se calcula cuánto de la foto se ve con `cover`; la ficha fija las zonas seguras. Ninguna pieza se aprueba sin verla en 390 × 844.
 
+**Sol directo y habitación completa (reglas permanentes):** todas las habitaciones reciben sol directo en la foto; en la terraza es suave y dorado. Cada habitación lleva fotos de habitación, terraza (si la tiene), baño y zona de TV. Las teles van apagadas y sin ninguna marca (ni en el marco ni en la peana). El hotel muestra además zonas comunes, restaurante y zona pet friendly.
+
 **Procedencia (interna):** las imágenes generadas con IA se registran con `ai_generated: true` y la herramienta usada en `creative/provenance.json` (y en `creative/manifest.json` desde la fase 4). Por decisión de la persona **no se muestra ninguna etiqueta visible** en el sitio. Para un cliente real se usan fotografías reales.
 
 | # | Código | Tipo | Qué | Proporción | Estado |
@@ -25,9 +27,9 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 9 | P19 | Foto | Sala de tratamientos del spa | 4:5 | Pendiente |
 | 10 | P25 | Foto | Perro en la terraza de la habitación (hotel petfriendly) | 3:2 | Pendiente |
 | 11 | P21 a P23 | Foto | Portadas de los tres paquetes | 4:5 | Pendiente (ajustar antes de pedir: ver tabla de contenedores) |
-| 12a | P07 escritorio y móvil | Foto (2 versiones) | Marea, vista general (concepto v2: el mirador, con el aspecto de P01 al pie de la letra) | 4:5 las dos (la móvil, con primer plano del banco-mirador) | **Rehecha por tercera vez** el 2026-10-09 con contrato de estilo: la versión anterior rompía la estética del hotel (`p07-marea-escritorio.md` y `p07-marea-movil.md`) |
-| 12b | P08, P09 | Foto | Marea: ventana al mar y ropa de cama | 3:2 | Pendiente de P07 |
-| 12c | P10 a P15 | Foto | Terraza y suite Faro, según el concepto | 3:2 y 4:5 | Pendiente |
+| 12a | P07, P08, P09, P28, P29 (escritorio y móvil) | Fotos (10 imágenes) | **Marea** (1 cama doble y 1 individual, 3 personas): dormitorio 4:5, mirador, camas, baño y zona de TV | 4:5 (P07) y 3:2 (el resto) | **Solicitada** el 2026-10-09 en el prompt maestro de Marea (`creative/briefs/prompt-maestro-marea.md`); sustituye a las fichas P07 anteriores, que rompían la estética |
+| 12b | P10, P11, P12, P30, P31 (escritorio y móvil) | Fotos (10 imágenes) | **Terraza** (2 camas individuales, 2 personas, mismo precio que Alba): dormitorio, terraza con sol suave y dorado, camas, baño y zona de TV | 4:5 y 3:2 | Pendiente de Marea (se prepara su prompt maestro) |
+| 12c | P13, P14, P15, P32, P33 (escritorio y móvil) | Fotos (10 imágenes) | **Faro** (mini apartamento: salón y dos dormitorios, 4 personas): salón con TV, dos dormitorios, baño y azotea | 4:5 y 3:2 | Pendiente (la azotea y la distribución de camas son supuestos por confirmar) |
 | 13 | P17, P18 | Foto | Plato en primer plano y desayuno | 3:2 | Pendiente |
 | 14 | P20 | Foto | Zona de agua del spa al amanecer | 3:2 | Pendiente |
 | 15 | P24 | Foto | **Playa de El Palmar** (rasgos reales: arena dorada, pasarela de madera con valla, hierba de duna, oleaje atlántico moderado y viento) | 16:9 | Pendiente |
