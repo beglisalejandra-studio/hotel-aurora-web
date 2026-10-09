@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "home",
   "role": "recorrido: patio interior, version movil (contenedor medido 328 x 218)",
-  "status": "requested",
+  "status": "received",
   "requested_at": "2026-10-09T16:32:30.495Z",
   "master": {
     "w": 2560,
@@ -18,5 +18,15 @@
     ".png",
     ".webp",
     ".avif"
-  ]
+  ],
+  "received_at": "2026-10-09T17:10:00.000Z",
+  "file": "creative/generated-drafts/p03-patio-movil.webp",
+  "derived_from": "creative/generated-drafts/p03-patio-escritorio.webp",
+  "crop": {
+    "x": 768,
+    "y": 358,
+    "w": 1664,
+    "h": 1109
+  },
+  "note": "La persona subio un vertical 9:16 (1440x2560) que no encaja en el hueco movil de P03 (328x218, 3:2). Se conserva en creative/inbox/p03-patio-vertical-extra.webp sin uso asignado. La version movil es un recorte compuesto 3:2 de la de escritorio (1664x1109), pendiente de aprobacion."
 }

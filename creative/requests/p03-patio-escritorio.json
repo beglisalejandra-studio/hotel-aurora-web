@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "home",
   "role": "recorrido: patio interior, version escritorio (contenedor medido 634 x 422)",
-  "status": "requested",
+  "status": "received",
   "requested_at": "2026-10-09T16:32:30.430Z",
   "master": {
     "w": 2560,
@@ -18,5 +18,7 @@
     ".png",
     ".webp",
     ".avif"
-  ]
+  ],
+  "received_at": "2026-10-09T16:54:15.691Z",
+  "file": "creative/generated-drafts/p03-patio-escritorio.webp"
 }

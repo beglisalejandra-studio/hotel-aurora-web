@@ -12,8 +12,8 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 |---|---|---|---|---|---|
 | 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Aprobada** el 2026-10-09 (`p01-hero-escritorio.md`) |
 | 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Aprobada** el 2026-10-09, tal cual (941 x 1672; `p01-hero-movil.md`) |
-| 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | **Solicitada** (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
-| 4 | P04 | Foto | Habitación Alba, vista general | 4:5 | Pendiente |
+| 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | **Recibidas**: escritorio, y móvil derivada por recorte; pendientes de tu aprobación (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
+| 4 | P04 escritorio y móvil | Foto (2 versiones) | Habitación Alba, vista general | 4:5 las dos (la móvil, con encuadre más cerrado) | **Solicitada** (`p04-alba-escritorio.md` y `p04-alba-movil.md`) |
 | 5 | P05 | Foto | Alba, la luz sobre la pared | 3:2 | Pendiente |
 | 6 | P06 | Foto | Alba, baño | 3:2 | Pendiente |
 | 7 | P16 | Foto | Sala del restaurante con luz de ventana (también es el póster de V01) | 3:2 | Pendiente |
@@ -40,4 +40,7 @@ Tamaño real de cada hueco de foto (`offsetWidth` x `offsetHeight`) a 390, 768 y
 | P04 Alba, P19 spa (recorrido) | 234 x 293 (0,80) | 230 x 288 | 420 x 525 | 4:5 | Coincide |
 | Carril de habitaciones (P04, P07, P10, P13) | 288 x 360 (0,80) | 288 x 360 | 288 x 360 | 4:5 | Coincide |
 | P25 mascotas | 358 x 239 (1,50) | 707 x 471 | 686 x 457 | 3:2 | Coincide |
+| Ficha de Alba (P04): foto principal | 358 x 448 (0,80) | 380 x 430 (0,88) | 425 x 480 (0,89) | 4:5 | Recorta algo arriba y abajo en tableta y escritorio: zona segura del 85 % central del alto |
+| Ficha de Alba: fotos de detalle (P05, P06) | 358 x 239 (1,50) | 311 x 207 | 348 x 232 | 3:2 | Coincide |
+| Miniaturas de otras habitaciones en la ficha | 96 x 128 (0,75) | igual | igual | 4:5 | Casi coincide |
 | P21 a P23 paquetes | 358 x 420 (0,85) | 707 x 420 (1,68) | 719 x 560 (1,28) | 4:5 | **No coincide** en tableta y escritorio: al pedirlas, sujeto en la franja central (26 % a 74 % del alto) o igualar el contenedor con CSS |

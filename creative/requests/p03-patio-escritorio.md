@@ -54,3 +54,15 @@ Composition: landscape 3:2, camera at eye level about 1.5 metres in one corner o
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+Archivo recibido: `creative/inbox/p03-patio-escritorio.webp` (se subió a la raíz de `main` como `.png`, pero es WebP; se movió a la bandeja y se corrigió la extensión). WebP, **2560 × 1706** (3:2 correcto), 1,15 MB, sRGB. Sin metadatos de procedencia; la herramienta se anota como ChatGPT por la declaración de la persona para P01 (por confirmar).
+
+**Cumple:** misma casa que P01 (cal color crema, contraventanas y puerta de madera oscura, teja terracota, puerta con marco de piedra y dos macetas); solo vanos rectangulares y ningún arco; olivo en el tercio derecho con luz diagonal sobre el suelo y la pared; estanque de piedra, banco y puerta entreabierta; sin personas, texto ni logos.
+
+**Se aparta de la ficha:** la cámara no está en una esquina mirando en diagonal, sino de frente al patio; la luz es más dorada y más saturada que la de P01, y las sombras salen cálidas, no azul pizarra; el cielo vuelve a ser azul intenso.
+
+**Peso optimizado:** AVIF 1600 px calidad 45 = 135 KB; AVIF 960 px calidad 55 = 82 KB; AVIF 480 px = 21 KB (no es imagen LCP).
+
+**Pendiente de la persona:** aprobar o repetir. Capturas: `docs/entregables/capturas/p03-comparacion-hueco-movil.jpg` y `p03-en-maqueta-movil-390x844.jpg`.

@@ -54,3 +54,13 @@ Landscape 3:2, camera at eye level about 1.4 metres, a little closer to the tree
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+La persona subió un **vertical 9:16 (1440 × 2560)**, pero el hueco de P03 en el teléfono es **horizontal 3:2 (328 × 218)**, así que no encaja: con `cover` solo se vería una banda del 37 % de su altura y sin ganar nada sobre la de escritorio. Se conserva como `creative/inbox/p03-patio-vertical-extra.webp`, sin uso asignado.
+
+**Versión móvil propuesta (borrador):** recorte compuesto 3:2 de la de escritorio, `creative/generated-drafts/p03-patio-movil.webp` (1664 × 1109, esquina en x 768, y 358). Es legítimo aquí porque las dos versiones tienen la misma proporción y el recorte conserva 1664 px de ancho (la ficha pedía 1500 como mínimo). Encuadra la puerta, las dos macetas, el olivo y el estanque, que en el hueco de 328 px se leen mejor que en la foto entera. No se regeneró con IA.
+
+**Pruebas:** panel a tamaño real del hueco (`p03-comparacion-hueco-movil.jpg`: A entera, B recorte, C banda de la vertical) y la maqueta a 390 × 844 con cada opción (`p03-en-maqueta-movil-390x844.jpg`: fila superior = foto entera, fila inferior = recorte).
+
+**Pendiente de la persona:** aprobar el recorte, o pedir otra toma 3:2 con encuadre cerrado (esta ficha sigue valiendo).

@@ -54,6 +54,81 @@
         "es": "Fachada de una casa encalada de dos plantas con dos olivos y un patio de grava al amanecer, con el mar a ambos lados.",
         "en": "Two-storey whitewashed house with two olive trees and a gravel courtyard at dawn, with the sea on both sides."
       }
+    },
+    {
+      "id": "p03-patio-escritorio",
+      "piece": "P03",
+      "version": "escritorio",
+      "request": "creative/requests/p03-patio-escritorio.md",
+      "files": {
+        "original": "creative/inbox/p03-patio-escritorio.webp",
+        "draft": "creative/generated-drafts/p03-patio-escritorio.webp"
+      },
+      "format": "WebP (se subio con extension .png)",
+      "width": 2560,
+      "height": 1706,
+      "bytes": 1149468,
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta en P03 (por confirmar)",
+      "embedded_content_credentials": false,
+      "state": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "alt_draft": {
+        "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
+        "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
+      }
+    },
+    {
+      "id": "p03-patio-movil",
+      "piece": "P03",
+      "version": "movil",
+      "request": "creative/requests/p03-patio-movil.md",
+      "files": {
+        "draft": "creative/generated-drafts/p03-patio-movil.webp"
+      },
+      "format": "WebP",
+      "width": 1664,
+      "height": 1109,
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "derivada por recorte de p03-patio-escritorio (imagen de ChatGPT); recorte hecho por el agente, sin regenerar",
+      "crop": {
+        "x": 768,
+        "y": 358,
+        "w": 1664,
+        "h": 1109
+      },
+      "embedded_content_credentials": false,
+      "state": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "alt_draft": {
+        "es": "Detalle del patio interior: un olivo junto a una puerta de madera entreabierta y un estanque rectangular de piedra.",
+        "en": "Detail of the interior courtyard: an olive tree beside a partly open wooden door and a rectangular stone pond."
+      }
+    },
+    {
+      "id": "p03-patio-vertical-extra",
+      "piece": "P03",
+      "version": "extra (sin uso asignado)",
+      "request": "creative/requests/p03-patio-movil.md",
+      "files": {
+        "original": "creative/inbox/p03-patio-vertical-extra.webp"
+      },
+      "format": "WebP",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 795730,
+      "aspect": "9:16",
+      "ai_generated": true,
+      "tool": "ChatGPT (por confirmar, igual que P03 escritorio)",
+      "embedded_content_credentials": false,
+      "state": "unused",
+      "note": "No encaja en el hueco 3:2 de P03 en movil. Disponible si mas adelante hace falta un vertical del patio."
     }
   ]
 }
