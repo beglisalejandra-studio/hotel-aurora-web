@@ -16,6 +16,7 @@
 | Qué | Valor |
 |---|---|
 | Tamaño del máster | **2560 × 1706 px** (3:2) |
+| Tamaño mínimo aceptado | **1500 px en el lado largo** (por ejemplo 1536 × 1024); más grande es mejor |
 | Formato de entrega | JPG, PNG, WebP o AVIF (**no SVG**) |
 | Peso máximo de subida | **4 MB** (el editor optimiza solo a WebP en 480/960/1600 px y quita los metadatos) |
 | Peso objetivo ya optimizado | ≤ 250 KB (el editor avisa por encima y bloquea por encima de 900 KB) |
