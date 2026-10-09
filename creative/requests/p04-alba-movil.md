@@ -16,7 +16,7 @@
 | Qué | Valor |
 |---|---|
 | Tamaño del máster | **2048 × 2560 px** (4:5) |
-| Tamaño mínimo aceptado | **1500 px en el lado largo** (por ejemplo 1200 × 1500 para 4:5 en las herramientas que no llegan a más); más grande es mejor |
+| Tamaño mínimo aceptado | **1500 px en el lado largo** (1200 × 1500 px para 4:5); más grande es mejor |
 | Formato de entrega | JPG, PNG, WebP o AVIF (**no SVG**) |
 | Peso máximo de subida | **4 MB** (el editor optimiza solo a WebP en 480/960/1600 px y quita los metadatos) |
 | Peso objetivo ya optimizado | ≤ 250 KB (el editor avisa por encima y bloquea por encima de 900 KB) |
@@ -32,6 +32,8 @@
 ## Prompt (cópialo tal cual en la herramienta que uses)
 
 ```text
+FORMAT: portrait image, exact aspect ratio 4:5 (2048 x 2560 px).
+
 VISUAL CONTRACT: the attached reference image(s) define the exact identity of the subject. Keep the product, its shape, proportions, materials, colors, logo, lighting and composition unchanged. Only the action, framing and camera may change. Do not add or alter logos, brand names or text. Also keep unchanged: the same house and the same materials as the approved P01: cream lime plaster with fine hairline cracks, dark timber shutters and doors, terracotta accents, cool slate shadows with a warm edge of light, rectangular openings only and no arches.
 
 Ultra-realistic interior photograph, a real photo and not a render. The same guest room, Alba, and the same morning light as the desktop version of this image, in the restored lime-plaster boutique hotel shown in the attached reference photograph: cream off-white lime-plaster walls with hairline cracks, dark-brown timber shutters, a low bed in natural linen with a folded terracotta-coloured wool blanket, cool slate-blue shadows with a warm amber edge of light. About thirty minutes after sunrise, the first low sun falls as one diagonal band of warm light across the plaster wall and the bed.
@@ -40,7 +42,7 @@ This version is re-composed for a small phone screen, where the picture is shown
 
 Portrait 4:5, camera at about 0.9 metres, 35mm lens at f/4, perfectly vertical verticals, focus on the pillows and the blanket. Keep every key element inside the central 85% of the frame height. Shot on a full-frame mirrorless camera, ISO 200, natural colour with restrained saturation, subtle fine film grain, realistic micro-contrast and true material textures (linen weave, lime plaster). Colour palette: cream off-white plaster and linen, cool slate-blue shadows, a single accent of terracotta. No people, no animals, no text, no logos, no signage, no watermark, no lens flare, no HDR halos, no oversaturated colours, no plastic or CGI look, no warped geometry, no arches, no clutter, no television.
 
-OUTPUT: one single image, portrait orientation, aspect ratio 4:5 (target 2048 x 2560 px; never smaller than 1200 x 1500 px), highest quality available, sRGB colour, delivered as JPG or PNG, with no frame, no border, no margins, no text and no watermark.
+OUTPUT: one single image, portrait orientation, aspect ratio exactly 4:5 (width : height = 4 : 5; target 2048 x 2560 px; never smaller than 1200 x 1500 px), highest quality available, sRGB colour, delivered as JPG or PNG, with no frame, no border, no margins, no text and no watermark.
 ```
 
 **Evitar (prompt negativo):** texto o marcas de agua dentro de la imagen, logotipos deformados o inventados, manos o rostros distorsionados, producto distinto al de la referencia.

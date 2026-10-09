@@ -4,7 +4,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 
 **Dos versiones por pieza (regla permanente):** cada foto se pide siempre en **escritorio y móvil**, cada una como imagen **separada**, con su propia ficha, su prompt y su nombre (`<pieza>-escritorio`, `<pieza>-movil`), las dos en el mismo mensaje. La versión móvil lleva la medida del contenedor móvil real y un encuadre pensado para una pantalla pequeña (sujeto más grande, menos detalles finos).
 
-**Medidas dentro del prompt (regla permanente):** el bloque que se copia en la herramienta termina siempre con una línea `OUTPUT:` con orientación, proporción, tamaño objetivo y mínimo, calidad, color y formato, porque la persona solo copia ese bloque. La tabla de medidas exactas de la ficha sigue siendo la referencia que comprueba `media-intake`. La herramienta decide el tamaño final; lo que no llegue al mínimo se avisa al subirlo.
+**Proporción exacta en cada prompt (regla permanente):** el bloque que se copia en la herramienta empieza con una línea `FORMAT:` y termina con una línea `OUTPUT:`, con la orientación, la proporción exacta, el tamaño objetivo y mínimo, la calidad, el color y el formato, porque la persona solo copia ese bloque. Las añade `node scripts/finalize-media-request.mjs <nombre>` (idempotente; `--check` avisa si falta alguna). La tabla de medidas de la ficha sigue siendo la referencia que comprueba `media-intake`. La herramienta decide el tamaño final; lo que no llegue al mínimo se avisa al subirlo.
 
 **Móvil primero (regla permanente):** cada pieza se pide con su composición nativa para el contenedor móvil real, nunca como recorte automático de la de escritorio. Antes de pedirla se mide el contenedor en la maqueta y se calcula cuánto de la foto se ve con `cover`; la ficha fija las zonas seguras. Ninguna pieza se aprueba sin verla en 390 × 844.
 
@@ -46,3 +46,15 @@ Tamaño real de cada hueco de foto (`offsetWidth` x `offsetHeight`) a 390, 768 y
 | Ficha de Alba: fotos de detalle (P05, P06) | 358 x 239 (1,50) | 311 x 207 | 348 x 232 | 3:2 | Coincide |
 | Miniaturas de otras habitaciones en la ficha | 96 x 128 (0,75) | igual | igual | 4:5 | Casi coincide |
 | P21 a P23 paquetes | 358 x 420 (0,85) | 707 x 420 (1,68) | 719 x 560 (1,28) | 4:5 | **No coincide** en tableta y escritorio: al pedirlas, sujeto en la franja central (26 % a 74 % del alto) o igualar el contenedor con CSS |
+
+## Medidas que llevará cada prompt, por proporción
+| Proporción | Orientación | Objetivo | Mínimo aceptado | Piezas de la cola |
+|---|---|---|---|---|
+| 3:2 | Horizontal | 2560 x 1706 px | 1500 x 1000 px | P03, P05, P06, P16, P17, P18, P20, P25 |
+| 4:5 | Vertical | 2048 x 2560 px | 1200 x 1500 px | P04, P07 a P15 (según hueco), P19, P21 a P23 |
+| 16:9 | Horizontal | 2560 x 1440 px | 1500 x 844 px | P24 (playa) |
+| 16:10 | Horizontal | 2560 x 1600 px | 1500 x 938 px | P01 escritorio (ya aprobada) |
+| 9:16 | Vertical | 1440 x 2560 px | 844 x 1500 px | P01 móvil (ya aprobada) |
+| 2:1 | Horizontal, panorámica 360° | 2560 x 1280 px | 1500 x 750 px | Cuatro panoramas de habitación (extra) |
+
+Cada pieza se confirma contra el hueco medido antes de pedirla; si el hueco pide otra proporción, la ficha manda.
