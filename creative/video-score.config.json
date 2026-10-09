@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "_nota": "Configurable por proyecto en creative/video-score.config.json. Los puntos positivos suman hasta 100; las penalizaciones restan. El resultado se acota a 0-100.",
+  "tiers": [
+    { "id": "image", "min": 0, "label": "Imagen estática optimizada" },
+    { "id": "microvideo", "min": 30, "label": "Microvideo (loop corto, mudo)" },
+    { "id": "hero-video", "min": 55, "label": "Video hero" },
+    {
+      "id": "full-pipeline",
+      "min": 75,
+      "label": "Pipeline completo (shot list, montaje, 16:9/1:1/9:16, captions)"
+    }
+  ],
+  "weights": {
+    "demonstration": 25,
+    "atmosphere": 15,
+    "assets_available": 15,
+    "references": 10,
+    "conversion_goal": {
+      "awareness": 10,
+      "purchase": 8,
+      "booking": 7,
+      "lead": 6,
+      "signup": 6,
+      "download": 4
+    },
+    "offer_type": {
+      "experience": 10,
+      "physical-product": 9,
+      "event": 8,
+      "saas": 6,
+      "local-business": 6,
+      "service": 5,
+      "info-product": 4
+    },
+    "audience": {
+      "b2c-young": 5,
+      "b2c-broad": 4,
+      "mixed": 3,
+      "local": 3,
+      "b2b": 2,
+      "enterprise": 1
+    },
+    "platform": {
+      "paid-social": 10,
+      "ads-landing": 8,
+      "direct": 5,
+      "email": 4,
+      "organic-seo": 3
+    }
+  },
+  "penalties": {
+    "mobile_max": 25,
+    "motion_sensitivity_max": 10,
+    "weight_budget_kb": [
+      { "max_kb": 800, "points": 15 },
+      { "max_kb": 1500, "points": 8 },
+      { "max_kb": 2500, "points": 3 }
+    ]
+  },
+  "budgets": {
+    "microvideo": { "max_seconds": 6, "max_bytes": 1500000 },
+    "hero-video": { "max_seconds": 15, "max_bytes": 4000000 },
+    "full-pipeline": { "max_seconds": 30, "max_bytes": 8000000 }
+  },
+  "aspects": ["16:9", "1:1", "9:16"]
+}

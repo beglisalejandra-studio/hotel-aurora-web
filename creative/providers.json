@@ -1,0 +1,5 @@
+{
+  "_nota": "Proveedor de generación por proyecto. 'manual' = el sistema produce shot list + prompts y una persona produce/compra el material. Nunca se inventa una API: añade un proveedor solo tras verificar su documentación y su política de datos.",
+  "image": { "provider": "manual", "model": null, "client_data_allowed": false },
+  "video": { "provider": "manual", "model": null, "client_data_allowed": false }
+}
