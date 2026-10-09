@@ -1,0 +1,22 @@
+{
+  "name": "p01-hero-escritorio",
+  "kind": "image",
+  "aspect": "16:10",
+  "page": "home",
+  "role": "heroe de portada en escritorio (LCP)",
+  "status": "requested",
+  "requested_at": "2026-10-09T15:41:02.960Z",
+  "master": {
+    "w": 2560,
+    "h": 1600
+  },
+  "min_long_side": 1600,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ]
+}

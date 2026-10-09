@@ -1,6 +1,6 @@
 # ADR-0002 · Motor de reservas: Mews (widget oficial) tras una interfaz intercambiable
 
-Estado: **propuesto** · Fecha: 2026-10-09
+Estado: **aceptado** el 2026-10-09 (la persona delegó la elección; sin objeciones) · Fecha: 2026-10-09
 
 ## Contexto
 Se me delegó la elección del PMS/motor de reservas porque es un proyecto de portfolio que debe sentirse real. Para un hotel real, **gana el PMS que el hotel ya usa**; esta decisión es la mejor para demostrar una integración auténtica y verificable sin contrato.

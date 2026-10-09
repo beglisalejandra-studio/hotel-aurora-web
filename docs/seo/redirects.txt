@@ -1,2 +1,68 @@
 # Redirecciones 301 de las URLs antiguas a las nuevas. Una por línea: /ruta-antigua /ruta-nueva
 # Se comprueban con: npm run launch:check -- https://sitio.com --redirects docs/seo/redirects.txt
+#
+# ESCENARIO DE EJEMPLO (portfolio): la "web antigua" es ficticia (WordPress con WPML, dominio hotelaurora.example).
+# Ninguna de estas URLs existe en un sitio real. Explicación y reglas generales: docs/seo/migracion-web-antigua.md
+# Reglas: destino siempre final (200), en minúsculas y sin barra final; nunca cadenas; el idioma del origen manda el del destino.
+# Validación automática del propio mapa: node scripts/check-redirect-map.mjs
+
+# --- Habitaciones y reserva (español) ---
+/habitaciones /es/habitaciones
+/habitacion-doble-este /es/habitaciones/alba
+/habitacion-doble-vista-mar /es/habitaciones/marea
+/habitacion-terraza-privada /es/habitaciones/terraza
+/suite-familiar /es/habitaciones/faro
+/reservar /es/habitaciones
+/reservas-online /es/habitaciones
+
+# --- Restaurante y spa ---
+/restaurante /es/restaurante
+/carta-restaurante.php /es/restaurante
+/spa-wellness /es/spa
+/tratamientos /es/spa
+
+# --- Ofertas, paquetes y regalos ---
+/ofertas /es/paquetes
+/oferta-escapada-fin-de-semana /es/paquetes/escapada-dos-noches
+/regala-experiencias /es/experiencias
+/bono-regalo /es/experiencias
+
+# --- El hotel, ubicación, mascotas y ayuda ---
+/el-hotel /es/el-hotel
+/historia /es/el-hotel
+/donde-estamos /es/como-llegar
+/como-llegar.html /es/como-llegar
+/mascotas /es/hotel-petfriendly
+/preguntas-frecuentes /es/preguntas-frecuentes
+/faq /es/preguntas-frecuentes
+/contacto /es/contacto
+/contacto.php /es/contacto
+
+# --- Legales ---
+/aviso-legal /es/aviso-legal
+/index.php/aviso-legal /es/aviso-legal
+/politica-de-privacidad /es/privacidad
+/politica-de-cookies /es/cookies
+/condiciones-de-reserva /es/condiciones-de-reserva
+
+# --- Blog antiguo (el blog no está en el alcance: cada entrada va a la página más cercana por intención) ---
+/blog /es
+/2023/05/nuevo-menu-de-verano /es/restaurante
+/2022/07/que-hacer-en-vejer /es/como-llegar
+/2021/03/viaja-con-tu-perro /es/hotel-petfriendly
+/category/noticias /es
+/tag/playa /es/como-llegar
+
+# --- Inglés (WPML). Las URLs que solo cambian en la barra final (/en/rooms/ a /en/rooms) no llevan línea: las resuelve la regla general de barra final ---
+/en/double-room-sea-view /en/rooms/marea
+/en/double-room-east /en/rooms/alba
+/en/spa-wellness /en/spa
+/en/special-offers /en/packages
+/en/gift-experiences /en/experiences
+/en/how-to-get-here /en/getting-here
+/en/pets /en/pet-friendly-hotel
+/en/privacy-policy /en/privacy
+/en/cookie-policy /en/cookies
+
+# --- Sistema de WordPress ---
+/sitemap_index.xml /sitemap.xml

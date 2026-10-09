@@ -1,6 +1,6 @@
 # DESIGN - Hotel Aurora
 
-> Dirección visual, tokens y reglas de componentes. **Autoridad visual única: taste-skill** (`visual_authority` en PROJECT.md). Las skills de UI/UX, 21st, Awwwards y Dribbble son consulta. Estado: **propuesta en la maqueta (versión 3), pendiente de aprobación (G1)**.
+> Dirección visual, tokens y reglas de componentes. **Autoridad visual única: taste-skill** (`visual_authority` en PROJECT.md). Las skills de UI/UX, 21st, Awwwards y Dribbble son consulta. Estado: **aprobada por la persona el 2026-10-09 (G1)** sobre la maqueta v3. Desde entonces se añadieron horarios fijos, petfriendly y mapa bajo demanda (ver PRODUCT.md).
 > Historial de dirección: v1 serena con arco y sol; v2 recorrido 3D con arcos; **v3 actual**: sin arco ni disco, fotografía a sangre y recorrido 3D a través de las fotos (decisión del cliente: el arco no gusta).
 
 ## 1. Concepto (10 líneas)

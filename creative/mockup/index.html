@@ -79,8 +79,6 @@ img{max-width:100%;display:block}
 .btn-primary{background:var(--accent);color:var(--on-accent)}
 .btn-primary::before{content:"";position:absolute;z-index:-1;left:var(--bx,50%);top:var(--by,115%);width:320%;aspect-ratio:1;border-radius:50%;background:var(--accent-hover);transform:translate(-50%,-50%) scale(0);transition:transform .75s var(--ease)}
 .btn-primary:hover::before,.btn-primary:focus-visible::before{transform:translate(-50%,-50%) scale(1)}
-.btn-primary::after{content:"\2192";display:inline-block;transition:transform .45s var(--ease);width:0;overflow:hidden;opacity:0;margin-left:-10px}
-.btn-primary:hover::after,.btn-primary:focus-visible::after{width:1.1em;opacity:1;margin-left:0}
 /* Secundario: la tinta sube desde abajo */
 .btn-ghost{border-color:var(--line);background:transparent;color:var(--ink);transition:color .4s var(--ease),border-color .3s}
 .btn-ghost::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:translateY(101%);transition:transform .5s var(--ease)}
@@ -88,8 +86,10 @@ img{max-width:100%;display:block}
 .btn-ghost:hover::before,.btn-ghost:focus-visible::before{transform:none}
 .btn-sm{min-height:44px;padding:0 20px;font-size:15px}
 .btn[disabled]{opacity:.55;cursor:not-allowed}
-.link-arrow{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--line);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;padding-block:0;transition:gap .35s var(--ease),background-size .5s var(--ease)}
-.link-arrow:hover{gap:16px;background-size:100% 2px}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--line);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;padding-block:0;transition:background-size .5s var(--ease)}
+.link-arrow span[aria-hidden]{display:inline-block;transition:transform .4s var(--ease)}
+.link-arrow:hover{background-size:100% 2px}
+.link-arrow:hover span[aria-hidden],.link-arrow:focus-visible span[aria-hidden]{transform:translateX(6px)}
 
 /* ===== Cabecera ===== */
 .hdr{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .2s}
@@ -340,6 +340,22 @@ details.q[open]::details-content{block-size:auto}
   .cell-a{grid-row:1/span 2;min-height:560px}
 }
 
+/* Hotel petfriendly */
+.pet-grid{display:grid;gap:36px;align-items:center}
+.pet-img{aspect-ratio:3/2;width:100%}
+.pet-copy{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.pet-list{display:grid;gap:14px;font-size:18px}
+.pet-list li{padding-left:20px;border-left:2px solid var(--accent)}
+@media (min-width:1024px){.pet-grid{grid-template-columns:7fr 5fr;column-gap:72px}}
+
+/* Cómo llegar (mapa bajo demanda) */
+.way{display:grid;gap:36px;align-items:start}
+.way>*,.pet-grid>*{min-width:0}
+.map{position:relative;height:clamp(300px,60vw,460px);width:100%;background:var(--band);border:1px solid var(--hair);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:14px;padding:clamp(20px,3vw,32px)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map-note{max-width:44ch}
+@media (min-width:1024px){.way{grid-template-columns:5fr 7fr;column-gap:72px}}
+
 /* FAQ */
 .faq{display:grid;gap:32px}
 @media (min-width:1024px){.faq{grid-template-columns:4fr 7fr;column-gap:96px}}
@@ -450,7 +466,7 @@ details.q p{padding:0 48px 24px 0;color:var(--ink-2);max-width:60ch}
   @keyframes stepin{from{opacity:0;transform:translateY(14px)}}
   @keyframes ckin{from{opacity:0;transform:translateY(36px)}}
 }
-@media (prefers-reduced-motion:reduce){.btn::before,.btn::after{transition:none}}
+@media (prefers-reduced-motion:reduce){.btn::before{transition:none}}
 
 /* ===== Cookies ===== */
 .cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;background:var(--surface);border:1px solid var(--ink);padding:20px;display:grid;gap:14px;max-width:460px;max-height:calc(100dvh - 32px);overflow:auto}
@@ -558,7 +574,7 @@ body.noscroll{overflow:hidden}
         <div class="cap cap0" style="--i:0">
           <div class="cap-body">
             <h1 id="h1"><span data-es="Amanece" data-en="Wake up">Amanece</span><br><span class="acc" data-es="despacio." data-en="slowly.">despacio.</span></h1>
-            <p class="lead" data-es="Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Reserva directa, sin intermediarios." data-en="Twenty-eight rooms facing the Atlantic, a spa and market cooking. Book direct, no middlemen.">Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Reserva directa, sin intermediarios.</p>
+            <p class="lead" data-es="Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios." data-en="Twenty-eight rooms facing the Atlantic, a spa and market cooking. A pet-friendly hotel. Book direct, no middlemen.">Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios.</p>
           </div>
           <form class="bar" id="heroBar" novalidate aria-label="Buscar fechas" data-es-aria="Buscar fechas" data-en-aria="Search dates">
             <div class="field"><label for="b-in" data-es="Llegada" data-en="Check-in">Llegada</label><input class="input" id="b-in" type="date"></div>
@@ -646,6 +662,22 @@ body.noscroll{overflow:hidden}
     </div>
   </section>
 
+  <!-- Hotel petfriendly -->
+  <section class="sec" id="mascotas" aria-labelledby="h-pet" style="padding-top:0">
+    <div class="wrap pet-grid">
+      <div class="slot ph pet-img lit pz rv" style="--gx:34%;--gy:40%" role="img" aria-label="Foto pendiente P25: perro en la terraza de la habitación" data-es-aria="Foto pendiente P25: perro en la terraza de la habitación" data-en-aria="Photo pending P25: dog on the room terrace"><span class="slot-label"><b>P25</b><span data-es="Perro en la terraza, horizontal 3:2" data-en="Dog on the terrace, landscape 3:2">Perro en la terraza, horizontal 3:2</span></span></div>
+      <div class="pet-copy rv d1">
+        <h2 class="h2" id="h-pet" data-es="Tu perro también está invitado." data-en="Your dog is invited too.">Tu perro también está invitado.</h2>
+        <ul class="pet-list">
+          <li data-es="Hotel petfriendly: hasta dos perros por habitación." data-en="Pet-friendly hotel: up to two dogs per room.">Hotel petfriendly: hasta dos perros por habitación.</li>
+          <li data-es="Cama y cuencos de cortesía en la habitación." data-en="A bed and bowls provided in the room.">Cama y cuencos de cortesía en la habitación.</li>
+          <li data-es="El suplemento por mascota se ve antes de pagar." data-en="The pet supplement is shown before you pay.">El suplemento por mascota se ve antes de pagar.</li>
+        </ul>
+        <a class="link-arrow" href="#/" data-goto="faq"><span data-es="Ver condiciones" data-en="See the conditions">Ver condiciones</span> <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- Paquetes -->
   <section class="sec sec-band" id="paquetes" aria-labelledby="h-pack">
     <div class="wrap">
@@ -677,10 +709,26 @@ body.noscroll{overflow:hidden}
   </section>
 
   <!-- Preguntas -->
-  <section class="sec" aria-labelledby="h-faq">
+  <section class="sec" id="faq" aria-labelledby="h-faq">
     <div class="wrap faq">
       <h2 class="h2 rv" id="h-faq" data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</h2>
       <div class="rv d1" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- Cómo llegar -->
+  <section class="sec" id="llegar" aria-labelledby="h-way" style="padding-top:0">
+    <div class="wrap way">
+      <div class="pet-copy rv">
+        <h2 class="h2" id="h-way" data-es="Cómo llegar" data-en="Getting here">Cómo llegar</h2>
+        <p class="lead" data-es="A pocos minutos de la Playa de El Palmar, en Vejer de la Frontera, en la Costa de la Luz de Cádiz." data-en="A few minutes from Playa de El Palmar, in Vejer de la Frontera, on the Costa de la Luz in Cádiz.">A pocos minutos de la Playa de El Palmar, en Vejer de la Frontera, en la Costa de la Luz de Cádiz.</p>
+        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Playa%20de%20El%20Palmar%2C%20Vejer%20de%20la%20Frontera" target="_blank" rel="noopener"><span data-es="Abrir en Google Maps" data-en="Open in Google Maps">Abrir en Google Maps</span> <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="map rv d1" id="map">
+        <p class="small map-note" data-es="El marcador señala la Playa de El Palmar, una referencia real de la zona. La dirección del hotel es ficticia." data-en="The pin marks Playa de El Palmar, a real landmark in the area. The hotel address is fictional.">El marcador señala la Playa de El Palmar, una referencia real de la zona. La dirección del hotel es ficticia.</p>
+        <button type="button" class="btn btn-ghost" id="mapLoad" data-es="Cargar el mapa" data-en="Load the map">Cargar el mapa</button>
+        <p class="small map-note" data-es="Al cargar el mapa te conectas con Google." data-en="Loading the map connects you to Google.">Al cargar el mapa te conectas con Google.</p>
+      </div>
     </div>
   </section>
 
@@ -747,7 +795,7 @@ body.noscroll{overflow:hidden}
     <div class="foot-grid">
       <div>
         <a class="brand" href="#/" aria-label="Hotel Aurora"><span class="brand-name">Aurora</span></a>
-        <address style="margin-top:20px" data-es="Calle de la Aurora, s/n. Costa de la Luz, Cádiz." data-en="Calle de la Aurora, s/n. Costa de la Luz, Cádiz.">Calle de la Aurora, s/n. Costa de la Luz, Cádiz.</address>
+        <address style="margin-top:20px" data-es="Calle de la Aurora, s/n. El Palmar, Vejer de la Frontera, Cádiz." data-en="Calle de la Aurora, s/n. El Palmar, Vejer de la Frontera, Cádiz.">Calle de la Aurora, s/n. El Palmar, Vejer de la Frontera, Cádiz.</address>
       </div>
       <div>
         <h3 data-es="Contacto" data-en="Contact">Contacto</h3>
@@ -764,6 +812,8 @@ body.noscroll{overflow:hidden}
           <li><a href="#/" data-goto="restaurante" data-es="Restaurante" data-en="Restaurant">Restaurante</a></li>
           <li><a href="#/" data-goto="spa" data-es="Spa" data-en="Spa">Spa</a></li>
           <li><a href="#/" data-goto="paquetes" data-es="Paquetes" data-en="Packages">Paquetes</a></li>
+          <li><a href="#/" data-goto="mascotas" data-es="Petfriendly" data-en="Pet-friendly">Petfriendly</a></li>
+          <li><a href="#/" data-goto="llegar" data-es="Cómo llegar" data-en="Getting here">Cómo llegar</a></li>
         </ul>
       </div>
       <div>
@@ -856,6 +906,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let lang = store.get('aurora-lang') || ((navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es');
 
 /* ---------- Datos de ejemplo (mock) ---------- */
+const CHECKIN = '15:00', CHECKOUT = '12:00'; // en producción vienen de los ajustes del CMS / Mews
 const ROOMS = {
   alba:    { n:'Alba',    area:32, guests:2, price:168, codes:['P04','P05','P06'],
     orient:{es:'Orientada al este.', en:'Facing east.'},
@@ -880,9 +931,9 @@ const ROOMS = {
 };
 const FAQ = [
   [{es:'¿Cómo cancelo una reserva?',en:'How do I cancel a booking?'},{es:'Desde el correo de confirmación o escribiéndonos. Cada tarifa indica su política antes de pagar.',en:'From the confirmation email or by writing to us. Each rate shows its policy before you pay.'}],
-  [{es:'¿A qué hora son la entrada y la salida?',en:'What time are check-in and check-out?'},{es:'La entrada es por la tarde y la salida antes del mediodía. Si llegas antes, guardamos tu equipaje.',en:'Check-in is in the afternoon and check-out before noon. If you arrive earlier, we store your luggage.'}],
+  [{es:'¿A qué hora son la entrada y la salida?',en:'What time are check-in and check-out?'},{es:'La entrada es desde las 15:00 y la salida hasta las 12:00. Si llegas antes, guardamos tu equipaje.',en:'Check-in is from 15:00 and check-out until 12:00. If you arrive earlier, we store your luggage.'}],
   [{es:'¿Hay aparcamiento?',en:'Is there parking?'},{es:'Sí, junto a la casa y sujeto a disponibilidad. Avísanos al reservar.',en:'Yes, next to the house and subject to availability. Let us know when you book.'}],
-  [{es:'¿Se admiten mascotas?',en:'Are pets allowed?'},{es:'Admitimos perros pequeños bajo petición previa y con un suplemento.',en:'Small dogs are welcome on prior request and with a supplement.'}],
+  [{es:'¿Puedo viajar con mi perro?',en:'Can I travel with my dog?'},{es:'Sí, somos un hotel petfriendly. Se admiten hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.',en:'Yes, we are a pet-friendly hotel. Up to two dogs are welcome per room, with a bed and bowls provided. The pet supplement is shown before you pay.'}],
   [{es:'¿El spa es solo para huéspedes?',en:'Is the spa for guests only?'},{es:'No. Las personas que no se alojan pueden pedir cita según disponibilidad.',en:'No. People not staying with us can request an appointment, subject to availability.'}],
   [{es:'¿Cómo llego?',en:'How do I get there?'},{es:'Estamos en la Costa de la Luz, a unos minutos en coche de la playa. Te enviamos la ruta con la confirmación.',en:'We are on the Costa de la Luz, a few minutes by car from the beach. We send directions with your confirmation.'}]
 ];
@@ -900,7 +951,7 @@ const FEAT = {
 };
 const D = {
   es:{ steps:['Fechas','Habitación','Confirmar'], back:'Atrás', next:'Continuar', confirm:'Confirmar reserva', close:'Cerrar',
-    arrive:'Llegada', depart:'Salida', adults:'Adultos', children:'Niños', errDates:'Elige la llegada y una salida posterior.', errPast:'La llegada no puede ser anterior a hoy.',
+    arrive:'Llegada', depart:'Salida', adults:'Adultos', children:'Niños', dogs:'Perros', dogsHelp:'Hotel petfriendly: hasta dos por habitación.', inout:'Entrada / Salida', petfee:'suplemento según tarifa', errDates:'Elige la llegada y una salida posterior.', errPast:'La llegada no puede ser anterior a hoy.',
     none:'Sin disponibilidad', noneTxt:'No hay habitaciones para ese número de huéspedes. Prueba con menos huéspedes o escríbenos por WhatsApp.',
     flex:'Tarifa flexible', nonref:'No reembolsable', nights:n=>`${n} ${n===1?'noche':'noches'}`, total:'Total', guests:g=>`${g} ${g===1?'huésped':'huéspedes'}`,
     name:'Nombre', email:'Correo electrónico', phone:'Teléfono (opcional)', consent:'Acepto que Hotel Aurora trate mis datos para gestionar esta solicitud. Más información en la política de privacidad.',
@@ -912,10 +963,10 @@ const D = {
     okTable:'Solicitud enviada', okTableP:'Te respondemos por correo o WhatsApp. En producción se envía por servidor con validación, límite de peticiones y página de gracias.',
     okVouch:'Pago alojado en Stripe', okVouchP:'En producción te llevaríamos a Stripe Checkout (modo test hasta aprobación). La tarjeta nunca pasa por nuestro servidor.',
     minData:'Solo pedimos lo necesario.', treats:['Ritual del amanecer','Circuito de agua','Ritual para dos'], bono:'Día de spa, 60 minutos',
-    bot:{hi:'Hola. ¿En qué puedo ayudarte?', q1:'¿Hay aparcamiento?', a1:'Sí, junto a la casa y sujeto a disponibilidad. Avísanos al reservar.', q2:'¿A qué hora es la entrada?', a2:'La entrada es por la tarde y la salida antes del mediodía.', q3:'Quiero hablar con una persona', a3:'Claro. Puedes escribirnos por WhatsApp o llamar al +34 000 000 000.'},
+    bot:{hi:'Hola. ¿En qué puedo ayudarte?', q1:'¿Puedo ir con mi perro?', a1:'Sí, somos un hotel petfriendly: hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento se muestra antes de pagar.', q2:'¿A qué hora es la entrada?', a2:'La entrada es desde las 15:00 y la salida hasta las 12:00.', q3:'Quiero hablar con una persona', a3:'Claro. Puedes escribirnos por WhatsApp o llamar al +34 000 000 000.'},
     theme:{auto:'Día',light:'Día',dark:'Madrugada'}, detail:'Ver habitación', book:'Reservar', night:'noche', from:'Desde' },
   en:{ steps:['Dates','Room','Confirm'], back:'Back', next:'Continue', confirm:'Confirm booking', close:'Close',
-    arrive:'Check-in', depart:'Check-out', adults:'Adults', children:'Children', errDates:'Choose a check-in and a later check-out.', errPast:'Check-in cannot be before today.',
+    arrive:'Check-in', depart:'Check-out', adults:'Adults', children:'Children', dogs:'Dogs', dogsHelp:'Pet-friendly hotel: up to two per room.', inout:'Check-in / Check-out', petfee:'supplement per rate', errDates:'Choose a check-in and a later check-out.', errPast:'Check-in cannot be before today.',
     none:'No availability', noneTxt:'There are no rooms for that number of guests. Try fewer guests or write to us on WhatsApp.',
     flex:'Flexible rate', nonref:'Non-refundable', nights:n=>`${n} ${n===1?'night':'nights'}`, total:'Total', guests:g=>`${g} ${g===1?'guest':'guests'}`,
     name:'Name', email:'Email', phone:'Phone (optional)', consent:'I agree that Hotel Aurora processes my data to handle this request. More information in the privacy policy.',
@@ -927,7 +978,7 @@ const D = {
     okTable:'Request sent', okTableP:'We reply by email or WhatsApp. In production it is sent from the server with validation, rate limiting and a thank-you page.',
     okVouch:'Payment hosted by Stripe', okVouchP:'In production we would take you to Stripe Checkout (test mode until approved). The card never goes through our server.',
     minData:'We only ask for what is necessary.', treats:['Dawn ritual','Water circuit','Ritual for two'], bono:'Spa day, 60 minutes',
-    bot:{hi:'Hello. How can I help?', q1:'Is there parking?', a1:'Yes, next to the house and subject to availability. Let us know when you book.', q2:'What time is check-in?', a2:'Check-in is in the afternoon and check-out before noon.', q3:'I want to talk to a person', a3:'Of course. You can write to us on WhatsApp or call +34 000 000 000.'},
+    bot:{hi:'Hello. How can I help?', q1:'Can I bring my dog?', a1:'Yes, we are a pet-friendly hotel: up to two dogs per room, with a bed and bowls provided. The supplement is shown before you pay.', q2:'What time is check-in?', a2:'Check-in is from 15:00 and check-out until 12:00.', q3:'I want to talk to a person', a3:'Of course. You can write to us on WhatsApp or call +34 000 000 000.'},
     theme:{auto:'Day',light:'Day',dark:'Pre-dawn'}, detail:'See the room', book:'Book', night:'night', from:'From' }
 };
 const T = () => D[lang];
@@ -1003,7 +1054,7 @@ function renderRoomPage(){
   const r = ROOMS[roomKey]; if (!r) return;
   $('#rTitle').textContent = r.n; $('#rCrumb').textContent = r.n;
   $('#rOrient').textContent = r.light[lang];
-  $('#rFacts').innerHTML = `<div><dt>${lang==='es'?'Superficie':'Size'}</dt><dd>${r.area} m²</dd></div><div><dt>${lang==='es'?'Capacidad':'Sleeps'}</dt><dd>${T().guests(r.guests)}</dd></div><div><dt>${lang==='es'?'Orientación':'Aspect'}</dt><dd>${r.orient[lang].replace(/\.$/, '')}</dd></div>`;
+  $('#rFacts').innerHTML = `<div><dt>${lang==='es'?'Superficie':'Size'}</dt><dd>${r.area} m²</dd></div><div><dt>${lang==='es'?'Capacidad':'Sleeps'}</dt><dd>${T().guests(r.guests)}</dd></div><div><dt>${lang==='es'?'Orientación':'Aspect'}</dt><dd>${r.orient[lang].replace(/\.$/, '')}</dd></div><div><dt>${lang==='es'?'Entrada':'Check-in'}</dt><dd>${CHECKIN}</dd></div><div><dt>${lang==='es'?'Salida':'Check-out'}</dt><dd>${CHECKOUT}</dd></div><div><dt>${lang==='es'?'Perros':'Dogs'}</dt><dd>${lang==='es'?'Bienvenidos':'Welcome'}</dd></div>`;
   $('#rBlurb').textContent = r.blurb[lang];
   $('#rSun').innerHTML = r.sun
     ? `<div class="sunnum"><strong>${r.sun[0]}</strong><span>${lang==='es'?'primer sol en la habitación':'first sun in the room'}</span></div><div class="sunnum"><strong>${r.sun[1]}</strong><span>${lang==='es'?'último sol directo':'last direct sun'}</span></div>`
@@ -1089,11 +1140,11 @@ function closeBack(back){ back.hidden = true; document.body.classList.remove('no
 });
 
 /* ---------- Reserva (simulación del widget) ---------- */
-const bk = { step:0, arrive:'', depart:'', adults:2, children:0, room:'alba', rate:'flex', name:'', email:'', phone:'', consent:false, errors:{}, loading:false, done:false };
+const bk = { step:0, arrive:'', depart:'', adults:2, children:0, dogs:0, room:'alba', rate:'flex', name:'', email:'', phone:'', consent:false, errors:{}, loading:false, done:false };
 const today = () => new Date().toISOString().slice(0, 10);
 const nightsOf = () => Math.max(0, Math.round((new Date(bk.depart) - new Date(bk.arrive)) / 864e5));
 function openBooking(pre = {}, opener){
-  if (bk.done) Object.assign(bk, {arrive:'', depart:'', adults:2, children:0, rate:'flex', name:'', email:'', phone:'', consent:false});
+  if (bk.done) Object.assign(bk, {arrive:'', depart:'', adults:2, children:0, dogs:0, rate:'flex', name:'', email:'', phone:'', consent:false});
   Object.assign(bk, {step:0, errors:{}, done:false, loading:false, enter:true}, pre);
   if (pre.room === undefined) bk.room = bk.room || 'alba';
   openBack($('#bk'), opener); renderBooking();
@@ -1119,7 +1170,8 @@ function renderBooking(){
     body.innerHTML = `<div class="grid2">${field('f-arr', t.arrive, `<input class="input" id="f-arr" type="date" min="${today()}" value="${bk.arrive}" ${bk.errors.dates ? 'aria-invalid="true"' : ''}>`, '')}
       ${field('f-dep', t.depart, `<input class="input" id="f-dep" type="date" min="${today()}" value="${bk.depart}" ${bk.errors.dates ? 'aria-invalid="true"' : ''}>`, bk.errors.dates || '')}
       ${field('f-ad', t.adults, `<select class="input" id="f-ad">${[1,2,3,4].map(n => `<option ${n === bk.adults ? 'selected' : ''}>${n}</option>`).join('')}</select>`, '')}
-      ${field('f-ch', t.children, `<select class="input" id="f-ch">${[0,1,2,3].map(n => `<option ${n === bk.children ? 'selected' : ''}>${n}</option>`).join('')}</select>`, '')}</div>`;
+      ${field('f-ch', t.children, `<select class="input" id="f-ch">${[0,1,2,3].map(n => `<option ${n === bk.children ? 'selected' : ''}>${n}</option>`).join('')}</select>`, '')}
+      ${field('f-dg', t.dogs, `<select class="input" id="f-dg">${[0,1,2].map(n => `<option ${n === bk.dogs ? 'selected' : ''}>${n}</option>`).join('')}</select>`, '', t.dogsHelp)}</div>`;
   } else if (bk.step === 1){
     if (bk.loading){ body.innerHTML = `<p class="small" role="status">${t.loading}</p><div class="sk"></div><div class="sk"></div>`; return; }
     const avail = Object.entries(ROOMS).filter(([, r]) => r.guests >= g);
@@ -1136,7 +1188,7 @@ function renderBooking(){
         <span class="help">${t.nights(n)}</span></fieldset>`; }).join('');
   } else {
     const r = ROOMS[bk.room], n = nightsOf(), price = (bk.rate === 'flex' ? r.price : Math.round(r.price * .9)) * n, e = bk.errors;
-    body.innerHTML = `<div class="sum"><div><span>${t.rooms}</span><strong>${r.n}</strong></div><div><span>${t.arrive} / ${t.depart}</span><span>${bk.arrive} / ${bk.depart}</span></div><div><span>${t.rate}</span><span>${bk.rate === 'flex' ? t.flex : t.nonref}</span></div><div><span>${t.nights(n)}, ${t.guests(g)}</span><span></span></div><div><strong>${t.total}</strong><strong>${eur(price)}</strong></div></div>
+    body.innerHTML = `<div class="sum"><div><span>${t.rooms}</span><strong>${r.n}</strong></div><div><span>${t.arrive} / ${t.depart}</span><span>${bk.arrive} / ${bk.depart}</span></div><div><span>${t.rate}</span><span>${bk.rate === 'flex' ? t.flex : t.nonref}</span></div><div><span>${t.nights(n)}, ${t.guests(g)}</span><span></span></div><div><span>${t.inout}</span><span>${CHECKIN} / ${CHECKOUT}</span></div>${bk.dogs ? `<div><span>${t.dogs}</span><span>${bk.dogs}, ${t.petfee}</span></div>` : ''}<div><strong>${t.total}</strong><strong>${eur(price)}</strong></div></div>
       <p class="help">${t.minData}</p>
       <div class="grid2">${field('f-n', t.name, `<input class="input" id="f-n" autocomplete="name" value="${bk.name}" ${e.name ? 'aria-invalid="true"' : ''}>`, e.name || '')}
       ${field('f-m', t.email, `<input class="input" id="f-m" type="email" autocomplete="email" value="${bk.email}" ${e.email ? 'aria-invalid="true"' : ''}>`, e.email || '')}</div>
@@ -1147,7 +1199,7 @@ function renderBooking(){
 }
 function readStep(){
   if (bk.step === 0){
-    bk.arrive = $('#f-arr').value; bk.depart = $('#f-dep').value; bk.adults = +$('#f-ad').value; bk.children = +$('#f-ch').value;
+    bk.arrive = $('#f-arr').value; bk.depart = $('#f-dep').value; bk.adults = +$('#f-ad').value; bk.children = +$('#f-ch').value; bk.dogs = +$('#f-dg').value;
   } else if (bk.step === 1){
     const c = $('input[name="rate"]:checked'); if (c){ const [k, r] = c.value.split('|'); bk.room = k; bk.rate = r; }
   } else {
@@ -1268,6 +1320,15 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches){
   document.addEventListener('pointerout', e => { const m = e.target.closest && e.target.closest('.btn-primary, .dock-btn'); if (m && !m.contains(e.relatedTarget)){ m.style.setProperty('--mtx', '0px'); m.style.setProperty('--mty', '0px'); const r = m.getBoundingClientRect(); if (m.classList.contains('btn-primary')){ m.style.setProperty('--bx', (e.clientX - r.left) + 'px'); m.style.setProperty('--by', (e.clientY - r.top) + 'px'); } } });
   document.addEventListener('pointerout', e => { const rm = e.target.closest && e.target.closest('.room-media'); if (rm && !rm.contains(e.relatedTarget)){ const a = $('.ph', rm); a.style.setProperty('--rx', '0deg'); a.style.setProperty('--ry', '0deg'); } });
 }
+
+/* ---------- Mapa bajo demanda (ninguna petición a Google hasta pulsar) ---------- */
+$('#mapLoad').addEventListener('click', () => {
+  const box = $('#map'); const f = document.createElement('iframe');
+  f.title = lang === 'es' ? 'Mapa de Google: Playa de El Palmar, Vejer de la Frontera' : 'Google map: Playa de El Palmar, Vejer de la Frontera';
+  f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+  f.src = 'https://www.google.com/maps?q=Playa%20de%20El%20Palmar%2C%20Vejer%20de%20la%20Frontera&z=14&output=embed';
+  box.replaceChildren(f);
+});
 
 /* ---------- Arranque ---------- */
 applyLang(lang); renderCookie(); route(); observeReveal();

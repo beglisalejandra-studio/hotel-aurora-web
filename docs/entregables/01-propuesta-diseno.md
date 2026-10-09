@@ -1,6 +1,6 @@
 # 01 · Propuesta de diseño UX/UI
 
-> Se entrega y se aprueba ANTES de construir. Estado: **borrador en revisión (G1)**. Aprobada: pendiente (fecha y quién aprobó).
+> Se entrega y se aprueba ANTES de construir. Estado: **aprobada** por la persona en el chat el 2026-10-09 (G1).
 
 ## Concepto
 **Inmersión fotográfica.** El hotel vende por sus fotos y su vídeo, así que la portada es una foto a sangre y, al desplazarse, se la atraviesa y emergen las siguientes con CSS 3D nativo. Luminoso, inmersivo, sereno. Elemento firma: **el recorrido**. Evitamos formas geométricas decorativas (el arco y el disco de sol se descartaron por decisión del cliente), el hero centrado de plantilla, el preloader y la paleta crema con latón. Detalle en `DESIGN.md`.
@@ -49,9 +49,6 @@ Análisis completo y capturas: `reference-analysis.md` y `creative/references/`.
 4. Botón flotante tapando el CTA en móvil. **Subidos los pies y el héroe** para dejarle sitio.
 5. Desbordes horizontales (hasta 139 px en móvil) por un `min-height` con `aspect-ratio`. **Corregidos**: 0 px en 390, 768 y 1440.
 
-**Decisiones pendientes para la persona:**
-1. **Fotografía:** sin fotos reales la maqueta usa huecos rotulados; ver `creative/briefs/pedido-de-materiales.md` (opciones A, B o C).
-2. Vídeo en el recorrido y el restaurante (V01 a V03): lo decide `VIDEO_SCORE` en la fase 4.
-3. Héroe WebGL 2,5D y visor 360: ¿los exploramos como opcionales?
-4. Longitud del recorrido (unas cuatro pantallas): ¿se acorta?
-5. Las cinco preguntas de negocio de `PRODUCT.md`.
+**Decisiones tomadas (2026-10-09):** dirección aprobada; recorrido de unas cuatro pantallas correcto; héroe WebGL 2,5D y visor 360 como extras opcionales: sí; ubicación real con la Playa de El Palmar en Google Maps; bonos con Stripe en modo test; migración 301 simulada; Sanity gratuito; entrada 15:00 y salida 12:00; hotel petfriendly; guía escrita en lugar de vídeo. Detalle en `PRODUCT.md` §7.
+
+**Pendiente:** la **fotografía y el vídeo**, que se piden uno a uno (`creative/requests/`), y `VIDEO_SCORE` en la fase 4.

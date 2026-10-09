@@ -6,7 +6,7 @@
 Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `[Decisión mía]` lo elegí yo con criterio porque se me delegó; lo marcado `[Confirmar]` necesita tu respuesta.
 
 ## 1. Negocio y oferta
-- **Qué ofrece (ficticio):** hotel boutique de 28 habitaciones en la Costa de la Luz (Cádiz), con spa y restaurante propios. `[Decisión mía]` ubicación y tamaño; `[Confirmar]` si prefieres otra zona.
+- **Qué ofrece (ficticio):** hotel boutique **petfriendly** de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), en la Costa de la Luz, con spa y restaurante propios. **Ubicación aprobada** el 2026-10-09: el entorno es real y se referencia con la **Playa de El Palmar** en Google Maps; la dirección del hotel (calle) es ficticia.
 - **Líneas de venta online:**
   1. **Alojamiento** (habitaciones y paquetes con noche): motor de reservas **Mews** (ADR-0002). Tarifas y disponibilidad viven en Mews, nunca en la web.
   2. **Paquetes turísticos**: con alojamiento van por Mews (tarifa/código); sin alojamiento se venden como experiencia (ver 3).
@@ -37,6 +37,8 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 | Reserva directa sin comisión de intermediarios | Condición del modelo directo; sin cifras | n/a | publicable sin cifras |
 | "Mejor tarifa garantizada" | Requiere política escrita del hotel y revisión | pendiente | **NO publicar** hasta tener política |
 | Cancelación flexible | Depende de las tarifas configuradas en Mews | pendiente | **NO publicar** como promesa; mostrar la condición real que devuelva Mews |
+| Entrada desde las 15:00 y salida hasta las 12:00 | Política ficticia de portfolio, fijada por la persona el 2026-10-09; en producción se configura en Mews y se lee del CMS | n/a | ficticio, declarado |
+| Hotel petfriendly: hasta 2 perros por habitación, cama y cuencos de cortesía, suplemento por mascota visible antes de pagar | Política ficticia de portfolio pedida por la persona; **sin importe publicado** | n/a | ficticio, declarado. **No se promete acceso de perros a la playa** (lo regula el ayuntamiento) |
 | Reseñas, puntuaciones, premios, sellos, "como visto en" | Ninguna | ninguno | **Ninguno publicado** (no se fabrican testimonios) |
 
 > Testimonios, cifras, logos, certificaciones y reseñas: solo con evidencia **y permiso**. Sin ellos no se publican.
@@ -47,9 +49,16 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 - **Restricciones legales/sectoriales (España/UE):** RGPD + LOPDGDD; aviso legal (LSSI); política de privacidad y de cookies con Aceptar, Rechazar y Configurar al mismo nivel (criterio AEPD indicado por el cliente); pagos sin que la tarjeta toque nuestro servidor; formularios con datos mínimos y casilla de consentimiento; obligaciones turísticas sectoriales (registro, hojas de reclamaciones) **según comunidad autónoma: verificar con asesoría**. Los textos legales se entregan como **borrador sujeto a revisión de abogado**.
 - **Competencia / referencias:** ver `reference-analysis.md`.
 
-## 7. Preguntas abiertas
-1. `[Confirmar]` ¿Costa de la Luz (Cádiz) te sirve como ubicación ficticia o prefieres otra?
-2. `[Confirmar]` ¿Vendemos experiencias (spa, cena) como **bono de pago online** con Stripe en modo test, o solo como solicitud?
-3. `[Confirmar]` ¿Quieres que simule una **migración desde una web antigua** (mapa de 301 con URLs de ejemplo) para mostrarla en el portfolio?
-4. Material visual: ver `creative/briefs/pedido-de-materiales.md`.
-5. Quién graba el **vídeo tutorial** de la entrega (guion y capturas los preparo yo).
+## 7. Decisiones tomadas por la persona (2026-10-09)
+1. **Ubicación:** real, con una playa (no un hotel) en Google Maps: **Playa de El Palmar**, Vejer de la Frontera.
+2. **Experiencias** (spa, cena): **bono de pago online con Stripe en modo test**.
+3. **Migración:** **sí**, se simula desde una web antigua ficticia con mapa de 301 (`docs/seo/migracion-web-antigua.md`).
+4. **CMS:** plan gratuito de Sanity para el portfolio (limitación de roles declarada en ADR-0003).
+5. **Dirección visual:** aprobada (G1). **Extras opcionales:** sí, héroe 2,5D con WebGL y visor 360. **Recorrido de unas cuatro pantallas:** correcto.
+6. **Horarios:** entrada desde las 15:00, salida hasta las 12:00. **Petfriendly:** sí.
+7. **Material visual:** lo produce la persona con prompts ultra realistas que se le piden **uno a uno** (`creative/requests/`).
+8. **Entrega para no técnicos:** en lugar de vídeo, un **documento muy explicado** (`docs/entregables/03-guia-de-gestion.md`).
+
+## 8. Preguntas abiertas
+- Formato final de la guía (Documento de Google, Word o PDF).
+- Si el hotel real admitirá perros de cualquier tamaño y cuál será el suplemento (aquí, ficticio y sin importe).

@@ -1,0 +1,24 @@
+# Inventario de URLs del sitio NUEVO: una página por línea, con su pareja ES y EN (hreflang recíproco).
+# Formato: ruta-es ruta-en
+# Se usa para (1) generar el sitemap con alternates, (2) validar que cada 301 apunta a una URL que existe.
+/es /en
+/es/habitaciones /en/rooms
+/es/habitaciones/alba /en/rooms/alba
+/es/habitaciones/marea /en/rooms/marea
+/es/habitaciones/terraza /en/rooms/terrace
+/es/habitaciones/faro /en/rooms/faro
+/es/restaurante /en/restaurant
+/es/spa /en/spa
+/es/paquetes /en/packages
+/es/paquetes/escapada-dos-noches /en/packages/two-night-escape
+/es/experiencias /en/experiences
+/es/el-hotel /en/the-hotel
+/es/como-llegar /en/getting-here
+/es/hotel-petfriendly /en/pet-friendly-hotel
+/es/preguntas-frecuentes /en/faq
+/es/contacto /en/contact
+/es/gracias /en/thank-you
+/es/aviso-legal /en/legal-notice
+/es/privacidad /en/privacy
+/es/cookies /en/cookies
+/es/condiciones-de-reserva /en/booking-terms

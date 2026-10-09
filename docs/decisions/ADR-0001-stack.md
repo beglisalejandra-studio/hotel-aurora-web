@@ -1,6 +1,6 @@
 # ADR-0001 · Stack: Next.js + TypeScript con contenido en un CMS headless
 
-Estado: **propuesto** (pendiente de aprobación en G1/G2) · Fecha: 2026-10-09
+Estado: **aceptado** el 2026-10-09 (la persona aprobó la dirección y el plan por fases sin objeciones al stack) · Fecha: 2026-10-09
 
 ## Contexto
 Web de un hotel boutique, bilingüe (ES/EN), con tres exigencias que condicionan la tecnología: Core Web Vitals (LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1), SEO técnico multilingüe, y consentimiento + medición conforme a RGPD/LOPDGDD. La reserva la resuelve un motor externo (ADR-0002), así que la web es una web de marca que lleva a reservar, no una tienda.

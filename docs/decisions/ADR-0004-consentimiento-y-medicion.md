@@ -1,6 +1,6 @@
 # ADR-0004 · Consentimiento (Consent Mode v2) y medición
 
-Estado: **propuesto** · Fecha: 2026-10-09
+Estado: **aceptado** el 2026-10-09 (sin objeciones) · Fecha: 2026-10-09
 
 ## Contexto
 Obligatorio en España/UE: RGPD + LOPDGDD, aviso legal (LSSI), política de cookies, y banner con **Aceptar, Rechazar y Configurar al mismo nivel** (criterio de la AEPD, indicado en el encargo). Medición requerida: GA4 y Pixel de Meta con Consent Mode v2.

@@ -1,6 +1,6 @@
 ---
 type: new
-status: discovery
+status: design
 duration: 3-6w
 visual_authority: taste-skill
 stack: next
@@ -11,12 +11,12 @@ mode: auto
 
 # PROJECT - Hotel Aurora
 
-> Alcance, arquitectura, integraciones, secretos y despliegue. El front-matter gobierna al sistema. `status` pasa a `design` cuando la persona apruebe el brief y la maqueta (puerta G1).
+> Alcance, arquitectura, integraciones, secretos y despliegue. El front-matter gobierna al sistema. `status` pasó a `design` el 2026-10-09 al aprobar la persona el brief y la dirección visual (puerta G1).
 
 ## 1. Alcance
 - **Objetivo de conversión (único):** reserva directa de alojamiento en el motor de reservas.
-- **Dentro del alcance:** web bilingüe ES/EN; habitaciones, restaurante, spa, paquetes y experiencias; reserva (widget Mews); solicitudes de mesa y de cita; bonos de experiencia (Stripe, modo test); WhatsApp y asistente de IA; consentimiento (Consent Mode v2), GA4 y Pixel de Meta; SEO técnico y 301; documentación y guion de vídeo tutorial; staging, copias y monitor.
-- **Fuera del alcance (propuesto):** motor de reservas propio; channel manager; tarjetas regalo genéricas; área de cliente; blog (se deja el modelo de contenido preparado, se activa si se aprueba); pasarela de pago directa para alojamiento (la gestiona Mews).
+- **Dentro del alcance:** web bilingüe ES/EN; hotel **petfriendly**; horarios fijos (entrada 15:00, salida 12:00); sección "Cómo llegar" con la Playa de El Palmar en Google Maps (carga bajo demanda); **migración simulada con 301**; extras opcionales (héroe 2,5D con WebGL y visor 360); habitaciones, restaurante, spa, paquetes y experiencias; reserva (widget Mews); solicitudes de mesa y de cita; bonos de experiencia (Stripe, modo test); WhatsApp y asistente de IA; consentimiento (Consent Mode v2), GA4 y Pixel de Meta; SEO técnico y 301; documentación y guion de vídeo tutorial; staging, copias y monitor.
+- **Fuera del alcance (propuesto; el vídeo tutorial se descartó a petición de la persona y se sustituye por una guía escrita):** motor de reservas propio; channel manager; tarjetas regalo genéricas; área de cliente; blog (se deja el modelo de contenido preparado, se activa si se aprueba); pasarela de pago directa para alojamiento (la gestiona Mews).
 - **Fechas / hitos:** ritmo 3-6 semanas, con una puerta de aprobación por fase (sección 6). Las fechas se fijan al aprobar el plan.
 
 ## 2. Arquitectura
@@ -28,7 +28,8 @@ mode: auto
 - **Visual inmersivo y rendimiento:** `docs/decisions/ADR-0006-visual-inmersivo-y-rendimiento.md`.
 - **Idiomas:** español (por defecto) e inglés. Rutas `/es/...` y `/en/...` con slugs traducidos, `hreflang` recíproco y `x-default`. Sin traducción automática sin revisión humana.
 - **Sitemap (propuesto):**
-  - Inicio · Habitaciones (listado + ficha por habitación) · Restaurante · Spa · Paquetes (listado + ficha) · Experiencias (bonos) · El hotel y cómo llegar · Preguntas frecuentes · Contacto · Gracias (por tipo de conversión) · Aviso legal · Privacidad · Cookies · Condiciones de reserva.
+  - Inicio · Habitaciones (listado + ficha por habitación) · Restaurante · Spa · Paquetes (listado + ficha) · Experiencias (bonos) · El hotel · Cómo llegar (con la Playa de El Palmar) · **Hotel petfriendly** (página propia para esa intención de búsqueda) · Preguntas frecuentes · Contacto · Gracias (por tipo de conversión) · Aviso legal · Privacidad · Cookies · Condiciones de reserva.
+  - Inventario exacto con pareja ES/EN de cada URL: `docs/seo/new-urls.txt` (21 páginas, 42 URLs).
 - **Contenido editable por el cliente:** textos, fotos, habitaciones, paquetes, FAQs, ofertas, horarios y datos de contacto, con borrador y vista previa. Layout, tokens, pagos, seguridad e integraciones sensibles quedan protegidos en código.
 - **Principio de datos:** tarifas, disponibilidad y datos de reserva **solo** en Mews; precios de bonos **solo** en Stripe (Price IDs); la web no guarda datos de huéspedes.
 
@@ -121,6 +122,22 @@ Ver `docs/decisions/ADR-0004-consentimiento-y-medicion.md`. Resumen: banner prop
 - Efectos 3D con CSS nativo y de forma progresiva (con alternativa estática); WebGL y visor 360 solo opcionales y tras `load`; vídeo mudo en bucle ≤ 1,5 MB por clip, carga diferida y **cero bytes en la carga inicial**.
 - Control: presupuesto de Lighthouse en CI y prueba en un móvil de gama media real antes de la aprobación.
 
+### 3.9 Google Maps (mapa bajo demanda)
+| Campo | Valor |
+|---|---|
+| Objetivo | Situar la zona con una playa real, no un hotel: **Playa de El Palmar, Vejer de la Frontera, Cádiz** |
+| Datos | Ninguno de la web. Al cargar el mapa, **Google recibe la IP y datos del navegador** |
+| Dónde se ejecuta | Cliente, **solo tras pulsar "Cargar el mapa"** (cero peticiones a Google antes). Enlace "Abrir en Google Maps": `https://www.google.com/maps/search/?api=1&query=Playa%20de%20El%20Palmar%2C%20Vejer%20de%20la%20Frontera` |
+| Credenciales | Demo: ninguna (iframe `maps?output=embed`, verificado). Producción: **API de Maps Embed con clave del cliente**, restringida por referente (`NEXT_PUBLIC_GOOGLE_MAPS_EMBED_KEY`) |
+| Coste | La API de Maps Embed: condiciones de Google a consultar al contratar |
+| Privacidad | Carga iniciada por el usuario con aviso visible; declarar en la política de cookies; **validar con asesoría** si requiere además consentimiento |
+| Fallback | Enlace a Google Maps |
+| Pruebas | Antes del clic no hay iframe; tras el clic carga la playa con título accesible (hecho en la maqueta) |
+| Coordenadas verificadas | OpenStreetMap 36,2253032 N, -6,0661621 O; Google Maps resuelve la búsqueda por nombre a "Playa de El Palmar" (P.º Marítimo, 11159 Vejer de la Frontera). 3.300 m de arena dorada y 50 m de ancho según spain.info |
+
+### 3.10 Datos estructurados (JSON-LD), horarios y mascotas
+`Hotel` con `checkinTime` 15:00, `checkoutTime` 12:00 y `petsAllowed: true`, leídos de los ajustes del CMS (no escritos a mano en cada página). `geo` y `hasMap` **se omiten** mientras la dirección sea ficticia: no se declara una ubicación falsa a los buscadores.
+
 ## 4. Secretos y variables
 Los VALORES viven solo en el gestor del proveedor de despliegue. Lista de NOMBRES en `.env.example` (sin valores). Rotación: al cambiar de responsable o ante sospecha, y al menos una vez al año. Las credenciales **se comparten por gestor de contraseñas, nunca por chat**. Si alguien pega una clave en un chat, se rota.
 
@@ -137,16 +154,16 @@ Cada fase: entregable, criterio de aceptación, verificación y decisión de ava
 
 | # | Fase | Entregable | Criterio de aceptación | Puerta |
 |---|---|---|---|---|
-| 1 | Brief | `PRODUCT.md` | Claims con evidencia o marcados pendientes | **G0** aprobación del brief |
+| 1 | Brief | `PRODUCT.md` | Claims con evidencia o marcados pendientes | **G0** aprobado 2026-10-09 |
 | 2 | Referencias | `creative/references/`, `reference-analysis.md` | ≥ 6 referencias con URL abierta; principios, no clones | incluida en G1 |
-| 2b | Maqueta + propuesta UX/UI | `creative/mockup/index.html`, `docs/entregables/01-propuesta-diseno.md` | Sin señales genéricas; 390/768/1440; autocrítica hecha | **G1** aprobación de diseño (estás aquí) |
+| 2b | Maqueta + propuesta UX/UI | `creative/mockup/index.html`, `docs/entregables/01-propuesta-diseno.md` | Sin señales genéricas; 390/768/1440; autocrítica hecha | **G1** aprobado 2026-10-09 |
 | 3 | Dirección + arquitectura | `DESIGN.md` final, ADR aprobados, fichas de integración, tokens | Contraste AA; fichas completas | **G2** |
 | 4 | Media | `VIDEO_SCORE` por página, `creative/manifest.json`, material recibido (fotos con dos recortes del héroe, vídeos V01 a V03, opcional 360 y profundidad) | Decisión y razón por página; peso y fallbacks dentro del presupuesto de ADR-0006 | **G3** aprobación de media |
-| 5 | Implementación (PRs pequeños) | 5.1 base, i18n y cabeceras · 5.2 Sanity y Studio · 5.3 páginas · 5.4 Mews (spike primero) · 5.5 formularios y correo · 5.6 Stripe test · 5.7 consentimiento y medición · 5.8 WhatsApp e IA · 5.9 SEO, JSON-LD, 301 · 5.10 legales y mapa de datos | TS estricto; lint, tipos, unit y build en verde por PR | revisión por PR |
+| 5 | Implementación (PRs pequeños) | 5.1 base, i18n y cabeceras · 5.2 Sanity y Studio · 5.3 páginas · 5.4 Mews (spike primero) · 5.5 formularios y correo · 5.6 Stripe test (bonos) · 5.7 consentimiento y medición · 5.8 WhatsApp e IA · 5.9 SEO, JSON-LD, 301 y **migración simulada** · 5.10 legales y mapa de datos · 5.11 mapa bajo demanda · 5.12 **spike héroe 2,5D (WebGL)** · 5.13 **spike visor 360** | TS estricto; lint, tipos, unit y build en verde por PR | revisión por PR |
 | 6 | QA | Informe de QA | axe sin graves; Lighthouse en presupuesto; e2e del flujo de reserva y formularios; `npm audit` | sin bloqueantes |
 | 7 | Staging | Preview + lista de entrega de 22 puntos + `launch:check` | Checklist completo con evidencia | **G4** aprobación escrita |
 | 8 | Producción | Release, dominio, SSL, monitor | Aprobación registrada por una persona | solo con aprobación |
-| 9 | Entrega y soporte | Docs técnicas, guía de gestión, guion y capturas de vídeo, plan de soporte (precio al final) | Documentos `01` a `05` completos | cierre |
+| 9 | Entrega y soporte | Docs técnicas, **guía ilustrada para personas sin conocimientos técnicos** (en lugar de vídeo), plan de soporte (precio al final) | Documentos `01` a `05` completos | cierre |
 
 ## 7. Responsables
 | Rol | Nombre | Contacto |

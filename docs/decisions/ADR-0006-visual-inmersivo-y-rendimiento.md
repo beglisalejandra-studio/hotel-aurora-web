@@ -1,6 +1,6 @@
 # ADR-0006 · Diseño visual inmersivo (3D) con presupuesto de rendimiento
 
-Estado: **propuesto** · Fecha: 2026-10-09
+Estado: **aceptado** el 2026-10-09: la persona aprobó la dirección, el recorrido de unas cuatro pantallas y los **dos extras opcionales** (héroe 2,5D con WebGL y visor 360) · Fecha: 2026-10-09
 
 ## Contexto
 El hotel vende por sus fotografías y su vídeo, y el cliente pide una web muy visual, interactiva, con botones animados y scroll dinámico, con efectos 3D de alto impacto, **sin penalizar la carga**. Hay además un requisito duro: LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1.
@@ -26,8 +26,8 @@ Lectura: los cuatro **ocultan la primera vista tras un preloader** y pesan entre
 | Botones con relleno direccional, atracción magnética, tema con revelado circular (View Transitions) | Alto | Muy bajo | **Se adopta** |
 | Transición de vista de la tarjeta de habitación a su ficha (View Transitions) | Alto | Nativo | **Se adopta** (con fallback) |
 | Vídeo en ventanas (restaurante, spa) | Alto | Medio, controlado por carga diferida | **Se adopta** con presupuesto |
-| Héroe WebGL con foto + mapa de profundidad (2,5D) | Muy alto | ~30 a 40 KB de JS (OGL o WebGL a mano) más un mapa de profundidad por foto | **Opcional**: spike en la fase 5, solo escritorio, tras `load` e inactividad |
-| Visor 360 de habitaciones (Pannellum o similar) | Alto | Carga bajo demanda al pulsar | **Opcional** si el hotel aporta fotos equirrectangulares |
+| Héroe WebGL con foto + mapa de profundidad (2,5D) | Muy alto | ~30 a 40 KB de JS (OGL o WebGL a mano) más un mapa de profundidad por foto | **Aprobado como extra**: spike 5.12 en la fase 5, solo escritorio, tras `load` e inactividad y con la puerta de rendimiento |
+| Visor 360 de habitaciones (Pannellum o similar) | Alto | Carga bajo demanda al pulsar | **Aprobado como extra**: spike 5.13; necesita fotos equirrectangulares (se piden más adelante, una a una) |
 | Escenas Three.js / React Three Fiber completas | Máximo | 14 a 43 MB como los de arriba | **Descartado** |
 
 ## Reglas de rendimiento (presupuesto)

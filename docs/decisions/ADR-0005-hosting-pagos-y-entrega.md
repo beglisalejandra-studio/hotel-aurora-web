@@ -1,6 +1,6 @@
 # ADR-0005 · Hosting, pagos, seguridad operativa y entrega
 
-Estado: **propuesto** · Fecha: 2026-10-09
+Estado: **aceptado** el 2026-10-09; la persona confirmó los bonos con Stripe en modo test y sustituyó el vídeo por una guía escrita · Fecha: 2026-10-09
 
 ## Hosting
 - **Vercel**, en equipo/cuenta **del cliente**; despliegue por preview para staging (noindex) y producción solo con aprobación humana.
@@ -28,4 +28,4 @@ Estado: **propuesto** · Fecha: 2026-10-09
 - Trabajo siempre primero en staging; cierre con tutoriales y plan de mantenimiento.
 
 ## Entrega
-Documentos `docs/entregables/01` a `05`, guía de gestión para no técnicos, repositorio con historial (PRs), lista de entrega de 22 puntos con `launch:check`, guion y capturas para el vídeo tutorial (la grabación la hace una persona), y plan de soporte con el **precio al final** como propuesta que valida la persona.
+Documentos `docs/entregables/01` a `05`, guía de gestión para no técnicos, repositorio con historial (PRs), lista de entrega de 22 puntos con `launch:check`, una **guía ilustrada, escrita para personas sin conocimientos técnicos** (sustituye al vídeo tutorial por decisión de la persona), y plan de soporte con el **precio al final** como propuesta que valida la persona.

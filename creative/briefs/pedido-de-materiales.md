@@ -13,10 +13,12 @@ Carpeta `creative/brand/` (marca) y `creative/inbox/` (fotos y vídeo en bruto),
 ## Especificaciones
 Fotos: JPG o PNG, **mínimo 2000 px en el lado largo**, ≤ 4 MB por archivo si las subes desde el navegador, sin texto ni logos incrustados, sin personas posando. Vídeo (opcional, solo si la fase 4 lo justifica): MP4, 6 a 8 s en bucle, 1080p, sin audio, ≤ 1,5 MB tras optimizar.
 
+> **Cómo se pide:** una a una, con una ficha por pieza en `creative/requests/` (medidas exactas, prompt ultra realista y carpeta de subida). El orden está en `creative/requests/INDEX.md`. Si una medida de esta tabla difiere de la de la ficha, **manda la ficha**.
+
 ## Lista de fotos (por prioridad)
 | Código | Dónde se usa | Encuadre | Qué debe verse |
 |---|---|---|---|
-| **P01** | Héroe de inicio (LCP). **Dos recortes:** horizontal 16:10 y vertical 4:5 | Horizontal mín. 2800 x 1750 y vertical mín. 2000 x 2500, con **zona libre en el tercio inferior** (ahí va el texto) | Fachada de una casa encalada restaurada, mirando al este, con el primer sol rozando el muro. Sombras frías de pizarra, borde cálido de luz. Sin personas |
+| **P01** | Héroe de inicio (LCP). **Dos recortes:** horizontal 16:10 y vertical 4:5 | Máster horizontal **2560 x 1600** y vertical 4:5 con la medida exacta de su ficha, con **zona libre en el tercio inferior** (ahí va el texto) | Fachada de una casa encalada restaurada, mirando al este, con el primer sol rozando el muro. Sombras frías de pizarra, borde cálido de luz. Sin personas |
 | **P02** | Compartir en redes (OG) | Horizontal 1200 x 630 útil | Variante de P01 con aire a la izquierda |
 | **P03** | Recorrido (casa) | Horizontal 3:2 | Patio interior a media mañana |
 | **P04 a P06** | Habitación **Alba** (este, sol al amanecer) | 3:2 y detalle | Vista general, luz sobre la pared, baño |
