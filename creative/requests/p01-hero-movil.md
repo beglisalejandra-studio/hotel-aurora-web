@@ -67,3 +67,5 @@ Archivo recibido: `creative/inbox/p01-hero-movil.png` (se subió como `p01-hero-
 **Peso optimizado:** AVIF 720 px calidad 55 = 102 KB (presupuesto móvil ≤ 110 KB); AVIF 941 px calidad 45 = 113 KB; AVIF 480 px calidad 55 = 46 KB.
 
 **Pendiente de la persona:** aprobar o repetir.
+
+**Aprobada por la persona el 2026-10-09**, conservándola tal cual: no se repite con un encuadre más cercano porque se cortarían los bordes del hotel. El máster está en `creative/approved/p01-hero-movil.png`.

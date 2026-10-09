@@ -35,7 +35,7 @@
       "request": "creative/requests/p01-hero-movil.md",
       "files": {
         "original": "creative/inbox/p01-hero-movil.png",
-        "draft": "creative/generated-drafts/p01-hero-movil.png"
+        "master": "creative/approved/p01-hero-movil.png"
       },
       "format": "PNG",
       "width": 941,
@@ -47,9 +47,9 @@
       "model": "gpt-image (segun las credenciales de contenido C2PA del archivo)",
       "declared_by": "persona (chat, 2026-10-09) y credenciales C2PA del propio archivo",
       "embedded_content_credentials": true,
-      "state": "draft",
-      "approved_by": null,
-      "approved_at": null,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: no se repite con encuadre mas cercano porque se cortarian los bordes del hotel; se conserva tal cual)",
+      "approved_at": "2026-10-09",
       "alt_draft": {
         "es": "Fachada de una casa encalada de dos plantas con dos olivos y un patio de grava al amanecer, con el mar a ambos lados.",
         "en": "Two-storey whitewashed house with two olive trees and a gravel courtyard at dawn, with the sea on both sides."

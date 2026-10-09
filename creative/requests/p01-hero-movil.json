@@ -4,7 +4,7 @@
   "aspect": "9:16",
   "page": "home",
   "role": "heroe de portada en movil (LCP): la misma fachada, recomposicion vertical",
-  "status": "received",
+  "status": "approved",
   "requested_at": "2026-10-09T16:04:50.965Z",
   "master": {
     "w": 1440,
@@ -20,5 +20,7 @@
     ".avif"
   ],
   "received_at": "2026-10-09T16:26:44.655Z",
-  "file": "creative/generated-drafts/p01-hero-movil.png"
+  "file": "creative/approved/p01-hero-movil.png",
+  "approved_by": "persona (mensaje en el chat: no se repite con encuadre mas cercano porque se cortarian los bordes del hotel; se conserva tal cual)",
+  "approved_at": "2026-10-09"
 }

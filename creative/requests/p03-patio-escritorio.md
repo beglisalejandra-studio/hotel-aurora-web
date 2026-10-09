@@ -32,7 +32,7 @@
 ## Prompt (cópialo tal cual en la herramienta que uses)
 
 ```text
-VISUAL CONTRACT: the attached reference image(s) define the exact identity of the subject. Keep the product, its shape, proportions, materials, colors, logo, lighting and composition unchanged. Only the action, framing and camera may change. Do not add or alter logos, brand names or text. Also keep unchanged: la misma casa y los mismos materiales que P01 aprobada: cal color crema con fisuras finas, contraventanas y puertas de madera oscura, teja terracota, sombras pizarra frias con borde de luz calido, solo vanos rectangulares y sin arcos.
+VISUAL CONTRACT: the attached reference image(s) define the exact identity of the subject. Keep the product, its shape, proportions, materials, colors, logo, lighting and composition unchanged. Only the action, framing and camera may change. Do not add or alter logos, brand names or text. Also keep unchanged: the same house and the same materials as the approved P01: cream lime plaster with fine hairline cracks, dark timber shutters and doors, terracotta roof tiles, cool slate shadows with a warm edge of light, rectangular openings only and no arches.
 
 Ultra-realistic architectural photograph, a real photo and not a render. The interior courtyard (patio) of the same restored two-storey lime-plaster boutique hotel shown in the attached reference photograph: the same hand-applied cream off-white plaster with hairline cracks and soft trowel marks, the same dark-brown timber shutters and heavy plank doors, the same weathered terracotta roof tiles, the same cool slate-blue shadows with a warm amber edge of light. Mid-morning, about 10:30: the sun has cleared the roofline and casts one clean diagonal band of warm light across the courtyard floor and up the plaster wall.
 
@@ -43,7 +43,7 @@ Composition: landscape 3:2, camera at eye level about 1.5 metres in one corner o
 
 **Evitar (prompt negativo):** texto o marcas de agua dentro de la imagen, logotipos deformados o inventados, manos o rostros distorsionados, producto distinto al de la referencia.
 
-**Debe conservarse sin cambios:** la misma casa y los mismos materiales que P01 aprobada: cal color crema con fisuras finas, contraventanas y puertas de madera oscura, teja terracota, sombras pizarra frias con borde de luz calido, solo vanos rectangulares y sin arcos.
+**Debe conservarse sin cambios:** the same house and the same materials as the approved P01: cream lime plaster with fine hairline cracks, dark timber shutters and doors, terracotta roof tiles, cool slate shadows with a warm edge of light, rectangular openings only and no arches.
 
 **Imágenes de referencia (adjúntalas en la herramienta):**
 - `creative/approved/p01-hero-escritorio.jpg`
