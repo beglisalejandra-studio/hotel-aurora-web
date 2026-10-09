@@ -24,6 +24,13 @@
 - Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio, incluidos móviles cortos (375 × 667).
 - Objetivos táctiles ≥ 44 px, sin desbordamiento horizontal a 390 px y el botón flotante no tapa la acción principal.
 
+## Fotografía del hotel (reglas permanentes, pedidas por la persona)
+- **El aspecto lo fija la imagen principal (P01), copiado al pie de la letra** (luz dorada de sol bajo, sombras azul lila, cal crema, madera oscura, casa vieja restaurada). Cada prompt lleva un contrato de estilo (`--look`) con P01 como primera referencia.
+- **Todas las habitaciones reciben sol directo** en la foto. Lo que diferencia una habitación de otra es la decoración, el color de la ropa de cama y los elementos que le dan otra vibra, no la luz ni la construcción.
+- **En la terraza, sol ligero, suave y dorado**, bueno para tomar el sol. Nunca duro ni cenital.
+- **Cada habitación lleva fotos de la habitación, la terraza (si la tiene), el baño y la zona de TV.** Una habitación no está completa sin las cuatro.
+- **El hotel muestra zonas comunes, restaurante y zona pet friendly**, además de las habitaciones.
+
 ## Reglas técnicas (Next.js next · TypeScript estricto)
 - **Antes de escribir código de Next, lee `node_modules/next/dist/docs/`** (esta versión tiene cambios de ruptura). En Next 16: el antiguo *middleware* se llama **`proxy.ts`** (función `proxy`); `next lint` ya no existe (se usa `eslint`).
 - Componentes de servidor por defecto; `"use client"` solo si hace falta. Componentes pequeños, HTML semántico, un `h1` por página.
