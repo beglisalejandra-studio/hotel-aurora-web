@@ -66,3 +66,5 @@ Archivo recibido: `creative/inbox/p03-patio-escritorio.webp` (se subió a la ra�
 **Peso optimizado:** AVIF 1600 px calidad 45 = 135 KB; AVIF 960 px calidad 55 = 82 KB; AVIF 480 px = 21 KB (no es imagen LCP).
 
 **Pendiente de la persona:** aprobar o repetir. Capturas: `docs/entregables/capturas/p03-comparacion-hueco-movil.jpg` y `p03-en-maqueta-movil-390x844.jpg`.
+
+**Aprobada por la persona el 2026-10-09** (mensaje en el chat). El máster aprobado está en `creative/approved/p03-patio-escritorio.webp`.

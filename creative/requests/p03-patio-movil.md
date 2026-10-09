@@ -64,3 +64,12 @@ La persona subió un **vertical 9:16 (1440 × 2560)**, pero el hueco de P03 en e
 **Pruebas:** panel a tamaño real del hueco (`p03-comparacion-hueco-movil.jpg`: A entera, B recorte, C banda de la vertical) y la maqueta a 390 × 844 con cada opción (`p03-en-maqueta-movil-390x844.jpg`: fila superior = foto entera, fila inferior = recorte).
 
 **Pendiente de la persona:** aprobar el recorte, o pedir otra toma 3:2 con encuadre cerrado (esta ficha sigue valiendo).
+
+### Actualización (2026-10-09): el primer recorte no gustó
+
+A la persona no le gustó cómo se veía el primer recorte en el teléfono (cortaba las ventanas de arriba y el olivo ocupaba media escena). Se generaron cinco recortes 3:2 más de la foto de escritorio y tres revisores independientes los puntuaron de 1 a 5 por composición, impacto a tamaño real y coherencia con el hotel: **B** (12 puntos sobre 15), **C** (11), foto entera (8), el primer recorte (8), y otros dos (7 y 6).
+
+- **B, propuesto** (esquina x 704, y 302; 1856 × 1237 px): las tres ventanas altas, la puerta, las macetas, el olivo y el estanque, completos y con margen. Se afinó respecto al ganador de la ronda para no cortar las tejas por arriba. Es el borrador actual: `creative/generated-drafts/p03-patio-movil.webp`.
+- **C, cerrado** (esquina x 883, y 640; 1248 × 832 px): puerta, macetas, estanque y tronco muy grandes; se lee mejor a 328 px, pero pierde el tejado y el cielo y parece la entrada de una villa.
+
+Pendiente de la persona: elegir B o C, o pedir otra toma. Página de decisión con los dos a tamaño real: `docs/entregables/capturas/p03-recortes-opciones.jpg`.

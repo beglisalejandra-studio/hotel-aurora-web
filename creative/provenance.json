@@ -62,7 +62,7 @@
       "request": "creative/requests/p03-patio-escritorio.md",
       "files": {
         "original": "creative/inbox/p03-patio-escritorio.webp",
-        "draft": "creative/generated-drafts/p03-patio-escritorio.webp"
+        "master": "creative/approved/p03-patio-escritorio.webp"
       },
       "format": "WebP (se subio con extension .png)",
       "width": 2560,
@@ -74,9 +74,9 @@
       "model": "no consta en el archivo",
       "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta en P03 (por confirmar)",
       "embedded_content_credentials": false,
-      "state": "draft",
-      "approved_by": null,
-      "approved_at": null,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: «la P03 de escritorio queda aprobada»)",
+      "approved_at": "2026-10-09",
       "alt_draft": {
         "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
         "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
@@ -91,16 +91,16 @@
         "draft": "creative/generated-drafts/p03-patio-movil.webp"
       },
       "format": "WebP",
-      "width": 1664,
-      "height": 1109,
+      "width": 1856,
+      "height": 1237,
       "aspect": "3:2",
       "ai_generated": true,
       "tool": "derivada por recorte de p03-patio-escritorio (imagen de ChatGPT); recorte hecho por el agente, sin regenerar",
       "crop": {
-        "x": 768,
-        "y": 358,
-        "w": 1664,
-        "h": 1109
+        "x": 704,
+        "y": 302,
+        "w": 1856,
+        "h": 1237
       },
       "embedded_content_credentials": false,
       "state": "draft",
@@ -109,7 +109,9 @@
       "alt_draft": {
         "es": "Detalle del patio interior: un olivo junto a una puerta de madera entreabierta y un estanque rectangular de piedra.",
         "en": "Detail of the interior courtyard: an olive tree beside a partly open wooden door and a rectangular stone pond."
-      }
+      },
+      "derived_from": "creative/approved/p03-patio-escritorio.webp",
+      "note": "Borrador: recorte B (propuesto). Alternativa C: x883,y640,1248x832. Pendiente de eleccion de la persona."
     },
     {
       "id": "p03-patio-vertical-extra",

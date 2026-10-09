@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "home",
   "role": "recorrido: patio interior, version escritorio (contenedor medido 634 x 422)",
-  "status": "received",
+  "status": "approved",
   "requested_at": "2026-10-09T16:32:30.430Z",
   "master": {
     "w": 2560,
@@ -20,5 +20,7 @@
     ".avif"
   ],
   "received_at": "2026-10-09T16:54:15.691Z",
-  "file": "creative/generated-drafts/p03-patio-escritorio.webp"
+  "file": "creative/approved/p03-patio-escritorio.webp",
+  "approved_by": "persona (mensaje en el chat: «la P03 de escritorio queda aprobada»)",
+  "approved_at": "2026-10-09"
 }

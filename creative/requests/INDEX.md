@@ -12,7 +12,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 |---|---|---|---|---|---|
 | 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Aprobada** el 2026-10-09 (`p01-hero-escritorio.md`) |
 | 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Aprobada** el 2026-10-09, tal cual (941 x 1672; `p01-hero-movil.md`) |
-| 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | **Recibidas**: escritorio, y móvil derivada por recorte; pendientes de tu aprobación (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
+| 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | Escritorio **aprobada** el 2026-10-09; móvil derivada por recorte, pendiente de que elijas entre B y C (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
 | 4 | P04 escritorio y móvil | Foto (2 versiones) | Habitación Alba, vista general | 4:5 las dos (la móvil, con encuadre más cerrado) | **Solicitada** (`p04-alba-escritorio.md` y `p04-alba-movil.md`) |
 | 5 | P05 | Foto | Alba, la luz sobre la pared | 3:2 | Pendiente |
 | 6 | P06 | Foto | Alba, baño | 3:2 | Pendiente |
