@@ -30,6 +30,7 @@
 - **En la terraza, sol ligero, suave y dorado**, bueno para tomar el sol. Nunca duro ni cenital.
 - **Cada habitación lleva fotos de la habitación, la terraza (si la tiene), el baño y la zona de TV.** Una habitación no está completa sin las cuatro.
 - **El hotel muestra zonas comunes, restaurante y zona pet friendly**, además de las habitaciones.
+- **El suelo es siempre piedra caliza vieja, gastada y mate** (losas grandes e irregulares con juntas finas, como el de Alba). Nunca brillante, pulido, mojado ni con reflejos, y sin textura picada, de burbujas o de guijarros. El suelo de Marea salió brillante y picado y la persona decidió dejarlo así (2026-10-09); en Terraza, Faro y el resto de prompts se pide expresamente mate, con un bloque `THE FLOOR`, una prohibición en `NEVER` y una línea en la comprobación final.
 
 ## Reglas técnicas (Next.js next · TypeScript estricto)
 - **Antes de escribir código de Next, lee `node_modules/next/dist/docs/`** (esta versión tiene cambios de ruptura). En Next 16: el antiguo *middleware* se llama **`proxy.ts`** (función `proxy`); `next lint` ya no existe (se usa `eslint`).

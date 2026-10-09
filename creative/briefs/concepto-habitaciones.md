@@ -34,6 +34,7 @@ Medido sobre `creative/approved/p01-hero-escritorio.jpg` (2560 x 1600):
 7. Fotografía documental de 35 mm, luz natural, sin personas, con el aspecto de P01.
 8. Casa vieja restaurada: muros gruesos e irregulares, vigas y carpintería de madera oscura, puertas de tablones, marcos de piedra pálida y suelos de piedra o barro gastados. Nada nuevo, liso ni de catálogo.
 9. **Teles apagadas, mates y sin marca ni logotipo** (ni en el marco ni en la peana).
+10. **Suelo de piedra caliza vieja, gastada y mate**: losas grandes e irregulares con juntas finas, secas, sin brillo, sin efecto mojado y sin textura picada. Marea salió con suelo brillante y picado y la persona decidió dejarlo; las demás habitaciones lo piden mate de forma expresa.
 
 ## Cuatro rincones
 Todas con el aspecto de P01. Cambian el espacio, las camas y los elementos.
@@ -66,6 +67,7 @@ Prueba de miniatura: se distinguen por la forma, no por el color. Alba, una band
 4. **Móvil primero**: la versión móvil lleva composición propia.
 
 ## Riesgos al generar con IA
+- **Suelo brillante o picado** (pasó en Marea; se acepta allí): el prompt describe el suelo con un bloque propio, lo prohíbe en `NEVER` y lo repite en la comprobación final.
 - **Deriva a villa moderna o a estilo catálogo**: se frena con el contrato de estilo, las referencias y las prohibiciones. Si vuelve a pasar, se recorta o se repite con la prohibición reforzada.
 - **Arcos fantasma** en Terraza y Faro: se repite «flat lintel, rectangular openings only».
 - **Camas mal contadas** (Marea y Terraza): ChatGPT puede dibujar dos camas dobles o una sola. El prompt dice el número, el tipo y la posición de cada cama y lo repite en la comprobación final.
