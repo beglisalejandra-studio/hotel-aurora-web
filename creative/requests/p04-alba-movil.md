@@ -58,3 +58,17 @@ OUTPUT: one single image, portrait orientation, aspect ratio exactly 4:5 (width 
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+Archivo recibido: `creative/inbox/p04-alba-movil.png` (se subió a la raíz de `main`). PNG, **1122 × 1402** (4:5 exacto, 0,8003), 2,60 MB, sRGB. Trae credenciales de contenido C2PA de la herramienta, que confirman que es una imagen generada por IA.
+
+**Cumple:** es el primer plano que se pedía (almohadas de lino, manta terracota y la banda de luz sobre la pared, con el borde de la ventana y la cortina a la derecha); se reconoce la misma habitación (sombra del olivo, contraventana, cortina); se lee bien a 288 px.
+
+**Se aparta de la ficha:** mide 1122 × 1402 px y se pedían al menos 1200 × 1500. El mínimo de esta foto se rebajó a 1400 px en el lado largo porque en el teléfono se muestra a 358 px como máximo (1074 px a 3x).
+
+**Peso optimizado:** AVIF calidad 50: 18 KB a 480 px, 38 KB a 720 px, 63 KB a 960 px, 82 KB a 1122 px.
+
+**Pruebas:** en la maqueta a 390 × 844, en la escena del recorrido, el carril de habitaciones y la ficha de Alba: `docs/entregables/capturas/p04-en-maqueta-movil-390x844.jpg`.
+
+**Pendiente de la persona:** aprobar o repetir.

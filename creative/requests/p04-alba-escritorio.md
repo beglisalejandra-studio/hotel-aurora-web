@@ -58,3 +58,17 @@ OUTPUT: one single image, portrait orientation, aspect ratio exactly 4:5 (width 
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+Archivo recibido: `creative/inbox/p04-alba-escritorio.jpg` (se subió a la raíz de `main` como `.png`, pero es JPEG; se integró `main` en la rama, se movió a la bandeja y se corrigió la extensión). JPG, **2048 × 2560** (4:5 exacto), 2,19 MB, sRGB. Sin metadatos de procedencia; la herramienta se anota como ChatGPT por lo declarado para P01 (por confirmar).
+
+**Cumple:** medida y proporción exactas; mismos materiales que P01 (cal crema, madera oscura, piedra); banda de luz del amanecer sobre la pared con la sombra de una rama de olivo; cama de lino con manta terracota, mesita con lámpara, silla de enea, jarra con olivo y vistas al mar; vigas de madera oscura; solo vanos rectangulares (puerta y ventana); sin personas ni texto.
+
+**Se aparta de la ficha:** luz dorada y sombras cálidas, no azul pizarra (igual que P03); el suelo ocupa más de un tercio de la foto y se pedía el 15 %.
+
+**Peso optimizado:** AVIF calidad 50: 20 KB a 480 px, 68 KB a 960 px, 148 KB a 1600 px.
+
+**Pruebas:** en la maqueta a 1440 × 900 (carril y ficha de Alba): `docs/entregables/capturas/p04-en-maqueta-escritorio-1440x900.jpg`. Página de decisión con las dos fotos a tamaño real.
+
+**Pendiente de la persona:** aprobar o repetir.
