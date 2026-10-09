@@ -407,6 +407,276 @@
     "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
     "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
    }
+  },
+  {
+   "id": "p07-marea-escritorio",
+   "piece": "P07",
+   "version": "escritorio",
+   "request": "creative/requests/p07-marea-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p07-marea-escritorio.png",
+    "draft": "creative/generated-drafts/p07-marea-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 1500,
+   "bytes": 2914643,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
+    "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
+   }
+  },
+  {
+   "id": "p07-marea-movil",
+   "piece": "P07",
+   "version": "movil",
+   "request": "creative/requests/p07-marea-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p07-marea-movil.png",
+    "draft": "creative/generated-drafts/p07-marea-movil.png"
+   },
+   "format": "PNG",
+   "width": 1120,
+   "height": 1400,
+   "bytes": 2636912,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
+    "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
+   }
+  },
+  {
+   "id": "p08-marea-mirador-escritorio",
+   "piece": "P08",
+   "version": "escritorio",
+   "request": "creative/requests/p08-marea-mirador-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p08-marea-mirador-escritorio.png",
+    "draft": "creative/generated-drafts/p08-marea-mirador-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2291645,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
+    "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
+   }
+  },
+  {
+   "id": "p08-marea-mirador-movil",
+   "piece": "P08",
+   "version": "movil",
+   "request": "creative/requests/p08-marea-mirador-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p08-marea-mirador-movil.png",
+    "draft": "creative/generated-drafts/p08-marea-mirador-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2349854,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
+    "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
+   }
+  },
+  {
+   "id": "p09-marea-camas-escritorio",
+   "piece": "P09",
+   "version": "escritorio",
+   "request": "creative/requests/p09-marea-camas-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p09-marea-camas-escritorio.png",
+    "draft": "creative/generated-drafts/p09-marea-camas-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2657974,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
+    "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
+   }
+  },
+  {
+   "id": "p09-marea-camas-movil",
+   "piece": "P09",
+   "version": "movil",
+   "request": "creative/requests/p09-marea-camas-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p09-marea-camas-movil.png",
+    "draft": "creative/generated-drafts/p09-marea-camas-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2605251,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
+    "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
+   }
+  },
+  {
+   "id": "p28-marea-bano-escritorio",
+   "piece": "P28",
+   "version": "escritorio",
+   "request": "creative/requests/p28-marea-bano-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p28-marea-bano-escritorio.png",
+    "draft": "creative/generated-drafts/p28-marea-bano-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2436500,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
+    "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
+   }
+  },
+  {
+   "id": "p28-marea-bano-movil",
+   "piece": "P28",
+   "version": "movil",
+   "request": "creative/requests/p28-marea-bano-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p28-marea-bano-movil.png",
+    "draft": "creative/generated-drafts/p28-marea-bano-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2478817,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
+    "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
+   }
+  },
+  {
+   "id": "p29-marea-tv-escritorio",
+   "piece": "P29",
+   "version": "escritorio",
+   "request": "creative/requests/p29-marea-tv-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p29-marea-tv-escritorio.png",
+    "draft": "creative/generated-drafts/p29-marea-tv-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2416181,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
+    "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
+   }
+  },
+  {
+   "id": "p29-marea-tv-movil",
+   "piece": "P29",
+   "version": "movil",
+   "request": "creative/requests/p29-marea-tv-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+   "files": {
+    "original": "creative/inbox/p29-marea-tv-movil.png",
+    "draft": "creative/generated-drafts/p29-marea-tv-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2483870,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
+    "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
+   }
   }
  ]
 }

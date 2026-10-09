@@ -393,6 +393,13 @@ details.q p{padding:0 48px 24px 0;color:var(--ink-2);max-width:60ch}
 .facts div{display:flex;flex-direction:column}
 .facts dt{font-size:13px;color:var(--ink-2)}
 .facts dd{margin:0;font:400 22px/1.3 var(--f-display)}
+@media (max-width:767px){
+  .facts{display:grid;grid-template-columns:repeat(6,1fr);gap:14px 16px;margin-top:20px}
+  .facts div{grid-column:span 2}
+  .facts div:nth-child(1),.facts div:nth-child(2){grid-column:span 3}
+  .facts div:nth-child(3),.facts div:nth-child(4){grid-column:1/-1}
+  .facts dd{font-size:18px}
+}
 .room-grid{display:grid;gap:48px;padding-bottom:var(--sec)}
 .gal{display:grid;gap:16px}
 .gal .g1{aspect-ratio:4/5;width:100%}
@@ -401,6 +408,10 @@ details.q p{padding:0 48px 24px 0;color:var(--ink-2);max-width:60ch}
   .gal{grid-template-columns:1.1fr .9fr;grid-template-rows:auto auto}
   .gal .g1{grid-row:1/span 2;aspect-ratio:auto;min-height:100%}
 }
+.gal-more{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:16px;margin-top:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:4px}
+.gal-more .slot{aspect-ratio:3/2;scroll-snap-align:start}
+.gal-more:focus-visible{outline-offset:4px}
+@media (min-width:768px){.gal-more{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:1fr 1fr;overflow:visible}}
 .room-text{display:grid;gap:40px;margin-top:48px;max-width:68ch}
 .sunblock{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap}
 .sunnum{display:flex;flex-direction:column}
@@ -763,10 +774,11 @@ body.noscroll{overflow:hidden}
     <div class="room-grid">
       <div class="room-main">
         <div class="gal">
-          <div class="g1 ph slot" role="img" aria-label="Foto pendiente" id="g1"><span class="slot-label"><b id="g1c">P04</b><span data-es="Vista general, vertical 4:5" data-en="Overview, vertical 4:5">Vista general, vertical 4:5</span></span></div>
-          <div class="g2 slot" role="img" aria-label="Foto pendiente"><span class="slot-label"><b id="g2c">P05</b><span data-es="La luz sobre la pared, 3:2" data-en="Light on the wall, 3:2">La luz sobre la pared, 3:2</span></span></div>
-          <div class="g3 slot" role="img" aria-label="Foto pendiente"><span class="slot-label"><b id="g3c">P06</b><span data-es="Baño, 3:2" data-en="Bathroom, 3:2">Baño, 3:2</span></span></div>
+          <div class="g1 ph slot" role="img" aria-label="Foto pendiente" id="g1"><span class="slot-label"><b id="g1c">P04</b><span id="g1t"></span></span></div>
+          <div class="g2 slot" role="img" aria-label="Foto pendiente" id="g2"><span class="slot-label"><b id="g2c">P05</b><span id="g2t"></span></span></div>
+          <div class="g3 slot" role="img" aria-label="Foto pendiente" id="g3"><span class="slot-label"><b id="g3c">P06</b><span id="g3t"></span></span></div>
         </div>
+        <div class="gal-more" id="galMore" role="region" tabindex="0" aria-label="Más fotos de la habitación" data-es-aria="Más fotos de la habitación" data-en-aria="More photos of the room"></div>
         <div class="room-text">
           <p class="lead" id="rBlurb" style="max-width:60ch"></p>
           <div>
@@ -913,24 +925,28 @@ const CHECKIN = '15:00', CHECKOUT = '12:00'; // en producción vienen de los aju
 const ROOMS = {
   alba:    { n:'Alba',    area:32, guests:2, price:168, codes:['P04','P05','P06'],
     beds:{es:'1 cama doble', en:'1 double bed'},
+    photos:[['P04','Vista general, vertical 4:5','Overview, vertical 4:5'],['P05','La zona de TV, 3:2','The TV corner, 3:2'],['P06','El baño, 3:2','The bathroom, 3:2'],['P26','El baño: la pila de piedra, 3:2','The bathroom: the stone basin, 3:2'],['P27','La zona de TV desde la cama, 3:2','The TV corner from the bed, 3:2']],
     orient:{es:'Orientada al este.', en:'Facing east.'},
     light:{es:'Sol de 7:10 a 10:30.', en:'Sun from 7:10 to 10:30.'},
     sun:['7:10','10:30'],
     blurb:{es:'La habitación que despierta primero. El sol entra por la ventana a primera hora y recorre la pared de cal hasta media mañana.', en:'The room that wakes up first. The sun comes through the window early and travels along the lime wall until mid-morning.'} },
   marea:   { n:'Marea',   area:36, guests:3, price:189, codes:['P07','P08','P09'],
     beds:{es:'1 cama doble y 1 individual', en:'1 double bed and 1 single bed'},
+    photos:[['P07','Vista general, vertical 4:5','Overview, vertical 4:5'],['P08','El mirador, 3:2','The window bench, 3:2'],['P09','Las dos camas, 3:2','The two beds, 3:2'],['P28','El baño, 3:2','The bathroom, 3:2'],['P29','La zona de TV, 3:2','The TV corner, 3:2']],
     orient:{es:'Vista al mar, orientada al suroeste.', en:'Sea view, facing south-west.'},
     light:{es:'Sol de 16:20 a 20:45.', en:'Sun from 16:20 to 20:45.'},
     sun:['16:20','20:45'],
     blurb:{es:'Un banco de obra en una ventana de muro grueso, con el Atlántico enmarcado y el sol dorado de la tarde sobre la ropa de cama. Cabe una persona más: una cama doble y una individual.', en:'A masonry bench in the window of a thick wall, the Atlantic framed and the golden afternoon sun across the bed linen. Room for one more: a double bed and a single bed.'} },
   terraza: { n:'Terraza', area:40, guests:2, price:168, codes:['P10','P11','P12'],
     beds:{es:'2 camas individuales', en:'2 single beds'},
+    photos:[['P10','Vista general, vertical 4:5','Overview, vertical 4:5'],['P11','La terraza, 3:2','The terrace, 3:2'],['P12','Las dos camas individuales, 3:2','The two single beds, 3:2'],['P30','El baño, 3:2','The bathroom, 3:2'],['P31','La zona de TV, 3:2','The TV corner, 3:2']],
     orient:{es:'Orientada al este, con terraza privada.', en:'Facing east, with a private terrace.'},
     light:{es:'Sol de 8:00 a 12:00.', en:'Sun from 8:00 to 12:00.'},
     sun:['8:00','12:00'],
     blurb:{es:'Dos camas individuales y una terraza privada con sol suave y dorado por la mañana, buena para tomar el sol. Desayunar fuera en cuanto el sol llega a la mesa.', en:'Two single beds and a private terrace with soft golden morning sun, made for sunbathing. Breakfast outside as soon as the sun reaches the table.'} },
   faro:    { n:'Faro',    area:74, guests:4, price:296, codes:['P13','P14','P15'],
     beds:{es:'Salón y 2 dormitorios: 1 cama doble y 2 individuales', en:'Living room and 2 bedrooms: 1 double bed and 2 single beds'},
+    photos:[['P13','El salón, vertical 4:5','The living room, vertical 4:5'],['P34','La zona de TV del salón, 3:2','The living-room TV corner, 3:2'],['P14','Dormitorio con cama doble, 3:2','Bedroom with the double bed, 3:2'],['P15','Dormitorio con dos camas individuales, 3:2','Bedroom with two single beds, 3:2'],['P32','El baño, 3:2','The bathroom, 3:2'],['P33','La azotea, 3:2','The rooftop terrace, 3:2']],
     orient:{es:'Mini apartamento orientado al sur y al oeste.', en:'Mini apartment facing south and west.'},
     light:{es:'Sol de 11:30 a 20:50.', en:'Sun from 11:30 to 20:50.'},
     sun:['11:30','20:50'],
@@ -1070,7 +1086,9 @@ function renderRoomPage(){
     : `<p class="lead">${r.light[lang]}</p>`;
   $('#rFeat').innerHTML = FEAT[lang].map(([h, items]) => `<div><h3>${h}</h3><ul>${items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('');
   $('#rPrice').textContent = eur(r.price);
-  $('#g1c').textContent = r.codes[0]; $('#g2c').textContent = r.codes[1]; $('#g3c').textContent = r.codes[2];
+  const ph = r.photos, alt = lang==='es'?'Foto pendiente':'Photo pending', li = lang==='es'?1:2;
+  [['g1',0],['g2',1],['g3',2]].forEach(([id, i]) => { $('#' + id + 'c').textContent = ph[i][0]; $('#' + id + 't').textContent = ph[i][li]; $('#' + id).setAttribute('aria-label', alt + ' ' + ph[i][0] + ': ' + ph[i][li]); });
+  $('#galMore').innerHTML = ph.slice(3).map(x => `<div class="slot ph" role="img" aria-label="${alt} ${x[0]}: ${x[li]}"><span class="slot-label"><b>${x[0]}</b>${x[li]}</span></div>`).join('');
   $('#rOthers').innerHTML = Object.entries(ROOMS).filter(([k]) => k !== roomKey).map(([k, o]) => `<li><a href="#/habitacion/${k}"><div class="ph slot" role="img" aria-label="${lang==='es'?'Foto pendiente':'Photo pending'} ${o.codes[0]}"><span class="slot-label"><b>${o.codes[0]}</b></span></div><span><strong class="h3" style="display:block">${o.n}</strong><span class="small">${o.light[lang]}</span></span></a></li>`).join('');
 }
 $('#rBook').addEventListener('click', () => openBooking({room: roomKey}));
