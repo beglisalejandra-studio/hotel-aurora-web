@@ -72,3 +72,5 @@ Archivo recibido: `creative/inbox/p04-alba-movil.png` (se subió a la raíz de `
 **Pruebas:** en la maqueta a 390 × 844, en la escena del recorrido, el carril de habitaciones y la ficha de Alba: `docs/entregables/capturas/p04-en-maqueta-movil-390x844.jpg`.
 
 **Pendiente de la persona:** aprobar o repetir.
+
+**Aprobada por la persona el 2026-10-09** (mensaje en el chat). Máster aprobado: `creative/approved/p04-alba-movil.png`.

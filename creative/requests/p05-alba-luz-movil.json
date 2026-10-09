@@ -1,0 +1,22 @@
+{
+  "name": "p05-alba-luz-movil",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "habitaciones",
+  "role": "habitacion Alba, la luz sobre la pared, version movil (hueco medido 358x239)",
+  "status": "requested",
+  "requested_at": "2026-10-09T18:55:20.520Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1200,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ]
+}

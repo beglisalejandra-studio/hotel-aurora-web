@@ -72,3 +72,5 @@ Archivo recibido: `creative/inbox/p04-alba-escritorio.jpg` (se subió a la raíz
 **Pruebas:** en la maqueta a 1440 × 900 (carril y ficha de Alba): `docs/entregables/capturas/p04-en-maqueta-escritorio-1440x900.jpg`. Página de decisión con las dos fotos a tamaño real.
 
 **Pendiente de la persona:** aprobar o repetir.
+
+**Aprobada por la persona el 2026-10-09** (mensaje en el chat). Máster aprobado: `creative/approved/p04-alba-escritorio.jpg`.

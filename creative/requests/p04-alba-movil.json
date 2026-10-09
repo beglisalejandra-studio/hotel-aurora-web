@@ -4,7 +4,7 @@
   "aspect": "4:5",
   "page": "habitaciones",
   "role": "habitacion Alba, vista general, version movil (contenedores medidos 358x448, 288x360 y 234x293)",
-  "status": "received",
+  "status": "approved",
   "requested_at": "2026-10-09T16:57:37.484Z",
   "master": {
     "w": 2048,
@@ -21,5 +21,7 @@
   ],
   "note": "Minimo rebajado de 1500 a 1400 px en el lado largo para esta version movil: se muestra a 358 px de ancho como maximo (1074 px a 3x) y la foto mide 1122 x 1402.",
   "received_at": "2026-10-09T18:50:23.538Z",
-  "file": "creative/generated-drafts/p04-alba-movil.png"
+  "file": "creative/approved/p04-alba-movil.png",
+  "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+  "approved_at": "2026-10-09"
 }

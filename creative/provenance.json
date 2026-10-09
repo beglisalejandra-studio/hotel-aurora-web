@@ -139,7 +139,7 @@
       "request": "creative/requests/p04-alba-escritorio.md",
       "files": {
         "original": "creative/inbox/p04-alba-escritorio.jpg",
-        "draft": "creative/generated-drafts/p04-alba-escritorio.jpg"
+        "master": "creative/approved/p04-alba-escritorio.jpg"
       },
       "format": "JPG (se subio con extension .png)",
       "width": 2048,
@@ -151,9 +151,9 @@
       "model": "no consta en el archivo",
       "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta (por confirmar)",
       "embedded_content_credentials": false,
-      "state": "draft",
-      "approved_by": null,
-      "approved_at": null,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+      "approved_at": "2026-10-09",
       "alt_draft": {
         "es": "Habitación Alba al amanecer: cama de lino con manta terracota, mesita con lámpara, silla de enea y ventana abierta con vistas al mar, bajo vigas de madera oscura.",
         "en": "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams."
@@ -166,7 +166,7 @@
       "request": "creative/requests/p04-alba-movil.md",
       "files": {
         "original": "creative/inbox/p04-alba-movil.png",
-        "draft": "creative/generated-drafts/p04-alba-movil.png"
+        "master": "creative/approved/p04-alba-movil.png"
       },
       "format": "PNG (se subio con extension .png)",
       "width": 1122,
@@ -178,9 +178,9 @@
       "model": "segun las credenciales de contenido C2PA del archivo (ver cabecera)",
       "declared_by": "persona (ChatGPT, chat 2026-10-09) y credenciales C2PA del propio archivo",
       "embedded_content_credentials": true,
-      "state": "draft",
-      "approved_by": null,
-      "approved_at": null,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+      "approved_at": "2026-10-09",
       "alt_draft": {
         "es": "Primer plano de la cama de Alba: almohadas de lino, manta terracota y una banda de luz del amanecer sobre la pared, con el borde de la ventana a la derecha.",
         "en": "Close-up of the bed in Alba: linen pillows, a terracotta blanket and a band of dawn light on the wall, with the window edge on the right."
