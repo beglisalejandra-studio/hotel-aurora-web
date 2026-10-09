@@ -1,0 +1,23 @@
+{
+  "name": "p07-marea-escritorio",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "habitaciones",
+  "role": "habitacion Marea, vista general, version escritorio (huecos medidos 288x360 y 358x448)",
+  "status": "requested",
+  "requested_at": "2026-10-09T19:19:03.795Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "contract": "essence"
+}
