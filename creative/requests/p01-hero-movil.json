@@ -4,7 +4,7 @@
   "aspect": "9:16",
   "page": "home",
   "role": "heroe de portada en movil (LCP): la misma fachada, recomposicion vertical",
-  "status": "requested",
+  "status": "received",
   "requested_at": "2026-10-09T16:04:50.965Z",
   "master": {
     "w": 1440,
@@ -18,5 +18,7 @@
     ".png",
     ".webp",
     ".avif"
-  ]
+  ],
+  "received_at": "2026-10-09T16:26:44.655Z",
+  "file": "creative/generated-drafts/p01-hero-movil.png"
 }

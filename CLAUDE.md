@@ -19,7 +19,8 @@
 - La versión móvil es **siempre** prioritaria: se diseña, se mide y se revisa **antes** que la de escritorio. Un cambio no está bien si en 390 × 844 se ve mal, aunque en escritorio luzca.
 - Toda revisión de un entregable visual incluye captura en **390 × 844**, 768 × 1024 y 1440 × 900, vista antes de pedir aprobación.
 - Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
-- Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio.
+- Cada foto se pide **siempre en dos versiones** (escritorio y móvil), cada una como imagen **separada** con su ficha, prompt y nombre (`<pieza>-escritorio`, `<pieza>-movil`), en el mismo mensaje.
+- Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio, incluidos móviles cortos (375 × 667).
 - Objetivos táctiles ≥ 44 px, sin desbordamiento horizontal a 390 px y el botón flotante no tapa la acción principal.
 
 ## Reglas técnicas (Next.js next · TypeScript estricto)

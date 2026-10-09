@@ -1,0 +1,22 @@
+{
+  "name": "p03-patio-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "home",
+  "role": "recorrido: patio interior, version escritorio (contenedor medido 634 x 422)",
+  "status": "requested",
+  "requested_at": "2026-10-09T16:32:30.430Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1600,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ]
+}

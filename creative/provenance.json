@@ -1,0 +1,59 @@
+{
+  "_nota": "Registro INTERNO de procedencia y aprobaciones de las imagenes. No se publica ni se muestra en el sitio (decision de la persona, 2026-10-09). Se traspasa a creative/manifest.json (outputs) en la fase 4, cuando existan las paginas y su VIDEO_SCORE. Los archivos optimizados que se publican (AVIF/WebP) no llevan metadatos incrustados: este registro es la prueba de procedencia.",
+  "assets": [
+    {
+      "id": "p01-hero-escritorio",
+      "piece": "P01",
+      "version": "escritorio",
+      "request": "creative/requests/p01-hero-escritorio.md",
+      "files": {
+        "original": "creative/inbox/p01-hero-escritorio.jpg",
+        "master": "creative/approved/p01-hero-escritorio.jpg"
+      },
+      "format": "JPG",
+      "width": 2560,
+      "height": 1600,
+      "bytes": 1920591,
+      "aspect": "16:10",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (chat, 2026-10-09)",
+      "embedded_content_credentials": false,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: «Aprobada»)",
+      "approved_at": "2026-10-09",
+      "alt_draft": {
+        "es": "Fachada de una casa encalada de dos plantas, con tejado de teja, contraventanas oscuras, dos olivos y el patio de grava al amanecer, con el mar al fondo.",
+        "en": "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind."
+      }
+    },
+    {
+      "id": "p01-hero-movil",
+      "piece": "P01",
+      "version": "movil",
+      "request": "creative/requests/p01-hero-movil.md",
+      "files": {
+        "original": "creative/inbox/p01-hero-movil.png",
+        "draft": "creative/generated-drafts/p01-hero-movil.png"
+      },
+      "format": "PNG",
+      "width": 941,
+      "height": 1672,
+      "bytes": 3300735,
+      "aspect": "9:16",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "gpt-image (segun las credenciales de contenido C2PA del archivo)",
+      "declared_by": "persona (chat, 2026-10-09) y credenciales C2PA del propio archivo",
+      "embedded_content_credentials": true,
+      "state": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "alt_draft": {
+        "es": "Fachada de una casa encalada de dos plantas con dos olivos y un patio de grava al amanecer, con el mar a ambos lados.",
+        "en": "Two-storey whitewashed house with two olive trees and a gravel courtyard at dawn, with the sea on both sides."
+      }
+    }
+  ]
+}

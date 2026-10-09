@@ -2,15 +2,17 @@
 
 Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md` (medidas exactas, prompt ultra realista y carpeta de subida). Al recibirla se comprueba con `media-intake.mjs`, se anota como **borrador** y la persona la aprueba antes de pasar a `public/media/`. La primera imagen aprobada de cada espacio **fija la identidad** (edificio, luz, paleta): las siguientes se piden como variaciones de ella.
 
+**Dos versiones por pieza (regla permanente):** cada foto se pide siempre en **escritorio y móvil**, cada una como imagen **separada**, con su propia ficha, su prompt y su nombre (`<pieza>-escritorio`, `<pieza>-movil`), las dos en el mismo mensaje. La versión móvil lleva la medida del contenedor móvil real y un encuadre pensado para una pantalla pequeña (sujeto más grande, menos detalles finos).
+
 **Móvil primero (regla permanente):** cada pieza se pide con su composición nativa para el contenedor móvil real, nunca como recorte automático de la de escritorio. Antes de pedirla se mide el contenedor en la maqueta y se calcula cuánto de la foto se ve con `cover`; la ficha fija las zonas seguras. Ninguna pieza se aprueba sin verla en 390 × 844.
 
-**Aviso sobre contenido sintético:** si las imágenes se generan con IA, se registran con `ai_generated: true` en `creative/manifest.json` y el portfolio debe indicarlo (el hotel y sus fotos son ficticios). Para un cliente real se usan fotografías reales.
+**Procedencia (interna):** las imágenes generadas con IA se registran con `ai_generated: true` y la herramienta usada en `creative/provenance.json` (y en `creative/manifest.json` desde la fase 4). Por decisión de la persona **no se muestra ninguna etiqueta visible** en el sitio. Para un cliente real se usan fotografías reales.
 
 | # | Código | Tipo | Qué | Proporción | Estado |
 |---|---|---|---|---|---|
-| 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Recibida** como borrador; pendiente de tu aprobación (`p01-hero-escritorio.md`) |
-| 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Solicitada** (`p01-hero-movil.md`); se genera con P01 escritorio como referencia |
-| 3 | P03 | Foto | Patio interior a media mañana | 3:2 | Pendiente |
+| 1 | P01 escritorio | Foto | Fachada al amanecer, héroe de la portada (LCP) | 16:10 | **Aprobada** el 2026-10-09 (`p01-hero-escritorio.md`) |
+| 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Recibida** (941 x 1672); revisada, pendiente de tu aprobación (`p01-hero-movil.md`) |
+| 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | **Solicitada** (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
 | 4 | P04 | Foto | Habitación Alba, vista general | 4:5 | Pendiente |
 | 5 | P05 | Foto | Alba, la luz sobre la pared | 3:2 | Pendiente |
 | 6 | P06 | Foto | Alba, baño | 3:2 | Pendiente |

@@ -60,3 +60,5 @@ Archivo recibido: `creative/inbox/p01-hero-escritorio.jpg` · JPG, 2560 × 1600 
 **Móvil (problema):** el contenedor del héroe en un teléfono mide 390 × 772 (0,51). Con `cover`, esta foto 16:10 muestra solo el **32 % de su ancho**: se pierden los olivos y el mar, y la fachada queda cortada por las ventanas. Capturas: `docs/entregables/capturas/p01-movil-recorte-del-escritorio.jpg`. Por eso se pide una composición nativa 9:16 (`p01-hero-movil.md`).
 
 **Pendiente de la persona:** aprobar o repetir con corrección. Nada pasa a `public/media/` sin esa aprobación.
+
+**Aprobada por la persona el 2026-10-09** (mensaje en el chat). El máster aprobado está en `creative/approved/p01-hero-escritorio.jpg`. Procedencia (interna): `creative/provenance.json`. Todavía no está en `public/media/`: eso ocurre al montar el sitio (fase 5), optimizada.

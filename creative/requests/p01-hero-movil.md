@@ -53,3 +53,17 @@ Shot on a full-frame mirrorless camera with a 35mm lens at f/5.6, ISO 100, verti
 - [ ] Tienes derechos de uso del material (propio, con licencia o generado con una herramienta que lo permita).
 - [ ] Texto alternativo escrito; video con poster y fallback; con audio, subtítulos.
 - [ ] Todo lo generado lleva marca de agua SynthID (Google). Es contenido sintético: valora si debes indicarlo al público.
+
+## Revisión de recepción (2026-10-09)
+
+Archivo recibido: `creative/inbox/p01-hero-movil.png` (se subió como `p01-hero-movil.jpg.png`; se renombró). PNG, **941 × 1672** (9:16 correcto), 3,30 MB, sRGB. Trae credenciales de contenido C2PA de ChatGPT (`gpt-image`, medios generados por IA), que confirman la procedencia declarada por la persona.
+
+**Cumple:** misma casa que la de escritorio (cuatro ventanas arriba, dos abajo, puerta con marco de piedra, dos macetas con olivo, dos olivos, muros bajos, mar a los lados y luz desde la izquierda); sin personas, texto ni arcos; casa entera en la banda del 31 % al 53 % de la altura y suelo liso en el 47 % inferior, justo donde va el texto.
+
+**Se aparta de la ficha:** pedía un encuadre más cercano y salió un plano general (la casa ocupa el 70 % del ancho y el 21 % del alto); el cielo, un 31 % de la imagen, es un azul muy saturado; mide 941 px de ancho, no 1440 (sirve hasta pantallas de 2,4x; un poco blanda a 3x). Los olivos son algo distintos de los de escritorio.
+
+**Prueba en la maqueta con las dos fotos reales (7 tamaños):** la casa se ve entera en móvil y en tableta, y con las reglas de `DESIGN.md` («Héroe con foto real») el titular supera 3:1 y el párrafo 4,5:1 en todos. Capturas: `docs/entregables/capturas/p01-real-movil-390x844.jpg`, `p01-real-movil-375x667.jpg`, `p01-real-tableta-768x1024.jpg` y `p01-real-escritorio-1440x900.jpg`.
+
+**Peso optimizado:** AVIF 720 px calidad 55 = 102 KB (presupuesto móvil ≤ 110 KB); AVIF 941 px calidad 45 = 113 KB; AVIF 480 px calidad 55 = 46 KB.
+
+**Pendiente de la persona:** aprobar o repetir.

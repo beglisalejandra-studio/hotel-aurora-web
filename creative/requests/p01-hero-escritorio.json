@@ -4,7 +4,7 @@
   "aspect": "16:10",
   "page": "home",
   "role": "heroe de portada en escritorio (LCP)",
-  "status": "received",
+  "status": "approved",
   "requested_at": "2026-10-09T15:41:02.960Z",
   "master": {
     "w": 2560,
@@ -20,5 +20,7 @@
     ".avif"
   ],
   "received_at": "2026-10-09T15:57:59.892Z",
-  "file": "creative/generated-drafts/p01-hero-escritorio.jpg"
+  "file": "creative/approved/p01-hero-escritorio.jpg",
+  "approved_by": "persona (mensaje en el chat: «Aprobada»)",
+  "approved_at": "2026-10-09"
 }
