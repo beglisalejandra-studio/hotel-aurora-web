@@ -73,3 +73,5 @@ A la persona no le gustó cómo se veía el primer recorte en el teléfono (cort
 - **C, cerrado** (esquina x 883, y 640; 1248 × 832 px): puerta, macetas, estanque y tronco muy grandes; se lee mejor a 328 px, pero pierde el tejado y el cielo y parece la entrada de una villa.
 
 Pendiente de la persona: elegir B o C, o pedir otra toma. Página de decisión con los dos a tamaño real: `docs/entregables/capturas/p03-recortes-opciones.jpg`.
+
+**Aprobada por la persona el 2026-10-09** (mensaje en el chat: «Elijo el recorte B para el móvil»). Máster aprobado: `creative/approved/p03-patio-movil.webp` (recorte de 1856 × 1237 px, esquina x 704 e y 302, de la foto de escritorio aprobada).

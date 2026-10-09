@@ -88,7 +88,7 @@
       "version": "movil",
       "request": "creative/requests/p03-patio-movil.md",
       "files": {
-        "draft": "creative/generated-drafts/p03-patio-movil.webp"
+        "master": "creative/approved/p03-patio-movil.webp"
       },
       "format": "WebP",
       "width": 1856,
@@ -103,15 +103,15 @@
         "h": 1237
       },
       "embedded_content_credentials": false,
-      "state": "draft",
-      "approved_by": null,
-      "approved_at": null,
+      "state": "approved",
+      "approved_by": "persona (mensaje en el chat: «Elijo el recorte B para el móvil»)",
+      "approved_at": "2026-10-09",
       "alt_draft": {
         "es": "Detalle del patio interior: un olivo junto a una puerta de madera entreabierta y un estanque rectangular de piedra.",
         "en": "Detail of the interior courtyard: an olive tree beside a partly open wooden door and a rectangular stone pond."
       },
       "derived_from": "creative/approved/p03-patio-escritorio.webp",
-      "note": "Borrador: recorte B (propuesto). Alternativa C: x883,y640,1248x832. Pendiente de eleccion de la persona."
+      "note": "Recorte B aprobado (esquina x704,y302; 1856x1237) de p03-patio-escritorio."
     },
     {
       "id": "p03-patio-vertical-extra",

@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "home",
   "role": "recorrido: patio interior, version movil (contenedor medido 328 x 218)",
-  "status": "received",
+  "status": "approved",
   "requested_at": "2026-10-09T16:32:30.495Z",
   "master": {
     "w": 2560,
@@ -20,7 +20,7 @@
     ".avif"
   ],
   "received_at": "2026-10-09T17:10:00.000Z",
-  "file": "creative/generated-drafts/p03-patio-movil.webp",
+  "file": "creative/approved/p03-patio-movil.webp",
   "derived_from": "creative/approved/p03-patio-escritorio.webp",
   "crop": {
     "x": 704,
@@ -28,21 +28,7 @@
     "w": 1856,
     "h": 1237
   },
-  "note": "La persona subio un vertical 9:16 que no encaja en el hueco movil de P03 (328x218, 3:2); se conserva como extra. La version movil es un recorte 3:2 de la de escritorio aprobada. El primer recorte no gusto; se probaron cuatro mas y tres revisores independientes los puntuaron (B 12 puntos, C 11, entera 8, primero 8). Pendiente de que la persona elija B o C.",
-  "crop_options": {
-    "B": {
-      "x": 704,
-      "y": 302,
-      "w": 1856,
-      "h": 1237,
-      "nota": "propuesto; el primer recorte (x768,y358,1664x1109) fue rechazado por la persona"
-    },
-    "C": {
-      "x": 883,
-      "y": 640,
-      "w": 1248,
-      "h": 832,
-      "nota": "cerrado, alternativa"
-    }
-  }
+  "note": "Version movil aprobada: recorte B 3:2 de la foto de escritorio aprobada (esquina x704,y302; 1856x1237). Se descartaron el primer recorte, C y la foto entera. El vertical 9:16 subido se conserva como extra sin uso.",
+  "approved_by": "persona (mensaje en el chat: «Elijo el recorte B para el móvil»)",
+  "approved_at": "2026-10-09"
 }
