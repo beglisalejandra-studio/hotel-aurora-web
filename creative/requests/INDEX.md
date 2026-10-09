@@ -16,8 +16,10 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 2 | P01 móvil | Foto | La misma fachada recompuesta en vertical para el teléfono (contenedor real 390 × 772) | **9:16** (1440 × 2560) | **Aprobada** el 2026-10-09, tal cual (941 x 1672; `p01-hero-movil.md`) |
 | 3 | P03 escritorio y móvil | Foto (2 versiones) | Patio interior a media mañana | 3:2 las dos (la móvil, con encuadre más cerrado) | **Aprobadas** el 2026-10-09: escritorio, y móvil con el recorte B (`p03-patio-escritorio.md` y `p03-patio-movil.md`) |
 | 4 | P04 escritorio y móvil | Foto (2 versiones) | Habitación Alba, vista general | 4:5 las dos (la móvil, con encuadre más cerrado) | **Aprobadas** el 2026-10-09: escritorio y móvil (`p04-alba-escritorio.md` y `p04-alba-movil.md`) |
-| 5 | P05 escritorio y móvil | Foto (2 versiones) | Alba, la luz sobre la pared | 3:2 las dos | **En pausa** el 2026-10-09: la persona pidió fotos que no se parezcan entre habitaciones; se propone suprimirla (ver `creative/briefs/concepto-habitaciones.md`) |
-| 6 | P06 | Foto | Alba, baño | 3:2 | Pendiente |
+| 5 | P05 escritorio y móvil | Foto (2 versiones) | Alba, zona de TV (alacena de tablones) | 3:2 las dos | **Solicitada** en el prompt maestro de Alba (`creative/briefs/prompt-maestro-alba.md`); sustituye a «luz sobre la pared» |
+| 6 | P06 escritorio y móvil | Foto (2 versiones) | Alba, baño general | 3:2 las dos | **Solicitada** en el prompt maestro de Alba |
+| 6b | P26 escritorio y móvil | Foto (2 versiones) | Alba, baño: pila de piedra y luz sobre la cal | 3:2 las dos | **Solicitada** en el prompt maestro de Alba |
+| 6c | P27 escritorio y móvil | Foto (2 versiones) | Alba, zona de TV vista desde la cama | 3:2 las dos | **Solicitada** en el prompt maestro de Alba |
 | 7 | P16 | Foto | Sala del restaurante con luz de ventana (también es el póster de V01) | 3:2 | Pendiente |
 | 8 | V01 | Vídeo | Luz de ventana sobre la mesa, 6 s en bucle, sin audio | 3:2 | Pendiente de #7 |
 | 9 | P19 | Foto | Sala de tratamientos del spa | 4:5 | Pendiente |

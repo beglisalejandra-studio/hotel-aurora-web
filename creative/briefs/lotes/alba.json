@@ -1,0 +1,62 @@
+{
+  "lote": "alba",
+  "prompt": "creative/briefs/prompt-maestro-alba.md",
+  "items": [
+    {
+      "name": "p06-alba-bano-escritorio",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, bano general, version escritorio (hueco 348x232)",
+      "min_long_side": 1500
+    },
+    {
+      "name": "p06-alba-bano-movil",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, bano general, version movil (hueco 358x239)",
+      "min_long_side": 1200
+    },
+    {
+      "name": "p05-alba-tv-escritorio",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, zona de TV general, version escritorio (hueco 348x232)",
+      "min_long_side": 1500
+    },
+    {
+      "name": "p05-alba-tv-movil",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, zona de TV general, version movil (hueco 358x239)",
+      "min_long_side": 1200
+    },
+    {
+      "name": "p26-alba-bano-detalle-escritorio",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, bano detalle de la pila, version escritorio (hueco 348x232)",
+      "min_long_side": 1500
+    },
+    {
+      "name": "p26-alba-bano-detalle-movil",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, bano detalle de la pila, version movil (hueco 358x239)",
+      "min_long_side": 1200
+    },
+    {
+      "name": "p27-alba-tv-vista-cama-escritorio",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, zona de TV vista desde la cama, version escritorio (hueco 348x232)",
+      "min_long_side": 1500
+    },
+    {
+      "name": "p27-alba-tv-vista-cama-movil",
+      "aspect": "3:2",
+      "page": "habitaciones",
+      "role": "Alba, zona de TV vista desde la cama, version movil (hueco 358x239)",
+      "min_long_side": 1200
+    }
+  ]
+}
