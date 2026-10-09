@@ -4,6 +4,8 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 
 **Dos versiones por pieza (regla permanente):** cada foto se pide siempre en **escritorio y móvil**, cada una como imagen **separada**, con su propia ficha, su prompt y su nombre (`<pieza>-escritorio`, `<pieza>-movil`), las dos en el mismo mensaje. La versión móvil lleva la medida del contenedor móvil real y un encuadre pensado para una pantalla pequeña (sujeto más grande, menos detalles finos).
 
+**Medidas dentro del prompt (regla permanente):** el bloque que se copia en la herramienta termina siempre con una línea `OUTPUT:` con orientación, proporción, tamaño objetivo y mínimo, calidad, color y formato, porque la persona solo copia ese bloque. La tabla de medidas exactas de la ficha sigue siendo la referencia que comprueba `media-intake`. La herramienta decide el tamaño final; lo que no llegue al mínimo se avisa al subirlo.
+
 **Móvil primero (regla permanente):** cada pieza se pide con su composición nativa para el contenedor móvil real, nunca como recorte automático de la de escritorio. Antes de pedirla se mide el contenedor en la maqueta y se calcula cuánto de la foto se ve con `cover`; la ficha fija las zonas seguras. Ninguna pieza se aprueba sin verla en 390 × 844.
 
 **Procedencia (interna):** las imágenes generadas con IA se registran con `ai_generated: true` y la herramienta usada en `creative/provenance.json` (y en `creative/manifest.json` desde la fase 4). Por decisión de la persona **no se muestra ninguna etiqueta visible** en el sitio. Para un cliente real se usan fotografías reales.

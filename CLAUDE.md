@@ -20,6 +20,7 @@
 - Toda revisión de un entregable visual incluye captura en **390 × 844**, 768 × 1024 y 1440 × 900, vista antes de pedir aprobación.
 - Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
 - Cada foto se pide **siempre en dos versiones** (escritorio y móvil), cada una como imagen **separada** con su ficha, prompt y nombre (`<pieza>-escritorio`, `<pieza>-movil`), en el mismo mensaje.
+- El bloque del prompt que se copia en la herramienta termina siempre con una línea `OUTPUT:` (orientación, proporción, tamaño objetivo y mínimo, calidad, color y formato).
 - Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio, incluidos móviles cortos (375 × 667).
 - Objetivos táctiles ≥ 44 px, sin desbordamiento horizontal a 390 px y el botón flotante no tapa la acción principal.
 
