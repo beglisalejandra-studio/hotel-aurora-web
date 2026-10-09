@@ -1,190 +1,412 @@
 {
-  "_nota": "Registro INTERNO de procedencia y aprobaciones de las imagenes. No se publica ni se muestra en el sitio (decision de la persona, 2026-10-09). Se traspasa a creative/manifest.json (outputs) en la fase 4, cuando existan las paginas y su VIDEO_SCORE. Los archivos optimizados que se publican (AVIF/WebP) no llevan metadatos incrustados: este registro es la prueba de procedencia.",
-  "assets": [
-    {
-      "id": "p01-hero-escritorio",
-      "piece": "P01",
-      "version": "escritorio",
-      "request": "creative/requests/p01-hero-escritorio.md",
-      "files": {
-        "original": "creative/inbox/p01-hero-escritorio.jpg",
-        "master": "creative/approved/p01-hero-escritorio.jpg"
-      },
-      "format": "JPG",
-      "width": 2560,
-      "height": 1600,
-      "bytes": 1920591,
-      "aspect": "16:10",
-      "ai_generated": true,
-      "tool": "ChatGPT",
-      "model": "no consta en el archivo",
-      "declared_by": "persona (chat, 2026-10-09)",
-      "embedded_content_credentials": false,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: «Aprobada»)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Fachada de una casa encalada de dos plantas, con tejado de teja, contraventanas oscuras, dos olivos y el patio de grava al amanecer, con el mar al fondo.",
-        "en": "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind."
-      }
-    },
-    {
-      "id": "p01-hero-movil",
-      "piece": "P01",
-      "version": "movil",
-      "request": "creative/requests/p01-hero-movil.md",
-      "files": {
-        "original": "creative/inbox/p01-hero-movil.png",
-        "master": "creative/approved/p01-hero-movil.png"
-      },
-      "format": "PNG",
-      "width": 941,
-      "height": 1672,
-      "bytes": 3300735,
-      "aspect": "9:16",
-      "ai_generated": true,
-      "tool": "ChatGPT",
-      "model": "gpt-image (segun las credenciales de contenido C2PA del archivo)",
-      "declared_by": "persona (chat, 2026-10-09) y credenciales C2PA del propio archivo",
-      "embedded_content_credentials": true,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: no se repite con encuadre mas cercano porque se cortarian los bordes del hotel; se conserva tal cual)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Fachada de una casa encalada de dos plantas con dos olivos y un patio de grava al amanecer, con el mar a ambos lados.",
-        "en": "Two-storey whitewashed house with two olive trees and a gravel courtyard at dawn, with the sea on both sides."
-      }
-    },
-    {
-      "id": "p03-patio-escritorio",
-      "piece": "P03",
-      "version": "escritorio",
-      "request": "creative/requests/p03-patio-escritorio.md",
-      "files": {
-        "original": "creative/inbox/p03-patio-escritorio.webp",
-        "master": "creative/approved/p03-patio-escritorio.webp"
-      },
-      "format": "WebP (se subio con extension .png)",
-      "width": 2560,
-      "height": 1706,
-      "bytes": 1149468,
-      "aspect": "3:2",
-      "ai_generated": true,
-      "tool": "ChatGPT",
-      "model": "no consta en el archivo",
-      "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta en P03 (por confirmar)",
-      "embedded_content_credentials": false,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: «la P03 de escritorio queda aprobada»)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
-        "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
-      }
-    },
-    {
-      "id": "p03-patio-movil",
-      "piece": "P03",
-      "version": "movil",
-      "request": "creative/requests/p03-patio-movil.md",
-      "files": {
-        "master": "creative/approved/p03-patio-movil.webp"
-      },
-      "format": "WebP",
-      "width": 1856,
-      "height": 1237,
-      "aspect": "3:2",
-      "ai_generated": true,
-      "tool": "derivada por recorte de p03-patio-escritorio (imagen de ChatGPT); recorte hecho por el agente, sin regenerar",
-      "crop": {
-        "x": 704,
-        "y": 302,
-        "w": 1856,
-        "h": 1237
-      },
-      "embedded_content_credentials": false,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: «Elijo el recorte B para el móvil»)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Detalle del patio interior: un olivo junto a una puerta de madera entreabierta y un estanque rectangular de piedra.",
-        "en": "Detail of the interior courtyard: an olive tree beside a partly open wooden door and a rectangular stone pond."
-      },
-      "derived_from": "creative/approved/p03-patio-escritorio.webp",
-      "note": "Recorte B aprobado (esquina x704,y302; 1856x1237) de p03-patio-escritorio."
-    },
-    {
-      "id": "p03-patio-vertical-extra",
-      "piece": "P03",
-      "version": "extra (sin uso asignado)",
-      "request": "creative/requests/p03-patio-movil.md",
-      "files": {
-        "original": "creative/inbox/p03-patio-vertical-extra.webp"
-      },
-      "format": "WebP",
-      "width": 1440,
-      "height": 2560,
-      "bytes": 795730,
-      "aspect": "9:16",
-      "ai_generated": true,
-      "tool": "ChatGPT (por confirmar, igual que P03 escritorio)",
-      "embedded_content_credentials": false,
-      "state": "unused",
-      "note": "No encaja en el hueco 3:2 de P03 en movil. Disponible si mas adelante hace falta un vertical del patio."
-    },
-    {
-      "id": "p04-alba-escritorio",
-      "piece": "P04",
-      "version": "escritorio",
-      "request": "creative/requests/p04-alba-escritorio.md",
-      "files": {
-        "original": "creative/inbox/p04-alba-escritorio.jpg",
-        "master": "creative/approved/p04-alba-escritorio.jpg"
-      },
-      "format": "JPG (se subio con extension .png)",
-      "width": 2048,
-      "height": 2560,
-      "bytes": 2193681,
-      "aspect": "4:5",
-      "ai_generated": true,
-      "tool": "ChatGPT",
-      "model": "no consta en el archivo",
-      "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta (por confirmar)",
-      "embedded_content_credentials": false,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Habitación Alba al amanecer: cama de lino con manta terracota, mesita con lámpara, silla de enea y ventana abierta con vistas al mar, bajo vigas de madera oscura.",
-        "en": "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams."
-      }
-    },
-    {
-      "id": "p04-alba-movil",
-      "piece": "P04",
-      "version": "movil",
-      "request": "creative/requests/p04-alba-movil.md",
-      "files": {
-        "original": "creative/inbox/p04-alba-movil.png",
-        "master": "creative/approved/p04-alba-movil.png"
-      },
-      "format": "PNG (se subio con extension .png)",
-      "width": 1122,
-      "height": 1402,
-      "bytes": 2600014,
-      "aspect": "4:5",
-      "ai_generated": true,
-      "tool": "ChatGPT",
-      "model": "segun las credenciales de contenido C2PA del archivo (ver cabecera)",
-      "declared_by": "persona (ChatGPT, chat 2026-10-09) y credenciales C2PA del propio archivo",
-      "embedded_content_credentials": true,
-      "state": "approved",
-      "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
-      "approved_at": "2026-10-09",
-      "alt_draft": {
-        "es": "Primer plano de la cama de Alba: almohadas de lino, manta terracota y una banda de luz del amanecer sobre la pared, con el borde de la ventana a la derecha.",
-        "en": "Close-up of the bed in Alba: linen pillows, a terracotta blanket and a band of dawn light on the wall, with the window edge on the right."
-      }
-    }
-  ]
+ "_nota": "Registro INTERNO de procedencia y aprobaciones de las imagenes. No se publica ni se muestra en el sitio (decision de la persona, 2026-10-09). Se traspasa a creative/manifest.json (outputs) en la fase 4, cuando existan las paginas y su VIDEO_SCORE. Los archivos optimizados que se publican (AVIF/WebP) no llevan metadatos incrustados: este registro es la prueba de procedencia.",
+ "assets": [
+  {
+   "id": "p01-hero-escritorio",
+   "piece": "P01",
+   "version": "escritorio",
+   "request": "creative/requests/p01-hero-escritorio.md",
+   "files": {
+    "original": "creative/inbox/p01-hero-escritorio.jpg",
+    "master": "creative/approved/p01-hero-escritorio.jpg"
+   },
+   "format": "JPG",
+   "width": 2560,
+   "height": 1600,
+   "bytes": 1920591,
+   "aspect": "16:10",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09)",
+   "embedded_content_credentials": false,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: «Aprobada»)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Fachada de una casa encalada de dos plantas, con tejado de teja, contraventanas oscuras, dos olivos y el patio de grava al amanecer, con el mar al fondo.",
+    "en": "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind."
+   }
+  },
+  {
+   "id": "p01-hero-movil",
+   "piece": "P01",
+   "version": "movil",
+   "request": "creative/requests/p01-hero-movil.md",
+   "files": {
+    "original": "creative/inbox/p01-hero-movil.png",
+    "master": "creative/approved/p01-hero-movil.png"
+   },
+   "format": "PNG",
+   "width": 941,
+   "height": 1672,
+   "bytes": 3300735,
+   "aspect": "9:16",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "gpt-image (segun las credenciales de contenido C2PA del archivo)",
+   "declared_by": "persona (chat, 2026-10-09) y credenciales C2PA del propio archivo",
+   "embedded_content_credentials": true,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: no se repite con encuadre mas cercano porque se cortarian los bordes del hotel; se conserva tal cual)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Fachada de una casa encalada de dos plantas con dos olivos y un patio de grava al amanecer, con el mar a ambos lados.",
+    "en": "Two-storey whitewashed house with two olive trees and a gravel courtyard at dawn, with the sea on both sides."
+   }
+  },
+  {
+   "id": "p03-patio-escritorio",
+   "piece": "P03",
+   "version": "escritorio",
+   "request": "creative/requests/p03-patio-escritorio.md",
+   "files": {
+    "original": "creative/inbox/p03-patio-escritorio.webp",
+    "master": "creative/approved/p03-patio-escritorio.webp"
+   },
+   "format": "WebP (se subio con extension .png)",
+   "width": 2560,
+   "height": 1706,
+   "bytes": 1149468,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta en P03 (por confirmar)",
+   "embedded_content_credentials": false,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: «la P03 de escritorio queda aprobada»)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
+    "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
+   }
+  },
+  {
+   "id": "p03-patio-movil",
+   "piece": "P03",
+   "version": "movil",
+   "request": "creative/requests/p03-patio-movil.md",
+   "files": {
+    "master": "creative/approved/p03-patio-movil.webp"
+   },
+   "format": "WebP",
+   "width": 1856,
+   "height": 1237,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "derivada por recorte de p03-patio-escritorio (imagen de ChatGPT); recorte hecho por el agente, sin regenerar",
+   "crop": {
+    "x": 704,
+    "y": 302,
+    "w": 1856,
+    "h": 1237
+   },
+   "embedded_content_credentials": false,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: «Elijo el recorte B para el móvil»)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Detalle del patio interior: un olivo junto a una puerta de madera entreabierta y un estanque rectangular de piedra.",
+    "en": "Detail of the interior courtyard: an olive tree beside a partly open wooden door and a rectangular stone pond."
+   },
+   "derived_from": "creative/approved/p03-patio-escritorio.webp",
+   "note": "Recorte B aprobado (esquina x704,y302; 1856x1237) de p03-patio-escritorio."
+  },
+  {
+   "id": "p03-patio-vertical-extra",
+   "piece": "P03",
+   "version": "extra (sin uso asignado)",
+   "request": "creative/requests/p03-patio-movil.md",
+   "files": {
+    "original": "creative/inbox/p03-patio-vertical-extra.webp"
+   },
+   "format": "WebP",
+   "width": 1440,
+   "height": 2560,
+   "bytes": 795730,
+   "aspect": "9:16",
+   "ai_generated": true,
+   "tool": "ChatGPT (por confirmar, igual que P03 escritorio)",
+   "embedded_content_credentials": false,
+   "state": "unused",
+   "note": "No encaja en el hueco 3:2 de P03 en movil. Disponible si mas adelante hace falta un vertical del patio."
+  },
+  {
+   "id": "p04-alba-escritorio",
+   "piece": "P04",
+   "version": "escritorio",
+   "request": "creative/requests/p04-alba-escritorio.md",
+   "files": {
+    "original": "creative/inbox/p04-alba-escritorio.jpg",
+    "master": "creative/approved/p04-alba-escritorio.jpg"
+   },
+   "format": "JPG (se subio con extension .png)",
+   "width": 2048,
+   "height": 2560,
+   "bytes": 2193681,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona declaro ChatGPT para P01; se asume la misma herramienta (por confirmar)",
+   "embedded_content_credentials": false,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Habitación Alba al amanecer: cama de lino con manta terracota, mesita con lámpara, silla de enea y ventana abierta con vistas al mar, bajo vigas de madera oscura.",
+    "en": "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams."
+   }
+  },
+  {
+   "id": "p04-alba-movil",
+   "piece": "P04",
+   "version": "movil",
+   "request": "creative/requests/p04-alba-movil.md",
+   "files": {
+    "original": "creative/inbox/p04-alba-movil.png",
+    "master": "creative/approved/p04-alba-movil.png"
+   },
+   "format": "PNG (se subio con extension .png)",
+   "width": 1122,
+   "height": 1402,
+   "bytes": 2600014,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "segun las credenciales de contenido C2PA del archivo (ver cabecera)",
+   "declared_by": "persona (ChatGPT, chat 2026-10-09) y credenciales C2PA del propio archivo",
+   "embedded_content_credentials": true,
+   "state": "approved",
+   "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+   "approved_at": "2026-10-09",
+   "alt_draft": {
+    "es": "Primer plano de la cama de Alba: almohadas de lino, manta terracota y una banda de luz del amanecer sobre la pared, con el borde de la ventana a la derecha.",
+    "en": "Close-up of the bed in Alba: linen pillows, a terracotta blanket and a band of dawn light on the wall, with the window edge on the right."
+   }
+  },
+  {
+   "id": "p05-alba-tv-escritorio",
+   "piece": "P05",
+   "version": "escritorio",
+   "request": "creative/requests/p05-alba-tv-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p05-alba-tv-escritorio.png",
+    "draft": "creative/generated-drafts/p05-alba-tv-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2524457,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
+   ],
+   "alt_draft": {
+    "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
+    "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
+   }
+  },
+  {
+   "id": "p05-alba-tv-movil",
+   "piece": "P05",
+   "version": "movil",
+   "request": "creative/requests/p05-alba-tv-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p05-alba-tv-movil.png",
+    "draft": "creative/generated-drafts/p05-alba-tv-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2107086,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
+    "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
+   }
+  },
+  {
+   "id": "p06-alba-bano-escritorio",
+   "piece": "P06",
+   "version": "escritorio",
+   "request": "creative/requests/p06-alba-bano-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p06-alba-bano-escritorio.png",
+    "draft": "creative/generated-drafts/p06-alba-bano-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2299185,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
+    "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
+   }
+  },
+  {
+   "id": "p06-alba-bano-movil",
+   "piece": "P06",
+   "version": "movil",
+   "request": "creative/requests/p06-alba-bano-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p06-alba-bano-movil.png",
+    "draft": "creative/generated-drafts/p06-alba-bano-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2262502,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
+    "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
+   }
+  },
+  {
+   "id": "p26-alba-bano-detalle-escritorio",
+   "piece": "P26",
+   "version": "escritorio",
+   "request": "creative/requests/p26-alba-bano-detalle-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p26-alba-bano-detalle-escritorio.png",
+    "draft": "creative/generated-drafts/p26-alba-bano-detalle-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2614746,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
+    "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
+   }
+  },
+  {
+   "id": "p26-alba-bano-detalle-movil",
+   "piece": "P26",
+   "version": "movil",
+   "request": "creative/requests/p26-alba-bano-detalle-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p26-alba-bano-detalle-movil.png",
+    "draft": "creative/generated-drafts/p26-alba-bano-detalle-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2484722,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
+    "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
+   }
+  },
+  {
+   "id": "p27-alba-tv-vista-cama-escritorio",
+   "piece": "P27",
+   "version": "escritorio",
+   "request": "creative/requests/p27-alba-tv-vista-cama-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p27-alba-tv-vista-cama-escritorio.png",
+    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 1859740,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
+   ],
+   "alt_draft": {
+    "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
+    "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
+   }
+  },
+  {
+   "id": "p27-alba-tv-vista-cama-movil",
+   "piece": "P27",
+   "version": "movil",
+   "request": "creative/requests/p27-alba-tv-vista-cama-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-alba.md",
+   "files": {
+    "original": "creative/inbox/p27-alba-tv-vista-cama-movil.png",
+    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2096105,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
+   ],
+   "alt_draft": {
+    "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
+    "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
+   }
+  }
+ ]
 }
