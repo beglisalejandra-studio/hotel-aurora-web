@@ -188,7 +188,7 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 .cam{order:0;display:block}
 .facade{position:relative;aspect-ratio:16/10;width:100%}
 .facade .f-img{position:absolute;inset:0}
-.doorway,.shade,.dip{display:none}
+.doorway,.shade,.dip,.lam{display:none}
 .rec-static{order:2;margin:0}
 .rec-static .r-img{aspect-ratio:16/9;width:100%;padding:0}
 .portal{order:4;display:block}
@@ -251,8 +251,6 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   @keyframes dipcycle{0%,42%{opacity:0}46%{opacity:.22}50.5%,52%{opacity:1}56%{opacity:.35}60%,74%{opacity:0}78%{opacity:.22}82.5%,84%{opacity:1}88%{opacity:.35}92%,100%{opacity:0}}
   .shade{display:block;position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,17,23,.62),rgba(11,17,23,.42) 34%,rgba(11,17,23,0) 64%),linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%);animation:shadecycle linear both;animation-timeline:--walk;animation-range:contain 0% contain 100%}
   @keyframes shadecycle{0%{opacity:1}22%{opacity:0}91%{opacity:0}97%{opacity:1}100%{opacity:1}}
-  .shade2{background:linear-gradient(90deg,rgba(11,17,23,.5),rgba(11,17,23,.28) 34%,rgba(11,17,23,0) 62%);animation-name:shade2cycle}
-  @keyframes shade2cycle{0%,54%{opacity:0}62%,79%{opacity:1}86%,100%{opacity:0}}
   .cap{position:absolute;z-index:3;left:var(--pad);right:var(--pad);bottom:84px;max-width:none;color:#F3F6F7;opacity:0;visibility:hidden;animation-timeline:--walk;animation-timing-function:linear;animation-fill-mode:both}
   .cap .cap-body,.cap:not(.cap0) .cap-body{display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:46ch;background:none;border:0;padding:0}
   .cap0{opacity:1;visibility:visible;animation-name:capfirst;animation-range:contain 0% contain 17%}
@@ -270,8 +268,43 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   @keyframes barhide{0%,35%{visibility:visible}100%{visibility:hidden}}
 }}
 @supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
+@media (prefers-reduced-motion:no-preference) {
+  .lam{display:block;position:absolute;z-index:3;pointer-events:none;visibility:hidden;opacity:0;--k:lam-up;--a:0%;--b:100%;animation-name:var(--k);animation-timing-function:linear;animation-fill-mode:both;animation-timeline:--walk;animation-range:contain var(--a) contain var(--b);will-change:transform,opacity}
+  .pan{padding:clamp(16px,1.6vw,24px) clamp(18px,2vw,30px);max-width:min(34ch,44vw);border:1px solid transparent}
+  .pan.slate{background:#14202A;color:#F3F6F7;border-color:rgba(243,246,247,.16)}
+  .pan.terra{background:#B9431A;color:#FFFFFF;border-color:rgba(255,255,255,.22)}
+  .pan.paper{background:#F7F8F8;color:#16202A;border-color:#C5CED3}
+  .pan.sand{background:#F3D9CC;color:#16202A;border-color:#E3BFAE}
+  .pan .t{font:500 clamp(20px,1.9vw,28px)/1.15 var(--f-display);letter-spacing:-.005em;text-wrap:balance}
+  .pan .b{margin-top:8px;font:400 clamp(14px,1.1vw,16px)/1.5 var(--f-text)}
+  .pan.slate .acc{color:#F6935F}
+  .lam-D{inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:0 var(--pad)}
+  .d-t{font:300 clamp(40px,7.2vw,104px)/1.02 var(--f-display);letter-spacing:-.025em;color:#F3F6F7;text-wrap:balance}
+  .d-t .acc{color:#F6935F}
+  .d-s{margin-top:16px;font:400 clamp(15px,1.3vw,18px)/1.5 var(--f-text);color:rgba(243,246,247,.8)}
+  .lam-L1{--k:lam-wipe-l;--a:21%;--b:42%;top:clamp(28px,9vh,88px);right:var(--pad)}
+  .lam-D1{--k:lam-zoom;--a:47%;--b:56%}
+  .lam-R2{--k:lam-wipe-l;--a:62%;--b:81%;top:clamp(28px,9vh,88px);right:var(--pad)}
+  .lam-R3{--k:lam-up;--a:65%;--b:82%;bottom:clamp(28px,9vh,88px);left:calc(50% - min(17ch,22vw))}
+  .lam-D2{--k:lam-zoom;--a:78.5%;--b:86%}
+  .lam-P2{--k:lam-in-r;--a:90%;--b:100%;top:clamp(28px,9vh,88px);right:var(--pad)}
+  .lam-P3{--k:lam-in-up;--a:93%;--b:100%;bottom:112px;right:var(--pad)}
+  .walk .cap1{top:clamp(28px,9vh,88px);bottom:auto;left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));right:auto;width:auto;max-width:min(38ch,40vw);padding:clamp(16px,1.8vw,26px) clamp(18px,2.2vw,32px);background:#14202A;border:1px solid rgba(243,246,247,.16);animation-name:lam-wipe-r;animation-range:contain 59% contain 79%}
+  @keyframes lam-up{0%{opacity:0;visibility:hidden;transform:translateY(48px);clip-path:inset(100% 0 0 0)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateY(-36px);clip-path:inset(0 0 100% 0)}}
+  @keyframes lam-wipe-r{0%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateX(36px);clip-path:inset(0 0 0 100%)}}
+  @keyframes lam-wipe-l{0%{opacity:0;visibility:hidden;transform:translateX(36px);clip-path:inset(0 0 0 100%)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}}
+  @keyframes lam-zoom{0%{opacity:0;visibility:hidden;transform:scale(.9)}20%,80%{opacity:1;visibility:visible;transform:none}100%{opacity:0;visibility:hidden;transform:scale(1.08)}}
+  @keyframes lam-in-r{0%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}40%,100%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}}
+  @keyframes lam-in-up{0%{opacity:0;visibility:hidden;transform:translateY(48px);clip-path:inset(100% 0 0 0)}40%,100%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}}
+}}
+@supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
 @media (prefers-reduced-motion:no-preference) and (max-width:900px) {
-  .shade2{background:linear-gradient(to top,rgba(11,17,23,.8) 0%,rgba(11,17,23,.5) 30%,rgba(11,17,23,0) 58%)}
+  .pan{max-width:none}
+  .lam-L1,.lam-R2,.lam-R3,.lam-P2{top:16px;bottom:auto;left:var(--pad);right:var(--pad)}
+  .lam-R2{--a:61%;--b:71%}
+  .lam-R3{--a:70%;--b:80%}
+  .lam-P3{display:none}
+  .walk .cap1{top:auto;bottom:84px;left:var(--pad);right:var(--pad);max-width:none}
 }}
 @supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
 @media (prefers-reduced-motion:no-preference) and (min-width:901px) {
@@ -636,7 +669,6 @@ body.noscroll{overflow:hidden}
           <div class="ph slot p-img" role="img" aria-label="Foto pendiente P03: patio interior" data-es-aria="Foto pendiente P03: patio interior" data-en-aria="Photo pending P03: courtyard"><span class="slot-label"><b>P03</b><span data-es="Patio interior, horizontal 3:2" data-en="Courtyard, landscape 3:2">Patio interior, horizontal 3:2</span></span></div>
         </div>
         <div class="shade" aria-hidden="true"></div>
-        <div class="shade shade2" aria-hidden="true"></div>
 
         <div class="cap cap0">
           <div class="cap-body">
@@ -661,6 +693,13 @@ body.noscroll{overflow:hidden}
           <p class="lead" data-es="Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde." data-en="Each room is told by the light it receives, from the first morning sun to the afternoon.">Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde.</p>
           <a class="link-arrow" href="#/" data-goto="habitaciones"><span data-es="Ver habitaciones" data-en="See the rooms">Ver habitaciones</span> <span aria-hidden="true">→</span></a>
         </div></div>
+        <div class="lam lam-L1 pan slate" aria-hidden="true"><p class="t" data-es="En El Palmar, frente al Atlántico." data-en="In El Palmar, facing the Atlantic.">En El Palmar, frente al Atlántico.</p><p class="b" data-es="Vejer de la Frontera, Costa de la Luz." data-en="Vejer de la Frontera, Costa de la Luz.">Vejer de la Frontera, Costa de la Luz.</p></div>
+        <div class="lam lam-D lam-D1" aria-hidden="true"><div><p class="d-t"><span data-es="Dentro, la luz" data-en="Inside, the light">Dentro, la luz</span> <span class="acc" data-es="cambia." data-en="changes.">cambia.</span></p><p class="d-s" data-es="Del sol de la entrada a la sombra de la casa." data-en="From the entrance sun to the shade of the house.">Del sol de la entrada a la sombra de la casa.</p></div></div>
+        <div class="lam lam-R2 pan terra" aria-hidden="true"><p class="t" data-es="Reserva directa." data-en="Book direct.">Reserva directa.</p><p class="b" data-es="Sin intermediarios ni comisión." data-en="No middlemen, no commission.">Sin intermediarios ni comisión.</p></div>
+        <div class="lam lam-R3 pan paper" aria-hidden="true"><p class="t" data-es="Petfriendly." data-en="Pet-friendly.">Petfriendly.</p><p class="b" data-es="Hasta dos perros por habitación, con cama y cuencos de cortesía." data-en="Up to two dogs per room, with a bed and bowls provided.">Hasta dos perros por habitación, con cama y cuencos de cortesía.</p></div>
+        <div class="lam lam-D lam-D2" aria-hidden="true"><div><p class="d-t"><span data-es="Al fondo, el" data-en="At the far end, the">Al fondo, el</span> <span class="acc" data-es="patio." data-en="courtyard.">patio.</span></p><p class="d-s" data-es="Mira al este y el sol entra temprano." data-en="It faces east and the sun comes in early.">Mira al este y el sol entra temprano.</p></div></div>
+        <div class="lam lam-P2 pan sand" aria-hidden="true"><p class="t" data-es="Spa y restaurante propios." data-en="Our own spa and restaurant.">Spa y restaurante propios.</p><p class="b" data-es="Pide cita o mesa desde la web." data-en="Request an appointment or a table online.">Pide cita o mesa desde la web.</p></div>
+        <div class="lam lam-P3 pan terra" aria-hidden="true"><p class="t" data-es="Llegada desde las 15:00." data-en="Check-in from 15:00.">Llegada desde las 15:00.</p><p class="b" data-es="Salida hasta las 12:00." data-en="Check-out until 12:00.">Salida hasta las 12:00.</p></div>
       </div>
     </div>
   </section>
