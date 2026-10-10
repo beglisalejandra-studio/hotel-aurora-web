@@ -41,3 +41,6 @@ Responde en el mismo chat: «Restore exactly everything outside the doorway from
 2. Comparo con P01 todo lo que queda **fuera de la puerta** (diferencia de píxeles) y reviso la puerta ampliada.
 3. Te muestro las dos en la vista real del sitio (móvil 390 × 844 y escritorio) y espero tu aprobación escrita.
 4. Solo entonces te pido el **paso 2**: la recepción, que usa esta imagen como referencia para que lo que se ve por la puerta coincida con el interior.
+
+## Corrección v2 (2026-10-10): solo el suelo del vestíbulo
+Registro del prompt pegado en el chat. Adjuntos: las dos imágenes de puerta abierta ya generadas (escritorio y móvil). Devuelve `p01-puerta-abierta-escritorio-v2` (16:9) y `p01-puerta-abierta-movil-v2` (9:16). Motivo: el suelo salió gris azulado, en rejilla regular y con franjas que parecen reflejo; la regla del hotel es piedra caliza cálida, mate, de losas grandes e irregulares. Plan B si cambia algo más: trasplantar solo el hueco de la puerta sobre la imagen base.
