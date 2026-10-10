@@ -70,8 +70,12 @@ One single continuous shot, no cuts. Start exactly on the first image (the facad
 ```
 Si la herramienta solo admite imagen inicial, usa el mismo texto sin «end exactly on the last image» y añade: *«The shot ends inside the lobby: a long dark oak reception desk on the right, an old bench on the left, and at the far wall a tall rectangular opening that glows with the sunlit courtyard.»*
 
-## Qué herramienta usar (verifícalo en tu cuenta)
-Mi búsqueda del 2026-10-10 indica que OpenAI cerró las apps de Sora el 26 de abril de 2026 (su API cierra el 24 de septiembre de 2026); los resultados no son concluyentes. Suelen citarse como alternativas Google Flow (Veo), Runway, Kling y Luma. Comprueba que tu plan acepte **imagen final** y que exporte **sin marca de agua** (suele exigir plan de pago).
+## Qué herramienta usa cada paso (tienes Google Flow, ChatGPT y Gemini)
+- **ChatGPT:** las 4 imágenes clave (paso 1), como el resto de las fotos del hotel.
+- **Google Flow (Veo 3.1):** los 2 clips (paso 2). Es la herramienta indicada: genera clips de 4, 6 u 8 s en 1080p, admite 16:9 y 9:16 y tiene el modo **imagen inicial + imagen final** («Frames to Video» o el nombre equivalente en tu versión). Elige el modelo de mayor calidad (*Quality*), el clip de **8 s**, la proporción que toque (16:9 o 9:16), sube la imagen inicial y la final, pega el prompt y genera. Descarga en 1080p (Flow permite ampliarlo antes de descargar).
+- **Gemini:** no hace falta. Solo como alternativa a ChatGPT para las imágenes clave, pero para mantener el aspecto de la fachada conviene seguir con ChatGPT.
+- **Marca de agua (importante):** según la ayuda de Flow, todos los vídeos llevan una marca invisible (SynthID) y los de **Google One Pro llevan además una marca visible «Veo»**; los de **Google One Ultra no**. Una marca visible no puede ir en la web. Comprueba tu plan antes de generar. Veo genera audio por defecto: ignóralo, lo quito yo.
+- Lo que no pude comprobar: si el modo imagen inicial + final de tu versión de Flow admite a la vez 8 s, 9:16 y 1080p. Una primera prueba corta lo dirá. Si algo de eso no está, dímelo y adapto las dimensiones.
 
 ## Siguiente fase (si funciona)
 Un segundo tramo continuo de la recepción al patio (imagen final = `p03-patio-escritorio` que ya está aprobada) y después a una habitación, encadenado con el primero. No lo pedimos hasta ver que el primer tramo sale limpio.
