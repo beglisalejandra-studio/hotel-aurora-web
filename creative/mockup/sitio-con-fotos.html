@@ -199,7 +199,7 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .walk-track{view-timeline:--walk block;height:calc(100dvh * var(--steps) + 100dvh - var(--hdr))}
   .walk-stage{position:sticky;top:var(--hdr);height:var(--H);overflow:hidden;display:block;padding:0;max-width:none;margin:0;isolation:isolate;background:#0D1318}
   .cam{position:absolute;inset:0;overflow:hidden}
-  .facade{position:absolute;left:50%;top:50%;width:var(--fw);height:var(--fh);aspect-ratio:auto;max-height:none;margin:0;transform-origin:calc(var(--px) * 100%) calc(var(--py) * 100%);transform:translate(-50%,-50%);animation:push cubic-bezier(.45,.05,.25,1) both;animation-timeline:--walk;animation-range:contain 5% contain 46%;will-change:transform}
+  .facade{position:absolute;left:50%;top:50%;width:var(--fw);height:var(--fh);aspect-ratio:auto;max-height:none;margin:0;transform-origin:calc(var(--px) * 100%) calc(var(--py) * 100%);transform:translate(-50%,-50%);animation:push cubic-bezier(.45,.05,.25,1) both;animation-timeline:--walk;animation-range:contain 5% contain 66%;will-change:transform}
   @keyframes push{to{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px))),calc(var(--fh) * (.5 - var(--py)))) scale(var(--S))}}
   .doorway{display:block;position:absolute;left:calc(var(--dx0) * 100%);top:calc(var(--dy0) * 100%);width:calc(var(--dw) * 100%);height:calc(var(--dh) * 100%);perspective:calc(var(--fw) * var(--dw) * 2.6)}
   .hall{position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 100%,rgba(176,122,78,.34),transparent 70%),linear-gradient(#1E140D,#0C0805)}
@@ -212,8 +212,8 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .leaf.lf .leaf-img{left:calc(var(--fw) * var(--dx0) * -1)}
   .leaf.rt .leaf-img{left:calc(var(--fw) * (var(--dx0) + var(--dw) / 2) * -1)}
   .leaf-img .slot-label{display:none}
-  .portal{position:absolute;inset:0;z-index:2;overflow:hidden;clip-path:inset(calc((100% - var(--S) * var(--dh) * var(--fh) * .78) / 2) calc((100% - var(--S) * var(--dw) * var(--fw) * .78) / 2));opacity:0;animation:reveal cubic-bezier(.55,0,.2,1) both;animation-timeline:--walk;animation-range:contain 50% contain 80%}
-  @keyframes reveal{0%{opacity:0}8%{opacity:1}35%{opacity:1;clip-path:inset(calc((100% - var(--S) * var(--dh) * var(--fh)) / 2) calc((100% - var(--S) * var(--dw) * var(--fw)) / 2))}100%{opacity:1;clip-path:inset(0 0)}}
+  .portal{position:absolute;inset:0;z-index:2;overflow:hidden;opacity:0;animation:reveal cubic-bezier(.4,0,.2,1) both;animation-timeline:--walk;animation-range:contain 48% contain 70%}
+  @keyframes reveal{to{opacity:1}}
   .portal::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(11,17,23,.58),rgba(11,17,23,.3) 38%,rgba(11,17,23,0) 66%);opacity:0;animation:scrimin linear both;animation-timeline:--walk;animation-range:contain 70% contain 86%}
   @keyframes scrimin{to{opacity:1}}
   .p-img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;padding:0;animation:dolly linear both;animation-timeline:--walk;animation-range:contain 50% contain 100%;will-change:transform}
