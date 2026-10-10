@@ -556,7 +556,7 @@
    "approved_at": "2026-10-10"
   },
   {
-   "id": "p09-marea-camas-escritorio",
+   "id": "p09-marea-camas-escritorio-intento1",
    "piece": "P09",
    "version": "escritorio",
    "request": "creative/requests/p09-marea-camas-escritorio.json",
@@ -576,7 +576,9 @@
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
    "state": "rejected",
-   "notes": [],
+   "notes": [
+    "Primer intento rechazado; archivos conservados como -intento1 en creative/inbox y generated-drafts."
+   ],
    "alt_draft": {
     "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
     "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
@@ -584,7 +586,7 @@
    "rejected_by": "persona (mensaje en el chat, 2026-10-10: «Repetir: P09 escritorio, P09 móvil»; la ventana no coincide con el cojín azul)"
   },
   {
-   "id": "p09-marea-camas-movil",
+   "id": "p09-marea-camas-movil-intento1",
    "piece": "P09",
    "version": "movil",
    "request": "creative/requests/p09-marea-camas-movil.json",
@@ -604,7 +606,9 @@
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
    "state": "rejected",
-   "notes": [],
+   "notes": [
+    "Primer intento rechazado; archivos conservados como -intento1 en creative/inbox y generated-drafts."
+   ],
    "alt_draft": {
     "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
     "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
@@ -736,6 +740,340 @@
    },
    "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
    "approved_at": "2026-10-10"
+  },
+  {
+   "id": "p09-marea-camas-escritorio",
+   "piece": "P09",
+   "version": "escritorio",
+   "request": "creative/requests/p09-marea-camas-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-repite-p09-marea.md",
+   "files": {
+    "original": "creative/inbox/p09-marea-camas-escritorio.png",
+    "draft": "creative/generated-drafts/p09-marea-camas-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2303813,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Una cama doble y una individual de forja con la ventana, el banco de obra y el cojin indigo de Marea.",
+    "en": "One double and one single iron bed with the Marea window, masonry bench and indigo cushion."
+   }
+  },
+  {
+   "id": "p09-marea-camas-movil",
+   "piece": "P09",
+   "version": "movil",
+   "request": "creative/requests/p09-marea-camas-movil.json",
+   "prompt_file": "creative/briefs/prompt-repite-p09-marea.md",
+   "files": {
+    "original": "creative/inbox/p09-marea-camas-movil.png",
+    "draft": "creative/generated-drafts/p09-marea-camas-movil.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 1953715,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Una cama doble y una individual de forja con la ventana, el banco de obra y el cojin indigo de Marea.",
+    "en": "One double and one single iron bed with the Marea window, masonry bench and indigo cushion."
+   }
+  },
+  {
+   "id": "p10-terraza-escritorio",
+   "piece": "P10",
+   "version": "escritorio",
+   "request": "creative/requests/p10-terraza-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p10-terraza-escritorio.png",
+    "draft": "creative/generated-drafts/p10-terraza-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 1500,
+   "bytes": 2755751,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Dormitorio de Terraza con dos camas individuales de obra y la puerta abierta a la terraza cubierta de cana.",
+    "en": "Terraza bedroom with two masonry single beds and the open door to the cane-covered terrace."
+   }
+  },
+  {
+   "id": "p10-terraza-movil",
+   "piece": "P10",
+   "version": "movil",
+   "request": "creative/requests/p10-terraza-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p10-terraza-movil.png",
+    "draft": "creative/generated-drafts/p10-terraza-movil.png"
+   },
+   "format": "PNG",
+   "width": 1120,
+   "height": 1400,
+   "bytes": 2475352,
+   "aspect": "4:5",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "La version movil subida es la de escritorio reducida (diferencia media 0,5 de 255): no es una composicion movil propia; hay que generarla aparte."
+   ],
+   "alt_draft": {
+    "es": "Dormitorio de Terraza con dos camas individuales de obra y la puerta abierta a la terraza cubierta de cana.",
+    "en": "Terraza bedroom with two masonry single beds and the open door to the cane-covered terrace."
+   }
+  },
+  {
+   "id": "p11-terraza-exterior-escritorio",
+   "piece": "P11",
+   "version": "escritorio",
+   "request": "creative/requests/p11-terraza-exterior-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p11-terraza-exterior-escritorio.png",
+    "draft": "creative/generated-drafts/p11-terraza-exterior-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2492242,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Terraza privada cubierta de cana, con banco para tomar el sol, mesa baja y ducha exterior sobre el patio.",
+    "en": "Private cane-covered terrace with a sunbathing bench, low table and outdoor shower above the courtyard."
+   }
+  },
+  {
+   "id": "p11-terraza-exterior-movil",
+   "piece": "P11",
+   "version": "movil",
+   "request": "creative/requests/p11-terraza-exterior-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p11-terraza-exterior-movil.png",
+    "draft": "creative/generated-drafts/p11-terraza-exterior-movil.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 800,
+   "bytes": 1561555,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "La version movil subida es la de escritorio reducida (diferencia media 0,5 de 255): no es una composicion movil propia; hay que generarla aparte."
+   ],
+   "alt_draft": {
+    "es": "Terraza privada cubierta de cana, con banco para tomar el sol, mesa baja y ducha exterior sobre el patio.",
+    "en": "Private cane-covered terrace with a sunbathing bench, low table and outdoor shower above the courtyard."
+   }
+  },
+  {
+   "id": "p12-terraza-camas-escritorio",
+   "piece": "P12",
+   "version": "escritorio",
+   "request": "creative/requests/p12-terraza-camas-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p12-terraza-camas-escritorio.png",
+    "draft": "creative/generated-drafts/p12-terraza-camas-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2414980,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Dos camas individuales identicas de obra con mesita de roble y un olivo en un jarron.",
+    "en": "Two identical masonry single beds with an oak bedside block and an olive twig in a jar."
+   }
+  },
+  {
+   "id": "p12-terraza-camas-movil",
+   "piece": "P12",
+   "version": "movil",
+   "request": "creative/requests/p12-terraza-camas-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p12-terraza-camas-movil.png",
+    "draft": "creative/generated-drafts/p12-terraza-camas-movil.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 800,
+   "bytes": 1494392,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "La version movil subida es la de escritorio reducida (diferencia media 0,5 de 255): no es una composicion movil propia; hay que generarla aparte."
+   ],
+   "alt_draft": {
+    "es": "Dos camas individuales identicas de obra con mesita de roble y un olivo en un jarron.",
+    "en": "Two identical masonry single beds with an oak bedside block and an olive twig in a jar."
+   }
+  },
+  {
+   "id": "p30-terraza-bano-escritorio",
+   "piece": "P30",
+   "version": "escritorio",
+   "request": "creative/requests/p30-terraza-bano-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p30-terraza-bano-escritorio.png",
+    "draft": "creative/generated-drafts/p30-terraza-bano-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2258203,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Bano con encimera de obra, pila excavada, cesta de junco, ducha de obra y ventana al patio.",
+    "en": "Bathroom with a plastered counter, hollowed basin, rush basket, walk-in shower and a window onto the courtyard."
+   }
+  },
+  {
+   "id": "p30-terraza-bano-movil",
+   "piece": "P30",
+   "version": "movil",
+   "request": "creative/requests/p30-terraza-bano-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p30-terraza-bano-movil.png",
+    "draft": "creative/generated-drafts/p30-terraza-bano-movil.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 800,
+   "bytes": 1408475,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "La version movil subida es la de escritorio reducida (diferencia media 0,5 de 255): no es una composicion movil propia; hay que generarla aparte."
+   ],
+   "alt_draft": {
+    "es": "Bano con encimera de obra, pila excavada, cesta de junco, ducha de obra y ventana al patio.",
+    "en": "Bathroom with a plastered counter, hollowed basin, rush basket, walk-in shower and a window onto the courtyard."
+   }
+  },
+  {
+   "id": "p31-terraza-tv-escritorio",
+   "piece": "P31",
+   "version": "escritorio",
+   "request": "creative/requests/p31-terraza-tv-escritorio.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p31-terraza-tv-escritorio.png",
+    "draft": "creative/generated-drafts/p31-terraza-tv-escritorio.png"
+   },
+   "format": "PNG",
+   "width": 1536,
+   "height": 1024,
+   "bytes": 2307377,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [],
+   "alt_draft": {
+    "es": "Hueco en el muro con una tele pequena y un panel de cana, junto a la puerta de la terraza.",
+    "en": "Wall opening with a small TV and a cane panel, beside the terrace door."
+   }
+  },
+  {
+   "id": "p31-terraza-tv-movil",
+   "piece": "P31",
+   "version": "movil",
+   "request": "creative/requests/p31-terraza-tv-movil.json",
+   "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+   "files": {
+    "original": "creative/inbox/p31-terraza-tv-movil.png",
+    "draft": "creative/generated-drafts/p31-terraza-tv-movil.png"
+   },
+   "format": "PNG",
+   "width": 1200,
+   "height": 800,
+   "bytes": 1425347,
+   "aspect": "3:2",
+   "ai_generated": true,
+   "tool": "ChatGPT",
+   "model": "no consta en el archivo",
+   "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT con el prompt maestro",
+   "embedded_content_credentials": false,
+   "state": "received",
+   "notes": [
+    "La version movil subida es la de escritorio reducida (diferencia media 0,5 de 255): no es una composicion movil propia; hay que generarla aparte."
+   ],
+   "alt_draft": {
+    "es": "Hueco en el muro con una tele pequena y un panel de cana, junto a la puerta de la terraza.",
+    "en": "Wall opening with a small TV and a cane panel, beside the terrace door."
+   }
   }
  ]
 }
