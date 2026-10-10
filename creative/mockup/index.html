@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light dark">
-<title>Hotel Aurora | Maqueta</title>
+<title>Hotel boutique petfriendly en El Palmar | Hotel Aurora (maqueta)</title>
+<meta name="description" content="Hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin comisiones.">
+<meta property="og:type" content="website"><meta property="og:title" content="Hotel boutique petfriendly en El Palmar | Hotel Aurora (maqueta)"><meta property="og:description" content="Hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin comisiones.">
+<!-- Datos estructurados de ejemplo: el hotel y sus datos son ficticios (proyecto de portfolio). -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Hotel", "@id": "#hotel", "name": "Hotel Aurora", "description": "Hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin comisiones.", "inLanguage": ["es", "en"], "availableLanguage": ["es", "en"], "address": {"@type": "PostalAddress", "streetAddress": "Calle de la Aurora, s/n", "addressLocality": "El Palmar, Vejer de la Frontera", "addressRegion": "Cádiz", "addressCountry": "ES"}, "numberOfRooms": 28, "petsAllowed": true, "checkinTime": "15:00", "checkoutTime": "12:00", "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Spa", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Restaurante", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Admite mascotas", "value": true}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Dónde está Hotel Aurora?", "acceptedAnswer": {"@type": "Answer", "text": "Hotel Aurora está en El Palmar, en Vejer de la Frontera (Cádiz), en la Costa de la Luz, a unos minutos en coche de la playa. Te enviamos la ruta con la confirmación."}}, {"@type": "Question", "name": "¿Se admiten perros en Hotel Aurora?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, es un hotel petfriendly. Se admiten hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar."}}, {"@type": "Question", "name": "¿Cuántas habitaciones tiene el hotel?", "acceptedAnswer": {"@type": "Answer", "text": "Hotel Aurora tiene 28 habitaciones. En la web ves cuatro tipos: Alba (2 personas), Terraza (2), Marea (3) y Faro (4, mini apartamento con salón y cocina)."}}, {"@type": "Question", "name": "¿Tiene spa y restaurante propios?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El spa también admite a quien no se aloja, según disponibilidad. En el restaurante pides mesa desde la web y te confirmamos por correo o WhatsApp."}}, {"@type": "Question", "name": "¿Puedo reservar sin comisiones?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Reservando directamente con el hotel no pagas comisión de intermediarios, y cada tarifa muestra su política de cancelación antes de pagar."}}, {"@type": "Question", "name": "¿A qué hora son la entrada y la salida?", "acceptedAnswer": {"@type": "Answer", "text": "La entrada es desde las 15:00 y la salida hasta las 12:00. Si llegas antes, guardamos tu equipaje."}}, {"@type": "Question", "name": "¿Cómo cancelo una reserva?", "acceptedAnswer": {"@type": "Answer", "text": "Desde el correo de confirmación o escribiéndonos. Cada tarifa indica su política antes de pagar."}}, {"@type": "Question", "name": "¿Hay aparcamiento?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, junto a la casa y sujeto a disponibilidad. Avísanos al reservar."}}, {"@type": "Question", "name": "¿Hay cuna o cama para mi mascota?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Todas las habitaciones pueden pedir una cuna de bebé o una cama para mascota, sin coste adicional. Pídela al reservar o escríbenos."}}]}]}</script>
 <!--
   MAQUETA DE DISEÑO, NO ES EL SITIO FINAL.
   - Un solo archivo, sin build. Fuentes por CDN (permitido en maqueta); en producción se autoalojan con next/font.
@@ -189,6 +193,21 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 .facade{position:relative;aspect-ratio:16/10;width:100%}
 .facade .f-img{position:absolute;inset:0}
 .doorway,.shade,.dip,.lam{display:none}
+.kw,.kwi{display:inline-block}
+.kw.acc{color:var(--accent)}
+.lam.st{display:block;background:var(--surface);border:1px solid var(--hair);padding:clamp(20px,2.4vw,32px);color:var(--ink);max-width:46ch}
+.lam.st .pbg,.lam.st .pbar{display:none}
+.lam .k{font:500 12px/1.2 var(--f-text);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.lam .t{font:300 clamp(28px,3.2vw,44px)/1.06 var(--f-display);letter-spacing:-.02em;margin-top:10px;text-wrap:balance}
+.lam .b{margin-top:12px;color:var(--ink-2)}
+.lam .link-arrow{margin-top:18px;display:inline-flex}
+.lam-R1{order:3}.lam-P1{order:5}
+@property --num{syntax:'<integer>';inherits:false;initial-value:28}
+.cnt{display:flex;align-items:baseline;gap:.4em;margin-top:6px}
+.num{font:300 clamp(64px,8vw,120px)/.9 var(--f-display);letter-spacing:-.04em;color:var(--accent);counter-reset:cn var(--num)}
+.num::before{content:counter(cn)}
+.num .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.unit{font:500 clamp(18px,1.9vw,26px)/1 var(--f-display)}
 .rec-static{order:2;margin:0}
 .rec-static .r-img{aspect-ratio:16/9;width:100%;padding:0}
 .portal{order:4;display:block}
@@ -232,7 +251,7 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .sala{position:absolute;left:50%;top:50%;height:100%;aspect-ratio:var(--ra);transform:translate(-50%,-50%)}
   .hall-img{position:absolute;inset:0;padding:0;--mL:var(--cl1);--mR:calc(100% - var(--cl1));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:hallclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk;animation-range:contain 50.5% contain 52%}
   @keyframes hallclip{to{--mL:-10%;--mR:110%;--mf:10%}}
-  .court{position:absolute;left:calc(var(--cbl) * 100%);top:calc(var(--cy0) * 100%);width:calc(var(--cbw) * 100%);height:calc(var(--ch) * 100%);opacity:0;--mL:var(--cl2);--mR:calc(100% - var(--cl2));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:courtin linear both,courtclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk,--walk;animation-range:contain 70% contain 76%,contain 82.5% contain 84%}
+  .court{position:absolute;left:calc(var(--cbl) * 100%);top:calc(var(--cy0) * 100%);width:calc(var(--cbw) * 100%);height:calc(var(--ch) * 100%);opacity:0;--mL:var(--cl2);--mR:calc(100% - var(--cl2));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:courtin linear both,courtclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk,--walk;animation-range:contain 49.5% contain 50.5%,contain 82.5% contain 84%}
   @keyframes courtin{to{opacity:1}}
   @keyframes courtclip{to{--mL:-10%;--mR:110%;--mf:10%}}
   .court-img{position:absolute;inset:0;padding:0}
@@ -269,42 +288,108 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 }}
 @supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
 @media (prefers-reduced-motion:no-preference) {
-  .lam{display:block;position:absolute;z-index:3;pointer-events:none;visibility:hidden;opacity:0;--k:lam-up;--a:0%;--b:100%;animation-name:var(--k);animation-timing-function:linear;animation-fill-mode:both;animation-timeline:--walk;animation-range:contain var(--a) contain var(--b);will-change:transform,opacity}
-  .pan{padding:clamp(16px,1.6vw,24px) clamp(18px,2vw,30px);max-width:min(34ch,44vw);border:1px solid transparent}
-  .pan.slate{background:#14202A;color:#F3F6F7;border-color:rgba(243,246,247,.16)}
-  .pan.terra{background:#B9431A;color:#FFFFFF;border-color:rgba(255,255,255,.22)}
-  .pan.paper{background:#F7F8F8;color:#16202A;border-color:#C5CED3}
-  .pan.sand{background:#F3D9CC;color:#16202A;border-color:#E3BFAE}
-  .pan .t{font:500 clamp(20px,1.9vw,28px)/1.15 var(--f-display);letter-spacing:-.005em;text-wrap:balance}
-  .pan .b{margin-top:8px;font:400 clamp(14px,1.1vw,16px)/1.5 var(--f-text)}
-  .pan.slate .acc{color:#F6935F}
-  .lam-D{inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:0 var(--pad)}
-  .d-t{font:300 clamp(40px,7.2vw,104px)/1.02 var(--f-display);letter-spacing:-.025em;color:#F3F6F7;text-wrap:balance}
-  .d-t .acc{color:#F6935F}
-  .d-s{margin-top:16px;font:400 clamp(15px,1.3vw,18px)/1.5 var(--f-text);color:rgba(243,246,247,.8)}
-  .lam-L1{--k:lam-wipe-l;--a:21%;--b:42%;top:clamp(28px,9vh,88px);right:var(--pad)}
-  .lam-D1{--k:lam-zoom;--a:47%;--b:56%}
-  .lam-R2{--k:lam-wipe-l;--a:62%;--b:81%;top:clamp(28px,9vh,88px);right:var(--pad)}
-  .lam-R3{--k:lam-up;--a:65%;--b:82%;bottom:clamp(28px,9vh,88px);left:calc(50% - min(17ch,22vw))}
-  .lam-D2{--k:lam-zoom;--a:78.5%;--b:86%}
-  .lam-P2{--k:lam-in-r;--a:90%;--b:100%;top:clamp(28px,9vh,88px);right:var(--pad)}
-  .lam-P3{--k:lam-in-up;--a:93%;--b:100%;bottom:112px;right:var(--pad)}
-  .walk .cap1{top:clamp(28px,9vh,88px);bottom:auto;left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));right:auto;width:auto;max-width:min(38ch,40vw);padding:clamp(16px,1.8vw,26px) clamp(18px,2.2vw,32px);background:#14202A;border:1px solid rgba(243,246,247,.16);animation-name:lam-wipe-r;animation-range:contain 59% contain 79%}
-  @keyframes lam-up{0%{opacity:0;visibility:hidden;transform:translateY(48px);clip-path:inset(100% 0 0 0)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateY(-36px);clip-path:inset(0 0 100% 0)}}
-  @keyframes lam-wipe-r{0%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateX(36px);clip-path:inset(0 0 0 100%)}}
-  @keyframes lam-wipe-l{0%{opacity:0;visibility:hidden;transform:translateX(36px);clip-path:inset(0 0 0 100%)}18%,82%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}100%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}}
-  @keyframes lam-zoom{0%{opacity:0;visibility:hidden;transform:scale(.9)}20%,80%{opacity:1;visibility:visible;transform:none}100%{opacity:0;visibility:hidden;transform:scale(1.08)}}
-  @keyframes lam-in-r{0%{opacity:0;visibility:hidden;transform:translateX(-36px);clip-path:inset(0 100% 0 0)}40%,100%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}}
-  @keyframes lam-in-up{0%{opacity:0;visibility:hidden;transform:translateY(48px);clip-path:inset(100% 0 0 0)}40%,100%{opacity:1;visibility:visible;transform:none;clip-path:inset(0)}}
+  .lam{display:block;position:absolute;z-index:3;pointer-events:none;--a:0;--b:100;--st:.55;animation:lam-vis linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1%) contain calc(var(--b) * 1%)}
+  .lam.st{background:none;border:0;padding:0;max-width:none;color:inherit}
+  .lam.st .pbg,.lam.st .pbar{display:block}
+  .lam.stay{animation-name:lam-vis-stay}
+  .lam .link-arrow{pointer-events:auto;color:#F3F6F7}
+  @keyframes lam-vis{0%{visibility:hidden}1%,99%{visibility:visible}100%{visibility:hidden}}
+  @keyframes lam-vis-stay{0%{visibility:hidden}1%,100%{visibility:visible}}
+  /* lamina: fondo que se abre con barrido, filete que se dibuja y texto que entra palabra a palabra */
+  .lam.pan{padding:clamp(18px,1.8vw,28px) clamp(20px,2.2vw,34px);max-width:min(36ch,44vw);overflow:hidden}
+  .pan .pbg{position:absolute;inset:0;transform:scaleX(0);transform-origin:var(--o1,0 50%);animation:pbg-x cubic-bezier(.7,0,.2,1) both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1%) contain calc(var(--b) * 1%)}
+  .pan.vy .pbg{animation-name:pbg-y;transform:scaleY(0)}
+  .pan.stay .pbg{animation-name:pbg-in}
+  .pan.stay.vy .pbg{animation-name:pbg-in-y}
+  .pan .pbar{position:absolute;left:0;top:0;height:4px;width:100%;transform:scaleX(0);transform-origin:0 50%;animation:pbar-x linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1%) contain calc(var(--b) * 1%)}
+  .pan.stay .pbar{animation-name:pbar-in}
+  .pan .pin{position:relative;z-index:1}
+  .pan.slate{color:#F3F6F7}.pan.slate .pbg{background:#14202A;box-shadow:inset 0 0 0 1px rgba(243,246,247,.16)}.pan.slate .pbar{background:#F6935F}
+  .pan.terra{color:#FFFFFF}.pan.terra .pbg{background:#B9431A}.pan.terra .pbar{background:#F7F8F8}
+  .pan.paper{color:#16202A}.pan.paper .pbg{background:#F7F8F8;box-shadow:inset 0 0 0 1px #C5CED3}.pan.paper .pbar{background:#B9431A}
+  .pan.sand{color:#16202A}.pan.sand .pbg{background:#F3D9CC;box-shadow:inset 0 0 0 1px #E3BFAE}.pan.sand .pbar{background:#14202A}
+  .pan.slate .b{color:rgba(243,246,247,.9)}.pan.terra .b{color:rgba(255,255,255,.95)}.pan.paper .b{color:#46535F}.pan.sand .b{color:#3B2A22}
+  .pan.slate .k,.pan.slate .kw.acc{color:#F6935F}.pan.terra .k{color:#FFFFFF}.pan.terra .kw.acc{color:#FFFFFF}.pan.paper .k,.pan.paper .kw.acc{color:#B9431A}.pan.sand .k,.pan.sand .kw.acc{color:#8F2F0E}
+  @keyframes pbg-x{0%{transform:scaleX(0);transform-origin:var(--o1,0 50%)}13%{transform:scaleX(1);transform-origin:var(--o1,0 50%)}87%{transform:scaleX(1);transform-origin:var(--o2,100% 50%)}100%{transform:scaleX(0);transform-origin:var(--o2,100% 50%)}}
+  @keyframes pbg-y{0%{transform:scaleY(0);transform-origin:var(--o1,50% 0)}13%{transform:scaleY(1);transform-origin:var(--o1,50% 0)}87%{transform:scaleY(1);transform-origin:var(--o2,50% 100%)}100%{transform:scaleY(0);transform-origin:var(--o2,50% 100%)}}
+  @keyframes pbg-in{0%{transform:scaleX(0);transform-origin:var(--o1,0 50%)}30%,100%{transform:scaleX(1);transform-origin:var(--o1,0 50%)}}
+  @keyframes pbg-in-y{0%{transform:scaleY(0);transform-origin:var(--o1,50% 0)}30%,100%{transform:scaleY(1);transform-origin:var(--o1,50% 0)}}
+  @keyframes pbar-x{0%,6%{transform:scaleX(0);transform-origin:0 50%}24%{transform:scaleX(1);transform-origin:0 50%}76%{transform:scaleX(1);transform-origin:100% 50%}94%,100%{transform:scaleX(0);transform-origin:100% 50%}}
+  @keyframes pbar-in{0%,8%{transform:scaleX(0);transform-origin:0 50%}34%,100%{transform:scaleX(1);transform-origin:0 50%}}
+  /* tipografia: filete + palabras con mascara que suben, entran de lado o bajan, con retardo por palabra */
+  .lam .k{display:flex;align-items:center;gap:12px;font:500 12px/1.2 var(--f-text);letter-spacing:.18em;text-transform:uppercase;--dl:.5}
+  .lam .k::before{content:"";flex:none;width:30px;height:1px;background:currentColor;transform-origin:0 50%;animation:rulek linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1%) contain calc(var(--b) * 1%)}
+  .lam.stay .k::before{animation-name:rulek-in}
+  @keyframes rulek{0%,6%{transform:scaleX(0)}20%,86%{transform:scaleX(1);transform-origin:0 50%}100%{transform:scaleX(0);transform-origin:100% 50%}}
+  @keyframes rulek-in{0%,8%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+  .pan .t{font:500 clamp(20px,1.9vw,28px)/1.15 var(--f-display);letter-spacing:-.005em;margin-top:12px;text-wrap:balance;--dl:1.2}
+  .pan.big .t{font:300 clamp(28px,3vw,44px)/1.06 var(--f-display);letter-spacing:-.02em}
+  .lam .b{margin-top:10px;font:400 clamp(14px,1.1vw,16px)/1.5 var(--f-text);animation:bk linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1% + 3.4%) contain calc(var(--b) * 1% - 1.6%)}
+  .lam.stay .b{animation-name:bk-in;animation-range:contain calc(var(--a) * 1% + 3.4%) contain calc(var(--a) * 1% + 6.6%)}
+  @keyframes bk{0%{opacity:0;transform:translateY(16px)}14%,84%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-10px)}}
+  @keyframes bk-in{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:none}}
+  .lam .cnt{animation:bk linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1% + 1.6%) contain calc(var(--b) * 1% - 3.4%)}
+  .num{animation:numk cubic-bezier(.2,.7,.2,1) both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1% + 2.4%) contain calc(var(--a) * 1% + 8%)}
+  @keyframes numk{from{--num:0}to{--num:28}}
+  .pan.slate .num{color:#F6935F}
+  .kw{overflow:hidden;vertical-align:top;padding:.05em .06em .22em;margin:-.05em -.06em -.22em}
+  .kwi{transform-origin:0 100%}
+  .lam .kwi{animation:kwk linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0)) * 1%) contain calc(var(--b) * 1% - (var(--n) - var(--i) - 1) * var(--st) * 1%)}
+  .lam.stay .kwi{animation-name:kwk-in;animation-range:contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0)) * 1%) contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0) + 3.6) * 1%)}
+  .kin-l .kwi{animation-name:kwk-l}.lam.stay .kin-l .kwi{animation-name:kwk-l-in}
+  .kin-d .kwi{animation-name:kwk-d}.lam.stay .kin-d .kwi{animation-name:kwk-d-in}
+  @keyframes kwk{0%{transform:translateY(122%) rotate(7deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}16%,84%{transform:none;animation-timing-function:cubic-bezier(.7,0,.84,0)}100%{transform:translateY(-122%) rotate(-6deg)}}
+  @keyframes kwk-in{0%{transform:translateY(122%) rotate(7deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}100%{transform:none}}
+  @keyframes kwk-l{0%{transform:translateX(-120%) skewX(-18deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}16%,84%{transform:none;animation-timing-function:cubic-bezier(.7,0,.84,0)}100%{transform:translateX(120%) skewX(18deg)}}
+  @keyframes kwk-l-in{0%{transform:translateX(-120%) skewX(-18deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}100%{transform:none}}
+  @keyframes kwk-d{0%{transform:translateY(-122%) rotate(-6deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}16%,84%{transform:none;animation-timing-function:cubic-bezier(.7,0,.84,0)}100%{transform:translateY(122%) rotate(7deg)}}
+  @keyframes kwk-d-in{0%{transform:translateY(-122%) rotate(-6deg);animation-timing-function:cubic-bezier(.16,1,.3,1)}100%{transform:none}}
+  .lam .kw.acc .kwi{position:relative}
+  .lam .kw.acc .kwi::after{content:"";position:absolute;left:0;right:0;bottom:-.01em;height:.07em;background:currentColor;transform:scaleX(0);transform-origin:0 50%;animation:ulk linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0)) * 1%) contain calc(var(--b) * 1% - (var(--n) - var(--i) - 1) * var(--st) * 1%)}
+  .lam.stay .kw.acc .kwi::after{animation-range:contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0) + 1.2) * 1%) contain calc(var(--a) * 1% + (var(--i) * var(--st) + var(--dl,0) + 4.4) * 1%);animation-name:ulk-in}
+  @keyframes ulk{0%,24%{transform:scaleX(0)}44%,100%{transform:scaleX(1)}}
+  @keyframes ulk-in{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  /* frases grandes sobre el fondo oscuro, con una palabra fantasma que cruza la pantalla */
+  .lam-D{inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:0 var(--pad);overflow:hidden}
+  .lam-D .dwrap{position:relative;z-index:1}
+  .lam-D .d-t{font:300 clamp(40px,7.2vw,104px)/1.04 var(--f-display);letter-spacing:-.025em;color:#F3F6F7;text-wrap:balance;--dl:.3}
+  .lam-D .kw.acc{color:#F6935F}
+  .lam-D .b{font-size:clamp(15px,1.3vw,18px);color:rgba(243,246,247,.82);margin-top:18px}
+  .ghost{position:absolute;inset:0;display:grid;place-items:center;font:300 clamp(150px,30vw,460px)/1 var(--f-display);font-style:normal;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(243,246,247,.2);white-space:nowrap;animation:ghostk linear both;animation-timeline:--walk;animation-range:contain calc(var(--a) * 1%) contain calc(var(--b) * 1%)}
+  @keyframes ghostk{0%{opacity:0;transform:translateX(20%)}22%,78%{opacity:1}100%{opacity:0;transform:translateX(-20%)}}
+  /* patio: texto sin lamina, directamente sobre la foto */
+  .lam.lam-P1{color:#F3F6F7;max-width:min(46ch,38vw)}
+  .lam-P1 .k,.lam-P1 .kw.acc{color:#F6935F}
+  .lam-P1 .t{font:300 clamp(34px,4.2vw,60px)/1.04 var(--f-display);letter-spacing:-.02em;margin-top:14px;text-wrap:balance;--dl:1.2}
+  .lam-P1 .b{color:rgba(243,246,247,.92)}
+  /* posiciones en escritorio */
+  .lam.lam-L1,.lam.lam-R1{max-width:min(38ch,40vw)}
+  .lam-L1{--a:21;--b:42;top:clamp(28px,9vh,88px);right:var(--pad);--o1:100% 50%;--o2:0 50%}
+  .lam-D1{--a:47;--b:56}
+  .lam-R1{--a:59;--b:78;top:clamp(28px,9vh,88px);left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)))}
+  .lam-R2{--a:61;--b:78;top:clamp(28px,9vh,88px);right:var(--pad);--o1:50% 0;--o2:50% 100%}
+  .lam-R3{--a:64;--b:78;bottom:clamp(28px,9vh,88px);left:calc(50% - min(17ch,22vw));--o1:50% 100%;--o2:50% 0}
+  .lam-D2{--a:79;--b:87}
+  .lam-P1{--a:89;--b:100;left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));top:50%;transform:translateY(-50%)}
+  .lam-P2{--a:90;--b:100;top:clamp(28px,9vh,88px);right:var(--pad);--o1:50% 0}
+  .lam-P3{--a:92;--b:100;bottom:112px;right:var(--pad);--o1:100% 50%}
+  /* entrada del titular al cargar (por tiempo, no por scroll) */
+  .cap0 .kwi{animation:kwl 1s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i) * 90ms + 180ms);animation-timeline:auto;animation-range:normal}
+  @keyframes kwl{from{transform:translateY(122%) rotate(7deg)}}
+  .cap0 .lead{animation:fup .9s cubic-bezier(.16,1,.3,1) .7s both}
+  @keyframes fup{from{opacity:0;transform:translateY(16px)}}
 }}
 @supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
 @media (prefers-reduced-motion:no-preference) and (max-width:900px) {
-  .pan{max-width:none}
+  .lam.pan,.lam.lam-L1,.lam.lam-R1,.lam.lam-R2,.lam.lam-R3,.lam.lam-P1,.lam.lam-P2{max-width:none}
   .lam-L1,.lam-R2,.lam-R3,.lam-P2{top:16px;bottom:auto;left:var(--pad);right:var(--pad)}
-  .lam-R2{--a:61%;--b:71%}
-  .lam-R3{--a:70%;--b:80%}
+  .lam-R1{top:auto;bottom:84px;left:var(--pad);right:var(--pad)}
+  .lam-R2{--a:61;--b:70}
+  .lam-R3{--a:69;--b:78;--o1:50% 0;--o2:50% 100%}
+  .lam-P1{top:auto;bottom:72px;left:var(--pad);right:var(--pad);transform:none}
   .lam-P3{display:none}
-  .walk .cap1{top:auto;bottom:84px;left:var(--pad);right:var(--pad);max-width:none}
+  .ghost{font-size:clamp(120px,46vw,260px)}
+  .cap0{width:auto}
 }}
 @supports ((animation-timeline: view()) and (width: calc(pow(2, 2) * 1px))) {
 @media (prefers-reduced-motion:no-preference) and (min-width:901px) {
@@ -666,8 +751,8 @@ body.noscroll{overflow:hidden}
 
         <div class="cap cap0">
           <div class="cap-body">
-            <h1 id="h1"><span data-es="Amanece" data-en="Wake up">Amanece</span><br><span class="acc" data-es="despacio." data-en="slowly.">despacio.</span></h1>
-            <p class="lead" data-es="Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios." data-en="Twenty-eight rooms facing the Atlantic, a spa and market cooking. A pet-friendly hotel. Book direct, no middlemen.">Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios.</p>
+            <h1 id="h1" data-kin data-es="Hotel boutique|en *El Palmar.*" data-en="Boutique hotel|in *El Palmar.*">Hotel boutique <br><span class="acc">en El Palmar.</span></h1>
+            <p class="lead" data-es="Hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin intermediarios." data-en="Pet-friendly boutique hotel with 28 rooms in El Palmar, Vejer de la Frontera (Cádiz), with its own spa and restaurant. Book direct, no middlemen.">Hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin intermediarios.</p>
           </div>
           <form class="bar" id="heroBar" novalidate aria-label="Buscar fechas" data-es-aria="Buscar fechas" data-en-aria="Search dates">
             <div class="field"><label for="b-in" data-es="Llegada" data-en="Check-in">Llegada</label><input class="input" id="b-in" type="date"></div>
@@ -678,22 +763,75 @@ body.noscroll{overflow:hidden}
           </form>
         </div>
 
-        <div class="cap cap1"><div class="cap-body">
-          <p class="cap-title" data-es="Una casa pequeña, abierta al este." data-en="A small house, open to the east.">Una casa pequeña, abierta al este.</p>
-          <p class="lead" data-es="Veintiocho habitaciones en una casa restaurada con cal y madera. El patio mira al este y el sol entra temprano." data-en="Twenty-eight rooms in a house restored with lime and timber. The courtyard faces east and the sun comes in early.">Veintiocho habitaciones en una casa restaurada con cal y madera. El patio mira al este y el sol entra temprano.</p>
-        </div></div>
-        <div class="cap cap2"><div class="cap-body">
-          <p class="cap-title" data-es="Cada habitación, una luz." data-en="Each room, its own light.">Cada habitación, una luz.</p>
-          <p class="lead" data-es="Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde." data-en="Each room is told by the light it receives, from the first morning sun to the afternoon.">Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde.</p>
+        <div class="lam lam-R1 st pan slate big">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="El hotel" data-en="The hotel">El hotel</p>
+            <p class="cnt"><b class="num"><span class="sr">28</span></b><span class="unit" data-kin data-es="habitaciones" data-en="rooms">habitaciones</span></p>
+            <p class="t" data-kin data-es="en una casa *restaurada.*" data-en="in a *restored* house.">en una casa restaurada.</p>
+            <p class="b" data-es="Cal, madera y piedra. Alba, Marea, Terraza y Faro: con terraza privada, mirador al mar o salón propio." data-en="Lime, timber and stone. Alba, Marea, Terraza and Faro: with a private terrace, a sea-view window seat or a living room of their own.">Cal, madera y piedra. Alba, Marea, Terraza y Faro: con terraza privada, mirador al mar o salón propio.</p>
+          </div>
+        </div>
+        <div class="lam lam-L1 pan slate big">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="Ubicación" data-en="Location">Ubicación</p>
+            <p class="t kin-l" data-kin data-es="*El Palmar,* Vejer de la Frontera." data-en="*El Palmar,* Vejer de la Frontera.">El Palmar, Vejer de la Frontera.</p>
+            <p class="b" data-es="Playa, surf y pueblos blancos en la Costa de la Luz de Cádiz." data-en="Beach, surf and white villages on the Costa de la Luz of Cádiz.">Playa, surf y pueblos blancos en la Costa de la Luz de Cádiz.</p>
+          </div>
+        </div>
+        <div class="lam lam-D lam-D1">
+          <i class="ghost" aria-hidden="true">AURORA</i>
+          <div class="dwrap">
+            <p class="d-t" data-kin data-es="Pasa, tú y *tu perro.*" data-en="Come in, you and *your dog.*">Pasa, tú y tu perro.</p>
+            <p class="b" data-es="Hotel petfriendly en El Palmar, Vejer de la Frontera." data-en="Pet-friendly hotel in El Palmar, Vejer de la Frontera.">Hotel petfriendly en El Palmar, Vejer de la Frontera.</p>
+          </div>
+        </div>
+        <div class="lam lam-R2 pan terra vy">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="Reserva directa" data-en="Direct booking">Reserva directa</p>
+            <p class="t" data-kin data-es="*Sin comisiones* de intermediarios." data-en="*No commission* for middlemen.">Sin comisiones de intermediarios.</p>
+            <p class="b" data-es="Reserva en pocos pasos, en español o en inglés, con la política de cancelación a la vista." data-en="Book in a few steps, in Spanish or English, with the cancellation policy in view.">Reserva en pocos pasos, en español o en inglés, con la política de cancelación a la vista.</p>
+          </div>
+        </div>
+        <div class="lam lam-R3 pan paper vy">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="Petfriendly" data-en="Pet-friendly">Petfriendly</p>
+            <p class="t kin-d" data-kin data-es="Hotel que *admite perros* en Cádiz." data-en="A hotel that *welcomes dogs* in Cádiz.">Hotel que admite perros en Cádiz.</p>
+            <p class="b" data-es="Hasta dos perros por habitación, con cama y cuencos de cortesía." data-en="Up to two dogs per room, with a bed and bowls provided.">Hasta dos perros por habitación, con cama y cuencos de cortesía.</p>
+          </div>
+        </div>
+        <div class="lam lam-D lam-D2">
+          <i class="ghost" aria-hidden="true">PATIO</i>
+          <div class="dwrap">
+            <p class="d-t kin-l" data-kin data-es="Y al fondo, el *patio andaluz.*" data-en="And at the back, the *Andalusian patio.*">Y al fondo, el patio andaluz.</p>
+            <p class="b" data-es="Olivo, estanque y banco de piedra en el corazón de la casa." data-en="Olive tree, pond and a stone bench at the heart of the house.">Olivo, estanque y banco de piedra en el corazón de la casa.</p>
+          </div>
+        </div>
+        <div class="lam lam-P1 st stay">
+          <p class="k" data-kin data-es="Habitaciones" data-en="Rooms">Habitaciones</p>
+          <p class="t" data-kin data-es="Elige tu *habitación* en El Palmar." data-en="Choose your *room* in El Palmar.">Elige tu habitación en El Palmar.</p>
+          <p class="b" data-es="Alba, Marea, Terraza y Faro: de dos a cuatro personas." data-en="Alba, Marea, Terraza and Faro: for two to four guests.">Alba, Marea, Terraza y Faro: de dos a cuatro personas.</p>
           <a class="link-arrow" href="#/" data-goto="habitaciones"><span data-es="Ver habitaciones" data-en="See the rooms">Ver habitaciones</span> <span aria-hidden="true">→</span></a>
-        </div></div>
-        <div class="lam lam-L1 pan slate" aria-hidden="true"><p class="t" data-es="En El Palmar, frente al Atlántico." data-en="In El Palmar, facing the Atlantic.">En El Palmar, frente al Atlántico.</p><p class="b" data-es="Vejer de la Frontera, Costa de la Luz." data-en="Vejer de la Frontera, Costa de la Luz.">Vejer de la Frontera, Costa de la Luz.</p></div>
-        <div class="lam lam-D lam-D1" aria-hidden="true"><div><p class="d-t"><span data-es="Dentro, la luz" data-en="Inside, the light">Dentro, la luz</span> <span class="acc" data-es="cambia." data-en="changes.">cambia.</span></p><p class="d-s" data-es="Del sol de la entrada a la sombra de la casa." data-en="From the entrance sun to the shade of the house.">Del sol de la entrada a la sombra de la casa.</p></div></div>
-        <div class="lam lam-R2 pan terra" aria-hidden="true"><p class="t" data-es="Reserva directa." data-en="Book direct.">Reserva directa.</p><p class="b" data-es="Sin intermediarios ni comisión." data-en="No middlemen, no commission.">Sin intermediarios ni comisión.</p></div>
-        <div class="lam lam-R3 pan paper" aria-hidden="true"><p class="t" data-es="Petfriendly." data-en="Pet-friendly.">Petfriendly.</p><p class="b" data-es="Hasta dos perros por habitación, con cama y cuencos de cortesía." data-en="Up to two dogs per room, with a bed and bowls provided.">Hasta dos perros por habitación, con cama y cuencos de cortesía.</p></div>
-        <div class="lam lam-D lam-D2" aria-hidden="true"><div><p class="d-t"><span data-es="Al fondo, el" data-en="At the far end, the">Al fondo, el</span> <span class="acc" data-es="patio." data-en="courtyard.">patio.</span></p><p class="d-s" data-es="Mira al este y el sol entra temprano." data-en="It faces east and the sun comes in early.">Mira al este y el sol entra temprano.</p></div></div>
-        <div class="lam lam-P2 pan sand" aria-hidden="true"><p class="t" data-es="Spa y restaurante propios." data-en="Our own spa and restaurant.">Spa y restaurante propios.</p><p class="b" data-es="Pide cita o mesa desde la web." data-en="Request an appointment or a table online.">Pide cita o mesa desde la web.</p></div>
-        <div class="lam lam-P3 pan terra" aria-hidden="true"><p class="t" data-es="Llegada desde las 15:00." data-en="Check-in from 15:00.">Llegada desde las 15:00.</p><p class="b" data-es="Salida hasta las 12:00." data-en="Check-out until 12:00.">Salida hasta las 12:00.</p></div>
+        </div>
+        <div class="lam lam-P2 pan sand vy stay">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="Spa y restaurante" data-en="Spa and restaurant">Spa y restaurante</p>
+            <p class="t" data-kin data-es="Hotel con *spa* y *restaurante* propios." data-en="Hotel with its own *spa* and *restaurant.*">Hotel con spa y restaurante propios.</p>
+            <p class="b" data-es="Cocina de mercado y spa de agua en la Costa de la Luz. Pide cita o mesa desde la web." data-en="Market cooking and a water spa on the Costa de la Luz. Request an appointment or a table online.">Cocina de mercado y spa de agua en la Costa de la Luz. Pide cita o mesa desde la web.</p>
+          </div>
+        </div>
+        <div class="lam lam-P3 pan terra stay">
+          <i class="pbg"></i><i class="pbar"></i>
+          <div class="pin">
+            <p class="k" data-kin data-es="Llegada y salida" data-en="Check-in and check-out">Llegada y salida</p>
+            <p class="t" data-kin data-es="Entrada *desde las 15:00.*" data-en="Check-in *from 15:00.*">Entrada desde las 15:00.</p>
+            <p class="b" data-es="Salida hasta las 12:00." data-en="Check-out until 12:00.">Salida hasta las 12:00.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -702,7 +840,7 @@ body.noscroll{overflow:hidden}
   <section class="sec" id="habitaciones" aria-labelledby="h-rooms" style="padding-top:calc(var(--sec) * .6)">
     <div class="wrap">
       <div class="rooms-head">
-        <h2 class="h2 rv" id="h-rooms" data-es="Cuatro habitaciones, cuatro luces." data-en="Four rooms, four kinds of light.">Cuatro habitaciones, cuatro luces.</h2>
+        <h2 class="h2 rv" id="h-rooms" data-es="Habitaciones con carácter en El Palmar." data-en="Characterful rooms in El Palmar.">Habitaciones con carácter en El Palmar.</h2>
         <div class="rooms-ctl" aria-hidden="false">
           <button type="button" id="rPrev" aria-label="Anteriores" data-es-aria="Habitaciones anteriores" data-en-aria="Previous rooms">←</button>
           <button type="button" id="rNext" aria-label="Siguientes" data-es-aria="Habitaciones siguientes" data-en-aria="Next rooms">→</button>
@@ -734,7 +872,7 @@ body.noscroll{overflow:hidden}
     <div class="rest">
       <div class="slot full lbl-tr video lit pz rv" style="--gx:78%;--gy:40%" role="img" aria-label="Vídeo pendiente V01: sala del restaurante" data-es-aria="Vídeo pendiente V01: sala del restaurante" data-en-aria="Video pending V01: dining room"><span class="slot-label"><b>V01</b><span data-es="Microvídeo en bucle, sin audio, con póster P16" data-en="Silent looping microvideo, poster P16">Microvídeo en bucle, sin audio, con póster P16</span></span></div>
       <div class="panel rv d1">
-        <h2 class="h2" id="h-rest" style="font-size:clamp(28px,3.4vw,44px)" data-es="Cocina de mercado, mesa junto a la ventana." data-en="Market cooking, a table by the window.">Cocina de mercado, mesa junto a la ventana.</h2>
+        <h2 class="h2" id="h-rest" style="font-size:clamp(28px,3.4vw,44px)" data-es="Restaurante de cocina de mercado en El Palmar." data-en="A market-kitchen restaurant in El Palmar.">Restaurante de cocina de mercado en El Palmar.</h2>
         <p class="muted" data-es="Desayuno hasta media mañana y cena con producto de temporada. Pide mesa y te confirmamos por correo o WhatsApp." data-en="Breakfast until mid-morning and dinner with seasonal produce. Request a table and we confirm by email or WhatsApp.">Desayuno hasta media mañana y cena con producto de temporada. Pide mesa y te confirmamos por correo o WhatsApp.</p>
         <button type="button" class="btn btn-ghost" data-open-request="table" data-es="Pedir mesa" data-en="Request a table">Pedir mesa</button>
       </div>
@@ -746,7 +884,7 @@ body.noscroll{overflow:hidden}
     <div class="wrap spa">
       <div class="spa-art ph slot lit pz rv" style="--gx:62%;--gy:20%" role="img" aria-label="Foto pendiente P19: sala de tratamientos" data-es-aria="Foto pendiente P19: sala de tratamientos" data-en-aria="Photo pending P19: treatment room"><span class="slot-label"><b>P19</b><span data-es="Sala de tratamientos, vertical 4:5" data-en="Treatment room, vertical 4:5">Sala de tratamientos, vertical 4:5</span></span></div>
       <div>
-        <h2 class="h2 rv" id="h-spa" data-es="Spa de agua, silencio y luz." data-en="A spa of water, silence and light.">Spa de agua, silencio y luz.</h2>
+        <h2 class="h2 rv" id="h-spa" data-es="Spa de agua y silencio en la Costa de la Luz." data-en="A spa of water and silence on the Costa de la Luz.">Spa de agua y silencio en la Costa de la Luz.</h2>
         <div class="tabs rv d1" role="tablist" aria-label="Spa" id="spaTabs"></div>
         <div class="tabpanel" id="spaPanel" role="tabpanel" tabindex="0"></div>
       </div>
@@ -758,7 +896,7 @@ body.noscroll{overflow:hidden}
     <div class="wrap pet-grid">
       <div class="slot ph pet-img lit pz rv" style="--gx:34%;--gy:40%" role="img" aria-label="Foto pendiente P25: perro en la terraza de la habitación" data-es-aria="Foto pendiente P25: perro en la terraza de la habitación" data-en-aria="Photo pending P25: dog on the room terrace"><span class="slot-label"><b>P25</b><span data-es="Perro en la terraza, horizontal 3:2" data-en="Dog on the terrace, landscape 3:2">Perro en la terraza, horizontal 3:2</span></span></div>
       <div class="pet-copy rv d1">
-        <h2 class="h2" id="h-pet" data-es="Tu perro también está invitado." data-en="Your dog is invited too.">Tu perro también está invitado.</h2>
+        <h2 class="h2" id="h-pet" data-es="Hotel petfriendly: tu perro también está invitado." data-en="Pet-friendly hotel: your dog is invited too.">Hotel petfriendly: tu perro también está invitado.</h2>
         <ul class="pet-list">
           <li data-es="Hotel petfriendly: hasta dos perros por habitación." data-en="Pet-friendly hotel: up to two dogs per room.">Hotel petfriendly: hasta dos perros por habitación.</li>
           <li data-es="Cama y cuencos de cortesía en la habitación." data-en="A bed and bowls provided in the room.">Cama y cuencos de cortesía en la habitación.</li>
@@ -773,7 +911,7 @@ body.noscroll{overflow:hidden}
   <section class="sec sec-band" id="paquetes" aria-labelledby="h-pack">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="h2 rv" id="h-pack" data-es="Paquetes" data-en="Packages">Paquetes</h2>
+        <h2 class="h2 rv" id="h-pack" data-es="Escapadas y paquetes en El Palmar" data-en="Getaways and packages in El Palmar">Escapadas y paquetes en El Palmar</h2>
         <p class="lead rv d1" data-es="Alojamiento, cena y spa en un solo paso." data-en="Stay, dinner and spa in one step.">Alojamiento, cena y spa en un solo paso.</p>
       </div>
       <div class="bento">
@@ -811,7 +949,7 @@ body.noscroll{overflow:hidden}
   <section class="sec" id="llegar" aria-labelledby="h-way" style="padding-top:0">
     <div class="wrap way">
       <div class="pet-copy rv">
-        <h2 class="h2" id="h-way" data-es="Cómo llegar" data-en="Getting here">Cómo llegar</h2>
+        <h2 class="h2" id="h-way" data-es="Cómo llegar a El Palmar, Vejer de la Frontera" data-en="Getting to El Palmar, Vejer de la Frontera">Cómo llegar a El Palmar, Vejer de la Frontera</h2>
         <p class="lead" data-es="A pocos minutos de la Playa de El Palmar, en Vejer de la Frontera, en la Costa de la Luz de Cádiz." data-en="A few minutes from Playa de El Palmar, in Vejer de la Frontera, on the Costa de la Luz in Cádiz.">A pocos minutos de la Playa de El Palmar, en Vejer de la Frontera, en la Costa de la Luz de Cádiz.</p>
         <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Playa%20de%20El%20Palmar%2C%20Vejer%20de%20la%20Frontera" target="_blank" rel="noopener"><span data-es="Abrir en Google Maps" data-en="Open in Google Maps">Abrir en Google Maps</span> <span aria-hidden="true">→</span></a>
       </div>
@@ -826,7 +964,7 @@ body.noscroll{overflow:hidden}
   <!-- Cierre -->
   <section class="sec" style="padding-top:0" aria-labelledby="h-close">
     <div class="wrap close">
-      <h2 class="h-display rv" id="h-close" style="font-size:clamp(44px,7vw,96px)"><span data-es="Reserva la" data-en="Book your">Reserva la</span><br><span class="acc" data-es="próxima mañana." data-en="next morning.">próxima mañana.</span></h2>
+      <h2 class="h-display rv" id="h-close" style="font-size:clamp(44px,7vw,96px)"><span data-es="Reserva tu escapada" data-en="Book your getaway">Reserva tu escapada</span> <br><span class="acc" data-es="a El Palmar." data-en="to El Palmar.">a El Palmar.</span></h2>
       <p class="lead rv d1" data-es="Escríbenos si prefieres hablar con una persona." data-en="Write to us if you prefer to talk to a person.">Escríbenos si prefieres hablar con una persona.</p>
       <div class="close-actions rv d2">
         <button type="button" class="btn btn-primary" data-open-booking data-es="Reservar" data-en="Book">Reservar</button>
@@ -860,7 +998,7 @@ body.noscroll{overflow:hidden}
         <div class="room-text">
           <p class="lead" id="rBlurb" style="max-width:60ch"></p>
           <div>
-            <h2 class="h3" style="margin-bottom:20px" data-es="La luz de la habitación" data-en="The room's light">La luz de la habitación</h2>
+            <h2 class="h3" style="margin-bottom:20px" data-es="Orientación y vistas" data-en="Orientation and views">Orientación y vistas</h2>
             <div class="sunblock" id="rSun"></div>
           </div>
           <div class="feat" id="rFeat"></div>
@@ -1007,42 +1145,44 @@ const ROOMS = {
     orient:{es:'Orientada al este.', en:'Facing east.'},
     light:{es:'Sol de 7:10 a 10:30.', en:'Sun from 7:10 to 10:30.'},
     sun:['7:10','10:30'],
-    blurb:{es:'La habitación que despierta primero. El sol entra por la ventana a primera hora y recorre la pared de cal hasta media mañana.', en:'The room that wakes up first. The sun comes through the window early and travels along the lime wall until mid-morning.'} },
+    blurb:{es:'Dormitorio para dos con cama doble, vigas de madera y zona de TV en un armario de pared. Orientada al este, con baño de piedra y ducha de obra.', en:'A bedroom for two with a double bed, timber beams and a TV corner in a wall cupboard. East-facing, with a stone bathroom and a walk-in shower.'} },
   marea:   { n:'Marea',   area:36, guests:3, price:189, codes:['P07','P08','P09'],
     beds:{es:'1 cama doble y 1 individual', en:'1 double bed and 1 single bed'},
     photos:[['P07','Vista general, vertical 4:5','Overview, vertical 4:5'],['P08','El mirador, 3:2','The window bench, 3:2'],['P09','Las dos camas, 3:2','The two beds, 3:2'],['P28','El baño, 3:2','The bathroom, 3:2'],['P29','La zona de TV, 3:2','The TV corner, 3:2']],
     orient:{es:'Vista al mar, orientada al suroeste.', en:'Sea view, facing south-west.'},
     light:{es:'Sol de 16:20 a 20:45.', en:'Sun from 16:20 to 20:45.'},
     sun:['16:20','20:45'],
-    blurb:{es:'Un banco de obra en una ventana de muro grueso, con el Atlántico enmarcado y el sol dorado de la tarde sobre la ropa de cama. Cabe una persona más: una cama doble y una individual.', en:'A masonry bench in the window of a thick wall, the Atlantic framed and the golden afternoon sun across the bed linen. Room for one more: a double bed and a single bed.'} },
+    blurb:{es:'Habitación para tres con una cama doble y una individual, y un banco de obra en una ventana de muro grueso con vistas al Atlántico.', en:'A room for three with a double bed and a single bed, and a masonry window seat in a thick wall with views of the Atlantic.'} },
   terraza: { n:'Terraza', area:40, guests:2, price:168, codes:['P10','P11','P12'],
     beds:{es:'2 camas individuales', en:'2 single beds'},
     photos:[['P10','Vista general, vertical 4:5','Overview, vertical 4:5'],['P11','La terraza, 3:2','The terrace, 3:2'],['P12','Las dos camas individuales, 3:2','The two single beds, 3:2'],['P30','El baño, 3:2','The bathroom, 3:2'],['P31','La zona de TV, 3:2','The TV corner, 3:2']],
     orient:{es:'Orientada al este, con terraza privada.', en:'Facing east, with a private terrace.'},
     light:{es:'Sol de 8:00 a 12:00.', en:'Sun from 8:00 to 12:00.'},
     sun:['8:00','12:00'],
-    blurb:{es:'Dos camas individuales y una terraza privada con sol suave y dorado por la mañana, buena para tomar el sol. Desayunar fuera en cuanto el sol llega a la mesa.', en:'Two single beds and a private terrace with soft golden morning sun, made for sunbathing. Breakfast outside as soon as the sun reaches the table.'} },
+    blurb:{es:'Habitación para dos con dos camas individuales y terraza privada cubierta de caña, con banco solárium y ducha exterior.', en:'A room for two with two single beds and a private cane-covered terrace, with a sun bench and an outdoor shower.'} },
   faro:    { n:'Faro',    area:74, guests:4, price:296, codes:['P13','P14','P15'],
     beds:{es:'Salón, cocina y 2 dormitorios: 1 cama doble y 2 individuales', en:'Living room, kitchen and 2 bedrooms: 1 double bed and 2 single beds'},
     photos:[['P13','El salón, vertical 4:5','The living room, vertical 4:5'],['P34','La zona de TV del salón, 3:2','The living-room TV corner, 3:2'],['P14','Dormitorio con cama doble, 3:2','Bedroom with the double bed, 3:2'],['P15','Dormitorio con dos camas individuales, 3:2','Bedroom with two single beds, 3:2'],['P32','El baño, 3:2','The bathroom, 3:2'],['P35','La cocina y el recibidor, 3:2','The kitchen and entrance hall, 3:2']],
     orient:{es:'Mini apartamento orientado al sur y al oeste.', en:'Mini apartment facing south and west.'},
     light:{es:'Sol de 11:30 a 20:50.', en:'Sun from 11:30 to 20:50.'},
     sun:['11:30','20:50'],
-    blurb:{es:'El mini apartamento de la casa: un salón con zona de TV, cocina y dos dormitorios, con ventanas a dos fachadas. La luz cambia de pared a lo largo del día.', en:'The house mini apartment: a living room with a TV corner, a kitchen and two bedrooms, with windows on two sides. The light moves from wall to wall through the day.'} }
+    blurb:{es:'Mini apartamento de 74 m² para cuatro personas, con salón, cocina y dos dormitorios: una cama doble y dos individuales.', en:'A 74 m² mini apartment for four guests, with a living room, a kitchen and two bedrooms: one double bed and two single beds.'} }
 };
 const FAQ = [
-  [{es:'¿Cómo cancelo una reserva?',en:'How do I cancel a booking?'},{es:'Desde el correo de confirmación o escribiéndonos. Cada tarifa indica su política antes de pagar.',en:'From the confirmation email or by writing to us. Each rate shows its policy before you pay.'}],
+  [{es:'¿Dónde está Hotel Aurora?',en:'Where is Hotel Aurora?'},{es:'Hotel Aurora está en El Palmar, en Vejer de la Frontera (Cádiz), en la Costa de la Luz, a unos minutos en coche de la playa. Te enviamos la ruta con la confirmación.',en:'Hotel Aurora is in El Palmar, in Vejer de la Frontera (Cádiz), on the Costa de la Luz, a few minutes by car from the beach. We send directions with your confirmation.'}],
+  [{es:'¿Se admiten perros en Hotel Aurora?',en:'Does Hotel Aurora accept dogs?'},{es:'Sí, es un hotel petfriendly. Se admiten hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.',en:'Yes, it is a pet-friendly hotel. Up to two dogs are welcome per room, with a bed and bowls provided. The pet supplement is shown before you pay.'}],
+  [{es:'¿Cuántas habitaciones tiene el hotel?',en:'How many rooms does the hotel have?'},{es:'Hotel Aurora tiene 28 habitaciones. En la web ves cuatro tipos: Alba (2 personas), Terraza (2), Marea (3) y Faro (4, mini apartamento con salón y cocina).',en:'Hotel Aurora has 28 rooms. On the site you can see four types: Alba (2 guests), Terraza (2), Marea (3) and Faro (4, a mini apartment with a living room and kitchen).'}],
+  [{es:'¿Tiene spa y restaurante propios?',en:'Does it have its own spa and restaurant?'},{es:'Sí. El spa también admite a quien no se aloja, según disponibilidad. En el restaurante pides mesa desde la web y te confirmamos por correo o WhatsApp.',en:'Yes. The spa also welcomes people who are not staying with us, subject to availability. For the restaurant you request a table online and we confirm by email or WhatsApp.'}],
+  [{es:'¿Puedo reservar sin comisiones?',en:'Can I book without commission?'},{es:'Sí. Reservando directamente con el hotel no pagas comisión de intermediarios, y cada tarifa muestra su política de cancelación antes de pagar.',en:'Yes. Booking directly with the hotel means no middleman commission, and each rate shows its cancellation policy before you pay.'}],
   [{es:'¿A qué hora son la entrada y la salida?',en:'What time are check-in and check-out?'},{es:'La entrada es desde las 15:00 y la salida hasta las 12:00. Si llegas antes, guardamos tu equipaje.',en:'Check-in is from 15:00 and check-out until 12:00. If you arrive earlier, we store your luggage.'}],
+  [{es:'¿Cómo cancelo una reserva?',en:'How do I cancel a booking?'},{es:'Desde el correo de confirmación o escribiéndonos. Cada tarifa indica su política antes de pagar.',en:'From the confirmation email or by writing to us. Each rate shows its policy before you pay.'}],
   [{es:'¿Hay aparcamiento?',en:'Is there parking?'},{es:'Sí, junto a la casa y sujeto a disponibilidad. Avísanos al reservar.',en:'Yes, next to the house and subject to availability. Let us know when you book.'}],
-  [{es:'¿Puedo viajar con mi perro?',en:'Can I travel with my dog?'},{es:'Sí, somos un hotel petfriendly. Se admiten hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.',en:'Yes, we are a pet-friendly hotel. Up to two dogs are welcome per room, with a bed and bowls provided. The pet supplement is shown before you pay.'}],
-  [{es:'¿Hay cuna o cama para mi mascota?',en:'Is there a baby crib or a bed for my pet?'},{es:'Sí. Todas las habitaciones pueden pedir una cuna de bebé o una cama para mascota, sin coste adicional. Pídela al reservar o escríbenos.',en:'Yes. Every room can request a baby crib or a pet bed at no extra cost. Ask when you book or write to us.'}],
-  [{es:'¿El spa es solo para huéspedes?',en:'Is the spa for guests only?'},{es:'No. Las personas que no se alojan pueden pedir cita según disponibilidad.',en:'No. People not staying with us can request an appointment, subject to availability.'}],
-  [{es:'¿Cómo llego?',en:'How do I get there?'},{es:'Estamos en la Costa de la Luz, a unos minutos en coche de la playa. Te enviamos la ruta con la confirmación.',en:'We are on the Costa de la Luz, a few minutes by car from the beach. We send directions with your confirmation.'}]
+  [{es:'¿Hay cuna o cama para mi mascota?',en:'Is there a baby crib or a bed for my pet?'},{es:'Sí. Todas las habitaciones pueden pedir una cuna de bebé o una cama para mascota, sin coste adicional. Pídela al reservar o escríbenos.',en:'Yes. Every room can request a baby crib or a pet bed at no extra cost. Ask when you book or write to us.'}]
 ];
 const SPA = [
-  {k:'rit', t:{es:'Rituales',en:'Rituals'}, p:{es:'Tratamientos con aceites tibios y música baja. Empiezan al amanecer o al caer la tarde.',en:'Treatments with warm oils and low music. They start at dawn or at dusk.'},
-    items:[[{es:'Ritual del amanecer',en:'Dawn ritual'},{es:'60 min',en:'60 min'}],[{es:'Masaje con aceite tibio',en:'Warm oil massage'},{es:'90 min',en:'90 min'}],[{es:'Facial de luz',en:'Light facial'},{es:'60 min',en:'60 min'}]]},
-  {k:'agua', t:{es:'Circuito de agua',en:'Water circuit'}, p:{es:'Un recorrido en silencio, con ventanas al este y la luz de la mañana sobre el agua.',en:'A silent route with east-facing windows and morning light on the water.'},
+  {k:'rit', t:{es:'Rituales',en:'Rituals'}, p:{es:'Tratamientos con aceites tibios y música baja, por la mañana o por la tarde.',en:'Treatments with warm oils and low music, in the morning or in the afternoon.'},
+    items:[[{es:'Ritual de bienvenida',en:'Welcome ritual'},{es:'60 min',en:'60 min'}],[{es:'Masaje con aceite tibio',en:'Warm oil massage'},{es:'90 min',en:'90 min'}],[{es:'Facial revitalizante',en:'Revitalising facial'},{es:'60 min',en:'60 min'}]]},
+  {k:'agua', t:{es:'Circuito de agua',en:'Water circuit'}, p:{es:'Un recorrido en silencio con piscina templada, sauna y ducha de contraste.',en:'A silent route with a warm pool, a sauna and a contrast shower.'},
     items:[[{es:'Piscina templada',en:'Warm pool'},{es:'Huéspedes y citas',en:'Guests and bookings'}],[{es:'Sauna',en:'Sauna'},{es:'Incluida en el circuito',en:'Included in the circuit'}],[{es:'Ducha de contraste',en:'Contrast shower'},{es:'Incluida en el circuito',en:'Included in the circuit'}]]},
   {k:'dos', t:{es:'Para dos',en:'For two'}, p:{es:'Una sala doble con bañera, pensada para compartir el ritual y el silencio.',en:'A double room with a bath, made for sharing the ritual and the silence.'},
     items:[[{es:'Ritual compartido',en:'Shared ritual'},{es:'90 min',en:'90 min'}],[{es:'Bañera para dos',en:'Bath for two'},{es:'Incluida',en:'Included'}],[{es:'Té al terminar',en:'Tea afterwards'},{es:'Incluido',en:'Included'}]]}
@@ -1064,7 +1204,7 @@ const D = {
     tableT:'Pedir mesa', spaT:'Pedir cita', vouchT:'Comprar bono', send:'Enviar solicitud', pay:'Ir al pago seguro',
     okTable:'Solicitud enviada', okTableP:'Te respondemos por correo o WhatsApp. En producción se envía por servidor con validación, límite de peticiones y página de gracias.',
     okVouch:'Pago alojado en Stripe', okVouchP:'En producción te llevaríamos a Stripe Checkout (modo test hasta aprobación). La tarjeta nunca pasa por nuestro servidor.',
-    minData:'Solo pedimos lo necesario.', treats:['Ritual del amanecer','Circuito de agua','Ritual para dos'], bono:'Día de spa, 60 minutos',
+    minData:'Solo pedimos lo necesario.', treats:['Ritual de bienvenida','Circuito de agua','Ritual para dos'], bono:'Día de spa, 60 minutos',
     bot:{hi:'Hola. ¿En qué puedo ayudarte?', q1:'¿Puedo ir con mi perro?', a1:'Sí, somos un hotel petfriendly: hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento se muestra antes de pagar.', q2:'¿A qué hora es la entrada?', a2:'La entrada es desde las 15:00 y la salida hasta las 12:00.', q3:'Quiero hablar con una persona', a3:'Claro. Puedes escribirnos por WhatsApp o llamar al +34 000 000 000.'},
     theme:{auto:'Día',light:'Día',dark:'Madrugada'}, detail:'Ver habitación', book:'Reservar', night:'noche', from:'Desde' },
   en:{ steps:['Dates','Room','Confirm'], back:'Back', next:'Continue', confirm:'Confirm booking', close:'Close',
@@ -1079,7 +1219,7 @@ const D = {
     tableT:'Request a table', spaT:'Request an appointment', vouchT:'Buy voucher', send:'Send request', pay:'Go to secure payment',
     okTable:'Request sent', okTableP:'We reply by email or WhatsApp. In production it is sent from the server with validation, rate limiting and a thank-you page.',
     okVouch:'Payment hosted by Stripe', okVouchP:'In production we would take you to Stripe Checkout (test mode until approved). The card never goes through our server.',
-    minData:'We only ask for what is necessary.', treats:['Dawn ritual','Water circuit','Ritual for two'], bono:'Spa day, 60 minutes',
+    minData:'We only ask for what is necessary.', treats:['Welcome ritual','Water circuit','Ritual for two'], bono:'Spa day, 60 minutes',
     bot:{hi:'Hello. How can I help?', q1:'Can I bring my dog?', a1:'Yes, we are a pet-friendly hotel: up to two dogs per room, with a bed and bowls provided. The supplement is shown before you pay.', q2:'What time is check-in?', a2:'Check-in is from 15:00 and check-out until 12:00.', q3:'I want to talk to a person', a3:'Of course. You can write to us on WhatsApp or call +34 000 000 000.'},
     theme:{auto:'Day',light:'Day',dark:'Pre-dawn'}, detail:'See the room', book:'Book', night:'night', from:'From' }
 };
@@ -1091,7 +1231,7 @@ function applyLang(l){
   $$('[data-es]').forEach(el => { const v = el.getAttribute('data-' + l); if (v != null) el.textContent = v; });
   $$('[data-es-aria]').forEach(el => { const v = el.getAttribute('data-' + l + '-aria'); if (v) el.setAttribute('aria-label', v); });
   $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
-  document.title = l === 'es' ? 'Hotel Aurora | Maqueta' : 'Hotel Aurora | Mockup';
+  document.title = l === 'es' ? 'Hotel boutique petfriendly en El Palmar | Hotel Aurora (maqueta)' : 'Pet-friendly boutique hotel in El Palmar | Hotel Aurora (mockup)';
   renderRooms(); renderFaq(); renderSpa(); renderRoomPage(); renderTheme(); renderCookie(); renderChat($('#chatLog').children.length <= 1);
   if (!$('#bk').hidden) renderBooking();
   if (!$('#rq').hidden) renderRequest();
@@ -1127,7 +1267,7 @@ function renderRooms(){
         <div class="ph slot" style="--gx:${58 + i * 9}%;--gy:${20 + (i % 2) * 8}%" role="img" aria-label="${lang==='es'?'Foto pendiente':'Photo pending'} ${r.codes[0]}"><span class="slot-label"><b>${r.codes[0]}</b>${lang==='es'?'Vista general':'Overview'}</span></div>
       </a>
       <h3 class="h3">${r.n}</h3>
-      <p class="room-light">${r.orient[lang]} ${r.light[lang]}</p>
+      <p class="room-light">${r.orient[lang]}</p>
       <p class="small">${r.area} m², ${T().guests(r.guests)}</p>
       <p class="small">${r.beds[lang]}</p>
       <p class="room-price"><span>${T().from}</span> ${eur(r.price)} <span>/ ${T().night}</span></p>
@@ -1156,12 +1296,10 @@ let roomKey = 'alba';
 function renderRoomPage(){
   const r = ROOMS[roomKey]; if (!r) return;
   $('#rTitle').textContent = r.n; $('#rCrumb').textContent = r.n;
-  $('#rOrient').textContent = r.light[lang];
+  $('#rOrient').textContent = r.orient[lang];
   $('#rFacts').innerHTML = `<div><dt>${lang==='es'?'Superficie':'Size'}</dt><dd>${r.area} m²</dd></div><div><dt>${lang==='es'?'Capacidad':'Sleeps'}</dt><dd>${T().guests(r.guests)}</dd></div><div><dt>${lang==='es'?'Camas':'Beds'}</dt><dd>${r.beds[lang]}</dd></div><div><dt>${lang==='es'?'Orientación':'Aspect'}</dt><dd>${r.orient[lang].replace(/\.$/, '')}</dd></div><div><dt>${lang==='es'?'Entrada':'Check-in'}</dt><dd>${CHECKIN}</dd></div><div><dt>${lang==='es'?'Salida':'Check-out'}</dt><dd>${CHECKOUT}</dd></div><div><dt>${lang==='es'?'Perros':'Dogs'}</dt><dd>${lang==='es'?'Bienvenidos':'Welcome'}</dd></div>`;
   $('#rBlurb').textContent = r.blurb[lang];
-  $('#rSun').innerHTML = r.sun
-    ? `<div class="sunnum"><strong>${r.sun[0]}</strong><span>${lang==='es'?'primer sol en la habitación':'first sun in the room'}</span></div><div class="sunnum"><strong>${r.sun[1]}</strong><span>${lang==='es'?'último sol directo':'last direct sun'}</span></div>`
-    : `<p class="lead">${r.light[lang]}</p>`;
+  $('#rSun').innerHTML = `<p class="lead">${r.orient[lang]} ${r.light[lang]}</p>`;
   $('#rFeat').innerHTML = FEAT[lang].map(([h, items]) => `<div><h3>${h}</h3><ul>${items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('');
   $('#rPrice').textContent = eur(r.price);
   const ph = r.photos, alt = lang==='es'?'Foto pendiente':'Photo pending', li = lang==='es'?1:2;
@@ -1287,7 +1425,7 @@ function renderBooking(){
     body.innerHTML = avail.map(([k, r]) => { const sel = k === bk.room; const pf = r.price * n, pn = Math.round(r.price * .9) * n;
       return `<fieldset class="opt" style="margin:0;${sel ? 'border-color:var(--ink)' : ''}"><legend class="sr">${r.n}</legend>
         <div class="opt-top"><strong>${r.n}</strong><span class="small">${r.area} m², ${t.guests(r.guests)}</span></div>
-        <p class="small">${r.orient[lang]} ${r.light[lang]}</p>
+        <p class="small">${r.orient[lang]}</p>
         <label class="rate"><input type="radio" name="rate" value="${k}|flex" ${sel && bk.rate === 'flex' ? 'checked' : ''}><span>${t.flex}</span><span>${eur(pf)}</span></label>
         <label class="rate"><input type="radio" name="rate" value="${k}|nonref" ${sel && bk.rate === 'nonref' ? 'checked' : ''}><span>${t.nonref}</span><span>${eur(pn)}</span></label>
         <span class="help">${t.nights(n)}</span></fieldset>`; }).join('');
@@ -1434,6 +1572,38 @@ applyLang(lang); renderCookie(); route(); observeReveal();
   function queue(){if(!raf)raf=requestAnimationFrame(geo)}
   if(window.ResizeObserver)new ResizeObserver(queue).observe(stage);
   mq.addEventListener('change',queue);addEventListener('load',queue);queue();
+})();
+</script>
+<script>
+/* Tipografía en movimiento: parte los textos marcados con data-kin en palabras (con máscara) para animarlas con el scroll.
+   Sintaxis: *palabras* = acento, | = salto de línea. Se rehace al cambiar de idioma. No escucha el scroll. */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('[data-kin]'));
+  if(!els.length)return;
+  function lang(){return document.documentElement.lang==='en'?'en':'es'}
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function build(el){
+    var l=lang(),src=el.getAttribute('data-'+l)||el.textContent;
+    if(el.__kin===l+'|'+src&&el.querySelector('.kwi'))return;
+    var idx=0,acc=false,out=[];
+    src.split('|').forEach(function(line){
+      var parts=[];
+      line.trim().split(/\s+/).forEach(function(w){
+        if(w.charAt(0)==='*'){acc=true;w=w.slice(1)}
+        var close=w.slice(-1)==='*';if(close)w=w.slice(0,-1);
+        parts.push('<span class="kw'+(acc?' acc':'')+'"><span class="kwi" style="--i:'+idx+'">'+esc(w)+'</span></span>');
+        idx++;if(close)acc=false;
+      });
+      out.push(parts.join(' '));
+    });
+    el.innerHTML=out.join(' <br>');el.style.setProperty('--n',idx);el.__kin=l+'|'+src;
+  }
+  function run(){els.forEach(build)}
+  if(window.MutationObserver){
+    var mo=new MutationObserver(function(muts){if(muts.some(function(m){return m.target.hasAttribute&&m.target.hasAttribute('data-kin')}))run()});
+    els.forEach(function(e){mo.observe(e,{childList:true})});
+  }
+  run();
 })();
 </script>
 </body>
