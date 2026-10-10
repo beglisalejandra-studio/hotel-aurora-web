@@ -18,6 +18,7 @@
 ## Móvil primero (regla permanente, pedida por la persona)
 - La versión móvil es **siempre** prioritaria: se diseña, se mide y se revisa **antes** que la de escritorio. Un cambio no está bien si en 390 × 844 se ve mal, aunque en escritorio luzca.
 - Toda revisión de un entregable visual incluye captura en **390 × 844**, 768 × 1024 y 1440 × 900, vista antes de pedir aprobación.
+- **La mesa de revisión muestra siempre la vista real del sitio** (la ficha de la maqueta con las fotos en sus huecos, en móvil 390 × 844 y en escritorio), además de cada foto suelta. Nunca se pide aprobar fotos sin esa vista (regla de la persona, 2026-10-10: «estoy aprobando a ciegas»).
 - **Excepción decidida por la persona (2026-10-10):** la versión móvil puede ser la de escritorio reducida si su proporción es la del hueco móvil (3:2 o 4:5), no se recorta y se ve bien en 390 × 844. Se pide composición propia solo si el hueco recorta o el sujeto queda diminuto.
 - Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
 - Cada foto se pide **siempre en dos versiones** (escritorio y móvil), cada una como imagen **separada** con su ficha, prompt y nombre (`<pieza>-escritorio`, `<pieza>-movil`), en el mismo mensaje.
