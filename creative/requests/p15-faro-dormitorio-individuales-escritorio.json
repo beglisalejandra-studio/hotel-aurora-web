@@ -1,0 +1,24 @@
+{
+  "name": "p15-faro-dormitorio-individuales-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "habitaciones",
+  "role": "Faro, segundo dormitorio (2 camas individuales, las dos completas en el encuadre), version escritorio (hueco 348x232)",
+  "status": "requested",
+  "requested_at": "2026-10-10T00:21:09.766Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "faro",
+  "prompt_file": "creative/briefs/prompt-maestro-faro.md"
+}

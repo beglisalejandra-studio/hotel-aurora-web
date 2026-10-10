@@ -1,0 +1,24 @@
+{
+  "name": "p13-faro-salon-escritorio",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "habitaciones",
+  "role": "Faro, salon vista general (mini apartamento de 4 personas; se entreve una cama doble por la puerta), version escritorio (huecos 288x360 y 358x448)",
+  "status": "requested",
+  "requested_at": "2026-10-10T00:21:09.765Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "faro",
+  "prompt_file": "creative/briefs/prompt-maestro-faro.md"
+}
