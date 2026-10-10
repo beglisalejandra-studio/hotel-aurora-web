@@ -46,13 +46,7 @@ CSS = """
 .slot[data-foto]{background-size:cover;background-position:50% 50%;background-repeat:no-repeat}
 .slot[data-foto] .slot-label{display:none}
 .slot[data-foto]::before{display:none}
-.plane.full .slot[data-foto="P01"]{background-position:50% 38%}
-.plane.full .shade{background:linear-gradient(90deg,rgba(11,17,23,.62),rgba(11,17,23,.42) 34%,rgba(11,17,23,0) 64%),linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%)}
-@media (max-width:900px){
-  .plane.full .slot[data-foto="P01"]{background-position:50% 80%}
-  .plane.full .shade{background:linear-gradient(to top,rgba(11,17,23,.92) 0%,rgba(11,17,23,.76) 42%,rgba(11,17,23,0) 80%)}
-}
-@media (max-height:720px){.cap0 .lead{display:none}}
+.leaf-img[data-foto]{background-position:50% 50%}
 """
 JS = """
 (function(){

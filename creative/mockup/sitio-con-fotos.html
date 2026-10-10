@@ -166,73 +166,94 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 /* ===== Luz que sigue al puntero sobre las fotos (solo puntero fino) ===== */
 .lit{position:relative}
 .lit::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);mix-blend-mode:soft-light;background:radial-gradient(260px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent) 55%,transparent),transparent 70%)}
-@media (hover:hover) and (pointer:fine){.lit:hover::after{opacity:1}}
 
 /* ===== Recorrido: inmersión a través de las fotografías =====
    Base = versión estática (sin movimiento, sin soporte de scroll-timeline, o movimiento reducido).
    Mejora = 3D con CSS nativo: solo transform y opacity, sin JS de scroll, sin librerías, sin WebGL.
-   La foto del héroe ocupa todo el escenario; al desplazarse se la atraviesa y emergen las siguientes. */
-.walk{--steps:4;--travel:4.15;--gap:900px;--persp:1000px;--ox:50%;position:relative}
+   La foto de la fachada ocupa todo el escenario; al desplazarse se entra por la puerta hasta el patio. */
+.walk{--H:calc(100dvh - var(--hdr));--steps:4.4;position:relative;
+  --fh:max(var(--H),calc(100vw / 1.6));--fw:calc(var(--fh) * 1.6);
+  --px:.518;--py:.48;--dx0:.4883;--dy0:.3925;--dw:.0594;--dh:.175;--S:3.1}
+@media (max-width:900px){.walk{--fh:max(var(--H),calc(100vw * 1.7778));--fw:calc(var(--fh) * .5625);--px:.502;--py:.484;--dx0:.464;--dy0:.449;--dw:.076;--dh:.07;--S:5.4}}
 .skipwalk{position:absolute;left:var(--pad);top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;text-decoration:none}
 .skipwalk:focus{top:12px}
-.walk-stage{display:grid;gap:48px;padding:20px var(--pad) 72px;max-width:var(--max);margin-inline:auto}
-.walk-horizon,.mist{display:none}
-.walk-tilt,.walk-world{display:contents}
-.cap{order:calc(var(--i) * 2);display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:46ch}
+.walk-stage{display:grid;gap:32px;padding:20px var(--pad) 72px;max-width:var(--max);margin-inline:auto}
+.cam{order:0;display:block}
+.facade{position:relative;aspect-ratio:16/10;width:100%}
+.facade .f-img{position:absolute;inset:0}
+.doorway,.shade,.p-back{display:none}
+.portal{order:2;display:block}
+.p-img{aspect-ratio:3/2;width:100%}
+.cap{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:46ch}
+.cap0{order:1;max-width:none;width:100%}
+.cap1{order:3}.cap2{order:4}
 .cap-title{font:300 clamp(32px,4.4vw,60px)/1.06 var(--f-display);letter-spacing:-.02em;text-wrap:balance}
-.cap0{max-width:none;width:100%}
 .cap:not(.cap0) .cap-body{background:var(--surface);border:1px solid var(--hair);padding:clamp(20px,2.4vw,32px)}
 .cap:not(.cap0) .cap-title{font-size:clamp(28px,3.2vw,44px)}
 .cap0 .lead{margin-top:4px}
-.plane{order:calc(var(--i) * 2 + 1);margin:0;width:100%}
-.plane .ph{width:100%;height:100%}
-.plane.full{aspect-ratio:16/10}
-.plane.land{aspect-ratio:3/2}
-.plane.port{aspect-ratio:4/5;width:min(86%,420px)}
-.plane .shade{display:none}
+@media (max-width:900px){.facade{aspect-ratio:9/16;max-height:78dvh;width:auto;margin-inline:auto}}
+/* Entrada: al desplazarse la cámara se acerca a la puerta de la fachada, las hojas se abren y la puerta deja ver el patio.
+   Solo transform, opacity y clip-path con scroll-timeline nativo; sin JS de scroll, sin librerías. */
 @supports (animation-timeline: view()) {
 @media (prefers-reduced-motion:no-preference) {
   .walk-track{view-timeline:--walk block;height:calc(100dvh * var(--steps) + 100dvh - var(--hdr))}
-  .walk-stage{position:sticky;top:var(--hdr);height:calc(100dvh - var(--hdr));overflow:hidden;perspective:var(--persp);perspective-origin:var(--ox) 50%;display:block;padding:0;max-width:none;margin:0;isolation:isolate}
-  .walk-horizon{display:block;position:absolute;z-index:0;left:0;right:0;bottom:0;height:58%;pointer-events:none;background:linear-gradient(to top,color-mix(in srgb,var(--accent) 34%,transparent),transparent);opacity:.2;animation:dawn linear both;animation-timeline:--walk;animation-range:contain 0% contain 100%}
-  .walk-tilt{display:block;position:absolute;inset:0;z-index:1;transform-style:preserve-3d;transform:rotateX(calc(var(--ty,0) * 1deg)) rotateY(calc(var(--tx,0) * 1deg));transition:transform .5s var(--ease)}
-  .walk-world{display:block;position:absolute;inset:0;transform-style:preserve-3d;animation:fly linear both;animation-timeline:--walk;animation-range:contain 0% contain 100%;will-change:transform}
-  .plane,.plane.full,.plane.land,.plane.port{position:absolute;left:var(--ox);top:50%;width:var(--pw);height:var(--ph);aspect-ratio:auto;margin:calc(var(--ph) / -2) 0 0 calc(var(--pw) / -2);transform:translate3d(calc(var(--x) * var(--kx) * 1vw),calc(var(--oy) + var(--y) * 1vh),calc(var(--i) * var(--gap) * -1));animation:planeout linear both;animation-timeline:--walk;animation-range:contain calc((var(--i) + .35) / var(--travel) * 100%) contain calc((var(--i) + .8) / var(--travel) * 100%)}
-  .plane.full{--pw:100vw;--ph:calc(100dvh - var(--hdr));--kx:0;--oy:0px;--y:0}
-  .plane .shade{display:block;position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%)}
-  .mist{display:block;position:absolute;z-index:2;inset:-8% -10% 0;pointer-events:none;opacity:.45;background:radial-gradient(38% 22% at 18% 80%,var(--mist),transparent 70%),radial-gradient(34% 20% at 82% 68%,var(--mist),transparent 70%),radial-gradient(30% 16% at 52% 94%,var(--mist),transparent 70%);animation:drift 26s ease-in-out infinite alternate}
-  .cap{position:absolute;z-index:3;order:0;left:var(--pad);right:var(--pad);bottom:84px;max-width:none;animation:capshow linear both;animation-timeline:--walk;animation-range:contain calc((var(--i) - .55) / var(--travel) * 100%) contain calc((var(--i) + .35) / var(--travel) * 100%)}
-  .cap0{animation-name:capfirst;animation-range:contain 0% contain calc(.62 / var(--travel) * 100%);color:#F3F6F7}
-  .cap0 .bar{animation:barhide linear both;animation-timeline:--walk;animation-range:contain 0% contain calc(.62 / var(--travel) * 100%)}
-  .cap0 h1{color:#F3F6F7}
-  .cap0 .lead{color:rgba(243,246,247,.92)}
-  .cap0 .acc{color:#F6935F}
-  .cap-body{display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:46ch}
-  @keyframes fly{to{transform:translateZ(calc(var(--gap) * var(--travel)))}}
-  @keyframes planeout{to{opacity:0}}
-  @keyframes dawn{to{opacity:1}}
-  @keyframes capshow{0%{opacity:0;visibility:hidden;transform:translateY(28px)}14%{opacity:1;visibility:visible;transform:none}86%{opacity:1;visibility:visible;transform:none}100%{opacity:0;visibility:hidden;transform:translateY(-28px)}}
-  @keyframes capfirst{0%,40%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-28px)}}
-  @keyframes barhide{0%,40%{visibility:visible}100%{visibility:hidden}}
-  @keyframes drift{to{transform:translate3d(4%,-2%,0)}}
-  .walk{--gap:780px;--kx:.3;--oy:-14vh;--ox:50%}
-  .plane.land{--pw:min(84vw,380px);--ph:calc(var(--pw) * .6667)}
-  .plane.port{--pw:min(60vw,260px);--ph:calc(var(--pw) * 1.25)}
+  .walk-stage{position:sticky;top:var(--hdr);height:var(--H);overflow:hidden;display:block;padding:0;max-width:none;margin:0;isolation:isolate;background:#0D1318}
+  .cam{position:absolute;inset:0;overflow:hidden}
+  .facade{position:absolute;left:50%;top:50%;width:var(--fw);height:var(--fh);aspect-ratio:auto;max-height:none;margin:0;transform-origin:calc(var(--px) * 100%) calc(var(--py) * 100%);transform:translate(-50%,-50%);animation:push cubic-bezier(.45,.05,.25,1) both;animation-timeline:--walk;animation-range:contain 5% contain 46%;will-change:transform}
+  @keyframes push{to{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px))),calc(var(--fh) * (.5 - var(--py)))) scale(var(--S))}}
+  .doorway{display:block;position:absolute;left:calc(var(--dx0) * 100%);top:calc(var(--dy0) * 100%);width:calc(var(--dw) * 100%);height:calc(var(--dh) * 100%);perspective:calc(var(--fw) * var(--dw) * 2.6)}
+  .hall{position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 100%,rgba(176,122,78,.34),transparent 70%),linear-gradient(#1E140D,#0C0805)}
+  .leaf{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;backface-visibility:hidden;animation-timing-function:cubic-bezier(.5,0,.25,1);animation-fill-mode:both;animation-timeline:--walk;animation-range:contain 34% contain 58%}
+  .leaf.lf{left:0;transform-origin:0 50%;animation-name:openL}
+  .leaf.rt{right:0;transform-origin:100% 50%;animation-name:openR}
+  @keyframes openL{to{transform:rotateY(82deg)}}
+  @keyframes openR{to{transform:rotateY(-82deg)}}
+  .leaf-img{position:absolute;padding:0;width:var(--fw);height:var(--fh);top:calc(var(--fh) * var(--dy0) * -1)}
+  .leaf.lf .leaf-img{left:calc(var(--fw) * var(--dx0) * -1)}
+  .leaf.rt .leaf-img{left:calc(var(--fw) * (var(--dx0) + var(--dw) / 2) * -1)}
+  .leaf-img .slot-label{display:none}
+  .portal{position:absolute;inset:0;z-index:2;overflow:hidden;clip-path:inset(calc((100% - var(--S) * var(--dh) * var(--fh) * .78) / 2) calc((100% - var(--S) * var(--dw) * var(--fw) * .78) / 2));opacity:0;animation:reveal cubic-bezier(.55,0,.2,1) both;animation-timeline:--walk;animation-range:contain 50% contain 80%}
+  @keyframes reveal{0%{opacity:0}8%{opacity:1}35%{opacity:1;clip-path:inset(calc((100% - var(--S) * var(--dh) * var(--fh)) / 2) calc((100% - var(--S) * var(--dw) * var(--fw)) / 2))}100%{opacity:1;clip-path:inset(0 0)}}
+  .portal::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(11,17,23,.58),rgba(11,17,23,.3) 38%,rgba(11,17,23,0) 66%);opacity:0;animation:scrimin linear both;animation-timeline:--walk;animation-range:contain 70% contain 86%}
+  @keyframes scrimin{to{opacity:1}}
+  .p-img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;padding:0;animation:dolly linear both;animation-timeline:--walk;animation-range:contain 50% contain 100%;will-change:transform}
+  @keyframes dolly{from{transform:scale(1.04)}to{transform:scale(1.17) translate3d(0,-1%,0)}}
+  .shade{display:block;position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,17,23,.62),rgba(11,17,23,.42) 34%,rgba(11,17,23,0) 64%),linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%);animation:shadeout linear both;animation-timeline:--walk;animation-range:contain 6% contain 26%}
+  @keyframes shadeout{to{opacity:0}}
+  .cap{position:absolute;z-index:3;left:var(--pad);right:var(--pad);bottom:84px;max-width:none;color:#F3F6F7;opacity:0;visibility:hidden;animation-timeline:--walk;animation-timing-function:linear;animation-fill-mode:both}
+  .cap .cap-body,.cap:not(.cap0) .cap-body{display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:46ch;background:none;border:0;padding:0}
+  .cap0{opacity:1;visibility:visible;animation-name:capfirst;animation-range:contain 0% contain 17%}
   .cap0 .cap-body{max-width:none}
-  .cap.cap0{bottom:84px;width:auto}
+  .cap0 .bar{animation:barhide linear both;animation-timeline:--walk;animation-range:contain 0% contain 17%}
+  .cap1{animation-name:capin;animation-range:contain 68% contain 90%}
+  .cap2{animation-name:capend;animation-range:contain 88% contain 100%}
+  .cap .cap-title,.cap0 h1{color:#F3F6F7}
+  .cap .lead{color:rgba(243,246,247,.92)}
+  .cap .acc{color:#F6935F}
+  .cap .link-arrow{color:#F3F6F7}
+  @keyframes capfirst{0%,35%{opacity:1;visibility:visible;transform:none}100%{opacity:0;visibility:hidden;transform:translateY(-28px)}}
+  @keyframes capin{0%{opacity:0;visibility:hidden;transform:translateY(28px)}22%,78%{opacity:1;visibility:visible;transform:none}100%{opacity:0;visibility:hidden;transform:translateY(-28px)}}
+  @keyframes capend{0%{opacity:0;visibility:hidden;transform:translateY(28px)}40%,100%{opacity:1;visibility:visible;transform:none}}
+  @keyframes barhide{0%,35%{visibility:visible}100%{visibility:hidden}}
+}}
+/* Móvil y tableta vertical: el patio (3:2) va en una franja sobre su propia imagen desenfocada, para no recortarlo a una rendija */
+@supports (animation-timeline: view()) {
+@media (prefers-reduced-motion:no-preference) and (max-width:900px) {
+  .p-back{display:block;position:absolute;inset:0;padding:0;filter:blur(18px) brightness(.86);transform:scale(1.15)}
+  .p-back .slot-label{display:none}
+  .p-img{inset:auto;left:0;right:0;top:50%;height:auto;aspect-ratio:3/2;width:100%;margin-top:calc(100vw * -.33333);animation:none;transform:none}
+  .portal::after{background:linear-gradient(to top,rgba(11,17,23,.9) 0%,rgba(11,17,23,.6) 26%,rgba(11,17,23,0) 56%)}
 }}
 @supports (animation-timeline: view()) {
-@media (prefers-reduced-motion:no-preference) and (min-width:768px) {
-  .walk{--gap:900px;--kx:1;--oy:0px}
-  .plane.land{--pw:min(44vw,640px);--ph:calc(var(--pw) * .6667)}
-  .plane.port{--pw:min(30vw,420px);--ph:calc(var(--pw) * 1.25)}
-  .cap{bottom:auto;top:50%;transform:translateY(-50%);left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));right:auto;width:min(46ch,38vw)}
-  .cap.r{left:auto;right:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)))}
-  .cap0{top:auto;bottom:max(28px,7vh);transform:none;width:min(720px,52vw)}
-  @keyframes capshow{0%{opacity:0;visibility:hidden;transform:translateY(calc(-50% + 28px))}14%{opacity:1;visibility:visible;transform:translateY(-50%)}86%{opacity:1;visibility:visible;transform:translateY(-50%)}100%{opacity:0;visibility:hidden;transform:translateY(calc(-50% - 28px))}}
-  @keyframes capfirst{0%,40%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-28px)}}
-  @keyframes barhide{0%,40%{visibility:visible}100%{visibility:hidden}}
+@media (prefers-reduced-motion:no-preference) and (min-width:901px) {
+  .cap{bottom:auto;top:50%;left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));right:auto;width:min(46ch,38vw)}
+  .cap0{top:auto;bottom:max(28px,7vh);width:min(720px,52vw)}
+  .cap1,.cap2{animation-name:capin-d}
+  .cap2{animation-name:capend-d}
+  @keyframes capin-d{0%{opacity:0;visibility:hidden;transform:translateY(calc(-50% + 28px))}22%,78%{opacity:1;visibility:visible;transform:translateY(-50%)}100%{opacity:0;visibility:hidden;transform:translateY(calc(-50% - 28px))}}
+  @keyframes capend-d{0%{opacity:0;visibility:hidden;transform:translateY(calc(-50% + 28px))}40%,100%{opacity:1;visibility:visible;transform:translateY(-50%)}}
 }}
+@media (max-height:720px){.cap0 .lead{display:none}}
 .cap0 h1{font:300 clamp(46px,7.4vw,104px)/.98 var(--f-display);letter-spacing:-.025em;text-wrap:balance}
 html.theme-vt::view-transition-old(root),html.theme-vt::view-transition-new(root){animation:none;mix-blend-mode:normal}
 html.theme-vt::view-transition-new(root){z-index:2}
@@ -526,13 +547,7 @@ body.noscroll{overflow:hidden}
 .slot[data-foto]{background-size:cover;background-position:50% 50%;background-repeat:no-repeat}
 .slot[data-foto] .slot-label{display:none}
 .slot[data-foto]::before{display:none}
-.plane.full .slot[data-foto="P01"]{background-position:50% 38%}
-.plane.full .shade{background:linear-gradient(90deg,rgba(11,17,23,.62),rgba(11,17,23,.42) 34%,rgba(11,17,23,0) 64%),linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%)}
-@media (max-width:900px){
-  .plane.full .slot[data-foto="P01"]{background-position:50% 80%}
-  .plane.full .shade{background:linear-gradient(to top,rgba(11,17,23,.92) 0%,rgba(11,17,23,.76) 42%,rgba(11,17,23,0) 80%)}
-}
-@media (max-height:720px){.cap0 .lead{display:none}}
+.leaf-img[data-foto]{background-position:50% 50%}
 </style></head>
 <body class="consent-pending">
 <div class="progress" aria-hidden="true"></div>
@@ -573,29 +588,23 @@ body.noscroll{overflow:hidden}
     <a class="skipwalk" href="#/" data-goto="habitaciones" data-es="Saltar el recorrido" data-en="Skip the walk">Saltar el recorrido</a>
     <div class="walk-track">
       <div class="walk-stage" id="stage">
-        <div class="walk-horizon" aria-hidden="true"></div>
-        <div class="walk-tilt">
-          <div class="walk-world">
-            <figure class="plane full" style="--i:0;--x:0;--y:0">
-              <div class="ph slot lit" style="--gx:62%;--gy:30%" role="img" aria-label="Foto pendiente P01: fachada al amanecer" data-es-aria="Foto pendiente P01: fachada al amanecer" data-en-aria="Photo pending P01: facade at dawn"><span class="slot-label" style="align-self:flex-start;margin-top:8px"><b>P01</b><span data-es="Fachada al amanecer, horizontal 16:10 (vertical 9:16 en móvil)" data-en="Facade at dawn, horizontal 16:10 (vertical 9:16 on mobile)">Fachada al amanecer, horizontal 16:10 (vertical 9:16 en móvil)</span></span><span class="shade" aria-hidden="true"></span></div>
-            </figure>
-            <figure class="plane land" style="--i:1;--x:-20;--y:-3">
-              <div class="ph slot lit" style="--gx:40%;--gy:30%" role="img" aria-label="Foto pendiente P03: patio interior" data-es-aria="Foto pendiente P03: patio interior" data-en-aria="Photo pending P03: courtyard"><span class="slot-label"><b>P03</b><span data-es="Patio interior, horizontal 3:2" data-en="Courtyard, landscape 3:2">Patio interior, horizontal 3:2</span></span></div>
-            </figure>
-            <figure class="plane port" style="--i:2;--x:18;--y:2">
-              <div class="ph slot lit" style="--gx:70%;--gy:20%" role="img" aria-label="Foto pendiente P04: habitación Alba" data-es-aria="Foto pendiente P04: habitación Alba" data-en-aria="Photo pending P04: Alba room"><span class="slot-label"><b>P04</b><span data-es="Habitación Alba, vertical 4:5" data-en="Alba room, portrait 4:5">Habitación Alba, vertical 4:5</span></span></div>
-            </figure>
-            <figure class="plane land" style="--i:3;--x:-18;--y:-2">
-              <div class="ph slot lit video" style="--gx:50%;--gy:26%" role="img" aria-label="Vídeo pendiente V01: sala del restaurante" data-es-aria="Vídeo pendiente V01: sala del restaurante" data-en-aria="Video pending V01: dining room"><span class="slot-label"><b>V01</b><span data-es="Microvídeo de 6 s, sin audio, horizontal 3:2" data-en="6 s silent microvideo, landscape 3:2">Microvídeo de 6 s, sin audio, horizontal 3:2</span></span></div>
-            </figure>
-            <figure class="plane port" style="--i:4;--x:16;--y:0">
-              <div class="ph slot lit" style="--gx:30%;--gy:22%" role="img" aria-label="Foto pendiente P19: sala de tratamientos" data-es-aria="Foto pendiente P19: sala de tratamientos" data-en-aria="Photo pending P19: treatment room"><span class="slot-label"><b>P19</b><span data-es="Sala de tratamientos, vertical 4:5" data-en="Treatment room, portrait 4:5">Sala de tratamientos, vertical 4:5</span></span></div>
-            </figure>
+        <div class="cam">
+          <div class="facade walk-world">
+            <div class="ph slot f-img" role="img" aria-label="Foto pendiente P01: fachada al amanecer" data-es-aria="Foto pendiente P01: fachada al amanecer" data-en-aria="Photo pending P01: facade at dawn"><span class="slot-label"><b>P01</b><span data-es="Fachada al amanecer, 16:10 (9:16 en móvil)" data-en="Facade at dawn, 16:10 (9:16 on mobile)">Fachada al amanecer, 16:10 (9:16 en móvil)</span></span></div>
+            <div class="doorway" aria-hidden="true">
+              <div class="hall"></div>
+              <div class="leaf lf"><div class="ph slot leaf-img"><span class="slot-label"><b>P01</b></span></div></div>
+              <div class="leaf rt"><div class="ph slot leaf-img"><span class="slot-label"><b>P01</b></span></div></div>
+            </div>
           </div>
         </div>
-        <div class="mist" aria-hidden="true"></div>
+        <div class="portal">
+          <div class="ph slot p-back" aria-hidden="true"><span class="slot-label"><b>P03</b></span></div>
+          <div class="ph slot p-img" role="img" aria-label="Foto pendiente P03: patio interior" data-es-aria="Foto pendiente P03: patio interior" data-en-aria="Photo pending P03: courtyard"><span class="slot-label"><b>P03</b><span data-es="Patio interior, horizontal 3:2" data-en="Courtyard, landscape 3:2">Patio interior, horizontal 3:2</span></span></div>
+        </div>
+        <div class="shade" aria-hidden="true"></div>
 
-        <div class="cap cap0" style="--i:0">
+        <div class="cap cap0">
           <div class="cap-body">
             <h1 id="h1"><span data-es="Amanece" data-en="Wake up">Amanece</span><br><span class="acc" data-es="despacio." data-en="slowly.">despacio.</span></h1>
             <p class="lead" data-es="Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios." data-en="Twenty-eight rooms facing the Atlantic, a spa and market cooking. A pet-friendly hotel. Book direct, no middlemen.">Veintiocho habitaciones frente al Atlántico, spa y cocina de mercado. Hotel petfriendly. Reserva directa, sin intermediarios.</p>
@@ -609,24 +618,14 @@ body.noscroll{overflow:hidden}
           </form>
         </div>
 
-        <div class="cap r" style="--i:1"><div class="cap-body">
+        <div class="cap cap1"><div class="cap-body">
           <p class="cap-title" data-es="Una casa pequeña, abierta al este." data-en="A small house, open to the east.">Una casa pequeña, abierta al este.</p>
           <p class="lead" data-es="Veintiocho habitaciones en una casa restaurada con cal y madera. El patio mira al este y el sol entra temprano." data-en="Twenty-eight rooms in a house restored with lime and timber. The courtyard faces east and the sun comes in early.">Veintiocho habitaciones en una casa restaurada con cal y madera. El patio mira al este y el sol entra temprano.</p>
         </div></div>
-        <div class="cap" style="--i:2"><div class="cap-body">
+        <div class="cap cap2"><div class="cap-body">
           <p class="cap-title" data-es="Cada habitación, una luz." data-en="Each room, its own light.">Cada habitación, una luz.</p>
           <p class="lead" data-es="Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde." data-en="Each room is told by the light it receives, from the first morning sun to the afternoon.">Cada habitación se cuenta por la luz que recibe, del primer sol de la mañana a la tarde.</p>
           <a class="link-arrow" href="#/" data-goto="habitaciones"><span data-es="Ver habitaciones" data-en="See the rooms">Ver habitaciones</span> <span aria-hidden="true">→</span></a>
-        </div></div>
-        <div class="cap r" style="--i:3"><div class="cap-body">
-          <p class="cap-title" data-es="Desayuno y cena en la casa." data-en="Breakfast and dinner at the house.">Desayuno y cena en la casa.</p>
-          <p class="lead" data-es="Cocina de mercado y producto de temporada, con la sala abierta a la luz de la ventana." data-en="Market cooking and seasonal produce, in a dining room open to the window light.">Cocina de mercado y producto de temporada, con la sala abierta a la luz de la ventana.</p>
-          <a class="link-arrow" href="#/" data-goto="restaurante"><span data-es="Ver restaurante" data-en="See the restaurant">Ver restaurante</span> <span aria-hidden="true">→</span></a>
-        </div></div>
-        <div class="cap" style="--i:4"><div class="cap-body">
-          <p class="cap-title" data-es="El spa abre con el primer sol." data-en="The spa opens with the first sun.">El spa abre con el primer sol.</p>
-          <p class="lead" data-es="Agua templada, sauna y rituales al amanecer o al caer la tarde." data-en="Warm water, sauna and rituals at dawn or at dusk.">Agua templada, sauna y rituales al amanecer o al caer la tarde.</p>
-          <a class="link-arrow" href="#/" data-goto="spa"><span data-es="Ver spa" data-en="See the spa">Ver spa</span> <span aria-hidden="true">→</span></a>
         </div></div>
       </div>
     </div>
@@ -1334,31 +1333,6 @@ document.addEventListener('keydown', e => {
   closeMenu();
 });
 
-/* ---------- Efectos de puntero: solo puntero fino; transform y variables CSS, sin layout ---------- */
-if (matchMedia('(hover: hover) and (pointer: fine)').matches){
-  let raf = 0, last = null;
-  document.addEventListener('pointermove', e => {
-    last = e; if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0; const ev = last, tg = ev.target.closest ? ev.target : null; if (!tg) return;
-      const lit = tg.closest('.lit');
-      if (lit){ const r = lit.getBoundingClientRect(); lit.style.setProperty('--mx', (ev.clientX - r.left) + 'px'); lit.style.setProperty('--my', (ev.clientY - r.top) + 'px'); }
-      if (reduce) return;
-      const st = $('#stage');
-      if (st && tg.closest('#stage')){ const r = st.getBoundingClientRect(), tl = $('.walk-tilt'); tl.style.setProperty('--tx', (((ev.clientX - r.left) / r.width - .5) * 5).toFixed(2)); tl.style.setProperty('--ty', (-((ev.clientY - r.top) / r.height - .5) * 3.5).toFixed(2)); }
-      const mg = tg.closest('.btn-primary, .dock-btn');
-      if (mg){ const r = mg.getBoundingClientRect(); mg.style.setProperty('--mtx', (((ev.clientX - (r.left + r.width / 2)) / r.width) * 10).toFixed(1) + 'px'); mg.style.setProperty('--mty', (((ev.clientY - (r.top + r.height / 2)) / r.height) * 8).toFixed(1) + 'px'); }
-      const rm = tg.closest('.room-media');
-      if (rm){ const a = $('.ph', rm), r = rm.getBoundingClientRect(); a.style.setProperty('--ry', (((ev.clientX - r.left) / r.width - .5) * 10).toFixed(2) + 'deg'); a.style.setProperty('--rx', (-((ev.clientY - r.top) / r.height - .5) * 8).toFixed(2) + 'deg'); }
-    });
-  });
-  document.addEventListener('pointerover', e => {
-    const b = e.target.closest && e.target.closest('.btn-primary'); if (!b) return;
-    const r = b.getBoundingClientRect(); b.style.setProperty('--bx', (e.clientX - r.left) + 'px'); b.style.setProperty('--by', (e.clientY - r.top) + 'px');
-  });
-  document.addEventListener('pointerout', e => { const m = e.target.closest && e.target.closest('.btn-primary, .dock-btn'); if (m && !m.contains(e.relatedTarget)){ m.style.setProperty('--mtx', '0px'); m.style.setProperty('--mty', '0px'); const r = m.getBoundingClientRect(); if (m.classList.contains('btn-primary')){ m.style.setProperty('--bx', (e.clientX - r.left) + 'px'); m.style.setProperty('--by', (e.clientY - r.top) + 'px'); } } });
-  document.addEventListener('pointerout', e => { const rm = e.target.closest && e.target.closest('.room-media'); if (rm && !rm.contains(e.relatedTarget)){ const a = $('.ph', rm); a.style.setProperty('--rx', '0deg'); a.style.setProperty('--ry', '0deg'); } });
-}
 
 /* ---------- Mapa bajo demanda (ninguna petición a Google hasta pulsar) ---------- */
 $('#mapLoad').addEventListener('click', () => {

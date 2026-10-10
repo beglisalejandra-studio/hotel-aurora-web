@@ -88,3 +88,11 @@ Resumen; razonado y medido en `docs/decisions/ADR-0006-visual-inmersivo-y-rendim
 ## 8. Desviaciones respecto a otras guías
 - La búsqueda de UI/UX devolvió "azul marino + dorado" y Playfair Display + Karla para hotelería. **No se adopta**: taste-skill veta la paleta de lujo por defecto y el serif sin justificación. Sí se adopta su pareja Outfit + Work Sans.
 - Figma no se usa en esta fase (recurso escaso, `figma_seat: view`); los tokens viven aquí.
+
+## Entrada al hotel (portada, 2026-10-10)
+Sustituye al recorrido con planos que volaban hacia la persona. La decisión nació de una crítica de la persona: el movimiento que seguía al cursor «no se ve nada bien, es poco profesional» y el efecto al desplazarse «se ve muy pobre». Ahora:
+- **Sin efectos de puntero:** no hay inclinación del héroe, ni tarjetas 3D, ni botones magnéticos, ni brillo bajo el cursor.
+- **Secuencia por scroll (CSS nativo `animation-timeline`, solo `transform`, `opacity` y `clip-path`):** fachada con titular (0 a 17 %) → la cámara se acerca a la puerta (5 a 46 %) → las dos hojas de la puerta giran hacia dentro (34 a 58 %) sobre un recibidor oscuro → el patio aparece dentro del marco de la puerta y se abre hasta ocupar toda la pantalla (50 a 80 %) con un empujón lento → «Una casa pequeña, abierta al este.» (68 a 90 %) → «Cada habitación, una luz.» con enlace a las habitaciones (88 a 100 %).
+- **Dos composiciones nativas:** la puerta se mide sobre P01 (escritorio: x 48,8 a 54,8 %, y 39,3 a 56,8 %; móvil: x 46,4 a 54,0 %, y 44,9 a 51,9 %). En móvil el patio (3:2) va en una franja centrada sobre su propia imagen desenfocada para no recortarlo.
+- **Respaldo estático:** con movimiento reducido o sin soporte de `animation-timeline`, la fachada, el titular, el patio y los textos se apilan sin animación.
+- **Límite conocido:** en móvil el acercamiento amplía unas 5,4 veces una foto de 941 px; la fachada se ve blanda durante el movimiento. Una P01 móvil de mayor resolución lo mejoraría.
