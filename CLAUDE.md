@@ -18,6 +18,7 @@
 ## Móvil primero (regla permanente, pedida por la persona)
 - La versión móvil es **siempre** prioritaria: se diseña, se mide y se revisa **antes** que la de escritorio. Un cambio no está bien si en 390 × 844 se ve mal, aunque en escritorio luzca.
 - Toda revisión de un entregable visual incluye captura en **390 × 844**, 768 × 1024 y 1440 × 900, vista antes de pedir aprobación.
+- **Excepción decidida por la persona (2026-10-10):** la versión móvil puede ser la de escritorio reducida si su proporción es la del hueco móvil (3:2 o 4:5), no se recorta y se ve bien en 390 × 844. Se pide composición propia solo si el hueco recorta o el sujeto queda diminuto.
 - Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
 - Cada foto se pide **siempre en dos versiones** (escritorio y móvil), cada una como imagen **separada** con su ficha, prompt y nombre (`<pieza>-escritorio`, `<pieza>-movil`), en el mismo mensaje.
 - **Cada imagen que se pida lleva su prompt con la proporción exacta**: el bloque que se copia en la herramienta empieza con una línea `FORMAT:` (orientación, proporción y tamaño) y termina con una línea `OUTPUT:` (proporción, tamaño objetivo y mínimo, calidad, color y formato). Tras `media-request`, se ejecuta `node scripts/finalize-media-request.mjs <nombre>`; `--check` avisa si una ficha pendiente no las tiene.

@@ -1,5 +1,6 @@
 # Terraza: las 4 versiones móvil (composición propia)
 
+> **Opcional:** el 2026-10-10 la persona aceptó las versiones reducidas si se ven bien en 390 × 844; este prompt solo se usa si cambia de opinión.
 > Para ChatGPT. Las 5 «móvil» que subiste son las de escritorio reducidas (diferencia media 0,5 sobre 255), no composiciones móviles propias. Este prompt pide **las 4 móviles de P10, P11, P12 y P30**, con las de escritorio como referencia. La P31 (tele) se pide aparte, en escritorio y móvil, según tu decisión sobre su versión de escritorio.
 > Adjunta en este orden: **1) `p01-hero-escritorio.jpg`**, **2) `p10-terraza-escritorio.png`**, **3) `p11-terraza-exterior-escritorio.png`**, **4) `p12-terraza-camas-escritorio.png`**, **5) `p30-terraza-bano-escritorio.png`**.
 

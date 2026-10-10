@@ -66,6 +66,7 @@ Estado del brief: **borrador para aprobación** (fecha 2026-10-09). Lo marcado `
 11. **Móvil primero, siempre:** la versión móvil es prioritaria en todo entregable (regla en `CLAUDE.md`).
 12. **Camas, capacidad y precio (2026-10-09):** Terraza pasa a **2 camas individuales** (2 personas) con el mismo precio que Alba; Marea tiene **1 cama doble y 1 individual** (3 personas, cuesta más); Faro es un **mini apartamento** con salón y dos dormitorios (4 personas, el más caro y el más exclusivo). Los importes son de ejemplo: Alba y Terraza 168 €, Marea 189 €, Faro 296 € (la superficie de Faro sube a 74 m²).
 13. **Cuna y cama para mascota:** todas las habitaciones pueden pedirlas en la habitación, **sin coste adicional**. La web lo dice en la ficha de cada habitación, bajo el carrusel de habitaciones y en las preguntas frecuentes.
+15. **Versión móvil reducida (2026-10-10):** una foto de escritorio reducida sirve como versión móvil si conserva la proporción del hueco móvil, no se recorta y se ve bien en 390 × 844 (se comprobó con las de Terraza). Se pide composición móvil propia solo cuando no se cumple.
 14. **Sol directo en todas las habitaciones (fotografía):** todas reciben sol directo en la foto, y lo que las distingue es la decoración, el color de la ropa de cama y los elementos propios. En la terraza el sol es suave, dorado y bueno para tomar el sol. Cada habitación se muestra con habitación, terraza (si la tiene), baño y zona de TV; el hotel muestra además zonas comunes, restaurante y zona pet friendly.
 
 ## 8. Preguntas abiertas
