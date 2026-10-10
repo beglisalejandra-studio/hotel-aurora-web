@@ -21,9 +21,15 @@ BASES = {'P05': 'p05-alba-tv', 'P06': 'p06-alba-bano', 'P26': 'p26-alba-bano-det
          'P13': 'p13-faro-salon', 'P34': 'p34-faro-tv', 'P14': 'p14-faro-dormitorio-doble', 'P15': 'p15-faro-dormitorio-individuales',
          'P32': 'p32-faro-bano', 'P35': 'p35-faro-cocina-recibidor'}
 FIXED = {  # piezas con nombre propio
-    'P01': ('p01-hero-escritorio.jpg', 'p01-hero-movil.png', 'p01-hero-escritorio', (1600, 1000), (720, 1280)),
-    'P03': ('p03-patio-escritorio.webp', 'p03-patio-movil.webp', 'p03-patio-escritorio', (960, 640), (720, 480)),
+    'P01': ('p01-hero-escritorio.jpg', 'p01-hero-movil.png', 'p01-hero-escritorio', (2048, 1280), (941, 1672)),
+    'P03': ('p03-patio-escritorio.webp', 'p03-patio-movil.webp', 'p03-patio-escritorio', (1600, 1067), (1856, 1237)),
     'P04': ('p04-alba-escritorio.jpg', 'p04-alba-movil.png', 'p04-alba-escritorio', (800, 1000), (720, 900)),
+}
+
+D = ROOT / 'creative' / 'generated-drafts'
+DRAFTS = {  # borradores todavia sin aprobar: se ven en la maqueta para decidir, no son material definitivo
+    'P36': ('p36-recepcion-fin-escritorio.png', 'p36-recepcion-fin-movil.png', (1672, 941), (941, 1672),
+            None),
 }
 
 def enc(path, size, q=76):
@@ -35,6 +41,9 @@ fotos = {}
 for code, (fd, fm, pid, sd, sm) in FIXED.items():
     alt = PROV[pid]['alt_draft']
     fotos[code] = {'d': enc(A / fd, sd, 72 if code == 'P01' else 76), 'm': enc(A / fm, sm, 74 if code == 'P01' else 76), 'alt': alt}
+for code, (fd, fm, sd, sm, alt) in DRAFTS.items():
+    alt = alt or PROV['p36-recepcion-fin-escritorio']['alt_draft']
+    fotos[code] = {'d': enc(D / fd, sd, 78), 'm': enc(D / fm, sm, 78), 'alt': alt}
 for code, base in BASES.items():
     pid = base + '-escritorio'
     portrait = PROV[pid]['aspect'] == '4:5'
@@ -58,7 +67,7 @@ JS = """
       var b=el.querySelector('.slot-label b'), code=b?b.textContent.trim():el.getAttribute('data-foto');
       var f=F[code]; if(!f) return;
       if(el.getAttribute('data-foto')!==code) el.setAttribute('data-foto',code);
-      var src=(code==='P01'?hero.matches:small.matches)?f.m:f.d;
+      var src=((code==='P01'||code==='P36')?hero.matches:small.matches)?f.m:f.d;
       if(el.dataset.src!==src){el.style.backgroundImage='url('+src+')';el.dataset.src=src}
       if(el.getAttribute('role')!=='img') el.setAttribute('role','img');
       var alt=f.alt[lang()]; if(el.getAttribute('aria-label')!==alt) el.setAttribute('aria-label',alt);
