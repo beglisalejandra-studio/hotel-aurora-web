@@ -194,7 +194,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p05-alba-tv-escritorio.png",
-    "draft": "creative/generated-drafts/p05-alba-tv-escritorio.png"
+    "draft": "creative/generated-drafts/p05-alba-tv-escritorio.png",
+    "master": "creative/approved/p05-alba-tv-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -206,14 +207,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
     "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p05-alba-tv-movil",
@@ -223,7 +226,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p05-alba-tv-movil.png",
-    "draft": "creative/generated-drafts/p05-alba-tv-movil.png"
+    "draft": "creative/generated-drafts/p05-alba-tv-movil.png",
+    "master": "creative/approved/p05-alba-tv-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -235,14 +239,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: se borro una marca diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
     "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p06-alba-bano-escritorio",
@@ -252,7 +258,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p06-alba-bano-escritorio.png",
-    "draft": "creative/generated-drafts/p06-alba-bano-escritorio.png"
+    "draft": "creative/generated-drafts/p06-alba-bano-escritorio.png",
+    "master": "creative/approved/p06-alba-bano-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -264,12 +271,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
     "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p06-alba-bano-movil",
@@ -279,7 +288,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p06-alba-bano-movil.png",
-    "draft": "creative/generated-drafts/p06-alba-bano-movil.png"
+    "draft": "creative/generated-drafts/p06-alba-bano-movil.png",
+    "master": "creative/approved/p06-alba-bano-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -291,12 +301,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
     "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p26-alba-bano-detalle-escritorio",
@@ -306,7 +318,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p26-alba-bano-detalle-escritorio.png",
-    "draft": "creative/generated-drafts/p26-alba-bano-detalle-escritorio.png"
+    "draft": "creative/generated-drafts/p26-alba-bano-detalle-escritorio.png",
+    "master": "creative/approved/p26-alba-bano-detalle-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -318,12 +331,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
     "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p26-alba-bano-detalle-movil",
@@ -333,7 +348,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p26-alba-bano-detalle-movil.png",
-    "draft": "creative/generated-drafts/p26-alba-bano-detalle-movil.png"
+    "draft": "creative/generated-drafts/p26-alba-bano-detalle-movil.png",
+    "master": "creative/approved/p26-alba-bano-detalle-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -345,12 +361,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
     "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p27-alba-tv-vista-cama-escritorio",
@@ -360,7 +378,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p27-alba-tv-vista-cama-escritorio.png",
-    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-escritorio.png"
+    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-escritorio.png",
+    "master": "creative/approved/p27-alba-tv-vista-cama-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -372,14 +391,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
     "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p27-alba-tv-vista-cama-movil",
@@ -389,7 +410,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-alba.md",
    "files": {
     "original": "creative/inbox/p27-alba-tv-vista-cama-movil.png",
-    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-movil.png"
+    "draft": "creative/generated-drafts/p27-alba-tv-vista-cama-movil.png",
+    "master": "creative/approved/p27-alba-tv-vista-cama-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -401,14 +423,17 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 8 fotos de Alba generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
-    "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
+    "Retoque menor en el borrador: se borro una marca de fabricante diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/.",
+    "Aprobada por la persona aunque la revision recomendaba repetirla (suelo agrietado en red y tele grande en P27; ventana y cabezal de ducha cortados por el borde en P28)."
    ],
    "alt_draft": {
     "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
     "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p07-marea-escritorio",
@@ -418,7 +443,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p07-marea-escritorio.png",
-    "draft": "creative/generated-drafts/p07-marea-escritorio.png"
+    "draft": "creative/generated-drafts/p07-marea-escritorio.png",
+    "master": "creative/approved/p07-marea-escritorio.png"
    },
    "format": "PNG",
    "width": 1200,
@@ -430,12 +456,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
     "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p07-marea-movil",
@@ -445,7 +473,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p07-marea-movil.png",
-    "draft": "creative/generated-drafts/p07-marea-movil.png"
+    "draft": "creative/generated-drafts/p07-marea-movil.png",
+    "master": "creative/approved/p07-marea-movil.png"
    },
    "format": "PNG",
    "width": 1120,
@@ -457,12 +486,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
     "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p08-marea-mirador-escritorio",
@@ -472,7 +503,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p08-marea-mirador-escritorio.png",
-    "draft": "creative/generated-drafts/p08-marea-mirador-escritorio.png"
+    "draft": "creative/generated-drafts/p08-marea-mirador-escritorio.png",
+    "master": "creative/approved/p08-marea-mirador-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -484,12 +516,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
     "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p08-marea-mirador-movil",
@@ -499,7 +533,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p08-marea-mirador-movil.png",
-    "draft": "creative/generated-drafts/p08-marea-mirador-movil.png"
+    "draft": "creative/generated-drafts/p08-marea-mirador-movil.png",
+    "master": "creative/approved/p08-marea-mirador-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -511,12 +546,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
     "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p09-marea-camas-escritorio",
@@ -538,12 +575,13 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "rejected",
    "notes": [],
    "alt_draft": {
     "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
     "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
-   }
+   },
+   "rejected_by": "persona (mensaje en el chat, 2026-10-10: «Repetir: P09 escritorio, P09 móvil»; la ventana no coincide con el cojín azul)"
   },
   {
    "id": "p09-marea-camas-movil",
@@ -565,12 +603,13 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "rejected",
    "notes": [],
    "alt_draft": {
     "es": "Una cama doble y una cama individual de forja, con ropa de lino y detalles indigo, bajo el sol de la tarde.",
     "en": "One double bed and one single bed of forged iron, with linen and indigo details, in the afternoon sun."
-   }
+   },
+   "rejected_by": "persona (mensaje en el chat, 2026-10-10: «Repetir: P09 escritorio, P09 móvil»; la ventana no coincide con el cojín azul)"
   },
   {
    "id": "p28-marea-bano-escritorio",
@@ -580,7 +619,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p28-marea-bano-escritorio.png",
-    "draft": "creative/generated-drafts/p28-marea-bano-escritorio.png"
+    "draft": "creative/generated-drafts/p28-marea-bano-escritorio.png",
+    "master": "creative/approved/p28-marea-bano-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -592,12 +632,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
     "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p28-marea-bano-movil",
@@ -607,7 +649,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p28-marea-bano-movil.png",
-    "draft": "creative/generated-drafts/p28-marea-bano-movil.png"
+    "draft": "creative/generated-drafts/p28-marea-bano-movil.png",
+    "master": "creative/approved/p28-marea-bano-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -619,12 +662,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
-   "notes": [],
+   "state": "approved",
+   "notes": [
+    "Aprobada por la persona aunque la revision recomendaba repetirla (suelo agrietado en red y tele grande en P27; ventana y cabezal de ducha cortados por el borde en P28)."
+   ],
    "alt_draft": {
     "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
     "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p29-marea-tv-escritorio",
@@ -634,7 +681,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p29-marea-tv-escritorio.png",
-    "draft": "creative/generated-drafts/p29-marea-tv-escritorio.png"
+    "draft": "creative/generated-drafts/p29-marea-tv-escritorio.png",
+    "master": "creative/approved/p29-marea-tv-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -646,14 +694,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: se borro una marca diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
     "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p29-marea-tv-movil",
@@ -663,7 +713,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-marea.md",
    "files": {
     "original": "creative/inbox/p29-marea-tv-movil.png",
-    "draft": "creative/generated-drafts/p29-marea-tv-movil.png"
+    "draft": "creative/generated-drafts/p29-marea-tv-movil.png",
+    "master": "creative/approved/p29-marea-tv-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -675,14 +726,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-09): lote de 10 fotos de Marea generado en ChatGPT con el prompt maestro",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: se borro una marca diminuta (unos 10 x 2 px) bajo la tele; el original sin tocar esta en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
     "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo: P05, P06, P26, P27, P07, P08, P28 y P29, escritorio y móvil»)",
+   "approved_at": "2026-10-10"
   }
  ]
 }
