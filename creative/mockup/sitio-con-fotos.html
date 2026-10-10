@@ -188,7 +188,7 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 .cam{order:0;display:block}
 .facade{position:relative;aspect-ratio:16/10;width:100%}
 .facade .f-img{position:absolute;inset:0}
-.doorway,.shade{display:none}
+.doorway,.shade,.dip{display:none}
 .rec-static{order:2;margin:0}
 .rec-static .r-img{aspect-ratio:16/9;width:100%;padding:0}
 .portal{order:4;display:block}
@@ -215,24 +215,24 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .walk-stage{position:sticky;top:var(--hdr);height:var(--H);overflow:hidden;display:block;padding:0;max-width:none;margin:0;isolation:isolate;background:#0D1318}
   .rec-static,.portal{display:none}
   .cam{position:absolute;inset:0;overflow:hidden}
-  .facade{position:absolute;left:50%;top:50%;width:var(--fw);height:var(--fh);aspect-ratio:auto;max-height:none;margin:0;transform-origin:calc(var(--px) * 100%) calc(var(--py) * 100%);transform:translate(-50%,-50%);animation:push linear both;animation-timeline:--walk;animation-range:contain 4% contain 92%}
+  .facade{position:absolute;left:50%;top:50%;width:var(--fw);height:var(--fh);aspect-ratio:auto;max-height:none;margin:0;transform-origin:calc(var(--px) * 100%) calc(var(--py) * 100%);transform:translate(-50%,-50%);animation:push linear both;animation-timeline:--walk;animation-range:contain 4% contain 100%}
   @keyframes push{
     0.00%{transform:translate(-50%,-50%) scale(1)}
-    13.64%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.2308 - (pow(var(--S1), 0.2308)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.2308 - (pow(var(--S1), 0.2308)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.2308))}
-    25.00%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.4231 - (pow(var(--S1), 0.4231)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.4231 - (pow(var(--S1), 0.4231)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.4231))}
-    36.36%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.6154 - (pow(var(--S1), 0.6154)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.6154 - (pow(var(--S1), 0.6154)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.6154))}
-    47.73%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.8077 - (pow(var(--S1), 0.8077)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.8077 - (pow(var(--S1), 0.8077)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.8077))}
-    59.09%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (pow(var(--S1), 1.0000)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (pow(var(--S1), 1.0000)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 1.0000))}
-    70.45%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 0.5556))) * var(--ex) * 0.5556),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 0.5556))) * var(--ey) * 0.5556)) scale(calc(var(--S1) * pow(var(--G), 0.5556)))}
-    79.55%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 1.0000))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 1.0000))) * var(--ey) * 1.0000)) scale(calc(var(--S1) * pow(var(--G), 1.0000)))}
-    89.77%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5000))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5000))) * var(--ey) * 1.0000)) scale(calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5000)))}
-    100.00%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000))) * var(--ey) * 1.0000)) scale(calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000)))}
+    12.50%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.2609 - (pow(var(--S1), 0.2609)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.2609 - (pow(var(--S1), 0.2609)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.2609))}
+    23.96%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.5000 - (pow(var(--S1), 0.5000)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.5000 - (pow(var(--S1), 0.5000)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.5000))}
+    36.46%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 0.7609 - (pow(var(--S1), 0.7609)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 0.7609 - (pow(var(--S1), 0.7609)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 0.7609))}
+    47.92%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (pow(var(--S1), 1.0000)) * var(--ex) * 0.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (pow(var(--S1), 1.0000)) * var(--ey) * 0.0000)) scale(pow(var(--S1), 1.0000))}
+    60.42%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 0.5000))) * var(--ex) * 0.5000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 0.5000))) * var(--ey) * 0.5000)) scale(calc(var(--S1) * pow(var(--G), 0.5000)))}
+    72.92%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 1.0000))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--S1) * pow(var(--G), 1.0000))) * var(--ey) * 1.0000)) scale(calc(var(--S1) * pow(var(--G), 1.0000)))}
+    78.12%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5556))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5556))) * var(--ey) * 1.0000)) scale(calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 0.5556)))}
+    82.29%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000))) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000))) * var(--ey) * 1.0000)) scale(calc(var(--Sg) * pow(calc(var(--S2) / var(--Sg)), 1.0000)))}
+    100.00%{transform:translate(-50%,-50%) translate(calc(var(--fw) * (.5 - var(--px)) * 1.0000 - (calc(var(--S2) * 1.08)) * var(--ex) * 1.0000),calc(var(--fh) * (.5 - var(--py)) * 1.0000 - (calc(var(--S2) * 1.08)) * var(--ey) * 1.0000)) scale(calc(var(--S2) * 1.08))}
   }
   .doorway{display:block;position:absolute;left:calc(var(--dx0) * 100%);top:calc(var(--dy0) * 100%);width:calc(var(--dw) * 100%);height:calc(var(--dh) * 100%);perspective:calc(var(--fw) * var(--dw) * 2.6)}
   .sala{position:absolute;left:50%;top:50%;height:100%;aspect-ratio:var(--ra);transform:translate(-50%,-50%)}
-  .hall-img{position:absolute;inset:0;padding:0;--mL:var(--cl1);--mR:calc(100% - var(--cl1));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:hallclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk;animation-range:contain 44% contain 62%}
+  .hall-img{position:absolute;inset:0;padding:0;--mL:var(--cl1);--mR:calc(100% - var(--cl1));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:hallclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk;animation-range:contain 50.5% contain 52%}
   @keyframes hallclip{to{--mL:-10%;--mR:110%;--mf:10%}}
-  .court{position:absolute;left:calc(var(--cbl) * 100%);top:calc(var(--cy0) * 100%);width:calc(var(--cbw) * 100%);height:calc(var(--ch) * 100%);opacity:0;--mL:var(--cl2);--mR:calc(100% - var(--cl2));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:courtin linear both,courtclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk,--walk;animation-range:contain 70% contain 76%,contain 76% contain 92%}
+  .court{position:absolute;left:calc(var(--cbl) * 100%);top:calc(var(--cy0) * 100%);width:calc(var(--cbw) * 100%);height:calc(var(--ch) * 100%);opacity:0;--mL:var(--cl2);--mR:calc(100% - var(--cl2));--mf:0%;-webkit-mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));mask-image:linear-gradient(90deg,transparent calc(var(--mL) - var(--mf)),#000 var(--mL),#000 var(--mR),transparent calc(var(--mR) + var(--mf)));animation:courtin linear both,courtclip cubic-bezier(.5,0,.3,1) both;animation-timeline:--walk,--walk;animation-range:contain 70% contain 76%,contain 82.5% contain 84%}
   @keyframes courtin{to{opacity:1}}
   @keyframes courtclip{to{--mL:-10%;--mR:110%;--mf:10%}}
   .court-img{position:absolute;inset:0;padding:0}
@@ -247,6 +247,8 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .leaf.lf .leaf-img{left:calc(var(--fw) * var(--dx0) * -1)}
   .leaf.rt .leaf-img{left:calc(var(--fw) * (var(--dx0) + var(--dw) / 2) * -1)}
   .leaf-img .slot-label{display:none}
+  .dip{display:block;position:absolute;inset:0;z-index:2;pointer-events:none;background:#0B1014;opacity:0;animation:dipcycle linear both;animation-timeline:--walk;animation-range:contain 0% contain 100%}
+  @keyframes dipcycle{0%,42%{opacity:0}46%{opacity:.22}50.5%,52%{opacity:1}56%{opacity:.35}60%,74%{opacity:0}78%{opacity:.22}82.5%,84%{opacity:1}88%{opacity:.35}92%,100%{opacity:0}}
   .shade{display:block;position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,17,23,.62),rgba(11,17,23,.42) 34%,rgba(11,17,23,0) 64%),linear-gradient(to top,rgba(11,17,23,.88) 0%,rgba(11,17,23,.62) 36%,rgba(11,17,23,0) 70%);animation:shadecycle linear both;animation-timeline:--walk;animation-range:contain 0% contain 100%}
   @keyframes shadecycle{0%{opacity:1}22%{opacity:0}91%{opacity:0}97%{opacity:1}100%{opacity:1}}
   .shade2{background:linear-gradient(90deg,rgba(11,17,23,.5),rgba(11,17,23,.28) 34%,rgba(11,17,23,0) 62%);animation-name:shade2cycle}
@@ -256,8 +258,8 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
   .cap0{opacity:1;visibility:visible;animation-name:capfirst;animation-range:contain 0% contain 17%}
   .cap0 .cap-body{max-width:none}
   .cap0 .bar{animation:barhide linear both;animation-timeline:--walk;animation-range:contain 0% contain 17%}
-  .cap1{animation-name:capin;animation-range:contain 57% contain 77%}
-  .cap2{animation-name:capend;animation-range:contain 89% contain 100%}
+  .cap1{animation-name:capin;animation-range:contain 60% contain 78%}
+  .cap2{animation-name:capend;animation-range:contain 93% contain 100%}
   .cap .cap-title,.cap0 h1{color:#F3F6F7}
   .cap .lead{color:rgba(243,246,247,.92)}
   .cap .acc{color:#F6935F}
@@ -628,6 +630,7 @@ body.noscroll{overflow:hidden}
             </div>
           </div>
         </div>
+        <div class="dip" aria-hidden="true"></div>
         <figure class="rec-static"><div class="ph slot r-img" role="img" aria-label="Foto pendiente P36: recepción" data-es-aria="Foto pendiente P36: recepción" data-en-aria="Photo pending P36: reception"><span class="slot-label"><b>P36</b><span data-es="Recepción, 16:9 (9:16 en móvil)" data-en="Reception, 16:9 (9:16 on mobile)">Recepción, 16:9 (9:16 en móvil)</span></span></div></figure>
         <div class="portal">
           <div class="ph slot p-img" role="img" aria-label="Foto pendiente P03: patio interior" data-es-aria="Foto pendiente P03: patio interior" data-en-aria="Photo pending P03: courtyard"><span class="slot-label"><b>P03</b><span data-es="Patio interior, horizontal 3:2" data-en="Courtyard, landscape 3:2">Patio interior, horizontal 3:2</span></span></div>
