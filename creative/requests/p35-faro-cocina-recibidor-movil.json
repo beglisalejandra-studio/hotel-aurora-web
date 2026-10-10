@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "habitaciones",
   "role": "Faro, cocina y recibidor, version movil (hueco 348x232 / 358x239)",
-  "status": "received",
+  "status": "approved",
   "batch": "faro",
   "prompt_file": null,
   "master": {
@@ -20,5 +20,5 @@
     ".webp",
     ".avif"
   ],
-  "file": "creative/generated-drafts/p35-faro-cocina-recibidor-movil.png"
+  "file": "creative/approved/p35-faro-cocina-recibidor-movil.png"
 }

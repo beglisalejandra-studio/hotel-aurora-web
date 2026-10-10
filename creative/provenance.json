@@ -1132,7 +1132,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p13-faro-salon-escritorio.png",
-    "draft": "creative/generated-drafts/p13-faro-salon-escritorio.png"
+    "draft": "creative/generated-drafts/p13-faro-salon-escritorio.png",
+    "master": "creative/approved/p13-faro-salon-escritorio.png"
    },
    "format": "PNG",
    "width": 1122,
@@ -1144,12 +1145,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Salon del mini apartamento Faro con banco de obra, mesa baja y sillones de anea.",
     "en": "Faro living room with a masonry bench, low table and rush armchairs."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p13-faro-salon-movil",
@@ -1159,7 +1162,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p13-faro-salon-movil.png",
-    "draft": "creative/generated-drafts/p13-faro-salon-movil.png"
+    "draft": "creative/generated-drafts/p13-faro-salon-movil.png",
+    "master": "creative/approved/p13-faro-salon-movil.png"
    },
    "format": "PNG",
    "width": 1122,
@@ -1171,12 +1175,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Salon del mini apartamento Faro con banco de obra, mesa baja y sillones de anea.",
     "en": "Faro living room with a masonry bench, low table and rush armchairs."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p34-faro-tv-escritorio",
@@ -1186,7 +1192,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p34-faro-tv-escritorio.png",
-    "draft": "creative/generated-drafts/p34-faro-tv-escritorio.png"
+    "draft": "creative/generated-drafts/p34-faro-tv-escritorio.png",
+    "master": "creative/approved/p34-faro-tv-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1198,14 +1205,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: marca diminuta bajo la tele borrada; original sin tocar en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hueco en el muro con la tele apagada y baldas de roble.",
     "en": "Wall recess with a switched-off TV and oak shelves."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p34-faro-tv-movil",
@@ -1215,7 +1224,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p34-faro-tv-movil.png",
-    "draft": "creative/generated-drafts/p34-faro-tv-movil.png"
+    "draft": "creative/generated-drafts/p34-faro-tv-movil.png",
+    "master": "creative/approved/p34-faro-tv-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1227,14 +1237,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "Retoque menor en el borrador: marca diminuta bajo la tele borrada; original sin tocar en creative/inbox/."
    ],
    "alt_draft": {
     "es": "Hueco en el muro con la tele apagada y baldas de roble.",
     "en": "Wall recess with a switched-off TV and oak shelves."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p14-faro-dormitorio-doble-escritorio",
@@ -1244,7 +1256,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p14-faro-dormitorio-doble-escritorio.png",
-    "draft": "creative/generated-drafts/p14-faro-dormitorio-doble-escritorio.png"
+    "draft": "creative/generated-drafts/p14-faro-dormitorio-doble-escritorio.png",
+    "master": "creative/approved/p14-faro-dormitorio-doble-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1256,12 +1269,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Dormitorio principal con una cama doble baja de roble.",
     "en": "Main bedroom with one low oak double bed."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p14-faro-dormitorio-doble-movil",
@@ -1271,7 +1286,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p14-faro-dormitorio-doble-movil.png",
-    "draft": "creative/generated-drafts/p14-faro-dormitorio-doble-movil.png"
+    "draft": "creative/generated-drafts/p14-faro-dormitorio-doble-movil.png",
+    "master": "creative/approved/p14-faro-dormitorio-doble-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1283,12 +1299,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Dormitorio principal con una cama doble baja de roble.",
     "en": "Main bedroom with one low oak double bed."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p15-faro-dormitorio-individuales-escritorio",
@@ -1298,7 +1316,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p15-faro-dormitorio-individuales-escritorio.png",
-    "draft": "creative/generated-drafts/p15-faro-dormitorio-individuales-escritorio.png"
+    "draft": "creative/generated-drafts/p15-faro-dormitorio-individuales-escritorio.png",
+    "master": "creative/approved/p15-faro-dormitorio-individuales-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1310,12 +1329,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Segundo dormitorio con dos camas individuales bajas.",
     "en": "Second bedroom with two low single beds."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p15-faro-dormitorio-individuales-movil",
@@ -1325,7 +1346,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p15-faro-dormitorio-individuales-movil.png",
-    "draft": "creative/generated-drafts/p15-faro-dormitorio-individuales-movil.png"
+    "draft": "creative/generated-drafts/p15-faro-dormitorio-individuales-movil.png",
+    "master": "creative/approved/p15-faro-dormitorio-individuales-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1337,12 +1359,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Segundo dormitorio con dos camas individuales bajas.",
     "en": "Second bedroom with two low single beds."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p32-faro-bano-escritorio",
@@ -1352,7 +1376,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p32-faro-bano-escritorio.png",
-    "draft": "creative/generated-drafts/p32-faro-bano-escritorio.png"
+    "draft": "creative/generated-drafts/p32-faro-bano-escritorio.png",
+    "master": "creative/approved/p32-faro-bano-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1364,12 +1389,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Bano con pila de arenisca sobre una balda de roble y ventana alta.",
     "en": "Bathroom with a sandstone basin on an oak slab and a tall window."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p32-faro-bano-movil",
@@ -1379,7 +1406,8 @@
    "prompt_file": "creative/briefs/prompt-maestro-faro.md",
    "files": {
     "original": "creative/inbox/p32-faro-bano-movil.png",
-    "draft": "creative/generated-drafts/p32-faro-bano-movil.png"
+    "draft": "creative/generated-drafts/p32-faro-bano-movil.png",
+    "master": "creative/approved/p32-faro-bano-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1391,12 +1419,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Bano con pila de arenisca sobre una balda de roble y ventana alta.",
     "en": "Bathroom with a sandstone basin on an oak slab and a tall window."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p35-faro-cocina-recibidor-escritorio",
@@ -1406,7 +1436,8 @@
    "prompt_file": null,
    "files": {
     "original": "creative/inbox/p35-faro-cocina-recibidor-escritorio.png",
-    "draft": "creative/generated-drafts/p35-faro-cocina-recibidor-escritorio.png"
+    "draft": "creative/generated-drafts/p35-faro-cocina-recibidor-escritorio.png",
+    "master": "creative/approved/p35-faro-cocina-recibidor-escritorio.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1418,14 +1449,16 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [
     "La persona sumo la cocina y renombre P16 a P35 (P16 es la sala del restaurante)."
    ],
    "alt_draft": {
     "es": "Cocina y recibidor del mini apartamento Faro.",
     "en": "Kitchen and entrance hall of the Faro mini apartment."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   },
   {
    "id": "p35-faro-cocina-recibidor-movil",
@@ -1435,7 +1468,8 @@
    "prompt_file": null,
    "files": {
     "original": "creative/inbox/p35-faro-cocina-recibidor-movil.png",
-    "draft": "creative/generated-drafts/p35-faro-cocina-recibidor-movil.png"
+    "draft": "creative/generated-drafts/p35-faro-cocina-recibidor-movil.png",
+    "master": "creative/approved/p35-faro-cocina-recibidor-movil.png"
    },
    "format": "PNG",
    "width": 1536,
@@ -1447,12 +1481,14 @@
    "model": "no consta en el archivo",
    "declared_by": "persona (chat, 2026-10-10): generada en ChatGPT",
    "embedded_content_credentials": false,
-   "state": "received",
+   "state": "approved",
    "notes": [],
    "alt_draft": {
     "es": "Cocina y recibidor del mini apartamento Faro.",
     "en": "Kitchen and entrance hall of the Faro mini apartment."
-   }
+   },
+   "approved_by": "persona (mensaje en el chat, 2026-10-10: «Apruebo la mesa Faro»: P13, P34, P14, P15, P32 y P35, escritorio y móvil)",
+   "approved_at": "2026-10-10"
   }
  ]
 }
