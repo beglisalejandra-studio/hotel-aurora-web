@@ -32,6 +32,12 @@
 - **El hotel muestra zonas comunes, restaurante y zona pet friendly**, además de las habitaciones.
 - **El suelo es siempre piedra caliza vieja, gastada y mate** (losas grandes e irregulares con juntas finas, como el de Alba). Nunca brillante, pulido, mojado ni con reflejos, y sin textura picada, de burbujas o de guijarros. El suelo de Marea salió brillante y picado y la persona decidió dejarlo así (2026-10-09); en Terraza, Faro y el resto de prompts se pide expresamente mate, con un bloque `THE FLOOR`, una prohibición en `NEVER` y una línea en la comprobación final.
 
+## Economía de tokens (regla permanente, pedida por la persona, 2026-10-10)
+- **Verificar siempre, pero solo lo que cambió:** una comprobación se repite únicamente si el cambio puede haberla roto (p. ej. `flows.mjs` y axe solo tras tocar la maqueta). No se vuelve a revisar lo ya revisado ni se re-leen archivos que ya están en contexto.
+- **Una sola carpeta de trabajo** (el scratchpad de la sesión) y se reutilizan nombres de archivo; no se crean carpetas ni copias nuevas por intento.
+- **Revisión de imágenes:** una pasada por pieza, con ampliación solo donde haya duda (teles, bordes, textura). Los revisores independientes (varios agentes) solo se lanzan por lote nuevo o si la persona lo pide, no por cada ajuste.
+- **Leer lo justo** (rangos de líneas, `grep`) y responder con tablas cortas; los prompts largos se envían una vez y luego se referencian por archivo.
+
 ## Reglas técnicas (Next.js next · TypeScript estricto)
 - **Antes de escribir código de Next, lee `node_modules/next/dist/docs/`** (esta versión tiene cambios de ruptura). En Next 16: el antiguo *middleware* se llama **`proxy.ts`** (función `proxy`); `next lint` ya no existe (se usa `eslint`).
 - Componentes de servidor por defecto; `"use client"` solo si hace falta. Componentes pequeños, HTML semántico, un `h1` por página.
