@@ -1,6 +1,6 @@
-# Terraza: las 5 versiones móvil (composición propia)
+# Terraza: las 4 versiones móvil (composición propia)
 
-> Para ChatGPT. Las 5 «móvil» que subiste son las de escritorio reducidas (diferencia media 0,5 sobre 255), no composiciones móviles propias. Este prompt pide **solo las 5 móviles**, con las de escritorio como referencia. Corrige además la pared lila-gris de la tele (P31).
+> Para ChatGPT. Las 5 «móvil» que subiste son las de escritorio reducidas (diferencia media 0,5 sobre 255), no composiciones móviles propias. Este prompt pide **las 4 móviles de P10, P11, P12 y P30**, con las de escritorio como referencia. La P31 (tele) se pide aparte, en escritorio y móvil, según tu decisión sobre su versión de escritorio.
 > Adjunta en este orden: **1) `p01-hero-escritorio.jpg`**, **2) `p10-terraza-escritorio.png`**, **3) `p11-terraza-exterior-escritorio.png`**, **4) `p12-terraza-camas-escritorio.png`**, **5) `p30-terraza-bano-escritorio.png`**.
 
 | # | Archivo | Proporción | Mínimo |
@@ -9,19 +9,18 @@
 | 2 | `p11-terraza-exterior-movil` | 3:2 | 1200 × 800 |
 | 3 | `p12-terraza-camas-movil` | 3:2 | 1200 × 800 |
 | 4 | `p30-terraza-bano-movil` | 3:2 | 1200 × 800 |
-| 5 | `p31-terraza-tv-movil` | 3:2 | 1200 × 800 |
 
 ## Prompt
 
 ```text
-Create 5 separate MOBILE photographs for Hotel Aurora, a boutique hotel: the guest room "Terraza" (the split-cane room) for two people in TWO SINGLE BEDS. They are the phone versions of five desktop photographs that already exist (attached). Each one must be its OWN closer, simpler composition of the same place, with a new camera position, never the attached image resized or cropped.
+Create 4 separate MOBILE photographs for Hotel Aurora, a boutique hotel: the guest room "Terraza" (the split-cane room) for two people in TWO SINGLE BEDS. They are the phone versions of four desktop photographs that already exist (attached). Each one must be its OWN closer, simpler composition of the same place, with a new camera position, never the attached image resized or cropped.
 
 HOW TO DELIVER (important)
 - Send each photograph as its own separate image, one after another, never a collage, grid or two pictures in one. Before each, write only its file name on one line, no captions.
-- If you cannot send all 5 in one reply, send as many as you can in order; I will write "siguiente" and you continue.
+- If you cannot send all 4 in one reply, send as many as you can in order; I will write "siguiente" and you continue.
 
 FORMAT
-Image 1: portrait, exact ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400). Images 2-5: landscape, exact ratio 3:2, target 2560 x 1706 px (never below 1200 x 800). If your maximum is smaller (e.g. 1536 x 1024), deliver it in the exact ratio, never cropped, stretched or upscaled. Best quality, sRGB, JPG or PNG, no border.
+Image 1: portrait, exact ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400). Images 2-4: landscape, exact ratio 3:2, target 2560 x 1706 px (never below 1200 x 800). If your maximum is smaller (e.g. 1536 x 1024), deliver it in the exact ratio, never cropped, stretched or upscaled. Best quality, sRGB, JPG or PNG, no border.
 
 ATTACHED REFERENCES (do not deliver them)
 REFERENCE 1: the hotel's main image (exterior at sunrise): copy its light, shadow colour and restraint to the letter.
@@ -44,7 +43,7 @@ The terrace: a flat roof of split cane (thin half-round reeds in slightly uneven
 ALWAYS: perfectly vertical verticals; rectangular openings with flat lintels only (no arches, vaults or curved niches); direct low golden sun visibly touching surfaces; a small terracotta accent under 8% of the frame; no people, animals, text, logos, brand names or watermark. Desktop images keep key elements inside the central 90%; each mobile image is its own closer, simpler composition (never a crop of the desktop one) with key elements inside the central 85%, a quiet lower part and at most 15% floor. The ONLY objects are those listed for each image: no pictures, books, lamps, bowls, soap, bottles, rugs or door knobs.
 NEVER: marble, white tile, glossy or polished surfaces (above all floors: glossy, wet-looking, reflective, pitted, bubbled, pebbled, stamped, small-tiled or crazed floors), chrome, a second spout or valve plate, curtains, toilets, hazy or overcast light, volumetric rays, lit screens, any mark on a television.
 
-THE 5 IMAGES, in this order
+THE 4 IMAGES, in this order
 
 IMAGE 1: the bedroom (4:5)
 File: p10-terraza-movil
@@ -70,11 +69,5 @@ Scene: a small bathroom seen from inside, facing the back (north) wall (no door 
 Sun: from the east through the small window, the RIGHT of the frame: a soft low golden band crosses the floor and the back wall behind the basin, rims the counter and spout, with an olive-branch shadow on the lime.
 Mobile composition: camera 1.0 m, 35 mm; the counter (with the basin in its middle) about 40% of the width, from 26% to 64%; towel and hook at 12% to 24%; the whole window (lintel, jambs, shutter) inside, upper right, at 66% to 90%; leave out the shower and the basket.
 
-IMAGE 5: the TV corner (3:2)
-File: p31-terraza-tv-movil
-Scene: the south wall (camera facing south, no bed). A deep rectangular opening cut into the thick lime wall: 110 cm wide, 90 cm high, 40 cm deep, square corners, flat lintel, pale limestone surround. Inside, flat on the back plaster, ONE SMALL switched-off television, matte black, about 40% of the opening width, centred, bare plaster each side. In front of it a rigid flat panel of split cane (horizontal reeds) in a slim dark oak frame, hung from a dark iron rail like a shutter: not a curtain, no folds. It covers exactly the RIGHT half of the opening and so the right half of the screen; the left half stays plain matte black. The lower bezel is one uniform matte-black strip with nothing printed, embossed or lit on it: no wordmark, badge, LED, sensor, notch or stand foot; no stand, cables or reflections.
-Sun: from the east, here the LEFT of the frame (door outside it): it lays warm matte patches on the floor only; the wall, the opening and the screen stay in soft shade (a slightly deeper warm cream, not a coloured wall), never touched by sun.
-Mobile composition: camera 0.9 m, 35 mm, frontal; opening, surround and cane panel centred, about 65% of the width; leave out the jar.
-
-FINAL CHECK before sending each image: it is a NEW closer composition, not a resized copy; exactly TWO identical single beds, never a double or a third (both in images 1 and 3; none in 2, 4, 5), each with ONE pillow; the terrace ledge a bench, never a bed; ONE stripe, never two, on every towel and throw; sun from the east on ONE side only, soft, golden, never hard, never on a TV screen; walls warm cream even in shade, never lilac or grey; shades visibly cool; every floor, shower alcoves included, worn, matte, dry limestone slabs: no gloss, wet look, reflections, or pitted, pebbled, small-tiled or crazed texture; ONE copper spout and nothing else on its wall; the television small, off, with a plain bezel without any mark, notch or stand foot, and NO bed in view in image 5; no arches or extra objects; the lower part of the image quiet.
+FINAL CHECK before sending each image: it is a NEW closer composition, not a resized copy; exactly TWO identical single beds, never a double or a third (both in images 1 and 3; none in 2 and 4), each with ONE pillow; the terrace ledge a bench, never a bed; ONE stripe, never two, on every towel and throw; sun from the east on ONE side only, soft, golden, never hard, never on a TV screen; walls warm cream even in shade, never lilac or grey; shades visibly cool; every floor, shower alcoves included, worn, matte, dry limestone slabs: no gloss, wet look, reflections, or pitted, pebbled, small-tiled or crazed texture; ONE copper spout and nothing else on its wall; no arches or extra objects; the lower part of the image quiet.
 ```
