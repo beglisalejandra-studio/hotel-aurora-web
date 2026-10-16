@@ -1,0 +1,340 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Hotel Aurora" [ref=e6] [cursor=pointer]:
+        - /url: "#/"
+        - generic [ref=e7]: Aurora
+      - navigation "Main" [ref=e8]:
+        - link "Rooms" [ref=e9] [cursor=pointer]:
+          - /url: "#/"
+        - link "Restaurant" [ref=e10] [cursor=pointer]:
+          - /url: "#/"
+        - link "Spa" [ref=e11] [cursor=pointer]:
+          - /url: "#/"
+        - link "Packages" [ref=e12] [cursor=pointer]:
+          - /url: "#/"
+        - link "The hotel" [ref=e13] [cursor=pointer]:
+          - /url: "#/"
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - group "Language" [ref=e16]:
+            - button "ES" [ref=e17] [cursor=pointer]
+            - button "EN" [pressed] [ref=e18] [cursor=pointer]
+          - button "Day" [ref=e19] [cursor=pointer]
+          - link "+34 000 000 000" [ref=e20] [cursor=pointer]:
+            - /url: tel:+34000000000
+        - button "Book" [ref=e21] [cursor=pointer]
+  - main [ref=e22]:
+    - region "Walk through the house" [ref=e23]:
+      - link "Skip the intro" [ref=e24] [cursor=pointer]:
+        - /url: "#/"
+      - generic [ref=e26]:
+        - img "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind." [ref=e29]
+        - generic [ref=e39]:
+          - heading "Boutique hotel in El Palmar." [level=1] [ref=e41]:
+            - generic [ref=e42]: Boutique
+            - generic [ref=e44]: hotel
+            - generic [ref=e46]: in
+            - generic [ref=e48]: El
+            - generic [ref=e50]: Palmar.
+          - form "Search dates" [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: Check-in
+              - textbox "Check-in" [ref=e55]
+            - generic [ref=e56]:
+              - generic [ref=e57]: Check-out
+              - textbox "Check-out" [ref=e58]
+            - generic [ref=e59]:
+              - generic [ref=e60]: Guests
+              - combobox "Guests" [ref=e61]:
+                - option "1 guest"
+                - option "2 guests" [selected]
+                - option "3 guests"
+                - option "4 guests"
+            - button "Book" [ref=e62] [cursor=pointer]
+    - region [ref=e63]:
+      - generic [ref=e65]:
+        - heading "Rooms of limewash, timber and stone in El Palmar." [level=2] [ref=e66]
+        - generic [ref=e67]:
+          - button "Previous rooms" [ref=e68] [cursor=pointer]: ←
+          - button "Next rooms" [ref=e69] [cursor=pointer]: →
+      - generic [ref=e70]:
+        - region "Rooms" [ref=e71]:
+          - article [ref=e72]:
+            - 'link "See the room: Alba" [ref=e73] [cursor=pointer]':
+              - /url: "#/habitacion/alba"
+              - 'img "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams." [ref=e74]'
+            - heading "Alba" [level=3] [ref=e75]
+            - paragraph [ref=e76]: Facing east.
+            - paragraph [ref=e77]: 2 guests
+            - paragraph [ref=e78]: 1 double bed
+            - paragraph [ref=e79]: From €168 / night
+            - generic [ref=e80]:
+              - button "Book" [ref=e81] [cursor=pointer]
+              - link "See the room" [ref=e82] [cursor=pointer]:
+                - /url: "#/habitacion/alba"
+          - article [ref=e83]:
+            - 'link "See the room: Marea" [ref=e84] [cursor=pointer]':
+              - /url: "#/habitacion/marea"
+              - img "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view." [ref=e85]
+            - heading "Marea" [level=3] [ref=e86]
+            - paragraph [ref=e87]: Facing south-west.
+            - paragraph [ref=e88]: 3 guests
+            - paragraph [ref=e89]: 1 double bed and 1 single bed
+            - paragraph [ref=e90]: From €189 / night
+            - generic [ref=e91]:
+              - button "Book" [ref=e92] [cursor=pointer]
+              - link "See the room" [ref=e93] [cursor=pointer]:
+                - /url: "#/habitacion/marea"
+          - article [ref=e94]:
+            - 'link "See the room: Terraza" [ref=e95] [cursor=pointer]':
+              - /url: "#/habitacion/terraza"
+              - img "Terraza bedroom with two masonry single beds and the open door to the cane-covered terrace." [ref=e96]
+            - heading "Terraza" [level=3] [ref=e97]
+            - paragraph [ref=e98]: Facing east, with a private terrace.
+            - paragraph [ref=e99]: 2 guests
+            - paragraph [ref=e100]: 2 single beds
+            - paragraph [ref=e101]: From €168 / night
+            - generic [ref=e102]:
+              - button "Book" [ref=e103] [cursor=pointer]
+              - link "See the room" [ref=e104] [cursor=pointer]:
+                - /url: "#/habitacion/terraza"
+          - article [ref=e105]:
+            - 'link "See the room: Faro" [ref=e106] [cursor=pointer]':
+              - /url: "#/habitacion/faro"
+              - img "Faro living room with a masonry bench, low table and rush armchairs." [ref=e107]
+            - heading "Faro" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Mini apartment facing south and west.
+            - paragraph [ref=e110]: 74 m², 4 guests
+            - paragraph [ref=e111]: "Living room, kitchen and 2 bedrooms: 1 double bed and 2 single beds"
+            - paragraph [ref=e112]: From €296 / night
+            - generic [ref=e113]:
+              - button "Book" [ref=e114] [cursor=pointer]
+              - link "See the room" [ref=e115] [cursor=pointer]:
+                - /url: "#/habitacion/faro"
+        - paragraph [ref=e118]: Example prices. On the live site the booking engine returns them.
+        - paragraph [ref=e119]: Every room can request a pet bed or a baby crib in the room at no extra cost.
+    - region [ref=e120]:
+      - generic [ref=e121]:
+        - heading "Book direct with the hotel." [level=2] [ref=e122]
+        - list [ref=e123]:
+          - listitem [ref=e124]:
+            - strong [ref=e125]: No middlemen.
+            - generic [ref=e126]: You deal with the hotel, not a platform.
+          - listitem [ref=e127]:
+            - strong [ref=e128]: Clear terms.
+            - generic [ref=e129]: You see each rate's cancellation policy before paying.
+          - listitem [ref=e130]:
+            - strong [ref=e131]: Secure payment.
+            - generic [ref=e132]: The booking engine handles payment. This site never sees your card.
+    - region [ref=e133]:
+      - generic [ref=e134]:
+        - 'img "Video pending V01: dining room" [ref=e135]':
+          - generic [ref=e136]:
+            - generic [ref=e137]: V01
+            - text: Silent looping microvideo, poster P16
+        - generic [ref=e138]:
+          - heading "A market-cuisine restaurant, from breakfast to dinner." [level=2] [ref=e139]
+          - paragraph [ref=e140]: Breakfast until mid-morning and dinner with seasonal produce. Request a table and we confirm by email or WhatsApp.
+          - button "Request a table" [ref=e141] [cursor=pointer]
+    - region [ref=e142]:
+      - generic [ref=e143]:
+        - 'img "Photo pending P19: treatment room" [ref=e144]':
+          - generic [ref=e145]:
+            - generic [ref=e146]: P19
+            - text: Treatment room, vertical 4:5
+        - generic [ref=e147]:
+          - heading "A hotel with a spa of water and silence on the Costa de la Luz." [level=2] [ref=e148]
+          - tablist "Spa" [ref=e149]:
+            - tab "Rituals" [selected] [ref=e150] [cursor=pointer]
+            - tab "Water circuit" [ref=e151] [cursor=pointer]
+            - tab "For two" [ref=e152] [cursor=pointer]
+          - tabpanel "Rituals" [ref=e153]:
+            - paragraph [ref=e154]: Treatments with warm oils and soft music, in the morning or in the afternoon.
+            - list [ref=e155]:
+              - listitem [ref=e156]:
+                - text: Welcome ritual
+                - generic [ref=e157]: 60 min
+              - listitem [ref=e158]:
+                - text: Warm oil massage
+                - generic [ref=e159]: 90 min
+              - listitem [ref=e160]:
+                - text: Revitalising facial
+                - generic [ref=e161]: 60 min
+            - button "Request an appointment" [ref=e162] [cursor=pointer]
+    - region [ref=e163]:
+      - generic [ref=e164]:
+        - 'img "Photo pending P25: dog on the room terrace" [ref=e165]':
+          - generic [ref=e166]:
+            - generic [ref=e167]: P25
+            - text: Dog on the terrace, landscape 3:2
+        - generic [ref=e168]:
+          - 'heading "Pet-friendly hotel: your dog is invited too." [level=2] [ref=e169]'
+          - list [ref=e170]:
+            - listitem [ref=e171]: "Dog-friendly hotel in Vejer de la Frontera: up to two dogs per room."
+            - listitem [ref=e172]: A bed and bowls provided in the room.
+            - listitem [ref=e173]: The pet supplement is shown before you pay.
+          - link "See the conditions" [ref=e174] [cursor=pointer]:
+            - /url: "#/"
+            - generic [aria-hidden] [ref=e176]: →
+    - region [ref=e177]:
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - heading "Getaways, dinners and spa days" [level=2] [ref=e180]
+          - paragraph [ref=e181]: "Two nights, a dinner or a spa day: pick your plan."
+        - generic [ref=e182]:
+          - article [ref=e183]:
+            - 'img "Photo pending P21: two-night escape" [ref=e184]':
+              - generic [ref=e185]:
+                - generic [ref=e186]: P21
+                - text: Two-night escape, 4:5
+            - generic [ref=e187]:
+              - heading "Two-night getaway" [level=3] [ref=e188]
+              - paragraph [ref=e189]: Two nights in Alba or Marea, breakfast and the water circuit.
+              - button "Book" [ref=e190] [cursor=pointer]
+          - article [ref=e191]:
+            - heading "Dinner at the hotel" [level=3] [ref=e192]
+            - paragraph [ref=e193]: Seasonal menu for two, with wine pairing.
+            - button "Request a table" [ref=e194] [cursor=pointer]
+          - article [ref=e195]:
+            - heading "Spa day" [level=3] [ref=e196]
+            - paragraph [ref=e197]: A voucher for the water circuit and a 60-minute ritual.
+            - button "Buy voucher" [ref=e198] [cursor=pointer]
+    - region [ref=e199]:
+      - generic [ref=e200]:
+        - heading "Hotel Aurora at a glance" [level=2] [ref=e201]
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - term [ref=e204]: Type
+            - definition [ref=e205]: Dog-friendly boutique hotel
+          - generic [ref=e206]:
+            - term [ref=e207]: Location
+            - definition [ref=e208]: El Palmar, Vejer de la Frontera (Cádiz, Spain)
+          - generic [ref=e209]:
+            - term [ref=e210]: Rooms
+            - definition [ref=e211]: "28: Alba, Marea, Terraza and Faro"
+          - generic [ref=e212]:
+            - term [ref=e213]: Services
+            - definition [ref=e214]: Own spa and restaurant
+          - generic [ref=e215]:
+            - term [ref=e216]: Dogs
+            - definition [ref=e217]: Up to two per room, with a bed and bowls
+          - generic [ref=e218]:
+            - term [ref=e219]: Check-in and check-out
+            - definition [ref=e220]: From 15:00 and by 12:00
+          - generic [ref=e221]:
+            - term [ref=e222]: Booking
+            - definition [ref=e223]: Direct, no middleman commission
+          - generic [ref=e224]:
+            - term [ref=e225]: Website
+            - definition [ref=e226]: In Spanish and English
+    - region [ref=e227]:
+      - generic [ref=e228]:
+        - heading "Frequently asked questions about Hotel Aurora" [level=2] [ref=e229]
+        - generic [ref=e230]:
+          - group [ref=e231]:
+            - generic "Where is Hotel Aurora? +" [ref=e232] [cursor=pointer]
+          - group [ref=e233]:
+            - generic "Does Hotel Aurora accept dogs? +" [ref=e234] [cursor=pointer]
+          - group [ref=e235]:
+            - generic "How many rooms does Hotel Aurora have? +" [ref=e236] [cursor=pointer]
+          - group [ref=e237]:
+            - generic "Does Hotel Aurora have a spa? +" [ref=e238] [cursor=pointer]
+          - group [ref=e239]:
+            - generic "Does Hotel Aurora have a restaurant? +" [ref=e240] [cursor=pointer]
+          - group [ref=e241]:
+            - generic "Can I book without commission? +" [ref=e242] [cursor=pointer]
+          - group [ref=e243]:
+            - generic "What time are check-in and check-out? +" [ref=e244] [cursor=pointer]
+          - group [ref=e245]:
+            - generic "How do I cancel a booking? +" [ref=e246] [cursor=pointer]
+          - group [ref=e247]:
+            - generic "Is there a baby crib or a bed for my pet? +" [ref=e248] [cursor=pointer]
+    - region [ref=e249]:
+      - generic [ref=e250]:
+        - generic [ref=e251]:
+          - heading "Getting to El Palmar, Vejer de la Frontera" [level=2] [ref=e252]
+          - paragraph [ref=e253]: In El Palmar, Vejer de la Frontera (Cádiz), on the Costa de la Luz. El Palmar beach is the landmark of the area.
+          - link "Open in Google Maps" [ref=e254] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Playa%20de%20El%20Palmar%2C%20Vejer%20de%20la%20Frontera
+            - generic [aria-hidden] [ref=e256]: →
+        - generic [ref=e257]:
+          - paragraph [ref=e258]: The pin marks Playa de El Palmar, a real landmark in the area. The hotel address is fictional.
+          - button "Load the map" [ref=e259] [cursor=pointer]
+          - paragraph [ref=e260]: Loading the map connects you to Google.
+    - region [ref=e261]:
+      - generic [ref=e262]:
+        - heading "Book your getaway with your dog." [level=2] [ref=e263]
+        - paragraph [ref=e264]: Write to us if you prefer to talk to a person.
+        - generic [ref=e265]:
+          - button "Book" [ref=e266] [cursor=pointer]
+          - link "WhatsApp" [ref=e267] [cursor=pointer]:
+            - /url: https://wa.me/34000000000?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20hotel.
+  - contentinfo [ref=e268]:
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - link "Hotel Aurora" [ref=e272] [cursor=pointer]:
+            - /url: "#/"
+            - generic [ref=e273]: Aurora
+          - generic [ref=e274]: Calle de la Aurora, s/n. El Palmar, Vejer de la Frontera, Cádiz.
+        - generic [ref=e275]:
+          - heading "Contact" [level=3] [ref=e276]
+          - list [ref=e277]:
+            - listitem [ref=e278]:
+              - link "+34 000 000 000" [ref=e279] [cursor=pointer]:
+                - /url: tel:+34000000000
+            - listitem [ref=e280]:
+              - link "reservas@hotelaurora.example" [ref=e281] [cursor=pointer]:
+                - /url: mailto:reservas@hotelaurora.example
+            - listitem [ref=e282]:
+              - link "WhatsApp" [ref=e283] [cursor=pointer]:
+                - /url: https://wa.me/34000000000
+        - generic [ref=e284]:
+          - heading "Hotel" [level=3] [ref=e285]
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "Rooms" [ref=e288] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e289]:
+              - link "Restaurant" [ref=e290] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e291]:
+              - link "Spa" [ref=e292] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e293]:
+              - link "Packages" [ref=e294] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e295]:
+              - link "Pet-friendly" [ref=e296] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e297]:
+              - link "Getting here" [ref=e298] [cursor=pointer]:
+                - /url: "#/"
+        - generic [ref=e299]:
+          - heading "Legal" [level=3] [ref=e300]
+          - list [ref=e301]:
+            - listitem [ref=e302]:
+              - link "Legal notice" [ref=e303] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e304]:
+              - link "Privacy" [ref=e305] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e306]:
+              - link "Cookies" [ref=e307] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e308]:
+              - link "Booking terms" [ref=e309] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=e310]:
+              - button "Cookie settings" [ref=e311] [cursor=pointer]
+      - paragraph [ref=e313]: Portfolio project. The hotel, its details and its prices are fictional.
+  - dialog [ref=e314]:
+    - heading "Your choice about cookies" [level=2] [ref=e315]
+    - paragraph [ref=e316]: We use necessary cookies so the site works. With your permission, also analytics and marketing cookies. You can change this at any time from the footer.
+    - generic [ref=e317]:
+      - button "Accept" [ref=e318] [cursor=pointer]
+      - button "Reject" [ref=e319] [cursor=pointer]
+      - button "Configure" [ref=e320] [cursor=pointer]

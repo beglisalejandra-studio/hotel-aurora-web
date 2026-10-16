@@ -30,8 +30,57 @@
 - Escapada de dos noches en Alba o Marea, con desayuno: desayuno para dos en una bandeja sobre la cama de Alba.
 - Petfriendly, hasta dos perros por habitación, con cama y cuencos de cortesía: un perro tumbado en su cama en la terraza de Terraza, con sus dos cuencos.
 
-## Prompt
+## Prompts (se piden de uno en uno, decisión de la persona del 2026-10-16)
+Se pegan en el chat. Adjuntos: 1) `p01-hero-escritorio.jpg`, 2) `p04-alba-escritorio.jpg`. El de móvil se pega en el mismo chat después de recibir el de escritorio.
+
+### p16-restaurante-escritorio
 
 ```text
-(se pega aquí la versión final revisada)
+FORMAT: landscape image, exact aspect ratio 16:9, target 2560 x 1440 px (never below 1500 x 844).
+
+Create ONE photograph for the boutique hotel Hotel Aurora, an old restored whitewashed house on the Atlantic coast: the hotel restaurant. Before the image write only its file name on one line: p16-restaurante-escritorio. One image only, never a collage.
+
+ATTACHED REFERENCES (do not deliver them)
+REFERENCE 1: the main image of the hotel. It fixes the look, above all the COLOUR OF THE SHADOWS and the restraint of the colours.
+REFERENCE 2: a bedroom of the same house. Copy ONLY its materials (lime plaster, dark oak beams, furniture language), never its bed, layout or colour grade.
+
+THE LOOK (copy it to the letter)
+Low golden sun entering directly, warm only on the lit surfaces, and long, soft, COOL BLUE-LILAC shadows like the shaded gravel of reference 1. What the sun does not touch reads pale grey-lilac: shaded plaster about RGB 150,140,165, deepest shadow about 95,100,125. Never brown, tan, amber, orange or ochre shadows. Saturation low, mean about 0.27 to 0.33; sunlit plaster pale cream, never peach or orange. Materials all matte and dry: hand-trowelled lime plaster with rare hairline cracks, heavy dark brown matt oak, golden rush seats, plain linen, small metal parts dark forged iron, never silver or chrome. A documentary photograph of a real, old, restored house, not a catalogue set.
+
+THE FLOOR (important)
+Old, worn, DRY, completely MATTE pale limestone: large irregular rectangular slabs (about 60 x 40 to 90 x 50 cm) in loose rows with thin hairline joints and softly chipped edges, like dusty sun-baked stone. NO gloss, shine, wet look or reflections; NO pitted, bubbled or pebbled texture; NO small square tiles, mosaic or terrazzo. Sun patches on the floor are warm, flat and matte.
+
+THE SCENE
+The dining room on the ground floor of the house: dark beams, thick lime walls. Four small square dark oak tables, each with two golden-rush chairs. ONE table, the nearest to the right-hand windows, is set for two: a plain undyed linen tablecloth, two cream handmade ceramic plates, two folded linen napkins, two plain thick water tumblers, a small clay water jug, a wooden board with a few slices of country bread, and in the middle ONE shallow cream ceramic dish of sliced ripe tomatoes with olive oil and coarse salt; a small clay jar with an olive twig. The other three tables are bare oak, chairs tucked in. In the far wall two tall narrow rectangular windows with flat lintels and dark plank shutters folded open, showing olive foliage and a flat level band of deep blue sea; they are views, never a source of glare.
+Sun: low and golden, from the RIGHT, through windows in the right wall outside the frame; the rays travel right to left. A warm band crosses the set table, lights the dish, tumblers and bread, and lies across the floor towards the left. The left part of the room stays in cool lilac shade.
+
+COMPOSITION (the website shows this photo as a wide 2:1 band and puts a text card over its lower-left part)
+Camera at seated eye height (1.2 m), 28 mm, perfectly vertical verticals, looking along the room. The sunlit set table in the right half of the frame, its centre at about 68% from the left and 50% from the top. The lower-left quarter is quiet: shaded floor and the legs of a bare table, nothing important there. Everything important between 8% and 90% of the height.
+
+ALWAYS: rectangular openings with flat lintels only (no arches or vaults); ONLY the objects named here.
+NEVER: people, animals, text, menus, logos, brand names, watermark, marble, white tile, glossy or polished surfaces, chrome, candles, flowers, pendant lamps, hazy light, volumetric rays, steam or smoke, white ceilings.
+
+FINAL CHECK before sending: ONE set table, the others bare; sun from the right only; shadows cool blue-lilac, never brown; floor matte, dry limestone slabs with no reflections; lower-left quarter quiet; exact 16:9.
+
+OUTPUT: landscape 16:9, 2560 x 1440 px target (minimum 1500 x 844); if you cannot reach it, your largest exact 16:9 size (for example 1672 x 941), never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
 ```
+
+### p16-restaurante-movil
+
+```text
+FORMAT: portrait image, exact aspect ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400).
+
+In this same chat, create ONE more photograph: the mobile version of the restaurant you just made. Before the image write only its file name on one line: p16-restaurante-movil. One image only, never a collage.
+
+REFERENCES: the two images attached before (same look and materials) and the restaurant photo you just generated (p16-restaurante-escritorio): the SAME room, the SAME set table with exactly the same objects, the SAME light from the right, the same colour grade, saturation and shadow tint.
+
+COMPOSITION: a NEW, closer camera position, never a crop of the desktop image. 35 mm, camera at 1.2 m, from the left side of the set table. The set table and its two chairs fill about 75% of the width, centred; the tomato dish at about 45% from the top. One far window with the sea band in the upper third. The bottom 18% is only plain shaded floor and the tablecloth hem (a text card covers it). No other tables in the frame. Perfectly vertical verticals.
+Sun: from the right, a warm band across the table, the dish, the tumblers and the bread; the rest in cool lilac shade.
+
+Same rules as before: matte dry limestone floor with no reflections; ONLY the named objects; no people, animals, text, logos, candles, flowers, steam or arches.
+
+FINAL CHECK before sending: same table and objects as the desktop image; new closer viewpoint, not a crop; bottom 18% quiet; exact 4:5.
+
+OUTPUT: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400); never below 1120 x 1400, never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
+```
+
