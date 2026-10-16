@@ -158,3 +158,38 @@ FINAL CHECK before sending: two separate images in this reply, each with its fil
 
 OUTPUT: Image 1: landscape 3:2, 2560 x 1706 px target (minimum 1500 x 1000; 1536 x 1024 is fine). Image 2: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400). Never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
 ```
+
+### P25 (escritorio y móvil 3:2 en un solo prompt)
+Adjuntos: 1) `p01-hero-escritorio.jpg`, 2) `p11-terraza-exterior-escritorio.png` (es la terraza). P21 se aprobó el 2026-10-16 tal cual.
+
+```text
+FORMAT: TWO separate images in ONE reply. Image 1: landscape, exact aspect ratio 3:2, target 2560 x 1706 px (never below 1500 x 1000). Image 2: landscape, exact aspect ratio 3:2, target 2560 x 1706 px (never below 1200 x 800).
+
+Create TWO photographs of the same scene for the boutique hotel Hotel Aurora, a dog-friendly hotel in an old restored whitewashed house on the Atlantic coast: a dog resting on the private terrace of the Terraza room. Deliver BOTH in this single reply, each as its own separate image, never a collage, never side by side. They are two shots taken by the same photographer in the same minute: the SAME terrace, the SAME dog, the SAME bed and bowls, the SAME textures and shapes, the SAME light and colour grade in both. Only the camera position changes.
+
+FILE NAME: write each file name as the description of its image, on its own line right above it, exactly: image 1 = p25-perro-terraza-escritorio , image 2 = p25-perro-terraza-movil . If you can name the downloadable files, use those names with .png.
+
+ATTACHED REFERENCES (do not deliver them)
+REFERENCE 1: the main image of the hotel. It fixes the look, above all the COLOUR OF THE SHADOWS and the restraint of the colours.
+REFERENCE 2: the private terrace of the Terraza room. It IS the place of these photos: the same cane roof on dark timber rafters and square posts, the same low lime parapet with limestone coping, the same built-in whitewashed ledge, the same open plank door and the same floor. Do not redesign it.
+
+THE LOOK (copy it to the letter, identical in both images)
+Soft, mild, golden morning sun, good for sunbathing, never hard or overhead: filtered by the cane roof into thin, wavy, irregular, soft-edged lines of gold about a finger wide, with pale lilac shade between them, as in reference 2. What the sun does not touch reads pale grey-lilac like the shaded gravel of reference 1: shaded plaster about RGB 150,140,165. Never brown, tan, amber, orange or ochre shadows. Saturation low, mean about 0.27 to 0.33 in both images; sunlit plaster pale cream, never peach or orange. Materials all matte and dry: lime plaster, dark brown matt oak, plain smooth raw linen with no pattern or relief, cream matte ceramic. A documentary photograph of a real, old, restored house, not a pet-food advert.
+
+THE FLOOR (important, identical in both images)
+Old, worn, DRY, completely MATTE pale limestone: large irregular rectangular slabs (about 60 x 40 to 90 x 50 cm) in loose rows with thin hairline joints and softly chipped edges, smooth and flat like dusty sun-baked stone. NO gloss, shine, wet look or reflections; NO hammered, rippled, pitted or pebbled texture; NO small square tiles.
+
+THE SCENE
+The terrace of reference 2, morning. ONE calm medium-sized mixed-breed dog with a short sand-coloured coat lies on its own dog bed, head up, eyes open, looking calmly towards the camera, relaxed. Natural, correct anatomy: four legs, one tail, two ears, one head, paws with normal toes; nothing doubled, merged or missing. A plain brown leather collar with no tag, text or logo. The dog bed: a low rectangular dark oak frame with a thick plain raw linen cushion, sized for the dog. Next to the bed, on the floor, exactly TWO plain cream matte ceramic bowls, one with water. Beyond the parapet the olive crown of the courtyard and a level band of deep blue sea under a clean sky.
+
+IMAGE 1 (p25-perro-terraza-escritorio, 3:2): camera low, at the dog's eye height (0.6 m), 35 mm, from the south end of the terrace as in reference 2, perfectly vertical verticals. The dog on its bed in the left-centre of the frame (its head at about 40% from the left and 50% from the top), the two bowls just to its right, the parapet and the view on the right, the cane roof across the top. The dog, the bed and the bowls whole, never cut by the edges.
+
+IMAGE 2 (p25-perro-terraza-movil, 3:2): a version for a phone screen, where the photo is shown small (about 358 x 239 px), so the dog must read clearly. Act as a professional photographer composing a NEW, closer photograph, never a crop of image 1: move closer and a little to the side, 50 mm, camera at 0.5 m. The dog, its bed and the two bowls fill about 70% of the width, centred, with breathing room on every side; the dog's head at about 40% from the top. Nothing important cut by the edges: no paw, ear, tail, bowl or bed corner sliced by the frame; if something cannot fit whole, leave it out entirely. Behind, soft and out of focus, the parapet, the olive crown and the sea band; the cane roof only as a few soft lines of light, no ledge. Same light, textures, dog and objects as image 1.
+
+ALWAYS: rectangular openings with flat lintels only (no arches or vaults); ONLY the objects named here; ONE dog only.
+NEVER: people or hands, other animals, a second dog, toys, leashes, food bags or pet-shop products, text, logos, brand names, name tags, watermark, plants other than the olive crown beyond the parapet, cushions with patterns, marble, glossy or polished surfaces, chrome, hard midday sun, black stripe shadows, hazy light, volumetric rays.
+
+FINAL CHECK before sending: two separate images in this reply, each with its file name above it; same terrace as reference 2 and same dog, bed and bowls in both; ONE dog with natural anatomy; ONE bed; TWO bowls; soft golden cane-filtered light; shadows cool blue-lilac, never brown; floor matte, dry limestone with no reflections; image 2 closer, nothing cut at the edges; both exact 3:2.
+
+OUTPUT: Image 1: landscape 3:2, 2560 x 1706 px target (minimum 1500 x 1000; 1536 x 1024 is fine). Image 2: landscape 3:2, 2560 x 1706 px target (minimum 1200 x 800; 1536 x 1024 is fine). Never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
+```
