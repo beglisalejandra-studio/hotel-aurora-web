@@ -23,6 +23,7 @@
 - Cada foto o vídeo se pide con su **composición nativa para el contenedor móvil real** (medido en la maqueta o el sitio), nunca como recorte automático de la de escritorio. Se calcula cuánto de la imagen se ve con `object-fit: cover` en cada contenedor y la ficha fija las zonas seguras.
 - Cada foto se pide **siempre en dos versiones** (escritorio y móvil), cada una como imagen **separada** con su ficha, prompt y nombre (`<pieza>-escritorio`, `<pieza>-movil`), en el mismo mensaje.
 - **Cada imagen que se pida lleva su prompt con la proporción exacta**: el bloque que se copia en la herramienta empieza con una línea `FORMAT:` (orientación, proporción y tamaño) y termina con una línea `OUTPUT:` (proporción, tamaño objetivo y mínimo, calidad, color y formato). Tras `media-request`, se ejecuta `node scripts/finalize-media-request.mjs <nombre>`; `--check` avisa si una ficha pendiente no las tiene.
+- **Cada prompt pide el nombre del archivo en la descripción de la imagen** (una línea `FILE NAME:` con el nombre exacto encima de la imagen y, si la herramienta lo permite, el archivo descargable con ese nombre), para que la persona sepa cómo renombrarla al subirla (regla de la persona, 2026-10-16).
 - Contraste y legibilidad del texto sobre foto se miden **sobre la foto real**, en móvil y en escritorio, incluidos móviles cortos (375 × 667).
 - Objetivos táctiles ≥ 44 px, sin desbordamiento horizontal a 390 px y el botón flotante no tapa la acción principal.
 

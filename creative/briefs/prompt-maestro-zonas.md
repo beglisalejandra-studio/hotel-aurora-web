@@ -38,7 +38,8 @@ Se pegan en el chat. Adjuntos: 1) `p01-hero-escritorio.jpg`, 2) `p04-alba-escrit
 ```text
 FORMAT: landscape image, exact aspect ratio 16:9, target 2560 x 1440 px (never below 1500 x 844).
 
-Create ONE photograph for the boutique hotel Hotel Aurora, an old restored whitewashed house on the Atlantic coast: the hotel restaurant. Before the image write only its file name on one line: p16-restaurante-escritorio. One image only, never a collage.
+Create ONE photograph for the boutique hotel Hotel Aurora, an old restored whitewashed house on the Atlantic coast: the hotel restaurant. One image only, never a collage.
+FILE NAME: write the file name as the description of the image, on its own line right above it, exactly: p16-restaurante-escritorio . If you can name the downloadable file, name it p16-restaurante-escritorio.png.
 
 ATTACHED REFERENCES (do not deliver them)
 REFERENCE 1: the main image of the hotel. It fixes the look, above all the COLOUR OF THE SHADOWS and the restraint of the colours.
@@ -70,7 +71,8 @@ OUTPUT: landscape 16:9, 2560 x 1440 px target (minimum 1500 x 844); if you canno
 ```text
 FORMAT: portrait image, exact aspect ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400).
 
-In this same chat, create ONE more photograph: the mobile version of the restaurant you just made. Before the image write only its file name on one line: p16-restaurante-movil. One image only, never a collage.
+In this same chat, create ONE more photograph: the mobile version of the restaurant you just made. One image only, never a collage.
+FILE NAME: write the file name as the description of the image, on its own line right above it, exactly: p16-restaurante-movil . If you can name the downloadable file, name it p16-restaurante-movil.png.
 
 REFERENCES: the two images attached before (same look and materials) and the restaurant photo you just generated (p16-restaurante-escritorio): the SAME room, the SAME set table with exactly the same objects, the SAME light from the right, the same colour grade, saturation and shadow tint.
 
