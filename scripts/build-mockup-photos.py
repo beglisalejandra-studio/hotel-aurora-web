@@ -27,6 +27,11 @@ FIXED = {  # piezas con nombre propio
     'P36': ('p36-recepcion-fin-escritorio.png', 'p36-recepcion-fin-movil.png', 'p36-recepcion-fin-escritorio', (1672, 941), (941, 1672)),
 }
 
+# borradores recibidos y aun sin aprobar: se ven en la maqueta para decidir (codigo del hueco -> archivos en el repo)
+DRAFTS = {
+    'V01': ('creative/inbox/p16-restaurante-escritorio.png', 'creative/inbox/p16-restaurante-movil.png', 'p16-restaurante-escritorio', (1672, 941), (900, 1125)),
+}
+
 def enc(path, size, q=76):
     im = Image.open(path).convert('RGB').resize(size, Image.LANCZOS)
     b = io.BytesIO(); im.save(b, 'WEBP', quality=q, method=6)
@@ -36,6 +41,8 @@ fotos = {}
 for code, (fd, fm, pid, sd, sm) in FIXED.items():
     alt = PROV[pid]['alt_draft']
     fotos[code] = {'d': enc(A / fd, sd, 72 if code == 'P01' else 76), 'm': enc(A / fm, sm, 74 if code == 'P01' else 76), 'alt': alt}
+for code, (fd, fm, pid, sd, sm) in DRAFTS.items():
+    fotos[code] = {'d': enc(ROOT / fd, sd, 78), 'm': enc(ROOT / fm, sm, 78), 'alt': PROV[pid]['alt_draft']}
 for code, base in BASES.items():
     pid = base + '-escritorio'
     portrait = PROV[pid]['aspect'] == '4:5'

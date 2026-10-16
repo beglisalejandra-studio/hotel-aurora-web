@@ -22,7 +22,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 6 | P06 escritorio y móvil | Foto (2 versiones) | Alba, baño general | 3:2 las dos | **Aprobada** el 2026-10-10, escritorio y móvil (1536 × 1024) |
 | 6b | P26 escritorio y móvil | Foto (2 versiones) | Alba, baño: pila de piedra y luz sobre la cal | 3:2 las dos | **Aprobada** el 2026-10-10, escritorio y móvil (1536 × 1024) |
 | 6c | P27 escritorio y móvil | Foto (2 versiones) | Alba, zona de TV vista desde la cama | 3:2 las dos | **Aprobada** el 2026-10-10, escritorio y móvil (1536 × 1024) |
-| 7 | P16 escritorio y móvil | Foto (2 versiones) | Sala del restaurante con una mesa puesta al sol (también es el póster de V01) | **16:9** escritorio (hueco 2:1) y **4:5** móvil | **Solicitada** el 2026-10-16 en el lote `zonas` (`creative/briefs/prompt-maestro-zonas.md`) |
+| 7 | P16 escritorio y móvil | Foto (2 versiones) | Sala del restaurante con una mesa puesta al sol (también es el póster de V01) | **16:9** escritorio (hueco 2:1) y **4:5** móvil | **Recibida** el 2026-10-16 (1672 × 941 y 1122 × 1402), en revisión (`creative/briefs/prompt-maestro-zonas.md`) |
 | 8 | V01 | Vídeo | Luz de ventana sobre la mesa, 6 s en bucle, sin audio | 3:2 | Pendiente de #7 |
 | 9 | P19 escritorio y móvil | Foto (2 versiones) | Sala de tratamientos del spa | 4:5 las dos | **Solicitada** el 2026-10-16 en el lote `zonas` |
 | 10 | P25 escritorio y móvil | Foto (2 versiones) | Perro en su cama en la terraza de Terraza, con dos cuencos (hotel petfriendly) | 3:2 las dos | **Solicitada** el 2026-10-16 en el lote `zonas` |

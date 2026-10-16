@@ -4,7 +4,7 @@
   "aspect": "16:9",
   "page": "home",
   "role": "Restaurante, sala con una mesa puesta al sol; tambien poster del microvideo V01. Hueco 1440x720 (2:1) y 768x420 en tableta; el panel de texto tapa x 1-45 %, y 47-100 % (escritorio)",
-  "status": "requested",
+  "status": "received",
   "requested_at": "2026-10-16T16:46:02.979Z",
   "master": {
     "w": 2560,
@@ -20,5 +20,7 @@
     ".avif"
   ],
   "batch": "zonas",
-  "prompt_file": "creative/briefs/prompt-maestro-zonas.md"
+  "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+  "file": "creative/inbox/p16-restaurante-escritorio.png",
+  "received_at": "2026-10-16"
 }

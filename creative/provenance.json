@@ -1587,6 +1587,56 @@
       "embedded_content_credentials": false,
       "state": "draft_unused",
       "note": "Primer fotograma del vídeo de entrada, que se descartó (2026-10-10) a favor del zoom entre fotos. No se usa en la web: las hojas de la puerta se abren sobre P01. Se guarda como registro."
+    },
+    {
+      "id": "p16-restaurante-escritorio",
+      "piece": "P16",
+      "version": "escritorio",
+      "request": "creative/requests/p16-restaurante-escritorio.json",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "files": {
+        "original": "creative/inbox/p16-restaurante-escritorio.png"
+      },
+      "format": "PNG",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2547431,
+      "aspect": "16:9",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt de P16)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Comedor del restaurante: mesas de roble oscuro con sillas de enea, una mesa puesta con mantel de lino, pan, tomates aliñados y una jarra de barro, y al fondo dos ventanas con olivos y el mar.",
+        "en": "Restaurant dining room: dark oak tables with rush chairs, one table set with a linen cloth, bread, dressed tomatoes and a clay jug, and two windows with olive trees and the sea beyond."
+      }
+    },
+    {
+      "id": "p16-restaurante-movil",
+      "piece": "P16",
+      "version": "movil",
+      "request": "creative/requests/p16-restaurante-movil.json",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "files": {
+        "original": "creative/inbox/p16-restaurante-movil.png"
+      },
+      "format": "PNG",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2572473,
+      "aspect": "4:5",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt de P16)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Comedor del restaurante: mesas de roble oscuro con sillas de enea, una mesa puesta con mantel de lino, pan, tomates aliñados y una jarra de barro, y al fondo dos ventanas con olivos y el mar.",
+        "en": "Restaurant dining room: dark oak tables with rush chairs, one table set with a linen cloth, bread, dressed tomatoes and a clay jug, and two windows with olive trees and the sea beyond."
+      }
     }
   ]
 }
