@@ -86,3 +86,39 @@ FINAL CHECK before sending: same table and objects as the desktop image; new clo
 OUTPUT: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400); never below 1120 x 1400, never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
 ```
 
+
+### P19 (escritorio y móvil en un solo prompt, regla de la persona del 2026-10-16)
+Adjuntos: 1) `p01-hero-escritorio.jpg`, 2) `p16-restaurante-escritorio.png` (aprobada; materiales de la planta baja). P16 se aprobó el 2026-10-16 tal cual.
+
+```text
+FORMAT: TWO separate images in ONE reply. Image 1: portrait, exact aspect ratio 4:5, target 2048 x 2560 px (never below 1200 x 1500). Image 2: portrait, exact aspect ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400).
+
+Create TWO photographs of the same scene for the boutique hotel Hotel Aurora, an old restored whitewashed house on the Atlantic coast: the spa treatment room. Deliver BOTH in this single reply, each as its own separate image, never a collage, never side by side. They are two shots taken by the same photographer in the same minute: the SAME room, the SAME objects, the SAME textures and shapes, the SAME light and colour grade in both. Only the camera position changes.
+
+FILE NAME: write each file name as the description of its image, on its own line right above it, exactly: image 1 = p19-spa-tratamientos-escritorio , image 2 = p19-spa-tratamientos-movil . If you can name the downloadable files, use those names with .png.
+
+ATTACHED REFERENCES (do not deliver them)
+REFERENCE 1: the main image of the hotel. It fixes the look, above all the COLOUR OF THE SHADOWS and the restraint of the colours.
+REFERENCE 2: the hotel restaurant, on the same ground floor. Copy its materials exactly: lime plaster walls, dark oak beams and shutters, matte limestone floor. Never its furniture or layout.
+
+THE LOOK (copy it to the letter, identical in both images)
+Low golden sun entering directly, warm only on the lit surfaces, and long, soft, COOL BLUE-LILAC shadows like the shaded gravel of reference 1. What the sun does not touch reads pale grey-lilac: shaded plaster about RGB 150,140,165, deepest shadow about 95,100,125. Never brown, tan, amber, orange or ochre shadows. Saturation low, mean about 0.27 to 0.33 in both images; sunlit plaster pale cream, never peach or orange. Materials all matte and dry: hand-trowelled lime plaster with rare hairline cracks, heavy dark brown matt oak, plain smooth raw linen with soft wrinkles only (no pattern, relief or jacquard), rough-cut pale sandstone, aged matte brass, small metal parts dark forged iron, never silver or chrome. A documentary photograph of a real, old, restored house, not a spa brochure.
+
+THE FLOOR (important, identical in both images)
+Old, worn, DRY, completely MATTE pale limestone: large irregular rectangular slabs (about 60 x 40 to 90 x 50 cm) in loose rows with thin hairline joints and softly chipped edges, smooth and flat like dusty sun-baked stone. NO gloss, shine, wet look or reflections; NO hammered, rippled, pitted, bubbled or pebbled texture; NO small square tiles, mosaic or terrazzo. Sun patches on the floor are warm, flat and matte.
+
+THE SCENE
+A small, quiet treatment room: thick lime walls, one heavy dark oak beam across the ceiling. ONE treatment table of dark oak with a low flat raw linen pad, set lengthwise. At its head ONE folded raw linen towel with ONE thin terracotta band near its edge. Beside the table ONE low dark oak stool holding ONE small aged-brass bowl of oil. On the floor at the foot of the table ONE wide shallow rectangular pale sandstone basin with still clear water. In the back wall ONE rectangular niche with a flat lintel holding a small clay jar with an olive twig. In the right wall ONE tall narrow rectangular window with deep reveals and dark plank shutters half open.
+Sun: low, golden, soft, through that window on the right; the rays travel right to left. A single warm band crosses the floor and the linen pad and touches the edge of the water. The rest of the room is calm, cool lilac shade.
+
+IMAGE 1 (p19-spa-tratamientos-escritorio): camera at 1.4 m in the corner diagonally opposite the window, 28 mm, perfectly vertical verticals. The table across the lower-middle of the frame, the window and the niche visible, the basin whole. Floor at most 25% of the height. Everything important inside the central 90%.
+
+IMAGE 2 (p19-spa-tratamientos-movil): a vertical shot for a phone screen (shown about 358 x 421 px). Act as a professional interior photographer composing a NEW vertical photograph, never a crop of image 1: move closer and lower (0.9 m, 35 mm), along the table from its foot. The table, the towel, the stool and the brass bowl fill about 75% of the width, centred, with breathing room on every side. Nothing important cut by the edges: no half table, stool, bowl or towel sliced by the frame; if something cannot fit whole, leave it out entirely (the niche and the jar stay out). The window is just outside the right edge, where the sun band enters. Verticals perfectly vertical; the top of the table at about 55% from the top. Same light, textures, shapes and objects as image 1.
+
+ALWAYS: rectangular openings with flat lintels only (no arches, vaults or rounded niches); ONLY the objects named here.
+NEVER: people, animals, text, logos, brand names, watermark, candles, orchids or flowers, stacked pebbles, bamboo, incense, statues, rose petals, rolled or sculpted towels, marble, white tile, glossy or polished surfaces, chrome, glass, hazy light, volumetric rays, steam or smoke, white ceilings.
+
+FINAL CHECK before sending: two separate images in this reply, each with its file name above it; same room, objects, textures and light in both; ONE treatment table, ONE towel, ONE stool, ONE brass bowl, ONE basin; sun from the right only; shadows cool blue-lilac, never brown; floor matte, dry limestone slabs with no reflections or hammered texture; image 2 recomposed, nothing cut at the edges; both exact 4:5.
+
+OUTPUT: Image 1: portrait 4:5, 2048 x 2560 px target (minimum 1200 x 1500). Image 2: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400). Never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
+```
