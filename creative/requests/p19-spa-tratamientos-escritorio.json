@@ -10,7 +10,7 @@
     "w": 2048,
     "h": 2560
   },
-  "min_long_side": 1500,
+  "min_long_side": 1400,
   "max_bytes": 4000000,
   "exts": [
     ".jpg",
@@ -20,5 +20,6 @@
     ".avif"
   ],
   "batch": "zonas",
-  "prompt_file": "creative/briefs/prompt-maestro-zonas.md"
+  "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+  "note": "Se acepta 1120 x 1400 (lo habitual de ChatGPT en 4:5): el hueco mide 524 x 615 px en escritorio (unos 1048 x 1230 en pantallas retina)."
 }
