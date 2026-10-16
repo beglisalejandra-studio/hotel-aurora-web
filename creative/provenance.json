@@ -1712,6 +1712,56 @@
       ],
       "approved_by": "persona (chat, 2026-10-16: «APRUEBO»)",
       "approved_at": "2026-10-16"
+    },
+    {
+      "id": "p21-escapada-escritorio",
+      "piece": "P21",
+      "version": "escritorio",
+      "request": "creative/requests/p21-escapada-escritorio.json",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "files": {
+        "original": "creative/inbox/p21-escapada-escritorio.png"
+      },
+      "format": "PNG",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2530084,
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt único de P21)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Desayuno para dos sobre la cama de Alba: bandeja de madera con dos cafés, dos zumos de naranja, tostadas con tomate y un jarrón con una rama de olivo.",
+        "en": "Breakfast for two on the Alba bed: a wooden tray with two coffees, two orange juices, tomato toast and a vase with an olive branch."
+      }
+    },
+    {
+      "id": "p21-escapada-movil",
+      "piece": "P21",
+      "version": "movil",
+      "request": "creative/requests/p21-escapada-movil.json",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "files": {
+        "original": "creative/inbox/p21-escapada-movil.png"
+      },
+      "format": "PNG",
+      "width": 1120,
+      "height": 1400,
+      "bytes": 2244929,
+      "aspect": "4:5",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt único de P21)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Desayuno para dos sobre la cama de Alba: bandeja de madera con dos cafés, dos zumos de naranja, tostadas con tomate y un jarrón con una rama de olivo.",
+        "en": "Breakfast for two on the Alba bed: a wooden tray with two coffees, two orange juices, tomato toast and a vase with an olive branch."
+      }
     }
   ]
 }

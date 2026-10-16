@@ -4,7 +4,7 @@
   "aspect": "3:2",
   "page": "home",
   "role": "Paquete Escapada de dos noches: desayuno para dos en la cama de Alba (hueco 719x560 en escritorio y 707x420 en tableta; la tarjeta tapa x 2-64 %, y 59-97 %)",
-  "status": "requested",
+  "status": "received",
   "requested_at": "2026-10-16T16:46:02.979Z",
   "master": {
     "w": 2560,
@@ -20,5 +20,7 @@
     ".avif"
   ],
   "batch": "zonas",
-  "prompt_file": "creative/briefs/prompt-maestro-zonas.md"
+  "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+  "received_at": "2026-10-16",
+  "file": "creative/inbox/p21-escapada-escritorio.png"
 }

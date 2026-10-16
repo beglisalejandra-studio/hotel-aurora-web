@@ -510,6 +510,12 @@ details.q[open]::details-content{block-size:auto}
   .bento{grid-template-columns:7fr 5fr;grid-template-rows:1fr 1fr}
   .cell-a{grid-row:1/span 2;min-height:560px}
 }
+/* Escapada: la foto se ve entera arriba y el texto va debajo, pisando solo su borde inferior (la bandeja ocupa casi todo el ancho) */
+.cell-a{justify-content:flex-start}
+.cell-a .slot{position:relative;inset:auto;width:100%;aspect-ratio:4/5}
+.cell-a .cell-in{margin:-40px 16px 16px}
+@media (min-width:768px) and (max-width:1023px){.cell-a .slot{aspect-ratio:3/2}}
+@media (min-width:1024px){.cell-a .slot{aspect-ratio:auto;flex:1 1 auto;min-height:300px}}
 
 /* Hotel petfriendly */
 .pet-grid{display:grid;gap:36px;align-items:center}
