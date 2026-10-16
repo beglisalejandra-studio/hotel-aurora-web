@@ -1,0 +1,14 @@
+{
+ "lote": "zonas",
+ "prompt": "creative/briefs/prompt-maestro-zonas.md",
+ "items": [
+  {"name": "p16-restaurante-escritorio", "aspect": "16:9", "page": "home", "role": "Restaurante, sala con una mesa puesta al sol; tambien poster del microvideo V01. Hueco 1440x720 (2:1) y 768x420 en tableta; el panel de texto tapa x 1-45 %, y 47-100 % (escritorio)", "min_long_side": 1500},
+  {"name": "p16-restaurante-movil", "aspect": "4:5", "page": "home", "role": "Restaurante, version movil (hueco 390x488); el panel de texto tapa el 15 % de abajo", "min_long_side": 1400},
+  {"name": "p19-spa-tratamientos-escritorio", "aspect": "4:5", "page": "home", "role": "Spa, sala de tratamientos con una camilla (hueco 524x615, 0,85; sin texto encima)", "min_long_side": 1500},
+  {"name": "p19-spa-tratamientos-movil", "aspect": "4:5", "page": "home", "role": "Spa, sala de tratamientos, version movil (hueco 358x421, 0,85)", "min_long_side": 1400},
+  {"name": "p21-escapada-escritorio", "aspect": "3:2", "page": "home", "role": "Paquete Escapada de dos noches: desayuno para dos en la cama de Alba (hueco 719x560 en escritorio y 707x420 en tableta; la tarjeta tapa x 2-64 %, y 59-97 %)", "min_long_side": 1500},
+  {"name": "p21-escapada-movil", "aspect": "4:5", "page": "home", "role": "Paquete Escapada de dos noches, version movil (hueco 358x420; la tarjeta tapa y 47-96 % a todo el ancho)", "min_long_side": 1400},
+  {"name": "p25-perro-terraza-escritorio", "aspect": "3:2", "page": "home", "role": "Petfriendly: perro en su cama en la terraza de Terraza, con dos cuencos (hueco 686x457, 3:2; sin texto encima)", "min_long_side": 1500},
+  {"name": "p25-perro-terraza-movil", "aspect": "3:2", "page": "home", "role": "Petfriendly, version movil (hueco 358x239, 3:2)", "min_long_side": 1200}
+ ]
+}

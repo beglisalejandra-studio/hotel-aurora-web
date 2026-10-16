@@ -1,0 +1,24 @@
+{
+  "name": "p25-perro-terraza-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "home",
+  "role": "Petfriendly: perro en su cama en la terraza de Terraza, con dos cuencos (hueco 686x457, 3:2; sin texto encima)",
+  "status": "requested",
+  "requested_at": "2026-10-16T16:46:02.980Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "zonas",
+  "prompt_file": "creative/briefs/prompt-maestro-zonas.md"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "p19-spa-tratamientos-movil",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "home",
+  "role": "Spa, sala de tratamientos, version movil (hueco 358x421, 0,85)",
+  "status": "requested",
+  "requested_at": "2026-10-16T16:46:02.979Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1400,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "zonas",
+  "prompt_file": "creative/briefs/prompt-maestro-zonas.md"
+}
