@@ -25,12 +25,12 @@ FIXED = {  # piezas con nombre propio
     'P03': ('p03-patio-escritorio.webp', 'p03-patio-movil.webp', 'p03-patio-escritorio', (1600, 1067), (1856, 1237)),
     'P04': ('p04-alba-escritorio.jpg', 'p04-alba-movil.png', 'p04-alba-escritorio', (800, 1000), (720, 900)),
     'P36': ('p36-recepcion-fin-escritorio.png', 'p36-recepcion-fin-movil.png', 'p36-recepcion-fin-escritorio', (1672, 941), (941, 1672)),
+    'P19': ('p19-spa-tratamientos-escritorio.png', 'p19-spa-tratamientos-escritorio.png', 'p19-spa-tratamientos-escritorio', (1122, 1402), (720, 900)),  # movil = escritorio reducida (4:5)
     'V01': ('p16-restaurante-escritorio.png', 'p16-restaurante-movil.png', 'p16-restaurante-escritorio', (1672, 941), (900, 1125)),  # P16, poster de V01
 }
 
 # borradores recibidos y aun sin aprobar: se ven en la maqueta para decidir (codigo del hueco -> archivos en el repo)
 DRAFTS = {
-    'P19': ('creative/inbox/p19-spa-tratamientos-escritorio.png', 'creative/inbox/p19-spa-tratamientos-escritorio.png', 'p19-spa-tratamientos-escritorio', (1122, 1402), (720, 900)),  # movil = escritorio reducida (excepcion 4:5)
 }
 
 def enc(path, size, q=76):

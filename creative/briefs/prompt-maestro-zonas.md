@@ -122,3 +122,39 @@ FINAL CHECK before sending: two separate images in this reply, each with its fil
 
 OUTPUT: Image 1: portrait 4:5, 2048 x 2560 px target (minimum 1200 x 1500). Image 2: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400). Never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
 ```
+
+### P21 (escritorio 3:2 y móvil 4:5 en un solo prompt)
+Adjuntos: 1) `p01-hero-escritorio.jpg`, 2) `p04-alba-escritorio.jpg` (es la habitación). P19 se aprobó el 2026-10-16 (la móvil es la de escritorio reducida).
+
+```text
+FORMAT: TWO separate images in ONE reply. Image 1: landscape, exact aspect ratio 3:2, target 2560 x 1706 px (never below 1500 x 1000). Image 2: portrait, exact aspect ratio 4:5, target 2048 x 2560 px (never below 1120 x 1400).
+
+Create TWO photographs of the same scene for the boutique hotel Hotel Aurora, an old restored whitewashed house on the Atlantic coast: breakfast for two on the bed of the Alba bedroom, for the "two-night getaway" package. Deliver BOTH in this single reply, each as its own separate image, never a collage, never side by side. They are two shots taken by the same photographer in the same minute: the SAME room, the SAME tray and food, the SAME textures and shapes, the SAME light and colour grade in both. Only the camera position changes.
+
+FILE NAME: write each file name as the description of its image, on its own line right above it, exactly: image 1 = p21-escapada-escritorio , image 2 = p21-escapada-movil . If you can name the downloadable files, use those names with .png.
+
+ATTACHED REFERENCES (do not deliver them)
+REFERENCE 1: the main image of the hotel. It fixes the look, above all the COLOUR OF THE SHADOWS and the restraint of the colours.
+REFERENCE 2: the Alba bedroom. It IS the room of these photos: the same double bed, low headboard, white linen, terracotta throw, beams, walls, window with dark shutters on the right and floor. Do not redesign it.
+
+THE LOOK (copy it to the letter, identical in both images)
+Low golden morning sun entering directly, warm only on the lit surfaces, and long, soft, COOL BLUE-LILAC shadows like the shaded gravel of reference 1. What the sun does not touch reads pale grey-lilac: shaded plaster about RGB 150,140,165, deepest shadow about 95,100,125. Never brown, tan, amber, orange or ochre shadows. Saturation low, mean about 0.27 to 0.33 in both images; sunlit plaster and linen pale cream, never peach or orange. Materials all matte and dry: hand-trowelled lime plaster, heavy dark brown matt oak, plain smooth white linen with soft natural wrinkles only (no pattern, relief, quilting or jacquard), handmade cream ceramic, small metal parts dark forged iron, never silver or chrome. A documentary photograph of a real, old, restored house, not a catalogue set.
+
+THE FLOOR (important, identical in both images)
+Old, worn, DRY, completely MATTE pale limestone: large irregular rectangular slabs (about 60 x 40 to 90 x 50 cm) in loose rows with thin hairline joints and softly chipped edges, smooth and flat like dusty sun-baked stone. NO gloss, shine, wet look or reflections; NO hammered, rippled, pitted or pebbled texture; NO small square tiles.
+
+THE SCENE
+The Alba bedroom of reference 2, morning. The double bed is made but slightly crumpled, as if just left, with its two pillows and the terracotta throw folded across the foot. On the bed, between the pillows and the throw, a little to the right of centre, ONE dark oak breakfast tray with low sides holding exactly: two cream ceramic cups of black coffee, two small plain glasses of fresh orange juice, ONE cream plate with two slices of toasted country bread topped with crushed tomato and a thread of olive oil, and ONE small clay jar with an olive twig. Nothing else on the tray or the bed. Nobody in the room.
+Sun: low and golden, from the window on the RIGHT; the rays travel right to left. A warm band crosses the tray, the cups and the glasses and lies on the white linen; the headboard wall stays in cool lilac shade.
+
+IMAGE 1 (p21-escapada-escritorio, 3:2): camera at the foot-left corner of the bed, 1.4 m high, 35 mm, perfectly vertical verticals, looking towards the headboard and the window. The tray in the upper-right part of the frame, its centre at about 65% from the left and 38% from the top. The lower-left part of the frame (left 60% of the width, below the middle) is quiet: plain linen, the throw and the floor in soft shade, nothing important there (a text card covers it on the website). Keep everything important more than 10% from the left and right edges.
+
+IMAGE 2 (p21-escapada-movil, 4:5): a vertical shot for a phone screen (shown about 358 x 420 px, with a text card over its lower half). Act as a professional interior photographer composing a NEW vertical photograph, never a crop of image 1: stand at the foot of the bed, camera at 1.6 m, 35 mm, looking down along the bed at about 35 degrees. The tray, whole and uncut, fills about 70% of the width and sits entirely in the TOP 45% of the frame, with the pillows and the top of the headboard above it, all inside the frame with breathing room. The bottom 55% is only plain white linen and the terracotta throw, calm and empty. Nothing important cut by the edges: no cup, glass, plate or jar sliced by the frame; if something cannot fit whole, leave it out entirely. Same light, textures, shapes and objects as image 1.
+
+ALWAYS: rectangular openings with flat lintels only (no arches or vaults); ONLY the objects named here.
+NEVER: people or hands, animals, text, logos, brand names, watermark, croissants, pastries, fruit bowls, flowers, candles, books, phones, newspapers, steam, marble, glossy or polished surfaces, chrome, hazy light, volumetric rays, white ceilings.
+
+FINAL CHECK before sending: two separate images in this reply, each with its file name above it; same room as reference 2, same tray and food in both; ONE tray with two coffees, two orange juices, ONE plate of tomato toast and ONE clay jar; sun from the right only; shadows cool blue-lilac, never brown; linen plain, no relief; floor matte with no reflections; image 1 tray upper right and lower-left quiet; image 2 recomposed, tray whole in the top 45%, nothing cut at the edges; exact 3:2 and 4:5.
+
+OUTPUT: Image 1: landscape 3:2, 2560 x 1706 px target (minimum 1500 x 1000; 1536 x 1024 is fine). Image 2: portrait 4:5, 2048 x 2560 px target (minimum 1120 x 1400). Never cropped, stretched or upscaled. Highest quality, sRGB, JPG or PNG, no frame, no border, no margins.
+```
