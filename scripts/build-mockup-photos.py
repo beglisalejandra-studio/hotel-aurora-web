@@ -30,6 +30,7 @@ FIXED = {  # piezas con nombre propio
 
 # borradores recibidos y aun sin aprobar: se ven en la maqueta para decidir (codigo del hueco -> archivos en el repo)
 DRAFTS = {
+    'P19': ('creative/inbox/p19-spa-tratamientos-escritorio.png', 'creative/inbox/p19-spa-tratamientos-escritorio.png', 'p19-spa-tratamientos-escritorio', (1122, 1402), (720, 900)),  # movil = escritorio reducida (excepcion 4:5)
 }
 
 def enc(path, size, q=76):

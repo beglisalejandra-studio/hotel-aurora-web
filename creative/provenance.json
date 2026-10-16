@@ -1649,6 +1649,61 @@
       "notes": [
         "Detalles aceptados por la persona: en la móvil, suelo con textura martillada y algo de brillo, mantel con relieve y borde de otra mesa a la izquierda; en la de escritorio, un olivo en maceta no pedido. Saturación media 0,30 (escritorio) y 0,37 (móvil)."
       ]
+    },
+    {
+      "id": "p19-spa-tratamientos-escritorio",
+      "version": "escritorio",
+      "request": "creative/requests/p19-spa-tratamientos-escritorio.json",
+      "files": {
+        "original": "creative/inbox/p19-spa-tratamientos-escritorio.png"
+      },
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2304961,
+      "aspect": "4:5",
+      "piece": "P19",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "format": "PNG",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt único de P19)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Sala de tratamientos del spa: una camilla de roble oscuro con colchoneta de lino, un taburete con un cuenco de latón, una pila de piedra con agua, una hornacina con una rama de olivo y una ventana con contraventanas abiertas.",
+        "en": "Spa treatment room: a dark oak treatment table with a linen pad, a stool with a brass bowl, a stone basin with water, a niche with an olive branch and a window with open shutters."
+      },
+      "notes": [
+        "La persona subió además tres copias idénticas de 2048 x 2560 que eran una ampliación de esta (diferencia media 0,6/255); se quitaron del repo. ChatGPT no entregó la versión móvil."
+      ]
+    },
+    {
+      "id": "p19-spa-tratamientos-movil",
+      "version": "movil",
+      "request": "creative/requests/p19-spa-tratamientos-movil.json",
+      "files": {
+        "original": "creative/inbox/p19-spa-tratamientos-escritorio.png (la misma imagen, reducida)"
+      },
+      "width": 1122,
+      "height": 1402,
+      "aspect": "4:5",
+      "piece": "P19",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "format": "PNG",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida el 2026-10-16 con el prompt único de P19)",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Sala de tratamientos del spa: una camilla de roble oscuro con colchoneta de lino, un taburete con un cuenco de latón, una pila de piedra con agua, una hornacina con una rama de olivo y una ventana con contraventanas abiertas.",
+        "en": "Spa treatment room: a dark oak treatment table with a linen pad, a stool with a brass bowl, a stone basin with water, a niche with an olive branch and a window with open shutters."
+      },
+      "notes": [
+        "Excepción de CLAUDE.md (2026-10-10): la móvil es la de escritorio reducida porque el hueco móvil también es 4:5 (358 x 421) y no recorta el sujeto. Adaptación pedida por la persona el 2026-10-16."
+      ]
     }
   ]
 }
