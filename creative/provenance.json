@@ -1496,7 +1496,8 @@
       "version": "escritorio",
       "request": "prompt pegado en el chat (2026-10-10), sin ficha",
       "files": {
-        "original": "creative/generated-drafts/p36-recepcion-fin-escritorio.png"
+        "original": "creative/generated-drafts/p36-recepcion-fin-escritorio.png (subida también a la raíz de main, 2026-10-10)",
+        "master": "creative/approved/p36-recepcion-fin-escritorio.png"
       },
       "format": "PNG",
       "width": 1672,
@@ -1508,12 +1509,14 @@
       "model": "no consta en el archivo",
       "declared_by": "persona (subida desde ChatGPT con el prompt del paso 2)",
       "embedded_content_credentials": false,
-      "state": "draft_unapproved",
-      "note": "Último fotograma previsto de la entrada en vídeo; ahora se usa como recepción en el recorrido con zoom entre fotos. Borrador: la persona aún no lo ha aprobado. El suelo sale brillante y picado (incumple la regla de piedra mate); decisión pendiente.",
+      "state": "approved",
+      "note": "Recepción del recorrido de entrada con zoom entre fotos. El suelo sale brillante y picado (incumple la regla de piedra mate); la persona decidió dejarlo así el 2026-10-16, igual que con Marea (2026-10-09).",
       "alt_draft": {
         "es": "Recepción del hotel: mostrador de madera con una campanita y un jarrón con ramita de olivo, un banco de madera y, al fondo, la abertura que da al patio soleado.",
         "en": "Hotel reception: a wooden counter with a small bell and a jar with an olive twig, a wooden bench and, at the far end, the opening to the sunlit courtyard."
-      }
+      },
+      "approved_by": "persona (chat, 2026-10-16: «Lo dejamos así» a la pregunta de si se corrige el suelo de P36)",
+      "approved_at": "2026-10-16"
     },
     {
       "id": "p36-recepcion-fin-movil",
@@ -1521,7 +1524,8 @@
       "version": "movil",
       "request": "prompt pegado en el chat (2026-10-10), sin ficha",
       "files": {
-        "original": "creative/generated-drafts/p36-recepcion-fin-movil.png"
+        "original": "creative/generated-drafts/p36-recepcion-fin-movil.png (subida también a la raíz de main, 2026-10-10)",
+        "master": "creative/approved/p36-recepcion-fin-movil.png"
       },
       "format": "PNG",
       "width": 941,
@@ -1533,12 +1537,56 @@
       "model": "no consta en el archivo",
       "declared_by": "persona (subida desde ChatGPT con el prompt del paso 2)",
       "embedded_content_credentials": false,
-      "state": "draft_unapproved",
-      "note": "Último fotograma previsto de la entrada en vídeo; ahora se usa como recepción en el recorrido con zoom entre fotos. Borrador: la persona aún no lo ha aprobado. El suelo sale brillante y picado (incumple la regla de piedra mate); decisión pendiente.",
+      "state": "approved",
+      "note": "Recepción del recorrido de entrada con zoom entre fotos. El suelo sale brillante y picado (incumple la regla de piedra mate); la persona decidió dejarlo así el 2026-10-16, igual que con Marea (2026-10-09).",
       "alt_draft": {
         "es": "Recepción del hotel: mostrador de madera con una campanita y un jarrón con ramita de olivo, un banco de madera y, al fondo, la abertura que da al patio soleado.",
         "en": "Hotel reception: a wooden counter with a small bell and a jar with an olive twig, a wooden bench and, at the far end, the opening to the sunlit courtyard."
-      }
+      },
+      "approved_by": "persona (chat, 2026-10-16: «Lo dejamos así» a la pregunta de si se corrige el suelo de P36)",
+      "approved_at": "2026-10-16"
+    },
+    {
+      "id": "p01-puerta-abierta-escritorio",
+      "piece": "P01",
+      "version": "escritorio",
+      "request": "creative/briefs/paso-1-fachada-puerta-abierta.md",
+      "files": {
+        "original": "creative/generated-drafts/p01-puerta-abierta-escritorio.png (subida a la raíz de main, 2026-10-10)"
+      },
+      "format": "PNG",
+      "width": 1672,
+      "height": 941,
+      "bytes": 3123234,
+      "aspect": "16:9",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida desde ChatGPT con el prompt del paso 1)",
+      "embedded_content_credentials": false,
+      "state": "draft_unused",
+      "note": "Primer fotograma del vídeo de entrada, que se descartó (2026-10-10) a favor del zoom entre fotos. No se usa en la web: las hojas de la puerta se abren sobre P01. Se guarda como registro."
+    },
+    {
+      "id": "p01-puerta-abierta-movil",
+      "piece": "P01",
+      "version": "movil",
+      "request": "creative/briefs/paso-1-fachada-puerta-abierta.md",
+      "files": {
+        "original": "creative/generated-drafts/p01-puerta-abierta-movil.png (subida a la raíz de main, 2026-10-10)"
+      },
+      "format": "PNG",
+      "width": 941,
+      "height": 1672,
+      "bytes": 3064373,
+      "aspect": "9:16",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "declared_by": "persona (subida desde ChatGPT con el prompt del paso 1)",
+      "embedded_content_credentials": false,
+      "state": "draft_unused",
+      "note": "Primer fotograma del vídeo de entrada, que se descartó (2026-10-10) a favor del zoom entre fotos. No se usa en la web: las hojas de la puerta se abren sobre P01. Se guarda como registro."
     }
   ]
 }

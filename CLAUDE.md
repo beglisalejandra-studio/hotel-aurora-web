@@ -32,7 +32,7 @@
 - **En la terraza, sol ligero, suave y dorado**, bueno para tomar el sol. Nunca duro ni cenital.
 - **Cada habitación lleva fotos de la habitación, la terraza (si la tiene), el baño y la zona de TV.** Una habitación no está completa sin las cuatro.
 - **El hotel muestra zonas comunes, restaurante y zona pet friendly**, además de las habitaciones.
-- **El suelo es siempre piedra caliza vieja, gastada y mate** (losas grandes e irregulares con juntas finas, como el de Alba). Nunca brillante, pulido, mojado ni con reflejos, y sin textura picada, de burbujas o de guijarros. El suelo de Marea salió brillante y picado y la persona decidió dejarlo así (2026-10-09); en Terraza, Faro y el resto de prompts se pide expresamente mate, con un bloque `THE FLOOR`, una prohibición en `NEVER` y una línea en la comprobación final.
+- **El suelo es siempre piedra caliza vieja, gastada y mate** (losas grandes e irregulares con juntas finas, como el de Alba). Nunca brillante, pulido, mojado ni con reflejos, y sin textura picada, de burbujas o de guijarros. El suelo de Marea salió brillante y picado y la persona decidió dejarlo así (2026-10-09), y lo mismo con la recepción P36 (2026-10-16); en Terraza, Faro y el resto de prompts se pide expresamente mate, con un bloque `THE FLOOR`, una prohibición en `NEVER` y una línea en la comprobación final.
 
 ## Economía de tokens (regla permanente, pedida por la persona, 2026-10-10)
 - **Verificar siempre, pero solo lo que cambió:** una comprobación se repite únicamente si el cambio puede haberla roto (p. ej. `flows.mjs` y axe solo tras tocar la maqueta). No se vuelve a revisar lo ya revisado ni se re-leen archivos que ya están en contexto.

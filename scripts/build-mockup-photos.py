@@ -24,12 +24,7 @@ FIXED = {  # piezas con nombre propio
     'P01': ('p01-hero-escritorio.jpg', 'p01-hero-movil.png', 'p01-hero-escritorio', (2048, 1280), (941, 1672)),
     'P03': ('p03-patio-escritorio.webp', 'p03-patio-movil.webp', 'p03-patio-escritorio', (1600, 1067), (1856, 1237)),
     'P04': ('p04-alba-escritorio.jpg', 'p04-alba-movil.png', 'p04-alba-escritorio', (800, 1000), (720, 900)),
-}
-
-D = ROOT / 'creative' / 'generated-drafts'
-DRAFTS = {  # borradores todavia sin aprobar: se ven en la maqueta para decidir, no son material definitivo
-    'P36': ('p36-recepcion-fin-escritorio.png', 'p36-recepcion-fin-movil.png', (1672, 941), (941, 1672),
-            None),
+    'P36': ('p36-recepcion-fin-escritorio.png', 'p36-recepcion-fin-movil.png', 'p36-recepcion-fin-escritorio', (1672, 941), (941, 1672)),
 }
 
 def enc(path, size, q=76):
@@ -41,9 +36,6 @@ fotos = {}
 for code, (fd, fm, pid, sd, sm) in FIXED.items():
     alt = PROV[pid]['alt_draft']
     fotos[code] = {'d': enc(A / fd, sd, 72 if code == 'P01' else 76), 'm': enc(A / fm, sm, 74 if code == 'P01' else 76), 'alt': alt}
-for code, (fd, fm, sd, sm, alt) in DRAFTS.items():
-    alt = alt or PROV['p36-recepcion-fin-escritorio']['alt_draft']
-    fotos[code] = {'d': enc(D / fd, sd, 78), 'm': enc(D / fm, sm, 78), 'alt': alt}
 for code, base in BASES.items():
     pid = base + '-escritorio'
     portrait = PROV[pid]['aspect'] == '4:5'
