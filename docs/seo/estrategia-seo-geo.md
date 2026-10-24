@@ -23,6 +23,7 @@
 | Comida | restaurante cocina de mercado El Palmar | H2 «Restaurante de cocina de mercado, del desayuno a la cena.» |
 | Bienestar | hotel con spa Costa de la Luz · spa abierto a no huéspedes | H2 «Hotel con spa de agua y silencio en la Costa de la Luz.» |
 | Local | cómo llegar a El Palmar · hotel cerca playa El Palmar | H2 «Cómo llegar a El Palmar, Vejer de la Frontera» |
+| Cierre (transaccional y local) | reservar escapada El Palmar con perro | H2 final «Reserva tu escapada en El Palmar / y no dejes en casa a tu perro.» (EN «Book your El Palmar getaway / and don’t leave your dog at home.»), elegido por la persona el 2026-10-24 |
 | Preguntas | check-in/out, perros, spa, reserva directa… | H2 «Preguntas frecuentes sobre Hotel Aurora» (9 preguntas) |
 
 ## 3. Reglas de redacción
