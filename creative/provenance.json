@@ -1774,6 +1774,61 @@
       "notes": [
         "Detalles aceptados: más cálida y saturada que P01 (0,36), sombras cálidas, sábanas con relieve marcado, apenas se ve la habitación. La bandeja quedó en el centro y la tarjeta de texto se movió debajo de la foto."
       ]
+    },
+    {
+      "id": "p25-perro-terraza-escritorio",
+      "version": "escritorio",
+      "request": "creative/requests/p25-perro-terraza-escritorio.json",
+      "files": {
+        "original": "creative/inbox/p25-perro-terraza-escritorio.png (subida con el nombre -movil el 2026-10-24; es la vista de escritorio)"
+      },
+      "width": 1200,
+      "height": 800,
+      "bytes": 1455052,
+      "declared_by": "persona (chat, 2026-10-24: «te subí la p25 perro en versión escritorio para que la adaptes a versión móvil»)",
+      "piece": "P25",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "format": "PNG",
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Perro de pelo color arena tumbado en su cama de madera y lino en la terraza de la habitación Terraza, junto a dos cuencos de cerámica, con luz dorada filtrada.",
+        "en": "Sand-coloured dog lying on its wooden and linen bed on the terrace of the Terraza room, next to two ceramic bowls, in filtered golden light."
+      },
+      "notes": [
+        "1200 x 800, por debajo del mínimo pedido (1500 x 1000); el hueco mide 686 x 457 px."
+      ]
+    },
+    {
+      "id": "p25-perro-terraza-movil",
+      "version": "movil",
+      "request": "creative/requests/p25-perro-terraza-movil.json",
+      "files": {
+        "original": "creative/inbox/p25-perro-terraza-movil.png (recorte de la de escritorio: x 135-1035, y 165-765)"
+      },
+      "width": 900,
+      "height": 600,
+      "declared_by": "derivada por el agente a petición de la persona (2026-10-24: «procura hacer un recorte coherente»)",
+      "piece": "P25",
+      "prompt_file": "creative/briefs/prompt-maestro-zonas.md",
+      "format": "PNG",
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "no consta en el archivo",
+      "embedded_content_credentials": false,
+      "state": "draft_unapproved",
+      "alt_draft": {
+        "es": "Perro de pelo color arena tumbado en su cama de madera y lino en la terraza de la habitación Terraza, junto a dos cuencos de cerámica, con luz dorada filtrada.",
+        "en": "Sand-coloured dog lying on its wooden and linen bed on the terrace of the Terraza room, next to two ceramic bowls, in filtered golden light."
+      },
+      "notes": [
+        "Recorte 3:2 centrado en el perro, la cama y los dos cuencos, enteros y con aire; sin la puerta ni la ducha. 900 x 600 (hueco móvil 358 x 239)."
+      ]
     }
   ]
 }
