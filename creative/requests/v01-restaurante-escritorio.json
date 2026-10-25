@@ -1,0 +1,23 @@
+{
+  "name": "v01-restaurante-escritorio",
+  "kind": "video",
+  "aspect": "16:9",
+  "page": "home",
+  "role": "Microvideo del restaurante (hueco V01, poster P16): la luz del sol avanza despacio sobre la mesa; 8 s, bucle hecho en posproduccion; movil 4:5 recortado del mismo clip",
+  "status": "requested",
+  "requested_at": "2026-10-25",
+  "master": {
+    "w": 1920,
+    "h": 1080
+  },
+  "duration_s": 8,
+  "fps": 24,
+  "exts": [
+    ".mp4",
+    ".mov",
+    ".webm"
+  ],
+  "max_bytes": 25000000,
+  "prompt_file": "creative/briefs/v01-restaurante-video.md",
+  "attempts_allowed": 1
+}
