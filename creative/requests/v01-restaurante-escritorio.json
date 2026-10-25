@@ -4,7 +4,7 @@
   "aspect": "16:9",
   "page": "home",
   "role": "Microvideo del restaurante (hueco V01, poster P16): la luz del sol avanza despacio sobre la mesa; 8 s, bucle hecho en posproduccion; movil 4:5 recortado del mismo clip",
-  "status": "requested",
+  "status": "cancelled",
   "requested_at": "2026-10-25",
   "master": {
     "w": 1920,
@@ -19,5 +19,7 @@
   ],
   "max_bytes": 25000000,
   "prompt_file": "creative/briefs/v01-restaurante-video.md",
-  "attempts_allowed": 1
+  "attempts_allowed": 1,
+  "cancelled_at": "2026-10-25",
+  "note": "La persona decidio no hacer el video («Mejor no»); se queda la foto fija P16."
 }

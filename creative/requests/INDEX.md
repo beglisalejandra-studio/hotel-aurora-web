@@ -23,7 +23,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 6b | P26 escritorio y móvil | Foto (2 versiones) | Alba, baño: pila de piedra y luz sobre la cal | 3:2 las dos | **Aprobada** el 2026-10-10, escritorio y móvil (1536 × 1024) |
 | 6c | P27 escritorio y móvil | Foto (2 versiones) | Alba, zona de TV vista desde la cama | 3:2 las dos | **Aprobada** el 2026-10-10, escritorio y móvil (1536 × 1024) |
 | 7 | P16 escritorio y móvil | Foto (2 versiones) | Sala del restaurante con una mesa puesta al sol (también es el póster de V01) | **16:9** escritorio (hueco 2:1) y **4:5** móvil | **Aprobada** el 2026-10-16, escritorio y móvil tal cual (1672 × 941 y 1122 × 1402) |
-| 8 | V01 | Vídeo | Luz de ventana sobre la mesa, 6 s en bucle, sin audio | 3:2 | Pendiente de #7 |
+| 8 | V01 | Vídeo | Luz de ventana sobre la mesa, 6 s en bucle, sin audio | 16:9 | **Descartado** el 2026-10-25 por la persona: se queda la foto fija P16 |
 | 9 | P19 escritorio y móvil | Foto (2 versiones) | Sala de tratamientos del spa | 4:5 las dos | **Aprobada** el 2026-10-16 (1122 × 1402; la móvil es la misma reducida) |
 | 10 | P25 escritorio y móvil | Foto (2 versiones) | Perro en su cama en la terraza de Terraza, con dos cuencos (hotel petfriendly) | 3:2 las dos | **Aprobada** el 2026-10-24 (1200 × 800; la móvil es un recorte de 900 × 600 centrado en el perro) |
 | 11 | P21 escritorio y móvil | Foto (2 versiones) | Portada de «Escapada de dos noches»: desayuno para dos en la cama de Alba (P22 y P23 no tienen hueco en la maqueta) | **3:2** escritorio y **4:5** móvil | **Aprobada** el 2026-10-16 (1536 × 1024 y 1120 × 1400); la tarjeta de texto va debajo de la foto |
@@ -32,7 +32,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 12c | P13, P14, P15, P32, P33 (escritorio y móvil) | Fotos (10 imágenes) | **Faro** (mini apartamento: salón y dos dormitorios, 4 personas): salón con TV, dos dormitorios, baño y azotea | 4:5 y 3:2 | **Aprobadas** el 2026-10-10: P13, P34, P14, P15, P32 y la cocina P35 (renombrada desde P16, que es la sala del restaurante), escritorio y móvil. P33 (azotea) cancelada: Faro queda sin azotea |
 | 13 | P17, P18 | Foto | Plato en primer plano y desayuno | 3:2 | Pendiente |
 | 14 | P20 | Foto | Zona de agua del spa al amanecer | 3:2 | Pendiente |
-| 15 | P24 | Foto | **Playa de El Palmar** (rasgos reales: arena dorada, pasarela de madera con valla, hierba de duna, oleaje atlántico moderado y viento) | 16:9 | Pendiente |
+| 15 | P24 escritorio y móvil | Foto (2 versiones) | **Familia con su perro en la playa de El Palmar** (sección «de un vistazo», 3:2 y 4:5; **solicitada** el 2026-10-25, `creative/briefs/p24-familia-playa.md`). Antes: **Playa de El Palmar** (rasgos reales: arena dorada, pasarela de madera con valla, hierba de duna, oleaje atlántico moderado y viento) | 16:9 | Pendiente |
 | 16 | P02 | Foto | Imagen para compartir en redes: se **deriva de P01**, no se pide aparte | 1200 x 630 | Derivada |
 | 17 | V02, V03 | Vídeo | Agua del spa y luz sobre la pared de Alba, 6 s en bucle | 4:5 y 3:2 | Pendiente |
 | 18 | 360 x 4 | Foto 360 | Panoramas equirrectangulares de las cuatro habitaciones (extra aprobado) | 2:1 | Pendiente |
