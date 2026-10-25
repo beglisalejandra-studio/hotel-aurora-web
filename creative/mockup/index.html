@@ -62,6 +62,31 @@ button,input,select,textarea{font:inherit;color:inherit}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
 .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+/* Páginas legales: lectura cómoda, sin tablas (en móvil cada fila es un bloque) */
+.legal{padding-block:clamp(20px,3vw,40px) var(--sec)}
+.legal-body{max-width:72ch}
+.legal-h1{font:300 clamp(36px,5.4vw,68px)/1.04 var(--f-display);letter-spacing:-.025em;margin-top:20px;text-wrap:balance}
+.legal-meta{margin-top:12px;color:var(--ink-2);font-size:14px}
+.legal-note{margin-top:24px;padding:16px 20px;border:1px solid var(--hair);border-left:3px solid var(--accent);background:var(--surface);font-size:15px;line-height:1.55}
+.legal-toc{margin-top:32px;padding-block:20px;border-block:1px solid var(--hair)}
+.legal-toc p{font:500 12px/1.2 var(--f-text);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.legal-toc ol{margin:12px 0 0;padding-left:1.4em;columns:2 16rem;column-gap:32px}
+.legal-toc li{margin-top:6px;break-inside:avoid}
+.legal-toc a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:3px;display:inline-block;padding-block:6px}
+.legal-toc a:hover{text-decoration-color:var(--accent)}
+.legal-sec{margin-top:clamp(36px,4vw,52px)}
+.legal-sec h2{font:400 clamp(24px,2.6vw,32px)/1.15 var(--f-display);letter-spacing:-.01em;scroll-margin-top:calc(var(--hdr) + 24px)}
+.legal-sec p,.legal-sec li{margin-top:12px;line-height:1.7}
+.legal-sec ul{padding-left:1.2em}
+.legal-sec a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px}
+.lr{margin-top:20px;padding-top:18px;border-top:1px solid var(--hair)}
+.lr h3{font:500 18px/1.3 var(--f-display)}
+.lr p{margin-top:6px;line-height:1.6}
+.lr b{font-weight:500}
+.legal-more{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:clamp(48px,6vw,72px);padding-top:24px;border-top:1px solid var(--hair)}
+.ck-link{display:inline-block;margin-top:6px;color:inherit;text-underline-offset:3px;padding-block:10px}
+.check a{color:inherit;text-underline-offset:3px}
+
 .skip{position:absolute;left:var(--pad);top:-60px;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;z-index:100}
 .skip:focus{top:12px}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
@@ -1189,6 +1214,15 @@ body.noscroll{overflow:hidden}
     </section>
   </div>
 </main>
+<main id="page-legal" class="page" hidden>
+  <div class="wrap legal">
+    <nav class="crumbs" aria-label="Ruta" data-es-aria="Ruta de navegación" data-en-aria="Breadcrumb">
+      <a href="#/" data-es="Inicio" data-en="Home">Inicio</a><span aria-hidden="true">/</span>
+      <span aria-current="page" id="lgCrumb"></span>
+    </nav>
+    <article class="legal-body" id="lgBody"></article>
+  </div>
+</main>
 
 <footer class="foot" id="foot">
   <div class="wrap">
@@ -1219,10 +1253,10 @@ body.noscroll{overflow:hidden}
       <div>
         <h3 data-es="Legal" data-en="Legal">Legal</h3>
         <ul>
-          <li><a href="#/" data-es="Aviso legal" data-en="Legal notice">Aviso legal</a></li>
-          <li><a href="#/" data-es="Privacidad" data-en="Privacy">Privacidad</a></li>
-          <li><a href="#/" data-es="Cookies" data-en="Cookies">Cookies</a></li>
-          <li><a href="#/" data-es="Condiciones de reserva" data-en="Booking terms">Condiciones de reserva</a></li>
+          <li><a href="#/legal/aviso-legal" data-es="Aviso legal" data-en="Legal notice">Aviso legal</a></li>
+          <li><a href="#/legal/privacidad" data-es="Privacidad" data-en="Privacy">Privacidad</a></li>
+          <li><a href="#/legal/cookies" data-es="Cookies" data-en="Cookies">Cookies</a></li>
+          <li><a href="#/legal/condiciones" data-es="Condiciones de reserva" data-en="Booking terms">Condiciones de reserva</a></li>
           <li><button type="button" class="linkbtn" id="openCookies" data-es="Configurar cookies" data-en="Cookie settings">Configurar cookies</button></li>
         </ul>
       </div>
@@ -1276,6 +1310,7 @@ body.noscroll{overflow:hidden}
 <section class="cookie" id="cookie" role="dialog" aria-labelledby="ckT" aria-modal="false" hidden>
   <h2 id="ckT" data-es="Tu decisión sobre las cookies" data-en="Your choice about cookies">Tu decisión sobre las cookies</h2>
   <p class="small" data-es="Usamos cookies necesarias para que la web funcione. Con tu permiso, también de analítica y de marketing. Puedes cambiarlo cuando quieras desde el pie de página." data-en="We use necessary cookies so the site works. With your permission, also analytics and marketing cookies. You can change this at any time from the footer.">Usamos cookies necesarias para que la web funcione. Con tu permiso, también de analítica y de marketing. Puedes cambiarlo cuando quieras desde el pie de página.</p>
+  <a class="ck-link small" href="#/legal/cookies" data-es="Política de cookies" data-en="Cookie policy">Política de cookies</a>
   <div class="cookie-btns">
     <button type="button" class="btn" id="ckAccept" data-es="Aceptar" data-en="Accept">Aceptar</button>
     <button type="button" class="btn" id="ckReject" data-es="Rechazar" data-en="Reject">Rechazar</button>
@@ -1365,7 +1400,7 @@ const D = {
     arrive:'Llegada', depart:'Salida', adults:'Adultos', children:'Niños', dogs:'Perros', dogsHelp:'Hotel petfriendly: hasta dos por habitación.', inout:'Entrada / Salida', petfee:'suplemento según tarifa', errDates:'Elige la llegada y una salida posterior.', errPast:'La llegada no puede ser anterior a hoy.',
     none:'Sin disponibilidad', noneTxt:'No hay habitaciones para ese número de huéspedes. Prueba con menos huéspedes o escríbenos por WhatsApp.',
     flex:'Tarifa estándar', nonref:'No reembolsable', nights:n=>`${n} ${n===1?'noche':'noches'}`, total:'Total', guests:g=>`${g} ${g===1?'huésped':'huéspedes'}`,
-    name:'Nombre', email:'Correo electrónico', phone:'Teléfono (opcional)', consent:'Acepto que Hotel Aurora trate mis datos para gestionar esta solicitud. Más información en la política de privacidad.',
+    name:'Nombre', email:'Correo electrónico', phone:'Teléfono (opcional)', consent:'Acepto que Hotel Aurora trate mis datos para gestionar esta solicitud. Más información en la <a href="#/legal/privacidad" target="_blank" rel="noopener">política de privacidad</a>.',
     errReq:'Este campo es obligatorio.', errMail:'Escribe un correo válido.', errConsent:'Necesitamos tu consentimiento para continuar.',
     payNote:'El pago lo gestiona el motor de reservas en una ventana segura. Esta web no guarda ni ve tu tarjeta.', loading:'Buscando habitaciones',
     okT:'Reserva simulada', okP:'En producción, Mews confirmaría la reserva y enviaría el correo. Aquí termina la simulación.',
@@ -1380,7 +1415,7 @@ const D = {
     arrive:'Check-in', depart:'Check-out', adults:'Adults', children:'Children', dogs:'Dogs', dogsHelp:'Pet-friendly hotel: up to two per room.', inout:'Check-in / Check-out', petfee:'supplement per rate', errDates:'Choose a check-in and a later check-out.', errPast:'Check-in cannot be before today.',
     none:'No availability', noneTxt:'There are no rooms for that number of guests. Try fewer guests or write to us on WhatsApp.',
     flex:'Standard rate', nonref:'Non-refundable', nights:n=>`${n} ${n===1?'night':'nights'}`, total:'Total', guests:g=>`${g} ${g===1?'guest':'guests'}`,
-    name:'Name', email:'Email', phone:'Phone (optional)', consent:'I agree that Hotel Aurora processes my data to handle this request. More information in the privacy policy.',
+    name:'Name', email:'Email', phone:'Phone (optional)', consent:'I agree that Hotel Aurora processes my data to handle this request. More information in the <a href="#/legal/privacidad" target="_blank" rel="noopener">privacy policy</a>.',
     errReq:'This field is required.', errMail:'Enter a valid email.', errConsent:'We need your consent to continue.',
     payNote:'Payment is handled by the booking engine in a secure window. This site never stores or sees your card.', loading:'Looking for rooms',
     okT:'Simulated booking', okP:'In production, Mews would confirm the booking and send the email. The simulation ends here.',
@@ -1397,6 +1432,7 @@ const T = () => D[lang];
 /* ---------- Título y descripción por idioma y página ---------- */
 const META = {es:{t:'Hotel boutique petfriendly en El Palmar, Vejer | Hotel Aurora', d:'Hotel boutique petfriendly con spa y restaurante en El Palmar, Vejer de la Frontera (Cádiz). 28 habitaciones, hasta dos perros por habitación. Reserva directa.'}, en:{t:'Dog-friendly boutique hotel in El Palmar, Vejer | Hotel Aurora', d:'Dog-friendly boutique hotel with spa and restaurant in El Palmar, Vejer de la Frontera (Cádiz, Spain). 28 rooms, up to two dogs per room. Book direct.'}};
 function setTitle(){
+  if (!$('#page-legal').hidden){ const L = LEGAL[legalKey][lang]; document.title = L.n + ' | Hotel Aurora'; document.querySelector('meta[name="description"]').setAttribute('content', L.d); return; }
   const m = META[lang], room = !$('#page-room').hidden, r = room && ROOMS[roomKey];
   document.title = room && r ? (lang === 'es' ? `Habitación ${r.n} para ${r.guests} personas | Hotel Aurora, El Palmar` : `${r.n} room for ${r.guests} guests | Hotel Aurora, El Palmar`) : m.t;
   document.querySelector('meta[name="description"]').setAttribute('content', m.d);
@@ -1409,7 +1445,7 @@ function applyLang(l){
   $$('[data-es-aria]').forEach(el => { const v = el.getAttribute('data-' + l + '-aria'); if (v) el.setAttribute('aria-label', v); });
   $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
   setTitle();
-  renderRooms(); renderFaq(); renderSpa(); renderRoomPage(); renderTheme(); renderCookie(); renderChat($('#chatLog').children.length <= 1);
+  renderRooms(); renderFaq(); renderSpa(); renderRoomPage(); renderLegal(); renderTheme(); renderCookie(); renderChat($('#chatLog').children.length <= 1);
   if (!$('#bk').hidden) renderBooking();
   if (!$('#rq').hidden) renderRequest();
 }
@@ -1506,7 +1542,122 @@ function applyRoute(isRoom, key){
   setTitle();
   closeMenu(); observeReveal();
 }
+/* ---------- Páginas legales (pedido de la persona, 2026-10-25). Textos de ejemplo para un hotel ficticio: un hotel real los revisa con su asesoría ---------- */
+const MAIL = 'privacidad@hotelaurora.example';
+const LR = (h, rows) => `<div class="lr"><h3>${h}</h3>${rows.map(([k, v]) => `<p><b>${k}:</b> ${v}</p>`).join('')}</div>`;
+const LEGAL = {
+  privacidad: {
+    es: { n:'Política de privacidad', d:'Cómo trata Hotel Aurora tus datos: qué datos, para qué, con qué base legal, durante cuánto tiempo, quién los recibe y cómo ejercer tus derechos.', s:[
+      ['Quién trata tus datos', `<p>Responsable: Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz). Para cualquier cuestión sobre tus datos escríbenos a <a href="mailto:${MAIL}">${MAIL}</a>.</p>`],
+      ['Qué datos tratamos y para qué',
+        LR('Reserva de alojamiento', [['Datos','los que escribes al reservar: nombre, contacto, fechas, huéspedes, perros y pago'],['Para qué','gestionar tu estancia y enviarte la confirmación'],['Base legal','el contrato que firmas al reservar'],['Dónde','en nuestro motor de reservas (Mews). Esta web no los recibe ni los guarda']]) +
+        LR('Registro de viajeros', [['Datos','los de identidad que exige la ley al llegar al hotel'],['Para qué','cumplir el registro documental de viajeros (Real Decreto 933/2021)'],['Base legal','obligación legal'],['Quién los recibe','las Fuerzas y Cuerpos de Seguridad, cuando la ley lo exige']]) +
+        LR('Mesa en el restaurante, cita en el spa y contacto', [['Datos','nombre, correo, teléfono si lo das, fecha y tu mensaje'],['Para qué','responderte y confirmar tu mesa o tu cita'],['Base legal','tu consentimiento y la gestión de lo que nos pides']]) +
+        LR('Bonos y experiencias', [['Datos','tu correo y el pago, en la página de pago de Stripe'],['Para qué','cobrar y enviarte el bono'],['Base legal','el contrato de compra'],['Qué guarda la web','solo el estado del pedido y el código del bono; nunca ve tu tarjeta']]) +
+        LR('Asistente del chat', [['Datos','lo que escribas'],['Para qué','responder tus dudas con la información del hotel'],['Base legal','nuestro interés legítimo en atenderte'],['Conservación','no guardamos las conversaciones. No escribas datos personales en el chat']]) +
+        LR('Navegación', [['Datos','dirección IP y datos técnicos del navegador en los registros del servidor'],['Para qué','mantener la web disponible y segura'],['Base legal','nuestro interés legítimo'],['Analítica y publicidad','solo si las aceptas en el aviso de cookies']])],
+      ['Cuánto tiempo los guardamos', '<p>Mientras gestionamos tu reserva o tu solicitud y, después, bloqueados durante los plazos que fija la ley para atender posibles responsabilidades. Pasados esos plazos, los borramos.</p>'],
+      ['Quién más recibe tus datos', '<p>No vendemos tus datos. Solo los tratan, por encargo nuestro y con contrato, los proveedores que necesitamos: Mews (reservas y pagos de estancias), Stripe (pago de bonos), Vercel (alojamiento de la web), Resend (envío de correos), Sanity (gestor de contenido, que no recibe datos de huéspedes) y el proveedor del asistente del chat. Y las autoridades cuando la ley lo exige.</p>'],
+      ['Datos fuera del Espacio Económico Europeo', '<p>Si algún proveedor trata datos fuera del Espacio Económico Europeo, lo hace con las garantías que exige el Reglamento General de Protección de Datos, como las cláusulas contractuales tipo de la Comisión Europea.</p>'],
+      ['Cómo protegemos tus datos', '<ul><li>La web no guarda datos de reservas ni de tarjetas: los tratan Mews y Stripe, con sus certificaciones de seguridad para pagos.</li><li>Conexión cifrada en todas las páginas.</li><li>Ningún rastreador de analítica o publicidad se activa hasta que lo aceptas.</li><li>El mapa y las tipografías están alojados en la propia web: navegar no te conecta con terceros.</li><li>El panel de gestión del hotel exige contraseña y verificación en dos pasos.</li></ul>'],
+      ['Tus derechos', `<p>Puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad de tus datos, y retirar tu consentimiento cuando quieras, escribiendo a <a href="mailto:${MAIL}">${MAIL}</a>. Te respondemos en el plazo de un mes. Si no estás de acuerdo con nuestra respuesta, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>`],
+      ['Menores', '<p>Las personas menores de 14 años necesitan el consentimiento de sus padres o tutores para darnos sus datos.</p>'],
+      ['Cookies', '<p>Lo explicamos en la <a href="#/legal/cookies">política de cookies</a>.</p>'],
+      ['Cambios en esta política', '<p>Si la cambiamos, publicaremos aquí la nueva versión con su fecha.</p>']]},
+    en: { n:'Privacy policy', d:'How Hotel Aurora handles your data: what data, why, on what legal basis, for how long, who receives it and how to exercise your rights.', s:[
+      ['Who handles your data', `<p>Controller: Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz, Spain). For any question about your data, write to <a href="mailto:${MAIL}">${MAIL}</a>.</p>`],
+      ['What data we process and why',
+        LR('Room booking', [['Data','what you enter when booking: name, contact, dates, guests, dogs and payment'],['Why','to manage your stay and send you the confirmation'],['Legal basis','the contract you enter into when booking'],['Where','in our booking engine (Mews). This website neither receives nor stores it']]) +
+        LR('Guest registration', [['Data','the identity data the law requires on arrival'],['Why','to comply with the Spanish guest registration rules (Royal Decree 933/2021)'],['Legal basis','legal obligation'],['Who receives it','the law-enforcement authorities, when the law requires it']]) +
+        LR('Restaurant table, spa appointment and contact', [['Data','name, email, phone if you give it, date and your message'],['Why','to reply and confirm your table or appointment'],['Legal basis','your consent and handling what you ask us for']]) +
+        LR('Vouchers and experiences', [['Data','your email and payment, on Stripe’s payment page'],['Why','to charge and send you the voucher'],['Legal basis','the purchase contract'],['What the website keeps','only the order status and the voucher code; it never sees your card']]) +
+        LR('Chat assistant', [['Data','what you type'],['Why','to answer your questions with the hotel’s information'],['Legal basis','our legitimate interest in helping you'],['Retention','we do not keep the conversations. Please do not type personal data in the chat']]) +
+        LR('Browsing', [['Data','IP address and technical browser data in the server logs'],['Why','to keep the website available and secure'],['Legal basis','our legitimate interest'],['Analytics and advertising','only if you accept them in the cookie notice']])],
+      ['How long we keep it', '<p>While we handle your booking or request and, afterwards, blocked for the periods set by law to deal with possible liabilities. After those periods we delete it.</p>'],
+      ['Who else receives your data', '<p>We do not sell your data. Only the providers we need process it, on our behalf and under contract: Mews (bookings and stay payments), Stripe (voucher payments), Vercel (website hosting), Resend (sending emails), Sanity (content management, which receives no guest data) and the chat assistant provider. And the authorities when the law requires it.</p>'],
+      ['Data outside the European Economic Area', '<p>If a provider processes data outside the European Economic Area, it does so with the safeguards required by the General Data Protection Regulation, such as the European Commission’s standard contractual clauses.</p>'],
+      ['How we protect your data', '<ul><li>The website stores no booking or card data: Mews and Stripe handle it, with their payment security certifications.</li><li>Encrypted connection on every page.</li><li>No analytics or advertising tracker runs until you accept it.</li><li>The map and the fonts are hosted on the website itself: browsing does not connect you to third parties.</li><li>The hotel’s management panel requires a password and two-step verification.</li></ul>'],
+      ['Your rights', `<p>You can request access, rectification, erasure, objection, restriction and portability of your data, and withdraw your consent at any time, by writing to <a href="mailto:${MAIL}">${MAIL}</a>. We reply within one month. If you disagree with our reply, you can complain to the Spanish Data Protection Agency (aepd.es).</p>`],
+      ['Minors', '<p>People under 14 need their parents’ or guardians’ consent to give us their data.</p>'],
+      ['Cookies', '<p>We explain them in the <a href="#/legal/cookies">cookie policy</a>.</p>'],
+      ['Changes to this policy', '<p>If we change it, we will publish the new version here with its date.</p>']]}
+  },
+  cookies: {
+    es: { n:'Política de cookies', d:'Qué cookies usa la web de Hotel Aurora, para qué sirven y cómo cambiar tu elección.', s:[
+      ['Qué son', '<p>Pequeños datos que la web guarda en tu navegador para recordar algo, por ejemplo tu idioma o tu elección sobre las cookies.</p>'],
+      ['Qué usamos',
+        LR('Necesarias (siempre activas)', [['Cuáles','tu elección sobre las cookies (180 días), el idioma y el tema Día o Madrugada'],['Para qué','que la web funcione y recuerde lo que eliges'],['De quién','de esta web']]) +
+        LR('Analítica (solo si la aceptas)', [['Cuáles','Google Analytics 4'],['Para qué','saber qué páginas se usan más, sin identificarte']]) +
+        LR('Marketing (solo si lo aceptas)', [['Cuáles','píxel de Meta'],['Para qué','medir nuestras campañas']]) +
+        LR('Reserva', [['Cuándo','solo al abrir el formulario de reserva'],['Qué','Mews puede usar lo técnicamente necesario para completar tu reserva, según su propia política']])],
+      ['El mapa', '<p>El mapa de «Cómo llegar» es una imagen alojada en esta web: no usa cookies ni te conecta con nadie. Si lo pulsas, se abre tu aplicación de mapas, fuera de la web.</p>'],
+      ['Cómo cambiar tu elección', '<p>Cuando quieras, desde «Configurar cookies», en el pie de página. También puedes borrar las cookies desde los ajustes de tu navegador.</p>'],
+      ['Más información', '<p>Sobre tus datos, consulta la <a href="#/legal/privacidad">política de privacidad</a>.</p>']]},
+    en: { n:'Cookie policy', d:'Which cookies the Hotel Aurora website uses, what they are for and how to change your choice.', s:[
+      ['What they are', '<p>Small pieces of data the website stores in your browser to remember something, such as your language or your cookie choice.</p>'],
+      ['What we use',
+        LR('Necessary (always on)', [['Which','your cookie choice (180 days), the language and the Day or Night theme'],['Why','so the website works and remembers your choices'],['Whose','this website’s']]) +
+        LR('Analytics (only if you accept)', [['Which','Google Analytics 4'],['Why','to know which pages are used most, without identifying you']]) +
+        LR('Marketing (only if you accept)', [['Which','Meta pixel'],['Why','to measure our campaigns']]) +
+        LR('Booking', [['When','only when you open the booking form'],['What','Mews may use what is technically needed to complete your booking, under its own policy']])],
+      ['The map', '<p>The “Getting here” map is an image hosted on this website: it uses no cookies and connects you to no one. If you press it, your maps app opens, outside the website.</p>'],
+      ['How to change your choice', '<p>Whenever you like, from “Cookie settings” in the footer. You can also delete cookies in your browser settings.</p>'],
+      ['More information', '<p>About your data, see the <a href="#/legal/privacidad">privacy policy</a>.</p>']]}
+  },
+  'aviso-legal': {
+    es: { n:'Aviso legal', d:'Datos del titular de la web de Hotel Aurora y condiciones de uso.', s:[
+      ['Titular de la web', `<p>Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz). Correo: <a href="mailto:reservas@hotelaurora.example">reservas@hotelaurora.example</a>. Un hotel real añade aquí su razón social, su NIF y sus datos registrales.</p>`],
+      ['Para qué es esta web', '<p>Informar sobre el hotel y permitir reservar directamente, pedir mesa o cita y comprar bonos.</p>'],
+      ['Uso de la web', '<p>Puedes usarla libremente para informarte y reservar. No está permitido usarla para fines ilícitos ni para dañar su funcionamiento.</p>'],
+      ['Propiedad intelectual', '<p>Los textos, el diseño y las fotografías pertenecen a sus titulares; las fotografías de este proyecto se han generado con inteligencia artificial. El mapa procede de OpenStreetMap (© colaboradores de OpenStreetMap, licencia ODbL). Las tipografías Outfit y Work Sans se usan con licencia SIL Open Font License.</p>'],
+      ['Enlaces a otras webs', '<p>Si sales a otra web (por ejemplo, tu aplicación de mapas o WhatsApp), se aplican sus propias condiciones.</p>'],
+      ['Ley aplicable', '<p>Ley española.</p>']]},
+    en: { n:'Legal notice', d:'Details of the owner of the Hotel Aurora website and terms of use.', s:[
+      ['Website owner', `<p>Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz, Spain). Email: <a href="mailto:reservas@hotelaurora.example">reservas@hotelaurora.example</a>. A real hotel adds its company name, tax ID and registry details here.</p>`],
+      ['What this website is for', '<p>To give information about the hotel and let you book directly, request a table or appointment and buy vouchers.</p>'],
+      ['Use of the website', '<p>You may use it freely to find information and book. It may not be used for unlawful purposes or to harm its operation.</p>'],
+      ['Intellectual property', '<p>The texts, design and photographs belong to their owners; the photographs in this project were generated with artificial intelligence. The map comes from OpenStreetMap (© OpenStreetMap contributors, ODbL licence). The Outfit and Work Sans fonts are used under the SIL Open Font License.</p>'],
+      ['Links to other websites', '<p>If you leave for another website (for example your maps app or WhatsApp), its own terms apply.</p>'],
+      ['Applicable law', '<p>Spanish law.</p>']]}
+  },
+  condiciones: {
+    es: { n:'Condiciones de reserva', d:'Entrada y salida, cancelación, pago, mascotas y bebés en Hotel Aurora.', s:[
+      ['Reserva directa', '<p>Antes de pagar ves el precio final y las condiciones de la tarifa que eliges. Al terminar recibes la confirmación por correo.</p>'],
+      ['Entrada y salida', '<p>Entrada desde las 15:00 y salida hasta las 12:00.</p>'],
+      ['Cancelación', '<p>Se aplica la política de cancelación de la tarifa elegida, que se muestra antes de pagar.</p>'],
+      ['Pago', '<p>El pago lo gestiona nuestro motor de reservas de forma segura. Tu banco puede pedirte que confirmes el pago.</p>'],
+      ['Mascotas', '<p>Hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.</p>'],
+      ['Bebés', '<p>Cuna sin coste. Pídela al reservar o escríbenos.</p>'],
+      ['Bonos', '<p>Se pagan en la página segura de Stripe; sus condiciones de uso figuran en el propio bono.</p>']]},
+    en: { n:'Booking terms', d:'Check-in and check-out, cancellation, payment, pets and babies at Hotel Aurora.', s:[
+      ['Direct booking', '<p>Before you pay you see the final price and the terms of the rate you choose. When you finish you receive the confirmation by email.</p>'],
+      ['Check-in and check-out', '<p>Check-in from 15:00 and check-out by 12:00.</p>'],
+      ['Cancellation', '<p>The cancellation policy of the chosen rate applies; it is shown before you pay.</p>'],
+      ['Payment', '<p>Our booking engine handles payment securely. Your bank may ask you to confirm the payment.</p>'],
+      ['Pets', '<p>Up to two dogs per room, with a bed and bowls provided. The pet supplement is shown before you pay.</p>'],
+      ['Babies', '<p>Crib at no cost. Ask for it when booking or write to us.</p>'],
+      ['Vouchers', '<p>They are paid on Stripe’s secure page; their terms of use appear on the voucher itself.</p>']]}
+  }
+};
+let legalKey = 'privacidad';
+function renderLegal(){
+  if ($('#page-legal').hidden) return;
+  const L = LEGAL[legalKey][lang], es = lang === 'es';
+  const id = i => 'lg-' + legalKey + '-' + i;
+  $('#lgCrumb').textContent = L.n;
+  $('#lgBody').innerHTML = `<h1 class="legal-h1">${L.n}</h1>
+    <p class="legal-meta">${es ? 'Última actualización: 25 de octubre de 2026' : 'Last updated: 25 October 2026'}</p>
+    <p class="legal-note">${es ? 'Proyecto de portfolio: Hotel Aurora es un hotel ficticio. Este texto muestra cómo sería su página; un hotel real debe revisarlo con su asesoría legal antes de publicarlo.' : 'Portfolio project: Hotel Aurora is a fictional hotel. This text shows what its page would look like; a real hotel must have it reviewed by its legal adviser before publishing it.'}</p>
+    <nav class="legal-toc" aria-label="${es ? 'En esta página' : 'On this page'}"><p>${es ? 'En esta página' : 'On this page'}</p><ol>${L.s.map(([h], i) => `<li><a href="#${id(i)}" data-lg="${id(i)}">${h}</a></li>`).join('')}</ol></nav>
+    ${L.s.map(([h, b], i) => `<section class="legal-sec" aria-labelledby="${id(i)}"><h2 id="${id(i)}">${h}</h2>${b}</section>`).join('')}
+    <nav class="legal-more" aria-label="${es ? 'Otras páginas legales' : 'Other legal pages'}">${Object.keys(LEGAL).filter(k => k !== legalKey).map(k => `<a class="link-arrow" href="#/legal/${k}">${LEGAL[k][lang].n}</a>`).join('')}</nav>`;
+}
+document.addEventListener('click', e => { const a = e.target.closest('a[data-lg]'); if (!a) return; e.preventDefault(); document.getElementById(a.dataset.lg)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); });
+
 function route(){
+  const lg = location.hash.match(/^#\/legal\/([\w-]+)/);
+  if (lg && LEGAL[lg[1]]){ legalKey = lg[1]; $('#page-home').hidden = true; $('#page-room').hidden = true; $('#page-legal').hidden = false; wasRoom = false; renderLegal(); scrollTo({top:0, behavior:'instant'}); setTitle(); closeMenu(); return; }
+  $('#page-legal').hidden = true;
   const m = location.hash.match(/^#\/habitacion\/(\w+)/);
   const isRoom = !!(m && ROOMS[m[1]]), key = m && m[1];
   const vt = typeof document.startViewTransition === 'function' && !reduce && isRoom !== wasRoom;

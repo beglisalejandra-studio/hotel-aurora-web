@@ -22,7 +22,7 @@
 | Stripe | Cobro de bonos con Checkout alojado | Datos de pago y correo del comprador (los trata Stripe) | **Por verificar** | Pendiente de revisar | Comisiones según tarifa vigente (por consultar) |
 | Mews | Motor de reservas | Datos de la reserva y del huésped | **Por verificar** | Pendiente de revisar (contrato del hotel con Mews) | Demo gratuita; producción según contrato |
 | Resend | Correo de solicitudes y de bonos | Contenido de los mensajes (nombre, correo y texto) | Región UE **por verificar** | Pendiente de revisar | Plan vigente por consultar |
-| Google (Maps) | Mapa de la Playa de El Palmar | IP y datos del navegador, **solo tras pulsar «Cargar el mapa»** | **Por verificar** | Condiciones de Google | Embed sin clave en la demo; clave del cliente en producción |
+| Mapa propio (OpenStreetMap exportado) | Mapa de «Cómo llegar» | **Nada**: imagen alojada en la web; al pulsarlo se abre la app de mapas del visitante, fuera de la web (decisión de la persona, 2026-10-25) | n/a | Licencia ODbL con atribución | Sin coste |
 | Google (GA4) | Analítica | Identificadores pseudónimos y eventos sin datos personales, **solo con consentimiento de analítica** | **Por verificar** | Condiciones de Google | Gratuito (límites de uso) |
 | Meta (Pixel) | Medición de campañas | Identificadores del navegador y eventos, **solo con consentimiento de marketing** | **Por verificar** | Condiciones de Meta | Gratuito; el coste es la publicidad |
 | Proveedor de IA del asistente | Responder dudas | El texto que escriba la persona (puede incluir datos personales sin querer) | **Por verificar** | Condiciones del proveedor, por revisar antes de producción | Por uso, con tope mensual |
@@ -34,7 +34,6 @@
 | `consent` (decisión del banner) | Necesaria (prueba del consentimiento) | 180 días | No aplica |
 | Preferencia de idioma | Necesaria (la elige el usuario) | Hasta que la cambie | No |
 | Preferencia de tema Día o Madrugada | Necesaria (la elige el usuario) | Hasta que la cambie | No |
-| Cookies de Google Maps | Terceros, iniciadas por el usuario | **Por verificar** | Solo tras pulsar «Cargar el mapa» |
 | Cookies de GA4 | Analítica | **Por verificar** | Sí, con consentimiento de analítica |
 | Cookies del Pixel de Meta | Marketing | **Por verificar** | Sí, con consentimiento de marketing |
 
@@ -48,3 +47,6 @@ Catálogo versionado, sin datos personales: `view_item`, `begin_booking`, `gener
 
 ## Derechos de las personas
 Acceso, rectificación, supresión, oposición, limitación y portabilidad. Procedimiento y plazos: capítulo 11 de `docs/entregables/03-guia-de-gestion.md` (a validar con asesoría).
+
+## Páginas legales publicadas en la maqueta (2026-10-25)
+Política de privacidad, política de cookies, aviso legal y condiciones de reserva (`#/legal/…`, ES/EN), redactadas a partir de este mapa de datos. Textos de ejemplo para un hotel ficticio: **un hotel real los revisa con su asesoría** antes de publicarlos. En la web real se editan desde el panel.
