@@ -10,3 +10,15 @@ creative/references/screenshots/*
 !creative/references/screenshots/.gitkeep
 creative/references/extracted/*
 !creative/references/extracted/.gitkeep
+
+# Next.js, pruebas y reportes (de la plantilla del sistema)
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+.lighthouseci/
+*.tsbuildinfo
+next-env.d.ts
+*.key
+*.pem

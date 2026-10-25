@@ -1,0 +1,12 @@
+{
+  "_nota": "Avisos de dependencias que NO tienen versión corregida y que aceptamos temporalmente. Cada excepción lleva motivo, ámbito y caducidad; al caducar, la puerta (`npm run audit`) falla para obligar a revisarla. Retírala en cuanto exista versión corregida. Una excepción de producción exige scope: prod y aprobación humana.",
+  "exceptions": [
+    {
+      "ghsa": "GHSA-vfj7-8cjw-p6xm",
+      "package": "braces",
+      "scope": "dev",
+      "reason": "Denegación de servicio por patrones anidados en braces <=3.0.3 (la última versión publicada es la 3.0.3: no hay corrección). Solo la usa eslint-config-next → fast-glob → micromatch en el linter local y el CI con patrones de nuestro propio repositorio (entrada de confianza); no está en el código de producción.",
+      "expires": "2026-11-03"
+    }
+  ]
+}

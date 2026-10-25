@@ -1,6 +1,6 @@
 ---
 type: new
-status: design
+status: build
 duration: 3-6w
 visual_authority: taste-skill
 stack: next

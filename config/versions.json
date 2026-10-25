@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "_nota": "Versiones mínimas/fijadas que usa el doctor. 'min' = por debajo es OUTDATED. 'pin' = versión exacta instalada por el sistema.",
+  "runtime": {
+    "node": {
+      "min": "22.19.0",
+      "recommended": "22.x"
+    },
+    "npm": {
+      "min": "10.0.0"
+    },
+    "pnpm": {
+      "min": "9.0.0",
+      "optional": true
+    },
+    "git": {
+      "min": "2.30.0"
+    },
+    "gh": {
+      "min": "2.40.0",
+      "optional": true
+    },
+    "claude": {
+      "min": "2.1.0"
+    },
+    "ffmpeg": {
+      "min": "6.0",
+      "optional": true
+    },
+    "ffprobe": {
+      "min": "6.0",
+      "optional": true
+    }
+  },
+  "tools": {
+    "@playwright/mcp": {
+      "pin": "0.0.83",
+      "license": "Apache-2.0"
+    },
+    "lighthouse": {
+      "pin": "13.5.0",
+      "license": "Apache-2.0"
+    }
+  },
+  "vendor": {
+    "taste-skill": {
+      "repo": "https://github.com/Leonxlnx/taste-skill",
+      "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+      "license": "MIT"
+    }
+  },
+  "optionalExternal": {
+    "impeccable": {
+      "repo": "https://github.com/pbakaus/impeccable",
+      "commit": "0d6b47ea19b63afe15e3f93a44d5d9fbbc6fd275",
+      "license": "Apache-2.0",
+      "engine": "0.1.8",
+      "binary": {
+        "linux-x64": {
+          "asset": "impeccable-linux-x64",
+          "sha256": "7853508983e8ece3aa8e76f077406e18860aef1773370d57a61f554cd8039102",
+          "bytes": 18457584,
+          "note": "Integridad verificada contra el .sha256 del release (no autentica al autor). Fuente Rust auditable en crates/. No se ha auditado el binario."
+        }
+      },
+      "downloadBase": "https://github.com/pbakaus/impeccable/releases/download",
+      "skillPath": ".claude/skills/impeccable",
+      "agentsPath": ".claude/agents"
+    }
+  },
+  "gemini": {
+    "apiBase": "https://generativelanguage.googleapis.com/v1beta",
+    "defaultModel": "gemini-2.5-flash",
+    "_nota": "El modelo se valida contra GET /models con la key real; no se asume que exista."
+  }
+}
