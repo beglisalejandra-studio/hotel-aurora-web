@@ -41,6 +41,7 @@
 - **Una sola carpeta de trabajo** (el scratchpad de la sesión) y se reutilizan nombres de archivo; no se crean carpetas ni copias nuevas por intento.
 - **Revisión de imágenes:** una pasada por pieza, con ampliación solo donde haya duda (teles, bordes, textura). Los revisores independientes (varios agentes) solo se lanzan por lote nuevo o si la persona lo pide, no por cada ajuste.
 - **Leer lo justo** (rangos de líneas, `grep`) y responder con tablas cortas.
+- **Siempre enlaces directos** a la pantalla exacta (Vercel, Sanity, GitHub…), nunca «entra en X y busca Y» (regla de la persona, 2026-10-25: «SIEMPRE pásame los links directos, no me hagas perder el tiempo»).
 - **Los prompts se pegan siempre en el chat, nunca como archivo `.md` adjunto** (regla de la persona, 2026-10-10: «no me envíes nada en md, envíame los textos de los prompt por aquí»). En el repo solo se guardan como registro. Los archivos que sí se adjuntan son las imágenes de referencia.
 
 ## Reglas técnicas (Next.js next · TypeScript estricto)
