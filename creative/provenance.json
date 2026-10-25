@@ -1837,6 +1837,66 @@
       ],
       "approved_by": "persona (chat, 2026-10-24: «Apruebo la P25»)",
       "approved_at": "2026-10-24"
+    },
+    {
+      "id": "p24-familia-playa-escritorio",
+      "version": "escritorio",
+      "request": "creative/requests/p24-familia-playa-escritorio.json",
+      "files": {
+        "original": "creative/inbox/p24-familia-playa-escritorio.png"
+      },
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2741835,
+      "declared_by": "persona (chat, 2026-10-25: «subidas las fotos de la familia en la playa»)",
+      "piece": "P24",
+      "prompt_file": "creative/briefs/p24-familia-playa.md",
+      "format": "PNG",
+      "aspect": "3:2",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "gpt-image (según las credenciales de contenido C2PA del archivo)",
+      "embedded_content_credentials": true,
+      "state": "draft",
+      "alt_draft": {
+        "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
+        "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
+      },
+      "notes": [
+        "Saturación media 0.2 (pedida 0,27 a 0,33).",
+        "Luz de día clara con cielo azul, no la luz dorada baja de P01; sombras cortas y poco liliáceas.",
+        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural."
+      ]
+    },
+    {
+      "id": "p24-familia-playa-movil",
+      "version": "movil",
+      "request": "creative/requests/p24-familia-playa-movil.json",
+      "files": {
+        "original": "creative/inbox/p24-familia-playa-movil.png"
+      },
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2773593,
+      "declared_by": "persona (chat, 2026-10-25: «subidas las fotos de la familia en la playa»)",
+      "piece": "P24",
+      "prompt_file": "creative/briefs/p24-familia-playa.md",
+      "format": "PNG",
+      "aspect": "4:3",
+      "ai_generated": true,
+      "tool": "ChatGPT",
+      "model": "gpt-image (según las credenciales de contenido C2PA del archivo)",
+      "embedded_content_credentials": true,
+      "state": "draft",
+      "alt_draft": {
+        "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
+        "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
+      },
+      "notes": [
+        "Saturación media 0.23 (pedida 0,27 a 0,33).",
+        "Luz de día clara con cielo azul, no la luz dorada baja de P01; sombras cortas y poco liliáceas.",
+        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural."
+      ]
     }
   ]
 }
