@@ -478,7 +478,11 @@ details.q[open]::details-content{block-size:auto}
 @media (max-width:767px){
   .room{gap:4px}
   .room .h3{font-size:21px;margin-top:6px}
-  .room-light,.room-beds,.room-actions{display:none}
+  .room-light,.room-beds{display:none}
+  /* Cada habitación con su botón «Reservar» (pedido de la persona, 2026-10-25); la tarjeta entera lleva a la ficha */
+  .room-actions{position:relative;z-index:2;margin-top:10px}
+  .room-actions .link-arrow{display:none}
+  .room-actions .btn{width:100%;min-height:44px;justify-content:center}
   .room-guests{font-size:14px}
   .room-price{font-size:15px;margin-top:2px}
   .room-link::after{content:"";position:absolute;inset:0;z-index:1}
