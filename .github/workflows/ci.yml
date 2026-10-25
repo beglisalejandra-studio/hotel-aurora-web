@@ -122,10 +122,10 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run audit
-      # La revisión de dependencias de GitHub solo funciona en repositorios públicos o privados con GitHub Advanced
-      # Security. En un repositorio privado sin ella se activa poniendo la variable DEPENDENCY_REVIEW_ENABLED=true;
-      # mientras tanto, la puerta propia (`npm run audit`, arriba) sigue bloqueando avisos altos y críticos.
+      # Revisión de dependencias de GitHub: necesita el «Dependency graph» activado en el repositorio (y en uno privado,
+      # GitHub Advanced Security). Se activa definiendo la variable del repositorio DEPENDENCY_REVIEW_ENABLED=true cuando
+      # esa opción esté encendida; mientras tanto, la puerta propia (`npm run audit`, arriba) bloquea avisos altos y críticos.
       - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0
-        if: github.event_name == 'pull_request' && (!github.event.repository.private || vars.DEPENDENCY_REVIEW_ENABLED == 'true')
+        if: github.event_name == 'pull_request' && vars.DEPENDENCY_REVIEW_ENABLED == 'true'
         with:
           fail-on-severity: high
