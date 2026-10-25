@@ -16,6 +16,7 @@
 ## 2. Mapa de palabras (ES; EN en paralelo con `data-en`)
 | Intención | Búsqueda objetivo | Dónde |
 |---|---|---|
+| Familias | hotel familiar El Palmar con perro · vacaciones en familia El Palmar | H2 «Disfruta en familia junto a tu perro, en la playa de El Palmar.» (sección #datos, con los datos citables del hotel) |
 | Principal | hotel boutique El Palmar · hotel boutique Vejer de la Frontera | `<title>`, meta descripción, H1 «Hotel boutique en El Palmar.» |
 | Nicho | hotel petfriendly El Palmar · hotel que admite perros Vejer · hotel con perro Cádiz | lead, H2 «Hotel petfriendly: tu perro también está invitado.», FAQ |
 | Alojamiento | habitaciones hotel El Palmar (Alba, Terraza, Marea, Faro) | H2 «Habitaciones de cal, madera y piedra en El Palmar.», `Habitación Alba` (H1 de ficha) |
@@ -23,7 +24,7 @@
 | Comida | restaurante cocina de mercado El Palmar | H2 «Restaurante de cocina de mercado, del desayuno a la cena.» |
 | Bienestar | hotel con spa Costa de la Luz · spa abierto a no huéspedes | H2 «Hotel con spa de agua y silencio en la Costa de la Luz.» |
 | Local | cómo llegar a El Palmar · hotel cerca playa El Palmar | H2 «Cómo llegar a El Palmar, Vejer de la Frontera» |
-| Cierre (transaccional y local) | reservar escapada El Palmar con perro | H2 final «Reserva tu escapada en El Palmar / y no dejes en casa a tu perro.» (EN «Book your El Palmar getaway / and don’t leave your dog at home.»), elegido por la persona el 2026-10-24 |
+| Cierre (transaccional y local) | reservar escapada El Palmar con perro | H2 final «Reserva tu escapada en El Palmar / y no dejes a tu perro en casa.» (EN «Book your El Palmar getaway / and don’t leave your dog at home.»), elegido por la persona el 2026-10-24 |
 | Preguntas | check-in/out, perros, spa, reserva directa… | H2 «Preguntas frecuentes sobre Hotel Aurora» (9 preguntas) |
 
 ## 3. Reglas de redacción
