@@ -144,15 +144,23 @@ for (const [ui, p] of urls.entries()) {
   for (let i = 1; i <= runs; i++) {
     const file = path.join(OUT, `lhr-${ui}-${i}.json`);
     process.stdout.write(`  · ${p} (corrida ${i}/${runs})… `);
-    const r = await runLighthouse([
-      lighthouseCli,
-      base + p,
-      "--output=json",
-      `--output-path=${file}`,
-      `--only-categories=${CATEGORIES}`,
-      `--chrome-flags=${chromeFlags}`,
-      "--quiet",
-    ]);
+    const measure = () =>
+      runLighthouse([
+        lighthouseCli,
+        base + p,
+        "--output=json",
+        `--output-path=${file}`,
+        `--only-categories=${CATEGORIES}`,
+        `--chrome-flags=${chromeFlags}`,
+        "--quiet",
+      ]);
+    let r = await measure();
+    // Un fallo del propio Lighthouse al grabar la traza (p. ej. NO_NAVSTART) no es un resultado de rendimiento:
+    // se repite esa corrida una vez. Los presupuestos se evalúan solo sobre corridas completas.
+    if (r.status !== 0 || !fs.existsSync(file)) {
+      process.stdout.write("reintento… ");
+      r = await measure();
+    }
     if (r.status !== 0 || !fs.existsSync(file)) {
       console.log("falló");
       infra(
