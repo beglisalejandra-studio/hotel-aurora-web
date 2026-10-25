@@ -212,7 +212,8 @@ export const theme = defineType({
       type: "object",
       initialValue: paletteInitial("light"),
       fields: paletteFields(),
-      validation: (r) => r.custom(paletteValidation),
+      // Aviso, no bloqueo: al publicar se pide confirmación (sanity/actions/contrastConfirm.tsx).
+      validation: (r) => r.custom(paletteValidation).warning(),
     }),
     defineField({
       name: "dark",
@@ -221,7 +222,8 @@ export const theme = defineType({
       initialValue: paletteInitial("dark"),
       fields: paletteFields(),
       options: { collapsible: true, collapsed: true },
-      validation: (r) => r.custom(paletteValidation),
+      // Aviso, no bloqueo: al publicar se pide confirmación (sanity/actions/contrastConfirm.tsx).
+      validation: (r) => r.custom(paletteValidation).warning(),
     }),
     defineField({
       name: "fontDisplay",

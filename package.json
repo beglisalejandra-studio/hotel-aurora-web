@@ -34,6 +34,7 @@
     "report": "node scripts/client-report.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "0.133.0",
     "@sanity/client": "7.27.0",
     "@sanity/color-input": "6.1.6",
     "@sanity/image-url": "2.1.1",

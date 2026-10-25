@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { themeProblems } from "@/sanity/actions/contrastConfirm";
 import { DEFAULT_PALETTES } from "@/sanity/defaults";
 import { contrastRatio, paletteProblems } from "@/sanity/lib/contrast";
 import { schemaTypes } from "@/sanity/schemaTypes";
@@ -23,6 +24,26 @@ describe("contraste del tema", () => {
   it("avisa en lenguaje claro si un texto no se leería bien", () => {
     const [problem] = paletteProblems({ ...DEFAULT_PALETTES.light, ink: "#C9CED1" });
     expect(problem).toMatch(/Texto principal sobre el fondo: contraste .*necesita al menos 4,5:1/);
+  });
+});
+
+describe("confirmación al publicar colores", () => {
+  const asColor = (p: Record<string, string>) =>
+    Object.fromEntries(Object.entries(p).map(([k, hex]) => [k, { hex }]));
+  it("sin problemas no pide confirmación", () => {
+    expect(
+      themeProblems({
+        light: asColor(DEFAULT_PALETTES.light),
+        dark: asColor(DEFAULT_PALETTES.dark),
+      }),
+    ).toEqual([]);
+  });
+  it("indica el modo y el problema para pedir confirmación", () => {
+    const problems = themeProblems({
+      light: asColor(DEFAULT_PALETTES.light),
+      dark: asColor({ ...DEFAULT_PALETTES.dark, ink: "#2A3540" }),
+    });
+    expect(problems[0]).toMatch(/^Modo Madrugada · Texto principal sobre el fondo/);
   });
 });
 

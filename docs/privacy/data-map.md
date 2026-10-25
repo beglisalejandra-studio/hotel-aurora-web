@@ -26,6 +26,7 @@
 | Google (GA4) | Analítica | Identificadores pseudónimos y eventos sin datos personales, **solo con consentimiento de analítica** | **Por verificar** | Condiciones de Google | Gratuito (límites de uso) |
 | Meta (Pixel) | Medición de campañas | Identificadores del navegador y eventos, **solo con consentimiento de marketing** | **Por verificar** | Condiciones de Meta | Gratuito; el coste es la publicidad |
 | Proveedor de IA del asistente | Responder dudas | El texto que escriba la persona (puede incluir datos personales sin querer) | **Por verificar** | Condiciones del proveedor, por revisar antes de producción | Por uso, con tope mensual |
+| Anthropic (API de Claude) | Sugerir la descripción de las fotos que sube el equipo del hotel en el panel | La foto (contenido del hotel, sin datos de huéspedes) y el título del documento; solo a petición de un editor | **Por verificar** | Condiciones comerciales de la API (sin entrenamiento con los datos por defecto): por revisar antes de producción | Por uso, con la clave del cliente en Vercel |
 | Google AI Studio (Gemini) | **No se usa** | n/a | n/a | n/a | n/a |
 
 ## Cookies y almacenamiento

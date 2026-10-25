@@ -8,6 +8,8 @@ import { z } from "zod";
 const serverSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   LEAD_SINK: z.enum(["log", "resend"]).default("log"),
+  // Opcional: sin ella el panel no sugiere descripciones de fotos (y lo dice).
+  ANTHROPIC_API_KEY: z.preprocess((v) => (v === "" ? undefined : v), z.string().min(20).optional()),
 });
 
 export type ServerEnv = z.infer<typeof serverSchema>;

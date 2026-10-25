@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { ImageWithAltInput } from "../../components/ImageWithAltInput";
 
 /**
  * Foto con sus dos versiones (regla del proyecto: escritorio y móvil se piden por separado) y texto alternativo
@@ -33,5 +34,6 @@ export const imageWithAlt = defineType({
       validation: (r) => r.required(),
     }),
   ],
+  components: { input: ImageWithAltInput },
   preview: { select: { title: "alt.es", media: "desktop" } },
 });
