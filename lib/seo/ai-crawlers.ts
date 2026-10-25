@@ -9,7 +9,7 @@ export interface AiCrawler {
 }
 
 export const aiCrawlers = crawlers.bots as AiCrawler[];
-const PRIVATE_PATHS = ["/api/", "/editor"];
+const PRIVATE_PATHS = ["/api/", "/admin"];
 
 /** Reglas de robots.txt: una regla explícita por rastreador de IA según la política que decidió el responsable. */
 export type CrawlerRule = { userAgent: string; allow?: string; disallow?: string | string[] };

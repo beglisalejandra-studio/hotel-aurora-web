@@ -17,7 +17,7 @@ describe("rastreadores de IA (robots.txt)", () => {
     ];
     const [a, b] = aiCrawlerRules(list);
     expect(a).toMatchObject({ userAgent: "A", allow: "/" });
-    expect(a).toMatchObject({ disallow: expect.arrayContaining(["/api/", "/editor"]) });
+    expect(a).toMatchObject({ disallow: expect.arrayContaining(["/api/", "/admin"]) });
     expect(b).toEqual({ userAgent: "B", disallow: "/" });
   });
 });
