@@ -1843,7 +1843,8 @@
       "version": "escritorio",
       "request": "creative/requests/p24-familia-playa-escritorio.json",
       "files": {
-        "original": "creative/inbox/p24-familia-playa-escritorio.png"
+        "original": "creative/inbox/p24-familia-playa-escritorio.png (subida por la persona el 2026-10-25)",
+        "master": "creative/approved/p24-familia-playa-escritorio.png"
       },
       "width": 1536,
       "height": 1024,
@@ -1857,7 +1858,7 @@
       "tool": "ChatGPT",
       "model": "gpt-image (según las credenciales de contenido C2PA del archivo)",
       "embedded_content_credentials": true,
-      "state": "draft",
+      "state": "approved",
       "alt_draft": {
         "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
         "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
@@ -1865,15 +1866,19 @@
       "notes": [
         "Saturación media 0.2 (pedida 0,27 a 0,33).",
         "Luz de día clara con cielo azul, no la luz dorada baja de P01; sombras cortas y poco liliáceas.",
-        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural."
-      ]
+        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural.",
+        "Aprobada con su luz de día clara (no la dorada de P01)."
+      ],
+      "approved_by": "persona (chat, 2026-10-25: «vale, ya está listo, apruebo»)",
+      "approved_at": "2026-10-25"
     },
     {
       "id": "p24-familia-playa-movil",
       "version": "movil",
       "request": "creative/requests/p24-familia-playa-movil.json",
       "files": {
-        "original": "creative/inbox/p24-familia-playa-movil.png"
+        "original": "creative/inbox/p24-familia-playa-movil.png (subida por la persona el 2026-10-25)",
+        "master": "creative/approved/p24-familia-playa-movil.png"
       },
       "width": 1448,
       "height": 1086,
@@ -1887,7 +1892,7 @@
       "tool": "ChatGPT",
       "model": "gpt-image (según las credenciales de contenido C2PA del archivo)",
       "embedded_content_credentials": true,
-      "state": "draft",
+      "state": "approved",
       "alt_draft": {
         "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
         "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
@@ -1895,8 +1900,11 @@
       "notes": [
         "Saturación media 0.23 (pedida 0,27 a 0,33).",
         "Luz de día clara con cielo azul, no la luz dorada baja de P01; sombras cortas y poco liliáceas.",
-        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural."
-      ]
+        "Revisión del agente: mismas personas, ropa y perro en las dos; nadie mira a cámara; manos, pies y perro con anatomía natural.",
+        "Aprobada con su luz de día clara (no la dorada de P01)."
+      ],
+      "approved_by": "persona (chat, 2026-10-25: «vale, ya está listo, apruebo»)",
+      "approved_at": "2026-10-25"
     }
   ]
 }
