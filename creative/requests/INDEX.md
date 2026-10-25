@@ -32,7 +32,7 @@ Se pide **una pieza por turno**, con su ficha en `creative/requests/<nombre>.md`
 | 12c | P13, P14, P15, P32, P33 (escritorio y móvil) | Fotos (10 imágenes) | **Faro** (mini apartamento: salón y dos dormitorios, 4 personas): salón con TV, dos dormitorios, baño y azotea | 4:5 y 3:2 | **Aprobadas** el 2026-10-10: P13, P34, P14, P15, P32 y la cocina P35 (renombrada desde P16, que es la sala del restaurante), escritorio y móvil. P33 (azotea) cancelada: Faro queda sin azotea |
 | 13 | P17, P18 | Foto | Plato en primer plano y desayuno | 3:2 | Pendiente |
 | 14 | P20 | Foto | Zona de agua del spa al amanecer | 3:2 | Pendiente |
-| 15 | P24 escritorio y móvil | Foto (2 versiones) | **Familia con su perro en la playa de El Palmar** (sección «de un vistazo», 3:2 y 4:5; **solicitada** el 2026-10-25, `creative/briefs/p24-familia-playa.md`). Antes: **Playa de El Palmar** (rasgos reales: arena dorada, pasarela de madera con valla, hierba de duna, oleaje atlántico moderado y viento) | 16:9 | Pendiente |
+| 15 | P24 escritorio y móvil | Foto (2 versiones) | **Familia con su perro disfrutando en la playa de El Palmar** (sección «de un vistazo», 3:2 y 4:3; **solicitada** el 2026-10-25, prompt rehecho el mismo día, `creative/briefs/p24-familia-playa.md`). Antes: **Playa de El Palmar** (rasgos reales: arena dorada, pasarela de madera con valla, hierba de duna, oleaje atlántico moderado y viento) | 16:9 | Pendiente |
 | 16 | P02 | Foto | Imagen para compartir en redes: se **deriva de P01**, no se pide aparte | 1200 x 630 | Derivada |
 | 17 | V02, V03 | Vídeo | Agua del spa y luz sobre la pared de Alba, 6 s en bucle | 4:5 y 3:2 | Pendiente |
 | 18 | 360 x 4 | Foto 360 | Panoramas equirrectangulares de las cuatro habitaciones (extra aprobado) | 2:1 | Pendiente |

@@ -1,16 +1,16 @@
 {
   "name": "p24-familia-playa-movil",
   "kind": "image",
-  "aspect": "4:5",
+  "aspect": "4:3",
   "page": "home",
   "role": "Familia con su perro en la playa de El Palmar, version movil (seccion #datos)",
   "status": "requested",
   "requested_at": "2026-10-25",
   "master": {
     "w": 2048,
-    "h": 2560
+    "h": 1536
   },
-  "min_long_side": 1400,
+  "min_long_side": 1080,
   "max_bytes": 4000000,
   "exts": [
     ".jpg",
