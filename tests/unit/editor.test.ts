@@ -44,33 +44,28 @@ describe("editor visual: secciones y listas", () => {
 });
 
 describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la web", () => {
-  type Op = { id: string; rev: string; ops: unknown[] };
-  type Sec = { _key: string; items: { _key: string; _ref?: string }[] };
+  type Item = { _key: string; _ref?: string; _type?: string | null; _weak?: boolean | null };
+  type Page = { _id: string; _rev: string; secs: { _key: string; items: Item[] }[] };
   const fakeClient = (
     ids: Record<string, string[]>,
-    pages: Record<string, { _id: string; _rev: string; secs: Sec[] }[]>,
+    pages: Record<string, Page[]>,
     fail?: { statusCode: number },
   ) => {
-    const commits: Op[] = [];
+    const commits: { id: string; rev: string; set: Record<string, Item[]> }[] = [];
     const client = {
       fetch: async (_q: string, p: { type: string }) => ({
         ids: ids[p.type] ?? [],
         pages: pages[p.type] ?? [],
       }),
       patch: (id: string) => {
-        const ops: unknown[] = [];
         let rev = "";
+        let changes: Record<string, Item[]> = {};
         const api = {
           ifRevisionId: (r: string) => ((rev = r), api),
-          unset: (paths: string[]) => (ops.push({ unset: paths }), api),
-          setIfMissing: (v: unknown) => (ops.push({ setIfMissing: v }), api),
-          append: (path: string, items: { _ref: string; _weak: boolean }[]) => (
-            ops.push({ append: path, refs: items.map((i) => [i._ref, i._weak]) }),
-            api
-          ),
+          set: (c: Record<string, Item[]>) => ((changes = { ...changes, ...c }), api),
           commit: async () => {
             if (fail) throw fail;
-            commits.push({ id, rev, ops });
+            commits.push({ id, rev, set: changes });
           },
         };
         return api;
@@ -78,6 +73,8 @@ describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la w
     };
     return { client, commits };
   };
+  const refs = (items: Item[]) => items.map((i) => [i._ref, i._weak ?? false]);
+
   it("añade al final, en su orden, solo lo que falta (referencias débiles) y solo sobre la revisión leída", async () => {
     const { client, commits } = fakeClient(
       { room: ["alba", "marea", "faro"] },
@@ -86,46 +83,10 @@ describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la w
           {
             _id: "page-inicio",
             _rev: "r1",
-            secs: [{ _key: "s1", items: [{ _key: "a", _ref: "marea" }] }],
-          },
-        ],
-      },
-    );
-    await syncLists(client as never);
-    expect(commits).toEqual([
-      {
-        id: "page-inicio",
-        rev: "r1",
-        ops: [
-          { setIfMissing: { 'sections[_key=="s1"].rooms': [] } },
-          {
-            append: 'sections[_key=="s1"].rooms',
-            refs: [
-              ["alba", true],
-              ["faro", true],
-            ],
-          },
-        ],
-      },
-    ]);
-  });
-  it("quita las repeticiones y deja la primera posición", async () => {
-    const { client, commits } = fakeClient(
-      { offer: ["o1", "o2"] },
-      {
-        offer: [
-          {
-            _id: "page-inicio",
-            _rev: "r2",
             secs: [
               {
-                _key: "s2",
-                items: [
-                  { _key: "a", _ref: "o2" },
-                  { _key: "b", _ref: "o1" },
-                  { _key: "c", _ref: "o2" },
-                  { _key: "d", _ref: "o1" },
-                ],
+                _key: "s1",
+                items: [{ _key: "a", _ref: "marea", _type: "reference", _weak: null }],
               },
             ],
           },
@@ -133,15 +94,58 @@ describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la w
       },
     );
     await syncLists(client as never);
-    expect(commits).toEqual([
+    expect(commits.length).toBe(1);
+    expect(commits[0]?.rev).toBe("r1");
+    const list = commits[0]?.set['sections[_key=="s1"].rooms'] ?? [];
+    expect(refs(list)).toEqual([
+      ["marea", false],
+      ["alba", true],
+      ["faro", true],
+    ]);
+    // Los campos que no existen (null) no se escriben
+    expect(list[0]).toEqual({ _key: "a", _ref: "marea", _type: "reference" });
+  });
+  it("quita TODAS las repeticiones de una vez y deja la primera posición", async () => {
+    const dup = ["alba", "marea", "terraza", "faro", "alba", "marea", "terraza", "faro"];
+    const { client, commits } = fakeClient(
+      { room: ["alba", "marea", "terraza", "faro"] },
       {
-        id: "page-inicio",
-        rev: "r2",
-        ops: [
-          { unset: ['sections[_key=="s2"].offers[_key=="c"]'] },
-          { unset: ['sections[_key=="s2"].offers[_key=="d"]'] },
+        room: [
+          {
+            _id: "page-inicio",
+            _rev: "r2",
+            secs: [
+              { _key: "s1", items: dup.map((r, i) => ({ _key: `k${i}`, _ref: r, _weak: true })) },
+            ],
+          },
         ],
       },
+    );
+    await syncLists(client as never);
+    const list = commits[0]?.set['sections[_key=="s1"].rooms'] ?? [];
+    expect(list.map((i) => i._key)).toEqual(["k0", "k1", "k2", "k3"]);
+  });
+  it("varias secciones de la misma página se cambian en un solo paso", async () => {
+    const { client, commits } = fakeClient(
+      { faq: ["q1", "q2"] },
+      {
+        faq: [
+          {
+            _id: "page-x",
+            _rev: "r4",
+            secs: [
+              { _key: "a", items: [] },
+              { _key: "b", items: [{ _key: "z", _ref: "q2" }] },
+            ],
+          },
+        ],
+      },
+    );
+    await syncLists(client as never);
+    expect(commits.length).toBe(1);
+    expect(Object.keys(commits[0]?.set ?? {})).toEqual([
+      'sections[_key=="a"].faqs',
+      'sections[_key=="b"].faqs',
     ]);
   });
   it("si ya está todo, no toca nada", async () => {
