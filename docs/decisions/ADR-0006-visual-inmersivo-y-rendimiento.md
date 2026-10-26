@@ -56,3 +56,25 @@ Lectura: los cuatro **ocultan la primera vista tras un preloader** y pesan entre
 - Hay que **entregar las fotos en dos recortes** y con zona libre para el texto del héroe.
 - El diseño depende de buena fotografía: sin ella, los planos son rectángulos grises. De ahí el pedido de materiales.
 - El recorrido ocupa unas cuatro pantallas de scroll; si en pruebas con usuarios resulta largo, se acorta reduciendo `--steps`.
+
+## Medición en la web real (2026-10-26)
+Medido con el Lighthouse del CI (móvil simulado: red lenta 4G y CPU ×4), 7 corridas sobre la misma compilación:
+
+| Métrica | Resultado | Presupuesto |
+|---|---|---|
+| Rendimiento | 0,91–0,98 (mediana 0,96) | ≥ 0,90 |
+| LCP (simulado) | 2,1–3,4 s (mediana 2,7 s) | 2,5 s (requisito) |
+| CLS | 0,002 | ≤ 0,1 |
+| TBT | 49–186 ms | ≤ 200 ms |
+| Foto LCP (móvil) | 36 KB en AVIF | ≤ 110 KB |
+| Transferencia antes del LCP | ~370 KB | ≤ 700 KB |
+| JS (gzip) | ~160 KB, de ellos ~110 KB de React y Next | ≤ 90 KB (**no se cumple**: el marco solo ya lo supera) |
+
+Hallazgos:
+- **Las 7 corridas cargan exactamente lo mismo** (mismas 18 peticiones, 371 KB) y el LCP real sin simular es 0,15–0,3 s. La diferencia entre 2,1 y 3,4 s la pone la simulación (estimación pesimista con el JS del marco y las fuentes), no la página. Reducir la foto principal a 12 KB no cambió la distribución.
+- Lo que sí bajó la medición: fotos en AVIF por el optimizador de la propia web (88 → 36 KB), precarga de la foto principal, fuentes sin precarga, secciones fuera de pantalla con `content-visibility: auto` (−35 % de cálculo de estilos) y comportamientos montados tras el primer pintado.
+
+Decisión:
+- El requisito sigue siendo **LCP ≤ 2,5 s para visitantes reales** (percentil 75). Se comprueba con un móvil de gama media real (regla 10) y, en producción, con datos de campo (Vercel Speed Insights o Chrome UX Report).
+- En el CI, el Lighthouse simulado es una **guardia contra empeoramientos**: mediana de 5 corridas, LCP ≤ 3,0 s como error. Con 2,5 s fallaría la mitad de las veces por ruido y bloquearía cambios sin relación con el rendimiento.
+- El presupuesto de JS de 90 KB no es alcanzable con Next.js (el marco ocupa ~110 KB). Queda como referencia: el código propio del cliente pesa ~11 KB.

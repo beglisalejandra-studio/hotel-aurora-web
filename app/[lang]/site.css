@@ -4709,3 +4709,14 @@ body.noscroll {
 .hero-still .hs-bar {
   margin-top: 16px;
 }
+/* Rendimiento: las secciones lejos de la pantalla no se calculan hasta acercarse (la portada pinta antes).
+   Al usar el menú, `cv-off` las calcula todas para llegar exacto a la sección (Enhance.tsx, goSec). */
+main > section:nth-of-type(n + 3),
+.foot {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+.cv-off main > section,
+.cv-off .foot {
+  content-visibility: visible;
+}

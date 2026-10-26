@@ -74,3 +74,23 @@ test("las páginas legales y de habitación existen en los dos idiomas", async (
   expect(r.status()).toBe(308);
   expect(r.headers().location).toMatch(/\/condiciones$/);
 });
+
+test("el menú lleva al contenido de cada sección, justo bajo la cabecera", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
+  const gap = (id: string) =>
+    page.evaluate((id) => {
+      const s = document.getElementById(id)!;
+      const top = s.getBoundingClientRect().top + (parseFloat(getComputedStyle(s).paddingTop) || 0);
+      return Math.round(top - document.getElementById("hdr")!.getBoundingClientRect().bottom);
+    }, id);
+  for (const id of ["habitaciones", "paquetes"]) {
+    if (isMobile) await page.locator("#menuBtn").click();
+    await page.locator(`#nav > a[href$="#${id}"]`).click();
+    // Al terminar el desplazamiento, el contenido queda a menos de 48 px de la cabecera (nunca debajo de ella)
+    await expect.poll(() => gap(id), { timeout: 5000 }).toBeGreaterThanOrEqual(10);
+    await expect.poll(() => gap(id), { timeout: 5000 }).toBeLessThanOrEqual(48);
+  }
+});

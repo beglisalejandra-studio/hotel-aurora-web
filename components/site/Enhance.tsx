@@ -96,6 +96,8 @@ function setTheme(next: "light" | "dark", x: number, y: number) {
 function goSec(id: string, smooth = true) {
   const el = document.getElementById(id);
   if (!el) return false;
+  // Se calculan todas las secciones (content-visibility) para medir la posición real y llegar justo a la sección
+  document.documentElement.classList.add("cv-off");
   const pad = parseFloat(getComputedStyle(el).paddingTop) || 0;
   const gap = Math.min(40, innerWidth * 0.06);
   const top = el.getBoundingClientRect().top + scrollY + pad - gap - ($("#hdr")?.offsetHeight ?? 0);
@@ -650,19 +652,35 @@ export function Enhance(props: EnhanceProps) {
           void openBooking(props, bk, { roomId: bk.dataset.mewsRoom || undefined });
           return;
         }
-        const a = el.closest<HTMLAnchorElement>("a[href*='#']");
-        if (a && a.origin === location.origin && a.pathname === location.pathname) {
-          const id = decodeURIComponent(a.hash.slice(1));
-          if (id && id !== "main" && document.getElementById(id)) {
-            e.preventDefault();
-            closeMenu();
-            history.pushState(null, "", a.hash);
-            goSec(id);
-          }
-        }
         if (el.closest("#nav a")) closeMenu();
       },
       o,
+    );
+    // Enlaces a una sección de la misma página: los lleva goSec (al contenido, no al relleno). Va en fase de captura
+    // para adelantarse al enlace de Next, que si no haría su propio desplazamiento y llegaría a otra altura.
+    document.addEventListener(
+      "click",
+      (e) => {
+        if (
+          e.defaultPrevented ||
+          e.button !== 0 ||
+          e.metaKey ||
+          e.ctrlKey ||
+          e.shiftKey ||
+          e.altKey
+        )
+          return;
+        const a = (e.target as Element).closest<HTMLAnchorElement>("a[href*='#']");
+        if (!a || a.origin !== location.origin || a.pathname !== location.pathname) return;
+        const id = decodeURIComponent(a.hash.slice(1));
+        if (!id || id === "main" || !document.getElementById(id)) return;
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+        history.pushState(history.state, "", a.hash);
+        goSec(id);
+      },
+      { capture: true, signal: ac.signal },
     );
     document.addEventListener(
       "submit",
@@ -702,12 +720,18 @@ export function Enhance(props: EnhanceProps) {
     );
     so.observe(sentinel);
     observeReveal();
-    const off = [walkGeometry(), spaTabs(), packages(), roomTrack(), mapNav(props.t)];
-    if (location.hash.length > 1) {
-      const id = decodeURIComponent(location.hash.slice(1));
-      setTimeout(() => goSec(id, false), 60);
-    }
+    // El resto (mapa, recorrido, pestañas…) se monta justo después del primer pintado: así no retrasa la foto principal
+    let off: (() => void)[] = [];
+    let cancelled = false;
+    const mount = () => {
+      if (cancelled) return;
+      off = [walkGeometry(), spaTabs(), packages(), roomTrack(), mapNav(props.t)];
+      if (location.hash.length > 1) goSec(decodeURIComponent(location.hash.slice(1)), false);
+    };
+    const raf = requestAnimationFrame(() => setTimeout(mount, 0));
     return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
       so.disconnect();
       sentinel.remove();
       off.forEach((f) => f());

@@ -5,8 +5,13 @@ import { NextResponse, type NextRequest } from "next/server";
  * Por dentro todo vive en app/[lang]: aquí se reescribe /… a /es/… y se redirige /es/… a /… (una sola dirección por
  * página, buena para buscadores). No se adivina el idioma del navegador: cada visitante elige con el selector.
  */
+const INTERNAL = "x-aurora-es";
+
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+  // Petición que ya viene de nuestra propia reescritura (cuando el servidor arranca con --hostname, Next la repite
+  // como petición nueva): se sirve tal cual para no entrar en un bucle de redirecciones.
+  if (request.headers.get(INTERNAL) === "1") return NextResponse.next();
   if (pathname === "/es" || pathname.startsWith("/es/")) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(3) || "/";
@@ -16,7 +21,9 @@ export function proxy(request: NextRequest) {
   if (pathname === "/en" || pathname.startsWith("/en/")) return NextResponse.next();
   const url = request.nextUrl.clone();
   url.pathname = `/es${pathname === "/" ? "" : pathname}`;
-  return NextResponse.rewrite(url);
+  const headers = new Headers(request.headers);
+  headers.set(INTERNAL, "1");
+  return NextResponse.rewrite(url, { request: { headers } });
 }
 
 export const config = {
