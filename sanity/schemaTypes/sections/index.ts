@@ -194,6 +194,14 @@ export const sectionFeature = defineType({
         }),
       ],
     }),
+    defineField({
+      name: "bullets",
+      title: "Lista de puntos",
+      type: "array",
+      group: "content",
+      of: [defineArrayMember({ type: "localeString" })],
+      validation: (r) => r.max(8),
+    }),
     defineField({ name: "note", title: "Nota destacada", type: "localeString", group: "content" }),
     ctas(),
     defineField({
