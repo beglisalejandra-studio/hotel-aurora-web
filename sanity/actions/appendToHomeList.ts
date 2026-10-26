@@ -62,36 +62,59 @@ export function withAppendToLists(Publish: DocumentActionComponent): DocumentAct
 /**
  * Al abrir el panel: cada habitación, paquete y pregunta publicados entra en la lista de las secciones que los
  * muestran, en el mismo orden en que ya salían en la web (primero los de la lista, después los demás por «Orden»).
- * La web no cambia; solo se vuelven arrastrables en «Editar la web».
+ * También quita repeticiones. La web no cambia; solo se vuelven arrastrables en «Editar la web».
+ *
+ * Seguro ante dos aperturas a la vez (2026-10-26: dos ejecuciones simultáneas duplicaron las listas): cada página se
+ * cambia solo si sigue en la misma revisión que se leyó (`ifRevisionId`); si otra ejecución llegó antes, se descarta.
  */
 export async function syncLists(client: SanityClient) {
   for (const [type, list] of Object.entries(LIST_OF)) {
     const { ids, pages } = await client.fetch<{
       ids: string[];
-      pages: { _id: string; secs: { _key: string; have: string[] }[] }[];
+      pages: {
+        _id: string;
+        _rev: string;
+        secs: { _key: string; items: { _key: string; _ref?: string }[] }[];
+      }[];
     }>(
       `{
         "ids": *[_type == $type && !(_id in path("drafts.**"))] | order(order asc)._id,
         "pages": *[_type == "page" && count(sections[_type == $section]) > 0]{
-          _id, "secs": sections[_type == $section]{ _key, "have": coalesce(${list.field}[]._ref, []) }
+          _id, _rev, "secs": sections[_type == $section]{ _key, "items": coalesce(${list.field}, [])[]{ _key, _ref } }
         }
       }`,
       { type, section: list.section },
     );
     for (const page of pages) {
-      const patch = client.patch(page._id);
+      const patch = client.patch(page._id).ifRevisionId(page._rev);
       let changed = false;
       for (const sec of page.secs) {
-        const missing = ids.filter((id) => !sec.have.includes(id));
+        const path = `sections[_key=="${sec._key}"].${list.field}`;
+        const seen = new Set<string>();
+        for (const item of sec.items) {
+          if (item._ref && !seen.has(item._ref)) {
+            seen.add(item._ref);
+            continue;
+          }
+          // Repetida (o rota): fuera de la lista
+          changed = true;
+          patch.unset([`${path}[_key=="${item._key}"]`]);
+        }
+        const missing = ids.filter((id) => !seen.has(id));
         if (!missing.length) continue;
         changed = true;
-        const path = `sections[_key=="${sec._key}"].${list.field}`;
         patch.setIfMissing({ [path]: [] }).append(
           path,
           missing.map((id) => ({ _type: "reference", _ref: id, _weak: true, _key: newKey() })),
         );
       }
-      if (changed) await patch.commit({ autoGenerateArrayKeys: false });
+      if (!changed) continue;
+      try {
+        await patch.commit({ autoGenerateArrayKeys: false });
+      } catch (e) {
+        // 409: otra apertura del panel ya la cambió; esa versión manda
+        if (!(typeof e === "object" && e && "statusCode" in e && e.statusCode === 409)) throw e;
+      }
     }
   }
 }

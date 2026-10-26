@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useClient, type LayoutProps } from "sanity";
 import { syncLists } from "../actions/appendToHomeList";
+
+let listsSync: Promise<void> | null = null;
 import { apiVersion } from "../env";
 
 // El contenido de ejemplo (180 KB) solo se descarga cuando hace falta, no en cada apertura del panel.
@@ -117,7 +119,11 @@ export function SeedOnFirstOpen(props: LayoutProps) {
         if (exists > 0) {
           await completeWalk(client);
           await completeCookies(client);
-          await syncLists(client);
+          // Una sola vez por página aunque el panel monte este componente más de una vez
+          listsSync ??= syncLists(client).finally(() => {
+            listsSync = null;
+          });
+          await listsSync;
           return setStatus({ phase: "idle", done: 0, total: 0 });
         }
         const seed = await loadSeed();

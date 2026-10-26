@@ -32,6 +32,10 @@ type Of<T extends Section["_type"]> = Extract<Section, { _type: T }>;
 const hid = (s: Section) => `h-${s._key}`;
 const style = (v: Record<string, string>) => v as CSSProperties;
 
+/** Cada documento una sola vez (si la lista de la sección lo repite, vale la primera posición). */
+const unique = <T extends { _id: string }>(xs: (T | null | undefined)[] | undefined): T[] =>
+  (xs ?? []).filter((x, i, all): x is T => !!x && all.findIndex((y) => y?._id === x._id) === i);
+
 /** Atributos de un elemento de una lista ordenable (habitaciones, paquetes, preguntas) en el editor visual. */
 const itemAttr = (edit: EditDoc | undefined, s: Section, field: string, key?: string) =>
   edit && key ? sanityAttr(edit, `${sectionPath(s._key)}.${field}[_key=="${key}"]`) : {};
@@ -63,7 +67,7 @@ function Rooms({ s, lang, edit }: { s: Of<"sectionRooms"> } & Ctx) {
       <div className="wrap rooms-wrap" style={{ overflow: "hidden" }}>
         <div className="track" id="track" tabIndex={0} role="region" aria-label={t.rooms}>
           <RoomCards
-            rooms={s.rooms ?? []}
+            rooms={unique(s.rooms)}
             lang={lang}
             edit={edit && { doc: edit, path: `${sectionPath(s._key)}.rooms` }}
           />
@@ -306,7 +310,7 @@ function Feature({ s, lang, settings, prev }: { s: Of<"sectionFeature"> } & Ctx)
 
 function Offers({ s, lang, settings, edit }: { s: Of<"sectionOffers"> } & Ctx) {
   const t = ui(lang);
-  const offers = (s.offers ?? []).filter((o) => o?.image);
+  const offers = unique(s.offers).filter((o) => o?.image);
   if (!offers.length && !edit) return null;
   return (
     <section className="sec sec-band" id={s.anchor} aria-labelledby={hid(s)}>
@@ -425,7 +429,7 @@ export function faqJsonLd(faqs: Faq[], lang: Locale) {
 
 function FaqSection({ s, lang, settings, edit }: { s: Of<"sectionFaq"> } & Ctx) {
   const t = ui(lang);
-  const faqs = (s.faqs ?? []).filter(Boolean);
+  const faqs = unique(s.faqs);
   if (!faqs.length && !edit) return null;
   const half = Math.ceil(faqs.length / 2);
   const wa = waHref(settings, t.wa.question);

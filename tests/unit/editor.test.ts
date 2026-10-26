@@ -44,8 +44,13 @@ describe("editor visual: secciones y listas", () => {
 });
 
 describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la web", () => {
-  type Op = { id: string; ops: unknown[] };
-  const fakeClient = (ids: Record<string, string[]>, pages: Record<string, unknown[]>) => {
+  type Op = { id: string; rev: string; ops: unknown[] };
+  type Sec = { _key: string; items: { _key: string; _ref?: string }[] };
+  const fakeClient = (
+    ids: Record<string, string[]>,
+    pages: Record<string, { _id: string; _rev: string; secs: Sec[] }[]>,
+    fail?: { statusCode: number },
+  ) => {
     const commits: Op[] = [];
     const client = {
       fetch: async (_q: string, p: { type: string }) => ({
@@ -54,28 +59,43 @@ describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la w
       }),
       patch: (id: string) => {
         const ops: unknown[] = [];
+        let rev = "";
         const api = {
+          ifRevisionId: (r: string) => ((rev = r), api),
+          unset: (paths: string[]) => (ops.push({ unset: paths }), api),
           setIfMissing: (v: unknown) => (ops.push({ setIfMissing: v }), api),
           append: (path: string, items: { _ref: string; _weak: boolean }[]) => (
             ops.push({ append: path, refs: items.map((i) => [i._ref, i._weak]) }),
             api
           ),
-          commit: async () => void commits.push({ id, ops }),
+          commit: async () => {
+            if (fail) throw fail;
+            commits.push({ id, rev, ops });
+          },
         };
         return api;
       },
     };
     return { client, commits };
   };
-  it("añade al final, en su orden, solo lo que falta (referencias débiles)", async () => {
+  it("añade al final, en su orden, solo lo que falta (referencias débiles) y solo sobre la revisión leída", async () => {
     const { client, commits } = fakeClient(
       { room: ["alba", "marea", "faro"] },
-      { room: [{ _id: "page-inicio", secs: [{ _key: "s1", have: ["marea"] }] }] },
+      {
+        room: [
+          {
+            _id: "page-inicio",
+            _rev: "r1",
+            secs: [{ _key: "s1", items: [{ _key: "a", _ref: "marea" }] }],
+          },
+        ],
+      },
     );
     await syncLists(client as never);
     expect(commits).toEqual([
       {
         id: "page-inicio",
+        rev: "r1",
         ops: [
           { setIfMissing: { 'sections[_key=="s1"].rooms': [] } },
           {
@@ -89,12 +109,64 @@ describe("al abrir el panel, todo entra en su lista sin cambiar el orden de la w
       },
     ]);
   });
+  it("quita las repeticiones y deja la primera posición", async () => {
+    const { client, commits } = fakeClient(
+      { offer: ["o1", "o2"] },
+      {
+        offer: [
+          {
+            _id: "page-inicio",
+            _rev: "r2",
+            secs: [
+              {
+                _key: "s2",
+                items: [
+                  { _key: "a", _ref: "o2" },
+                  { _key: "b", _ref: "o1" },
+                  { _key: "c", _ref: "o2" },
+                  { _key: "d", _ref: "o1" },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    );
+    await syncLists(client as never);
+    expect(commits).toEqual([
+      {
+        id: "page-inicio",
+        rev: "r2",
+        ops: [
+          { unset: ['sections[_key=="s2"].offers[_key=="c"]'] },
+          { unset: ['sections[_key=="s2"].offers[_key=="d"]'] },
+        ],
+      },
+    ]);
+  });
   it("si ya está todo, no toca nada", async () => {
     const { client, commits } = fakeClient(
       { faq: ["q1"] },
-      { faq: [{ _id: "page-inicio", secs: [{ _key: "s9", have: ["q1"] }] }] },
+      {
+        faq: [
+          {
+            _id: "page-inicio",
+            _rev: "r3",
+            secs: [{ _key: "s9", items: [{ _key: "a", _ref: "q1" }] }],
+          },
+        ],
+      },
     );
     await syncLists(client as never);
+    expect(commits).toEqual([]);
+  });
+  it("si otra apertura del panel se adelantó (409), no falla ni repite", async () => {
+    const { client, commits } = fakeClient(
+      { room: ["alba"] },
+      { room: [{ _id: "page-inicio", _rev: "viejo", secs: [{ _key: "s1", items: [] }] }] },
+      { statusCode: 409 },
+    );
+    await expect(syncLists(client as never)).resolves.toBeUndefined();
     expect(commits).toEqual([]);
   });
 });

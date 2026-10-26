@@ -24,3 +24,23 @@ describe("una sección recién añadida y vacía no rompe la página", () => {
     });
   }
 });
+
+describe("una lista con repeticiones muestra cada documento una sola vez", () => {
+  it("habitaciones", () => {
+    const room = (id: string, k: string) => ({ _id: id, _key: k, slug: id, title: { es: id } });
+    const html = renderToStaticMarkup(
+      createElement(Sections, {
+        sections: [
+          {
+            _type: "sectionRooms",
+            _key: "s",
+            rooms: [room("alba", "a"), room("marea", "b"), room("alba", "c")],
+          } as unknown as Section,
+        ],
+        lang: "es",
+        settings: null,
+      }),
+    );
+    expect(html.match(/<article/g)?.length).toBe(2);
+  });
+});
