@@ -29,7 +29,8 @@ export const SITE_QUERY = `{
     fontDisplay, fontText
   },
   "nav": *[_id == "navigation"][0]{ header[]${LINK}, footer[]{ _key, title, links[]${LINK} } },
-  "hasPosts": count(*[_type == "post" && defined(slug.current) && publishedAt <= now()]) > 0
+  "hasPosts": count(*[_type == "post" && defined(slug.current) && publishedAt <= now()]) > 0,
+  "faqs": *[_type == "faq"] | order(order asc)[0...12]{ _id, question, answer }
 }`;
 
 export const HOME_QUERY = `*[_id == *[_id == "settings"][0].homePage._ref][0]{ _id, title, "slug": slug.current, seo, ${SECTIONS} }`;

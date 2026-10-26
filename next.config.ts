@@ -6,7 +6,11 @@ import { buildAdminCsp } from "./lib/security/admin-csp";
 import { buildTarget, canonicalHost, canonicalRedirect } from "./lib/hosting";
 import { withModules } from "./lib/next-modules";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+const sanityProject = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "7keq933j";
+const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const target = buildTarget();
 const canonical = canonicalHost();
 const isProductionSite = process.env.NEXT_PUBLIC_SITE_ENV === "production";
@@ -18,6 +22,16 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     // Fotos subidas desde el panel (CDN de Sanity), servidas a través de next/image.
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io", pathname: "/images/**" }],
+  },
+  // Las fotos del panel se piden al propio dominio (/cdn/…): el visitante no se conecta con la CDN de Sanity.
+  // Solo las de este proyecto y conjunto de datos, para no servir de pasarela a otros.
+  async rewrites() {
+    return [
+      {
+        source: `/cdn/images/${sanityProject}/${sanityDataset}/:file`,
+        destination: `https://cdn.sanity.io/images/${sanityProject}/${sanityDataset}/:file`,
+      },
+    ];
   },
   ...(target === "standalone" ? { output: "standalone" as const } : {}),
   // Un solo host canónico (SEO): el resto se redirige con 308. No aplica a las comprobaciones de salud.

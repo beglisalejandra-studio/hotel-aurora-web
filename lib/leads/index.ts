@@ -1,16 +1,8 @@
 import { serverEnv } from "@/lib/env.server";
 import { logSink, type LeadSink } from "@/lib/leads/sink";
+import { resendSink } from "@/lib/leads/sinks/resend";
 
-/**
- * Selecciona el destino según LEAD_SINK. El módulo `email-resend` REEMPLAZA este archivo para registrar su sink.
- * Mientras no haya un sink real configurado, se usa `log` (sin PII) y el formulario debe avisar al responsable.
- */
+/** Selecciona el destino según LEAD_SINK (módulo email-resend). `log` es el respaldo explícito, sin PII. */
 export function getLeadSink(): LeadSink {
-  const choice = serverEnv().LEAD_SINK;
-  if (choice !== "log") {
-    console.warn(
-      `[lead] LEAD_SINK=${choice} no tiene implementación en este proyecto; usando 'log'`,
-    );
-  }
-  return logSink;
+  return serverEnv().LEAD_SINK === "resend" ? resendSink : logSink;
 }

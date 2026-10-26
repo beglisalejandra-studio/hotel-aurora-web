@@ -28,7 +28,19 @@ export function parsePublicEnv(source: Record<string, string | undefined>): Publ
   return parsed.data;
 }
 
+/**
+ * En Vercel, si no se fija NEXT_PUBLIC_SITE_URL, se usa la dirección que Vercel da a cada despliegue (la de la rama en
+ * preview, la de producción en producción), para que canónicas, sitemap y comprobación de origen sean correctas.
+ */
+function vercelUrl(): string | undefined {
+  const host =
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+      ? process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+      : (process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL ?? process.env.NEXT_PUBLIC_VERCEL_URL);
+  return host ? `https://${host}` : undefined;
+}
+
 export const publicEnv: PublicEnv = parsePublicEnv({
-  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || vercelUrl(),
   NEXT_PUBLIC_SITE_ENV: process.env.NEXT_PUBLIC_SITE_ENV,
 });

@@ -90,7 +90,14 @@ export const room = defineType({
       validation: (r) => r.required().min(1).max(12),
     }),
     defineField({ name: "beds", title: "Camas", type: "localeString", group: "content" }),
-    defineField({ name: "area", title: "Metros cuadrados", type: "number", group: "content" }),
+    defineField({
+      name: "area",
+      title: "Metros cuadrados",
+      type: "number",
+      group: "content",
+      description:
+        "Se muestra en la web a partir de 60 m² (apartamentos y suites), como en el diseño aprobado. Escríbelo solo si es un dato confirmado.",
+    }),
     defineField({
       name: "orientation",
       title: "Orientación y luz",

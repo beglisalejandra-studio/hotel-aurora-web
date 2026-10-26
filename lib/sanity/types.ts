@@ -59,6 +59,7 @@ export type SiteData = {
   theme: Theme;
   nav: { header?: NavLink[]; footer?: { _key: string; title?: L10n; links?: NavLink[] }[] } | null;
   hasPosts: boolean;
+  faqs?: Faq[];
 };
 
 export type RoomCard = {

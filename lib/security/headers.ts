@@ -15,6 +15,8 @@ export interface SecurityHeaderOptions {
   extraConnectSrc?: string[];
   extraImgSrc?: string[];
   extraFrameSrc?: string[];
+  extraStyleSrc?: string[];
+  extraFontSrc?: string[];
 }
 
 export function buildStaticCsp(o: SecurityHeaderOptions): string {
@@ -22,9 +24,9 @@ export function buildStaticCsp(o: SecurityHeaderOptions): string {
   const directives = [
     "default-src 'self'",
     `script-src ${list(["'self'", "'unsafe-inline'", ...(o.isDev ? ["'unsafe-eval'"] : [])], o.extraScriptSrc)}`,
-    "style-src 'self' 'unsafe-inline'",
+    `style-src ${list(["'self'", "'unsafe-inline'"], o.extraStyleSrc)}`,
     `img-src ${list(["'self'", "blob:", "data:"], o.extraImgSrc)}`,
-    "font-src 'self'",
+    `font-src ${list(["'self'"], o.extraFontSrc)}`,
     "media-src 'self'",
     `connect-src ${list(["'self'"], o.extraConnectSrc)}`,
     `frame-src ${o.extraFrameSrc?.length ? o.extraFrameSrc.join(" ") : "'none'"}`,
