@@ -151,6 +151,8 @@ Los VALORES viven solo en el gestor del proveedor de despliegue. Lista de NOMBRE
 - **Monitor externo** con aviso de caída (a configurar y probar en staging).
 
 ## 6. Plan por fases (ritmo 3-6 semanas)
+
+> **Estado (2026-10-26):** hechas 5.1 (base), 5.2 (panel), 5.3 (páginas), 5.4 (Mews demo, comprobado), 5.5 en parte (solicitudes con validación en servidor; el envío por correo espera la cuenta de Resend), 5.8 en parte (WhatsApp; asistente con las preguntas frecuentes, IA lista a falta de clave), 5.9 en parte (JSON-LD, sitemap con hreflang, canónicas) y 5.11 (mapa propio). Pendientes: 5.6 Stripe (cuenta), 5.7 analítica (identificadores), 5.12 y 5.13 (opcionales). QA de la fase 6 hecho en local y en CI (ver PRODUCT.md, decisión 24, y ADR-0006).
 Cada fase: entregable, criterio de aceptación, verificación y decisión de avanzar. **Nada se construye sin la aprobación de la puerta anterior.**
 
 | # | Fase | Entregable | Criterio de aceptación | Puerta |
