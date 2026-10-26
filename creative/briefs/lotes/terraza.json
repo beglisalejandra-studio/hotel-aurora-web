@@ -1,0 +1,76 @@
+{
+ "lote": "terraza",
+ "prompt": "creative/briefs/prompt-maestro-terraza.md",
+ "items": [
+  {
+   "name": "p10-terraza-escritorio",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Terraza, dormitorio con las dos camas individuales y la puerta a la terraza, version escritorio (huecos 288x360 y 358x448)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p10-terraza-movil",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Terraza, dormitorio vista general, version movil (hueco 358x448); minimo 1120x1400 como en P04 movil",
+   "min_long_side": 1400
+  },
+  {
+   "name": "p11-terraza-exterior-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, la terraza privada con banco solarium (no es una cama), canizo y ducha exterior, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p11-terraza-exterior-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, la terraza privada, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p12-terraza-camas-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, las dos camas individuales, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p12-terraza-camas-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, las dos camas individuales, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p30-terraza-bano-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, bano general, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p30-terraza-bano-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, bano general, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p31-terraza-tv-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, zona de TV con panel corredizo de canizo, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p31-terraza-tv-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Terraza, zona de TV, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  }
+ ]
+}

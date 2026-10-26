@@ -1,0 +1,16 @@
+{
+  "_nota": "Política por rastreador de IA. 'allow' = pueden leer el sitio (necesario para que un agente lo navegue y cite); 'block' = robots.txt se lo prohíbe. La decide el responsable del sitio. robots.txt es una petición de cortesía, no una barrera de seguridad: lo que no debe ser público no se publica.",
+  "bots": [
+    { "name": "OAI-SearchBot", "purpose": "search", "policy": "allow" },
+    { "name": "ChatGPT-User", "purpose": "user", "policy": "allow" },
+    { "name": "Claude-SearchBot", "purpose": "search", "policy": "allow" },
+    { "name": "Claude-User", "purpose": "user", "policy": "allow" },
+    { "name": "PerplexityBot", "purpose": "search", "policy": "allow" },
+    { "name": "Perplexity-User", "purpose": "user", "policy": "allow" },
+    { "name": "GPTBot", "purpose": "training", "policy": "allow" },
+    { "name": "ClaudeBot", "purpose": "training", "policy": "allow" },
+    { "name": "Google-Extended", "purpose": "training", "policy": "allow" },
+    { "name": "Applebot-Extended", "purpose": "training", "policy": "allow" },
+    { "name": "CCBot", "purpose": "training", "policy": "allow" }
+  ]
+}

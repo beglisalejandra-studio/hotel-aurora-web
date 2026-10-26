@@ -1,0 +1,25 @@
+{
+  "name": "p13-faro-salon-movil",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "habitaciones",
+  "role": "Faro, salon vista general, version movil (hueco 358x448); minimo 1120x1400 como en P04 movil",
+  "status": "approved",
+  "requested_at": "2026-10-10T00:21:09.765Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1400,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "faro",
+  "prompt_file": "creative/briefs/prompt-maestro-faro.md",
+  "file": "creative/approved/p13-faro-salon-movil.png"
+}

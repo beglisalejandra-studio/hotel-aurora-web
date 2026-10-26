@@ -1,0 +1,19 @@
+# ADR-0007 · Panel de administración: Sanity Studio en /admin con secciones, tema y textos legales editables
+
+- **Estado:** aceptada (2026-10-25). Amplía ADR-0003 (CMS) con el pedido de la persona: «absolutamente todas las secciones editables para el cliente final», incluidos habitaciones nuevas, un blog, colores y tipografías.
+- **Proyecto de Sanity:** `7keq933j`, conjunto de datos `production` (ID público). Cuenta a nombre de la persona.
+
+## Decisión
+1. **Studio dentro de la web, en `/admin`** (`app/admin/[[...tool]]`, `sanity.config.ts` con `"use client"`). Una sola dirección para el cliente. Acceso con la cuenta de Sanity (activar verificación en dos pasos). `/admin` lleva CSP propia (`lib/security/admin-csp.ts`), `noindex`, `X-Frame-Options: SAMEORIGIN` y está fuera de `robots.txt`. El resto del sitio conserva su CSP estricta.
+2. **Páginas por bloques:** cada página es una lista de secciones (portada, habitaciones, foto y texto, reserva directa, paquetes, de un vistazo, preguntas, mapa, cierre, texto libre, galería, blog) que se añaden, ocultan y reordenan. El diseño lo pone la web: el panel no permite romper espaciados, tipografía ni la versión móvil.
+3. **Habitaciones, paquetes, preguntas, blog y páginas legales** son documentos propios; una habitación nueva genera su página, su tarjeta y su botón «Reservar».
+4. **Colores y tipografías editables con límites:** paletas Día y Madrugada con selector de color y **aviso de contraste WCAG** (`sanity/lib/contrast.ts`, con pruebas). Por decisión de la persona (2026-10-25) el aviso **no bloquea**: al publicar, el panel lista los textos que no se leerían bien y pide confirmar («Publicar igualmente» / «Revisar los colores»); tipografías de una lista cerrada **alojadas en la web** (ninguna conexión a terceros).
+5. **Fotos siempre con texto alternativo, sugerido automáticamente** (pedido de la persona, 2026-10-25): al subir la foto de escritorio, el panel pide a `/api/alt-text` una descripción en español e inglés y la rellena para que el editor la revise; hay un botón para pedir otra. El endpoint solo atiende a editores del proyecto (token de sesión de Sanity comprobado contra la API de Sanity), mismo origen, límite de 60 por hora y editor, y construye él mismo la dirección de la foto en la CDN de su proyecto (sin URLs arbitrarias). Usa Claude Opus 5.5 con esfuerzo bajo y salida estructurada; sin `ANTHROPIC_API_KEY` lo dice y deja escribirla a mano. Versión móvil opcional; una prueba impide añadir fotos sueltas sin descripción.
+6. **Calendario, precios, reservas, cobros y correos a huéspedes: en Mews** (ADR-0002), enlazado desde el panel. La web solo guarda el ID del tipo de habitación de Mews y un precio «desde» orientativo.
+7. Interfaz del panel en español (`@sanity/locale-es-es`).
+8. **Contenido inicial automático** (pedido de la persona, 2026-10-25: «a partir de ahora eso no debería ser manual»): `scripts/build-seed.mjs` convierte la maqueta aprobada en `sanity/seed/seed.json` (24 documentos) y `scripts/build-seed-images.py` deja las 29 fotos aprobadas en `public/seed/` (WebP, 7,6 MB). La primera vez que un administrador abre el panel vacío, `SeedOnFirstOpen` sube las fotos y crea los documentos con su propia sesión (sin tokens) y con `createIfNotExists` (nunca pisa nada). Una prueba comprueba que cada campo existe en el esquema.
+
+## Pendiente
+- CORS de Sanity: añadir la dirección de la vista previa de Vercel y la definitiva (con credenciales) en sanity.io/manage → API → CORS origins. Sin eso el panel muestra «Connect this Studio to your project».
+- Vista previa en vivo (Presentation tool) y revalidación por webhook en la fase 5.3, con la web ya leyendo del panel.
+- Plan: gratuito para el portfolio (roles Administrador y Visor). Un hotel real con varias personas editando necesita el plan de pago para el rol Editor (ADR-0003).

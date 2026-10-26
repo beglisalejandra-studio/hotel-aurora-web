@@ -1,0 +1,25 @@
+{
+  "name": "p10-terraza-escritorio",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "habitaciones",
+  "role": "Terraza, dormitorio con las dos camas individuales y la puerta a la terraza, version escritorio (huecos 288x360 y 358x448)",
+  "status": "approved",
+  "requested_at": "2026-10-10T00:21:09.698Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "terraza",
+  "prompt_file": "creative/briefs/prompt-maestro-terraza.md",
+  "file": "creative/approved/p10-terraza-escritorio.png"
+}

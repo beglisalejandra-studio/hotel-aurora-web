@@ -1,0 +1,5721 @@
+{
+  "version": 1,
+  "generatedFrom": "creative/mockup/index.html",
+  "images": {
+    "p04-alba": {
+      "desktop": "/seed/p04-alba-escritorio.webp",
+      "mobile": "/seed/p04-alba-movil.webp",
+      "alt": {
+        "es": "Habitación Alba al amanecer: cama de lino con manta terracota, mesita con lámpara, silla de enea y ventana abierta con vistas al mar, bajo vigas de madera oscura.",
+        "en": "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams."
+      }
+    },
+    "p05-alba-tv": {
+      "desktop": "/seed/p05-alba-tv-escritorio.webp",
+      "mobile": "/seed/p05-alba-tv-movil.webp",
+      "alt": {
+        "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
+        "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
+      }
+    },
+    "p06-alba-bano": {
+      "desktop": "/seed/p06-alba-bano-escritorio.webp",
+      "mobile": "/seed/p06-alba-bano-movil.webp",
+      "alt": {
+        "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
+        "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
+      }
+    },
+    "p26-alba-bano-detalle": {
+      "desktop": "/seed/p26-alba-bano-detalle-escritorio.webp",
+      "mobile": "/seed/p26-alba-bano-detalle-movil.webp",
+      "alt": {
+        "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
+        "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
+      }
+    },
+    "p27-alba-tv-vista-cama": {
+      "desktop": "/seed/p27-alba-tv-vista-cama-escritorio.webp",
+      "mobile": "/seed/p27-alba-tv-vista-cama-movil.webp",
+      "alt": {
+        "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
+        "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
+      }
+    },
+    "p07-marea": {
+      "desktop": "/seed/p07-marea-escritorio.webp",
+      "mobile": "/seed/p07-marea-movil.webp",
+      "alt": {
+        "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
+        "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
+      }
+    },
+    "p08-marea-mirador": {
+      "desktop": "/seed/p08-marea-mirador-escritorio.webp",
+      "mobile": "/seed/p08-marea-mirador-movil.webp",
+      "alt": {
+        "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
+        "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
+      }
+    },
+    "p09-marea-camas": {
+      "desktop": "/seed/p09-marea-camas-escritorio.webp",
+      "mobile": "/seed/p09-marea-camas-movil.webp",
+      "alt": {
+        "es": "Una cama doble y una individual de forja con la ventana, el banco de obra y el cojin indigo de Marea.",
+        "en": "One double and one single iron bed with the Marea window, masonry bench and indigo cushion."
+      }
+    },
+    "p28-marea-bano": {
+      "desktop": "/seed/p28-marea-bano-escritorio.webp",
+      "mobile": "/seed/p28-marea-bano-movil.webp",
+      "alt": {
+        "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
+        "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
+      }
+    },
+    "p29-marea-tv": {
+      "desktop": "/seed/p29-marea-tv-escritorio.webp",
+      "mobile": "/seed/p29-marea-tv-movil.webp",
+      "alt": {
+        "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
+        "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
+      }
+    },
+    "p10-terraza": {
+      "desktop": "/seed/p10-terraza-escritorio.webp",
+      "mobile": "/seed/p10-terraza-movil.webp",
+      "alt": {
+        "es": "Dormitorio de Terraza con dos camas individuales de obra y la puerta abierta a la terraza cubierta de cana.",
+        "en": "Terraza bedroom with two masonry single beds and the open door to the cane-covered terrace."
+      }
+    },
+    "p11-terraza-exterior": {
+      "desktop": "/seed/p11-terraza-exterior-escritorio.webp",
+      "mobile": "/seed/p11-terraza-exterior-movil.webp",
+      "alt": {
+        "es": "Terraza privada cubierta de cana, con banco para tomar el sol, mesa baja y ducha exterior sobre el patio.",
+        "en": "Private cane-covered terrace with a sunbathing bench, low table and outdoor shower above the courtyard."
+      }
+    },
+    "p12-terraza-camas": {
+      "desktop": "/seed/p12-terraza-camas-escritorio.webp",
+      "mobile": "/seed/p12-terraza-camas-movil.webp",
+      "alt": {
+        "es": "Dos camas individuales identicas de obra con mesita de roble y un olivo en un jarron.",
+        "en": "Two identical masonry single beds with an oak bedside block and an olive twig in a jar."
+      }
+    },
+    "p30-terraza-bano": {
+      "desktop": "/seed/p30-terraza-bano-escritorio.webp",
+      "mobile": "/seed/p30-terraza-bano-movil.webp",
+      "alt": {
+        "es": "Bano con encimera de obra, pila excavada, cesta de junco, ducha de obra y ventana al patio.",
+        "en": "Bathroom with a plastered counter, hollowed basin, rush basket, walk-in shower and a window onto the courtyard."
+      }
+    },
+    "p31-terraza-tv": {
+      "desktop": "/seed/p31-terraza-tv-escritorio.webp",
+      "mobile": "/seed/p31-terraza-tv-movil.webp",
+      "alt": {
+        "es": "Hueco en el muro con una tele pequena y un panel de cana, junto a la puerta de la terraza.",
+        "en": "Wall opening with a small TV and a cane panel, beside the terrace door."
+      }
+    },
+    "p13-faro-salon": {
+      "desktop": "/seed/p13-faro-salon-escritorio.webp",
+      "mobile": "/seed/p13-faro-salon-movil.webp",
+      "alt": {
+        "es": "Salon del mini apartamento Faro con banco de obra, mesa baja y sillones de anea.",
+        "en": "Faro living room with a masonry bench, low table and rush armchairs."
+      }
+    },
+    "p34-faro-tv": {
+      "desktop": "/seed/p34-faro-tv-escritorio.webp",
+      "mobile": "/seed/p34-faro-tv-movil.webp",
+      "alt": {
+        "es": "Hueco en el muro con la tele apagada y baldas de roble.",
+        "en": "Wall recess with a switched-off TV and oak shelves."
+      }
+    },
+    "p14-faro-dormitorio-doble": {
+      "desktop": "/seed/p14-faro-dormitorio-doble-escritorio.webp",
+      "mobile": "/seed/p14-faro-dormitorio-doble-movil.webp",
+      "alt": {
+        "es": "Dormitorio principal con una cama doble baja de roble.",
+        "en": "Main bedroom with one low oak double bed."
+      }
+    },
+    "p15-faro-dormitorio-individuales": {
+      "desktop": "/seed/p15-faro-dormitorio-individuales-escritorio.webp",
+      "mobile": "/seed/p15-faro-dormitorio-individuales-movil.webp",
+      "alt": {
+        "es": "Segundo dormitorio con dos camas individuales bajas.",
+        "en": "Second bedroom with two low single beds."
+      }
+    },
+    "p32-faro-bano": {
+      "desktop": "/seed/p32-faro-bano-escritorio.webp",
+      "mobile": "/seed/p32-faro-bano-movil.webp",
+      "alt": {
+        "es": "Bano con pila de arenisca sobre una balda de roble y ventana alta.",
+        "en": "Bathroom with a sandstone basin on an oak slab and a tall window."
+      }
+    },
+    "p35-faro-cocina-recibidor": {
+      "desktop": "/seed/p35-faro-cocina-recibidor-escritorio.webp",
+      "mobile": "/seed/p35-faro-cocina-recibidor-movil.webp",
+      "alt": {
+        "es": "Cocina y recibidor del mini apartamento Faro.",
+        "en": "Kitchen and entrance hall of the Faro mini apartment."
+      }
+    },
+    "p21-escapada": {
+      "desktop": "/seed/p21-escapada-escritorio.webp",
+      "mobile": "/seed/p21-escapada-movil.webp",
+      "alt": {
+        "es": "Desayuno para dos sobre la cama de Alba: bandeja de madera con dos cafés, dos zumos de naranja, tostadas con tomate y un jarrón con una rama de olivo.",
+        "en": "Breakfast for two on the Alba bed: a wooden tray with two coffees, two orange juices, tomato toast and a vase with an olive branch."
+      }
+    },
+    "p16-restaurante": {
+      "desktop": "/seed/p16-restaurante-escritorio.webp",
+      "mobile": "/seed/p16-restaurante-movil.webp",
+      "alt": {
+        "es": "Comedor del restaurante: mesas de roble oscuro con sillas de enea, una mesa puesta con mantel de lino, pan, tomates aliñados y una jarra de barro, y al fondo dos ventanas con olivos y el mar.",
+        "en": "Restaurant dining room: dark oak tables with rush chairs, one table set with a linen cloth, bread, dressed tomatoes and a clay jug, and two windows with olive trees and the sea beyond."
+      }
+    },
+    "p19-spa-tratamientos": {
+      "desktop": "/seed/p19-spa-tratamientos-escritorio.webp",
+      "mobile": null,
+      "alt": {
+        "es": "Sala de tratamientos del spa: una camilla de roble oscuro con colchoneta de lino, un taburete con un cuenco de latón, una pila de piedra con agua, una hornacina con una rama de olivo y una ventana con contraventanas abiertas.",
+        "en": "Spa treatment room: a dark oak treatment table with a linen pad, a stool with a brass bowl, a stone basin with water, a niche with an olive branch and a window with open shutters."
+      }
+    },
+    "p01-hero": {
+      "desktop": "/seed/p01-hero-escritorio.webp",
+      "mobile": "/seed/p01-hero-movil.webp",
+      "alt": {
+        "es": "Fachada de una casa encalada de dos plantas, con tejado de teja, contraventanas oscuras, dos olivos y el patio de grava al amanecer, con el mar al fondo.",
+        "en": "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind."
+      }
+    },
+    "p36-recepcion-fin": {
+      "desktop": "/seed/p36-recepcion-fin-escritorio.webp",
+      "mobile": "/seed/p36-recepcion-fin-movil.webp",
+      "alt": {
+        "es": "Recepción del hotel: mostrador de madera con una campanita y un jarrón con ramita de olivo, un banco de madera y, al fondo, la abertura que da al patio soleado.",
+        "en": "Hotel reception: a wooden counter with a small bell and a jar with an olive twig, a wooden bench and, at the far end, the opening to the sunlit courtyard."
+      }
+    },
+    "p03-patio": {
+      "desktop": "/seed/p03-patio-escritorio.webp",
+      "mobile": "/seed/p03-patio-movil.webp",
+      "alt": {
+        "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
+        "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
+      }
+    },
+    "p25-perro-terraza": {
+      "desktop": "/seed/p25-perro-terraza-escritorio.webp",
+      "mobile": "/seed/p25-perro-terraza-movil.webp",
+      "alt": {
+        "es": "Perro de pelo color arena tumbado en su cama de madera y lino en la terraza de la habitación Terraza, junto a dos cuencos de cerámica, con luz dorada filtrada.",
+        "en": "Sand-coloured dog lying on its wooden and linen bed on the terrace of the Terraza room, next to two ceramic bowls, in filtered golden light."
+      }
+    },
+    "p24-familia-playa": {
+      "desktop": "/seed/p24-familia-playa-escritorio.webp",
+      "mobile": "/seed/p24-familia-playa-movil.webp",
+      "alt": {
+        "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
+        "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
+      }
+    }
+  },
+  "documents": [
+    {
+      "_id": "settings",
+      "_type": "settings",
+      "name": "Hotel Aurora",
+      "homePage": {
+        "_type": "reference",
+        "_ref": "page-inicio"
+      },
+      "address": {
+        "_type": "localeString",
+        "es": "El Palmar, Vejer de la Frontera (Cádiz)",
+        "en": "El Palmar, Vejer de la Frontera (Cádiz, Spain)"
+      },
+      "geo": {
+        "lat": 36.22679,
+        "lng": -6.06377
+      },
+      "checkIn": "15:00",
+      "checkOut": "12:00",
+      "maxDogs": 2,
+      "phone": "+34 000 000 000",
+      "email": "reservas@hotelaurora.example",
+      "privacyEmail": "privacidad@hotelaurora.example",
+      "whatsapp": "+34000000000",
+      "mews": {
+        "environment": "demo"
+      },
+      "seo": {
+        "_type": "seo",
+        "title": {
+          "_type": "localeString",
+          "es": "Hotel boutique petfriendly en El Palmar, Vejer | Hotel Aurora",
+          "en": "Dog-friendly boutique hotel in El Palmar, Vejer | Hotel Aurora"
+        },
+        "description": {
+          "_type": "localeText",
+          "es": "Hotel boutique petfriendly con spa y restaurante en El Palmar, Vejer de la Frontera (Cádiz). 28 habitaciones, hasta dos perros por habitación. Reserva directa.",
+          "en": "Dog-friendly boutique hotel with spa and restaurant in El Palmar, Vejer de la Frontera (Cádiz, Spain). 28 rooms, up to two dogs per room. Book direct."
+        },
+        "noindex": false
+      },
+      "footerNote": {
+        "_type": "localeText",
+        "es": "Proyecto de portfolio. El hotel, sus datos y sus precios son ficticios.",
+        "en": "Portfolio project. The hotel, its details and its prices are fictional."
+      }
+    },
+    {
+      "_id": "cookieNotice",
+      "_type": "cookieNotice",
+      "title": {
+        "_type": "localeString",
+        "es": "Tu decisión sobre las cookies",
+        "en": "Your choice about cookies"
+      },
+      "text": {
+        "_type": "localeText",
+        "es": "Usamos cookies propias necesarias para que la web funcione y, si nos das permiso, cookies propias y de terceros de analítica y de marketing. Puedes cambiar tu elección cuando quieras en «Configurar cookies», al pie de la página.",
+        "en": "We use our own necessary cookies so the website works and, with your permission, our own and third-party analytics and marketing cookies. You can change your choice at any time from “Cookie settings” at the bottom of the page."
+      },
+      "analytics": {
+        "_type": "localeString",
+        "es": "Cuenta las visitas y las páginas más vistas, sin identificarte.",
+        "en": "Counts visits and the most viewed pages, without identifying you."
+      },
+      "marketing": {
+        "_type": "localeString",
+        "es": "Mide si nuestras campañas funcionan.",
+        "en": "Measures whether our campaigns work."
+      }
+    },
+    {
+      "_id": "theme",
+      "_type": "theme",
+      "light": {
+        "background": {
+          "_type": "color",
+          "hex": "#EDF0F1"
+        },
+        "surface": {
+          "_type": "color",
+          "hex": "#F7F8F8"
+        },
+        "band": {
+          "_type": "color",
+          "hex": "#E1E7E9"
+        },
+        "ink": {
+          "_type": "color",
+          "hex": "#16202A"
+        },
+        "inkSoft": {
+          "_type": "color",
+          "hex": "#46535F"
+        },
+        "accent": {
+          "_type": "color",
+          "hex": "#B9431A"
+        },
+        "onAccent": {
+          "_type": "color",
+          "hex": "#FFFFFF"
+        }
+      },
+      "dark": {
+        "background": {
+          "_type": "color",
+          "hex": "#11181F"
+        },
+        "surface": {
+          "_type": "color",
+          "hex": "#1A242D"
+        },
+        "band": {
+          "_type": "color",
+          "hex": "#162029"
+        },
+        "ink": {
+          "_type": "color",
+          "hex": "#E8ECEE"
+        },
+        "inkSoft": {
+          "_type": "color",
+          "hex": "#A9B4BD"
+        },
+        "accent": {
+          "_type": "color",
+          "hex": "#F0794A"
+        },
+        "onAccent": {
+          "_type": "color",
+          "hex": "#1A0F09"
+        }
+      },
+      "fontDisplay": "outfit",
+      "fontText": "work-sans"
+    },
+    {
+      "_id": "room-alba",
+      "_type": "room",
+      "title": {
+        "_type": "localeString",
+        "es": "Alba",
+        "en": "Alba"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "alba"
+      },
+      "order": 10,
+      "summary": {
+        "_type": "localeText",
+        "es": "Dormitorio para dos con cama doble, vigas de madera y zona de TV en un armario de pared. Orientada al este, con baño de piedra y ducha de obra.",
+        "en": "A bedroom for two with a double bed, timber beams and a TV corner in a wall cupboard. East-facing, with a stone bathroom and a walk-in shower."
+      },
+      "guests": 2,
+      "beds": {
+        "_type": "localeString",
+        "es": "1 cama doble",
+        "en": "1 double bed"
+      },
+      "area": 32,
+      "orientation": {
+        "_type": "localeString",
+        "es": "Orientada al este.",
+        "en": "Facing east."
+      },
+      "features": [
+        {
+          "_key": "k0000",
+          "_type": "localeString",
+          "es": "Baño propio",
+          "en": "Private bathroom"
+        },
+        {
+          "_key": "k0001",
+          "_type": "localeString",
+          "es": "Zona de TV",
+          "en": "TV corner"
+        },
+        {
+          "_key": "k0002",
+          "_type": "localeString",
+          "es": "Cuna de bebé o cama para mascota, sin coste (bajo petición)",
+          "en": "Baby crib or pet bed at no cost (on request)"
+        },
+        {
+          "_key": "k0003",
+          "_type": "localeString",
+          "es": "Cama y cuencos de cortesía para tu perro (hasta dos por habitación)",
+          "en": "A bed and bowls for your dog (up to two per room)"
+        }
+      ],
+      "petFriendly": true,
+      "mainImage": {
+        "_seedImage": "p04-alba",
+        "desktop": "/seed/p04-alba-escritorio.webp",
+        "mobile": "/seed/p04-alba-movil.webp",
+        "alt": {
+          "es": "Habitación Alba al amanecer: cama de lino con manta terracota, mesita con lámpara, silla de enea y ventana abierta con vistas al mar, bajo vigas de madera oscura.",
+          "en": "Alba room at dawn: a linen bed with a terracotta blanket, a bedside table with a lamp, a rush chair and an open window with a sea view, under dark timber beams."
+        }
+      },
+      "gallery": [
+        {
+          "_key": "k0004",
+          "_type": "roomPhoto",
+          "kind": "tv",
+          "photo": {
+            "_seedImage": "p05-alba-tv",
+            "desktop": "/seed/p05-alba-tv-escritorio.webp",
+            "mobile": "/seed/p05-alba-tv-movil.webp",
+            "alt": {
+              "es": "Hornacina con la tele apagada y las contraventanas de tablones abiertas, un arcón de madera con una manta terracota y un sillón de anea junto a una ventana con vistas al mar.",
+              "en": "Alcove with a wall-mounted switched-off TV, open plank shutters, wooden chest with a terracotta throw, wicker armchair, window with sea view."
+            }
+          }
+        },
+        {
+          "_key": "k0005",
+          "_type": "roomPhoto",
+          "kind": "bath",
+          "photo": {
+            "_seedImage": "p06-alba-bano",
+            "desktop": "/seed/p06-alba-bano-escritorio.webp",
+            "mobile": "/seed/p06-alba-bano-movil.webp",
+            "alt": {
+              "es": "Baño con pila de piedra picada, grifería de cobre, baldas de madera, espejo, ducha a ras de suelo y una ventana pequeña con contraventana.",
+              "en": "Bathroom with a rough stone trough sink, copper taps, wooden shelves, mirror, walk-in shower with copper rain head and a small shuttered window."
+            }
+          }
+        },
+        {
+          "_key": "k0006",
+          "_type": "roomPhoto",
+          "kind": "bath",
+          "photo": {
+            "_seedImage": "p26-alba-bano-detalle",
+            "desktop": "/seed/p26-alba-bano-detalle-escritorio.webp",
+            "mobile": "/seed/p26-alba-bano-detalle-movil.webp",
+            "alt": {
+              "es": "Detalle de la pila de piedra con grifo de cobre, un olivo en un jarrón de barro, jabón y una toalla doblada sobre una balda de madera.",
+              "en": "Close detail of the stone sink, copper tap, olive branch in a clay vase, soap and folded towel on a timber shelf with olive shadows on the lime wall."
+            }
+          }
+        },
+        {
+          "_key": "k0007",
+          "_type": "roomPhoto",
+          "kind": "tv",
+          "photo": {
+            "_seedImage": "p27-alba-tv-vista-cama",
+            "desktop": "/seed/p27-alba-tv-vista-cama-escritorio.webp",
+            "mobile": "/seed/p27-alba-tv-vista-cama-movil.webp",
+            "alt": {
+              "es": "Vista desde la cama hacia la hornacina de la tele, con la ropa de cama blanca y una manta terracota en primer plano y el sol sobre el suelo.",
+              "en": "View from the foot of the bed toward the TV alcove with open plank shutters, white linen and a terracotta throw in the foreground, sun on the floor and wall."
+            }
+          }
+        }
+      ],
+      "priceFrom": 168
+    },
+    {
+      "_id": "room-marea",
+      "_type": "room",
+      "title": {
+        "_type": "localeString",
+        "es": "Marea",
+        "en": "Marea"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "marea"
+      },
+      "order": 20,
+      "summary": {
+        "_type": "localeText",
+        "es": "Habitación para tres con una cama doble y una individual, y un banco de obra en una ventana de muro grueso.",
+        "en": "A room for three with a double bed and a single bed, and a masonry window seat in a thick wall."
+      },
+      "guests": 3,
+      "beds": {
+        "_type": "localeString",
+        "es": "1 cama doble y 1 individual",
+        "en": "1 double bed and 1 single bed"
+      },
+      "area": 36,
+      "orientation": {
+        "_type": "localeString",
+        "es": "Orientada al suroeste.",
+        "en": "Facing south-west."
+      },
+      "features": [
+        {
+          "_key": "k0008",
+          "_type": "localeString",
+          "es": "Baño propio",
+          "en": "Private bathroom"
+        },
+        {
+          "_key": "k0009",
+          "_type": "localeString",
+          "es": "Zona de TV",
+          "en": "TV corner"
+        },
+        {
+          "_key": "k000a",
+          "_type": "localeString",
+          "es": "Cuna de bebé o cama para mascota, sin coste (bajo petición)",
+          "en": "Baby crib or pet bed at no cost (on request)"
+        },
+        {
+          "_key": "k000b",
+          "_type": "localeString",
+          "es": "Cama y cuencos de cortesía para tu perro (hasta dos por habitación)",
+          "en": "A bed and bowls for your dog (up to two per room)"
+        }
+      ],
+      "petFriendly": true,
+      "mainImage": {
+        "_seedImage": "p07-marea",
+        "desktop": "/seed/p07-marea-escritorio.webp",
+        "mobile": "/seed/p07-marea-movil.webp",
+        "alt": {
+          "es": "Dormitorio de Marea con una cama doble de forja con manta indigo y una cama individual, y un banco de obra en la ventana con vistas al mar.",
+          "en": "Marea bedroom with a double iron bed and an indigo throw, a single iron bed, and a masonry bench in the window with sea view."
+        }
+      },
+      "gallery": [
+        {
+          "_key": "k000c",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p08-marea-mirador",
+            "desktop": "/seed/p08-marea-mirador-escritorio.webp",
+            "mobile": "/seed/p08-marea-mirador-movil.webp",
+            "alt": {
+              "es": "Banco de obra con cojin indigo en el hueco de una ventana de muro grueso, con el mar al fondo y las contraventanas abiertas.",
+              "en": "Masonry bench with an indigo cushion in the recess of a thick-wall window, the sea beyond and the shutters open."
+            }
+          }
+        },
+        {
+          "_key": "k000d",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p09-marea-camas",
+            "desktop": "/seed/p09-marea-camas-escritorio.webp",
+            "mobile": "/seed/p09-marea-camas-movil.webp",
+            "alt": {
+              "es": "Una cama doble y una individual de forja con la ventana, el banco de obra y el cojin indigo de Marea.",
+              "en": "One double and one single iron bed with the Marea window, masonry bench and indigo cushion."
+            }
+          }
+        },
+        {
+          "_key": "k000e",
+          "_type": "roomPhoto",
+          "kind": "bath",
+          "photo": {
+            "_seedImage": "p28-marea-bano",
+            "desktop": "/seed/p28-marea-bano-escritorio.webp",
+            "mobile": "/seed/p28-marea-bano-movil.webp",
+            "alt": {
+              "es": "Bano con lavabo redondo de piedra sobre una balda de roble, ventana con vistas al mar y ducha de obra.",
+              "en": "Bathroom with a round stone basin on an oak shelf, a window with sea view and a walk-in shower."
+            }
+          }
+        },
+        {
+          "_key": "k000f",
+          "_type": "roomPhoto",
+          "kind": "tv",
+          "photo": {
+            "_seedImage": "p29-marea-tv",
+            "desktop": "/seed/p29-marea-tv-escritorio.webp",
+            "mobile": "/seed/p29-marea-tv-movil.webp",
+            "alt": {
+              "es": "Hueco en el muro con la tele apagada sobre un banco de obra con dos cojines indigo.",
+              "en": "Wall recess with a switched-off TV above a masonry bench with two indigo cushions."
+            }
+          }
+        }
+      ],
+      "priceFrom": 189
+    },
+    {
+      "_id": "room-terraza",
+      "_type": "room",
+      "title": {
+        "_type": "localeString",
+        "es": "Terraza",
+        "en": "Terraza"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "terraza"
+      },
+      "order": 30,
+      "summary": {
+        "_type": "localeText",
+        "es": "Habitación para dos con dos camas individuales y terraza privada cubierta de caña, con banco para tumbarse y ducha exterior.",
+        "en": "A room for two with two single beds and a private cane-covered terrace, with a lounging bench and an outdoor shower."
+      },
+      "guests": 2,
+      "beds": {
+        "_type": "localeString",
+        "es": "2 camas individuales",
+        "en": "2 single beds"
+      },
+      "area": 40,
+      "orientation": {
+        "_type": "localeString",
+        "es": "Orientada al este, con terraza privada.",
+        "en": "Facing east, with a private terrace."
+      },
+      "features": [
+        {
+          "_key": "k000g",
+          "_type": "localeString",
+          "es": "Baño propio",
+          "en": "Private bathroom"
+        },
+        {
+          "_key": "k000h",
+          "_type": "localeString",
+          "es": "Zona de TV",
+          "en": "TV corner"
+        },
+        {
+          "_key": "k000i",
+          "_type": "localeString",
+          "es": "Cuna de bebé o cama para mascota, sin coste (bajo petición)",
+          "en": "Baby crib or pet bed at no cost (on request)"
+        },
+        {
+          "_key": "k000j",
+          "_type": "localeString",
+          "es": "Cama y cuencos de cortesía para tu perro (hasta dos por habitación)",
+          "en": "A bed and bowls for your dog (up to two per room)"
+        }
+      ],
+      "petFriendly": true,
+      "mainImage": {
+        "_seedImage": "p10-terraza",
+        "desktop": "/seed/p10-terraza-escritorio.webp",
+        "mobile": "/seed/p10-terraza-movil.webp",
+        "alt": {
+          "es": "Dormitorio de Terraza con dos camas individuales de obra y la puerta abierta a la terraza cubierta de cana.",
+          "en": "Terraza bedroom with two masonry single beds and the open door to the cane-covered terrace."
+        }
+      },
+      "gallery": [
+        {
+          "_key": "k000k",
+          "_type": "roomPhoto",
+          "kind": "terrace",
+          "photo": {
+            "_seedImage": "p11-terraza-exterior",
+            "desktop": "/seed/p11-terraza-exterior-escritorio.webp",
+            "mobile": "/seed/p11-terraza-exterior-movil.webp",
+            "alt": {
+              "es": "Terraza privada cubierta de cana, con banco para tomar el sol, mesa baja y ducha exterior sobre el patio.",
+              "en": "Private cane-covered terrace with a sunbathing bench, low table and outdoor shower above the courtyard."
+            }
+          }
+        },
+        {
+          "_key": "k000l",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p12-terraza-camas",
+            "desktop": "/seed/p12-terraza-camas-escritorio.webp",
+            "mobile": "/seed/p12-terraza-camas-movil.webp",
+            "alt": {
+              "es": "Dos camas individuales identicas de obra con mesita de roble y un olivo en un jarron.",
+              "en": "Two identical masonry single beds with an oak bedside block and an olive twig in a jar."
+            }
+          }
+        },
+        {
+          "_key": "k000m",
+          "_type": "roomPhoto",
+          "kind": "bath",
+          "photo": {
+            "_seedImage": "p30-terraza-bano",
+            "desktop": "/seed/p30-terraza-bano-escritorio.webp",
+            "mobile": "/seed/p30-terraza-bano-movil.webp",
+            "alt": {
+              "es": "Bano con encimera de obra, pila excavada, cesta de junco, ducha de obra y ventana al patio.",
+              "en": "Bathroom with a plastered counter, hollowed basin, rush basket, walk-in shower and a window onto the courtyard."
+            }
+          }
+        },
+        {
+          "_key": "k000n",
+          "_type": "roomPhoto",
+          "kind": "tv",
+          "photo": {
+            "_seedImage": "p31-terraza-tv",
+            "desktop": "/seed/p31-terraza-tv-escritorio.webp",
+            "mobile": "/seed/p31-terraza-tv-movil.webp",
+            "alt": {
+              "es": "Hueco en el muro con una tele pequena y un panel de cana, junto a la puerta de la terraza.",
+              "en": "Wall opening with a small TV and a cane panel, beside the terrace door."
+            }
+          }
+        }
+      ],
+      "priceFrom": 168
+    },
+    {
+      "_id": "room-faro",
+      "_type": "room",
+      "title": {
+        "_type": "localeString",
+        "es": "Faro",
+        "en": "Faro"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "faro"
+      },
+      "order": 40,
+      "summary": {
+        "_type": "localeText",
+        "es": "Mini apartamento de 74 m² para cuatro personas, con salón, cocina y dos dormitorios, sin azotea.",
+        "en": "A 74 m² mini apartment for four guests, with a living room, a kitchen and two bedrooms, without a rooftop."
+      },
+      "guests": 4,
+      "beds": {
+        "_type": "localeString",
+        "es": "Salón, cocina y 2 dormitorios: 1 cama doble y 2 individuales",
+        "en": "Living room, kitchen and 2 bedrooms: 1 double bed and 2 single beds"
+      },
+      "area": 74,
+      "orientation": {
+        "_type": "localeString",
+        "es": "Mini apartamento orientado al sur y al oeste.",
+        "en": "Mini apartment facing south and west."
+      },
+      "features": [
+        {
+          "_key": "k000o",
+          "_type": "localeString",
+          "es": "Baño propio",
+          "en": "Private bathroom"
+        },
+        {
+          "_key": "k000p",
+          "_type": "localeString",
+          "es": "Zona de TV",
+          "en": "TV corner"
+        },
+        {
+          "_key": "k000q",
+          "_type": "localeString",
+          "es": "Cuna de bebé o cama para mascota, sin coste (bajo petición)",
+          "en": "Baby crib or pet bed at no cost (on request)"
+        },
+        {
+          "_key": "k000r",
+          "_type": "localeString",
+          "es": "Cama y cuencos de cortesía para tu perro (hasta dos por habitación)",
+          "en": "A bed and bowls for your dog (up to two per room)"
+        }
+      ],
+      "petFriendly": true,
+      "mainImage": {
+        "_seedImage": "p13-faro-salon",
+        "desktop": "/seed/p13-faro-salon-escritorio.webp",
+        "mobile": "/seed/p13-faro-salon-movil.webp",
+        "alt": {
+          "es": "Salon del mini apartamento Faro con banco de obra, mesa baja y sillones de anea.",
+          "en": "Faro living room with a masonry bench, low table and rush armchairs."
+        }
+      },
+      "gallery": [
+        {
+          "_key": "k000s",
+          "_type": "roomPhoto",
+          "kind": "tv",
+          "photo": {
+            "_seedImage": "p34-faro-tv",
+            "desktop": "/seed/p34-faro-tv-escritorio.webp",
+            "mobile": "/seed/p34-faro-tv-movil.webp",
+            "alt": {
+              "es": "Hueco en el muro con la tele apagada y baldas de roble.",
+              "en": "Wall recess with a switched-off TV and oak shelves."
+            }
+          }
+        },
+        {
+          "_key": "k000t",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p14-faro-dormitorio-doble",
+            "desktop": "/seed/p14-faro-dormitorio-doble-escritorio.webp",
+            "mobile": "/seed/p14-faro-dormitorio-doble-movil.webp",
+            "alt": {
+              "es": "Dormitorio principal con una cama doble baja de roble.",
+              "en": "Main bedroom with one low oak double bed."
+            }
+          }
+        },
+        {
+          "_key": "k000u",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p15-faro-dormitorio-individuales",
+            "desktop": "/seed/p15-faro-dormitorio-individuales-escritorio.webp",
+            "mobile": "/seed/p15-faro-dormitorio-individuales-movil.webp",
+            "alt": {
+              "es": "Segundo dormitorio con dos camas individuales bajas.",
+              "en": "Second bedroom with two low single beds."
+            }
+          }
+        },
+        {
+          "_key": "k000v",
+          "_type": "roomPhoto",
+          "kind": "bath",
+          "photo": {
+            "_seedImage": "p32-faro-bano",
+            "desktop": "/seed/p32-faro-bano-escritorio.webp",
+            "mobile": "/seed/p32-faro-bano-movil.webp",
+            "alt": {
+              "es": "Bano con pila de arenisca sobre una balda de roble y ventana alta.",
+              "en": "Bathroom with a sandstone basin on an oak slab and a tall window."
+            }
+          }
+        },
+        {
+          "_key": "k000w",
+          "_type": "roomPhoto",
+          "kind": "room",
+          "photo": {
+            "_seedImage": "p35-faro-cocina-recibidor",
+            "desktop": "/seed/p35-faro-cocina-recibidor-escritorio.webp",
+            "mobile": "/seed/p35-faro-cocina-recibidor-movil.webp",
+            "alt": {
+              "es": "Cocina y recibidor del mini apartamento Faro.",
+              "en": "Kitchen and entrance hall of the Faro mini apartment."
+            }
+          }
+        }
+      ],
+      "priceFrom": 296
+    },
+    {
+      "_id": "offer-escapada",
+      "_type": "offer",
+      "title": {
+        "_type": "localeString",
+        "es": "Escapada de dos noches",
+        "en": "Two-night getaway"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "escapada-dos-noches"
+      },
+      "order": 10,
+      "summary": {
+        "_type": "localeText",
+        "es": "Dos noches en Alba o Marea, desayuno y circuito de agua.",
+        "en": "Two nights in Alba or Marea, breakfast and the water circuit."
+      },
+      "image": {
+        "_seedImage": "p21-escapada",
+        "desktop": "/seed/p21-escapada-escritorio.webp",
+        "mobile": "/seed/p21-escapada-movil.webp",
+        "alt": {
+          "es": "Desayuno para dos sobre la cama de Alba: bandeja de madera con dos cafés, dos zumos de naranja, tostadas con tomate y un jarrón con una rama de olivo.",
+          "en": "Breakfast for two on the Alba bed: a wooden tray with two coffees, two orange juices, tomato toast and a vase with an olive branch."
+        }
+      },
+      "cta": {
+        "_type": "cta",
+        "label": {
+          "_type": "localeString",
+          "es": "Reservar",
+          "en": "Book"
+        },
+        "action": "booking",
+        "style": "primary"
+      }
+    },
+    {
+      "_id": "offer-cena",
+      "_type": "offer",
+      "title": {
+        "_type": "localeString",
+        "es": "Cena en el hotel",
+        "en": "Dinner at the hotel"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "cena-en-el-hotel"
+      },
+      "order": 20,
+      "summary": {
+        "_type": "localeText",
+        "es": "Menú de temporada para dos, con maridaje.",
+        "en": "Seasonal menu for two, with wine pairing."
+      },
+      "image": {
+        "_seedImage": "p16-restaurante",
+        "desktop": "/seed/p16-restaurante-escritorio.webp",
+        "mobile": "/seed/p16-restaurante-movil.webp",
+        "alt": {
+          "es": "Comedor del restaurante: mesas de roble oscuro con sillas de enea, una mesa puesta con mantel de lino, pan, tomates aliñados y una jarra de barro, y al fondo dos ventanas con olivos y el mar.",
+          "en": "Restaurant dining room: dark oak tables with rush chairs, one table set with a linen cloth, bread, dressed tomatoes and a clay jug, and two windows with olive trees and the sea beyond."
+        }
+      },
+      "cta": {
+        "_type": "cta",
+        "label": {
+          "_type": "localeString",
+          "es": "Solicitar mesa",
+          "en": "Request a table"
+        },
+        "action": "table",
+        "style": "secondary"
+      }
+    },
+    {
+      "_id": "offer-spa",
+      "_type": "offer",
+      "title": {
+        "_type": "localeString",
+        "es": "Día de spa",
+        "en": "Spa day"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "dia-de-spa"
+      },
+      "order": 30,
+      "summary": {
+        "_type": "localeText",
+        "es": "Bono para un circuito de agua y un ritual de 60 minutos.",
+        "en": "A voucher for the water circuit and a 60-minute ritual."
+      },
+      "image": {
+        "_seedImage": "p19-spa-tratamientos",
+        "desktop": "/seed/p19-spa-tratamientos-escritorio.webp",
+        "mobile": null,
+        "alt": {
+          "es": "Sala de tratamientos del spa: una camilla de roble oscuro con colchoneta de lino, un taburete con un cuenco de latón, una pila de piedra con agua, una hornacina con una rama de olivo y una ventana con contraventanas abiertas.",
+          "en": "Spa treatment room: a dark oak treatment table with a linen pad, a stool with a brass bowl, a stone basin with water, a niche with an olive branch and a window with open shutters."
+        }
+      },
+      "cta": {
+        "_type": "cta",
+        "label": {
+          "_type": "localeString",
+          "es": "Comprar bono",
+          "en": "Buy voucher"
+        },
+        "action": "voucher",
+        "style": "secondary"
+      }
+    },
+    {
+      "_id": "faq-1",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Dónde está Hotel Aurora?",
+        "en": "Where is Hotel Aurora?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Hotel Aurora está en El Palmar, en Vejer de la Frontera (Cádiz), en la Costa de la Luz. La Playa de El Palmar, que señalamos en el mapa, es la referencia de la zona.",
+        "en": "Hotel Aurora is in El Palmar, in Vejer de la Frontera (Cádiz, Spain), on the Costa de la Luz. El Palmar beach, marked on our map, is the landmark of the area."
+      },
+      "order": 10
+    },
+    {
+      "_id": "faq-2",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Se admiten perros en Hotel Aurora?",
+        "en": "Does Hotel Aurora accept dogs?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Sí. Hotel Aurora es un hotel petfriendly (pet friendly): admite hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.",
+        "en": "Yes. Hotel Aurora is a dog-friendly (pet-friendly) hotel: up to two dogs are welcome per room, with a bed and bowls provided. The pet supplement is shown before you pay."
+      },
+      "order": 20
+    },
+    {
+      "_id": "faq-3",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Cuántas habitaciones tiene Hotel Aurora?",
+        "en": "How many rooms does Hotel Aurora have?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Hotel Aurora tiene 28 habitaciones de cuatro tipos: Alba y Terraza (2 personas), Marea (3) y Faro (4, mini apartamento con salón y cocina).",
+        "en": "Hotel Aurora has 28 rooms of four types: Alba and Terraza (2 guests), Marea (3) and Faro (4, a mini apartment with a living room and kitchen)."
+      },
+      "order": 30
+    },
+    {
+      "_id": "faq-4",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Tiene Hotel Aurora spa?",
+        "en": "Does Hotel Aurora have a spa?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Sí. Hotel Aurora tiene spa propio, con circuito de agua y rituales. También admite a quien no se aloja, según disponibilidad: pides cita desde la web.",
+        "en": "Yes. Hotel Aurora has its own spa, with a water circuit and rituals. It also welcomes people who are not staying, subject to availability: you request an appointment online."
+      },
+      "order": 40
+    },
+    {
+      "_id": "faq-5",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Tiene Hotel Aurora restaurante?",
+        "en": "Does Hotel Aurora have a restaurant?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Sí. Hotel Aurora tiene restaurante propio de cocina de mercado. Solicitas mesa desde la web y te confirmamos por correo o WhatsApp.",
+        "en": "Yes. Hotel Aurora has its own market-cuisine restaurant. You request a table online and we confirm by email or WhatsApp."
+      },
+      "order": 50
+    },
+    {
+      "_id": "faq-6",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Puedo reservar sin comisiones?",
+        "en": "Can I book without commission?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Sí. Al reservar directamente con Hotel Aurora no interviene ninguna plataforma ni su comisión, y cada tarifa muestra su política de cancelación antes de pagar.",
+        "en": "Yes. When you book directly with Hotel Aurora, no platform or platform commission is involved, and each rate shows its cancellation policy before you pay."
+      },
+      "order": 60
+    },
+    {
+      "_id": "faq-7",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿A qué hora son la entrada y la salida?",
+        "en": "What time are check-in and check-out?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "En Hotel Aurora la entrada es desde las 15:00 y la salida hasta las 12:00.",
+        "en": "At Hotel Aurora, check-in is from 15:00 and check-out by 12:00."
+      },
+      "order": 70
+    },
+    {
+      "_id": "faq-8",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Cómo cancelo una reserva?",
+        "en": "How do I cancel a booking?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Cada tarifa de Hotel Aurora indica su política de cancelación antes de pagar, y esa es la condición que se aplica a tu reserva.",
+        "en": "Each Hotel Aurora rate shows its cancellation policy before you pay, and that is the condition that applies to your booking."
+      },
+      "order": 80
+    },
+    {
+      "_id": "faq-9",
+      "_type": "faq",
+      "question": {
+        "_type": "localeString",
+        "es": "¿Hay cuna o cama para mi mascota?",
+        "en": "Is there a baby crib or a bed for my pet?"
+      },
+      "answer": {
+        "_type": "localeText",
+        "es": "Sí. Todas las habitaciones de Hotel Aurora pueden pedir una cuna de bebé o una cama para mascota, sin coste adicional. Pídela al reservar o escríbenos.",
+        "en": "Yes. Every room at Hotel Aurora can request a baby crib or a pet bed at no extra cost. Ask when you book or write to us."
+      },
+      "order": 90
+    },
+    {
+      "_id": "legal-privacidad",
+      "_type": "legalPage",
+      "title": {
+        "_type": "localeString",
+        "es": "Política de privacidad",
+        "en": "Privacy policy"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "privacidad"
+      },
+      "updatedAt": "2026-10-25",
+      "body": {
+        "_type": "localeBlock",
+        "es": [
+          {
+            "_type": "block",
+            "_key": "k000y",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k000x",
+                "text": "Quién trata tus datos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0013",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k0010",
+                "_type": "link",
+                "href": "mailto:privacidad@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k000z",
+                "text": "Responsable: Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz). Para cualquier cuestión sobre tus datos escríbenos a ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k0011",
+                "text": "privacidad@hotelaurora.example",
+                "marks": ["k0010"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0012",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0015",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0014",
+                "text": "Qué datos tratamos y para qué",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0017",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0016",
+                "text": "Reserva de alojamiento",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001a",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0018",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0019",
+                "text": " los que escribes al reservar: nombre, contacto, fechas, huéspedes, perros y pago",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001d",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001b",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001c",
+                "text": " gestionar tu estancia y enviarte la confirmación",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001g",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001e",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001f",
+                "text": " el contrato que firmas al reservar",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001j",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001h",
+                "text": "Dónde:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001i",
+                "text": " en nuestro motor de reservas (Mews). Esta web no los recibe ni los guarda",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001l",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001k",
+                "text": "Registro de viajeros",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001o",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001m",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001n",
+                "text": " los de identidad que exige la ley al llegar al hotel",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001r",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001p",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001q",
+                "text": " cumplir el registro documental de viajeros (Real Decreto 933/2021)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001s",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001t",
+                "text": " obligación legal",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001x",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001v",
+                "text": "Quién los recibe:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k001w",
+                "text": " las Fuerzas y Cuerpos de Seguridad, cuando la ley lo exige",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k001z",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k001y",
+                "text": "Mesa en el restaurante, cita en el spa y contacto",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0022",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0020",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0021",
+                "text": " nombre, correo, teléfono si lo das, fecha y tu mensaje",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0025",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0023",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0024",
+                "text": " responderte y confirmar tu mesa o tu cita",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0028",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0026",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0027",
+                "text": " tu consentimiento y la gestión de lo que nos pides",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002a",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0029",
+                "text": "Bonos y experiencias",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002d",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002b",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002c",
+                "text": " tu correo y el pago, en la página de pago de Stripe",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002g",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002e",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002f",
+                "text": " cobrar y enviarte el bono",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002j",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002h",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002i",
+                "text": " el contrato de compra",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002m",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002k",
+                "text": "Qué guarda la web:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002l",
+                "text": " solo el estado del pedido y el código del bono; nunca ve tu tarjeta",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002o",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002n",
+                "text": "Asistente del chat",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002r",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002p",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002q",
+                "text": " lo que escribas",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002s",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002t",
+                "text": " responder tus dudas con la información del hotel",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k002x",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002v",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002w",
+                "text": " nuestro interés legítimo en atenderte",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0030",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k002y",
+                "text": "Conservación:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k002z",
+                "text": " no guardamos las conversaciones. No escribas datos personales en el chat",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0032",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0031",
+                "text": "Navegación",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0035",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0033",
+                "text": "Datos:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0034",
+                "text": " dirección IP y datos técnicos del navegador en los registros del servidor",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0038",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0036",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0037",
+                "text": " mantener la web disponible y segura",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003b",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0039",
+                "text": "Base legal:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k003a",
+                "text": " nuestro interés legítimo",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003e",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003c",
+                "text": "Analítica y publicidad:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k003d",
+                "text": " solo si las aceptas en el aviso de cookies",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003g",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003f",
+                "text": "Cuánto tiempo los guardamos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003i",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003h",
+                "text": "Mientras gestionamos tu reserva o tu solicitud y, después, bloqueados durante los plazos que fija la ley para atender posibles responsabilidades. Pasados esos plazos, los borramos.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003k",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003j",
+                "text": "Quién más recibe tus datos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003m",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003l",
+                "text": "No vendemos tus datos. Solo los tratan, por encargo nuestro y con contrato, los proveedores que necesitamos: Mews (reservas y pagos de estancias), Stripe (pago de bonos), Vercel (alojamiento de la web), Resend (envío de correos), Sanity (gestor de contenido, que no recibe datos de huéspedes) y el proveedor del asistente del chat. Y las autoridades cuando la ley lo exige.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003o",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003n",
+                "text": "Datos fuera del Espacio Económico Europeo",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003q",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003p",
+                "text": "Si algún proveedor trata datos fuera del Espacio Económico Europeo, lo hace con las garantías que exige el Reglamento General de Protección de Datos, como las cláusulas contractuales tipo de la Comisión Europea.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003s",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003r",
+                "text": "Cómo protegemos tus datos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k003u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003t",
+                "text": "La web no guarda datos de reservas ni de tarjetas: los tratan Mews y Stripe, con sus certificaciones de seguridad para pagos.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k003w",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003v",
+                "text": "Conexión cifrada en todas las páginas.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k003y",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003x",
+                "text": "Ningún rastreador de analítica o publicidad se activa hasta que lo aceptas.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k0040",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k003z",
+                "text": "El mapa y las tipografías están alojados en la propia web: navegar no te conecta con terceros.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k0042",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0041",
+                "text": "El panel de gestión del hotel exige contraseña y verificación en dos pasos.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k0044",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0043",
+                "text": "Tus derechos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0049",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k0046",
+                "_type": "link",
+                "href": "mailto:privacidad@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0045",
+                "text": "Puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad de tus datos, y retirar tu consentimiento cuando quieras, escribiendo a ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k0047",
+                "text": "privacidad@hotelaurora.example",
+                "marks": ["k0046"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0048",
+                "text": ". Te respondemos en el plazo de un mes. Si no estás de acuerdo con nuestra respuesta, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004b",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004a",
+                "text": "Menores",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004d",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004c",
+                "text": "Las personas menores de 14 años necesitan el consentimiento de sus padres o tutores para darnos sus datos.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004f",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004e",
+                "text": "Cookies",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004k",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k004h",
+                "_type": "link",
+                "href": "/cookies"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004g",
+                "text": "Lo explicamos en la ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k004i",
+                "text": "política de cookies",
+                "marks": ["k004h"]
+              },
+              {
+                "_type": "span",
+                "_key": "k004j",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004m",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004l",
+                "text": "Cambios en esta política",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004o",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004n",
+                "text": "Si la cambiamos, publicaremos aquí la nueva versión con su fecha.",
+                "marks": []
+              }
+            ]
+          }
+        ],
+        "en": [
+          {
+            "_type": "block",
+            "_key": "k004q",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004p",
+                "text": "Who handles your data",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004v",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k004s",
+                "_type": "link",
+                "href": "mailto:privacidad@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004r",
+                "text": "Controller: Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz, Spain). For any question about your data, write to ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k004t",
+                "text": "privacidad@hotelaurora.example",
+                "marks": ["k004s"]
+              },
+              {
+                "_type": "span",
+                "_key": "k004u",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004x",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004w",
+                "text": "What data we process and why",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k004z",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k004y",
+                "text": "Room booking",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0052",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0050",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0051",
+                "text": " what you enter when booking: name, contact, dates, guests, dogs and payment",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0055",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0053",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0054",
+                "text": " to manage your stay and send you the confirmation",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0058",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0056",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0057",
+                "text": " the contract you enter into when booking",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005b",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0059",
+                "text": "Where:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005a",
+                "text": " in our booking engine (Mews). This website neither receives nor stores it",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005d",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005c",
+                "text": "Guest registration",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005g",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005e",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005f",
+                "text": " the identity data the law requires on arrival",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005j",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005h",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005i",
+                "text": " to comply with the Spanish guest registration rules (Royal Decree 933/2021)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005m",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005k",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005l",
+                "text": " legal obligation",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005p",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005n",
+                "text": "Who receives it:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005o",
+                "text": " the law-enforcement authorities, when the law requires it",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005r",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005q",
+                "text": "Restaurant table, spa appointment and contact",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005s",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005t",
+                "text": " name, email, phone if you give it, date and your message",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k005x",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005v",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005w",
+                "text": " to reply and confirm your table or appointment",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0060",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k005y",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k005z",
+                "text": " your consent and handling what you ask us for",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0062",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0061",
+                "text": "Vouchers and experiences",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0065",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0063",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0064",
+                "text": " your email and payment, on Stripe’s payment page",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0068",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0066",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0067",
+                "text": " to charge and send you the voucher",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006b",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0069",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006a",
+                "text": " the purchase contract",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006e",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006c",
+                "text": "What the website keeps:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006d",
+                "text": " only the order status and the voucher code; it never sees your card",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006g",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006f",
+                "text": "Chat assistant",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006j",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006h",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006i",
+                "text": " what you type",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006m",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006k",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006l",
+                "text": " to answer your questions with the hotel’s information",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006p",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006n",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006o",
+                "text": " our legitimate interest in helping you",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006s",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006q",
+                "text": "Retention:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006r",
+                "text": " we do not keep the conversations. Please do not type personal data in the chat",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006u",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006t",
+                "text": "Browsing",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k006x",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006v",
+                "text": "Data:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006w",
+                "text": " IP address and technical browser data in the server logs",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0070",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k006y",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k006z",
+                "text": " to keep the website available and secure",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0073",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0071",
+                "text": "Legal basis:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0072",
+                "text": " our legitimate interest",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0076",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0074",
+                "text": "Analytics and advertising:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0075",
+                "text": " only if you accept them in the cookie notice",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0078",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0077",
+                "text": "How long we keep it",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007a",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0079",
+                "text": "While we handle your booking or request and, afterwards, blocked for the periods set by law to deal with possible liabilities. After those periods we delete it.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007c",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007b",
+                "text": "Who else receives your data",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007e",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007d",
+                "text": "We do not sell your data. Only the providers we need process it, on our behalf and under contract: Mews (bookings and stay payments), Stripe (voucher payments), Vercel (website hosting), Resend (sending emails), Sanity (content management, which receives no guest data) and the chat assistant provider. And the authorities when the law requires it.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007g",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007f",
+                "text": "Data outside the European Economic Area",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007i",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007h",
+                "text": "If a provider processes data outside the European Economic Area, it does so with the safeguards required by the General Data Protection Regulation, such as the European Commission’s standard contractual clauses.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007k",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007j",
+                "text": "How we protect your data",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k007m",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007l",
+                "text": "The website stores no booking or card data: Mews and Stripe handle it, with their payment security certifications.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k007o",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007n",
+                "text": "Encrypted connection on every page.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k007q",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007p",
+                "text": "No analytics or advertising tracker runs until you accept it.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k007s",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007r",
+                "text": "The map and the fonts are hosted on the website itself: browsing does not connect you to third parties.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k007u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007t",
+                "text": "The hotel’s management panel requires a password and two-step verification.",
+                "marks": []
+              }
+            ],
+            "listItem": "bullet",
+            "level": 1
+          },
+          {
+            "_type": "block",
+            "_key": "k007w",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007v",
+                "text": "Your rights",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0081",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k007y",
+                "_type": "link",
+                "href": "mailto:privacidad@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k007x",
+                "text": "You can request access, rectification, erasure, objection, restriction and portability of your data, and withdraw your consent at any time, by writing to ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k007z",
+                "text": "privacidad@hotelaurora.example",
+                "marks": ["k007y"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0080",
+                "text": ". We reply within one month. If you disagree with our reply, you can complain to the Spanish Data Protection Agency (aepd.es).",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0083",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0082",
+                "text": "Minors",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0085",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0084",
+                "text": "People under 14 need their parents’ or guardians’ consent to give us their data.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0087",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0086",
+                "text": "Cookies",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008c",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k0089",
+                "_type": "link",
+                "href": "/cookies"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0088",
+                "text": "We explain them in the ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k008a",
+                "text": "cookie policy",
+                "marks": ["k0089"]
+              },
+              {
+                "_type": "span",
+                "_key": "k008b",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008e",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008d",
+                "text": "Changes to this policy",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008g",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008f",
+                "text": "If we change it, we will publish the new version here with its date.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "_type": "seo",
+        "description": {
+          "_type": "localeText",
+          "es": "Cómo trata Hotel Aurora tus datos: qué datos, para qué, con qué base legal, durante cuánto tiempo, quién los recibe y cómo ejercer tus derechos.",
+          "en": "How Hotel Aurora handles your data: what data, why, on what legal basis, for how long, who receives it and how to exercise your rights."
+        }
+      }
+    },
+    {
+      "_id": "legal-cookies",
+      "_type": "legalPage",
+      "title": {
+        "_type": "localeString",
+        "es": "Política de cookies",
+        "en": "Cookie policy"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "cookies"
+      },
+      "updatedAt": "2026-10-25",
+      "body": {
+        "_type": "localeBlock",
+        "es": [
+          {
+            "_type": "block",
+            "_key": "k008i",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008h",
+                "text": "Qué son",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008k",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008j",
+                "text": "Pequeños datos que la web guarda en tu navegador para recordar algo, por ejemplo tu idioma o tu elección sobre las cookies.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008m",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008l",
+                "text": "Qué usamos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008o",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008n",
+                "text": "Necesarias (siempre activas)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008r",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008p",
+                "text": "Cuáles:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k008q",
+                "text": " tu elección sobre las cookies (180 días), el idioma y el tema Día o Madrugada",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008u",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008s",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k008t",
+                "text": " que la web funcione y recuerde lo que eliges",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008x",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008v",
+                "text": "De quién:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k008w",
+                "text": " de esta web",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k008z",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k008y",
+                "text": "Analítica (solo si la aceptas)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0092",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0090",
+                "text": "Cuáles:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0091",
+                "text": " Google Analytics 4",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0095",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0093",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0094",
+                "text": " saber qué páginas se usan más, sin identificarte",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k0097",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0096",
+                "text": "Marketing (solo si lo aceptas)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009a",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k0098",
+                "text": "Cuáles:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k0099",
+                "text": " píxel de Meta",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009d",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009b",
+                "text": "Para qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k009c",
+                "text": " medir nuestras campañas",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009f",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009e",
+                "text": "Reserva",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009i",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009g",
+                "text": "Cuándo:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k009h",
+                "text": " solo al abrir el formulario de reserva",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009l",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009j",
+                "text": "Qué:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k009k",
+                "text": " Mews puede usar lo técnicamente necesario para completar tu reserva, según su propia política",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009n",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009m",
+                "text": "El mapa",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009p",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009o",
+                "text": "El mapa de «Cómo llegar» es una imagen alojada en esta web: no usa cookies ni te conecta con nadie. Si lo pulsas, se abre tu aplicación de mapas, fuera de la web.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009r",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009q",
+                "text": "Cómo cambiar tu elección",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009t",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009s",
+                "text": "Cuando quieras, desde «Configurar cookies», en el pie de página. También puedes borrar las cookies desde los ajustes de tu navegador.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k009v",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009u",
+                "text": "Más información",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00a0",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k009x",
+                "_type": "link",
+                "href": "/privacidad"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k009w",
+                "text": "Sobre tus datos, consulta la ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k009y",
+                "text": "política de privacidad",
+                "marks": ["k009x"]
+              },
+              {
+                "_type": "span",
+                "_key": "k009z",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          }
+        ],
+        "en": [
+          {
+            "_type": "block",
+            "_key": "k00a2",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00a1",
+                "text": "What they are",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00a4",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00a3",
+                "text": "Small pieces of data the website stores in your browser to remember something, such as your language or your cookie choice.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00a6",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00a5",
+                "text": "What we use",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00a8",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00a7",
+                "text": "Necessary (always on)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ab",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00a9",
+                "text": "Which:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00aa",
+                "text": " your cookie choice (180 days), the language and the Day or Night theme",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ae",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ac",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00ad",
+                "text": " so the website works and remembers your choices",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ah",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00af",
+                "text": "Whose:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00ag",
+                "text": " this website’s",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00aj",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ai",
+                "text": "Analytics (only if you accept)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00am",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ak",
+                "text": "Which:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00al",
+                "text": " Google Analytics 4",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ap",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00an",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00ao",
+                "text": " to know which pages are used most, without identifying you",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ar",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00aq",
+                "text": "Marketing (only if you accept)",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00au",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00as",
+                "text": "Which:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00at",
+                "text": " Meta pixel",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ax",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00av",
+                "text": "Why:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00aw",
+                "text": " to measure our campaigns",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00az",
+            "style": "h3",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ay",
+                "text": "Booking",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00b2",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00b0",
+                "text": "When:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00b1",
+                "text": " only when you open the booking form",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00b5",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00b3",
+                "text": "What:",
+                "marks": ["strong"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00b4",
+                "text": " Mews may use what is technically needed to complete your booking, under its own policy",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00b7",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00b6",
+                "text": "The map",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00b9",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00b8",
+                "text": "The “Getting here” map is an image hosted on this website: it uses no cookies and connects you to no one. If you press it, your maps app opens, outside the website.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bb",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ba",
+                "text": "How to change your choice",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bd",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bc",
+                "text": "Whenever you like, from “Cookie settings” in the footer. You can also delete cookies in your browser settings.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bf",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00be",
+                "text": "More information",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bk",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k00bh",
+                "_type": "link",
+                "href": "/privacidad"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bg",
+                "text": "About your data, see the ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k00bi",
+                "text": "privacy policy",
+                "marks": ["k00bh"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00bj",
+                "text": ".",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "_type": "seo",
+        "description": {
+          "_type": "localeText",
+          "es": "Qué cookies usa la web de Hotel Aurora, para qué sirven y cómo cambiar tu elección.",
+          "en": "Which cookies the Hotel Aurora website uses, what they are for and how to change your choice."
+        }
+      }
+    },
+    {
+      "_id": "legal-aviso-legal",
+      "_type": "legalPage",
+      "title": {
+        "_type": "localeString",
+        "es": "Aviso legal",
+        "en": "Legal notice"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "aviso-legal"
+      },
+      "updatedAt": "2026-10-25",
+      "body": {
+        "_type": "localeBlock",
+        "es": [
+          {
+            "_type": "block",
+            "_key": "k00bm",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bl",
+                "text": "Titular de la web",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00br",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k00bo",
+                "_type": "link",
+                "href": "mailto:reservas@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bn",
+                "text": "Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz). Correo: ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k00bp",
+                "text": "reservas@hotelaurora.example",
+                "marks": ["k00bo"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00bq",
+                "text": ". Un hotel real añade aquí su razón social, su NIF y sus datos registrales.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bt",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bs",
+                "text": "Para qué es esta web",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bv",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bu",
+                "text": "Informar sobre el hotel y permitir reservar directamente, pedir mesa o cita y comprar bonos.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bx",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00bw",
+                "text": "Uso de la web",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00bz",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00by",
+                "text": "Puedes usarla libremente para informarte y reservar. No está permitido usarla para fines ilícitos ni para dañar su funcionamiento.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00c1",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00c0",
+                "text": "Propiedad intelectual",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00c3",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00c2",
+                "text": "Los textos, el diseño y las fotografías pertenecen a sus titulares; las fotografías de este proyecto se han generado con inteligencia artificial. El mapa procede de OpenStreetMap (© colaboradores de OpenStreetMap, licencia ODbL). Las tipografías Outfit y Work Sans se usan con licencia SIL Open Font License.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00c5",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00c4",
+                "text": "Enlaces a otras webs",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00c7",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00c6",
+                "text": "Si sales a otra web (por ejemplo, tu aplicación de mapas o WhatsApp), se aplican sus propias condiciones.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00c9",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00c8",
+                "text": "Ley aplicable",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cb",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ca",
+                "text": "Ley española.",
+                "marks": []
+              }
+            ]
+          }
+        ],
+        "en": [
+          {
+            "_type": "block",
+            "_key": "k00cd",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cc",
+                "text": "Website owner",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ci",
+            "style": "normal",
+            "markDefs": [
+              {
+                "_key": "k00cf",
+                "_type": "link",
+                "href": "mailto:reservas@hotelaurora.example"
+              }
+            ],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ce",
+                "text": "Hotel Aurora, El Palmar, Vejer de la Frontera (Cádiz, Spain). Email: ",
+                "marks": []
+              },
+              {
+                "_type": "span",
+                "_key": "k00cg",
+                "text": "reservas@hotelaurora.example",
+                "marks": ["k00cf"]
+              },
+              {
+                "_type": "span",
+                "_key": "k00ch",
+                "text": ". A real hotel adds its company name, tax ID and registry details here.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ck",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cj",
+                "text": "What this website is for",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cm",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cl",
+                "text": "To give information about the hotel and let you book directly, request a table or appointment and buy vouchers.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00co",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cn",
+                "text": "Use of the website",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cq",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cp",
+                "text": "You may use it freely to find information and book. It may not be used for unlawful purposes or to harm its operation.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cs",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cr",
+                "text": "Intellectual property",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cu",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ct",
+                "text": "The texts, design and photographs belong to their owners; the photographs in this project were generated with artificial intelligence. The map comes from OpenStreetMap (© OpenStreetMap contributors, ODbL licence). The Outfit and Work Sans fonts are used under the SIL Open Font License.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cw",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cv",
+                "text": "Links to other websites",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00cy",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cx",
+                "text": "If you leave for another website (for example your maps app or WhatsApp), its own terms apply.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00d0",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00cz",
+                "text": "Applicable law",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00d2",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00d1",
+                "text": "Spanish law.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "_type": "seo",
+        "description": {
+          "_type": "localeText",
+          "es": "Datos del titular de la web de Hotel Aurora y condiciones de uso.",
+          "en": "Details of the owner of the Hotel Aurora website and terms of use."
+        }
+      }
+    },
+    {
+      "_id": "legal-condiciones",
+      "_type": "legalPage",
+      "title": {
+        "_type": "localeString",
+        "es": "Condiciones de reserva",
+        "en": "Booking terms"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "condiciones"
+      },
+      "updatedAt": "2026-10-25",
+      "body": {
+        "_type": "localeBlock",
+        "es": [
+          {
+            "_type": "block",
+            "_key": "k00d4",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00d3",
+                "text": "Reserva directa",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00d6",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00d5",
+                "text": "Antes de pagar ves el precio final y las condiciones de la tarifa que eliges. Al terminar recibes la confirmación por correo.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00d8",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00d7",
+                "text": "Entrada y salida",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00da",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00d9",
+                "text": "Entrada desde las 15:00 y salida hasta las 12:00.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dc",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00db",
+                "text": "Cancelación",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00de",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dd",
+                "text": "Se aplica la política de cancelación de la tarifa elegida, que se muestra antes de pagar.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dg",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00df",
+                "text": "Pago",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00di",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dh",
+                "text": "El pago lo gestiona nuestro motor de reservas de forma segura. Tu banco puede pedirte que confirmes el pago.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dk",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dj",
+                "text": "Mascotas",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dm",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dl",
+                "text": "Hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se muestra antes de pagar.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00do",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dn",
+                "text": "Bebés",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dq",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dp",
+                "text": "Cuna sin coste. Pídela al reservar o escríbenos.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ds",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dr",
+                "text": "Bonos",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00du",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dt",
+                "text": "Se pagan en la página segura de Stripe; sus condiciones de uso figuran en el propio bono.",
+                "marks": []
+              }
+            ]
+          }
+        ],
+        "en": [
+          {
+            "_type": "block",
+            "_key": "k00dw",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dv",
+                "text": "Direct booking",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00dy",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dx",
+                "text": "Before you pay you see the final price and the terms of the rate you choose. When you finish you receive the confirmation by email.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00e0",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00dz",
+                "text": "Check-in and check-out",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00e2",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00e1",
+                "text": "Check-in from 15:00 and check-out by 12:00.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00e4",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00e3",
+                "text": "Cancellation",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00e6",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00e5",
+                "text": "The cancellation policy of the chosen rate applies; it is shown before you pay.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00e8",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00e7",
+                "text": "Payment",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ea",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00e9",
+                "text": "Our booking engine handles payment securely. Your bank may ask you to confirm the payment.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ec",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00eb",
+                "text": "Pets",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ee",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ed",
+                "text": "Up to two dogs per room, with a bed and bowls provided. The pet supplement is shown before you pay.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00eg",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ef",
+                "text": "Babies",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ei",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00eh",
+                "text": "Crib at no cost. Ask for it when booking or write to us.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00ek",
+            "style": "h2",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00ej",
+                "text": "Vouchers",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "k00em",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "k00el",
+                "text": "They are paid on Stripe’s secure page; their terms of use appear on the voucher itself.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "_type": "seo",
+        "description": {
+          "_type": "localeText",
+          "es": "Entrada y salida, cancelación, pago, mascotas y bebés en Hotel Aurora.",
+          "en": "Check-in and check-out, cancellation, payment, pets and babies at Hotel Aurora."
+        }
+      }
+    },
+    {
+      "_id": "page-inicio",
+      "_type": "page",
+      "title": {
+        "_type": "localeString",
+        "es": "Inicio",
+        "en": "Home"
+      },
+      "slug": {
+        "_type": "slug",
+        "current": "inicio"
+      },
+      "sections": [
+        {
+          "_key": "k00fs",
+          "_type": "sectionHero",
+          "heading": {
+            "_type": "localeString",
+            "es": "Hotel boutique en *El Palmar.*",
+            "en": "Boutique hotel in *El Palmar.*"
+          },
+          "lead": {
+            "_type": "localeText",
+            "es": "Hotel Aurora es un hotel boutique petfriendly de 28 habitaciones en El Palmar, Vejer de la Frontera (Cádiz), con spa y restaurante propios. Reserva directa, sin intermediarios.",
+            "en": "Hotel Aurora is a dog-friendly boutique hotel with 28 rooms in El Palmar, Vejer de la Frontera (Cádiz, Spain), with its own spa and restaurant. Book direct, no middlemen."
+          },
+          "facade": {
+            "_seedImage": "p01-hero",
+            "desktop": "/seed/p01-hero-escritorio.webp",
+            "mobile": "/seed/p01-hero-movil.webp",
+            "alt": {
+              "es": "Fachada de una casa encalada de dos plantas, con tejado de teja, contraventanas oscuras, dos olivos y el patio de grava al amanecer, con el mar al fondo.",
+              "en": "Two-storey whitewashed house with a tiled roof, dark shutters, two olive trees and a gravel courtyard at dawn, with the sea behind."
+            }
+          },
+          "reception": {
+            "_seedImage": "p36-recepcion-fin",
+            "desktop": "/seed/p36-recepcion-fin-escritorio.webp",
+            "mobile": "/seed/p36-recepcion-fin-movil.webp",
+            "alt": {
+              "es": "Recepción del hotel: mostrador de madera con una campanita y un jarrón con ramita de olivo, un banco de madera y, al fondo, la abertura que da al patio soleado.",
+              "en": "Hotel reception: a wooden counter with a small bell and a jar with an olive twig, a wooden bench and, at the far end, the opening to the sunlit courtyard."
+            }
+          },
+          "patio": {
+            "_seedImage": "p03-patio",
+            "desktop": "/seed/p03-patio-escritorio.webp",
+            "mobile": "/seed/p03-patio-movil.webp",
+            "alt": {
+              "es": "Patio interior de la casa, con paredes de cal color crema, contraventanas oscuras, un olivo, un estanque rectangular de piedra y una puerta de madera entreabierta.",
+              "en": "Interior courtyard of the house, with cream lime-plaster walls, dark shutters, an olive tree, a rectangular stone pond and a partly open wooden door."
+            }
+          },
+          "steps": [
+            {
+              "_key": "k00en",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "El hotel",
+                "en": "The hotel"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "28 habitaciones en una casa *restaurada.*",
+                "en": "28 rooms in a *restored* house."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Cal, madera y piedra. Alba tiene vigas; Terraza, terraza de caña; Marea, un banco en la ventana; Faro, salón y cocina.",
+                "en": "Limewash, timber and stone. Alba has beams; Terraza, a cane-covered terrace; Marea, a window seat; Faro, a living room and a kitchen."
+              }
+            },
+            {
+              "_key": "k00eo",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Ubicación",
+                "en": "Location"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Entre el surf de *El Palmar* y los pueblos blancos.",
+                "en": "Between the surf of *El Palmar* and the white villages."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "El Palmar es una playa de surf de Vejer de la Frontera, en la Costa de la Luz de Cádiz.",
+                "en": "El Palmar is a surf beach in Vejer de la Frontera, on the Costa de la Luz in Cádiz."
+              }
+            },
+            {
+              "_key": "walk-3",
+              "_type": "heroStep",
+              "ghost": "AURORA",
+              "title": {
+                "_type": "localeString",
+                "es": "Pasa. *Tu perro* también.",
+                "en": "Come in. *Your dog* too."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Hotel petfriendly en El Palmar: hasta dos perros por habitación.",
+                "en": "Dog-friendly hotel in El Palmar: up to two dogs per room."
+              }
+            },
+            {
+              "_key": "walk-4",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Reserva directa",
+                "en": "Direct booking"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Reservas con el hotel, *no con una plataforma.*",
+                "en": "You book with the hotel, *not a platform.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Sin intermediarios ni su comisión. Pocos pasos, en español o en inglés, y ves la política de cancelación antes de pagar.",
+                "en": "No middlemen and no middleman commission. A few steps, in Spanish or English, and you see the cancellation policy before you pay."
+              }
+            },
+            {
+              "_key": "k00ep",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Admite perros",
+                "en": "Dogs welcome"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Tu perro tiene *cama esperándole.*",
+                "en": "Your dog's *bed is waiting.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se ve antes de pagar.",
+                "en": "Up to two dogs per room, with a bed and bowls provided. The pet supplement is shown before you pay."
+              }
+            },
+            {
+              "_key": "walk-6",
+              "_type": "heroStep",
+              "ghost": "PATIO",
+              "title": {
+                "_type": "localeString",
+                "es": "Al fondo de la casa, el *patio andaluz.*",
+                "en": "At the far end of the house, the *Andalusian patio.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Un olivo, un estanque y un banco de piedra para no hacer nada.",
+                "en": "An olive tree, a pond and a stone bench for doing nothing."
+              }
+            },
+            {
+              "_key": "walk-7",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Habitaciones",
+                "en": "Rooms"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Cuatro maneras de *dormir* en El Palmar.",
+                "en": "Four ways to *sleep* in El Palmar."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Alba y Terraza, para dos. Marea, para tres. Faro, para cuatro, con salón y cocina.",
+                "en": "Alba and Terraza sleep two. Marea sleeps three. Faro sleeps four, with a living room and kitchen."
+              },
+              "link": {
+                "_type": "cta",
+                "label": {
+                  "_type": "localeString",
+                  "es": "Ver habitaciones",
+                  "en": "See the rooms"
+                },
+                "action": "link",
+                "href": "#habitaciones",
+                "style": "link"
+              }
+            },
+            {
+              "_key": "walk-8",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Spa y restaurante",
+                "en": "Spa and restaurant"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "*Mesa* de mercado y circuito de *agua,* bajo el mismo techo.",
+                "en": "A market-cuisine *table* and a *water* circuit, under one roof."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "El spa admite también a quien no se aloja. Solicita mesa o cita desde la web.",
+                "en": "The spa also welcomes non-guests. Request a table or an appointment online."
+              }
+            },
+            {
+              "_key": "walk-9",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Llegada y salida",
+                "en": "Check-in and check-out"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Entrada *desde las 15:00.*",
+                "en": "Check-in *from 15:00.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Salida hasta las 12:00.",
+                "en": "Check-out by 12:00."
+              }
+            }
+          ],
+          "walk": true,
+          "bookingBar": true,
+          "hidden": false
+        },
+        {
+          "_key": "k00ft",
+          "_type": "sectionRooms",
+          "heading": {
+            "_type": "localeString",
+            "es": "Habitaciones de cal, madera y piedra en El Palmar.",
+            "en": "Rooms of limewash, timber and stone in El Palmar."
+          },
+          "intro": {
+            "_type": "localeText",
+            "es": "Todas las habitaciones pueden pedir una cama para mascota o una cuna de bebé en la habitación, sin coste adicional.",
+            "en": "Every room can request a pet bed or a baby crib in the room at no extra cost."
+          },
+          "anchor": {
+            "_type": "slug",
+            "current": "habitaciones"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00fu",
+          "_type": "sectionDirect",
+          "kicker": {
+            "_type": "localeString",
+            "es": "En la web del hotel",
+            "en": "On the hotel's own website"
+          },
+          "heading": {
+            "_type": "localeString",
+            "es": "Reserva directa con el hotel.",
+            "en": "Book direct with the hotel."
+          },
+          "items": [
+            {
+              "_key": "k00ew",
+              "_type": "localeString",
+              "es": "Sin intermediarios ni su comisión. Hablas con el hotel, no con una plataforma.",
+              "en": "No middlemen and no middleman commission. You deal with the hotel, not a platform."
+            },
+            {
+              "_key": "k00ex",
+              "_type": "localeString",
+              "es": "Condiciones claras. Ves la política de cancelación de cada tarifa antes de pagar.",
+              "en": "Clear terms. You see each rate's cancellation policy before you pay."
+            },
+            {
+              "_key": "k00ey",
+              "_type": "localeString",
+              "es": "Pago seguro. Lo gestiona el motor de reservas; esta web nunca ve tu tarjeta.",
+              "en": "Secure payment. The booking engine handles it; this website never sees your card."
+            },
+            {
+              "_key": "k00ez",
+              "_type": "localeString",
+              "es": "En español o en inglés. Unos pocos pasos, también desde el móvil.",
+              "en": "In Spanish or English. A few steps, from your phone too."
+            }
+          ],
+          "ctas": [
+            {
+              "_key": "k00f0",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Reservar directo",
+                "en": "Book direct"
+              },
+              "action": "booking",
+              "style": "primary"
+            },
+            {
+              "_key": "k00f1",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "WhatsApp",
+                "en": "WhatsApp"
+              },
+              "action": "whatsapp",
+              "style": "secondary"
+            }
+          ],
+          "hidden": false
+        },
+        {
+          "_key": "k00fv",
+          "_type": "sectionFeature",
+          "heading": {
+            "_type": "localeString",
+            "es": "*Restaurante de cocina de mercado,* del desayuno a la cena.",
+            "en": "*A market-cuisine restaurant,* from breakfast to dinner."
+          },
+          "text": {
+            "_type": "localeText",
+            "es": "Desayuno hasta media mañana y cena con producto de temporada. Pide mesa y te confirmamos por correo o WhatsApp.",
+            "en": "Breakfast until mid-morning and dinner with seasonal produce. Request a table and we confirm by email or WhatsApp."
+          },
+          "image": {
+            "_seedImage": "p16-restaurante",
+            "desktop": "/seed/p16-restaurante-escritorio.webp",
+            "mobile": "/seed/p16-restaurante-movil.webp",
+            "alt": {
+              "es": "Comedor del restaurante: mesas de roble oscuro con sillas de enea, una mesa puesta con mantel de lino, pan, tomates aliñados y una jarra de barro, y al fondo dos ventanas con olivos y el mar.",
+              "en": "Restaurant dining room: dark oak tables with rush chairs, one table set with a linen cloth, bread, dressed tomatoes and a clay jug, and two windows with olive trees and the sea beyond."
+            }
+          },
+          "ctas": [
+            {
+              "_key": "k00f2",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Solicitar mesa",
+                "en": "Request a table"
+              },
+              "action": "table",
+              "style": "secondary"
+            }
+          ],
+          "layout": "fullBleed",
+          "background": "page",
+          "anchor": {
+            "_type": "slug",
+            "current": "restaurante"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00fw",
+          "_type": "sectionFeature",
+          "heading": {
+            "_type": "localeString",
+            "es": "Hotel con *spa de agua y silencio* en la Costa de la Luz.",
+            "en": "A hotel with a *spa of water and silence* on the Costa de la Luz."
+          },
+          "image": {
+            "_seedImage": "p19-spa-tratamientos",
+            "desktop": "/seed/p19-spa-tratamientos-escritorio.webp",
+            "mobile": null,
+            "alt": {
+              "es": "Sala de tratamientos del spa: una camilla de roble oscuro con colchoneta de lino, un taburete con un cuenco de latón, una pila de piedra con agua, una hornacina con una rama de olivo y una ventana con contraventanas abiertas.",
+              "en": "Spa treatment room: a dark oak treatment table with a linen pad, a stool with a brass bowl, a stone basin with water, a niche with an olive branch and a window with open shutters."
+            }
+          },
+          "groups": [
+            {
+              "_key": "k00fc",
+              "_type": "featureGroup",
+              "title": {
+                "_type": "localeString",
+                "es": "Rituales",
+                "en": "Rituals"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Tratamientos con aceites tibios y música suave, por la mañana o por la tarde.",
+                "en": "Treatments with warm oils and soft music, in the morning or in the afternoon."
+              },
+              "items": [
+                {
+                  "_key": "k00f3",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Ritual de bienvenida",
+                    "en": "Welcome ritual"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "60 min",
+                    "en": "60 min"
+                  }
+                },
+                {
+                  "_key": "k00f4",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Masaje con aceite tibio",
+                    "en": "Warm oil massage"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "90 min",
+                    "en": "90 min"
+                  }
+                },
+                {
+                  "_key": "k00f5",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Facial revitalizante",
+                    "en": "Revitalising facial"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "60 min",
+                    "en": "60 min"
+                  }
+                }
+              ]
+            },
+            {
+              "_key": "k00fd",
+              "_type": "featureGroup",
+              "title": {
+                "_type": "localeString",
+                "es": "Circuito de agua",
+                "en": "Water circuit"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Un circuito en silencio con piscina templada, sauna y ducha de contraste.",
+                "en": "A silent circuit with a heated pool, a sauna and a contrast shower."
+              },
+              "items": [
+                {
+                  "_key": "k00f6",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Piscina templada",
+                    "en": "Heated pool"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "Huéspedes y citas",
+                    "en": "Guests and appointments"
+                  }
+                },
+                {
+                  "_key": "k00f7",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Sauna",
+                    "en": "Sauna"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "Incluida en el circuito",
+                    "en": "Included in the circuit"
+                  }
+                },
+                {
+                  "_key": "k00f8",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Ducha de contraste",
+                    "en": "Contrast shower"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "Incluida en el circuito",
+                    "en": "Included in the circuit"
+                  }
+                }
+              ]
+            },
+            {
+              "_key": "k00fe",
+              "_type": "featureGroup",
+              "title": {
+                "_type": "localeString",
+                "es": "Para dos",
+                "en": "For two"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Una cabina doble con bañera, pensada para compartir el ritual y el silencio.",
+                "en": "A treatment room for two with a bath, made for sharing the ritual and the quiet."
+              },
+              "items": [
+                {
+                  "_key": "k00f9",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Ritual compartido",
+                    "en": "Shared ritual"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "90 min",
+                    "en": "90 min"
+                  }
+                },
+                {
+                  "_key": "k00fa",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Bañera para dos",
+                    "en": "Bath for two"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "Incluida",
+                    "en": "Included"
+                  }
+                },
+                {
+                  "_key": "k00fb",
+                  "_type": "labelValue",
+                  "label": {
+                    "_type": "localeString",
+                    "es": "Té al terminar",
+                    "en": "Tea afterwards"
+                  },
+                  "value": {
+                    "_type": "localeString",
+                    "es": "Incluido",
+                    "en": "Included"
+                  }
+                }
+              ]
+            }
+          ],
+          "ctas": [
+            {
+              "_key": "k00ff",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Pedir cita en el spa",
+                "en": "Book a spa appointment"
+              },
+              "action": "spa",
+              "style": "secondary"
+            }
+          ],
+          "layout": "imageLeft",
+          "background": "page",
+          "anchor": {
+            "_type": "slug",
+            "current": "spa"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00fx",
+          "_type": "sectionFeature",
+          "heading": {
+            "_type": "localeString",
+            "es": "*Hotel petfriendly:* tu perro también está invitado.",
+            "en": "*Pet-friendly hotel:* your dog is invited too."
+          },
+          "image": {
+            "_seedImage": "p25-perro-terraza",
+            "desktop": "/seed/p25-perro-terraza-escritorio.webp",
+            "mobile": "/seed/p25-perro-terraza-movil.webp",
+            "alt": {
+              "es": "Perro de pelo color arena tumbado en su cama de madera y lino en la terraza de la habitación Terraza, junto a dos cuencos de cerámica, con luz dorada filtrada.",
+              "en": "Sand-coloured dog lying on its wooden and linen bed on the terrace of the Terraza room, next to two ceramic bowls, in filtered golden light."
+            }
+          },
+          "bullets": [
+            {
+              "_key": "k00fg",
+              "_type": "localeString",
+              "es": "Hotel petfriendly en Vejer de la Frontera: hasta dos perros por habitación.",
+              "en": "Dog-friendly hotel in Vejer de la Frontera: up to two dogs per room."
+            },
+            {
+              "_key": "k00fh",
+              "_type": "localeString",
+              "es": "Cama y cuencos de cortesía en la habitación.",
+              "en": "A bed and bowls provided in the room."
+            },
+            {
+              "_key": "k00fi",
+              "_type": "localeString",
+              "es": "El suplemento por mascota se ve antes de pagar.",
+              "en": "The pet supplement is shown before you pay."
+            }
+          ],
+          "ctas": [
+            {
+              "_key": "k00fj",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Ver condiciones",
+                "en": "See the conditions"
+              },
+              "action": "link",
+              "style": "link",
+              "href": "/condiciones"
+            }
+          ],
+          "layout": "imageRight",
+          "background": "page",
+          "anchor": {
+            "_type": "slug",
+            "current": "mascotas"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00fy",
+          "_type": "sectionOffers",
+          "heading": {
+            "_type": "localeString",
+            "es": "Escapadas, cenas y días de spa",
+            "en": "Getaways, dinners and spa days"
+          },
+          "intro": {
+            "_type": "localeText",
+            "es": "Dos noches, una cena o un día de spa: elige tu plan.",
+            "en": "Two nights, a dinner or a spa day: pick your plan."
+          },
+          "anchor": {
+            "_type": "slug",
+            "current": "paquetes"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00fz",
+          "_type": "sectionFacts",
+          "kicker": {
+            "_type": "localeString",
+            "es": "Hotel Aurora, de un vistazo",
+            "en": "Hotel Aurora at a glance"
+          },
+          "heading": {
+            "_type": "localeString",
+            "es": "Disfruta *en familia junto a tu perro,* en la playa de El Palmar.",
+            "en": "Enjoy *family time with your dog* on El Palmar beach."
+          },
+          "lead": {
+            "_type": "localeText",
+            "es": "Hotel Aurora es un hotel boutique petfriendly en El Palmar, Vejer de la Frontera (Cádiz): una casa restaurada con spa y restaurante, a un paseo de la arena.",
+            "en": "Hotel Aurora is a dog-friendly boutique hotel in El Palmar, Vejer de la Frontera (Cádiz, Spain): a restored house with a spa and a restaurant, a short walk from the sand."
+          },
+          "image": {
+            "_seedImage": "p24-familia-playa",
+            "desktop": "/seed/p24-familia-playa-escritorio.webp",
+            "mobile": "/seed/p24-familia-playa-movil.webp",
+            "alt": {
+              "es": "Una familia con su perro corre descalza por la orilla de la playa de El Palmar: el niño y el perro van delante salpicando y los padres, abrazados, los siguen riendo.",
+              "en": "A family and their dog run barefoot along the shore of El Palmar beach: the child and the dog splash ahead while the parents, arm in arm, follow laughing."
+            }
+          },
+          "facts": [
+            {
+              "_key": "k00fk",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "Habitaciones",
+                "en": "Rooms"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "28, de 2 a 4 personas",
+                "en": "28, for 2 to 4 guests"
+              }
+            },
+            {
+              "_key": "k00fl",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "Perros",
+                "en": "Dogs"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "Hasta dos por habitación",
+                "en": "Up to two per room"
+              }
+            },
+            {
+              "_key": "k00fm",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "Bebés y mascotas",
+                "en": "Babies and pets"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "Cuna o cama, sin coste",
+                "en": "Crib or pet bed, free"
+              }
+            },
+            {
+              "_key": "k00fn",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "Entrada y salida",
+                "en": "Check-in and check-out"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "15:00 · 12:00",
+                "en": "15:00 · 12:00"
+              }
+            },
+            {
+              "_key": "k00fo",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "En la casa",
+                "en": "In the house"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "Spa y restaurante",
+                "en": "Spa and restaurant"
+              }
+            },
+            {
+              "_key": "k00fp",
+              "_type": "labelValue",
+              "label": {
+                "_type": "localeString",
+                "es": "Reserva",
+                "en": "Booking"
+              },
+              "value": {
+                "_type": "localeString",
+                "es": "Directa, sin intermediarios",
+                "en": "Direct, no middlemen"
+              }
+            }
+          ],
+          "anchor": {
+            "_type": "slug",
+            "current": "datos"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00g0",
+          "_type": "sectionFaq",
+          "heading": {
+            "_type": "localeString",
+            "es": "Preguntas frecuentes sobre Hotel Aurora",
+            "en": "Frequently asked questions about Hotel Aurora"
+          },
+          "anchor": {
+            "_type": "slug",
+            "current": "faq"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00g1",
+          "_type": "sectionMap",
+          "heading": {
+            "_type": "localeString",
+            "es": "Cómo llegar a El Palmar, Vejer de la Frontera",
+            "en": "Getting to El Palmar, Vejer de la Frontera"
+          },
+          "lead": {
+            "_type": "localeText",
+            "es": "En El Palmar, Vejer de la Frontera (Cádiz), en la Costa de la Luz, junto a la playa de surf de El Palmar.",
+            "en": "In El Palmar, Vejer de la Frontera (Cádiz, Spain), on the Costa de la Luz, next to El Palmar surf beach."
+          },
+          "note": {
+            "_type": "localeString",
+            "es": "Proyecto de portfolio: la ubicación del hotel es ficticia; el mapa muestra la zona real de la Playa de El Palmar.",
+            "en": "Portfolio project: the hotel location is fictional; the map shows the real area of El Palmar beach."
+          },
+          "anchor": {
+            "_type": "slug",
+            "current": "llegar"
+          },
+          "hidden": false
+        },
+        {
+          "_key": "k00g2",
+          "_type": "sectionClosing",
+          "heading": {
+            "_type": "localeString",
+            "es": "Reserva tu escapada en El Palmar",
+            "en": "Book your El Palmar getaway"
+          },
+          "accentLine": {
+            "_type": "localeString",
+            "es": "y no dejes a tu perro en casa.",
+            "en": "and don’t leave your dog at home."
+          },
+          "text": {
+            "_type": "localeText",
+            "es": "Escríbenos si prefieres hablar con una persona.",
+            "en": "Write to us if you prefer to talk to a person."
+          },
+          "ctas": [
+            {
+              "_key": "k00fq",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Reservar",
+                "en": "Book"
+              },
+              "action": "booking",
+              "style": "primary"
+            },
+            {
+              "_key": "k00fr",
+              "_type": "cta",
+              "label": {
+                "_type": "localeString",
+                "es": "Escríbenos por WhatsApp",
+                "en": "Message us on WhatsApp"
+              },
+              "action": "whatsapp",
+              "style": "secondary"
+            }
+          ],
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "_id": "navigation",
+      "_type": "navigation",
+      "header": [
+        {
+          "_key": "k00g3",
+          "_type": "navLink",
+          "label": {
+            "_type": "localeString",
+            "es": "Habitaciones",
+            "en": "Rooms"
+          },
+          "page": {
+            "_type": "reference",
+            "_ref": "page-inicio"
+          },
+          "anchor": "habitaciones"
+        },
+        {
+          "_key": "k00g4",
+          "_type": "navLink",
+          "label": {
+            "_type": "localeString",
+            "es": "Restaurante",
+            "en": "Restaurant"
+          },
+          "page": {
+            "_type": "reference",
+            "_ref": "page-inicio"
+          },
+          "anchor": "restaurante"
+        },
+        {
+          "_key": "k00g5",
+          "_type": "navLink",
+          "label": {
+            "_type": "localeString",
+            "es": "Spa",
+            "en": "Spa"
+          },
+          "page": {
+            "_type": "reference",
+            "_ref": "page-inicio"
+          },
+          "anchor": "spa"
+        },
+        {
+          "_key": "k00g6",
+          "_type": "navLink",
+          "label": {
+            "_type": "localeString",
+            "es": "Petfriendly",
+            "en": "Pet-friendly"
+          },
+          "page": {
+            "_type": "reference",
+            "_ref": "page-inicio"
+          },
+          "anchor": "mascotas"
+        },
+        {
+          "_key": "k00g7",
+          "_type": "navLink",
+          "label": {
+            "_type": "localeString",
+            "es": "Paquetes",
+            "en": "Packages"
+          },
+          "page": {
+            "_type": "reference",
+            "_ref": "page-inicio"
+          },
+          "anchor": "paquetes"
+        }
+      ],
+      "footer": [
+        {
+          "_key": "k00gh",
+          "_type": "navColumn",
+          "title": {
+            "_type": "localeString",
+            "es": "El hotel",
+            "en": "The hotel"
+          },
+          "links": [
+            {
+              "_key": "k00g8",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Habitaciones",
+                "en": "Rooms"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "page-inicio"
+              },
+              "anchor": "habitaciones"
+            },
+            {
+              "_key": "k00g9",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Restaurante",
+                "en": "Restaurant"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "page-inicio"
+              },
+              "anchor": "restaurante"
+            },
+            {
+              "_key": "k00ga",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Spa",
+                "en": "Spa"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "page-inicio"
+              },
+              "anchor": "spa"
+            },
+            {
+              "_key": "k00gb",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Petfriendly",
+                "en": "Pet-friendly"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "page-inicio"
+              },
+              "anchor": "mascotas"
+            },
+            {
+              "_key": "k00gc",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Cómo llegar",
+                "en": "Getting here"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "page-inicio"
+              },
+              "anchor": "llegar"
+            }
+          ]
+        },
+        {
+          "_key": "k00gi",
+          "_type": "navColumn",
+          "title": {
+            "_type": "localeString",
+            "es": "Legal",
+            "en": "Legal"
+          },
+          "links": [
+            {
+              "_key": "k00gd",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Aviso legal",
+                "en": "Legal notice"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "legal-aviso-legal"
+              }
+            },
+            {
+              "_key": "k00ge",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Privacidad",
+                "en": "Privacy"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "legal-privacidad"
+              }
+            },
+            {
+              "_key": "k00gf",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Cookies",
+                "en": "Cookies"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "legal-cookies"
+              }
+            },
+            {
+              "_key": "k00gg",
+              "_type": "navLink",
+              "label": {
+                "_type": "localeString",
+                "es": "Condiciones de reserva",
+                "en": "Booking terms"
+              },
+              "page": {
+                "_type": "reference",
+                "_ref": "legal-condiciones"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

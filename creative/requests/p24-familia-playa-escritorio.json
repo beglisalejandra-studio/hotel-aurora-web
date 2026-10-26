@@ -1,0 +1,22 @@
+{
+  "name": "p24-familia-playa-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "home",
+  "role": "Familia con su perro en la playa de El Palmar, version escritorio (seccion #datos)",
+  "status": "requested",
+  "requested_at": "2026-10-25",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp"
+  ],
+  "prompt_file": "creative/briefs/p24-familia-playa.md"
+}

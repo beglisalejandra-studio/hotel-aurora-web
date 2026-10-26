@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # Bloqueado aguas arriba (verificado al crear la plantilla; ver docs/decisions/ADR-0001-stack.md):
+      #  - ESLint 10: eslint-config-next 16.3.8 lo rompe (eslint-plugin-react usa context.getFilename, eliminado en v10).
+      #  - TypeScript >=6.1 / 7: typescript-eslint solo admite TS <6.1 (el lint falla con TS 7).
+      # Reevalúa al salir eslint-config-next con soporte de ESLint 10 y typescript-eslint con TS >=7.1.
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: typescript
+        versions: [">=6.1.0"]
+    # Las mayores (Next, React, TypeScript, ESLint…) se revisan una a una con QA completo.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

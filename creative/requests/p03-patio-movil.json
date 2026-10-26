@@ -1,0 +1,34 @@
+{
+  "name": "p03-patio-movil",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "home",
+  "role": "recorrido: patio interior, version movil (contenedor medido 328 x 218)",
+  "status": "approved",
+  "requested_at": "2026-10-09T16:32:30.495Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "received_at": "2026-10-09T17:10:00.000Z",
+  "file": "creative/approved/p03-patio-movil.webp",
+  "derived_from": "creative/approved/p03-patio-escritorio.webp",
+  "crop": {
+    "x": 704,
+    "y": 302,
+    "w": 1856,
+    "h": 1237
+  },
+  "note": "Version movil aprobada: recorte B 3:2 de la foto de escritorio aprobada (esquina x704,y302; 1856x1237). Se descartaron el primer recorte, C y la foto entera. El vertical 9:16 subido se conserva como extra sin uso.",
+  "approved_by": "persona (mensaje en el chat: «Elijo el recorte B para el móvil»)",
+  "approved_at": "2026-10-09"
+}

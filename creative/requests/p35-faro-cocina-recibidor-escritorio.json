@@ -1,0 +1,24 @@
+{
+  "name": "p35-faro-cocina-recibidor-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "habitaciones",
+  "role": "Faro, cocina y recibidor, version escritorio (hueco 348x232 / 358x239)",
+  "status": "approved",
+  "batch": "faro",
+  "prompt_file": null,
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "file": "creative/approved/p35-faro-cocina-recibidor-escritorio.png"
+}

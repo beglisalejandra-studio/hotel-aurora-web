@@ -1,0 +1,90 @@
+{
+ "lote": "faro",
+ "prompt": "creative/briefs/prompt-maestro-faro.md",
+ "items": [
+  {
+   "name": "p13-faro-salon-escritorio",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Faro, salon vista general (mini apartamento de 4 personas; se entreve una cama doble por la puerta), version escritorio (huecos 288x360 y 358x448)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p13-faro-salon-movil",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Faro, salon vista general, version movil (hueco 358x448); minimo 1120x1400 como en P04 movil",
+   "min_long_side": 1400
+  },
+  {
+   "name": "p34-faro-tv-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, salon, zona de TV (hueco en muro grueso con baldas de roble), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p34-faro-tv-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, salon, zona de TV, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p14-faro-dormitorio-doble-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, dormitorio principal (1 cama doble), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p14-faro-dormitorio-doble-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, dormitorio principal (1 cama doble), version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p15-faro-dormitorio-individuales-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, segundo dormitorio (2 camas individuales, las dos completas en el encuadre), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p15-faro-dormitorio-individuales-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, segundo dormitorio (2 camas individuales, las dos completas en el encuadre), version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p32-faro-bano-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, bano general (pila de arenisca, grifo de laton, ducha de obra), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p32-faro-bano-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, bano general, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p33-faro-azotea-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, azotea mirador privada (sol suave y dorado), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p33-faro-azotea-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Faro, azotea mirador privada, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  }
+ ]
+}

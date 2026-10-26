@@ -1,0 +1,4 @@
+{
+  "_nota": "Avisos de dependencias que NO tienen versión corregida y que aceptamos temporalmente. Cada excepción lleva motivo, ámbito y caducidad; al caducar, la puerta (`npm run audit`) falla para obligar a revisarla. Retírala en cuanto exista versión corregida. Una excepción de producción exige scope: prod y aprobación humana.",
+  "exceptions": []
+}

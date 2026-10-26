@@ -1,0 +1,26 @@
+{
+  "name": "p29-marea-tv-movil",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "habitaciones",
+  "role": "Marea, zona de TV, version movil (hueco 358x239)",
+  "status": "approved",
+  "requested_at": "2026-10-09T20:41:34.906Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1200,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "batch": "marea",
+  "prompt_file": "creative/briefs/prompt-maestro-marea.md",
+  "received_at": "2026-10-09T21:10:23.773Z",
+  "file": "creative/approved/p29-marea-tv-movil.png"
+}

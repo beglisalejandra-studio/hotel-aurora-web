@@ -1,0 +1,26 @@
+{
+  "name": "p04-alba-escritorio",
+  "kind": "image",
+  "aspect": "4:5",
+  "page": "habitaciones",
+  "role": "habitacion Alba, vista general, version escritorio (contenedores medidos 425x480 y 288x360)",
+  "status": "approved",
+  "requested_at": "2026-10-09T16:57:37.424Z",
+  "master": {
+    "w": 2048,
+    "h": 2560
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "received_at": "2026-10-09T18:49:48.157Z",
+  "file": "creative/approved/p04-alba-escritorio.jpg",
+  "approved_by": "persona (mensaje en el chat: «Apruebo P04 de escritorio y de móvil»)",
+  "approved_at": "2026-10-09"
+}

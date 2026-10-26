@@ -1,0 +1,26 @@
+{
+  "name": "p03-patio-escritorio",
+  "kind": "image",
+  "aspect": "3:2",
+  "page": "home",
+  "role": "recorrido: patio interior, version escritorio (contenedor medido 634 x 422)",
+  "status": "approved",
+  "requested_at": "2026-10-09T16:32:30.430Z",
+  "master": {
+    "w": 2560,
+    "h": 1706
+  },
+  "min_long_side": 1500,
+  "max_bytes": 4000000,
+  "exts": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".avif"
+  ],
+  "received_at": "2026-10-09T16:54:15.691Z",
+  "file": "creative/approved/p03-patio-escritorio.webp",
+  "approved_by": "persona (mensaje en el chat: «la P03 de escritorio queda aprobada»)",
+  "approved_at": "2026-10-09"
+}

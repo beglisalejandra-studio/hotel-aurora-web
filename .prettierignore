@@ -1,0 +1,15 @@
+.next
+node_modules
+coverage
+.lighthouseci
+playwright-report
+test-results
+package-lock.json
+creative/references/screenshots
+public/media
+scripts
+.claude
+*.md
+.web-os
+creative
+.playwright-mcp

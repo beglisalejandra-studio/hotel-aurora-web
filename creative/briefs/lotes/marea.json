@@ -1,0 +1,76 @@
+{
+ "lote": "marea",
+ "prompt": "creative/briefs/prompt-maestro-marea.md",
+ "items": [
+  {
+   "name": "p07-marea-escritorio",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Marea, dormitorio vista general (1 cama doble y 1 individual), version escritorio (huecos 288x360 y 358x448)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p07-marea-movil",
+   "aspect": "4:5",
+   "page": "habitaciones",
+   "role": "Marea, dormitorio vista general, version movil (hueco 358x448); minimo 1120x1400 como en P04 movil",
+   "min_long_side": 1400
+  },
+  {
+   "name": "p08-marea-mirador-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, el banco-mirador de la ventana, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p08-marea-mirador-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, el banco-mirador de la ventana, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p09-marea-camas-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, las dos camas (una doble y una individual), version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p09-marea-camas-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, las dos camas, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p28-marea-bano-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, bano general, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p28-marea-bano-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, bano general, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  },
+  {
+   "name": "p29-marea-tv-escritorio",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, zona de TV, version escritorio (hueco 348x232)",
+   "min_long_side": 1500
+  },
+  {
+   "name": "p29-marea-tv-movil",
+   "aspect": "3:2",
+   "page": "habitaciones",
+   "role": "Marea, zona de TV, version movil (hueco 358x239)",
+   "min_long_side": 1200
+  }
+ ]
+}

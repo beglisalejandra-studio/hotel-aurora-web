@@ -1,0 +1,6 @@
+# Ajusta a los responsables reales. Las rutas sensibles exigen revisión humana.
+*                          @beglisalejandra-studio
+/.github/                  @beglisalejandra-studio
+/lib/security/             @beglisalejandra-studio
+/app/api/                  @beglisalejandra-studio
+/.env.example              @beglisalejandra-studio
