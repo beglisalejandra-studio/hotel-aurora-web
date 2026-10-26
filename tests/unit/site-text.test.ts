@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { accentParts, kineticWords, localePath, plain, tr } from "@/lib/i18n/text";
-import { resolveImage, sanityLoader } from "@/lib/sanity/image";
+import { resolveImage } from "@/lib/sanity/image";
 import { worldPx16 } from "@/lib/map";
 
 describe("textos del panel", () => {
@@ -35,9 +35,9 @@ describe("textos del panel", () => {
 
 describe("fotos del panel", () => {
   const ref = "image-0123456789abcdef0123456789abcdef01234567-2000x1000-webp";
-  it("se piden al propio dominio, con su tamaño", () => {
+  it("salen solo de este proyecto de Sanity, con su tamaño", () => {
     expect(resolveImage({ ref })).toEqual({
-      src: "/cdn/images/7keq933j/production/0123456789abcdef0123456789abcdef01234567-2000x1000.webp",
+      src: "https://cdn.sanity.io/images/7keq933j/production/0123456789abcdef0123456789abcdef01234567-2000x1000.webp",
       width: 2000,
       height: 1000,
       position: undefined,
@@ -52,9 +52,6 @@ describe("fotos del panel", () => {
     expect(r?.src).toMatch(/\?rect=200,0,1600,500$/);
     expect([r?.width, r?.height]).toEqual([1600, 500]);
     expect(r?.position).toBe("50% 50%");
-    expect(sanityLoader({ src: r!.src, width: 640 })).toMatch(
-      /\?rect=200,0,1600,500&w=640&q=72&fm=webp&fit=max$/,
-    );
   });
   it("ignora referencias que no son de imagen", () => {
     expect(resolveImage({ ref: "file-abc-pdf" })).toBeNull();

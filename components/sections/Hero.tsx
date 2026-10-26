@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { Cta } from "@/components/site/Cta";
 import { Photo } from "@/components/site/Photo";
-import { Kinetic, kineticStyle } from "@/components/site/Text";
+import { Accent, Kinetic, kineticStyle } from "@/components/site/Text";
 import type { Locale } from "@/lib/i18n/config";
 import { tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
@@ -107,6 +107,61 @@ function Panel({
   );
 }
 
+function BookingBar({ lang }: { lang: Locale }) {
+  const t = ui(lang);
+  return (
+    <form className="bar" id="heroBar" noValidate aria-label={t.searchDates}>
+      <div className="field">
+        <label htmlFor="b-in">{t.arrive}</label>
+        <input className="input" id="b-in" name="arrive" type="date" />
+      </div>
+      <div className="field">
+        <label htmlFor="b-out">{t.depart}</label>
+        <input className="input" id="b-out" name="depart" type="date" />
+      </div>
+      <div className="field field-wide">
+        <label htmlFor="b-g">{t.guestsLabel}</label>
+        <select className="input" id="b-g" name="guests" defaultValue="2">
+          {[1, 2, 3, 4].map((n) => (
+            <option key={n} value={n}>
+              {t.guests(n)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <button type="submit" className="btn btn-primary">
+        {t.book}
+      </button>
+    </form>
+  );
+}
+
+/** Portada sin recorrido (opción del panel): la foto principal con el titular encima, como en móvil. */
+function StillHero({ s, lang }: { s: Hero; lang: Locale }) {
+  const heading = tr(s.heading, lang);
+  const lead = tr(s.lead, lang);
+  return (
+    <section className="hero-still" id={s.anchor || "portada"} aria-labelledby="h1">
+      <div className="hs-photo">
+        <div className="ph slot f-img" data-foto="">
+          <Photo img={s.facade} lang={lang} breakpoint={900} sizes="100vw" priority quality={70} />
+        </div>
+        <div className="hs-copy">
+          <h1 id="h1">
+            <Accent text={heading} />
+          </h1>
+          {lead && <p className="lead">{lead}</p>}
+        </div>
+      </div>
+      {s.bookingBar !== false && (
+        <div className="wrap hs-bar">
+          <BookingBar lang={lang} />
+        </div>
+      )}
+    </section>
+  );
+}
+
 /** Portada: la entrada a la casa con el scroll (tableta y escritorio) o la foto con el titular (móvil). */
 export function HeroSection({
   s,
@@ -119,6 +174,7 @@ export function HeroSection({
   settings: Settings | null;
   next?: string;
 }) {
+  if (s.walk === false) return <StillHero s={s} lang={lang} />;
   const t = ui(lang);
   const heading = tr(s.heading, lang);
   const lead = tr(s.lead, lang);
@@ -136,7 +192,15 @@ export function HeroSection({
           <div className="cam">
             <div className="facade walk-world">
               <div className="ph slot f-img" data-foto="">
-                <Photo img={s.facade} {...hero} priority quality={70} />
+                <Photo
+                  img={s.facade}
+                  {...hero}
+                  // Foto principal (LCP) en móvil: densidad ~1,5x en vez de la del dispositivo; ahorra ~40 KB
+                  // sin que se note y deja la carga del móvil dentro del presupuesto (ADR-0006: LCP ≤ 2,5 s)
+                  mobileSizes="80vw"
+                  priority
+                  quality={60}
+                />
               </div>
               {s.reception && s.patio && (
                 <div className="doorway" aria-hidden="true">
@@ -152,12 +216,12 @@ export function HeroSection({
                   </div>
                   <div className="leaf lf">
                     <div className="ph slot leaf-img" data-foto="">
-                      <Photo img={s.facade} {...hero} decorative quality={70} />
+                      <Photo img={s.facade} {...hero} decorative quality={60} mobileSizes="80vw" />
                     </div>
                   </div>
                   <div className="leaf rt">
                     <div className="ph slot leaf-img" data-foto="">
-                      <Photo img={s.facade} {...hero} decorative quality={70} />
+                      <Photo img={s.facade} {...hero} decorative quality={60} mobileSizes="80vw" />
                     </div>
                   </div>
                 </div>
@@ -187,31 +251,7 @@ export function HeroSection({
               </h1>
               {lead && <p className="lead">{lead}</p>}
             </div>
-            {s.bookingBar !== false && (
-              <form className="bar" id="heroBar" noValidate aria-label={t.searchDates}>
-                <div className="field">
-                  <label htmlFor="b-in">{t.arrive}</label>
-                  <input className="input" id="b-in" name="arrive" type="date" />
-                </div>
-                <div className="field">
-                  <label htmlFor="b-out">{t.depart}</label>
-                  <input className="input" id="b-out" name="depart" type="date" />
-                </div>
-                <div className="field field-wide">
-                  <label htmlFor="b-g">{t.guestsLabel}</label>
-                  <select className="input" id="b-g" name="guests" defaultValue="2">
-                    {[1, 2, 3, 4].map((n) => (
-                      <option key={n} value={n}>
-                        {t.guests(n)}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  {t.book}
-                </button>
-              </form>
-            )}
+            {s.bookingBar !== false && <BookingBar lang={lang} />}
           </div>
           {steps.map((step, i) => {
             const slot = SLOTS[i];

@@ -4657,3 +4657,55 @@ body.noscroll {
   break-inside: avoid;
   margin-bottom: 6px;
 }
+/* Portada sin recorrido animado (opción «Recorrido animado» desactivada en el panel) */
+.hero-still .hs-photo {
+  position: relative;
+  height: min(78svh, 760px);
+  min-height: 440px;
+}
+.hero-still .f-img {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+}
+.hero-still .hs-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 19, 24, 0) 34%,
+    rgba(13, 19, 24, 0.5) 60%,
+    rgba(13, 19, 24, 0.84) 100%
+  );
+  pointer-events: none;
+}
+.hero-still .hs-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 88px var(--pad) clamp(22px, 4vw, 48px);
+  color: #f3f6f7;
+}
+.hero-still h1 {
+  font: 300 clamp(40px, 7.4vw, 104px)/0.98 var(--f-display);
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.hero-still h1 .acc {
+  color: #f6935f;
+}
+.hero-still .lead {
+  color: #e9eef0;
+  margin-top: 16px;
+}
+.hero-still .hs-bar {
+  margin-top: 16px;
+}

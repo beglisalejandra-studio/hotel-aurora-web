@@ -18,7 +18,12 @@ export function Footer({ lang, data }: { lang: Locale; data: SiteData }) {
       <div className="wrap">
         <div className="foot-grid">
           <div>
-            <Link className="brand" href={localePath(lang, "/")} aria-label={s?.name || "Hotel"}>
+            <Link
+              className="brand"
+              href={localePath(lang, "/")}
+              prefetch={false}
+              aria-label={s?.name || "Hotel"}
+            >
               <span className="brand-name">{brandName(s?.name)}</span>
             </Link>
             {tr(s?.address, lang) && (
@@ -62,7 +67,9 @@ export function Footer({ lang, data }: { lang: Locale; data: SiteData }) {
               <ul>
                 {(c.links ?? []).map((l) => (
                   <li key={l._key}>
-                    <Link href={navHref(l, lang, s?.home)}>{tr(l.label, lang)}</Link>
+                    <Link href={navHref(l, lang, s?.home)} prefetch={false}>
+                      {tr(l.label, lang)}
+                    </Link>
                   </li>
                 ))}
                 {i === 0 && data.hasPosts && !linksToBlog && (

@@ -1,6 +1,6 @@
 # Mapa de datos y subprocesadores (registro de proveedores)
 
-> Mantenlo al día con cada integración. Lo revisa una persona cualificada: **este documento no es asesoría legal**. Estado: **borrador de diseño (fase 3)**; ninguna integración está implementada todavía. Donde pone «por verificar» no he podido comprobar el dato en una fuente oficial.
+> Mantenlo al día con cada integración. Lo revisa una persona cualificada: **este documento no es asesoría legal**. Estado: **web real en preview (2026-10-26)**; ver «Estado en la web real» al final. Donde pone «por verificar» no he podido comprobar el dato en una fuente oficial.
 
 ## Datos recogidos
 | Dato / categoría | Dónde se recoge | Finalidad | Base legal (propuesta) | Retención (propuesta) | Quién accede |
@@ -51,3 +51,10 @@ Acceso, rectificación, supresión, oposición, limitación y portabilidad. Proc
 
 ## Páginas legales publicadas en la maqueta (2026-10-25)
 Política de privacidad, política de cookies, aviso legal y condiciones de reserva (`#/legal/…`, ES/EN), redactadas a partir de este mapa de datos. Textos de ejemplo para un hotel ficticio: **un hotel real los revisa con su asesoría** antes de publicarlos. En la web real se editan desde el panel.
+
+## Estado en la web real (2026-10-26)
+- **Navegar no conecta con terceros** (comprobado con una prueba automática, `tests/e2e/site.spec.ts`): fotos del panel servidas desde el propio dominio (`/cdn/…` → CDN de Sanity por el servidor), tipografías y mapa alojados en la web.
+- **Mews** solo se descarga al pulsar «Reservar». Su widget intenta cargar rastreadores propios (Google Tag Manager `GTM-TTTCZJQ`, Sentry, LaunchDarkly, Azure Application Insights): la política de seguridad de la web los bloquea y la reserva funciona igual. Además se llama a `disableTracking()` mientras el visitante no acepte analítica o marketing.
+- **Solicitudes de mesa, spa y bono**: `/api/request` (mismo origen, 5 cada 10 minutos por IP, antispam, validación con zod). Destino: correo del hotel con Resend si `LEAD_SINK=resend`; si no, solo se registra «llegó una solicitud», sin datos personales.
+- **Asistente**: sin `ANTHROPIC_API_KEY` responde con las preguntas frecuentes del panel, en el navegador, sin enviar nada. Con la clave, `/api/assistant` manda la pregunta y el contenido publicado del hotel a la API de Claude; no se guarda la conversación; 20 preguntas cada 10 minutos por IP y tope diario.
+- **Almacenamiento**: el tema Día o Madrugada se guarda en el navegador (`aurora-theme`); el idioma va en la dirección (`/en`), sin cookie. No hay analítica ni marketing activados, así que **no se muestra aviso de cookies**: aparecerá cuando se configure GA4 o el Pixel de Meta.

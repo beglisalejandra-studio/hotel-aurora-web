@@ -20,18 +20,20 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
-    // Fotos subidas desde el panel (CDN de Sanity), servidas a través de next/image.
-    remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io", pathname: "/images/**" }],
-  },
-  // Las fotos del panel se piden al propio dominio (/cdn/…): el visitante no se conecta con la CDN de Sanity.
-  // Solo las de este proyecto y conjunto de datos, para no servir de pasarela a otros.
-  async rewrites() {
-    return [
+    // Fotos del panel: el optimizador de la propia web las pide a Sanity (solo a este proyecto y conjunto de
+    // datos) y las sirve en AVIF/WebP. El visitante no se conecta con Sanity.
+    remotePatterns: [
       {
-        source: `/cdn/images/${sanityProject}/${sanityDataset}/:file`,
-        destination: `https://cdn.sanity.io/images/${sanityProject}/${sanityDataset}/:file`,
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: `/images/${sanityProject}/${sanityDataset}/**`,
       },
-    ];
+    ],
+    qualities: [60, 75],
+    // Menos anchos que los de serie: cubren móvil, tableta y escritorio y aligeran el HTML de la portada.
+    deviceSizes: [640, 828, 1080, 1440, 1920, 2560],
+    // Las fotos del panel no cambian de dirección (el nombre es su huella): se pueden guardar mucho tiempo.
+    minimumCacheTTL: 2678400,
   },
   ...(target === "standalone" ? { output: "standalone" as const } : {}),
   // Un solo host canónico (SEO): el resto se redirige con 308. No aplica a las comprobaciones de salud.

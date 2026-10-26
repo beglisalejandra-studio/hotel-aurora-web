@@ -1,8 +1,9 @@
 import { getImageProps } from "next/image";
+import { preload } from "react-dom";
 import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import { tr } from "@/lib/i18n/text";
-import { resolveImage, sanityLoader } from "@/lib/sanity/image";
+import { resolveImage } from "@/lib/sanity/image";
 import type { Img } from "@/lib/sanity/types";
 
 type Props = {
@@ -39,7 +40,6 @@ export function Photo({
   const alt = decorative ? "" : tr(img?.alt, lang);
   const common = {
     alt,
-    loader: sanityLoader,
     quality,
     ...(priority ? { fetchPriority: "high" as const, loading: "eager" as const } : {}),
   };
@@ -59,6 +59,25 @@ export function Photo({
         sizes: mobileSizes ?? sizes,
       }).props
     : null;
+  // La foto principal se pide desde el <head>, antes que los scripts y las fuentes: llega antes y pinta antes (LCP)
+  if (priority) {
+    const bp = `(max-width: ${breakpoint}px)`;
+    if (mob)
+      preload(mob.src, {
+        as: "image",
+        imageSrcSet: mob.srcSet,
+        imageSizes: mob.sizes,
+        fetchPriority: "high",
+        media: bp,
+      });
+    preload(desk.src, {
+      as: "image",
+      imageSrcSet: desk.srcSet,
+      imageSizes: desk.sizes,
+      fetchPriority: "high",
+      ...(mob ? { media: `not all and ${bp}` } : {}),
+    });
+  }
   const pos = (m && d.position) || d.position;
   const style: CSSProperties | undefined = d.position ? { objectPosition: d.position } : undefined;
   return (

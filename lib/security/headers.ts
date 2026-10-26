@@ -30,6 +30,8 @@ export function buildStaticCsp(o: SecurityHeaderOptions): string {
     "media-src 'self'",
     `connect-src ${list(["'self'"], o.extraConnectSrc)}`,
     `frame-src ${o.extraFrameSrc?.length ? o.extraFrameSrc.join(" ") : "'none'"}`,
+    // Procesos en segundo plano creados por la propia página (el widget de reservas los usa)
+    "worker-src 'self' blob:",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",

@@ -139,7 +139,7 @@ export const sectionHero = defineType({
       initialValue: true,
       group: "options",
       description:
-        "Solo en tableta y escritorio. En móvil la portada es siempre estática y compacta.",
+        "Solo en tableta y escritorio. Si lo desactivas, la portada es la foto principal con el titular encima (sin los textos del recorrido). En móvil la portada es siempre así, compacta.",
     }),
     defineField({
       name: "bookingBar",

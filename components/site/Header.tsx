@@ -50,12 +50,17 @@ export function Header({ lang, data }: { lang: Locale; data: SiteData }) {
   return (
     <header className="hdr" id="hdr">
       <div className="wrap hdr-in">
-        <Link className="brand" href={localePath(lang, "/")} aria-label={s?.name || "Hotel"}>
+        <Link
+          className="brand"
+          href={localePath(lang, "/")}
+          prefetch={false}
+          aria-label={s?.name || "Hotel"}
+        >
           <span className="brand-name">{brandName(s?.name)}</span>
         </Link>
         <nav className="nav" id="nav" aria-label={t.main}>
           {(data.nav?.header ?? []).map((l) => (
-            <Link key={l._key} href={navHref(l, lang, s?.home)}>
+            <Link key={l._key} href={navHref(l, lang, s?.home)} prefetch={false}>
               {tr(l.label, lang)}
             </Link>
           ))}

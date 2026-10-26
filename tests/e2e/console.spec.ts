@@ -5,7 +5,7 @@ import { expect, test } from "@playwright/test";
  * al cargar la home. Atrapa cosas que un ojo humano no ve (favicon 404, código que exige 'unsafe-eval', etc.).
  * Añade aquí las rutas nuevas importantes del proyecto.
  */
-const ROUTES = ["/"];
+const ROUTES = ["/", "/en", "/habitaciones/alba", "/privacidad"];
 
 for (const route of ROUTES) {
   test(`consola limpia y sin violaciones de CSP: ${route}`, async ({ page }) => {

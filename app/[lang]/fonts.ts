@@ -2,20 +2,23 @@ import localFont from "next/font/local";
 
 /**
  * Tipografías del tema, alojadas en la propia web (licencia SIL Open Font License; subconjunto latino, variable
- * 300–600). Navegar no conecta con Google Fonts. Solo se precargan las dos de la maqueta; las demás se descargan
- * únicamente si el cliente las elige en el panel.
+ * 300–600). Navegar no conecta con Google Fonts. Ninguna se precarga: así no compiten con la foto principal (LCP) y
+ * mientras llegan se ve la tipografía de respaldo con las medidas ajustadas (sin saltos). Las alternativas solo se
+ * descargan si el cliente las elige en el panel.
  */
 const outfit = localFont({
   src: "../fonts/outfit.woff2",
   weight: "300 600",
   variable: "--font-outfit",
   display: "swap",
+  preload: false,
 });
 const workSans = localFont({
   src: "../fonts/work-sans.woff2",
   weight: "300 600",
   variable: "--font-work-sans",
   display: "swap",
+  preload: false,
 });
 const fraunces = localFont({
   src: "../fonts/fraunces.woff2",

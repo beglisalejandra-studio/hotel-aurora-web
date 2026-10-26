@@ -1,12 +1,11 @@
-import type { ImageLoader } from "next/image";
 import { dataset, projectId } from "@/sanity/env";
 import type { ImageRef } from "./types";
 
 /**
- * Fotos del panel servidas desde el propio dominio: `/cdn/images/…` se reescribe a la CDN de Sanity en next.config,
- * así el visitante solo se conecta con la web del hotel. El recorte y el punto de interés del panel se respetan.
+ * Fotos del panel. El visitante nunca las pide a Sanity: pasan por el optimizador de imágenes de la propia web
+ * (`/_next/image`), que las sirve en AVIF o WebP al tamaño justo. El recorte y el punto de interés del panel se respetan.
  */
-export const CDN_PREFIX = `/cdn/images/${projectId}/${dataset}/`;
+export const SANITY_IMAGES = `https://cdn.sanity.io/images/${projectId}/${dataset}/`;
 
 export type ResolvedImage = { src: string; width: number; height: number; position?: string };
 
@@ -19,7 +18,7 @@ export function resolveImage(img: ImageRef | undefined): ResolvedImage | null {
   const [, id, w, h, ext] = m;
   let width = Number(w);
   let height = Number(h);
-  let src = `${CDN_PREFIX}${id}-${w}x${h}.${ext}`;
+  let src = `${SANITY_IMAGES}${id}-${w}x${h}.${ext}`;
   const c = img.crop;
   let box = { left: 0, top: 0, w: 1, h: 1 };
   if (c && (c.left || c.right || c.top || c.bottom)) {
@@ -38,7 +37,3 @@ export function resolveImage(img: ImageRef | undefined): ResolvedImage | null {
       : undefined;
   return { src, width, height, position };
 }
-
-/** La CDN de Sanity hace el redimensionado: WebP, sin agrandar nunca la original. */
-export const sanityLoader: ImageLoader = ({ src, width, quality }) =>
-  `${src}${src.includes("?") ? "&" : "?"}w=${width}&q=${quality ?? 72}&fm=webp&fit=max`;

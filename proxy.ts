@@ -20,6 +20,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Fuera: panel, API, archivos internos de Next, fotos y mapa propios, y cualquier archivo con extensión.
-  matcher: ["/((?!admin|api|_next|cdn|seed|map|fonts|.*\\..*).*)"],
+  // Fuera: panel, API, archivos internos de Next (también las fotos optimizadas), mapa propio y archivos con extensión.
+  matcher: ["/((?!admin|api|_next|seed|map|fonts|.*\\..*).*)"],
 };
