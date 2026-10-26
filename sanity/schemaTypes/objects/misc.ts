@@ -89,7 +89,8 @@ export const cta = defineType({
       name: "href",
       title: "Dirección",
       type: "string",
-      description: "Una página del sitio (/blog) o una dirección completa (https://…).",
+      description:
+        "Una página del sitio (/blog), una sección de la portada (#restaurante) o una dirección completa (https://…).",
       hidden: ({ parent }) => parent?.action !== "link",
     }),
     defineField({

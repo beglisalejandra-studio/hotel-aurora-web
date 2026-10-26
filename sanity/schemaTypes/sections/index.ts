@@ -105,11 +105,32 @@ export const sectionHero = defineType({
               description: ACCENT_HELP,
             }),
             defineField({ name: "text", title: "Texto", type: "localeText" }),
+            defineField({
+              name: "ghost",
+              title: "Palabra de fondo",
+              type: "string",
+              description:
+                "Opcional. Palabra grande y tenue detrás del texto (por ejemplo «PATIO»). Solo se ve en los textos 3 y 6.",
+            }),
+            defineField({
+              name: "link",
+              title: "Enlace",
+              type: "cta",
+              description: "Opcional. Por ejemplo «Ver habitaciones» con el enlace #habitaciones.",
+            }),
           ],
-          preview: { select: { title: "title.es", subtitle: "kicker.es" } },
+          preview: {
+            select: { title: "title.es", subtitle: "kicker.es" },
+            prepare: ({ title, subtitle }: { title?: string; subtitle?: string }) => ({
+              title: (title ?? "Texto").replaceAll("*", ""),
+              subtitle,
+            }),
+          },
         }),
       ],
-      validation: (r) => r.max(3),
+      description:
+        "Aparecen uno tras otro mientras se baja por la entrada de la casa (en tableta y escritorio), en este orden: 1 y 2 en la fachada (si el titular del 1 empieza por un número, el número se ve en grande), 3 en grande al cruzar la puerta, 4 y 5 en la recepción, 6 en grande camino del patio, y 7, 8 y 9 en el patio. En móvil la portada es solo la foto con el titular, sin estos textos.",
+      validation: (r) => r.max(9),
     }),
     defineField({
       name: "walk",

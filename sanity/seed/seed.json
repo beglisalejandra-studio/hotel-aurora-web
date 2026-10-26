@@ -4630,7 +4630,7 @@
       },
       "sections": [
         {
-          "_key": "k00fm",
+          "_key": "k00fs",
           "_type": "sectionHero",
           "heading": {
             "_type": "localeString",
@@ -4709,6 +4709,40 @@
               }
             },
             {
+              "_key": "walk-3",
+              "_type": "heroStep",
+              "ghost": "AURORA",
+              "title": {
+                "_type": "localeString",
+                "es": "Pasa. *Tu perro* también.",
+                "en": "Come in. *Your dog* too."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Hotel petfriendly en El Palmar: hasta dos perros por habitación.",
+                "en": "Dog-friendly hotel in El Palmar: up to two dogs per room."
+              }
+            },
+            {
+              "_key": "walk-4",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Reserva directa",
+                "en": "Direct booking"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Reservas con el hotel, *no con una plataforma.*",
+                "en": "You book with the hotel, *not a platform.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Sin intermediarios ni su comisión. Pocos pasos, en español o en inglés, y ves la política de cancelación antes de pagar.",
+                "en": "No middlemen and no middleman commission. A few steps, in Spanish or English, and you see the cancellation policy before you pay."
+              }
+            },
+            {
               "_key": "k00ep",
               "_type": "heroStep",
               "kicker": {
@@ -4726,6 +4760,89 @@
                 "es": "Hasta dos perros por habitación, con cama y cuencos de cortesía. El suplemento por mascota se ve antes de pagar.",
                 "en": "Up to two dogs per room, with a bed and bowls provided. The pet supplement is shown before you pay."
               }
+            },
+            {
+              "_key": "walk-6",
+              "_type": "heroStep",
+              "ghost": "PATIO",
+              "title": {
+                "_type": "localeString",
+                "es": "Al fondo de la casa, el *patio andaluz.*",
+                "en": "At the far end of the house, the *Andalusian patio.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Un olivo, un estanque y un banco de piedra para no hacer nada.",
+                "en": "An olive tree, a pond and a stone bench for doing nothing."
+              }
+            },
+            {
+              "_key": "walk-7",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Habitaciones",
+                "en": "Rooms"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Cuatro maneras de *dormir* en El Palmar.",
+                "en": "Four ways to *sleep* in El Palmar."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Alba y Terraza, para dos. Marea, para tres. Faro, para cuatro, con salón y cocina.",
+                "en": "Alba and Terraza sleep two. Marea sleeps three. Faro sleeps four, with a living room and kitchen."
+              },
+              "link": {
+                "_type": "cta",
+                "label": {
+                  "_type": "localeString",
+                  "es": "Ver habitaciones",
+                  "en": "See the rooms"
+                },
+                "action": "link",
+                "href": "#habitaciones",
+                "style": "link"
+              }
+            },
+            {
+              "_key": "walk-8",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Spa y restaurante",
+                "en": "Spa and restaurant"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "*Mesa* de mercado y circuito de *agua,* bajo el mismo techo.",
+                "en": "A market-cuisine *table* and a *water* circuit, under one roof."
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "El spa admite también a quien no se aloja. Solicita mesa o cita desde la web.",
+                "en": "The spa also welcomes non-guests. Request a table or an appointment online."
+              }
+            },
+            {
+              "_key": "walk-9",
+              "_type": "heroStep",
+              "kicker": {
+                "_type": "localeString",
+                "es": "Llegada y salida",
+                "en": "Check-in and check-out"
+              },
+              "title": {
+                "_type": "localeString",
+                "es": "Entrada *desde las 15:00.*",
+                "en": "Check-in *from 15:00.*"
+              },
+              "text": {
+                "_type": "localeText",
+                "es": "Salida hasta las 12:00.",
+                "en": "Check-out by 12:00."
+              }
             }
           ],
           "walk": true,
@@ -4733,7 +4850,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fn",
+          "_key": "k00ft",
           "_type": "sectionRooms",
           "heading": {
             "_type": "localeString",
@@ -4752,7 +4869,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fo",
+          "_key": "k00fu",
           "_type": "sectionDirect",
           "kicker": {
             "_type": "localeString",
@@ -4766,25 +4883,25 @@
           },
           "items": [
             {
-              "_key": "k00eq",
+              "_key": "k00ew",
               "_type": "localeString",
               "es": "Sin intermediarios ni su comisión. Hablas con el hotel, no con una plataforma.",
               "en": "No middlemen and no middleman commission. You deal with the hotel, not a platform."
             },
             {
-              "_key": "k00er",
+              "_key": "k00ex",
               "_type": "localeString",
               "es": "Condiciones claras. Ves la política de cancelación de cada tarifa antes de pagar.",
               "en": "Clear terms. You see each rate's cancellation policy before you pay."
             },
             {
-              "_key": "k00es",
+              "_key": "k00ey",
               "_type": "localeString",
               "es": "Pago seguro. Lo gestiona el motor de reservas; esta web nunca ve tu tarjeta.",
               "en": "Secure payment. The booking engine handles it; this website never sees your card."
             },
             {
-              "_key": "k00et",
+              "_key": "k00ez",
               "_type": "localeString",
               "es": "En español o en inglés. Unos pocos pasos, también desde el móvil.",
               "en": "In Spanish or English. A few steps, from your phone too."
@@ -4792,7 +4909,7 @@
           ],
           "ctas": [
             {
-              "_key": "k00eu",
+              "_key": "k00f0",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -4803,7 +4920,7 @@
               "style": "primary"
             },
             {
-              "_key": "k00ev",
+              "_key": "k00f1",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -4817,7 +4934,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fp",
+          "_key": "k00fv",
           "_type": "sectionFeature",
           "heading": {
             "_type": "localeString",
@@ -4840,7 +4957,7 @@
           },
           "ctas": [
             {
-              "_key": "k00ew",
+              "_key": "k00f2",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -4860,7 +4977,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fq",
+          "_key": "k00fw",
           "_type": "sectionFeature",
           "heading": {
             "_type": "localeString",
@@ -4878,7 +4995,7 @@
           },
           "groups": [
             {
-              "_key": "k00f6",
+              "_key": "k00fc",
               "_type": "featureGroup",
               "title": {
                 "_type": "localeString",
@@ -4892,7 +5009,7 @@
               },
               "items": [
                 {
-                  "_key": "k00ex",
+                  "_key": "k00f3",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4906,7 +5023,7 @@
                   }
                 },
                 {
-                  "_key": "k00ey",
+                  "_key": "k00f4",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4920,7 +5037,7 @@
                   }
                 },
                 {
-                  "_key": "k00ez",
+                  "_key": "k00f5",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4936,7 +5053,7 @@
               ]
             },
             {
-              "_key": "k00f7",
+              "_key": "k00fd",
               "_type": "featureGroup",
               "title": {
                 "_type": "localeString",
@@ -4950,7 +5067,7 @@
               },
               "items": [
                 {
-                  "_key": "k00f0",
+                  "_key": "k00f6",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4964,7 +5081,7 @@
                   }
                 },
                 {
-                  "_key": "k00f1",
+                  "_key": "k00f7",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4978,7 +5095,7 @@
                   }
                 },
                 {
-                  "_key": "k00f2",
+                  "_key": "k00f8",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -4994,7 +5111,7 @@
               ]
             },
             {
-              "_key": "k00f8",
+              "_key": "k00fe",
               "_type": "featureGroup",
               "title": {
                 "_type": "localeString",
@@ -5008,7 +5125,7 @@
               },
               "items": [
                 {
-                  "_key": "k00f3",
+                  "_key": "k00f9",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -5022,7 +5139,7 @@
                   }
                 },
                 {
-                  "_key": "k00f4",
+                  "_key": "k00fa",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -5036,7 +5153,7 @@
                   }
                 },
                 {
-                  "_key": "k00f5",
+                  "_key": "k00fb",
                   "_type": "labelValue",
                   "label": {
                     "_type": "localeString",
@@ -5054,7 +5171,7 @@
           ],
           "ctas": [
             {
-              "_key": "k00f9",
+              "_key": "k00ff",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -5074,7 +5191,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fr",
+          "_key": "k00fx",
           "_type": "sectionFeature",
           "heading": {
             "_type": "localeString",
@@ -5092,19 +5209,19 @@
           },
           "bullets": [
             {
-              "_key": "k00fa",
+              "_key": "k00fg",
               "_type": "localeString",
               "es": "Hotel petfriendly en Vejer de la Frontera: hasta dos perros por habitación.",
               "en": "Dog-friendly hotel in Vejer de la Frontera: up to two dogs per room."
             },
             {
-              "_key": "k00fb",
+              "_key": "k00fh",
               "_type": "localeString",
               "es": "Cama y cuencos de cortesía en la habitación.",
               "en": "A bed and bowls provided in the room."
             },
             {
-              "_key": "k00fc",
+              "_key": "k00fi",
               "_type": "localeString",
               "es": "El suplemento por mascota se ve antes de pagar.",
               "en": "The pet supplement is shown before you pay."
@@ -5112,7 +5229,7 @@
           ],
           "ctas": [
             {
-              "_key": "k00fd",
+              "_key": "k00fj",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -5133,7 +5250,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fs",
+          "_key": "k00fy",
           "_type": "sectionOffers",
           "heading": {
             "_type": "localeString",
@@ -5152,7 +5269,7 @@
           "hidden": false
         },
         {
-          "_key": "k00ft",
+          "_key": "k00fz",
           "_type": "sectionFacts",
           "kicker": {
             "_type": "localeString",
@@ -5180,7 +5297,7 @@
           },
           "facts": [
             {
-              "_key": "k00fe",
+              "_key": "k00fk",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5194,7 +5311,7 @@
               }
             },
             {
-              "_key": "k00ff",
+              "_key": "k00fl",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5208,7 +5325,7 @@
               }
             },
             {
-              "_key": "k00fg",
+              "_key": "k00fm",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5222,7 +5339,7 @@
               }
             },
             {
-              "_key": "k00fh",
+              "_key": "k00fn",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5236,7 +5353,7 @@
               }
             },
             {
-              "_key": "k00fi",
+              "_key": "k00fo",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5250,7 +5367,7 @@
               }
             },
             {
-              "_key": "k00fj",
+              "_key": "k00fp",
               "_type": "labelValue",
               "label": {
                 "_type": "localeString",
@@ -5271,7 +5388,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fu",
+          "_key": "k00g0",
           "_type": "sectionFaq",
           "heading": {
             "_type": "localeString",
@@ -5285,7 +5402,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fv",
+          "_key": "k00g1",
           "_type": "sectionMap",
           "heading": {
             "_type": "localeString",
@@ -5309,7 +5426,7 @@
           "hidden": false
         },
         {
-          "_key": "k00fw",
+          "_key": "k00g2",
           "_type": "sectionClosing",
           "heading": {
             "_type": "localeString",
@@ -5328,7 +5445,7 @@
           },
           "ctas": [
             {
-              "_key": "k00fk",
+              "_key": "k00fq",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -5339,7 +5456,7 @@
               "style": "primary"
             },
             {
-              "_key": "k00fl",
+              "_key": "k00fr",
               "_type": "cta",
               "label": {
                 "_type": "localeString",
@@ -5359,7 +5476,7 @@
       "_type": "navigation",
       "header": [
         {
-          "_key": "k00fx",
+          "_key": "k00g3",
           "_type": "navLink",
           "label": {
             "_type": "localeString",
@@ -5373,7 +5490,7 @@
           "anchor": "habitaciones"
         },
         {
-          "_key": "k00fy",
+          "_key": "k00g4",
           "_type": "navLink",
           "label": {
             "_type": "localeString",
@@ -5387,7 +5504,7 @@
           "anchor": "restaurante"
         },
         {
-          "_key": "k00fz",
+          "_key": "k00g5",
           "_type": "navLink",
           "label": {
             "_type": "localeString",
@@ -5401,7 +5518,7 @@
           "anchor": "spa"
         },
         {
-          "_key": "k00g0",
+          "_key": "k00g6",
           "_type": "navLink",
           "label": {
             "_type": "localeString",
@@ -5415,7 +5532,7 @@
           "anchor": "mascotas"
         },
         {
-          "_key": "k00g1",
+          "_key": "k00g7",
           "_type": "navLink",
           "label": {
             "_type": "localeString",
@@ -5431,7 +5548,7 @@
       ],
       "footer": [
         {
-          "_key": "k00gb",
+          "_key": "k00gh",
           "_type": "navColumn",
           "title": {
             "_type": "localeString",
@@ -5440,7 +5557,7 @@
           },
           "links": [
             {
-              "_key": "k00g2",
+              "_key": "k00g8",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5454,7 +5571,7 @@
               "anchor": "habitaciones"
             },
             {
-              "_key": "k00g3",
+              "_key": "k00g9",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5468,7 +5585,7 @@
               "anchor": "restaurante"
             },
             {
-              "_key": "k00g4",
+              "_key": "k00ga",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5482,7 +5599,7 @@
               "anchor": "spa"
             },
             {
-              "_key": "k00g5",
+              "_key": "k00gb",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5496,7 +5613,7 @@
               "anchor": "mascotas"
             },
             {
-              "_key": "k00g6",
+              "_key": "k00gc",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5512,7 +5629,7 @@
           ]
         },
         {
-          "_key": "k00gc",
+          "_key": "k00gi",
           "_type": "navColumn",
           "title": {
             "_type": "localeString",
@@ -5521,7 +5638,7 @@
           },
           "links": [
             {
-              "_key": "k00g7",
+              "_key": "k00gd",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5534,7 +5651,7 @@
               }
             },
             {
-              "_key": "k00g8",
+              "_key": "k00ge",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5547,7 +5664,7 @@
               }
             },
             {
-              "_key": "k00g9",
+              "_key": "k00gf",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",
@@ -5560,7 +5677,7 @@
               }
             },
             {
-              "_key": "k00ga",
+              "_key": "k00gg",
               "_type": "navLink",
               "label": {
                 "_type": "localeString",

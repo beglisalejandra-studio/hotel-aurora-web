@@ -39,6 +39,36 @@ export function resolveImages(value: unknown, assets: Map<string, string>): unkn
   return value;
 }
 
+type Step = { _key: string } & Record<string, unknown>;
+type SeedDoc = { _id: string; sections?: { _type: string; steps?: Step[] }[] };
+
+/** Claves de los tres textos del recorrido que se cargaron con la primera versión del contenido. */
+const FIRST_WALK = ["k00en", "k00eo", "k00ep"];
+
+/**
+ * Migración automática (2026-10-26): el recorrido de la portada pasó de 3 a 9 textos, como en la maqueta aprobada.
+ * Solo actúa si la portada conserva exactamente los 3 textos de la primera carga (en el mismo orden); los textos que el
+ * cliente haya cambiado se mantienen tal cual y los 6 nuevos se intercalan en su sitio. Si ya hay otra cosa, no toca nada.
+ */
+async function completeWalk(client: ReturnType<typeof useClient>) {
+  const home = (seed.documents as unknown as SeedDoc[]).find((d) => d._id === "page-inicio");
+  const seeded = home?.sections?.find((s) => s._type === "sectionHero")?.steps ?? [];
+  for (const id of ["page-inicio", "drafts.page-inicio"]) {
+    const hero = await client.fetch<{ _key: string; steps?: Step[] } | null>(
+      '*[_id == $id][0].sections[_type == "sectionHero"][0]{_key, steps}',
+      { id },
+    );
+    const keys = (hero?.steps ?? []).map((s) => s._key);
+    if (!hero || keys.join() !== FIRST_WALK.join()) continue;
+    const current = new Map((hero.steps ?? []).map((s) => [s._key, s]));
+    const steps = seeded.map((s) => current.get(s._key) ?? s);
+    await client
+      .patch(id)
+      .set({ [`sections[_key=="${hero._key}"].steps`]: steps })
+      .commit();
+  }
+}
+
 /**
  * Contenido inicial automático (pedido de la persona, 2026-10-25: «a partir de ahora eso no debería ser manual»).
  * La primera vez que un administrador abre el panel y aún no hay «Ajustes del hotel», se cargan solos los textos, las
@@ -58,7 +88,10 @@ export function SeedOnFirstOpen(props: LayoutProps) {
         const exists = await client.fetch<number>(
           'count(*[_id in ["settings", "drafts.settings"]])',
         );
-        if (exists > 0) return setStatus({ phase: "idle", done: 0, total: 0 });
+        if (exists > 0) {
+          await completeWalk(client);
+          return setStatus({ phase: "idle", done: 0, total: 0 });
+        }
         const files = Object.values(seed.images).flatMap((i) =>
           [i.desktop, i.mobile].filter((p): p is string => Boolean(p)),
         );
