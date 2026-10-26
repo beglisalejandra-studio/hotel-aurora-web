@@ -4,6 +4,7 @@ import { CogIcon } from "@sanity/icons/Cog";
 import { ColorWheelIcon } from "@sanity/icons/ColorWheel";
 import { ComposeIcon } from "@sanity/icons/Compose";
 import { DocumentTextIcon } from "@sanity/icons/DocumentText";
+import { EditIcon } from "@sanity/icons/Edit";
 import { HelpCircleIcon } from "@sanity/icons/HelpCircle";
 import { HomeIcon } from "@sanity/icons/Home";
 import { ImagesIcon } from "@sanity/icons/Images";
@@ -117,6 +118,12 @@ const CSS = `
 .ah-task svg{font-size:28px;flex:none;margin-top:-2px}
 .ah-task strong{display:block;font-size:16px;margin-bottom:4px}
 .ah-task span{font-size:14px;color:var(--card-muted-fg-color,#5b6670)}
+.ah-edit{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-radius:12px;text-decoration:none;color:#fff;background:#b9431a;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.ah-edit:hover{background:#a23a16}
+.ah-edit:focus-visible{outline:3px solid var(--card-focus-ring-color,#2276fc);outline-offset:2px}
+.ah-edit svg{font-size:34px;flex:none}
+.ah-edit strong{display:block;font-size:20px;margin-bottom:6px}
+.ah-edit span{font-size:15px;opacity:.95}
 .ah-how{border-radius:10px;padding:20px 22px;border:1px solid var(--card-border-color,rgba(22,32,42,.16))}
 .ah-how ol{margin:0 0 12px;padding-left:22px;display:grid;gap:8px 32px;font-size:16px}
 @media (min-width:900px){.ah-how ol{grid-template-columns:repeat(3,1fr)}}
@@ -153,6 +160,31 @@ function TaskCard({ task, homeId }: { task: Task; homeId: string }) {
   );
 }
 
+// Ruta de la herramienta «Editar la web» dentro del panel (la maneja el enrutador del panel, no Next).
+const EDIT_PATH = "/admin/editar";
+
+/** Acceso grande a «Editar la web»: la web real, editable (lo que más se usa). */
+function EditCard() {
+  const router = useRouter();
+  const onClick = (e: MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    router.navigateUrl({ path: EDIT_PATH });
+  };
+  return (
+    <a className="ah-edit" href={EDIT_PATH} onClick={onClick}>
+      <EditIcon aria-hidden="true" />
+      <div>
+        <strong>Editar la web viéndola</strong>
+        <span>
+          La web tal cual, con todo editable: pulsa un texto o una foto para cambiarlo, arrastra
+          habitaciones y secciones para ordenarlas, y añade o quita con los botones de cada sección.
+        </span>
+      </div>
+    </a>
+  );
+}
+
 /** Portada del panel: las tareas habituales con un clic y cómo se publica un cambio, en palabras sencillas. */
 function HomeTool() {
   const client = useClient({ apiVersion });
@@ -173,6 +205,7 @@ function HomeTool() {
             Cada botón te lleva directamente a la pantalla donde se cambia.
           </p>
         </header>
+        <EditCard />
         <section className="ah-how">
           <h2>Cómo se publica un cambio</h2>
           <ol>

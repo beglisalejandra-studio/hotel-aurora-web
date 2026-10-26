@@ -12,7 +12,8 @@ test.describe("base del sitio", () => {
   test("cabeceras de seguridad presentes", async ({ request }) => {
     const h = (await request.get("/")).headers();
     expect(h["x-content-type-options"]).toBe("nosniff");
-    expect(h["x-frame-options"]).toBe("DENY");
+    // Solo el propio dominio puede enmarcar la web (lo usa el editor visual del panel)
+    expect(h["x-frame-options"]).toBe("SAMEORIGIN");
     expect(h["referrer-policy"]).toBeTruthy();
     expect(h["content-security-policy"]).toMatch(/default-src 'self'/);
     expect(h["x-powered-by"]).toBeUndefined();

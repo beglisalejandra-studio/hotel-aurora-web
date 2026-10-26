@@ -67,6 +67,8 @@ export type CookieNotice = { title?: L10n; text?: L10n; analytics?: L10n; market
 
 export type RoomCard = {
   _id: string;
+  /** Solo si está en la lista ordenada de la sección (permite arrastrarla en el editor visual). */
+  _key?: string;
   title?: L10n;
   slug: string;
   summary?: L10n;
@@ -87,13 +89,14 @@ export type Room = RoomCard & {
 };
 export type Offer = {
   _id: string;
+  _key?: string;
   title?: L10n;
   slug?: string;
   summary?: L10n;
   image?: Img;
   cta?: Cta | null;
 };
-export type Faq = { _id: string; question?: L10n; answer?: L10n };
+export type Faq = { _id: string; _key?: string; question?: L10n; answer?: L10n };
 export type PostCard = {
   _id: string;
   title?: L10n;
@@ -112,7 +115,7 @@ export type LegalPage = {
   seo?: Seo;
 };
 
-type Base = { _key: string; anchor?: string };
+type Base = { _key: string; anchor?: string; hidden?: boolean };
 export type LabelValue = { _key: string; label?: L10n; value?: L10n };
 export type HeroStep = {
   _key: string;

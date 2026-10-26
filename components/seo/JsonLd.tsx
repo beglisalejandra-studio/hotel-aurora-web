@@ -1,3 +1,5 @@
+import { stegaClean } from "next-sanity";
+
 /**
  * Datos estructurados (schema.org) como <script type="application/ld+json">.
  * Se escapa "<" para que un valor con "</script>" no pueda cerrar la etiqueta (inyección XSS), y los separadores de línea
@@ -8,7 +10,8 @@ const LINE_SEPARATOR = new RegExp(String.fromCharCode(0x2028), "g");
 const PARAGRAPH_SEPARATOR = new RegExp(String.fromCharCode(0x2029), "g");
 
 export function jsonLdString(data: Record<string, unknown>): string {
-  return JSON.stringify(data)
+  // stegaClean: en el editor visual los textos llevan marcas invisibles; los buscadores nunca deben verlas.
+  return JSON.stringify(stegaClean(data))
     .replace(/</g, "\\u003c")
     .replace(LINE_SEPARATOR, "\\u2028")
     .replace(PARAGRAPH_SEPARATOR, "\\u2029");

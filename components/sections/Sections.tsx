@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PortableText } from "next-sanity";
-import type { CSSProperties } from "react";
+import { Fragment, type CSSProperties } from "react";
+import { AddCard } from "@/components/edit/AddCard";
+import { EditSection } from "@/components/edit/EditSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Cta } from "@/components/site/Cta";
 import { Photo } from "@/components/site/Photo";
@@ -8,6 +10,8 @@ import { Accent } from "@/components/site/Text";
 import type { Locale } from "@/lib/i18n/config";
 import { localePath, plain, tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
+import { sanityAttr, sectionPath, type EditDoc } from "@/lib/edit/attr";
+import { ORDERED_LISTS, type SectionType } from "@/lib/edit/labels";
 import { MAP_LEVELS, worldPx16 } from "@/lib/map";
 import { waHref } from "@/lib/site-data";
 import type { Faq, Section, Settings } from "@/lib/sanity/types";
@@ -15,13 +19,24 @@ import { HeroSection } from "./Hero";
 import { PostCards } from "./PostCards";
 import { RoomCards } from "./RoomCards";
 
-type Ctx = { lang: Locale; settings: Settings | null; prev?: Section; first: boolean };
+type Ctx = {
+  lang: Locale;
+  settings: Settings | null;
+  prev?: Section;
+  first: boolean;
+  /** Solo en el editor visual del panel: el documento de la página que se está editando. */
+  edit?: EditDoc;
+};
 type Of<T extends Section["_type"]> = Extract<Section, { _type: T }>;
 
 const hid = (s: Section) => `h-${s._key}`;
 const style = (v: Record<string, string>) => v as CSSProperties;
 
-function Rooms({ s, lang }: { s: Of<"sectionRooms"> } & Ctx) {
+/** Atributos de un elemento de una lista ordenable (habitaciones, paquetes, preguntas) en el editor visual. */
+const itemAttr = (edit: EditDoc | undefined, s: Section, field: string, key?: string) =>
+  edit && key ? sanityAttr(edit, `${sectionPath(s._key)}.${field}[_key=="${key}"]`) : {};
+
+function Rooms({ s, lang, edit }: { s: Of<"sectionRooms"> } & Ctx) {
   const t = ui(lang);
   return (
     <section
@@ -47,12 +62,19 @@ function Rooms({ s, lang }: { s: Of<"sectionRooms"> } & Ctx) {
       </div>
       <div className="wrap rooms-wrap" style={{ overflow: "hidden" }}>
         <div className="track" id="track" tabIndex={0} role="region" aria-label={t.rooms}>
-          <RoomCards rooms={s.rooms ?? []} lang={lang} />
+          <RoomCards
+            rooms={s.rooms ?? []}
+            lang={lang}
+            edit={edit && { doc: edit, path: `${sectionPath(s._key)}.rooms` }}
+          />
         </div>
         <div className="rp" aria-hidden="true">
           <i />
         </div>
         {tr(s.intro, lang) && <p className="small fine">{tr(s.intro, lang)}</p>}
+        {edit && (
+          <AddCard type={ORDERED_LISTS.sectionRooms.type} label={ORDERED_LISTS.sectionRooms.add} />
+        )}
       </div>
     </section>
   );
@@ -282,10 +304,10 @@ function Feature({ s, lang, settings, prev }: { s: Of<"sectionFeature"> } & Ctx)
   );
 }
 
-function Offers({ s, lang, settings }: { s: Of<"sectionOffers"> } & Ctx) {
+function Offers({ s, lang, settings, edit }: { s: Of<"sectionOffers"> } & Ctx) {
   const t = ui(lang);
   const offers = (s.offers ?? []).filter((o) => o?.image);
-  if (!offers.length) return null;
+  if (!offers.length && !edit) return null;
   return (
     <section className="sec sec-band" id={s.anchor} aria-labelledby={hid(s)}>
       <div className="wrap">
@@ -315,6 +337,7 @@ function Offers({ s, lang, settings }: { s: Of<"sectionOffers"> } & Ctx) {
                 key={o._id}
                 className={`pk-card${i === 0 ? " is-on" : ""} rv${i ? ` d${Math.min(i, 3)}` : ""}`}
                 data-pk={o.slug ?? o._id}
+                {...itemAttr(edit, s, "offers", o._key)}
               >
                 <div className="slot pk-thumb" data-foto="" aria-hidden="true">
                   <Photo img={o.image} lang={lang} sizes="116px" decorative />
@@ -341,6 +364,12 @@ function Offers({ s, lang, settings }: { s: Of<"sectionOffers"> } & Ctx) {
                 )}
               </article>
             ))}
+            {edit && (
+              <AddCard
+                type={ORDERED_LISTS.sectionOffers.type}
+                label={ORDERED_LISTS.sectionOffers.add}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -394,14 +423,14 @@ export function faqJsonLd(faqs: Faq[], lang: Locale) {
   };
 }
 
-function FaqSection({ s, lang, settings }: { s: Of<"sectionFaq"> } & Ctx) {
+function FaqSection({ s, lang, settings, edit }: { s: Of<"sectionFaq"> } & Ctx) {
   const t = ui(lang);
   const faqs = (s.faqs ?? []).filter(Boolean);
-  if (!faqs.length) return null;
+  if (!faqs.length && !edit) return null;
   const half = Math.ceil(faqs.length / 2);
   const wa = waHref(settings, t.wa.question);
   const one = (f: Faq) => (
-    <details key={f._id} className="q" name="faq">
+    <details key={f._id} className="q" name="faq" {...itemAttr(edit, s, "faqs", f._key)}>
       <summary>{tr(f.question, lang)}</summary>
       <p>{tr(f.answer, lang)}</p>
     </details>
@@ -427,6 +456,9 @@ function FaqSection({ s, lang, settings }: { s: Of<"sectionFaq"> } & Ctx) {
           <div className="faq-col">{faqs.slice(0, half).map(one)}</div>
           <div className="faq-col">{faqs.slice(half).map(one)}</div>
         </div>
+        {edit && (
+          <AddCard type={ORDERED_LISTS.sectionFaq.type} label={ORDERED_LISTS.sectionFaq.add} />
+        )}
       </div>
     </section>
   );
@@ -608,51 +640,70 @@ export function Sections({
   sections,
   lang,
   settings,
+  edit,
 }: {
   sections: Section[];
   lang: Locale;
   settings: Settings | null;
+  /** Solo en el editor visual del panel: cada sección lleva su barra (subir, bajar, añadir, ocultar, eliminar). */
+  edit?: EditDoc;
 }) {
+  const render = (s: Section, i: number) => {
+    const ctx: Ctx = { lang, settings, prev: sections[i - 1], first: i === 0, edit };
+    switch (s._type) {
+      case "sectionHero":
+        return (
+          <HeroSection
+            s={s}
+            lang={lang}
+            settings={settings}
+            next={sections[i + 1]?.anchor ?? undefined}
+          />
+        );
+      case "sectionRooms":
+        return <Rooms s={s} {...ctx} />;
+      case "sectionDirect":
+        return <Direct s={s} {...ctx} />;
+      case "sectionFeature":
+        return <Feature s={s} {...ctx} />;
+      case "sectionOffers":
+        return <Offers s={s} {...ctx} />;
+      case "sectionFacts":
+        return <Facts s={s} {...ctx} />;
+      case "sectionFaq":
+        return <FaqSection s={s} {...ctx} />;
+      case "sectionMap":
+        return <MapSection s={s} {...ctx} />;
+      case "sectionClosing":
+        return <Closing s={s} {...ctx} />;
+      case "sectionRichText":
+        return <RichText s={s} {...ctx} />;
+      case "sectionGallery":
+        return <Gallery s={s} {...ctx} />;
+      case "sectionBlog":
+        return <Blog s={s} {...ctx} />;
+      default:
+        return null;
+    }
+  };
   return (
     <>
       {sections.map((s, i) => {
-        const ctx: Ctx = { lang, settings, prev: sections[i - 1], first: i === 0 };
-        switch (s._type) {
-          case "sectionHero":
-            return (
-              <HeroSection
-                key={s._key}
-                s={s}
-                lang={lang}
-                settings={settings}
-                next={sections[i + 1]?.anchor ?? undefined}
-              />
-            );
-          case "sectionRooms":
-            return <Rooms key={s._key} s={s} {...ctx} />;
-          case "sectionDirect":
-            return <Direct key={s._key} s={s} {...ctx} />;
-          case "sectionFeature":
-            return <Feature key={s._key} s={s} {...ctx} />;
-          case "sectionOffers":
-            return <Offers key={s._key} s={s} {...ctx} />;
-          case "sectionFacts":
-            return <Facts key={s._key} s={s} {...ctx} />;
-          case "sectionFaq":
-            return <FaqSection key={s._key} s={s} {...ctx} />;
-          case "sectionMap":
-            return <MapSection key={s._key} s={s} {...ctx} />;
-          case "sectionClosing":
-            return <Closing key={s._key} s={s} {...ctx} />;
-          case "sectionRichText":
-            return <RichText key={s._key} s={s} {...ctx} />;
-          case "sectionGallery":
-            return <Gallery key={s._key} s={s} {...ctx} />;
-          case "sectionBlog":
-            return <Blog key={s._key} s={s} {...ctx} />;
-          default:
-            return null;
-        }
+        const el = render(s, i);
+        if (!edit) return el && <Fragment key={s._key}>{el}</Fragment>;
+        return (
+          <EditSection
+            key={s._key}
+            edit={edit}
+            sectionKey={s._key}
+            type={s._type as SectionType}
+            hidden={s.hidden}
+            index={i}
+            count={sections.length}
+          >
+            {el}
+          </EditSection>
+        );
       })}
     </>
   );

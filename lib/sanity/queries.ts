@@ -1,4 +1,8 @@
-/** Consultas GROQ de la web pública. Solo contenido publicado; las referencias se resuelven aquí. */
+/**
+ * Consultas GROQ de la web pública. Solo contenido publicado; las referencias se resuelven aquí. Todas reciben
+ * `$editing` (lo pone sanityFetch): en el editor visual del panel se ven también las secciones ocultas, para poder
+ * volver a mostrarlas.
+ */
 
 const IMG = `{ "desktop": desktop{ "ref": asset._ref, crop, hotspot }, "mobile": mobile{ "ref": asset._ref, crop, hotspot }, alt }`;
 const CTA = `{ _key, label, action, href, style, "room": room->slug.current, "offer": offer->slug.current }`;
@@ -8,15 +12,23 @@ const OFFER = `{ _id, title, "slug": slug.current, summary, image${IMG}, cta${CT
 const POST_CARD = `{ _id, title, "slug": slug.current, publishedAt, excerpt, cover${IMG} }`;
 const PUBLIC_ROOMS = `*[_type == "room" && defined(slug.current)] | order(order asc, title.es asc)`;
 
-const SECTIONS = `sections[hidden != true]{
+/**
+ * Listas ordenables de una sección (habitaciones, paquetes, preguntas): primero las elegidas en la sección, en su orden
+ * (con su `_key`, para arrastrarlas en el editor visual), y después cualquier otra que exista, en su orden propio. Así
+ * una habitación nueva sale sola al final y se recoloca arrastrándola. Las referencias rotas (borradas) se ignoran.
+ */
+const orderedList = (field: string, all: string, projection: string) =>
+  `[...coalesce(${field}, [])[defined(@->_id)]{ _key, ...@->${projection} }, ...${all}[!(_id in coalesce(^.${field}[]._ref, []))]${projection}]`;
+
+const SECTIONS = `sections[$editing || hidden != true]{
   ...,
   "anchor": anchor.current,
   ctas[]${CTA},
   _type == "sectionHero" => { facade${IMG}, reception${IMG}, patio${IMG}, steps[]{ ..., link${CTA} } },
   _type in ["sectionFeature", "sectionFacts"] => { image${IMG} },
-  _type == "sectionRooms" => { "rooms": select(count(rooms) > 0 => rooms[]->${ROOM_CARD}, ${PUBLIC_ROOMS}${ROOM_CARD}) },
-  _type == "sectionOffers" => { "offers": select(count(offers) > 0 => offers[]->${OFFER}, *[_type == "offer"] | order(order asc)${OFFER}) },
-  _type == "sectionFaq" => { "faqs": select(count(faqs) > 0 => faqs[]->{ _id, question, answer }, *[_type == "faq"] | order(order asc){ _id, question, answer }) },
+  _type == "sectionRooms" => { "rooms": ${orderedList("rooms", `(${PUBLIC_ROOMS})`, ROOM_CARD)} },
+  _type == "sectionOffers" => { "offers": ${orderedList("offers", `(*[_type == "offer"] | order(order asc))`, OFFER)} },
+  _type == "sectionFaq" => { "faqs": ${orderedList("faqs", `(*[_type == "faq"] | order(order asc))`, "{ _id, question, answer }")} },
   _type == "sectionGallery" => { images[]{ _key, ...${IMG} } },
   _type == "sectionBlog" => { "posts": *[_type == "post" && defined(slug.current) && publishedAt <= now()] | order(publishedAt desc)${POST_CARD} }
 }`;

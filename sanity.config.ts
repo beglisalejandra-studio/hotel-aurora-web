@@ -10,10 +10,12 @@ import { structureTool } from "sanity/structure";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { SINGLETONS } from "./sanity/schemaTypes/documents/singletons";
+import { LIST_OF, withAppendToLists } from "./sanity/actions/appendToHomeList";
 import { withContrastConfirm } from "./sanity/actions/contrastConfirm";
 import { SeedOnFirstOpen } from "./sanity/components/SeedOnFirstOpen";
 import { structure } from "./sanity/structure";
 import { homeTool } from "./sanity/tools/home";
+import { editTheWebsite } from "./sanity/presentation";
 
 const singletons = new Set<string>(SINGLETONS);
 
@@ -24,9 +26,17 @@ export default defineConfig({
   projectId,
   dataset,
   apiVersion,
-  plugins: [structureTool({ structure, title: "Contenido" }), colorInput(), esESLocale()],
-  // «Inicio» va primero: es lo que se ve al abrir el panel (tareas habituales con un clic).
-  tools: (prev) => [homeTool, ...prev],
+  plugins: [
+    editTheWebsite,
+    structureTool({ structure, title: "Contenido" }),
+    colorInput(),
+    esESLocale(),
+  ],
+  // Al abrir el panel se ve la web, editable («Editar la web»); «Inicio» tiene los atajos y «Contenido», todo.
+  tools: (prev) => {
+    const edit = prev.filter((t) => t.name === "editar");
+    return [...edit, homeTool, ...prev.filter((t) => t.name !== "editar")];
+  },
   schema: {
     types: schemaTypes,
     // Los documentos únicos no se crean desde «Nuevo documento».
@@ -46,9 +56,12 @@ export default defineConfig({
           )
         : actions;
       // En «Colores y tipografías», publicar pide confirmación si algún texto no se leería bien.
-      return schemaType === "theme"
-        ? allowed.map((a) => (a.action === "publish" ? withContrastConfirm(a) : a))
-        : allowed;
+      if (schemaType === "theme")
+        return allowed.map((a) => (a.action === "publish" ? withContrastConfirm(a) : a));
+      // Una habitación, un paquete o una pregunta nuevos se colocan solos al final de su lista en la web.
+      if (LIST_OF[schemaType])
+        return allowed.map((a) => (a.action === "publish" ? withAppendToLists(a) : a));
+      return allowed;
     },
   },
 });

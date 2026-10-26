@@ -12,7 +12,9 @@
 7. **Prueba con una persona real** antes de cerrar: alguien que no ha visto el proyecto sigue la guía sola. Cada punto donde se atasca se reescribe. Criterio de aceptación: completa las cinco tareas básicas sin ayuda.
 
 ## Al abrir el panel (2026-10-26)
-El panel se abre en **Inicio**: una pantalla con un botón por tarea habitual (habitaciones y precios, añadir una habitación, portada, blog, paquetes, preguntas, datos del hotel, colores, menú, aviso de cookies, textos legales, calendario) y los tres pasos para publicar un cambio. Cada botón lleva directamente a la pantalla donde se cambia. El menú **Contenido** tiene las mismas entradas, con los mismos nombres.
+El panel se abre en **Editar la web**: la web tal cual, editable. Pulsa un texto o una foto para cambiarlo en el panel de la derecha; arrastra habitaciones, paquetes, preguntas y secciones para ordenarlos; usa la barra de cada sección (**Subir**, **Bajar**, **+ Añadir sección debajo**, **Ocultar**, **Eliminar**) y las tarjetas **+ Añadir habitación / paquete / pregunta**. Nada se ve en la web hasta pulsar **Publicar**.
+
+Además, **Inicio** tiene un botón por tarea habitual (habitaciones y precios, añadir una habitación, portada, blog, paquetes, preguntas, datos del hotel, colores, menú, aviso de cookies, textos legales, calendario) y los tres pasos para publicar un cambio. Cada botón lleva directamente a la pantalla donde se cambia. El menú **Contenido** tiene las mismas entradas, con los mismos nombres.
 
 ## Las 5 cosas que más harás (chuleta de una página)
 | Quiero... | Dónde se hace | Capítulo |

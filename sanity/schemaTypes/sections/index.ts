@@ -163,11 +163,13 @@ export const sectionRooms = defineType({
     defineField({ name: "intro", title: "Introducción", type: "localeText", group: "content" }),
     defineField({
       name: "rooms",
-      title: "Habitaciones a mostrar",
+      title: "Orden de las habitaciones",
       type: "array",
       group: "content",
-      of: [defineArrayMember({ type: "reference", to: [{ type: "room" }] })],
-      description: "Déjalo vacío para mostrar todas, en el orden de «Habitaciones».",
+      // Débil: borrar una habitación la quita de aquí sin bloquear el borrado.
+      of: [defineArrayMember({ type: "reference", to: [{ type: "room" }], weak: true })],
+      description:
+        "Arrástralas para cambiar el orden (también en «Editar la web»). Salen todas: las que no estén aquí aparecen al final.",
     }),
     ...common(),
   ],
@@ -291,11 +293,12 @@ export const sectionOffers = defineType({
     defineField({ name: "intro", title: "Introducción", type: "localeText", group: "content" }),
     defineField({
       name: "offers",
-      title: "Paquetes a mostrar",
+      title: "Orden de los paquetes",
       type: "array",
       group: "content",
-      of: [defineArrayMember({ type: "reference", to: [{ type: "offer" }] })],
-      description: "Déjalo vacío para mostrar todos.",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "offer" }], weak: true })],
+      description:
+        "Arrástralos para cambiar el orden (también en «Editar la web»). Salen todos: los que no estén aquí aparecen al final.",
     }),
     ...common(),
   ],
@@ -334,11 +337,12 @@ export const sectionFaq = defineType({
     heading(),
     defineField({
       name: "faqs",
-      title: "Preguntas a mostrar",
+      title: "Orden de las preguntas",
       type: "array",
       group: "content",
-      of: [defineArrayMember({ type: "reference", to: [{ type: "faq" }] })],
-      description: "Déjalo vacío para mostrar todas.",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "faq" }], weak: true })],
+      description:
+        "Arrástralas para cambiar el orden (también en «Editar la web»). Salen todas: las que no estén aquí aparecen al final.",
     }),
     ...common(),
   ],

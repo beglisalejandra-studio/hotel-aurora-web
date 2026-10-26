@@ -35,7 +35,8 @@ export function buildStaticCsp(o: SecurityHeaderOptions): string {
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
-    "frame-ancestors 'none'",
+    // Solo el propio dominio puede mostrar la web dentro de un marco: es el editor visual del panel (/admin).
+    "frame-ancestors 'self'",
     ...(o.https ? ["upgrade-insecure-requests"] : []),
   ];
   return directives.join("; ");
@@ -45,7 +46,7 @@ export function securityHeaders(o: SecurityHeaderOptions): { key: string; value:
   return [
     ...(o.csp === "static" ? [{ key: "Content-Security-Policy", value: buildStaticCsp(o) }] : []),
     { key: "X-Content-Type-Options", value: "nosniff" },
-    { key: "X-Frame-Options", value: "DENY" },
+    { key: "X-Frame-Options", value: "SAMEORIGIN" },
     { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
     {
       key: "Permissions-Policy",

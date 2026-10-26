@@ -1,3 +1,4 @@
+import { stegaClean } from "next-sanity";
 import type { Metadata } from "next";
 import { alternatesFor } from "@/lib/i18n/alternates";
 import type { Locale } from "@/lib/i18n/config";
@@ -15,11 +16,11 @@ export function pageMeta(opts: {
   absoluteTitle?: boolean;
   settings?: Settings | null;
 }): Metadata {
-  const title = tr(opts.seo?.title, opts.lang) || opts.title || "";
-  const description = (tr(opts.seo?.description, opts.lang) || opts.description || "").slice(
-    0,
-    300,
-  );
+  // stegaClean: sin las marcas invisibles del editor visual en <title> y <meta>
+  const title = stegaClean(tr(opts.seo?.title, opts.lang) || opts.title || "");
+  const description = stegaClean(
+    tr(opts.seo?.description, opts.lang) || opts.description || "",
+  ).slice(0, 300);
   const alt = alternatesFor(opts.path, opts.lang, site.url);
   // El español va sin prefijo en la dirección pública
   const fix = (u: string) => u.replace(/\/es(?=\/|$)/, "");

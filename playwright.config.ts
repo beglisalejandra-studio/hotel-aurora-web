@@ -38,5 +38,12 @@ export default defineConfig({
         url: `http://127.0.0.1:${port}`,
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
+        // Deja ver la interfaz del editor visual con el contenido publicado (sin token) en tests/e2e/editor.spec.ts
+        env: {
+          ...(Object.fromEntries(
+            Object.entries(process.env).filter(([, v]) => v !== undefined),
+          ) as Record<string, string>),
+          SANITY_PREVIEW_ALLOW_PUBLISHED: "1",
+        },
       },
 });

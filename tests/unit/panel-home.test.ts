@@ -50,6 +50,9 @@ describe("portada del panel", () => {
         expect(params.id).toBe(params.type);
     }
   });
+  it("lleva directamente a «Editar la web»", () => {
+    expect(html).toContain('class="ah-edit" href="/admin/editar"');
+  });
   it("explica cómo se publica un cambio con las palabras del panel", () => {
     expect(html).toContain("«Publicar»");
     expect(html).toContain("«Descartar cambios»");

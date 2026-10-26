@@ -5,10 +5,12 @@ import { Enhance } from "@/components/site/Enhance";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { Overlays } from "@/components/site/Overlays";
+import { VisualEditing } from "next-sanity/visual-editing";
 import { CONSENT_COOKIE, CONSENT_VERSION } from "@/lib/analytics/consent";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
+import { isEditing } from "@/lib/sanity/client";
 import { getSite } from "@/lib/site-data";
 import { site } from "@/lib/site";
 import { fontVariables } from "./fonts";
@@ -72,10 +74,15 @@ const BOOT = `(function(){var d=document.documentElement;d.classList.add("js");t
 export default async function SiteLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const data = await getSite();
+  const [data, editing] = await Promise.all([getSite(), isEditing()]);
   const t = ui(lang);
   return (
-    <html lang={lang} className={fontVariables} suppressHydrationWarning>
+    // ed-on: vista previa del editor visual del panel (sin aviso de cookies ni contacto flotante, todo visible)
+    <html
+      lang={lang}
+      className={editing ? `${fontVariables} ed-on cv-off` : fontVariables}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
         <ThemeStyle theme={data.theme} />
@@ -90,6 +97,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[la
         {children}
         <Footer lang={lang} data={data} />
         <Overlays lang={lang} data={data} />
+        {editing && <VisualEditing />}
         <Enhance
           lang={lang}
           mews={mewsConfig(data.settings?.mews)}

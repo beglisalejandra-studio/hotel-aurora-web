@@ -4,6 +4,7 @@ import { Photo } from "@/components/site/Photo";
 import type { Locale } from "@/lib/i18n/config";
 import { localePath, tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
+import { sanityAttr, type EditDoc } from "@/lib/edit/attr";
 import type { RoomCard } from "@/lib/sanity/types";
 
 export const eur = (n: number, lang: Locale) =>
@@ -14,7 +15,16 @@ export const eur = (n: number, lang: Locale) =>
   }).format(n);
 
 /** Tarjetas de habitación: todas con su botón de reservar (pedido de la persona). */
-export function RoomCards({ rooms, lang }: { rooms: RoomCard[]; lang: Locale }) {
+export function RoomCards({
+  rooms,
+  lang,
+  edit,
+}: {
+  rooms: RoomCard[];
+  lang: Locale;
+  /** Editor visual: documento y ruta de la lista ordenada (cada tarjeta se puede arrastrar). */
+  edit?: { doc: EditDoc; path: string };
+}) {
   const t = ui(lang);
   return (
     <>
@@ -22,7 +32,11 @@ export function RoomCards({ rooms, lang }: { rooms: RoomCard[]; lang: Locale }) 
         const name = tr(r.title, lang);
         const href = localePath(lang, `/habitaciones/${r.slug}`);
         return (
-          <article key={r._id} className={`room rv${i ? ` d${Math.min(i, 3)}` : ""}`}>
+          <article
+            key={r._id}
+            className={`room rv${i ? ` d${Math.min(i, 3)}` : ""}`}
+            {...(edit && r._key ? sanityAttr(edit.doc, `${edit.path}[_key=="${r._key}"]`) : {})}
+          >
             <Link className="room-media" href={href} aria-label={`${t.seeRoom}: ${name}`}>
               <div
                 className="ph slot"

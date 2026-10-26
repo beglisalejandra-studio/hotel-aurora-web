@@ -5,13 +5,15 @@ const prod = { csp: "static", https: true, isDev: false } as const;
 
 describe("CSP estática", () => {
   it("es restrictiva por defecto", () => {
+    expect(buildStaticCsp(prod)).not.toContain("frame-ancestors *");
     const csp = buildStaticCsp(prod);
     for (const d of [
       "default-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
-      "frame-ancestors 'none'",
+      // Solo el propio dominio (el editor visual del panel muestra la web en un marco)
+      "frame-ancestors 'self'",
       "frame-src 'none'",
     ]) {
       expect(csp).toContain(d);

@@ -6,7 +6,7 @@ import { LegalBody } from "@/components/site/LegalBody";
 import { isLocale, locales } from "@/lib/i18n/config";
 import { localePath, tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
-import { sanityFetch } from "@/lib/sanity/client";
+import { isEditing, sanityFetch } from "@/lib/sanity/client";
 import { LEGAL_LIST_QUERY, LEGAL_QUERY, PAGE_QUERY, ROUTES_QUERY } from "@/lib/sanity/queries";
 import type { LegalPage, Page } from "@/lib/sanity/types";
 import { pageMeta } from "@/lib/seo/meta";
@@ -66,7 +66,12 @@ export default async function FreePage({ params }: PageProps<"/[lang]/[...slug]"
             <h1 className="legal-h1">{tr(found.page.title, lang)}</h1>
           </div>
         )}
-        <Sections sections={sections} lang={lang} settings={settings} />
+        <Sections
+          sections={sections}
+          lang={lang}
+          settings={settings}
+          edit={(await isEditing()) ? { id: found.page._id, type: "page" } : undefined}
+        />
       </main>
     );
   }
