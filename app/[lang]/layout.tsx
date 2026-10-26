@@ -10,6 +10,7 @@ import { CONSENT_COOKIE, CONSENT_VERSION } from "@/lib/analytics/consent";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
+import { EDITOR_CSS } from "@/lib/edit/editor-css";
 import { isEditing } from "@/lib/sanity/client";
 import { getSite } from "@/lib/site-data";
 import { site } from "@/lib/site";
@@ -86,6 +87,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[la
       <head>
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
         <ThemeStyle theme={data.theme} />
+        {editing && <style dangerouslySetInnerHTML={{ __html: EDITOR_CSS }} />}
       </head>
       <body>
         <div className="progress" aria-hidden="true" />
