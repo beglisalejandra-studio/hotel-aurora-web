@@ -61,3 +61,22 @@ export function parseConsent(cookieHeader: string | null | undefined): Consent {
 export function hasDecided(cookieHeader: string | null | undefined): boolean {
   return Boolean(cookieHeader && new RegExp(`(?:^|;\\s*)${CONSENT_COOKIE}=`).test(cookieHeader));
 }
+
+/**
+ * La decisión vigente del visitante, o null si aún no ha decidido, la cookie está corrupta o es de una versión
+ * anterior de la política (en esos casos hay que volver a preguntar).
+ */
+export function readDecision(cookieHeader: string | null | undefined): Consent | null {
+  if (!hasDecided(cookieHeader)) return null;
+  const raw = cookieHeader!
+    .split(";")
+    .map((p) => p.trim())
+    .find((p) => p.startsWith(`${CONSENT_COOKIE}=`))
+    ?.slice(CONSENT_COOKIE.length + 1);
+  try {
+    const o = JSON.parse(decodeURIComponent(raw ?? "")) as Partial<Consent>;
+    return o.v === CONSENT_VERSION ? parseConsent(cookieHeader) : null;
+  } catch {
+    return null;
+  }
+}

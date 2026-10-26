@@ -30,6 +30,7 @@ export const SITE_QUERY = `{
   },
   "nav": *[_id == "navigation"][0]{ header[]${LINK}, footer[]{ _key, title, links[]${LINK} } },
   "hasPosts": count(*[_type == "post" && defined(slug.current) && publishedAt <= now()]) > 0,
+  "cookies": *[_id == "cookieNotice"][0]{ title, text, analytics, marketing },
   "faqs": *[_type == "faq"] | order(order asc)[0...12]{ _id, question, answer }
 }`;
 

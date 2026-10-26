@@ -3,10 +3,11 @@ import { localePath, tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
 import { telHref, waHref } from "@/lib/site-data";
 import type { SiteData } from "@/lib/sanity/types";
+import { CookieBanner } from "./CookieBanner";
 import { Dock } from "./Dock";
 import { RequestDialog } from "./RequestDialog";
 
-/** Capas comunes a todas las páginas: contacto flotante, solicitudes y el aviso breve de la reserva. */
+/** Capas comunes a todas las páginas: contacto flotante, solicitudes, aviso de cookies y el aviso breve de la reserva. */
 export function Overlays({ lang, data }: { lang: Locale; data: SiteData }) {
   const t = ui(lang);
   const s = data.settings;
@@ -73,6 +74,7 @@ export function Overlays({ lang, data }: { lang: Locale; data: SiteData }) {
           voucherNote: t.voucherNote,
         }}
       />
+      <CookieBanner lang={lang} notice={data.cookies} />
       <p className="toast" id="toast" role="status" hidden />
     </>
   );

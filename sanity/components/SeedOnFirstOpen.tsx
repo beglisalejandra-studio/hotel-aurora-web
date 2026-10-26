@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useClient, type LayoutProps } from "sanity";
 import { apiVersion } from "../env";
-import seed from "../seed/seed.json";
+
+// El contenido de ejemplo (180 KB) solo se descarga cuando hace falta, no en cada apertura del panel.
+type Seed = typeof import("../seed/seed.json");
+const loadSeed = async (): Promise<Seed> => {
+  const m = await import("../seed/seed.json");
+  return ("default" in m ? m.default : m) as Seed;
+};
 
 type SeedImage = {
   _seedImage: string;
@@ -51,15 +57,20 @@ const FIRST_WALK = ["k00en", "k00eo", "k00ep"];
  * cliente haya cambiado se mantienen tal cual y los 6 nuevos se intercalan en su sitio. Si ya hay otra cosa, no toca nada.
  */
 async function completeWalk(client: ReturnType<typeof useClient>) {
-  const home = (seed.documents as unknown as SeedDoc[]).find((d) => d._id === "page-inicio");
-  const seeded = home?.sections?.find((s) => s._type === "sectionHero")?.steps ?? [];
+  const pending: { id: string; hero: { _key: string; steps?: Step[] } }[] = [];
   for (const id of ["page-inicio", "drafts.page-inicio"]) {
     const hero = await client.fetch<{ _key: string; steps?: Step[] } | null>(
       '*[_id == $id][0].sections[_type == "sectionHero"][0]{_key, steps}',
       { id },
     );
     const keys = (hero?.steps ?? []).map((s) => s._key);
-    if (!hero || keys.join() !== FIRST_WALK.join()) continue;
+    if (hero && keys.join() === FIRST_WALK.join()) pending.push({ id, hero });
+  }
+  if (!pending.length) return;
+  const seed = await loadSeed();
+  const home = (seed.documents as unknown as SeedDoc[]).find((d) => d._id === "page-inicio");
+  const seeded = home?.sections?.find((s) => s._type === "sectionHero")?.steps ?? [];
+  for (const { id, hero } of pending) {
     const current = new Map((hero.steps ?? []).map((s) => [s._key, s]));
     const steps = seeded.map((s) => current.get(s._key) ?? s);
     await client
@@ -67,6 +78,20 @@ async function completeWalk(client: ReturnType<typeof useClient>) {
       .set({ [`sections[_key=="${hero._key}"].steps`]: steps })
       .commit();
   }
+}
+
+/**
+ * Migración automática (2026-10-26): el aviso de cookies se edita en su propia entrada del panel («Aviso de cookies»).
+ * Si aún no existe, se crea con los textos de serie; si ya existe (publicado o en borrador), no se toca.
+ */
+async function completeCookies(client: ReturnType<typeof useClient>) {
+  const exists = await client.fetch<number>(
+    'count(*[_id in ["cookieNotice", "drafts.cookieNotice"]])',
+  );
+  if (exists > 0) return;
+  const seed = await loadSeed();
+  const doc = seed.documents.find((d) => d._id === "cookieNotice");
+  if (doc) await client.createIfNotExists(doc as { _id: string; _type: string });
 }
 
 /**
@@ -90,8 +115,10 @@ export function SeedOnFirstOpen(props: LayoutProps) {
         );
         if (exists > 0) {
           await completeWalk(client);
+          await completeCookies(client);
           return setStatus({ phase: "idle", done: 0, total: 0 });
         }
+        const seed = await loadSeed();
         const files = Object.values(seed.images).flatMap((i) =>
           [i.desktop, i.mobile].filter((p): p is string => Boolean(p)),
         );

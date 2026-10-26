@@ -29,3 +29,10 @@ Obligatorio en España/UE: RGPD + LOPDGDD, aviso legal (LSSI), política de cook
 
 ## Rendimiento
 Los scripts de medición entran después del consentimiento y en reposo del hilo principal, para no penalizar INP ni LCP. Las métricas de campo (`web-vitals`) solo se envían con consentimiento de analítica; sin tráfico, la evidencia es de laboratorio (Lighthouse).
+
+## Estado en la web real (2026-10-26)
+- **Aviso visible desde la primera visita** (pedido de la persona: «en España es obligatorio»). Se había dejado oculto mientras no hubiera analítica; se revierte: el aviso de la maqueta (Aceptar, Rechazar y Configurar idénticos; segunda capa con necesarias fijas, analítica y marketing sin marcar; «Configurar cookies» en el pie) va en todas las páginas.
+- Lo muestra el script del `<head>` si no hay decisión vigente (cookie `consent` ausente, corrupta o de otra versión): aparece con la página, sin esperar al JavaScript, y no parpadea a quien ya decidió. Cerrar con Escape solo vale al reabrirlo desde el pie (cerrar sin elegir no es consentir).
+- Hoy no hay GA4 ni Pixel de Meta. Mews: `enableTracking()` solo con analítica **y** marketing aceptadas; si la reserva ya está abierta, la nueva decisión se aplica sin recargar.
+- Textos editables en el panel (documento único «Aviso de cookies»); si se dejan vacíos, se usan los de serie.
+- Pruebas: `tests/e2e/site.spec.ts` (mismo tamaño de los tres botones, nada marcado, Rechazar guarda todo apagado y no vuelve a preguntar, el pie lo reabre y guarda el cambio) y `tests/unit/analytics.test.ts` (`readDecision`).

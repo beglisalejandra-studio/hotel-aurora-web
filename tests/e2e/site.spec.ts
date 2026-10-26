@@ -94,3 +94,48 @@ test("el menú lleva al contenido de cada sección, justo bajo la cabecera", asy
     await expect.poll(() => gap(id), { timeout: 5000 }).toBeLessThanOrEqual(48);
   }
 });
+
+test("aviso de cookies: Aceptar, Rechazar y Configurar al mismo nivel, nada marcado y se puede cambiar", async ({
+  page,
+  context,
+}) => {
+  await page.goto("/");
+  const banner = page.getByRole("dialog", { name: /cookies/i });
+  await expect(banner).toBeVisible();
+  // Los tres botones de la primera capa miden lo mismo (criterio de la AEPD)
+  const sizes = await Promise.all(
+    ["#ckAccept", "#ckReject", "#ckConfig"].map((s) =>
+      page.locator(s).evaluate((e) => {
+        const r = e.getBoundingClientRect();
+        return `${Math.round(r.width)}x${Math.round(r.height)}`;
+      }),
+    ),
+  );
+  expect(new Set(sizes).size, sizes.join(" ")).toBe(1);
+  await page.locator("#ckConfig").click();
+  await expect(page.locator("#ckAn")).not.toBeChecked();
+  await expect(page.locator("#ckMk")).not.toBeChecked();
+  // Rechazar guarda la decisión con todo apagado y el aviso no vuelve a salir
+  await page.locator("#ckReject").click();
+  await expect(banner).toBeHidden();
+  const cookie = (await context.cookies()).find((c) => c.name === "consent");
+  expect(JSON.parse(decodeURIComponent(cookie?.value ?? "{}"))).toMatchObject({
+    analytics: false,
+    marketing: false,
+  });
+  await page.reload();
+  await expect(banner).toBeHidden();
+  // «Configurar cookies», en el pie, lo vuelve a abrir con la elección guardada para cambiarla
+  await page.locator("[data-open-cookies]").scrollIntoViewIfNeeded();
+  await page.locator("[data-open-cookies]").click();
+  await expect(banner).toBeVisible();
+  await expect(page.locator("#ckCfg")).toBeVisible();
+  await page.locator("#ckAn").check();
+  await page.locator("#ckSave").click();
+  await expect(banner).toBeHidden();
+  const updated = (await context.cookies()).find((c) => c.name === "consent");
+  expect(JSON.parse(decodeURIComponent(updated?.value ?? "{}"))).toMatchObject({
+    analytics: true,
+    marketing: false,
+  });
+});

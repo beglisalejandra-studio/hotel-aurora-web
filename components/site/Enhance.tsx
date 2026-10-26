@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { readDecision, serializeConsent, type Consent } from "@/lib/analytics/consent";
 import { MAP_LEVELS } from "@/lib/map";
 
 type MewsApi = {
@@ -146,15 +147,43 @@ function toast(text: string) {
     el.hidden = true;
   }, 6000);
 }
-function readConsent(): { an?: boolean; mk?: boolean } | null {
-  try {
-    return JSON.parse(store.get("aurora-consent") ?? "null") as {
-      an?: boolean;
-      mk?: boolean;
-    } | null;
-  } catch {
-    return null;
-  }
+/* ---------- Aviso de cookies (Aceptar, Rechazar y Configurar al mismo nivel; nada marcado de antemano) ---------- */
+// Las cookies de seguimiento de Mews mezclan analítica y publicidad: solo se activan si se aceptan las dos.
+const mewsTracking = (c: Consent | null) => Boolean(c?.analytics && c?.marketing);
+let cookieOpener: HTMLElement | null = null;
+function cookieConfig(open: boolean) {
+  const cfg = $("#ckCfg");
+  if (!cfg) return;
+  cfg.hidden = !open;
+  $("#ckConfig")?.setAttribute("aria-expanded", String(open));
+}
+function openCookies(opener: HTMLElement) {
+  const c = readDecision(document.cookie);
+  const an = $<HTMLInputElement>("#ckAn");
+  const mk = $<HTMLInputElement>("#ckMk");
+  if (an) an.checked = c?.analytics ?? false;
+  if (mk) mk.checked = c?.marketing ?? false;
+  cookieOpener = opener;
+  document.documentElement.classList.add("consent-pending");
+  cookieConfig(true);
+  an?.focus();
+}
+function closeCookies() {
+  const hadFocus = $("#cookie")?.contains(document.activeElement);
+  document.documentElement.classList.remove("consent-pending");
+  cookieConfig(false);
+  if (hadFocus) cookieOpener?.focus();
+  cookieOpener = null;
+}
+function saveConsent(analytics: boolean, marketing: boolean) {
+  document.cookie = serializeConsent({ analytics, marketing }, location.protocol === "https:");
+  closeCookies();
+  // Si la reserva ya estaba abierta, la nueva decisión se aplica sin recargar
+  void mewsApi
+    ?.then((api) =>
+      mewsTracking(readDecision(document.cookie)) ? api.enableTracking() : api.disableTracking(),
+    )
+    .catch(() => {});
 }
 const asDate = (v?: string) => {
   const m = v ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(v) : null;
@@ -172,9 +201,8 @@ async function openBooking(
     const api = await loadMews(props.mews);
     api.setLanguageCode(props.lang === "es" ? "es-ES" : "en-GB");
     api.setCurrencyCode("EUR");
-    // Las cookies de seguimiento de Mews siguen la decisión del visitante sobre la analítica y el marketing
-    const consent = readConsent();
-    if (consent?.an || consent?.mk) api.enableTracking();
+    // Las cookies de seguimiento de Mews siguen la decisión del visitante en el aviso de cookies
+    if (mewsTracking(readDecision(document.cookie))) api.enableTracking();
     else api.disableTracking();
     const a = asDate(pre.arrive);
     const d = asDate(pre.depart);
@@ -197,10 +225,12 @@ async function openBooking(
 /* ---------- Revelado una vez al entrar en pantalla ---------- */
 let io: IntersectionObserver | null = null;
 function observeReveal() {
-  if (reduce() || !("IntersectionObserver" in window)) {
-    $$(".rv").forEach((el) => el.classList.add("in"));
-    return;
-  }
+  if (reduce() || !("IntersectionObserver" in window)) return;
+  // Lo que ya está a la vista (o se ha dejado atrás) se queda como está; solo se anima lo que aún no se ha visto.
+  $$(".rv:not(.in)").forEach((el) => {
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in");
+  });
+  document.documentElement.classList.add("rv-on");
   io ??= new IntersectionObserver(
     (es) =>
       es.forEach((en) => {
@@ -653,6 +683,16 @@ export function Enhance(props: EnhanceProps) {
           return;
         }
         if (el.closest("#nav a")) closeMenu();
+        if (el.closest("#ckAccept")) return saveConsent(true, true);
+        if (el.closest("#ckReject")) return saveConsent(false, false);
+        if (el.closest("#ckSave"))
+          return saveConsent(
+            Boolean($<HTMLInputElement>("#ckAn")?.checked),
+            Boolean($<HTMLInputElement>("#ckMk")?.checked),
+          );
+        if (el.closest("#ckConfig")) return cookieConfig(Boolean($("#ckCfg")?.hidden));
+        const oc = el.closest<HTMLElement>("[data-open-cookies]");
+        if (oc) openCookies(oc);
       },
       o,
     );
@@ -700,7 +740,10 @@ export function Enhance(props: EnhanceProps) {
     document.addEventListener(
       "keydown",
       (e) => {
-        if (e.key === "Escape" && !$(".back:not([hidden])")) closeMenu();
+        if (e.key !== "Escape" || $(".back:not([hidden])")) return;
+        closeMenu();
+        // Cerrar el aviso sin elegir solo vale si ya había una decisión (al reabrirlo desde el pie)
+        if (readDecision(document.cookie)) closeCookies();
       },
       o,
     );

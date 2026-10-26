@@ -3,7 +3,7 @@ import { DEFAULT_PALETTES } from "../../defaults";
 import { paletteProblems, type PaletteKey } from "../../lib/contrast";
 
 /** Documentos únicos: solo existe uno de cada (el panel no deja crear otro ni borrarlo). */
-export const SINGLETONS = ["settings", "theme", "navigation"] as const;
+export const SINGLETONS = ["settings", "theme", "navigation", "cookieNotice"] as const;
 
 export const settings = defineType({
   name: "settings",
@@ -268,4 +268,35 @@ export const navigation = defineType({
     }),
   ],
   preview: { prepare: () => ({ title: "Menú y pie" }) },
+});
+
+export const cookieNotice = defineType({
+  name: "cookieNotice",
+  title: "Aviso de cookies",
+  type: "document",
+  description:
+    "El aviso que ve cada visitante la primera vez, con los botones Aceptar, Rechazar y Configurar al mismo nivel (criterio de la AEPD). Si dejas un texto vacío, se usa el de serie. El detalle de cada cookie va en «Textos legales» → «Política de cookies».",
+  fields: [
+    defineField({ name: "title", title: "Título", type: "localeString" }),
+    defineField({
+      name: "text",
+      title: "Texto",
+      type: "localeText",
+      description:
+        "Di quién usa las cookies, para qué y si hay de terceros. Debe poder leerse en pocos segundos.",
+    }),
+    defineField({
+      name: "analytics",
+      title: "Qué hace la analítica",
+      type: "localeString",
+      description: "Una frase. Aparece al pulsar «Configurar».",
+    }),
+    defineField({
+      name: "marketing",
+      title: "Qué hace el marketing",
+      type: "localeString",
+      description: "Una frase. Aparece al pulsar «Configurar».",
+    }),
+  ],
+  preview: { prepare: () => ({ title: "Aviso de cookies" }) },
 });

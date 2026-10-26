@@ -11,11 +11,14 @@
 6. Se avisa **antes** de cualquier acción que no se puede deshacer, con la palabra **Cuidado**.
 7. **Prueba con una persona real** antes de cerrar: alguien que no ha visto el proyecto sigue la guía sola. Cada punto donde se atasca se reescribe. Criterio de aceptación: completa las cinco tareas básicas sin ayuda.
 
+## Al abrir el panel (2026-10-26)
+El panel se abre en **Inicio**: una pantalla con un botón por tarea habitual (habitaciones y precios, añadir una habitación, portada, blog, paquetes, preguntas, datos del hotel, colores, menú, aviso de cookies, textos legales, calendario) y los tres pasos para publicar un cambio. Cada botón lleva directamente a la pantalla donde se cambia. El menú **Contenido** tiene las mismas entradas, con los mismos nombres.
+
 ## Las 5 cosas que más harás (chuleta de una página)
 | Quiero... | Dónde se hace | Capítulo |
 |---|---|---|
 | Cambiar un texto o una foto de la web | **El panel de contenido** | 2 y 3 |
-| Cambiar las horas de entrada y salida o el teléfono | **El panel de contenido**, en "Ajustes del hotel" | 7 |
+| Cambiar las horas de entrada y salida o el teléfono | **El panel de contenido**, en **Inicio** → **Teléfono, correo y dirección** (en el menú: **Datos del hotel**) | 7 |
 | Cambiar precios y disponibilidad de habitaciones | **Mews** (no en el panel) | 9 |
 | Ver una solicitud de mesa o de cita | Tu **correo** (llega ahí) | 8 |
 | Cambiar el precio de un bono o ver sus pedidos | **Stripe** (no en el panel) | 10 |
@@ -28,7 +31,7 @@
 4. **Español e inglés.** Cada cambio se hace en los dos idiomas: no se puede publicar si falta uno.
 5. **Habitaciones.** Descripciones y fotos. Los **precios no se tocan aquí**.
 6. **Paquetes y ofertas.** Crear, editar y retirar uno.
-7. **Ajustes del hotel.** Horas de **entrada (15:00) y salida (12:00)**, política de **mascotas** (hotel petfriendly), teléfono, WhatsApp y redes.
+7. **Datos del hotel.** Horas de **entrada (15:00) y salida (12:00)**, política de **mascotas** (hotel petfriendly), teléfono, WhatsApp y redes.
 8. **Restaurante y spa.** Carta y tratamientos. Dónde llegan las solicitudes y cómo responder a tiempo.
 9. **Reservas en Mews.** Ver reservas, cambiar tarifas y disponibilidad, y condiciones de cancelación.
 10. **Bonos y pagos en Stripe.** Ver pedidos, hacer un reembolso y cambiar un precio. **Cuidado**: en modo de prueba no se cobra nada; el paso a cobros reales lo aprueba una persona.
@@ -70,7 +73,7 @@ Contacto de soporte, horario y cómo reportar un problema: ver `05-plan-de-sopor
 | 2 | Abrir un texto, la vista previa y el botón de publicar | 5.2 |
 | 3 | Subir una foto y escribir su texto alternativo | 5.2 |
 | 4 | El aviso de "falta el idioma" al intentar publicar | 5.2 |
-| 7 | "Ajustes del hotel" con horas de entrada y salida y mascotas | 5.2 |
+| 7 | "Datos del hotel" con horas de entrada y salida y mascotas | 5.2 |
 | 9 | Vista de reservas y de tarifas en Mews | 5.4 |
 | 10 | Lista de pedidos y reembolso en Stripe (modo de prueba) | 5.6 |
 | 11 | Banner de cookies y ventana de configuración | 5.7 |

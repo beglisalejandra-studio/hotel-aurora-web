@@ -78,3 +78,10 @@ Decisión:
 - El requisito sigue siendo **LCP ≤ 2,5 s para visitantes reales** (percentil 75). Se comprueba con un móvil de gama media real (regla 10) y, en producción, con datos de campo (Vercel Speed Insights o Chrome UX Report).
 - En el CI, el Lighthouse simulado es una **guardia contra empeoramientos**: mediana de 5 corridas, LCP ≤ 3,0 s como error. Con 2,5 s fallaría la mitad de las veces por ruido y bloquearía cambios sin relación con el rendimiento.
 - El presupuesto de JS de 90 KB no es alcanzable con Next.js (el marco ocupa ~110 KB). Queda como referencia: el código propio del cliente pesa ~11 KB.
+
+## Velocidad en el despliegue (2026-10-26, tras «las páginas tardan demasiado»)
+- En local la portada ya era ligera (≈450 KB en móvil, LCP de laboratorio < 1,7 s con 4G lento). Lo que pesaba estaba en el despliegue: `proxy.ts` (idiomas) corre en Node y en Vercel es una función que se ejecuta **en cada visita** antes de la caché, por defecto en Washington (`iad1`). La guía de Next 16 recomienda evitar el proxy si hay otra forma.
+- **Decisión:** idiomas con `rewrites` (`beforeFiles`) y `redirects` en `next.config.ts`, que aplica la CDN sin función. Mismas direcciones: `/…` sirve `/es/…`, `/en/…` tal cual, `/es/…` → 308 a `/…`. Funciones restantes en París (`vercel.json`, `regions: ["cdg1"]`).
+- **Precarga de enlaces otra vez activa** (`<Link>` por defecto): abrir una habitación desde la portada pasó de ~535 ms a ~74 ms (móvil, 4G lento simulado). Coste: ~60 KB en móvil (datos de las páginas enlazadas visibles y su foto principal).
+- **El revelado ya no oculta contenido antes del JavaScript:** la opacidad 0 solo se aplica con la clase `rv-on`, que pone el script cuando ya vigila el scroll; lo que está a la vista se queda visible. Fundido de 0,9 s a 0,6 s.
+- Medición tras el cambio (Lighthouse móvil, mediana de 5): rendimiento 0,96, accesibilidad 1, buenas prácticas 1, LCP 2,6 s (dentro del margen de ruido documentado arriba), CLS 0,002, TBT 88 ms.

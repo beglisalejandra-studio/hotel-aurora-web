@@ -1,20 +1,25 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 import { SECTION_TYPES } from "../sections";
 
-const slugField = (source = "title.es") =>
+// En los documentos con pestañas, estos campos van en la primera («Contenido»): si no, al crear uno nuevo la dirección
+// obligatoria quedaría escondida en «Todos los campos».
+const slugField = (source = "title.es", group?: string) =>
   defineField({
     name: "slug",
     title: "Dirección en la web",
     type: "slug",
+    ...(group ? { group } : {}),
     options: { source, maxLength: 80 },
-    description: "Se genera desde el título. Cámbiala solo si sabes que nadie la enlaza ya.",
+    description:
+      "Pulsa «Generar» para crearla a partir del nombre. Después no la cambies: los enlaces antiguos dejarían de funcionar.",
     validation: (r) => r.required(),
   });
-const order = () =>
+const order = (group?: string) =>
   defineField({
     name: "order",
     title: "Orden",
     type: "number",
+    ...(group ? { group } : {}),
     description: "Menor número, antes aparece.",
     initialValue: 10,
   });
@@ -35,7 +40,7 @@ export const page = defineType({
       group: "content",
       validation: (r) => r.required(),
     }),
-    slugField(),
+    slugField("title.es", "content"),
     defineField({
       name: "sections",
       title: "Secciones",
@@ -68,8 +73,17 @@ export const room = defineType({
       group: "content",
       validation: (r) => r.required(),
     }),
-    slugField(),
-    order(),
+    slugField("title.es", "content"),
+    order("content"),
+    defineField({
+      name: "priceFrom",
+      title: "Precio «desde» por noche (€)",
+      type: "number",
+      group: ["content", "booking"],
+      description:
+        "Lo que sale en la web como «Desde … € / noche». La tarifa real de cada día y la disponibilidad se fijan en Mews.",
+      validation: (r) => r.min(0),
+    }),
     defineField({
       name: "summary",
       title: "Descripción breve",
@@ -164,15 +178,6 @@ export const room = defineType({
       ],
     }),
     defineField({
-      name: "priceFrom",
-      title: "Precio «desde» por noche (€)",
-      type: "number",
-      group: "booking",
-      description:
-        "Precio orientativo para las tarjetas. La tarifa real, el calendario y la disponibilidad se fijan en Mews.",
-      validation: (r) => r.min(0),
-    }),
-    defineField({
       name: "mewsCategoryId",
       title: "ID del tipo de habitación en Mews",
       type: "string",
@@ -183,10 +188,16 @@ export const room = defineType({
   ],
   orderings: [{ title: "Orden", name: "order", by: [{ field: "order", direction: "asc" }] }],
   preview: {
-    select: { title: "title.es", subtitle: "guests", media: "mainImage.desktop" },
-    prepare: ({ title, subtitle, media }) => ({
+    select: { title: "title.es", guests: "guests", price: "priceFrom", media: "mainImage.desktop" },
+    prepare: ({ title, guests, price, media }) => ({
       title,
-      subtitle: subtitle ? `${subtitle} personas` : undefined,
+      subtitle:
+        [
+          guests ? `${guests} personas` : "",
+          typeof price === "number" ? `desde ${price} €/noche` : "",
+        ]
+          .filter(Boolean)
+          .join(" · ") || undefined,
       media,
     }),
   },
@@ -269,7 +280,7 @@ export const post = defineType({
       group: "content",
       validation: (r) => r.required(),
     }),
-    slugField(),
+    slugField("title.es", "content"),
     defineField({
       name: "publishedAt",
       title: "Fecha de publicación",

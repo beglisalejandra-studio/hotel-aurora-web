@@ -38,7 +38,7 @@
 | Cookies de GA4 | Analítica | **Por verificar** | Sí, con consentimiento de analítica |
 | Cookies del Pixel de Meta | Marketing | **Por verificar** | Sí, con consentimiento de marketing |
 
-En la maqueta, el idioma, el tema y la decisión de cookies se guardan en el almacenamiento del navegador de la persona. En la web real se confirmará qué mecanismo se usa y se ajustará esta tabla.
+En la maqueta, el idioma, el tema y la decisión de cookies se guardan en el almacenamiento del navegador de la persona. En la web real: la decisión va en la cookie `consent`, el tema en `localStorage` (`aurora-theme`) y el idioma en la dirección (`/en`), sin guardar nada.
 
 ## Consent Mode v2 (señales por defecto: denegadas)
 `analytics_storage`, `ad_storage`, `ad_user_data` y `ad_personalization` empiezan en «denied» y se actualizan según las categorías que acepte la persona. Modo básico: las etiquetas de Google y el Pixel no se cargan antes del consentimiento (ADR-0004).
@@ -53,8 +53,9 @@ Acceso, rectificación, supresión, oposición, limitación y portabilidad. Proc
 Política de privacidad, política de cookies, aviso legal y condiciones de reserva (`#/legal/…`, ES/EN), redactadas a partir de este mapa de datos. Textos de ejemplo para un hotel ficticio: **un hotel real los revisa con su asesoría** antes de publicarlos. En la web real se editan desde el panel.
 
 ## Estado en la web real (2026-10-26)
-- **Navegar no conecta con terceros** (comprobado con una prueba automática, `tests/e2e/site.spec.ts`): fotos del panel servidas desde el propio dominio (`/cdn/…` → CDN de Sanity por el servidor), tipografías y mapa alojados en la web.
-- **Mews** solo se descarga al pulsar «Reservar». Su widget intenta cargar rastreadores propios (Google Tag Manager `GTM-TTTCZJQ`, Sentry, LaunchDarkly, Azure Application Insights): la política de seguridad de la web los bloquea y la reserva funciona igual. Además se llama a `disableTracking()` mientras el visitante no acepte analítica o marketing.
+- **Navegar no conecta con terceros** (comprobado con una prueba automática, `tests/e2e/site.spec.ts`): fotos del panel servidas desde el propio dominio por el optimizador de imágenes (`/_next/image`, que las pide a Sanity desde el servidor), tipografías y mapa alojados en la web.
+- **Mews** solo se descarga al pulsar «Reservar». Su widget intenta cargar rastreadores propios (Google Tag Manager `GTM-TTTCZJQ`, Sentry, LaunchDarkly, Azure Application Insights): la política de seguridad de la web los bloquea y la reserva funciona igual. Además se llama a `disableTracking()` salvo que el visitante acepte analítica y marketing (los rastreadores de Mews mezclan las dos cosas).
 - **Solicitudes de mesa, spa y bono**: `/api/request` (mismo origen, 5 cada 10 minutos por IP, antispam, validación con zod). Destino: correo del hotel con Resend si `LEAD_SINK=resend`; si no, solo se registra «llegó una solicitud», sin datos personales.
 - **Asistente**: sin `ANTHROPIC_API_KEY` responde con las preguntas frecuentes del panel, en el navegador, sin enviar nada. Con la clave, `/api/assistant` manda la pregunta y el contenido publicado del hotel a la API de Claude; no se guarda la conversación; 20 preguntas cada 10 minutos por IP y tope diario.
-- **Almacenamiento**: el tema Día o Madrugada se guarda en el navegador (`aurora-theme`); el idioma va en la dirección (`/en`), sin cookie. No hay analítica ni marketing activados, así que **no se muestra aviso de cookies**: aparecerá cuando se configure GA4 o el Pixel de Meta.
+- **Almacenamiento**: el tema Día o Madrugada se guarda en el navegador (`aurora-theme`); el idioma va en la dirección (`/en`), sin cookie.
+- **Aviso de cookies (desde 2026-10-26, pedido de la persona)**: sale en la primera visita con Aceptar, Rechazar y Configurar al mismo nivel; nada marcado de antemano; «Configurar cookies» siempre en el pie. La decisión se guarda en la cookie propia `consent` (180 días, `SameSite=Lax`, `Secure` en HTTPS, versión de la política dentro). Hoy no hay GA4 ni Pixel de Meta instalados: el aviso ya gobierna su carga cuando se activen y, desde hoy, los rastreadores de Mews. Textos editables en el panel («Aviso de cookies»).

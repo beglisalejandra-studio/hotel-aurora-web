@@ -37,6 +37,7 @@
     "@anthropic-ai/sdk": "0.133.0",
     "@sanity/client": "7.27.0",
     "@sanity/color-input": "6.1.6",
+    "@sanity/icons": "5.2.3",
     "@sanity/image-url": "2.1.1",
     "@sanity/locale-es-es": "1.2.39",
     "next": "16.4.3",

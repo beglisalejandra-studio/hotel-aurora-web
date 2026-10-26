@@ -6,6 +6,24 @@ const TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 for (const path of ["/", "/en", "/habitaciones/faro", "/privacidad", "/esta-ruta-no-existe"]) {
   test(`axe: ${path} sin violaciones serias o críticas (WCAG 2.2 AA)`, async ({ page }) => {
     await page.goto(path);
+    // Se mide el estado final de todo el contenido, no un fotograma a medio fundido: se muestran ya las entradas que
+    // aparecen al hacer scroll y se espera a que todo (también el aviso de cookies) esté del todo visible.
+    await page.waitForFunction(() => document.documentElement.classList.contains("rv-on"));
+    // cv-off: sin content-visibility, para que las secciones de abajo se pinten (y se puedan medir) ya
+    await page.evaluate(() => {
+      document.documentElement.classList.add("cv-off");
+      document.querySelectorAll(".rv").forEach((e) => e.classList.add("in"));
+    });
+    await expect
+      .poll(() =>
+        page.evaluate(() =>
+          [...document.querySelectorAll(".rv, .cookie")].every((e) => {
+            const cs = getComputedStyle(e);
+            return cs.display === "none" || cs.opacity === "1";
+          }),
+        ),
+      )
+      .toBe(true);
     const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze();
     const serious = violations.filter((v) => v.impact === "serious" || v.impact === "critical");
     expect(

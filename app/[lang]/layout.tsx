@@ -5,6 +5,7 @@ import { Enhance } from "@/components/site/Enhance";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { Overlays } from "@/components/site/Overlays";
+import { CONSENT_COOKIE, CONSENT_VERSION } from "@/lib/analytics/consent";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { tr } from "@/lib/i18n/text";
 import { ui } from "@/lib/i18n/ui";
@@ -62,8 +63,11 @@ function mewsConfig(m: { configurationId?: string; environment?: string } | null
   return id ? { configurationId: id, demo } : null;
 }
 
-/** Antes de pintar: activa las animaciones de entrada y aplica el tema Día / Madrugada que eligió el visitante. */
-const BOOT = `(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("aurora-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}})()`;
+/**
+ * Antes de pintar: activa las animaciones de entrada, aplica el tema Día / Madrugada que eligió el visitante y, si aún
+ * no ha decidido sobre las cookies (o la decisión es de otra versión de la política), muestra el aviso.
+ */
+const BOOT = `(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("aurora-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}var c=null;try{var m=document.cookie.match(/(?:^|;\\s*)${CONSENT_COOKIE}=([^;]*)/);c=m&&JSON.parse(decodeURIComponent(m[1]))}catch(e){}if(!c||c.v!==${CONSENT_VERSION})d.classList.add("consent-pending")})()`;
 
 export default async function SiteLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;

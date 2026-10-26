@@ -13,6 +13,7 @@ import { SINGLETONS } from "./sanity/schemaTypes/documents/singletons";
 import { withContrastConfirm } from "./sanity/actions/contrastConfirm";
 import { SeedOnFirstOpen } from "./sanity/components/SeedOnFirstOpen";
 import { structure } from "./sanity/structure";
+import { homeTool } from "./sanity/tools/home";
 
 const singletons = new Set<string>(SINGLETONS);
 
@@ -24,6 +25,8 @@ export default defineConfig({
   dataset,
   apiVersion,
   plugins: [structureTool({ structure, title: "Contenido" }), colorInput(), esESLocale()],
+  // «Inicio» va primero: es lo que se ve al abrir el panel (tareas habituales con un clic).
+  tools: (prev) => [homeTool, ...prev],
   schema: {
     types: schemaTypes,
     // Los documentos únicos no se crean desde «Nuevo documento».

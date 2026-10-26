@@ -23,12 +23,7 @@ export function RoomCards({ rooms, lang }: { rooms: RoomCard[]; lang: Locale }) 
         const href = localePath(lang, `/habitaciones/${r.slug}`);
         return (
           <article key={r._id} className={`room rv${i ? ` d${Math.min(i, 3)}` : ""}`}>
-            <Link
-              className="room-media"
-              href={href}
-              prefetch={false}
-              aria-label={`${t.seeRoom}: ${name}`}
-            >
+            <Link className="room-media" href={href} aria-label={`${t.seeRoom}: ${name}`}>
               <div
                 className="ph slot"
                 data-foto=""
@@ -44,7 +39,7 @@ export function RoomCards({ rooms, lang }: { rooms: RoomCard[]; lang: Locale }) 
               </div>
             </Link>
             <h3 className="h3">
-              <Link className="room-link" href={href} prefetch={false}>
+              <Link className="room-link" href={href}>
                 {name}
               </Link>
             </h3>
@@ -70,7 +65,7 @@ export function RoomCards({ rooms, lang }: { rooms: RoomCard[]; lang: Locale }) 
               >
                 {t.book}
               </button>
-              <Link className="link-arrow" href={href} prefetch={false}>
+              <Link className="link-arrow" href={href}>
                 {t.seeRoom}
               </Link>
             </div>

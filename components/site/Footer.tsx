@@ -13,17 +13,15 @@ export function Footer({ lang, data }: { lang: Locale; data: SiteData }) {
   const wa = waHref(s);
   const columns = data.nav?.footer ?? [];
   const linksToBlog = columns.some((c) => c.links?.some((l) => l.target?._type === "post"));
+  // «Configurar cookies» va siempre en el pie (criterio de la AEPD), en la columna de los textos legales.
+  const legalCol = columns.findIndex((c) => c.links?.some((l) => l.target?._type === "legalPage"));
+  const cookiesCol = legalCol >= 0 ? legalCol : columns.length - 1;
   return (
     <footer className="foot" id="foot">
       <div className="wrap">
         <div className="foot-grid">
           <div>
-            <Link
-              className="brand"
-              href={localePath(lang, "/")}
-              prefetch={false}
-              aria-label={s?.name || "Hotel"}
-            >
+            <Link className="brand" href={localePath(lang, "/")} aria-label={s?.name || "Hotel"}>
               <span className="brand-name">{brandName(s?.name)}</span>
             </Link>
             {tr(s?.address, lang) && (
@@ -67,14 +65,19 @@ export function Footer({ lang, data }: { lang: Locale; data: SiteData }) {
               <ul>
                 {(c.links ?? []).map((l) => (
                   <li key={l._key}>
-                    <Link href={navHref(l, lang, s?.home)} prefetch={false}>
-                      {tr(l.label, lang)}
-                    </Link>
+                    <Link href={navHref(l, lang, s?.home)}>{tr(l.label, lang)}</Link>
                   </li>
                 ))}
                 {i === 0 && data.hasPosts && !linksToBlog && (
                   <li>
                     <Link href={localePath(lang, "/blog")}>{t.blog}</Link>
+                  </li>
+                )}
+                {i === cookiesCol && (
+                  <li>
+                    <button type="button" className="linkbtn" data-open-cookies>
+                      {t.cookies}
+                    </button>
                   </li>
                 )}
               </ul>

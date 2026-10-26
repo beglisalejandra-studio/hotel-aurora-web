@@ -14,6 +14,9 @@ const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const target = buildTarget();
 const canonical = canonicalHost();
 const isProductionSite = process.env.NEXT_PUBLIC_SITE_ENV === "production";
+// Rutas en español sin prefijo: todo menos el inglés, el panel, la API, los archivos internos de Next (también las
+// fotos optimizadas), el mapa propio, las fotos de ejemplo y cualquier archivo con extensión.
+const SPANISH_PATH = "(?!(?:en|es|admin|api|_next|seed|map|media|fonts)(?:/|$))(?!.*\\.[^/]+$).+";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -37,9 +40,26 @@ const nextConfig: NextConfig = {
   },
   ...(target === "standalone" ? { output: "standalone" as const } : {}),
   // Un solo host canónico (SEO): el resto se redirige con 308. No aplica a las comprobaciones de salud.
+  // Idiomas: /es/… redirige a /… (una sola dirección por página en español).
   async redirects() {
-    if (!canonical) return [];
-    return [canonicalRedirect(canonical, siteUrl)];
+    return [
+      ...(canonical ? [canonicalRedirect(canonical, siteUrl)] : []),
+      { source: "/es", destination: "/", permanent: true },
+      { source: "/es/:path*", destination: "/:path*", permanent: true },
+    ];
+  },
+  // Idiomas en la dirección: el español va sin prefijo (/habitaciones/alba) y el inglés con /en. Por dentro todo vive
+  // en app/[lang], así que /… se sirve desde /es/…. Son reglas de la propia CDN (sin función intermedia en cada
+  // visita): las páginas salen de la caché más cercana al visitante. No se adivina el idioma del navegador.
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: "/", destination: "/es" },
+        { source: `/:path(${SPANISH_PATH})`, destination: "/es/:path" },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   async headers() {
     return [

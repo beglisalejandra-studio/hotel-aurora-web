@@ -654,27 +654,29 @@ img {
   text-align: right;
 }
 
-/* ===== Revelado (una vez, solo transform y opacity) ===== */
+/* ===== Revelado (una vez, solo transform y opacity) =====
+   Solo se oculta lo que está por debajo de la pantalla y solo cuando el script ya vigila el desplazamiento (clase
+   rv-on): con una conexión lenta el contenido nunca queda invisible esperando al JavaScript. */
 @media (prefers-reduced-motion: no-preference) {
-  .js .rv {
+  .rv-on .rv {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
     transition:
-      opacity 0.9s var(--ease),
-      transform 0.9s var(--ease);
+      opacity 0.6s var(--ease),
+      transform 0.6s var(--ease);
   }
-  .js .rv.in {
+  .rv-on .rv.in {
     opacity: 1;
     transform: none;
   }
-  .js .rv.d1 {
-    transition-delay: 0.08s;
+  .rv-on .rv.d1 {
+    transition-delay: 0.06s;
   }
-  .js .rv.d2 {
-    transition-delay: 0.16s;
+  .rv-on .rv.d2 {
+    transition-delay: 0.12s;
   }
-  .js .rv.d3 {
-    transition-delay: 0.24s;
+  .rv-on .rv.d3 {
+    transition-delay: 0.18s;
   }
 }
 
@@ -3912,7 +3914,8 @@ details.q p {
 .back {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  /* Por encima del aviso de cookies (70): un formulario abierto no queda tapado */
+  z-index: 75;
   background: rgba(10, 16, 22, 0.62);
   display: flex;
   align-items: stretch;
@@ -4155,8 +4158,8 @@ details.q p {
   .enter > *:nth-child(5) {
     animation-delay: 0.24s;
   }
-  .cookie:not([hidden]) {
-    animation: ckin 0.7s var(--ease) both;
+  .consent-pending .cookie {
+    animation: ckin 0.5s var(--ease) both;
   }
   @keyframes fadein {
     from {
@@ -4198,14 +4201,30 @@ details.q p {
   background: var(--surface);
   border: 1px solid var(--ink);
   padding: 20px;
-  display: grid;
+  display: none;
   gap: 14px;
   max-width: 460px;
   max-height: calc(100dvh - 32px);
   overflow: auto;
 }
+.consent-pending .cookie {
+  display: grid;
+}
 .cookie h2 {
   font: 500 20px/1.2 var(--f-display);
+}
+.cookie p a {
+  color: inherit;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.cookie .ck-save {
+  justify-self: start;
+  padding-inline: 24px;
+  min-height: 48px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
 }
 .cookie-btns {
   display: grid;
@@ -4248,18 +4267,6 @@ details.q p {
   height: 26px;
   accent-color: var(--accent);
   flex: none;
-}
-.cm {
-  font:
-    13px/1.5 ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
-  color: var(--ink-2);
-  background: var(--band);
-  padding: 10px 12px;
-  margin: 0;
-  white-space: pre-wrap;
 }
 @media (min-width: 600px) {
   .cookie {
@@ -4447,7 +4454,7 @@ details.q p {
 .chip:hover {
   border-color: var(--ink);
 }
-body.consent-pending .dock {
+.consent-pending .dock {
   display: none;
 }
 body.noscroll {

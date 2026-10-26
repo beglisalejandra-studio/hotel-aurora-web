@@ -3,6 +3,7 @@ import {
   DEFAULT_CONSENT,
   hasDecided,
   parseConsent,
+  readDecision,
   serializeConsent,
   type Consent,
 } from "@/lib/analytics/consent";
@@ -41,6 +42,17 @@ describe("consentimiento", () => {
         `consent=${encodeURIComponent(JSON.stringify({ v: 99, analytics: true, marketing: true }))}`,
       ),
     ).toEqual(DEFAULT_CONSENT);
+  });
+  it("readDecision: null si no ha decidido, si está corrupta o si es de otra versión", () => {
+    const cookie = serializeConsent({ analytics: false, marketing: true }).split(";")[0] as string;
+    expect(readDecision(`x=1; ${cookie}`)).toMatchObject({ analytics: false, marketing: true });
+    expect(readDecision("x=1")).toBeNull();
+    expect(readDecision("consent=%7Bmal")).toBeNull();
+    expect(
+      readDecision(
+        `consent=${encodeURIComponent(JSON.stringify({ v: 99, analytics: true, marketing: true }))}`,
+      ),
+    ).toBeNull();
   });
   it("la cookie es SameSite=Lax y Secure por defecto", () => {
     const c = serializeConsent({ analytics: false, marketing: false });

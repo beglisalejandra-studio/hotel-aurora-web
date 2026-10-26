@@ -77,6 +77,19 @@ function toBlocks(sections) {
   return blocks;
 }
 
+// Aviso de cookies (pedido de la persona, 2026-10-26): primera capa con Aceptar, Rechazar y Configurar al mismo nivel.
+const COOKIE_NOTICE = {
+  _id: "cookieNotice",
+  _type: "cookieNotice",
+  title: ls("Tu decisión sobre las cookies", "Your choice about cookies"),
+  text: lt(
+    "Usamos cookies propias necesarias para que la web funcione y, si nos das permiso, cookies propias y de terceros de analítica y de marketing. Puedes cambiar tu elección cuando quieras en «Configurar cookies», al pie de la página.",
+    "We use our own necessary cookies so the website works and, with your permission, our own and third-party analytics and marketing cookies. You can change your choice at any time from “Cookie settings” at the bottom of the page.",
+  ),
+  analytics: ls("Cuenta las visitas y las páginas más vistas, sin identificarte.", "Counts visits and the most viewed pages, without identifying you."),
+  marketing: ls("Mide si nuestras campañas funcionan.", "Measures whether our campaigns work."),
+};
+
 // --- documentos ---
 const docs = [];
 const PAL = {
@@ -111,6 +124,7 @@ docs.push({
   },
   footerNote: lt("Proyecto de portfolio. El hotel, sus datos y sus precios son ficticios.", "Portfolio project. The hotel, its details and its prices are fictional."),
 });
+docs.push(COOKIE_NOTICE);
 docs.push({ _id: "theme", _type: "theme", light: palette(PAL.light), dark: palette(PAL.dark), fontDisplay: "outfit", fontText: "work-sans" });
 
 // Habitaciones
